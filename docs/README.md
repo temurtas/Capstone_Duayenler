@@ -10,7 +10,7 @@ This is the website of the Duayenler Ltd. Şti.
 * [Halil Temurtaş](https://github.com/temurtas)
 * [Erdem Tuna](https://github.com/erdemtuna)
 * [Sarper Sertel](https://github.com/Kriyusxxx)
-* [Enes Taştan](https://github.com/)
+* [Enes Taştan](https://github.com/enestastan)
 * [İlker Sağlık](https://github.com/)
 
 
