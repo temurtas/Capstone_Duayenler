@@ -1,4 +1,5 @@
 # Capstone_Duayenler
+![](https://github.com/temurtas/Capstone_Duayenler/blob/master/logos/logo3.png "DUAYENLER")
 Private repository of Duayenler Ltd. Şti.
 
 
