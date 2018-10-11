@@ -1,7 +1,7 @@
 # Capstone_Duayenler
 Private repository of Duayenler Ltd. Şti.
 
-
+![Alt text](logos/logo1.png?raw=true "Title")
 
 # Contributors
 * [Halil Temurtaş](https://github.com/temurtas)
