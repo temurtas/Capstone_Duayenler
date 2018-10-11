@@ -1,5 +1,8 @@
 ﻿# Welcome to DUAYENLER Ltd. Şti. Official Website
-![](https://github.com/temurtas/Capstone_Duayenler/blob/master/logos/logo3.png "DUAYENLER")
+
+![Alt text](img/logo3.png?raw=true "Title")
+
+
 This is the website of the Duayenler Ltd. Şti.
 
 
