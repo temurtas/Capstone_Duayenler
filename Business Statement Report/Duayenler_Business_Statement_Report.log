@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.15)  13 OCT 2018 23:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.15)  14 OCT 2018 00:17
 entering extended mode
 **./Duayenler_Business_Statement_Report.tex
 (Duayenler_Business_Statement_Report.tex
@@ -731,15 +731,11 @@ File: images/logo3-with-stroke.png Graphic file (type png)
 Package pdftex.def Info: images/logo3-with-stroke.png used on input line 166.
 (pdftex.def)             Requested size: 419.14645pt x 105.41406pt.
 
-
-LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 197.
-
-("D:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-1.def"
-File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
-)
 ("D:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-0.def"
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
+)
+("D:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-1.def"
+File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
 )
 LaTeX Font Info:    Try loading font information for U+msa on input line 205.
 
@@ -754,7 +750,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./images/logo3-with-strok
 e.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 224--225
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
 
  []
 
@@ -802,53 +798,49 @@ Overfull \hbox (8.69412pt too wide) in paragraph at lines 248--248
 \OT1/cmr/m/n/12 NOTE  
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 259.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 263.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 259.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 263.
 
 <images/logo1.png, id=21, 376.40625pt x 376.40625pt>
 File: images/logo1.png Graphic file (type png)
  <use images/logo1.png>
-Package pdftex.def Info: images/logo1.png used on input line 267.
+Package pdftex.def Info: images/logo1.png used on input line 271.
 (pdftex.def)             Requested size: 293.41507pt x 293.43486pt.
 
 [3]
 File: images/logo1.png Graphic file (type png)
  <use images/logo1.png>
-Package pdftex.def Info: images/logo1.png used on input line 277.
+Package pdftex.def Info: images/logo1.png used on input line 281.
 (pdftex.def)             Requested size: 201.19798pt x 201.20016pt.
 
 <images/logo2.png, id=26, 376.40625pt x 376.40625pt>
 File: images/logo2.png Graphic file (type png)
  <use images/logo2.png>
-Package pdftex.def Info: images/logo2.png used on input line 282.
+Package pdftex.def Info: images/logo2.png used on input line 286.
 (pdftex.def)             Requested size: 201.19798pt x 201.20016pt.
 
 [4 <./images/logo1.png>] [5 <./images/logo2.png>]
-(Duayenler_Business_Statement_Report.aux)
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
- ) 
+(Duayenler_Business_Statement_Report.aux) ) 
 Here is how much of TeX's memory you used:
- 18393 strings out of 493323
- 333510 string characters out of 3139065
- 420097 words of memory out of 3000000
- 21559 multiletter control sequences out of 15000+200000
+ 18392 strings out of 493323
+ 333493 string characters out of 3139065
+ 420095 words of memory out of 3000000
+ 21558 multiletter control sequences out of 15000+200000
  12260 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,9n,94p,492b,715s stack positions out of 5000i,500n,10000p,200000b,50000s
-<D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><D:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmti12.pfb>
-Output written on Duayenler_Business_Statement_Report.pdf (6 pages, 196249 byte
+ 62i,9n,94p,492b,704s stack positions out of 5000i,500n,10000p,200000b,50000s
+<D:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmbx12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmcsc10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmr10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on Duayenler_Business_Statement_Report.pdf (6 pages, 197372 byte
 s).
 PDF statistics:
  55 PDF objects out of 1000 (max. 8388607)
