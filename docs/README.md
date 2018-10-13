@@ -11,7 +11,7 @@ This is the website of the Duayenler Ltd. Şti.
 * [Erdem Tuna](https://github.com/erdemtuna)
 * [Sarper Sertel](https://github.com/Kriyusxxx)
 * [Enes Taştan](https://github.com/enestastan)
-* [İlker Sağlık](https://github.com/)
+* [İlker Sağlık](https://github.com/isaglik)
 
 
 # More to Read

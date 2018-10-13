@@ -8,7 +8,7 @@ Private repository of Duayenler Ltd. Şti.
 * [Erdem Tuna](https://github.com/erdemtuna)
 * [Sarper Sertel](https://github.com/Kriyusxxx)
 * [Enes Taştan](https://github.com/enestastan)
-* [İlker Sağlık](https://github.com/)
+* [İlker Sağlık](https://github.com/isaglik)
 
 
 ### Version Control, Git and GitHub
