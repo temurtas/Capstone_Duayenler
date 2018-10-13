@@ -45,28 +45,29 @@
 \usepackage{xcolor}
 \usepackage{listings}
 \usepackage{xspace}
-
-
-\usepackage{amssymb}
-\usepackage{nicefrac}
-\usepackage{gensymb}
-\usepackage{xspace}
-\usepackage{fancyhdr}
-
-
-
-
-
+%%%%
 \newcommand\nd{\textsuperscript{nd}\xspace}
 \newcommand\rd{\textsuperscript{rd}\xspace}
 \newcommand\nth{\textsuperscript{th}\xspace} %\th is taken already
-
 
 \definecolor{mGreen}{rgb}{0,0.6,0} % for python
 \definecolor{mGray}{rgb}{0.5,0.5,0.5}
 \definecolor{mPurple}{rgb}{0.58,0,0.82}
 \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue for matlab
 \definecolor{mylilas}{RGB}{170,55,241}
+%%%%%
+
+
+
+\usepackage{amssymb}
+\usepackage{nicefrac}
+\usepackage{gensymb}
+\usepackage{fancyhdr}
+
+
+
+
+
 
 
 
@@ -129,7 +130,7 @@
 % For Blank Page -------------
 \newcommand{\blankpage}{
 	\- \\[8.5cm]	
-	{ \centering This Page Intentionally Left Blank \par }
+	{ \centering \textit{This page intentionally left blank.} \par }
 	\- \\[8.5cm]
 }
 % ---------------------------
@@ -162,8 +163,8 @@
 %----------------------------------------------------------------------------------------
 %	LOGO SECTION
 %----------------------------------------------------------------------------------------
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/logo3-with-stroke}\\[1cm]
 
-\includegraphics[scale=0.3]{logo3}\\[1cm]
 % Include a department/university logo - this will require the graphicx package
  
 %----------------------------------------------------------------------------------------
@@ -175,6 +176,7 @@
 
 \textsc{\LARGE Middle East Technical University}\\[1.5cm] % Name of your university/college
 \textsc{\Large Department of Electrical and Electronics Engineering }\\[0.5cm] % Major heading such as course name
+\textsc{\large EE493 ENGINEERING DESIGN I}\\[0.5cm] % Minor heading such as course title
  % Minor heading such as course title
 
 %----------------------------------------------------------------------------------------
@@ -183,37 +185,24 @@
 
 \HRule \\[0.4cm]
 
-{ \huge \bfseries \large EE493 Capstone \\ Business Statement Report}\\[0cm] % Title of your document
+{ \huge \bfseries  Business Statement Report}\\[0cm] % Title of your document
 \HRule \\[1cm]
  
 %----------------------------------------------------------------------------------------
 %	AUTHOR SECTION
 %----------------------------------------------------------------------------------------
 
-\begin{minipage}{0.38\textwidth}
+\begin{minipage}{\textwidth}
 \begin{flushleft} \large
-	\textbf{Names} \\
-		\textit{\begin{itemize}
-					\item HT
-					\item ET
-					\item SS
-					\item ET
-					\item İS
-				\end{itemize}} 
+	\large\textsc{\textbf{Company Name :}}
+	\textsc{Duayenler Ltd. Şti.}\\
+	\large\textsc{\textbf{Supervisor\hspace{1.55cm}:}}
+	\textsc{Assoc. Prof. Emre Özkan}\\
+	\large\textsc{\textbf{Members\hspace{1.89cm}:}}
+	\textsc{Enes Taştan, 9998887 \\\hspace{4.39cm} Erdem Tuna, 2617419 \\\hspace{4.39cm} Halil Temurtaş, 2094522 \\\hspace{4.39cm} İlker Sağlık, 1112223 \\\hspace{4.39cm} Sarper Sertel, 4445556}\\
+
 \end{flushleft}
-\end{minipage}
-\begin{minipage}{0.6\textwidth}
-\begin{flushright} \large
-	\textbf{Names2} \\
-		\textit{\begin{itemize}
-					\item HT
-					\item ET
-					\item SS
-					\item ET
-					\item İS
-				\end{itemize}}
-\end{flushright}
-\end{minipage}\\[0.4cm]
+\end{minipage}\\[1cm]
 
 % If you don't want a supervisor, uncomment the two lines below and remove the section above
 %\Large \emph{Author:}\\
@@ -223,7 +212,8 @@
 %	DATE SECTION
 %----------------------------------------------------------------------------------------
 
-{\large 21/08/2018}\\[1cm] % Date, change the \today to a set date if you want to be precise
+{\large October 19, 2018}\\[1cm] % Date, change the \today to a set date if you want to be precise
+
 
 
 \vfill % Fill the rest of the page with whitespace
@@ -253,7 +243,9 @@
 
 \section{Human Resources}
 \-\indent
-
+\subsection{Sub}
+asfsa
+\todo{TODO NOTE}
 
 \section{Description of the Projects}
 \-\indent
@@ -272,7 +264,7 @@
 \begin{figure}[H]
 \center
 \setlength{\unitlength}{\textwidth} 
-\includegraphics[width=0.7\unitlength]{logo1}
+\includegraphics[width=0.7\unitlength]{images/logo1}
 \caption{\label{fig:logo}Logo }
 \end{figure}
 
@@ -282,12 +274,12 @@
 	\centering
 	\begin{subfigure}{.5\textwidth}
   		\centering
-  		\includegraphics[width=0.48\unitlength]{logo1}
+  		\includegraphics[width=0.48\unitlength]{images/logo1}
   		\caption{\label{fig:logo1}Logo1 }
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
   		\centering
-		\includegraphics[width=0.48\unitlength]{logo2}
+		\includegraphics[width=0.48\unitlength]{images/logo2}
   		\caption{\label{fig:logo2}Logo2}
 	\end{subfigure}
 \caption{\label{fig:calisandegree} Small Logos   }
