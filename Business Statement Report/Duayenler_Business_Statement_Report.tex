@@ -65,6 +65,19 @@
 \usepackage{fancyhdr}
 
 
+\usepackage{array} %allows more options in tables
+\usepackage{pgfplots,pgf,tikz} %coding plots in latex
+\usepackage{capt-of} % allows caption outside the figure environment
+\usepackage[export]{adjustbox} %more options for adjusting the images
+\usepackage{multicol,multirow,slashbox} % allows tables like table1
+%\usepackage[hyperfootnotes=false]{hyperref} % clickable references
+\usepackage{epstopdf} % useful when matlab is involved
+\usepackage{placeins} % prevents the text after figure to go above figure with \FloatBarrier 
+%\usepackage{listingsutf8,mcode} %import .m or any other code file mcode is for matlab highlighting
+\setcounter{secnumdepth}{4} %depth of structures in table of contents
+\setcounter{tocdepth}{4} %depth of structures in table of contents
+
+
 
 
 
@@ -309,7 +322,24 @@ CVs (Maximum of 2 pages per person)
 \end{table}
 
 	
+	
+\begin{table}[H]
+  \centering
+ 
+    \begin{tabular}{c|c|c}
+       \backslashbox{$A$}{$a$} & $$B$$ & $$C$$ \\ \hline
+       \multirow{2}{*}{1} & 2 & 3  \\ \cline{2-3}
+        & 3 & 4  \\ \hline
+       3 & \multicolumn{2}{c}{4}  \\ \hline
+       4 & 5 & 6  
+      
+  \end{tabular}
+  \caption{table}
+  \label{tab:table}
+\end{table}
 
+	
+	
 
 \appendix
 
