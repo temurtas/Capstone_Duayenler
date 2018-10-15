@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  15 OCT 2018 18:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  16 OCT 2018 01:00
 entering extended mode
 **./Duayenler_Business_Statement_Report.tex
 (Duayenler_Business_Statement_Report.tex
@@ -614,11 +614,53 @@ s
 \f@nch@O@olf=\skip59
 \f@nch@O@orf=\skip60
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\blindtext\blindtext.sty"
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+\c@blindtext=\count145
+\c@Blindtext=\count146
+\c@blind@countparstart=\count147
+\blind@countxx=\count148
+\blindtext@numBlindtext=\count149
+\blind@countyy=\count150
+\c@blindlist=\count151
+\c@blindlistlevel=\count152
+\c@blindlist@level=\count153
+\blind@listitem=\count154
+\c@blind@listcount=\count155
+\c@blind@levelcount=\count156
+\blind@mathformula=\count157
+\blind@Mathformula=\count158
+\c@blind@randomcount=\count159
+\c@blind@randommax=\count160
+\c@blind@pangramcount=\count161
+\c@blind@pangrammax=\count162
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
+Package: pdfpages 2017/10/31 v0.5l Insert pages of external PDF documents (AM)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
+Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+))
+\AM@pagewidth=\dimen182
+\AM@pageheight=\dimen183
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.def"
+File: pppdftex.def 2017/10/31 v0.5l Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box43
+\AM@global@opts=\toks43
+\AM@toc@title=\toks44
+\c@AM@survey=\count163
+\AM@templatesizebox=\box44
+)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen182
-\extrarowheight=\dimen183
-\NC@list=\toks43
+\col@sep=\dimen184
+\extrarowheight=\dimen185
+\NC@list=\toks45
 \extratabsurround=\skip61
 \backup@length=\skip62
 )
@@ -628,12 +670,12 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 Package: pgfplots 2018/03/28 v1.16 Data Visualization (1.16)
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\pgfplots.code.tex"
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\pgfplotscore.code.tex"
-\t@pgfplots@toka=\toks44
-\t@pgfplots@tokb=\toks45
-\t@pgfplots@tokc=\toks46
-\pgfplots@tmpa=\dimen184
-\c@pgfplots@coordindex=\count145
-\c@pgfplots@scanlineindex=\count146
+\t@pgfplots@toka=\toks46
+\t@pgfplots@tokb=\toks47
+\t@pgfplots@tokc=\toks48
+\pgfplots@tmpa=\dimen186
+\c@pgfplots@coordindex=\count164
+\c@pgfplots@scanlineindex=\count165
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\sys\pgfplotssysgeneric
 .code.tex"))
@@ -649,7 +691,7 @@ Package pgfplots: loading complementary arithmetics for your pgf version...
 soldpgfsupp_pgflibraryfpu.code.tex")
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\oldpgfcompatib\pgfplot
 soldpgfsupp_pgfmathfloat.code.tex"
-\c@pgfmathroundto@lastzeros=\count147
+\c@pgfmathroundto@lastzeros=\count166
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\oldpgfcompatib\pgfplot
 soldpgfsupp_leq.code.tex"))
@@ -661,14 +703,14 @@ liststructure.code.tex")
 liststructureext.code.tex")
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\liststructure\pgfplots
 array.code.tex"
-\c@pgfplotsarray@tmp=\count148
+\c@pgfplotsarray@tmp=\count167
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\liststructure\pgfplots
 matrix.code.tex")
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\numtable\pgfplotstable
 shared.code.tex"
-\c@pgfplotstable@counta=\count149
-\t@pgfplotstable@a=\toks47
+\c@pgfplotstable@counta=\count168
+\t@pgfplotstable@a=\toks49
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\liststructure\pgfplots
 deque.code.tex")
@@ -680,7 +722,7 @@ ta.code.tex"))
 .code.tex")
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\libs\pgflibrarypgfplot
 s.surfshading.code.tex"
-\c@pgfplotslibrarysurf@no=\count150
+\c@pgfplotslibrarysurf@no=\count169
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\sys\pgflibrarypgfplots
 .surfshading.pgfsys-pdftex.def")))
@@ -712,16 +754,16 @@ x")
 s\tikzlibrarydecorations.code.tex"
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduledecoration
 s.code.tex"
-\pgfdecoratedcompleteddistance=\dimen185
-\pgfdecoratedremainingdistance=\dimen186
-\pgfdecoratedinputsegmentcompleteddistance=\dimen187
-\pgfdecoratedinputsegmentremainingdistance=\dimen188
-\pgf@decorate@distancetomove=\dimen189
-\pgf@decorate@repeatstate=\count151
-\pgfdecorationsegmentamplitude=\dimen190
-\pgfdecorationsegmentlength=\dimen191
+\pgfdecoratedcompleteddistance=\dimen187
+\pgfdecoratedremainingdistance=\dimen188
+\pgfdecoratedinputsegmentcompleteddistance=\dimen189
+\pgfdecoratedinputsegmentremainingdistance=\dimen190
+\pgf@decorate@distancetomove=\dimen191
+\pgf@decorate@repeatstate=\count170
+\pgfdecorationsegmentamplitude=\dimen192
+\pgfdecorationsegmentlength=\dimen193
 )
-\tikz@lib@dec@box=\box43
+\tikz@lib@dec@box=\box45
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\librarie
 s\tikzlibrarydecorations.pathmorphing.code.tex"
@@ -731,13 +773,13 @@ brarydecorations.pathmorphing.code.tex"))
 s\tikzlibrarydecorations.pathreplacing.code.tex"
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\libraries\decorations\pgfli
 brarydecorations.pathreplacing.code.tex"))
-\pgfplots@numplots=\count152
-\pgfplots@xmin@reg=\dimen192
-\pgfplots@xmax@reg=\dimen193
-\pgfplots@ymin@reg=\dimen194
-\pgfplots@ymax@reg=\dimen195
-\pgfplots@zmin@reg=\dimen196
-\pgfplots@zmax@reg=\dimen197
+\pgfplots@numplots=\count171
+\pgfplots@xmin@reg=\dimen194
+\pgfplots@xmax@reg=\dimen195
+\pgfplots@ymin@reg=\dimen196
+\pgfplots@ymax@reg=\dimen197
+\pgfplots@zmin@reg=\dimen198
+\pgfplots@zmax@reg=\dimen199
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\librarie
 s\tikzlibraryplotmarks.code.tex"
@@ -762,62 +804,60 @@ Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\collectbox\collectbox.sty"
 Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box44
+\collectedbox=\box46
 )
-\tc@llx=\dimen198
-\tc@lly=\dimen199
-\tc@urx=\dimen256
-\tc@ury=\dimen257
+\tc@llx=\dimen256
+\tc@lly=\dimen257
+\tc@urx=\dimen258
+\tc@ury=\dimen259
 Package trimclip Info: Using driver 'tc-pdftex.def'.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\adjustbox\tc-pdftex.def"
 File: tc-pdftex.def 2018/04/08 v2.1 Clipping driver for pdftex
 ))
-\adjbox@Width=\dimen258
-\adjbox@Height=\dimen259
-\adjbox@Depth=\dimen260
-\adjbox@Totalheight=\dimen261
-\adjbox@pwidth=\dimen262
-\adjbox@pheight=\dimen263
-\adjbox@pdepth=\dimen264
-\adjbox@ptotalheight=\dimen265
+\adjbox@Width=\dimen260
+\adjbox@Height=\dimen261
+\adjbox@Depth=\dimen262
+\adjbox@Totalheight=\dimen263
+\adjbox@pwidth=\dimen264
+\adjbox@pheight=\dimen265
+\adjbox@pdepth=\dimen266
+\adjbox@ptotalheight=\dimen267
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ifoddpage\ifoddpage.sty"
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count153
+\c@checkoddpage=\count172
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\varwidth.sty"
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box45
-\sift@deathcycles=\count154
-\@vwid@loff=\dimen266
-\@vwid@roff=\dimen267
+\@vwid@box=\box47
+\sift@deathcycles=\count173
+\@vwid@loff=\dimen268
+\@vwid@roff=\dimen269
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\multicol.sty"
 Package: multicol 2016/04/07 v1.8p multicolumn formatting (FMi)
-\c@tracingmulticols=\count155
-\mult@box=\box46
-\multicol@leftmargin=\dimen268
-\c@unbalance=\count156
-\c@collectmore=\count157
-\doublecol@number=\count158
-\multicoltolerance=\count159
-\multicolpretolerance=\count160
-\full@width=\dimen269
-\page@free=\dimen270
-\premulticols=\dimen271
-\postmulticols=\dimen272
+\c@tracingmulticols=\count174
+\mult@box=\box48
+\multicol@leftmargin=\dimen270
+\c@unbalance=\count175
+\c@collectmore=\count176
+\doublecol@number=\count177
+\multicoltolerance=\count178
+\multicolpretolerance=\count179
+\full@width=\dimen271
+\page@free=\dimen272
+\premulticols=\dimen273
+\postmulticols=\dimen274
 \multicolsep=\skip63
 \multicolbaselineskip=\skip64
-\partial@page=\box47
-\last@line=\box48
-\maxbalancingoverflow=\dimen273
-\mult@rightbox=\box49
-\mult@grightbox=\box50
-\mult@gfirstbox=\box51
-\mult@firstbox=\box52
-\@tempa=\box53
-\@tempa=\box54
+\partial@page=\box49
+\last@line=\box50
+\maxbalancingoverflow=\dimen275
+\mult@rightbox=\box51
+\mult@grightbox=\box52
+\mult@gfirstbox=\box53
+\mult@firstbox=\box54
 \@tempa=\box55
 \@tempa=\box56
 \@tempa=\box57
@@ -833,32 +873,34 @@ Package: multicol 2016/04/07 v1.8p multicolumn formatting (FMi)
 \@tempa=\box67
 \@tempa=\box68
 \@tempa=\box69
-\c@columnbadness=\count161
-\c@finalcolumnbadness=\count162
-\last@try=\dimen274
-\multicolovershoot=\dimen275
-\multicolundershoot=\dimen276
-\mult@nat@firstbox=\box70
-\colbreak@box=\box71
-\mc@col@check@num=\count163
+\@tempa=\box70
+\@tempa=\box71
+\c@columnbadness=\count180
+\c@finalcolumnbadness=\count181
+\last@try=\dimen276
+\multicolovershoot=\dimen277
+\multicolundershoot=\dimen278
+\mult@nat@firstbox=\box72
+\colbreak@box=\box73
+\mc@col@check@num=\count182
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
 Package: multirow 2016/10/11 v2.1 Span multiple rows of a table
 \multirow@colwidth=\skip65
-\multirow@cnta=\count164
-\multirow@cntb=\count165
+\multirow@cnta=\count183
+\multirow@cntb=\count184
 \multirow@dima=\skip66
-\bigstrutjot=\dimen277
+\bigstrutjot=\dimen279
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\slashbox\slashbox.sty"
 slashbox style by K.Yasuoka, May 1993.
-\@slashboxa=\box72
-\@slashboxb=\box73
-\@slashboxc=\box74
-\@slashboxwd=\count166
-\@slashboxht=\count167
-\@slashsepl=\dimen278
-\@slashsepr=\dimen279
+\@slashboxa=\box74
+\@slashboxb=\box75
+\@slashboxc=\box76
+\@slashboxwd=\count185
+\@slashboxht=\count186
+\@slashsepl=\dimen280
+\@slashsepr=\dimen281
 ) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
 Package: epstopdf 2016/05/15 v2.6 Conversion with epstopdf on the fly (HO)
 
@@ -917,18 +959,18 @@ LaTeX Warning: Label `tab:table' multiply defined.
 )
 \openout1 = `Duayenler_Business_Statement_Report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -969,45 +1011,54 @@ File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count168
-\scratchdimen=\dimen280
-\scratchbox=\box75
-\nofMPsegments=\count169
-\nofMParguments=\count170
-\everyMPshowfont=\toks48
-\MPscratchCnt=\count171
-\MPscratchDim=\dimen281
-\MPnumerator=\count172
-\makeMPintoPDFobject=\count173
-\everyMPtoPDFconversion=\toks49
+\scratchcounter=\count187
+\scratchdimen=\dimen282
+\scratchbox=\box77
+\nofMPsegments=\count188
+\nofMParguments=\count189
+\everyMPshowfont=\toks50
+\MPscratchCnt=\count190
+\MPscratchDim=\dimen283
+\MPnumerator=\count191
+\makeMPintoPDFobject=\count192
+\everyMPtoPDFconversion=\toks51
 ) ABD: EveryShipout initializing macros
-LaTeX Info: Redefining \celsius on input line 169.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 169
+LaTeX Info: Redefining \celsius on input line 175.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 175
 .
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 169.
-Package gensymb Info: Using \Omega for \ohm on input line 169.
+LaTeX Info: Redefining \ohm on input line 175.
+Package gensymb Info: Using \Omega for \ohm on input line 175.
 
 Package gensymb Warning: Not defining \micro.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count174
+\c@lstlisting=\count193
+\AtBeginShipoutBox=\box78
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\pdflscape.sty"
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.16} into 
 your preamble.
- on input line 169.
+ on input line 175.
 
 <images/logo3-with-stroke.png, id=4, 1508.63625pt x 379.4175pt>
 File: images/logo3-with-stroke.png Graphic file (type png)
 
 <use images/logo3-with-stroke.png>
-Package pdftex.def Info: images/logo3-with-stroke.png used on input line 179.
+Package pdftex.def Info: images/logo3-with-stroke.png used on input line 185.
 (pdftex.def)             Requested size: 419.14645pt x 105.41406pt.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-0.def"
@@ -1016,12 +1067,12 @@ File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-1.def"
 File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 218.
+LaTeX Font Info:    Try loading font information for U+msa on input line 224.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 218.
+LaTeX Font Info:    Try loading font information for U+msb on input line 224.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1029,7 +1080,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./images/logo3-with-strok
 e.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 240--241
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
 
  []
 
@@ -1038,85 +1089,259 @@ Underfull \hbox (badness 10000) in paragraph at lines 240--241
 \openout4 = `Duayenler_Business_Statement_Report.toc'.
 
  [2]
-Overfull \hbox (10.00383pt too wide) in paragraph at lines 261--261
+<images/logo1.png, id=21, 376.40625pt x 376.40625pt>
+File: images/logo1.png Graphic file (type png)
+ <use images/logo1.png>
+Package pdftex.def Info: images/logo1.png used on input line 285.
+(pdftex.def)             Requested size: 82.15585pt x 82.15486pt.
+
+Overfull \hbox (36.14514pt too wide) in paragraph at lines 279--299
+$[]$ $[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--299
+
+ []
+
+File: images/logo1.png Graphic file (type png)
+<use images/logo1.png>
+Package pdftex.def Info: images/logo1.png used on input line 316.
+(pdftex.def)             Requested size: 82.15585pt x 82.15486pt.
+
+Overfull \hbox (53.76996pt too wide) in paragraph at lines 302--322
+[]$[]$ $[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--322
+
+ []
+
+[3 <./images/logo1.png>]
+File: images/logo1.png Graphic file (type png)
+ <use images/logo1.png>
+Package pdftex.def Info: images/logo1.png used on input line 331.
+(pdftex.def)             Requested size: 82.15585pt x 82.15486pt.
+
+Overfull \hbox (53.76996pt too wide) in paragraph at lines 325--345
+[]$[]$ $[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 325--345
+
+ []
+
+File: images/logo1.png Graphic file (type png)
+<use images/logo1.png>
+Package pdftex.def Info: images/logo1.png used on input line 363.
+(pdftex.def)             Requested size: 82.15585pt x 82.15486pt.
+
+Overfull \hbox (53.76996pt too wide) in paragraph at lines 349--369
+[]$[]$ $[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 349--369
+
+ []
+
+File: images/logo1.png Graphic file (type png)
+<use images/logo1.png>
+Package pdftex.def Info: images/logo1.png used on input line 379.
+(pdftex.def)             Requested size: 82.15585pt x 82.15486pt.
+
+Overfull \hbox (53.76996pt too wide) in paragraph at lines 373--393
+[]$[]$ $[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 373--393
+
+ []
+
+[4]
+Overfull \hbox (10.00383pt too wide) in paragraph at lines 396--396
 [][][][]\OT1/cmr/m/n/12 TODO 
  []
 
 
-Overfull \hbox (8.69412pt too wide) in paragraph at lines 261--261
+Overfull \hbox (8.69412pt too wide) in paragraph at lines 396--396
 \OT1/cmr/m/n/12 NOTE  
  []
 
 
-Overfull \hbox (10.00383pt too wide) in paragraph at lines 261--261
+Overfull \hbox (10.00383pt too wide) in paragraph at lines 396--396
 [][][][]\OT1/cmr/m/n/12 TODO 
  []
 
 
-Overfull \hbox (8.69412pt too wide) in paragraph at lines 261--261
+Overfull \hbox (8.69412pt too wide) in paragraph at lines 396--396
 \OT1/cmr/m/n/12 NOTE  
  []
 
 
-Overfull \hbox (10.00383pt too wide) in paragraph at lines 261--261
+Overfull \hbox (10.00383pt too wide) in paragraph at lines 396--396
 [][][][]\OT1/cmr/m/n/12 TODO 
  []
 
 
-Overfull \hbox (8.69412pt too wide) in paragraph at lines 261--261
+Overfull \hbox (8.69412pt too wide) in paragraph at lines 396--396
 \OT1/cmr/m/n/12 NOTE  
  []
 
 
-Overfull \hbox (10.00383pt too wide) in paragraph at lines 261--261
+Overfull \hbox (10.00383pt too wide) in paragraph at lines 396--396
 [][][][]\OT1/cmr/m/n/12 TODO 
  []
 
 
-Overfull \hbox (8.69412pt too wide) in paragraph at lines 261--261
+Overfull \hbox (8.69412pt too wide) in paragraph at lines 396--396
 \OT1/cmr/m/n/12 NOTE  
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 276.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 411.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 276.
-
-<images/logo1.png, id=21, 376.40625pt x 376.40625pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 411.
 File: images/logo1.png Graphic file (type png)
- <use images/logo1.png>
-Package pdftex.def Info: images/logo1.png used on input line 284.
+
+<use images/logo1.png>
+Package pdftex.def Info: images/logo1.png used on input line 419.
 (pdftex.def)             Requested size: 293.41507pt x 293.43486pt.
-
-[3]
+ [5]
 File: images/logo1.png Graphic file (type png)
  <use images/logo1.png>
-Package pdftex.def Info: images/logo1.png used on input line 294.
+Package pdftex.def Info: images/logo1.png used on input line 429.
 (pdftex.def)             Requested size: 201.19798pt x 201.20016pt.
 
-<images/logo2.png, id=26, 376.40625pt x 376.40625pt>
+<images/logo2.png, id=33, 376.40625pt x 376.40625pt>
 File: images/logo2.png Graphic file (type png)
  <use images/logo2.png>
-Package pdftex.def Info: images/logo2.png used on input line 299.
+Package pdftex.def Info: images/logo2.png used on input line 434.
 (pdftex.def)             Requested size: 201.19798pt x 201.20016pt.
 
-[4 <./images/logo1.png>] [5 <./images/logo2.png>]
+[6] <CVs/Enes_CV.pdf, id=38, 597.50829pt x 845.0471pt>
+File: CVs/Enes_CV.pdf Graphic file (type pdf)
+ <use CVs/Enes_CV.pdf>
+Package pdftex.def Info: CVs/Enes_CV.pdf used on input line 485.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: CVs/Enes_CV.pdf Graphic file (type pdf)
+
+<use CVs/Enes_CV.pdf>
+Package pdftex.def Info: CVs/Enes_CV.pdf used on input line 485.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+
+<CVs/Enes_CV.pdf, id=41, page=1, 597.50829pt x 845.0471pt>
+File: CVs/Enes_CV.pdf Graphic file (type pdf)
+
+<use CVs/Enes_CV.pdf, page 1>
+Package pdftex.def Info: CVs/Enes_CV.pdf, page1 used on input line 485.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: CVs/Enes_CV.pdf Graphic file (type pdf)
+ <use CVs/Enes_CV.pdf, page 1>
+Package pdftex.def Info: CVs/Enes_CV.pdf, page1 used on input line 485.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+ [7 <./images/logo2.png>]
+File: CVs/Enes_CV.pdf Graphic file (type pdf)
+ <use CVs/Enes_CV.pdf, page 1>
+Package pdftex.def Info: CVs/Enes_CV.pdf, page1 used on input line 485.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: CVs/Enes_CV.pdf Graphic file (type pdf)
+ <use CVs/Enes_CV.pdf, page 1>
+Package pdftex.def Info: CVs/Enes_CV.pdf, page1 used on input line 485.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: CVs/Enes_CV.pdf Graphic file (type pdf)
+
+<use CVs/Enes_CV.pdf, page 1>
+Package pdftex.def Info: CVs/Enes_CV.pdf, page1 used on input line 485.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+ [8 <./CVs/Enes_CV.pdf>]
+<CVs/Enes_CV.pdf, id=89, page=2, 597.50829pt x 845.0471pt>
+File: CVs/Enes_CV.pdf Graphic file (type pdf)
+
+<use CVs/Enes_CV.pdf, page 2>
+Package pdftex.def Info: CVs/Enes_CV.pdf, page2 used on input line 485.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: CVs/Enes_CV.pdf Graphic file (type pdf)
+ <use CVs/Enes_CV.pdf, page 2>
+Package pdftex.def Info: CVs/Enes_CV.pdf, page2 used on input line 485.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: CVs/Enes_CV.pdf Graphic file (type pdf)
+
+<use CVs/Enes_CV.pdf, page 2>
+Package pdftex.def Info: CVs/Enes_CV.pdf, page2 used on input line 485.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+ [9 <./CVs/Enes_CV.pdf>]
+<CVs/Halil_CV.pdf, id=98, 597.50829pt x 845.0471pt>
+File: CVs/Halil_CV.pdf Graphic file (type pdf)
+ <use CVs/Halil_CV.pdf>
+Package pdftex.def Info: CVs/Halil_CV.pdf used on input line 486.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: CVs/Halil_CV.pdf Graphic file (type pdf)
+
+<use CVs/Halil_CV.pdf>
+Package pdftex.def Info: CVs/Halil_CV.pdf used on input line 486.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+
+<CVs/Halil_CV.pdf, id=101, page=1, 597.50829pt x 845.0471pt>
+File: CVs/Halil_CV.pdf Graphic file (type pdf)
+
+<use CVs/Halil_CV.pdf, page 1>
+Package pdftex.def Info: CVs/Halil_CV.pdf, page1 used on input line 486.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: CVs/Halil_CV.pdf Graphic file (type pdf)
+ <use CVs/Halil_CV.pdf, page 1>
+Package pdftex.def Info: CVs/Halil_CV.pdf, page1 used on input line 486.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: CVs/Halil_CV.pdf Graphic file (type pdf)
+
+<use CVs/Halil_CV.pdf, page 1>
+Package pdftex.def Info: CVs/Halil_CV.pdf, page1 used on input line 486.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: CVs/Halil_CV.pdf Graphic file (type pdf)
+ <use CVs/Halil_CV.pdf, page 1>
+Package pdftex.def Info: CVs/Halil_CV.pdf, page1 used on input line 486.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: CVs/Halil_CV.pdf Graphic file (type pdf)
+
+<use CVs/Halil_CV.pdf, page 1>
+Package pdftex.def Info: CVs/Halil_CV.pdf, page1 used on input line 486.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+ [10 <./CVs/Halil_CV.pdf>]
+<CVs/Halil_CV.pdf, id=155, page=2, 597.50829pt x 845.0471pt>
+File: CVs/Halil_CV.pdf Graphic file (type pdf)
+
+<use CVs/Halil_CV.pdf, page 2>
+Package pdftex.def Info: CVs/Halil_CV.pdf, page2 used on input line 486.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: CVs/Halil_CV.pdf Graphic file (type pdf)
+ <use CVs/Halil_CV.pdf, page 2>
+Package pdftex.def Info: CVs/Halil_CV.pdf, page2 used on input line 486.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: CVs/Halil_CV.pdf Graphic file (type pdf)
+
+<use CVs/Halil_CV.pdf, page 2>
+Package pdftex.def Info: CVs/Halil_CV.pdf, page2 used on input line 486.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+ [11 <./CVs/Halil_CV.pdf>]
 (Duayenler_Business_Statement_Report.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 29154 strings out of 493333
- 684013 string characters out of 3136576
- 870414 words of memory out of 3000000
- 32123 multiletter control sequences out of 15000+200000
+ 30025 strings out of 493333
+ 698511 string characters out of 3136576
+ 897068 words of memory out of 3000000
+ 32966 multiletter control sequences out of 15000+200000
  12260 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,14n,96p,802b,714s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,19n,96p,802b,714s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><
 C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:
@@ -1124,11 +1349,26 @@ C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Progr
 am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program
  Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on Duayenler_Business_Statement_Report.pdf (6 pages, 210700 byte
-s).
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/public/lm/lmr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
+lm/lmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb
+><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmro10.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmro12.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/lm/lmss10.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/lm/lmss12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
+pe1/public/lm/lmss17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
+lm/lmss8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.
+pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsso10.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsso17.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/public/marvosym/marvosym.pfb>
+Output written on Duayenler_Business_Statement_Report.pdf (12 pages, 1002511 by
+tes).
 PDF statistics:
- 63 PDF objects out of 1000 (max. 8388607)
+ 202 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 78 words of extra memory for PDF output out of 10000 (max. 10000000)
 

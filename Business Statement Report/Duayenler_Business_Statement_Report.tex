@@ -64,6 +64,9 @@
 \usepackage{gensymb}
 \usepackage{fancyhdr}
 
+\usepackage{blindtext}  % for dummy text, use \blindtext or \BlindText
+\usepackage[final]{pdfpages}  % pdf include
+
 
 \usepackage{array} %allows more options in tables
 \usepackage{pgfplots,pgf,tikz} %coding plots in latex
@@ -138,6 +141,9 @@
 \setcounter{secnumdepth}{5} % how many sectioning levels to assign numbers to
 \setcounter{tocdepth}{5}    % how many sectioning levels to show in ToC
 
+
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}} % for too long table lines
 
 
 % For Blank Page -------------
@@ -254,9 +260,138 @@
 	
 
 \section{About the Company}
-Mission and vision statements of the company
+
+
+
+\subsection{Our Mission}
+	Our mission is to design products for real life problems by creating innovative solutions.
+	
+	
+	
+\subsection{Our Mission}
+	Our vision is to be frontier in robotics by intelligently automating the future world.
+
 
 \section{About Us}
+
+%------kişi1-----------
+
+\begin{minipage}{0.28\textwidth}
+\begin{flushleft} \large
+
+\begin{figure}[H]
+\center
+\setlength{\unitlength}{\textwidth} 
+\includegraphics[width=0.7\unitlength]{images/logo1}
+\caption{\label{fig:kisi1}Kişi1 }
+\end{figure}
+
+
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.8\textwidth}
+\begin{flushright} 
+
+\blindtext
+
+\end{flushright}
+\end{minipage}\\[0.8cm]
+
+%-------kişi2----------
+
+\begin{minipage}{0.8\textwidth}
+\begin{flushleft} 
+
+\blindtext
+
+
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.28\textwidth}
+\begin{flushright} 
+
+\begin{figure}[H]
+\center
+\setlength{\unitlength}{\textwidth} 
+\includegraphics[width=0.7\unitlength]{images/logo1}
+\caption{\label{fig:kisi2}Kişi2 }
+\end{figure}
+
+\end{flushright}
+\end{minipage}\\[0.8cm]
+
+%--------kişi3---------
+
+\begin{minipage}{0.28\textwidth}
+\begin{flushleft} 
+
+\begin{figure}[H]
+\center
+\setlength{\unitlength}{\textwidth} 
+\includegraphics[width=0.7\unitlength]{images/logo1}
+\caption{\label{fig:kisi3}Kişi3 }
+\end{figure}
+
+
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.8\textwidth}
+\begin{flushright} 
+
+\blindtext
+
+\end{flushright}
+\end{minipage}\\[0.8cm]
+
+%---------kişi4----------
+
+
+\begin{minipage}{0.8\textwidth}
+\begin{flushleft} 
+
+\blindtext
+
+
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.28\textwidth}
+\begin{flushright}
+ 
+\begin{figure}[H]
+\center
+\setlength{\unitlength}{\textwidth} 
+\includegraphics[width=0.7\unitlength]{images/logo1}
+\caption{\label{fig:kisi4}Kişi4 }
+\end{figure}
+
+\end{flushright}
+\end{minipage}\\[0.8cm]
+
+
+%------kişi5---------
+
+\begin{minipage}{0.28\textwidth}
+\begin{flushleft}
+
+\begin{figure}[H]
+\center
+\setlength{\unitlength}{\textwidth} 
+\includegraphics[width=0.7\unitlength]{images/logo1}
+\caption{\label{fig:kisi5}Kişi5 }
+\end{figure}
+
+
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.8\textwidth}
+\begin{flushright} 
+
+\blindtext
+
+\end{flushright}
+\end{minipage}\\[0.8cm]
+
+
 Justification of the composition of the team
 \todo{TODO NOTE}
 
@@ -327,7 +462,7 @@ CVs (Maximum of 2 pages per person)
   \centering
  
     \begin{tabular}{c|c|c}
-       \backslashbox{$A$}{$a$} & $$B$$ & $$C$$ \\ \hline
+       \backslashbox{$A$}{$a$} & $$\specialcell{ Average deviation \\ after subtracting out the  \\ frequency error }$$ & $$C$$ \\ \hline
        \multirow{2}{*}{1} & 2 & 3  \\ \cline{2-3}
         & 3 & 4  \\ \hline
        3 & \multicolumn{2}{c}{4}  \\ \hline
@@ -342,6 +477,13 @@ CVs (Maximum of 2 pages per person)
 	
 
 \appendix
+
+
+
+%\includepdf[pages=1-2, scale=0.75 ,pagecommand=\appendices]{CVs/Enes_CV}
+%\includepdf[pages=1-2, scale=1.0 ,pagecommand={}]{CVs/Enes_CV}
+\includepdf[pages=1-2, scale=1.0 ]{CVs/Enes_CV}
+\includepdf[pages=1-2, scale=1.0 ]{CVs/Halil_CV}
 
 
 

@@ -2,6 +2,8 @@
 \select@language {english}
 \contentsline {section}{\numberline {1}Introduction}{3}
 \contentsline {section}{\numberline {2}About the Company}{3}
+\contentsline {subsection}{\numberline {2.1}Our Mission}{3}
+\contentsline {subsection}{\numberline {2.2}Our Mission}{3}
 \contentsline {section}{\numberline {3}About Us}{3}
-\contentsline {section}{\numberline {4}Description of the Projects}{3}
-\contentsline {section}{\numberline {5}Conclusion}{3}
+\contentsline {section}{\numberline {4}Description of the Projects}{5}
+\contentsline {section}{\numberline {5}Conclusion}{5}
