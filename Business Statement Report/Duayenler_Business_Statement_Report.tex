@@ -290,11 +290,11 @@
 \end{flushleft}
 \end{minipage}
 \begin{minipage}{0.8\textwidth}
-\begin{flushright} 
+\begin{flushleft} 
 
 \blindtext
 
-\end{flushright}
+\end{flushleft}
 \end{minipage}\\[0.8cm]
 
 %-------kişi2----------
@@ -396,7 +396,18 @@ Justification of the composition of the team
 \todo{TODO NOTE}
 
 \section{Description of the Projects}
-Brief description with your own interpretation for each of the 5 projects
+The analyses of each 4 projects including possible challenges and solutions are given in this section.
+
+\subsubsection{Devices Competing to Catch Falling Balloons}
+%FILL HERE%
+\subsubsection{Devices Trying to Score in Each Other’s Goals}
+%FILL HERE%
+\subsubsection{Vehicles Chasing Each Other Around a Closed Course with Varying Properties}
+%FILL HERE%
+\subsubsection{Devices Trying to Extract the Plan of Their Surroundings}
+The project requires a mobile vehicle that can travel in a meaningful path such that the device neither crashes any of the obstacles nor the exterior walls but can map the whole playfield accurately. The main limiting factor in the solution is the use of same color for both the obstacles and the exterior wall. This limitation prevents the implementation of a simple color thresholding solution for the object detection with the help of a imaging system such as a camera. A possible way to handle the object detection problem would be to use “shadow games” so that light shades of the color indicate a possible object whereas the dark shades of the color might mean exterior wall. Certainly, mapping the playfield is important as much as object detection. The vehicle should be able to get the distance of it to its environment. 
+
+The overall solution requires a combination of many steps, mainly, image processing, direction automation with respect to surroundings, an algorithm to create map.
 
 
 \section{Conclusion}
@@ -484,13 +495,6 @@ CVs (Maximum of 2 pages per person)
 %\includepdf[pages=1-2, scale=1.0 ,pagecommand={}]{CVs/Enes_CV}
 \includepdf[pages=1-2, scale=1.0 ]{CVs/Enes_CV}
 \includepdf[pages=1-2, scale=1.0 ]{CVs/Halil_CV}
-
-
-
-
-
-
-
 
 \tikzset{
 desicion/.style={

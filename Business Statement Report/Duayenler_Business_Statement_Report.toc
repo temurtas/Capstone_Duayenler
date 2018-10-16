@@ -6,4 +6,8 @@
 \contentsline {subsection}{\numberline {2.2}Our Mission}{3}
 \contentsline {section}{\numberline {3}About Us}{3}
 \contentsline {section}{\numberline {4}Description of the Projects}{5}
-\contentsline {section}{\numberline {5}Conclusion}{5}
+\contentsline {subsubsection}{\numberline {4.0.1}Devices Competing to Catch Falling Balloons}{5}
+\contentsline {subsubsection}{\numberline {4.0.2}Devices Trying to Score in Each Other\IeC {\textquoteright }s Goals}{5}
+\contentsline {subsubsection}{\numberline {4.0.3}Vehicles Chasing Each Other Around a Closed Course with Varying Properties}{5}
+\contentsline {subsubsection}{\numberline {4.0.4}Devices Trying to Extract the Plan of Their Surroundings}{5}
+\contentsline {section}{\numberline {5}Conclusion}{6}
