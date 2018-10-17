@@ -1078,288 +1078,293 @@ e.png>]
 \openout4 = `Duayenler_Business_Statement_Report.toc'.
 
  [1]
-<images/logo1.png, id=17, 376.40625pt x 376.40625pt>
-File: images/logo1.png Graphic file (type png)
- <use images/logo1.png>
-Package pdftex.def Info: images/logo1.png used on input line 266.
-(pdftex.def)             Requested size: 87.82169pt x 87.81795pt.
-
-Overfull \hbox (38.4578pt too wide) in paragraph at lines 260--279
-$[]$ $[]$ 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 260--279
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
 
  []
 
-File: images/logo1.png Graphic file (type png)
-<use images/logo1.png>
-Package pdftex.def Info: images/logo1.png used on input line 295.
-(pdftex.def)             Requested size: 87.82169pt x 87.81795pt.
+<images/sarper_foto.png, id=17, 338.76563pt x 454.69875pt>
+File: images/sarper_foto.png Graphic file (type png)
 
-Overfull \hbox (56.08261pt too wide) in paragraph at lines 282--301
+<use images/sarper_foto.png>
+Package pdftex.def Info: images/sarper_foto.png used on input line 277.
+(pdftex.def)             Requested size: 118.29257pt x 158.77228pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 290.
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 290.
+
+Overfull \hbox (15.75761pt too wide) in paragraph at lines 271--299
 []$[]$ $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 282--301
+Underfull \hbox (badness 10000) in paragraph at lines 271--299
 
  []
 
-[2 <./images/logo1.png>]
-File: images/logo1.png Graphic file (type png)
- <use images/logo1.png>
-Package pdftex.def Info: images/logo1.png used on input line 310.
-(pdftex.def)             Requested size: 87.82169pt x 87.81795pt.
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 300--301
 
-Overfull \hbox (56.08261pt too wide) in paragraph at lines 304--323
+ []
+
+<images/enes_foto.png, id=21, 437.38406pt x 570.63188pt>
+File: images/enes_foto.png Graphic file (type png)
+
+<use images/enes_foto.png>
+Package pdftex.def Info: images/enes_foto.png used on input line 324.
+(pdftex.def)             Requested size: 118.29257pt x 154.32516pt.
+
+Overfull \hbox (15.75761pt too wide) in paragraph at lines 304--330
 []$[]$ $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--323
+Underfull \hbox (badness 10000) in paragraph at lines 304--330
 
  []
 
-File: images/logo1.png Graphic file (type png)
-<use images/logo1.png>
-Package pdftex.def Info: images/logo1.png used on input line 340.
-(pdftex.def)             Requested size: 87.82169pt x 87.81795pt.
 
-Overfull \hbox (56.08261pt too wide) in paragraph at lines 327--346
+Underfull \hbox (badness 10000) in paragraph at lines 331--332
+
+ []
+
+<images/erdem_foto.jpg, id=22, 489.32813pt x 665.48625pt>
+File: images/erdem_foto.jpg Graphic file (type jpg)
+
+<use images/erdem_foto.jpg>
+Package pdftex.def Info: images/erdem_foto.jpg used on input line 341.
+(pdftex.def)             Requested size: 118.29257pt x 160.87756pt.
+
+Overfull \hbox (20.23589pt too wide) in paragraph at lines 335--361
 []$[]$ $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--346
+Underfull \hbox (badness 10000) in paragraph at lines 335--361
 
  []
 
-File: images/logo1.png Graphic file (type png)
-<use images/logo1.png>
-Package pdftex.def Info: images/logo1.png used on input line 356.
-(pdftex.def)             Requested size: 87.82169pt x 87.81795pt.
+[3 <./images/sarper_foto.png> <./images/enes_foto.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 362--363
 
-Overfull \hbox (56.08261pt too wide) in paragraph at lines 350--369
+ []
+
+<images/halil_foto.jpg, id=29, 1341.01pt x 1593.955pt>
+File: images/halil_foto.jpg Graphic file (type jpg)
+
+<use images/halil_foto.jpg>
+Package pdftex.def Info: images/halil_foto.jpg used on input line 388.
+(pdftex.def)             Requested size: 119.18863pt x 141.64995pt.
+
+Overfull \hbox (15.75761pt too wide) in paragraph at lines 367--394
 []$[]$ $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 350--369
+Underfull \hbox (badness 10000) in paragraph at lines 367--394
 
  []
 
-[3]
-Overfull \hbox (10.00383pt too wide) in paragraph at lines 372--372
-[][][][]\OT1/cmr/m/n/12 TODO 
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--396
+
+ []
+
+<images/ilker_foto.png, id=30, 576.65437pt x 581.17125pt>
+File: images/ilker_foto.png Graphic file (type png)
+
+<use images/ilker_foto.png>
+Package pdftex.def Info: images/ilker_foto.png used on input line 405.
+(pdftex.def)             Requested size: 119.18863pt x 120.11635pt.
+
+Overfull \hbox (15.75761pt too wide) in paragraph at lines 399--426
+[]$[]$ $[]$ 
  []
 
 
-Overfull \hbox (8.69412pt too wide) in paragraph at lines 372--372
-\OT1/cmr/m/n/12 NOTE  
+Underfull \hbox (badness 10000) in paragraph at lines 399--426
+
  []
 
+[4 <./images/erdem_foto.jpg> <./images/halil_foto.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 427--428
 
-Overfull \hbox (10.00383pt too wide) in paragraph at lines 372--372
-[][][][]\OT1/cmr/m/n/12 TODO 
- []
-
-
-Overfull \hbox (8.69412pt too wide) in paragraph at lines 372--372
-\OT1/cmr/m/n/12 NOTE  
- []
-
-
-Overfull \hbox (10.00383pt too wide) in paragraph at lines 372--372
-[][][][]\OT1/cmr/m/n/12 TODO 
- []
-
-
-Overfull \hbox (8.69412pt too wide) in paragraph at lines 372--372
-\OT1/cmr/m/n/12 NOTE  
- []
-
-
-Overfull \hbox (10.00383pt too wide) in paragraph at lines 372--372
-[][][][]\OT1/cmr/m/n/12 TODO 
- []
-
-
-Overfull \hbox (8.69412pt too wide) in paragraph at lines 372--372
-\OT1/cmr/m/n/12 NOTE  
  []
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-Underfull \hbox (badness 10000) in paragraph at lines 379--380
+Underfull \hbox (badness 10000) in paragraph at lines 436--437
 
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 388--389
+[5 <./images/ilker_foto.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 445--446
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 394--395
+Underfull \hbox (badness 10000) in paragraph at lines 451--452
 
  []
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 400--401
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 457--458
 
  []
 
-<CVs/Enes_CV.pdf, id=31, 597.50829pt x 845.0471pt>
+<CVs/Enes_CV.pdf, id=42, 597.50829pt x 845.0471pt>
 File: CVs/Enes_CV.pdf Graphic file (type pdf)
  <use CVs/Enes_CV.pdf>
-Package pdftex.def Info: CVs/Enes_CV.pdf used on input line 408.
+Package pdftex.def Info: CVs/Enes_CV.pdf used on input line 465.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: CVs/Enes_CV.pdf Graphic file (type pdf)
 
 <use CVs/Enes_CV.pdf>
-Package pdftex.def Info: CVs/Enes_CV.pdf used on input line 408.
+Package pdftex.def Info: CVs/Enes_CV.pdf used on input line 465.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 
-<CVs/Enes_CV.pdf, id=34, page=1, 597.50829pt x 845.0471pt>
+<CVs/Enes_CV.pdf, id=45, page=1, 597.50829pt x 845.0471pt>
 File: CVs/Enes_CV.pdf Graphic file (type pdf)
 
 <use CVs/Enes_CV.pdf, page 1>
-Package pdftex.def Info: CVs/Enes_CV.pdf, page1 used on input line 408.
+Package pdftex.def Info: CVs/Enes_CV.pdf, page1 used on input line 465.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: CVs/Enes_CV.pdf Graphic file (type pdf)
  <use CVs/Enes_CV.pdf, page 1>
-Package pdftex.def Info: CVs/Enes_CV.pdf, page1 used on input line 408.
+Package pdftex.def Info: CVs/Enes_CV.pdf, page1 used on input line 465.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
- [6]
+ [7]
 File: CVs/Enes_CV.pdf Graphic file (type pdf)
 
 <use CVs/Enes_CV.pdf, page 1>
-Package pdftex.def Info: CVs/Enes_CV.pdf, page1 used on input line 408.
+Package pdftex.def Info: CVs/Enes_CV.pdf, page1 used on input line 465.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: CVs/Enes_CV.pdf Graphic file (type pdf)
  <use CVs/Enes_CV.pdf, page 1>
-Package pdftex.def Info: CVs/Enes_CV.pdf, page1 used on input line 408.
+Package pdftex.def Info: CVs/Enes_CV.pdf, page1 used on input line 465.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: CVs/Enes_CV.pdf Graphic file (type pdf)
 
 <use CVs/Enes_CV.pdf, page 1>
-Package pdftex.def Info: CVs/Enes_CV.pdf, page1 used on input line 408.
+Package pdftex.def Info: CVs/Enes_CV.pdf, page1 used on input line 465.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
- [7 <./CVs/Enes_CV.pdf>]
-<CVs/Enes_CV.pdf, id=84, page=2, 597.50829pt x 845.0471pt>
+ [8 <./CVs/Enes_CV.pdf>]
+<CVs/Enes_CV.pdf, id=94, page=2, 597.50829pt x 845.0471pt>
 File: CVs/Enes_CV.pdf Graphic file (type pdf)
 
 <use CVs/Enes_CV.pdf, page 2>
-Package pdftex.def Info: CVs/Enes_CV.pdf, page2 used on input line 408.
+Package pdftex.def Info: CVs/Enes_CV.pdf, page2 used on input line 465.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: CVs/Enes_CV.pdf Graphic file (type pdf)
  <use CVs/Enes_CV.pdf, page 2>
-Package pdftex.def Info: CVs/Enes_CV.pdf, page2 used on input line 408.
+Package pdftex.def Info: CVs/Enes_CV.pdf, page2 used on input line 465.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: CVs/Enes_CV.pdf Graphic file (type pdf)
 
 <use CVs/Enes_CV.pdf, page 2>
-Package pdftex.def Info: CVs/Enes_CV.pdf, page2 used on input line 408.
+Package pdftex.def Info: CVs/Enes_CV.pdf, page2 used on input line 465.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
- [8 <./CVs/Enes_CV.pdf>]
-<CVs/Halil_CV.pdf, id=93, 597.50829pt x 845.0471pt>
+ [9 <./CVs/Enes_CV.pdf>]
+<CVs/Halil_CV.pdf, id=103, 597.50829pt x 845.0471pt>
 File: CVs/Halil_CV.pdf Graphic file (type pdf)
  <use CVs/Halil_CV.pdf>
-Package pdftex.def Info: CVs/Halil_CV.pdf used on input line 409.
+Package pdftex.def Info: CVs/Halil_CV.pdf used on input line 466.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: CVs/Halil_CV.pdf Graphic file (type pdf)
 
 <use CVs/Halil_CV.pdf>
-Package pdftex.def Info: CVs/Halil_CV.pdf used on input line 409.
+Package pdftex.def Info: CVs/Halil_CV.pdf used on input line 466.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 
-<CVs/Halil_CV.pdf, id=96, page=1, 597.50829pt x 845.0471pt>
+<CVs/Halil_CV.pdf, id=106, page=1, 597.50829pt x 845.0471pt>
 File: CVs/Halil_CV.pdf Graphic file (type pdf)
 
 <use CVs/Halil_CV.pdf, page 1>
-Package pdftex.def Info: CVs/Halil_CV.pdf, page1 used on input line 409.
+Package pdftex.def Info: CVs/Halil_CV.pdf, page1 used on input line 466.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: CVs/Halil_CV.pdf Graphic file (type pdf)
  <use CVs/Halil_CV.pdf, page 1>
-Package pdftex.def Info: CVs/Halil_CV.pdf, page1 used on input line 409.
+Package pdftex.def Info: CVs/Halil_CV.pdf, page1 used on input line 466.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: CVs/Halil_CV.pdf Graphic file (type pdf)
 
 <use CVs/Halil_CV.pdf, page 1>
-Package pdftex.def Info: CVs/Halil_CV.pdf, page1 used on input line 409.
+Package pdftex.def Info: CVs/Halil_CV.pdf, page1 used on input line 466.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: CVs/Halil_CV.pdf Graphic file (type pdf)
  <use CVs/Halil_CV.pdf, page 1>
-Package pdftex.def Info: CVs/Halil_CV.pdf, page1 used on input line 409.
+Package pdftex.def Info: CVs/Halil_CV.pdf, page1 used on input line 466.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: CVs/Halil_CV.pdf Graphic file (type pdf)
 
 <use CVs/Halil_CV.pdf, page 1>
-Package pdftex.def Info: CVs/Halil_CV.pdf, page1 used on input line 409.
+Package pdftex.def Info: CVs/Halil_CV.pdf, page1 used on input line 466.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
- [9 <./CVs/Halil_CV.pdf>]
-<CVs/Halil_CV.pdf, id=150, page=2, 597.50829pt x 845.0471pt>
+ [10 <./CVs/Halil_CV.pdf>]
+<CVs/Halil_CV.pdf, id=160, page=2, 597.50829pt x 845.0471pt>
 File: CVs/Halil_CV.pdf Graphic file (type pdf)
 
 <use CVs/Halil_CV.pdf, page 2>
-Package pdftex.def Info: CVs/Halil_CV.pdf, page2 used on input line 409.
+Package pdftex.def Info: CVs/Halil_CV.pdf, page2 used on input line 466.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: CVs/Halil_CV.pdf Graphic file (type pdf)
  <use CVs/Halil_CV.pdf, page 2>
-Package pdftex.def Info: CVs/Halil_CV.pdf, page2 used on input line 409.
+Package pdftex.def Info: CVs/Halil_CV.pdf, page2 used on input line 466.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: CVs/Halil_CV.pdf Graphic file (type pdf)
 
 <use CVs/Halil_CV.pdf, page 2>
-Package pdftex.def Info: CVs/Halil_CV.pdf, page2 used on input line 409.
+Package pdftex.def Info: CVs/Halil_CV.pdf, page2 used on input line 466.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
- [10 <./CVs/Halil_CV.pdf>]
-<CVs/Ilker_CV.pdf, id=154, 597.50829pt x 845.0471pt>
+ [11 <./CVs/Halil_CV.pdf>]
+<CVs/Ilker_CV.pdf, id=164, 597.50829pt x 845.0471pt>
 File: CVs/Ilker_CV.pdf Graphic file (type pdf)
  <use CVs/Ilker_CV.pdf>
-Package pdftex.def Info: CVs/Ilker_CV.pdf used on input line 410.
+Package pdftex.def Info: CVs/Ilker_CV.pdf used on input line 467.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: CVs/Ilker_CV.pdf Graphic file (type pdf)
 
 <use CVs/Ilker_CV.pdf>
-Package pdftex.def Info: CVs/Ilker_CV.pdf used on input line 410.
+Package pdftex.def Info: CVs/Ilker_CV.pdf used on input line 467.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 
-<CVs/Ilker_CV.pdf, id=157, page=1, 597.50829pt x 845.0471pt>
+<CVs/Ilker_CV.pdf, id=167, page=1, 597.50829pt x 845.0471pt>
 File: CVs/Ilker_CV.pdf Graphic file (type pdf)
 
 <use CVs/Ilker_CV.pdf, page 1>
-Package pdftex.def Info: CVs/Ilker_CV.pdf, page1 used on input line 410.
+Package pdftex.def Info: CVs/Ilker_CV.pdf, page1 used on input line 467.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: CVs/Ilker_CV.pdf Graphic file (type pdf)
  <use CVs/Ilker_CV.pdf, page 1>
-Package pdftex.def Info: CVs/Ilker_CV.pdf, page1 used on input line 410.
+Package pdftex.def Info: CVs/Ilker_CV.pdf, page1 used on input line 467.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: CVs/Ilker_CV.pdf Graphic file (type pdf)
 
 <use CVs/Ilker_CV.pdf, page 1>
-Package pdftex.def Info: CVs/Ilker_CV.pdf, page1 used on input line 410.
+Package pdftex.def Info: CVs/Ilker_CV.pdf, page1 used on input line 467.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: CVs/Ilker_CV.pdf Graphic file (type pdf)
  <use CVs/Ilker_CV.pdf, page 1>
-Package pdftex.def Info: CVs/Ilker_CV.pdf, page1 used on input line 410.
+Package pdftex.def Info: CVs/Ilker_CV.pdf, page1 used on input line 467.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: CVs/Ilker_CV.pdf Graphic file (type pdf)
 
 <use CVs/Ilker_CV.pdf, page 1>
-Package pdftex.def Info: CVs/Ilker_CV.pdf, page1 used on input line 410.
+Package pdftex.def Info: CVs/Ilker_CV.pdf, page1 used on input line 467.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
- [11 <./CVs/Ilker_CV.pdf>]
+ [12 <./CVs/Ilker_CV.pdf>]
 
 pdfTeX warning: pdflatex (file ./CVs/Sarper_CV.pdf): PDF inclusion: found PDF v
 ersion <1.7>, but at most version <1.5> allowed
-<CVs/Sarper_CV.pdf, id=184, 614.295pt x 794.97pt>
+<CVs/Sarper_CV.pdf, id=195, 614.295pt x 794.97pt>
 File: CVs/Sarper_CV.pdf Graphic file (type pdf)
  <use CVs/Sarper_CV.pdf>
-Package pdftex.def Info: CVs/Sarper_CV.pdf used on input line 411.
+Package pdftex.def Info: CVs/Sarper_CV.pdf used on input line 468.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 
@@ -1367,7 +1372,7 @@ pdfTeX warning: pdflatex (file ./CVs/Sarper_CV.pdf): PDF inclusion: found PDF v
 ersion <1.7>, but at most version <1.5> allowed
 File: CVs/Sarper_CV.pdf Graphic file (type pdf)
 <use CVs/Sarper_CV.pdf>
-Package pdftex.def Info: CVs/Sarper_CV.pdf used on input line 411.
+Package pdftex.def Info: CVs/Sarper_CV.pdf used on input line 468.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 
@@ -1377,87 +1382,80 @@ ersion <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: pdflatex (file ./CVs/Sarper_CV.pdf): PDF inclusion: found PDF v
 ersion <1.7>, but at most version <1.5> allowed
-<CVs/Sarper_CV.pdf, id=187, page=1, 614.295pt x 794.97pt>
+<CVs/Sarper_CV.pdf, id=198, page=1, 614.295pt x 794.97pt>
 File: CVs/Sarper_CV.pdf Graphic file (type pdf)
 
 <use CVs/Sarper_CV.pdf, page 1>
-Package pdftex.def Info: CVs/Sarper_CV.pdf, page1 used on input line 411.
+Package pdftex.def Info: CVs/Sarper_CV.pdf, page1 used on input line 468.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: CVs/Sarper_CV.pdf Graphic file (type pdf)
  <use CVs/Sarper_CV.pdf, page 1>
-Package pdftex.def Info: CVs/Sarper_CV.pdf, page1 used on input line 411.
+Package pdftex.def Info: CVs/Sarper_CV.pdf, page1 used on input line 468.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: CVs/Sarper_CV.pdf Graphic file (type pdf)
 
 <use CVs/Sarper_CV.pdf, page 1>
-Package pdftex.def Info: CVs/Sarper_CV.pdf, page1 used on input line 411.
+Package pdftex.def Info: CVs/Sarper_CV.pdf, page1 used on input line 468.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: CVs/Sarper_CV.pdf Graphic file (type pdf)
  <use CVs/Sarper_CV.pdf, page 1>
-Package pdftex.def Info: CVs/Sarper_CV.pdf, page1 used on input line 411.
+Package pdftex.def Info: CVs/Sarper_CV.pdf, page1 used on input line 468.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: CVs/Sarper_CV.pdf Graphic file (type pdf)
 
 <use CVs/Sarper_CV.pdf, page 1>
-Package pdftex.def Info: CVs/Sarper_CV.pdf, page1 used on input line 411.
+Package pdftex.def Info: CVs/Sarper_CV.pdf, page1 used on input line 468.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
- [12 <./CVs/Sarper_CV.pdf>]
+ [13 <./CVs/Sarper_CV.pdf>]
 
 pdfTeX warning: pdflatex (file ./CVs/Sarper_CV.pdf): PDF inclusion: found PDF v
 ersion <1.7>, but at most version <1.5> allowed
-<CVs/Sarper_CV.pdf, id=218, page=2, 614.295pt x 794.97pt>
+<CVs/Sarper_CV.pdf, id=228, page=2, 614.295pt x 794.97pt>
 File: CVs/Sarper_CV.pdf Graphic file (type pdf)
 
 <use CVs/Sarper_CV.pdf, page 2>
-Package pdftex.def Info: CVs/Sarper_CV.pdf, page2 used on input line 411.
+Package pdftex.def Info: CVs/Sarper_CV.pdf, page2 used on input line 468.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: CVs/Sarper_CV.pdf Graphic file (type pdf)
  <use CVs/Sarper_CV.pdf, page 2>
-Package pdftex.def Info: CVs/Sarper_CV.pdf, page2 used on input line 411.
+Package pdftex.def Info: CVs/Sarper_CV.pdf, page2 used on input line 468.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: CVs/Sarper_CV.pdf Graphic file (type pdf)
 
 <use CVs/Sarper_CV.pdf, page 2>
-Package pdftex.def Info: CVs/Sarper_CV.pdf, page2 used on input line 411.
+Package pdftex.def Info: CVs/Sarper_CV.pdf, page2 used on input line 468.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
- [13 <./CVs/Sarper_CV.pdf>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 418.
-
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 418.
+ [14 <./CVs/Sarper_CV.pdf>]
+<images/logo1.png, id=233, 376.40625pt x 376.40625pt>
+File: images/logo1.png Graphic file (type png)
+ <use images/logo1.png>
+Package pdftex.def Info: images/logo1.png used on input line 483.
+(pdftex.def)             Requested size: 313.65027pt x 313.67493pt.
 File: images/logo1.png Graphic file (type png)
 
 <use images/logo1.png>
-Package pdftex.def Info: images/logo1.png used on input line 426.
-(pdftex.def)             Requested size: 313.65027pt x 313.67493pt.
-File: images/logo1.png Graphic file (type png)
- <use images/logo1.png>
-Package pdftex.def Info: images/logo1.png used on input line 436.
+Package pdftex.def Info: images/logo1.png used on input line 493.
 (pdftex.def)             Requested size: 215.07349pt x 215.07643pt.
-
-<images/logo2.png, id=223, 376.40625pt x 376.40625pt>
+ <images/logo2.png, id=234, 376.40625pt x 376.40625pt>
 File: images/logo2.png Graphic file (type png)
- <use images/logo2.png>
-Package pdftex.def Info: images/logo2.png used on input line 441.
-(pdftex.def)             Requested size: 215.07349pt x 215.07643pt.
 
-[14] [15 <./images/logo2.png>] (Duayenler_Business_Statement_Report.aux)
+<use images/logo2.png>
+Package pdftex.def Info: images/logo2.png used on input line 498.
+(pdftex.def)             Requested size: 215.07349pt x 215.07643pt.
+ [15 <./images/logo1.png>] [16 <./images/logo2.png>]
+(Duayenler_Business_Statement_Report.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 30279 strings out of 493333
- 701439 string characters out of 3136576
- 898739 words of memory out of 3000000
- 33220 multiletter control sequences out of 15000+200000
+ 30240 strings out of 493333
+ 700443 string characters out of 3136576
+ 896739 words of memory out of 3000000
+ 33175 multiletter control sequences out of 15000+200000
  11913 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,19n,96p,1032b,714s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,19n,96p,1032b,666s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><
 C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:
@@ -1481,10 +1479,10 @@ rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsso10.pfb><C:/Program Fil
 es (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsso17.pfb><C:/Program Files (x86)/M
 iKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
 onts/type1/public/marvosym/marvosym.pfb>
-Output written on Duayenler_Business_Statement_Report.pdf (16 pages, 1234234 by
+Output written on Duayenler_Business_Statement_Report.pdf (17 pages, 3843859 by
 tes).
 PDF statistics:
- 276 PDF objects out of 1000 (max. 8388607)
+ 286 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 123 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 148 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -5,9 +5,9 @@
 \contentsline {subsection}{\numberline {2.1}Our Mission}{2}
 \contentsline {subsection}{\numberline {2.2}Our Mission}{2}
 \contentsline {section}{\numberline {3}About Us}{2}
-\contentsline {section}{\numberline {4}Description of the Projects}{4}
-\contentsline {subsection}{\numberline {4.1}Devices Competing to Catch Falling Balloons}{4}
-\contentsline {subsection}{\numberline {4.2}Devices Trying to Score in Each Other\IeC {\textquoteright }s Goals}{4}
-\contentsline {subsection}{\numberline {4.3}Vehicles Chasing Each Other Around a Closed Course with Varying Properties}{5}
-\contentsline {subsection}{\numberline {4.4}Devices Trying to Extract the Plan of Their Surroundings}{5}
-\contentsline {section}{\numberline {5}Conclusion}{6}
+\contentsline {section}{\numberline {4}Description of the Projects}{5}
+\contentsline {subsection}{\numberline {4.1}Devices Competing to Catch Falling Balloons}{5}
+\contentsline {subsection}{\numberline {4.2}Devices Trying to Score in Each Other\IeC {\textquoteright }s Goals}{6}
+\contentsline {subsection}{\numberline {4.3}Vehicles Chasing Each Other Around a Closed Course with Varying Properties}{6}
+\contentsline {subsection}{\numberline {4.4}Devices Trying to Extract the Plan of Their Surroundings}{7}
+\contentsline {section}{\numberline {5}Conclusion}{7}
