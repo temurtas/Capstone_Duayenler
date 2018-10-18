@@ -17,30 +17,31 @@ All files for codes, simulations, drawings and designs go here.
 Foldering can be left (not as an exercise) to what is to come.
 
 ## Documents Folder
-has files related to the course and the company with its people.
+Contains files related to the course and the company with its people.
 
 ## docs Folder
-containg source code for website
+Contains source code for website
 	temurtas.github.io/Capstone_Duayenler
 
 
 ## Reports Foler
-has
-	* bussiness_statement_report Folder,
-	* conceptual_design_report Folder,	
-	* Presentation,
-	* Proposal Report,
-	* Standards Report,
-	* weekly_reports Folder
-		has /Template that stores the LaTeX template for the weekly reports.
-		Just copy the .tex file and rename it under the named by date folder.
-which all have obvious reasons to exist.
+Contains
+
+* bussiness_statement_report Folder,
+* conceptual_design_report Folder,	
+* Presentation,
+* Proposal Report,
+* Standards Report,
+* weekly_reports Folder
+
+	has /Template that stores the LaTeX template for the weekly reports.
+	Just copy the .tex file and rename it under the named by date folder.
 
 ## Resources Folder
-has 	
-	* Datasheets Folder 	
-		to store them in the directory instead of having a link only.
-and other files whose explanations of existence is written in them.
+Contains files whose explanations of existence is written in them and	
+
+* Datasheets Folder 	
+To store them in the directory instead of having a link only.
 
 
 
