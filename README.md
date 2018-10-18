@@ -34,14 +34,17 @@ Contains
 * Standards Report,
 * weekly_reports Folder
 
-	has /Template that stores the LaTeX template for the weekly reports.
-	Just copy the .tex file and rename it under the named by date folder.
+	which has 
+	* Template Folder
+		that stores the LaTeX template for the weekly reports. 
+		Just copy the .tex file and rename it under the named by date folder.
 
 ## Resources Folder
 Contains files whose explanations of existence is written in them and	
 
 * Datasheets Folder 	
-To store them in the directory instead of having a link only.
+	
+	To store them in the directory instead of having a link only.
 
 
 
