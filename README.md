@@ -10,7 +10,7 @@ Private repository of Duayenler Ltd. Şti.
 * [Enes Taştan](https://github.com/enestastan)
 * [İlker Sağlık](https://github.com/isaglik)
 
-#Use of Repository
+# Use of Repository
 
 ## Codes Folder
 All files for codes, simulations, drawings and designs go here. 
@@ -26,19 +26,19 @@ containg source code for website
 
 ## Reports Foler
 has
-	*bussiness_statement_report Folder,
-	*conceptual_design_report Folder,	
-	*Presentation,
-	*Proposal Report,
-	*Standards Report,
-	*weekly_reports Folder
+	* bussiness_statement_report Folder,
+	* conceptual_design_report Folder,	
+	* Presentation,
+	* Proposal Report,
+	* Standards Report,
+	* weekly_reports Folder
 		has /Template that stores the LaTeX template for the weekly reports.
 		Just copy the .tex file and rename it under the named by date folder.
 which all have obvious reasons to exist.
 
 ## Resources Folder
 has 	
-	*Datasheets Folder 	
+	* Datasheets Folder 	
 		to store them in the directory instead of having a link only.
 and other files whose explanations of existence is written in them.
 
