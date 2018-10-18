@@ -10,6 +10,36 @@ Private repository of Duayenler Ltd. Şti.
 * [Enes Taştan](https://github.com/enestastan)
 * [İlker Sağlık](https://github.com/isaglik)
 
+#Use of Repository
+
+## Codes Folder
+All files for codes, simulations, drawings and designs go here. 
+Foldering can be left (not as an exercise) to what is to come.
+
+## Documents Folder
+has files related to the course and the company with its people.
+
+## docs Folder
+containg source code for website
+	temurtas.github.io/Capstone_Duayenler
+
+
+## Reports Foler
+has 	/Bussiness Statement Report,
+	/Conceptual Design Report,	
+	/Presentation,
+	/Proposal Report,
+	/Standards Report,
+	/Weekly Reports
+		has /Template that stores the LaTeX template for the weekly reports.
+		Just copy the .tex file and rename it under the named by date folder.
+which all have obvious reasons to exist.
+
+## Resources Folder
+has 	/Datasheets 	to store them in the directory instead of having a link only.
+and other files whose explanations of existence is written in them.
+
+
 
 ### Version Control, Git and GitHub
 * [How to use Git and Github](https://www.udacity.com/course/how-to-use-git-and-github--ud775)
