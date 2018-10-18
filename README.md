@@ -1,7 +1,7 @@
 ﻿# Capstone_Duayenler
 Private repository of Duayenler Ltd. Şti.
 
-![Alt text](logos/logo3-with-stroke.png?raw=true "Title")
+![Alt text](Documents/logos/logo3-with-stroke.png?raw=true "Title")
 
 # Contributors
 * [Halil Temurtaş](https://github.com/temurtas)
@@ -25,18 +25,21 @@ containg source code for website
 
 
 ## Reports Foler
-has 	/Bussiness Statement Report,
-	/Conceptual Design Report,	
-	/Presentation,
-	/Proposal Report,
-	/Standards Report,
-	/Weekly Reports
+has
+	*bussiness_statement_report Folder,
+	*conceptual_design_report Folder,	
+	*Presentation,
+	*Proposal Report,
+	*Standards Report,
+	*weekly_reports Folder
 		has /Template that stores the LaTeX template for the weekly reports.
 		Just copy the .tex file and rename it under the named by date folder.
 which all have obvious reasons to exist.
 
 ## Resources Folder
-has 	/Datasheets 	to store them in the directory instead of having a link only.
+has 	
+	*Datasheets Folder 	
+		to store them in the directory instead of having a link only.
 and other files whose explanations of existence is written in them.
 
 
