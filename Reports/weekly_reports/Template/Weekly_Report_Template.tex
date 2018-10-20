@@ -29,7 +29,7 @@
 \usepackage{nicefrac}
 \usepackage{gensymb}
 \usepackage{fancyhdr}
-\usepackage{blindtext}  % for dummy text, use \blindtext or \BlindText
+\usepackage{lipsum}  % for lipsum
 \usepackage[final]{pdfpages}  % pdf include
 \usepackage{array} %allows more options in tables
 \usepackage{pgfplots,pgf,tikz} %coding plots in latex
@@ -198,9 +198,10 @@
 
 
 \pagestyle{fancy}
+\setlength{\footskip}{3cm}
 \fancyhead[LO,LE]{Duayenler Ltd. Şti.}
 \fancyhead[RO,RE]{\today}
-\fancyfoot[RO,RE]{\includegraphics[width=2.7cm]{../../../Documents/Logo/logo}}
+\rfoot{\includegraphics[width=2.7cm]{../../../Documents/logos/logo2-page-with-stroke}}
 
 \begin{document}
 \begin{center}
@@ -210,7 +211,9 @@
 \begin{enumerate}
 	\item He has done it
 	\item Other he did that
+	
 \end{enumerate}
+\lipsum[1-5]
 
 \end{document}
 
