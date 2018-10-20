@@ -20,8 +20,7 @@ Foldering can be left (not as an exercise) to what is to come.
 Contains files related to the course and the company with its people.
 
 ## docs Folder
-Contains source code for website
-	[Official Website!] : temurtas.github.io/Capstone_Duayenler
+Contains source code for website : [Official Website!](https://temurtas.github.io/Capstone_Duayenler)
 
 
 ## Reports Foler
