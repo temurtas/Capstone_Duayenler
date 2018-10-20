@@ -21,7 +21,7 @@ Contains files related to the course and the company with its people.
 
 ## docs Folder
 Contains source code for website
-	temurtas.github.io/Capstone_Duayenler
+	[Official Website!](temurtas.github.io/Capstone_Duayenler)
 
 
 ## Reports Foler
