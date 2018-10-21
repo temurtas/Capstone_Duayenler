@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  21 OCT 2018 15:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  21 OCT 2018 16:02
 entering extended mode
 **./2018_10_21_Weekly_Report_Template.tex
 (2018_10_21_Weekly_Report_Template.tex
@@ -1062,7 +1062,7 @@ File: ../../../Documents/logos/logo2-page-with-stroke.png Graphic file (type pn
 g)
  <use ../../../Documents/logos/logo2-page-with-stroke.png>
 Package pdftex.def Info: ../../../Documents/logos/logo2-page-with-stroke.png us
-ed on input line 261.
+ed on input line 244.
 (pdftex.def)             Requested size: 76.82234pt x 76.82pt.
  [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
@@ -1077,7 +1077,7 @@ File: ../../../Documents/logos/logo2-page-with-stroke.png Graphic file (type pn
 g)
 <use ../../../Documents/logos/logo2-page-with-stroke.png>
 Package pdftex.def Info: ../../../Documents/logos/logo2-page-with-stroke.png us
-ed on input line 275.
+ed on input line 286.
 (pdftex.def)             Requested size: 76.82234pt x 76.82pt.
  [2]
 (2018_10_21_Weekly_Report_Template.aux) ) 
@@ -1088,12 +1088,12 @@ Here is how much of TeX's memory you used:
  32345 multiletter control sequences out of 15000+200000
  5108 words of font info for 19 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,15n,96p,800b,742s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,15n,96p,800b,774s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmsy10.pfb>
-Output written on 2018_10_21_Weekly_Report_Template.pdf (2 pages, 154967 bytes)
+Output written on 2018_10_21_Weekly_Report_Template.pdf (2 pages, 156527 bytes)
 .
 PDF statistics:
  27 PDF objects out of 1000 (max. 8388607)
