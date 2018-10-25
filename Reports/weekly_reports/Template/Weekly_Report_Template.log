@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.15)  24 OCT 2018 12:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.15)  25 OCT 2018 17:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -893,7 +893,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 )))
-(../../../docs/commands.tex
+(../../../Documents/configuration.tex
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 ))
@@ -1040,7 +1040,7 @@ ed on input line 66.
 (./Weekly_Report_Template.aux) ) 
 Here is how much of TeX's memory you used:
  28535 strings out of 494953
- 662280 string characters out of 6180976
+ 662310 string characters out of 6180976
  945890 words of memory out of 5000000
  31275 multiletter control sequences out of 15000+600000
  4544 words of font info for 17 fonts, out of 8000000 for 9000
@@ -1049,7 +1049,7 @@ Here is how much of TeX's memory you used:
 </usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmr12.pfb>
-Output written on Weekly_Report_Template.pdf (2 pages, 142584 bytes).
+Output written on Weekly_Report_Template.pdf (2 pages, 142647 bytes).
 PDF statistics:
  25 PDF objects out of 1000 (max. 8388607)
  16 compressed objects within 1 object stream
