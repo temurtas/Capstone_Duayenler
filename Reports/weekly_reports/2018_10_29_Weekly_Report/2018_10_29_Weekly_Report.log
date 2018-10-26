@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  26 OCT 2018 22:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  26 OCT 2018 22:32
 entering extended mode
-**./Weekly_Report_Template.tex
-(Weekly_Report_Template.tex
+**./2018_10_29_Weekly_Report.tex
+(2018_10_29_Weekly_Report.tex
 LaTeX2e <2016/03/31> patch level 3
 Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
@@ -935,27 +935,27 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 ))
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 62.
+less on input line 63.
 
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 68.
+less on input line 69.
 
-(Weekly_Report_Template.aux)
-\openout1 = `Weekly_Report_Template.aux'.
+(2018_10_29_Weekly_Report.aux)
+\openout1 = `2018_10_29_Weekly_Report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1008,15 +1008,15 @@ File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 \makeMPintoPDFobject=\count175
 \everyMPtoPDFconversion=\toks51
 ) ABD: EveryShipout initializing macros
-LaTeX Info: Redefining \celsius on input line 72.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 72.
+LaTeX Info: Redefining \celsius on input line 73.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 73.
 
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 72.
-Package gensymb Info: Using \Omega for \ohm on input line 72.
+LaTeX Info: Redefining \ohm on input line 73.
+Package gensymb Info: Using \Omega for \ohm on input line 73.
 
 Package gensymb Warning: Not defining \micro.
 
@@ -1037,7 +1037,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.16} into 
 your preamble.
- on input line 72.
+ on input line 73.
 
 
 <../../../Documents/logos/logo3-with-stroke.png, id=4, 1508.63625pt x 379.4175p
@@ -1045,15 +1045,15 @@ t>
 File: ../../../Documents/logos/logo3-with-stroke.png Graphic file (type png)
  <use ../../../Documents/logos/logo3-with-stroke.png>
 Package pdftex.def Info: ../../../Documents/logos/logo3-with-stroke.png used on
- input line 80.
+ input line 81.
 (pdftex.def)             Requested size: 403.26366pt x 101.41936pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 95.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 96.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 95.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 96.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-1.def"
 File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
@@ -1064,7 +1064,7 @@ File: ../../../Documents/logos/logo2-page-with-stroke.png Graphic file (type pn
 g)
  <use ../../../Documents/logos/logo2-page-with-stroke.png>
 Package pdftex.def Info: ../../../Documents/logos/logo2-page-with-stroke.png us
-ed on input line 113.
+ed on input line 123.
 (pdftex.def)             Requested size: 62.59596pt x 62.59557pt.
  [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
@@ -1075,23 +1075,23 @@ g)
 
 <use ../../../Documents/logos/logo2-page-with-stroke.png>
 Package pdftex.def Info: ../../../Documents/logos/logo2-page-with-stroke.png us
-ed on input line 120.
+ed on input line 130.
 (pdftex.def)             Requested size: 62.59596pt x 62.59557pt.
  [2]
-(Weekly_Report_Template.aux) ) 
+(2018_10_29_Weekly_Report.aux) ) 
 Here is how much of TeX's memory you used:
  29381 strings out of 493333
- 689667 string characters out of 3136576
- 996900 words of memory out of 3000000
+ 689687 string characters out of 3136576
+ 997900 words of memory out of 3000000
  32353 multiletter control sequences out of 15000+200000
  5108 words of font info for 19 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,15n,96p,789b,783s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb>
-Output written on Weekly_Report_Template.pdf (2 pages, 219440 bytes).
+ 62i,15n,96p,791b,782s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb>
+Output written on 2018_10_29_Weekly_Report.pdf (2 pages, 223139 bytes).
 PDF statistics:
  29 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
