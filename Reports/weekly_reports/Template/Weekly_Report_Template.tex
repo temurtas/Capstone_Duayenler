@@ -11,7 +11,7 @@
 %----------------------------------------------------------------------------------------
 \documentclass[a4paper,12pt]{article}
 %-----packages------
-\usepackage[a4paper, total={6.2in, 8.5in}]{geometry}
+\usepackage[a4paper, total={6.2in, 8.5in}, headheight=110pt]{geometry}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage{amsmath}
@@ -24,6 +24,10 @@
 \usepackage[toc,page]{appendix} %appendix package
 \usepackage{xcolor}
 \usepackage{listings}
+
+
+\usepackage[export]{adjustbox}
+
 \usepackage{xspace}
 \usepackage{amssymb}
 \usepackage{nicefrac}
@@ -46,15 +50,29 @@
 
 
 \pagestyle{fancy}
-\setlength{\footskip}{3cm}
-\fancyhead[LO,LE]{Duayenler Ltd. Şti.}
-\fancyhead[RO,RE]{\today}
-\rfoot{\includegraphics[width=2.7cm]{../../../Documents/logos/logo2-page-with-stroke}}
+%\setlength{\footskip}{3cm}
+\fancyhead[LO,LE]{Duayenler Ltd. Şti.\\October 29, 2018}
+%\fancyhead[RO,RE]{October 19, 2018}
+\fancyhead[RO]{Sarper Sertel (05435156039),\\Enes Taştan (05436834336), Erdem Tuna (05352563320),\\Halil Temurtaş (05316322194), İlker Sağlık (05417229573)}
+%\rfoot{\includegraphics[width=2.7cm]{../../../Documents/logos/logo2-page-with-stroke}}
 
 \begin{document}
-\begin{center}
-	\Large\textbf{Month, XX-XX Weekly Report}
-\end{center}
+\begin{figure}[ht]
+	\begin{minipage}[]{0.65\textwidth}
+	\Large\textbf{October, 21-29 Weekly Report}
+	\end{minipage}
+	\begin{minipage}[]{0.35\textwidth}
+		\begin{flushright}
+			\includegraphics[width=3cm,height=\textheight,keepaspectratio]{../../../Documents/logos/logo2-page-with-stroke}
+			%\caption{test}
+			\label{GIS_Mapping_Software}
+		\end{flushright}
+
+	\end{minipage}%
+
+\end{figure}
+
+
 
 \begin{enumerate}
 	\item He has done it
