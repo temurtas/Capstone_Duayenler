@@ -1,6 +1,6 @@
 ﻿# Welcome to DUAYENLER Ltd. Şti. Official Website
 
-![Alt text](img/logo3.png?raw=true "Title")
+![Alt text](img/logo3-with-stroke.png?raw=true "Title")
 
 
 This is the website of the Duayenler Ltd. Şti.
