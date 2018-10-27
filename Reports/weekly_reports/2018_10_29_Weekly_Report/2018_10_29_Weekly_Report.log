@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  27 OCT 2018 01:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  27 OCT 2018 23:01
 entering extended mode
 **./2018_10_29_Weekly_Report.tex
 (2018_10_29_Weekly_Report.tex
@@ -1064,7 +1064,7 @@ File: ../../../Documents/logos/logo2-page-with-stroke.png Graphic file (type pn
 g)
  <use ../../../Documents/logos/logo2-page-with-stroke.png>
 Package pdftex.def Info: ../../../Documents/logos/logo2-page-with-stroke.png us
-ed on input line 123.
+ed on input line 113.
 (pdftex.def)             Requested size: 62.59596pt x 62.59557pt.
  [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
@@ -1075,23 +1075,23 @@ g)
 
 <use ../../../Documents/logos/logo2-page-with-stroke.png>
 Package pdftex.def Info: ../../../Documents/logos/logo2-page-with-stroke.png us
-ed on input line 130.
+ed on input line 150.
 (pdftex.def)             Requested size: 62.59596pt x 62.59557pt.
  [2]
 (2018_10_29_Weekly_Report.aux) ) 
 Here is how much of TeX's memory you used:
- 29382 strings out of 493333
- 689695 string characters out of 3136576
- 997899 words of memory out of 3000000
- 32354 multiletter control sequences out of 15000+200000
+ 29383 strings out of 493333
+ 689719 string characters out of 3136576
+ 996900 words of memory out of 3000000
+ 32355 multiletter control sequences out of 15000+200000
  5108 words of font info for 19 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,15n,96p,791b,782s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,15n,96p,791b,880s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/cm/cmsy10.pfb>
-Output written on 2018_10_29_Weekly_Report.pdf (2 pages, 222619 bytes).
+Output written on 2018_10_29_Weekly_Report.pdf (2 pages, 222473 bytes).
 PDF statistics:
  29 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
