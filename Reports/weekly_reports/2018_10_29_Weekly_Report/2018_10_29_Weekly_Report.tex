@@ -1,4 +1,4 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+﻿%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Weekly Report 
 % LaTeX Template
 % Version 1.3 (26/10/2018)
@@ -125,7 +125,8 @@
 	\item {[İlker]} In the racing project, TCS230 color sensor can be utilized as an alternative for image processing. The TCS230 basically senses the color with the help of 8x8 array of photodiodes and generates a PWM signal whose frequency is proportional to the light intensity. For example, if the elliptic path is red, we can give the s2 and s3 pins of the sensor low voltage, we activate the red photodiodes and we can use the pulseIn command of Arduino to measure the frequency of the generated PWM signal. When the robots are out of the path, the output frequency of the sensor will significantly decrease, so this information can be used to keep the robots in the path.  	  
 \end{itemize}
 
-
+	\item {[SS]} To solve distance measuring problem in cheaper way, instead of laser-based measuring, ultrasonic distance sensors could be an alternative. They are able to measure 2 cm to 4 m with 3 mm precision. One sensor has 15 cm measuring angle and 8 TL cost. To avoid opponent, we can use these sensors for to catch falling balloons and chasing vehicles projects. For mapping projects, they could be used, but eco problem should be handled with the algorithm. In other words, we need to be aware of this problem if we decide to use this technique. 
+\end{itemize}
 \section{Plans}
 
 \begin{itemize}
