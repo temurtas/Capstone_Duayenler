@@ -121,7 +121,8 @@
 					\item https://www.mathworks.com/help/vision/ug/opencv-interface.html
 					\item https://www.mathworks.com/discovery/matlab-opencv.html
 				\end{itemize}
-		\end{itemize}		  
+		\end{itemize}
+	\item {[İlker]} In the racing project, TCS230 color sensor can be utilized as an alternative for image processing. The TCS230 basically senses the color with the help of 8x8 array of photodiodes and generates a PWM signal whose frequency is proportional to the light intensity. For example, if the elliptic path is red, we can give the s2 and s3 pins of the sensor low voltage, we activate the red photodiodes and we can use the pulseIn command of Arduino to measure the frequency of the generated PWM signal. When the robots are out of the path, the output frequency of the sensor will significantly decrease, so this information can be used to keep the robots in the path.  	  
 \end{itemize}
 
 
