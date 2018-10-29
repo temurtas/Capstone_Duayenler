@@ -122,19 +122,22 @@
 					\item https://www.mathworks.com/discovery/matlab-opencv.html
 				\end{itemize}
 		\end{itemize}
+	\item {[Erdem]} Lane detection is mostly done using OpenCV libraries. Some of the applications (using highway roads) first corrects the distortion in the frame. Then a color thresholding is applied since most of the lanes are confined within white or yellow colors. Later, Canny Edge Detection is used to detect the edges. An algorithm is run afterwards to filter the irrelevant detections in the previous step. Lastly, ultimate lines are fitted into the best-line as a result.
+	
 	\item {[İlker]} In the racing project, TCS230 color sensor can be utilized as an alternative for image processing. The TCS230 basically senses the color with the help of 8x8 array of photodiodes and generates a PWM signal whose frequency is proportional to the light intensity. For example, if the elliptic path is red, we can give the s2 and s3 pins of the sensor low voltage, we activate the red photodiodes and we can use the pulseIn command of Arduino to measure the frequency of the generated PWM signal. When the robots are out of the path, the output frequency of the sensor will significantly decrease, so this information can be used to keep the robots in the path.  	  
 
 
-	\item {[SS]} To solve distance measuring problem in cheaper way, instead of laser-based measuring, ultrasonic distance sensors could be an alternative. They are able to measure 2 cm to 4 m with 3 mm precision. One sensor has 15 cm measuring angle and 8 TL cost. To avoid opponent, we can use these sensors for to catch falling balloons and chasing vehicles projects. For mapping projects, they could be used, but eco problem should be handled with the algorithm. In other words, we need to be aware of this problem if we decide to use this technique. 
+	\item {[Sarper]} To solve distance measuring problem in cheaper way, instead of laser-based measuring, ultrasonic distance sensors could be an alternative. They are able to measure 2 cm to 4 m with 3 mm precision. One sensor has 15 cm measuring angle and 8 TL cost. To avoid opponent, we can use these sensors for to catch falling balloons and chasing vehicles projects. For mapping projects, they could be used, but eco problem should be handled with the algorithm. In other words, we need to be aware of this problem if we decide to use this technique. 
 \end{itemize}
 
 \section{Plans}
 
 \begin{itemize}
 	
-	\item {[Halil]} More research on OpenCV
-	\item {[Halil]} Motor derive and basic sensor usage
-	\item
+	\item {[Halil]} More research on OpenCV.
+	\item {[Halil]} Motor derive and basic sensor usage.
+	\item {[Erdem]}	Possible ways to merge lane information and steering of the wheels.
+
 	
 \end{itemize}
 
@@ -143,7 +146,9 @@
 
 \begin{itemize}
 	
-	\item {[Halil]} 
+	\item {[Group]} There are no definitions for submodules.
+	\item {[Group]} There are no determined objectives to select a project out of four.
+	\item {[Halil]}
 	
 \end{itemize}
 
