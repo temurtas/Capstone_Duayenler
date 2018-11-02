@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  1 NOV 2018 22:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  2 NOV 2018 17:46
 entering extended mode
 **./Duayenler_Proposal.tex
 (Duayenler_Proposal.tex
@@ -810,7 +810,23 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-(Duayenler_Proposal.aux)
+(Duayenler_Proposal.aux
+
+LaTeX Warning: Label `fig:schedule' multiply defined.
+
+
+LaTeX Warning: Label `fig:schedule' multiply defined.
+
+
+LaTeX Warning: Label `fig:schedule' multiply defined.
+
+
+LaTeX Warning: Label `fig:schedule' multiply defined.
+
+
+LaTeX Warning: Label `fig:schedule' multiply defined.
+
+)
 \openout1 = `Duayenler_Proposal.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 201.
@@ -982,167 +998,218 @@ o3-with-stroke.png>] (Duayenler_Proposal.toc)
 \openout4 = `Duayenler_Proposal.toc'.
 
  [1]
-Overfull \hbox (1.68307pt too wide) in paragraph at lines 290--290
+<images/objective_tree.png, id=17, 5835.8025pt x 1050.92625pt>
+File: images/objective_tree.png Graphic file (type png)
+
+<use images/objective_tree.png>
+Package pdftex.def Info: images/objective_tree.png used on input line 282.
+(pdftex.def)             Requested size: 447.99577pt x 80.67622pt.
+
+<images/proje_objective_tree.png, id=18, 4086.26625pt x 596.98032pt>
+File: images/proje_objective_tree.png Graphic file (type png)
+
+<use images/proje_objective_tree.png>
+Package pdftex.def Info: images/proje_objective_tree.png used on input line 289
+.
+(pdftex.def)             Requested size: 448.05661pt x 65.45853pt.
+
+<images/proje_objective_tree_2.png, id=19, 4085.51344pt x 498.36188pt>
+File: images/proje_objective_tree_2.png Graphic file (type png)
+
+<use images/proje_objective_tree_2.png>
+Package pdftex.def Info: images/proje_objective_tree_2.png used on input line 2
+97.
+(pdftex.def)             Requested size: 448.03639pt x 54.65268pt.
+ [2 <./images/objective_tree.png> <./images/proje_objective_tree.png>]
+<images/proje_objective_tree_3.png, id=25, 3503.58937pt x 405.01312pt>
+File: images/proje_objective_tree_3.png Graphic file (type png)
+
+<use images/proje_objective_tree_3.png>
+Package pdftex.def Info: images/proje_objective_tree_3.png used on input line 3
+05.
+(pdftex.def)             Requested size: 448.05162pt x 51.79453pt.
+
+<images/proje_objective_tree_4.png, id=26, 3502.83656pt x 492.33937pt>
+File: images/proje_objective_tree_4.png Graphic file (type png)
+
+<use images/proje_objective_tree_4.png>
+Package pdftex.def Info: images/proje_objective_tree_4.png used on input line 3
+13.
+(pdftex.def)             Requested size: 448.06224pt x 62.97714pt.
+
+<images/project_evaluation.png, id=27, 5253.12563pt x 1021.56656pt>
+File: images/project_evaluation.png Graphic file (type png)
+
+<use images/project_evaluation.png>
+Package pdftex.def Info: images/project_evaluation.png used on input line 320.
+(pdftex.def)             Requested size: 448.07283pt x 87.13597pt.
+
+Overfull \hbox (1.68307pt too wide) in paragraph at lines 335--335
 \OT1/cmr/m/n/12 prob- 
  []
 
 
-Overfull \hbox (8.21078pt too wide) in paragraph at lines 290--290
+Overfull \hbox (8.21078pt too wide) in paragraph at lines 335--335
 \OT1/cmr/m/n/12 ciently 
  []
 
 
-Overfull \hbox (10.1691pt too wide) in paragraph at lines 290--290
+Overfull \hbox (10.1691pt too wide) in paragraph at lines 335--335
 \OT1/cmr/m/n/12 money, 
  []
 
 
-Overfull \hbox (1.68307pt too wide) in paragraph at lines 290--290
+Overfull \hbox (1.68307pt too wide) in paragraph at lines 335--335
 \OT1/cmr/m/n/12 prob- 
  []
 
 
-Overfull \hbox (8.21078pt too wide) in paragraph at lines 290--290
+Overfull \hbox (8.21078pt too wide) in paragraph at lines 335--335
 \OT1/cmr/m/n/12 ciently 
  []
 
 
-Overfull \hbox (10.1691pt too wide) in paragraph at lines 290--290
+Overfull \hbox (10.1691pt too wide) in paragraph at lines 335--335
 \OT1/cmr/m/n/12 money, 
  []
 
 
-Overfull \hbox (1.68307pt too wide) in paragraph at lines 290--290
+Overfull \hbox (1.68307pt too wide) in paragraph at lines 335--335
 \OT1/cmr/m/n/12 prob- 
  []
 
 
-Overfull \hbox (8.21078pt too wide) in paragraph at lines 290--290
+Overfull \hbox (8.21078pt too wide) in paragraph at lines 335--335
 \OT1/cmr/m/n/12 ciently 
  []
 
 
-Overfull \hbox (10.1691pt too wide) in paragraph at lines 290--290
+Overfull \hbox (10.1691pt too wide) in paragraph at lines 335--335
 \OT1/cmr/m/n/12 money, 
  []
 
 
-Overfull \hbox (1.68307pt too wide) in paragraph at lines 290--290
+Overfull \hbox (1.68307pt too wide) in paragraph at lines 335--335
 \OT1/cmr/m/n/12 prob- 
  []
 
 
-Overfull \hbox (8.21078pt too wide) in paragraph at lines 290--290
+Overfull \hbox (8.21078pt too wide) in paragraph at lines 335--335
 \OT1/cmr/m/n/12 ciently 
  []
 
 
-Overfull \hbox (10.1691pt too wide) in paragraph at lines 290--290
+Overfull \hbox (10.1691pt too wide) in paragraph at lines 335--335
 \OT1/cmr/m/n/12 money, 
  []
 
 
-Overfull \hbox (10.49548pt too wide) in paragraph at lines 292--292
+Overfull \hbox (10.49548pt too wide) in paragraph at lines 337--337
 \OT1/cmr/m/n/12 project 
  []
 
 
-Overfull \hbox (10.49548pt too wide) in paragraph at lines 292--292
+Overfull \hbox (10.49548pt too wide) in paragraph at lines 337--337
 \OT1/cmr/m/n/12 project 
  []
 
 
-Overfull \hbox (10.49548pt too wide) in paragraph at lines 292--292
+Overfull \hbox (10.49548pt too wide) in paragraph at lines 337--337
 \OT1/cmr/m/n/12 project 
  []
 
 
-Overfull \hbox (10.49548pt too wide) in paragraph at lines 292--292
+Overfull \hbox (10.49548pt too wide) in paragraph at lines 337--337
 \OT1/cmr/m/n/12 project 
  []
 
 
-LaTeX Warning: Marginpar on page 2 moved.
+LaTeX Warning: Marginpar on page 3 moved.
 
 
-Overfull \hbox (4.35944pt too wide) in paragraph at lines 294--294
+Overfull \hbox (4.35944pt too wide) in paragraph at lines 339--339
 \OT1/cmr/m/n/12 sound 
  []
 
 
-Overfull \hbox (11.80103pt too wide) in paragraph at lines 294--294
+Overfull \hbox (11.80103pt too wide) in paragraph at lines 339--339
 \OT1/cmr/m/n/12 proach, 
  []
 
 
-Overfull \hbox (5.73026pt too wide) in paragraph at lines 294--294
+Overfull \hbox (5.73026pt too wide) in paragraph at lines 339--339
 \OT1/cmr/m/n/12 tasks?  
  []
 
 
-Overfull \hbox (4.35944pt too wide) in paragraph at lines 294--294
+Overfull \hbox (4.35944pt too wide) in paragraph at lines 339--339
 \OT1/cmr/m/n/12 sound 
  []
 
 
-Overfull \hbox (11.80103pt too wide) in paragraph at lines 294--294
+Overfull \hbox (11.80103pt too wide) in paragraph at lines 339--339
 \OT1/cmr/m/n/12 proach, 
  []
 
 
-Overfull \hbox (5.73026pt too wide) in paragraph at lines 294--294
+Overfull \hbox (5.73026pt too wide) in paragraph at lines 339--339
 \OT1/cmr/m/n/12 tasks?  
  []
 
 
-Overfull \hbox (4.35944pt too wide) in paragraph at lines 294--294
+Overfull \hbox (4.35944pt too wide) in paragraph at lines 339--339
 \OT1/cmr/m/n/12 sound 
  []
 
 
-Overfull \hbox (11.80103pt too wide) in paragraph at lines 294--294
+Overfull \hbox (11.80103pt too wide) in paragraph at lines 339--339
 \OT1/cmr/m/n/12 proach, 
  []
 
 
-Overfull \hbox (5.73026pt too wide) in paragraph at lines 294--294
+Overfull \hbox (5.73026pt too wide) in paragraph at lines 339--339
 \OT1/cmr/m/n/12 tasks?  
  []
 
 
-Overfull \hbox (4.35944pt too wide) in paragraph at lines 294--294
+Overfull \hbox (4.35944pt too wide) in paragraph at lines 339--339
 \OT1/cmr/m/n/12 sound 
  []
 
 
-Overfull \hbox (11.80103pt too wide) in paragraph at lines 294--294
+Overfull \hbox (11.80103pt too wide) in paragraph at lines 339--339
 \OT1/cmr/m/n/12 proach, 
  []
 
 
-Overfull \hbox (5.73026pt too wide) in paragraph at lines 294--294
+Overfull \hbox (5.73026pt too wide) in paragraph at lines 339--339
 \OT1/cmr/m/n/12 tasks?  
  []
 
 
-LaTeX Warning: Marginpar on page 2 moved.
+LaTeX Warning: Marginpar on page 3 moved.
 
-[2] (Duayenler_Proposal.aux) ) 
+[3 <./images/proje_objective_tree_2.png> <./images/proje_objective_tree_3.png> 
+<./images/proje_objective_tree_4.png> <./images/project_evaluation.png>]
+(Duayenler_Proposal.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 29753 strings out of 493333
- 693176 string characters out of 3136576
+ 29791 strings out of 493333
+ 694269 string characters out of 3136576
  993549 words of memory out of 3000000
- 32726 multiletter control sequences out of 15000+200000
+ 32757 multiletter control sequences out of 15000+200000
  11613 words of font info for 43 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,9n,96p,786b,714s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmcsc10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmr12.pfb>
-Output written on Duayenler_Proposal.pdf (3 pages, 118868 bytes).
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><
+C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+Output written on Duayenler_Proposal.pdf (4 pages, 612524 bytes).
 PDF statistics:
- 30 PDF objects out of 1000 (max. 8388607)
+ 45 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 48 words of extra memory for PDF output out of 10000 (max. 10000000)
 

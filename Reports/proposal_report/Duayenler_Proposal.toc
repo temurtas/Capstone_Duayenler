@@ -12,7 +12,7 @@
 \contentsline {section}{\numberline {2}Introduction}{2}
 \contentsline {section}{\numberline {3}Team Organization}{2}
 \contentsline {section}{\numberline {4}Requirement Analysis}{2}
-\contentsline {section}{\numberline {5}Standards Section}{2}
-\contentsline {section}{\numberline {6}Solution Procedure}{2}
-\contentsline {section}{\numberline {7}Expected Deliverables}{2}
-\contentsline {section}{\numberline {8}Conclusion}{2}
+\contentsline {section}{\numberline {5}Standards Section}{3}
+\contentsline {section}{\numberline {6}Solution Procedure}{3}
+\contentsline {section}{\numberline {7}Expected Deliverables}{3}
+\contentsline {section}{\numberline {8}Conclusion}{3}
