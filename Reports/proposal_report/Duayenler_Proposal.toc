@@ -51,18 +51,18 @@
 \contentsline {subsection}{\numberline {1.5}tentative cost-budget analysis,}{3}
 \contentsline {section}{\numberline {2}Executive Summary}{3}
 \contentsline {section}{\numberline {3}Introduction}{3}
-\contentsline {section}{\numberline {4}Our Team}{4}
+\contentsline {section}{\numberline {4}The Team}{4}
 \contentsline {section}{\numberline {5}Requirement Analysis}{4}
 \contentsline {subsection}{\numberline {5.1}Pairwise Comparisons for Project Selection}{4}
 \contentsline {subsection}{\numberline {5.2}Systems \& Subsystems of Chosen Project}{6}
 \contentsline {subsection}{\numberline {5.3}Solution Alternatives for Systems \& Subsystems }{7}
 \contentsline {subsection}{\numberline {5.4}Design Options}{8}
 \contentsline {subsection}{\numberline {5.5}Pairwise Comparisons for Design Selection}{8}
-\contentsline {section}{\numberline {6}Standards Section}{10}
-\contentsline {section}{\numberline {7}Solution Procedure}{10}
-\contentsline {subsection}{\numberline {7.1}Sensing Subsystem}{10}
+\contentsline {section}{\numberline {6}Standards Section}{9}
+\contentsline {section}{\numberline {7}Solution Procedure}{9}
+\contentsline {subsection}{\numberline {7.1}Sensing Subsystem}{9}
 \contentsline {subsubsection}{\numberline {7.1.1}Lane Detection Unit }{10}
-\contentsline {subsubsection}{\numberline {7.1.2}Vehicle Detection Unit }{11}
+\contentsline {subsubsection}{\numberline {7.1.2}Vehicle Detection Unit }{10}
 \contentsline {section}{\numberline {8}Expected Deliverables}{11}
 \contentsline {section}{\numberline {9}Conclusion}{11}
 \contentsline {section}{Appendix \numberline {A}Gannt Chart}{12}
