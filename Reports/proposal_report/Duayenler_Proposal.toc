@@ -8,27 +8,29 @@
 \contentsline {section}{\numberline {4}The Team}{5}
 \contentsline {section}{\numberline {5}Requirement Analysis}{6}
 \contentsline {subsection}{\numberline {5.1}Pairwise Comparisons for Project Selection}{6}
-\contentsline {subsection}{\numberline {5.2}Systems \& Subsystems of Chosen Project}{7}
-\contentsline {subsection}{\numberline {5.3}Solution Alternatives for Systems \& Subsystems }{8}
-\contentsline {subsection}{\numberline {5.4}Design Options}{9}
-\contentsline {subsection}{\numberline {5.5}Pairwise Comparisons for Design Selection}{9}
-\contentsline {section}{\numberline {6}Standards Section}{10}
-\contentsline {section}{\numberline {7}Solution Procedure}{11}
-\contentsline {subsection}{\numberline {7.1}Sensing Subsystem}{11}
-\contentsline {subsubsection}{\numberline {7.1.1}Lane Detection Unit}{11}
-\contentsline {subsubsection}{\numberline {7.1.2}Vehicle Detection Unit}{12}
-\contentsline {subsection}{\numberline {7.2}Computation Subsystem}{12}
-\contentsline {subsubsection}{\numberline {7.2.1}Data Processing Unit}{12}
-\contentsline {subsubsection}{\numberline {7.2.2}Controller Unit}{12}
-\contentsline {subsection}{\numberline {7.3}Driving Subsystem}{13}
-\contentsline {subsubsection}{\numberline {7.3.1}Direction Unit}{13}
-\contentsline {subsubsection}{\numberline {7.3.2}Speed Unit}{14}
-\contentsline {subsection}{\numberline {7.4}Structure Subsystem}{14}
-\contentsline {subsubsection}{\numberline {7.4.1}Chassis Unit}{14}
-\contentsline {subsubsection}{\numberline {7.4.2}Printed Circuit Board Unit}{14}
-\contentsline {subsection}{\numberline {7.5}Motion Subsystem}{14}
-\contentsline {subsubsection}{\numberline {7.5.1}Wheels Unit}{14}
-\contentsline {subsubsection}{\numberline {7.5.2}Motors Unit}{15}
-\contentsline {section}{\numberline {8}Expected Deliverables}{15}
-\contentsline {section}{\numberline {9}Conclusion}{15}
-\contentsline {section}{Appendix \numberline {A}Gannt Chart}{16}
+\contentsline {subsection}{\numberline {5.2}Project Selection}{7}
+\contentsline {subsection}{\numberline {5.3}Pairwise Comparisons for Solution Selection}{7}
+\contentsline {subsection}{\numberline {5.4}Systems \& Subsystems of Chosen Project}{8}
+\contentsline {subsection}{\numberline {5.5}Solution Alternatives for Systems \& Subsystems }{9}
+\contentsline {subsection}{\numberline {5.6}Design Options}{10}
+\contentsline {subsection}{\numberline {5.7}Pairwise Comparisons for Design Selection}{11}
+\contentsline {section}{\numberline {6}Standards Section}{11}
+\contentsline {section}{\numberline {7}Solution Procedure}{12}
+\contentsline {subsection}{\numberline {7.1}Sensing Subsystem}{12}
+\contentsline {subsubsection}{\numberline {7.1.1}Lane Detection Unit}{12}
+\contentsline {subsubsection}{\numberline {7.1.2}Vehicle Detection Unit}{13}
+\contentsline {subsection}{\numberline {7.2}Computation Subsystem}{13}
+\contentsline {subsubsection}{\numberline {7.2.1}Data Processing Unit}{13}
+\contentsline {subsubsection}{\numberline {7.2.2}Controller Unit}{13}
+\contentsline {subsection}{\numberline {7.3}Driving Subsystem}{14}
+\contentsline {subsubsection}{\numberline {7.3.1}Direction Unit}{14}
+\contentsline {subsubsection}{\numberline {7.3.2}Speed Unit}{15}
+\contentsline {subsection}{\numberline {7.4}Structure Subsystem}{15}
+\contentsline {subsubsection}{\numberline {7.4.1}Chassis Unit}{15}
+\contentsline {subsubsection}{\numberline {7.4.2}Printed Circuit Board Unit}{15}
+\contentsline {subsection}{\numberline {7.5}Motion Subsystem}{15}
+\contentsline {subsubsection}{\numberline {7.5.1}Wheels Unit}{15}
+\contentsline {subsubsection}{\numberline {7.5.2}Motors Unit}{16}
+\contentsline {section}{\numberline {8}Expected Deliverables}{16}
+\contentsline {section}{\numberline {9}Conclusion}{16}
+\contentsline {section}{Appendix \numberline {A}Gannt Chart}{17}
