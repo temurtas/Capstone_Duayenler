@@ -121,20 +121,20 @@
 \begin{figure}[h!]
 	\centering
 	\setlength{\unitlength}{\textwidth} 
-	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{project-systems}
+	\includegraphics[width=.8\textwidth,height=\textheight,keepaspectratio]{project-systems}
 	\caption{\label{fig:project-systems} Project Requirements.}
 \end{figure} 
 
 
 \item {[Team]} Subsystems  are determined. Possible solution methods (pros and cons) for subsystems are determined (to be detailed in proposal report).
-\item {[Team]} Distance sensor is tested: Very bad accuracy for indirect surfaces.
+\item {[Team]} Ultrasonic distance sensor is tested: Very bad accuracy for indirect surfaces.
 \item {[Team]} Discussions on Standard Committee meeting. Some the of topics are as follows:
 \begin{itemize}
-	\item Handshake protocol
-	\item Detectability of the front of a vehicle
-	\item Distance sensor bug 
-	\item Elevation of path
-	\item Brake system
+	\item Handshake protocol (communication ?)
+	\item Detectability of the front of a vehicle 
+	\item Distance sensor bug  (for ultrasonic one)
+	\item Elevation of path		(specs of distance sensors)
+	\item Brake system		(time to stop, same acc.? )
 \end{itemize}
 \end{itemize}
 
@@ -142,6 +142,11 @@
 
 \begin{itemize}
 	\item  {[Team]} Initial tests for sub-system solutions are to be made.
+	\begin{itemize}
+		\item {[Enes, Sarper]}  circular path follower using differential drive
+		\item {[İlker, Sarper]} different distance (IR, LASER) and color sensor tests
+	\end{itemize}
+	\item {[Erdem, Halil]} Study of camera recognition using RPi, Python etc.
 	\item  {[Team]} Quantitative comparisons between solution methods according to test results.
 	
 	

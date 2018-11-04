@@ -45,6 +45,8 @@
 \usepackage{setspace}
 %-----end of packages
 
+
+
 \input{../../Documents/configuration.tex}
 \onehalfspacing
 \begin{document}
@@ -103,15 +105,13 @@
 
 \end{titlepage}
 
-%\blankpage
+\blankpage
 \tableofcontents
 \newpage
 
 
-	\section{notes}
-\subsection{problem statement, societal impact of the project,}
 
-\subsection{company organization (human resources, etc.),}
+	\section{notes}
 
 
 \subsection{specific requirements and objectives of the project}
@@ -128,18 +128,32 @@
 
 \subsection{tentative cost-budget analysis,}
 
-\subsection{time plan (Gantt chart),}
-
-
 
 \section{Executive Summary}
 
 
 \section{Introduction}
 
+Driving is a common event that many people experience in their daily life. As time passes, human reflexes started to become insufficient for driving compared to fast pace of daily life in modern world. Together with the developments in the technology, new solutions are proposed to assist the driver such as lane tracking and emergency breaking systems. The ultimate version of such solutions are considered to be fully autonomous self-driving cars. \\
 
-\section{Team Organization}
-DUAYENLER Ltd. Şti. (DUAYENLER) was founded in September 2018 by five electrical and electronics engineering students from Middle East Technical University. The company structure is shown in \textit{Figure~\ref{fig:company_tree}}. The team is composed of variously skilled visionary members. The leader of the team is Halil Temurtaş, a control engineer. Being the team leader, Halil manages the organization of the members as well as drawing an outline for the future calendar. He is experienced in using microcontrollers, device testing and project scheduling. He will be working on the development of the subsystems computation, motion and driving in parallel with his experiences. Sarper Sertel, electronics engineer, has a wide understanding of microelectronics circuits and their design as well as analog lumped circuits. He is also interested in mechanical systems. He will be working on structure, driving and sensing subsystems. Enes Taştan, hardware design engineer, is interested in several topics such as electronics and mechanics. He can also design PCBs. He will be participating to development of driving, motion and structure subsystems. Erdem Tuna, embedded systems engineer, is experienced in use of microcontrollers with sensors and likes programming. He will be contributing in computation and sensing subsystems. Lastly İlker Sağlık, software engineer, is also interested in programming and microcontrollers. He will be working on sensing and driving subsystems.
+Self-driving vehicles are presented to the society as a solution that can facilitate people's life in many ways. Fast operation of the electronics system allows faster response than humans can. A fast and reliable operation of self-driving action can prevent many accidents and increase the safety of the roads in heavy traffics since the system is immune to human defects such as distraction and panic. As a result, autonomous vehicles can open doors to a safer and more conventional future.\\
+
+DUAYENLER Ltd. Şti. is launched with the aim of innovating automation technologies. In that context, a device that can detect the road and other vehicles on them will be built. It autonomously track the lane and stay on the road while trying to as fast as possible.\\
+
+This report includes;
+\begin{itemize}
+	\item organization of the company by explaining of the qualifications of the members. 
+	\item Requirements for physically realizing the intended vehicle
+	\item Possible solutions in system and subsystem levels by explaining their operations
+	\item Timeline and cost of the project
+	\item Expected deliverables from the project 
+\end{itemize} 
+
+
+
+\section{Our Team}
+
+	DUAYENLER Ltd. Şti. (DUAYENLER) was founded in September 2018 by five electrical and electronics engineering students from Middle East Technical University. The company structure is shown in \textit{Figure~\ref{fig:company_tree}}. The team is composed of variously skilled visionary members. The leader of the team is Halil Temurtaş, a control engineer. Being the team leader, Halil manages the organization of the members as well as drawing an outline for the future calendar. He is experienced in using microcontrollers, device testing and project scheduling. He will be working on the development of the subsystems computation, motion and driving in parallel with his experiences. Sarper Sertel, electronics engineer, has a wide understanding of microelectronics circuits and their design as well as analog lumped circuits. He is also interested in mechanical systems. He will be working on structure, driving and sensing subsystems. Enes Taştan, hardware design engineer, is interested in several topics such as electronics and mechanics. He can also design PCBs. He will be participating to development of driving, motion and structure subsystems. Erdem Tuna, embedded systems engineer, is experienced in use of microcontrollers with sensors and likes programming. He will be contributing in computation and sensing subsystems. Lastly İlker Sağlık, software engineer, is also interested in programming and microcontrollers. He will be working on sensing and driving subsystems.
 
 \begin{figure}[t!]
 	\centering
@@ -149,7 +163,9 @@ DUAYENLER Ltd. Şti. (DUAYENLER) was founded in September 2018 by five electrica
 
 
 \section{Requirement Analysis}
-	Reqs, soln puanlama
+	
+	\subsection{Pairwise Comparisons for Project Selection}
+		Pairwise comparisons technique can be use to assess objectives of the project. Then, these objectives can be very useful as the desired project is selected out of all potential project. For this purpose, tables at \textit{Figures~\ref{fig:pairwise_comp},\ref{fig:project_eval}} is created by consensus of all project-pairs. The weighted objectives are then used to construct the weighted objective tree at \textit{Figure~\ref{fig:objective_tree}}. 
 
 	\begin{figure}[H]
 		\centering
@@ -159,21 +175,37 @@ DUAYENLER Ltd. Şti. (DUAYENLER) was founded in September 2018 by five electrica
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/project_evaluation} 
+		\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/project_evaluation2} 
 		\caption{\label{fig:project_eval}Project Evaluation Chart}
 	\end{figure}
 	
 	
-	
-	
-%%%%%%%  Project Seçimi
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{pre-objective-tree/pre-objective-tree} 
+		\caption{\label{fig:objective_tree}Weighted Objective Tree}
+	\end{figure}
 
+	
+	
+	\subsection{Systems \& Subsystems of Chosen Project}	
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/proje_objective_tree} 
-		\caption{\label{fig:project_objective_tree}Pairwise Comparison Charts for Objectives}
-	\end{figure}	
+		\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{product-tree/product-tree} 
+		\caption{\label{fig:product_tree}Weighted Objective Tree}
+	\end{figure}
+
+	\subsection{Solution Alternatives for Systems \& Subsystems }
+	
+	\subsection{Design Option 1}
+	
+	\subsection{Design Option 2}
+	
+	\subsection{Design Option 3}
+	
+	
+	\subsection{Pairwise Comparisons for Solution Selection}	
 	
 	\begin{figure}[H]
 		\centering
@@ -187,17 +219,11 @@ DUAYENLER Ltd. Şti. (DUAYENLER) was founded in September 2018 by five electrica
 		\caption{\label{fig:product_tree}Weighted Objective Tree}
 	\end{figure}
 	
-	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{product-tree/product-tree} 
-		\caption{\label{fig:product_tree}Weighted Objective Tree}
+		\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/soln_selection} 
+		\caption{\label{fig:soln_selection}Pairwise Comparison Charts for Solution Selection}
 	\end{figure}
-
-	
-
-
-	
 
 
 %	\begin{figure}[H]
@@ -224,19 +250,13 @@ DUAYENLER Ltd. Şti. (DUAYENLER) was founded in September 2018 by five electrica
 \section{Expected Deliverables}
 
 
-\todo{Is the problem sufficiently important to justify money, company time, and your effort?}
-
-\todo{Is the project well defined and realistic?}
-
-\todo{Have you outlined a sound approach, including your ability to perform the tasks?}
-
 \section{Conclusion}
-	
+
+\newpage
 \begin{appendices}
 	
-	\section{Gannt Chart}
-	
-		\includepdf[landscape=true,pages=1-2, scale=1.0 ]{gannt_chart.pdf}
+		\includepdf[landscape=true,pages=1, scale=0.85,pagecommand=\section{Gannt Chart}]{gannt_chart.pdf}
+		\includepdf[landscape=true,pages=2, scale=0.85,pagecommand=]{gannt_chart.pdf}
 
 	
 \end{appendices}
