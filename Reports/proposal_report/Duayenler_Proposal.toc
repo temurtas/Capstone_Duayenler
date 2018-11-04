@@ -1,5 +1,5 @@
-\select@language {english}
-\select@language {english}
+\babel@toc {english}{}
+\babel@toc {english}{}
 \contentsline {section}{\numberline {1}notes}{4}
 \contentsline {subsection}{\numberline {1.1}specific requirements and objectives of the project}{4}
 \contentsline {subsection}{\numberline {1.2}approach to the solution of the problem}{4}
