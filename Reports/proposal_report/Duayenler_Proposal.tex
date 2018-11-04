@@ -278,7 +278,7 @@ This report includes;
 \section{Solution Procedure}
 \subsection{Sensing Subsystem}
 This unit has two main tasks which are observing lane and another vehicle on the path. 
-\subsubsection{Lane Detection Unit }
+\subsubsection{Lane Detection Unit}
 To solve this problem, path and environmental differences, such as color difference, contrast difference could be used. In addition to these, image processing could be an alternative to detection of lane and vehicle. 
 Infrared sensors can be used to solve lane detection problem. Line follower vehicle logic can be implemented to this problem, by placing two sensor arrays to both sides of the path to align vehicle at the center. Sensors gives current proportional to reflection of the surfaces. By using such outputs, an algorithm to be developed to track the path on the center. 
 
@@ -286,13 +286,19 @@ Another approach to detect the lane is using camera and image processing. Camera
 
 Color sensor can be utilized as an alternative for image processing. Color sensors basically senses the color with the help of 8x8 array of photodiodes and generates a PWM signal whose duty cycle is proportional to the light intensity. For example, if the elliptic path is red, we can give the s2 and s3 pins of the sensor low voltage, we activate the red photodiodes and we can use the Arduino command to measure the on or off time of the generated PWM signal. When the robots are out of the path, the output duty cycle of the sensor will significantly decrease, so this information can be used to keep the robots in the path. However, using color sensors can be problematic, because of their size and slow operation.
 
-\subsubsection{Vehicle Detection Unit }
+\subsubsection{Vehicle Detection Unit}
 The detection of the opponent can be implemented using distance sensors. In order to stop the robot when it catches the opponent, or it is caught, a sensor must be placed at the front and the back. The most common distance sensors are ultrasonic, infrared and laser sensors. 
 
 Ultrasonic sensors have acceptable range. They send a sound wave and take back the echo, then give a PWM voltage related to the distance. However, using ultrasonic sensors can cause problems if the opponent also uses ultrasonic sensors; because of the interference. Besides, when measurement is angled, measuring is failing. 
 
-Infrared sensors can be another approach to this problem, they may provide better accuracy. Moreover, Laser distance measurement can be applied to solve this problem. They have the best accuracy, but their price is the highest among the rest. 
+Infrared sensors can be another approach to this problem, they may provide better accuracy. Moreover, Laser distance measurement can be applied to solve this problem. They have the best accuracy, but their price is the highest among the rest.
+\subsection{Computation Subsystem}
+Functionality of computation subsystem will be presented in this section.
+\subsubsection{Data Processing Unit}
+This unit is the main algorithm application level. Data from sensor will be aggregated in this unit and will be pre-processed. Then, processed data will be output to the controller unit. Processing will mainly be done using Arduino and Raspberry Pi (if used). Suitable algorithms will be developed to realize desired operations with the controller unit
 
+\subsubsection{Controller Unit}
+Mathematical models will be implemented in this unit to realize controllers such as P, PI, PID. The output of the controller unit will be sent to driving subsystem. This output will be the ultimate decision to realize a desired operation according to the data sent from sensor.
 
 \section{Expected Deliverables}
 
