@@ -32,9 +32,9 @@
 \contentsline {subsubsection}{\numberline {7.1.2}Vehicle Detection Unit}{12}
 \contentsline {subsection}{\numberline {7.2}Computation Subsystem}{12}
 \contentsline {subsubsection}{\numberline {7.2.1}Data Processing Unit}{12}
-\contentsline {subsubsection}{\numberline {7.2.2}Controller Unit}{12}
-\contentsline {subsection}{\numberline {7.3}Structure Subsystem}{12}
-\contentsline {subsubsection}{\numberline {7.3.1}Chassis Unit}{12}
+\contentsline {subsubsection}{\numberline {7.2.2}Controller Unit}{13}
+\contentsline {subsection}{\numberline {7.3}Structure Subsystem}{13}
+\contentsline {subsubsection}{\numberline {7.3.1}Chassis Unit}{13}
 \contentsline {subsubsection}{\numberline {7.3.2}Printed Circuit Board Unit}{13}
 \contentsline {section}{\numberline {8}Expected Deliverables}{13}
 \contentsline {section}{\numberline {9}Conclusion}{13}

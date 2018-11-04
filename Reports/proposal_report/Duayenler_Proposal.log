@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.4)  4 NOV 2018 19:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.4)  4 NOV 2018 19:48
 entering extended mode
 **./Duayenler_Proposal.tex
 (Duayenler_Proposal.tex
@@ -1172,7 +1172,7 @@ pdfTeX warning: pdflatex.exe (file ./gannt_chart.pdf): PDF inclusion: found PDF
 <gannt_chart.pdf, id=71, 1194.98447pt x 845.07718pt>
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf>
-Package pdftex.def Info: gannt_chart.pdf  used on input line 317.
+Package pdftex.def Info: gannt_chart.pdf  used on input line 326.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 
 
@@ -1180,7 +1180,7 @@ pdfTeX warning: pdflatex.exe (file ./gannt_chart.pdf): PDF inclusion: found PDF
  version <1.7>, but at most version <1.5> allowed
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf>
-Package pdftex.def Info: gannt_chart.pdf  used on input line 317.
+Package pdftex.def Info: gannt_chart.pdf  used on input line 326.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 
 
@@ -1193,28 +1193,28 @@ pdfTeX warning: pdflatex.exe (file ./gannt_chart.pdf): PDF inclusion: found PDF
 <gannt_chart.pdf, id=74, page=1, 1194.98447pt x 845.07718pt>
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 1>
-Package pdftex.def Info: gannt_chart.pdf , page1 used on input line 317.
+Package pdftex.def Info: gannt_chart.pdf , page1 used on input line 326.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 1>
-Package pdftex.def Info: gannt_chart.pdf , page1 used on input line 317.
+Package pdftex.def Info: gannt_chart.pdf , page1 used on input line 326.
 (pdftex.def)             Requested size: 1015.74161pt x 718.319pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 1>
-Package pdftex.def Info: gannt_chart.pdf , page1 used on input line 317.
+Package pdftex.def Info: gannt_chart.pdf , page1 used on input line 326.
 (pdftex.def)             Requested size: 1015.74161pt x 718.319pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 1>
-Package pdftex.def Info: gannt_chart.pdf , page1 used on input line 317.
+Package pdftex.def Info: gannt_chart.pdf , page1 used on input line 326.
 (pdftex.def)             Requested size: 1015.74161pt x 718.319pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 1>
-Package pdftex.def Info: gannt_chart.pdf , page1 used on input line 317.
+Package pdftex.def Info: gannt_chart.pdf , page1 used on input line 326.
 (pdftex.def)             Requested size: 1015.74161pt x 718.319pt.
 [14 <./gannt_chart.pdf>]
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf>
-Package pdftex.def Info: gannt_chart.pdf  used on input line 318.
+Package pdftex.def Info: gannt_chart.pdf  used on input line 327.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 
 
@@ -1222,7 +1222,7 @@ pdfTeX warning: pdflatex.exe (file ./gannt_chart.pdf): PDF inclusion: found PDF
  version <1.7>, but at most version <1.5> allowed
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf>
-Package pdftex.def Info: gannt_chart.pdf  used on input line 318.
+Package pdftex.def Info: gannt_chart.pdf  used on input line 327.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 
 
@@ -1235,23 +1235,23 @@ pdfTeX warning: pdflatex.exe (file ./gannt_chart.pdf): PDF inclusion: found PDF
 <gannt_chart.pdf, id=98, page=2, 1194.98447pt x 845.07718pt>
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 2>
-Package pdftex.def Info: gannt_chart.pdf , page2 used on input line 318.
+Package pdftex.def Info: gannt_chart.pdf , page2 used on input line 327.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 2>
-Package pdftex.def Info: gannt_chart.pdf , page2 used on input line 318.
+Package pdftex.def Info: gannt_chart.pdf , page2 used on input line 327.
 (pdftex.def)             Requested size: 1015.74161pt x 718.319pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 2>
-Package pdftex.def Info: gannt_chart.pdf , page2 used on input line 318.
+Package pdftex.def Info: gannt_chart.pdf , page2 used on input line 327.
 (pdftex.def)             Requested size: 1015.74161pt x 718.319pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 2>
-Package pdftex.def Info: gannt_chart.pdf , page2 used on input line 318.
+Package pdftex.def Info: gannt_chart.pdf , page2 used on input line 327.
 (pdftex.def)             Requested size: 1015.74161pt x 718.319pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 2>
-Package pdftex.def Info: gannt_chart.pdf , page2 used on input line 318.
+Package pdftex.def Info: gannt_chart.pdf , page2 used on input line 327.
 (pdftex.def)             Requested size: 1015.74161pt x 718.319pt.
 [15 <./gannt_chart.pdf>] (Duayenler_Proposal.aux) ) 
 Here is how much of TeX's memory you used:
@@ -1269,7 +1269,7 @@ C:/Users/srtls/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmr12.pfb><C:/Users/srtls/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
 /amsfonts/cm/cmsy10.pfb><C:/Users/srtls/AppData/Local/Programs/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Duayenler_Proposal.pdf (16 pages, 1312411 bytes).
+Output written on Duayenler_Proposal.pdf (16 pages, 1313486 bytes).
 PDF statistics:
  120 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
