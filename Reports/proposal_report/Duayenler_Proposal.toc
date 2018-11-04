@@ -1,5 +1,5 @@
-\select@language {english}
-\select@language {english}
+\babel@toc {english}{}
+\babel@toc {english}{}
 \contentsline {section}{\numberline {1}notes}{3}
 \contentsline {subsection}{\numberline {1.1}specific requirements and objectives of the project}{3}
 \contentsline {subsection}{\numberline {1.2}approach to the solution of the problem}{3}
@@ -19,6 +19,9 @@
 \contentsline {subsection}{\numberline {5.7}Pairwise Comparisons for Solution Selection}{7}
 \contentsline {section}{\numberline {6}Standards Section}{9}
 \contentsline {section}{\numberline {7}Solution Procedure}{9}
-\contentsline {section}{\numberline {8}Expected Deliverables}{9}
-\contentsline {section}{\numberline {9}Conclusion}{9}
-\contentsline {section}{Appendix \numberline {A}Gannt Chart}{10}
+\contentsline {subsection}{\numberline {7.1}Sensing Subsystem}{9}
+\contentsline {subsubsection}{\numberline {7.1.1}Lane Detection Unit }{9}
+\contentsline {subsubsection}{\numberline {7.1.2}Vehicle Detection Unit }{10}
+\contentsline {section}{\numberline {8}Expected Deliverables}{10}
+\contentsline {section}{\numberline {9}Conclusion}{10}
+\contentsline {section}{Appendix \numberline {A}Gannt Chart}{11}
