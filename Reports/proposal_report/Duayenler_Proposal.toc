@@ -15,5 +15,5 @@
 \contentsline {section}{\numberline {5}Standards Section}{4}
 \contentsline {section}{\numberline {6}Solution Procedure}{4}
 \contentsline {section}{\numberline {7}Expected Deliverables}{4}
-\contentsline {section}{\numberline {8}Conclusion}{4}
-\contentsline {section}{Appendix \numberline {A}Gannt Chart}{4}
+\contentsline {section}{\numberline {8}Conclusion}{5}
+\contentsline {section}{Appendix \numberline {A}Gannt Chart}{5}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  4 NOV 2018 11:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  4 NOV 2018 11:44
 entering extended mode
 **./Duayenler_Proposal.tex
 (Duayenler_Proposal.tex
@@ -810,20 +810,7 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-(Duayenler_Proposal.aux
-
-LaTeX Warning: Label `fig:schedule' multiply defined.
-
-
-LaTeX Warning: Label `fig:schedule' multiply defined.
-
-
-LaTeX Warning: Label `fig:schedule' multiply defined.
-
-
-LaTeX Warning: Label `fig:schedule' multiply defined.
-
-)
+(Duayenler_Proposal.aux)
 \openout1 = `Duayenler_Proposal.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 201.
@@ -1010,214 +997,192 @@ File: images/objective_tree.png Graphic file (type png)
 Package pdftex.def Info: images/objective_tree.png used on input line 310.
 (pdftex.def)             Requested size: 447.99577pt x 80.67622pt.
  [2 <../../Documents/company/company-tree.png>]
+<images/project_evaluation.png, id=23, 5253.12563pt x 1021.56656pt>
+File: images/project_evaluation.png Graphic file (type png)
 
-! LaTeX Error: File `objective-tree/objective_tree' not found.
+<use images/project_evaluation.png>
+Package pdftex.def Info: images/project_evaluation.png used on input line 316.
+(pdftex.def)             Requested size: 448.07283pt x 87.13597pt.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.316 ...pectratio]{objective-tree/objective_tree}
-                                                  
-I could not locate the file with any of these extensions:
-.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-<images/proje_objective_tree.png, id=23, 4086.26625pt x 596.98032pt>
+<images/proje_objective_tree.png, id=24, 4086.26625pt x 596.98032pt>
 File: images/proje_objective_tree.png Graphic file (type png)
 
 <use images/proje_objective_tree.png>
-Package pdftex.def Info: images/proje_objective_tree.png used on input line 322
+Package pdftex.def Info: images/proje_objective_tree.png used on input line 328
 .
 (pdftex.def)             Requested size: 448.05661pt x 65.45853pt.
 
-<images/proje_objective_tree_2.png, id=24, 4085.51344pt x 498.36188pt>
+<images/proje_objective_tree_2.png, id=25, 4085.51344pt x 498.36188pt>
 File: images/proje_objective_tree_2.png Graphic file (type png)
 
 <use images/proje_objective_tree_2.png>
 Package pdftex.def Info: images/proje_objective_tree_2.png used on input line 3
-29.
+34.
 (pdftex.def)             Requested size: 448.03639pt x 54.65268pt.
 
-<images/proje_objective_tree_3.png, id=25, 3503.58937pt x 405.01312pt>
-File: images/proje_objective_tree_3.png Graphic file (type png)
+<objective-tree/objective-tree.png, id=26, 915.42pt x 979.66pt>
+File: objective-tree/objective-tree.png Graphic file (type png)
 
-<use images/proje_objective_tree_3.png>
-Package pdftex.def Info: images/proje_objective_tree_3.png used on input line 3
-37.
-(pdftex.def)             Requested size: 448.05162pt x 51.79453pt.
-
-<images/proje_objective_tree_4.png, id=26, 3502.83656pt x 492.33937pt>
-File: images/proje_objective_tree_4.png Graphic file (type png)
-
-<use images/proje_objective_tree_4.png>
-Package pdftex.def Info: images/proje_objective_tree_4.png used on input line 3
-45.
-(pdftex.def)             Requested size: 448.06224pt x 62.97714pt.
-
-<images/project_evaluation.png, id=27, 5253.12563pt x 1021.56656pt>
-File: images/project_evaluation.png Graphic file (type png)
-
-<use images/project_evaluation.png>
-Package pdftex.def Info: images/project_evaluation.png used on input line 352.
-(pdftex.def)             Requested size: 448.07283pt x 87.13597pt.
- [3 <./images/objective_tree.png> <./images/proje_objective_tree.png> <./images
-/proje_objective_tree_2.png> <./images/proje_objective_tree_3.png> <./images/pr
-oje_objective_tree_4.png>]
-Overfull \hbox (1.68307pt too wide) in paragraph at lines 367--367
+<use objective-tree/objective-tree.png>
+Package pdftex.def Info: objective-tree/objective-tree.png used on input line 3
+40.
+(pdftex.def)             Requested size: 448.07085pt x 479.51442pt.
+ [3 <./images/objective_tree.png> <./images/project_evaluation.png> <./images/p
+roje_objective_tree.png> <./images/proje_objective_tree_2.png>]
+Overfull \hbox (1.68307pt too wide) in paragraph at lines 374--374
 \OT1/cmr/m/n/12 prob- 
  []
 
 
-Overfull \hbox (8.21078pt too wide) in paragraph at lines 367--367
+Overfull \hbox (8.21078pt too wide) in paragraph at lines 374--374
 \OT1/cmr/m/n/12 ciently 
  []
 
 
-Overfull \hbox (10.1691pt too wide) in paragraph at lines 367--367
+Overfull \hbox (10.1691pt too wide) in paragraph at lines 374--374
 \OT1/cmr/m/n/12 money, 
  []
 
 
-Overfull \hbox (1.68307pt too wide) in paragraph at lines 367--367
+Overfull \hbox (1.68307pt too wide) in paragraph at lines 374--374
 \OT1/cmr/m/n/12 prob- 
  []
 
 
-Overfull \hbox (8.21078pt too wide) in paragraph at lines 367--367
+Overfull \hbox (8.21078pt too wide) in paragraph at lines 374--374
 \OT1/cmr/m/n/12 ciently 
  []
 
 
-Overfull \hbox (10.1691pt too wide) in paragraph at lines 367--367
+Overfull \hbox (10.1691pt too wide) in paragraph at lines 374--374
 \OT1/cmr/m/n/12 money, 
  []
 
 
-Overfull \hbox (1.68307pt too wide) in paragraph at lines 367--367
+Overfull \hbox (1.68307pt too wide) in paragraph at lines 374--374
 \OT1/cmr/m/n/12 prob- 
  []
 
 
-Overfull \hbox (8.21078pt too wide) in paragraph at lines 367--367
+Overfull \hbox (8.21078pt too wide) in paragraph at lines 374--374
 \OT1/cmr/m/n/12 ciently 
  []
 
 
-Overfull \hbox (10.1691pt too wide) in paragraph at lines 367--367
+Overfull \hbox (10.1691pt too wide) in paragraph at lines 374--374
 \OT1/cmr/m/n/12 money, 
  []
 
 
-Overfull \hbox (1.68307pt too wide) in paragraph at lines 367--367
+Overfull \hbox (1.68307pt too wide) in paragraph at lines 374--374
 \OT1/cmr/m/n/12 prob- 
  []
 
 
-Overfull \hbox (8.21078pt too wide) in paragraph at lines 367--367
+Overfull \hbox (8.21078pt too wide) in paragraph at lines 374--374
 \OT1/cmr/m/n/12 ciently 
  []
 
 
-Overfull \hbox (10.1691pt too wide) in paragraph at lines 367--367
+Overfull \hbox (10.1691pt too wide) in paragraph at lines 374--374
 \OT1/cmr/m/n/12 money, 
  []
 
 
-Overfull \hbox (10.49548pt too wide) in paragraph at lines 369--369
+Overfull \hbox (10.49548pt too wide) in paragraph at lines 376--376
 \OT1/cmr/m/n/12 project 
  []
 
 
-Overfull \hbox (10.49548pt too wide) in paragraph at lines 369--369
+Overfull \hbox (10.49548pt too wide) in paragraph at lines 376--376
 \OT1/cmr/m/n/12 project 
  []
 
 
-Overfull \hbox (10.49548pt too wide) in paragraph at lines 369--369
+Overfull \hbox (10.49548pt too wide) in paragraph at lines 376--376
 \OT1/cmr/m/n/12 project 
  []
 
 
-Overfull \hbox (10.49548pt too wide) in paragraph at lines 369--369
+Overfull \hbox (10.49548pt too wide) in paragraph at lines 376--376
 \OT1/cmr/m/n/12 project 
  []
 
+[4 <./objective-tree/objective-tree.png>]
 
-LaTeX Warning: Marginpar on page 4 moved.
+LaTeX Warning: Marginpar on page 5 moved.
 
 
-Overfull \hbox (4.35944pt too wide) in paragraph at lines 371--371
+Overfull \hbox (4.35944pt too wide) in paragraph at lines 378--378
 \OT1/cmr/m/n/12 sound 
  []
 
 
-Overfull \hbox (11.80103pt too wide) in paragraph at lines 371--371
+Overfull \hbox (11.80103pt too wide) in paragraph at lines 378--378
 \OT1/cmr/m/n/12 proach, 
  []
 
 
-Overfull \hbox (5.73026pt too wide) in paragraph at lines 371--371
+Overfull \hbox (5.73026pt too wide) in paragraph at lines 378--378
 \OT1/cmr/m/n/12 tasks?  
  []
 
 
-Overfull \hbox (4.35944pt too wide) in paragraph at lines 371--371
+Overfull \hbox (4.35944pt too wide) in paragraph at lines 378--378
 \OT1/cmr/m/n/12 sound 
  []
 
 
-Overfull \hbox (11.80103pt too wide) in paragraph at lines 371--371
+Overfull \hbox (11.80103pt too wide) in paragraph at lines 378--378
 \OT1/cmr/m/n/12 proach, 
  []
 
 
-Overfull \hbox (5.73026pt too wide) in paragraph at lines 371--371
+Overfull \hbox (5.73026pt too wide) in paragraph at lines 378--378
 \OT1/cmr/m/n/12 tasks?  
  []
 
 
-Overfull \hbox (4.35944pt too wide) in paragraph at lines 371--371
+Overfull \hbox (4.35944pt too wide) in paragraph at lines 378--378
 \OT1/cmr/m/n/12 sound 
  []
 
 
-Overfull \hbox (11.80103pt too wide) in paragraph at lines 371--371
+Overfull \hbox (11.80103pt too wide) in paragraph at lines 378--378
 \OT1/cmr/m/n/12 proach, 
  []
 
 
-Overfull \hbox (5.73026pt too wide) in paragraph at lines 371--371
+Overfull \hbox (5.73026pt too wide) in paragraph at lines 378--378
 \OT1/cmr/m/n/12 tasks?  
  []
 
 
-Overfull \hbox (4.35944pt too wide) in paragraph at lines 371--371
+Overfull \hbox (4.35944pt too wide) in paragraph at lines 378--378
 \OT1/cmr/m/n/12 sound 
  []
 
 
-Overfull \hbox (11.80103pt too wide) in paragraph at lines 371--371
+Overfull \hbox (11.80103pt too wide) in paragraph at lines 378--378
 \OT1/cmr/m/n/12 proach, 
  []
 
 
-Overfull \hbox (5.73026pt too wide) in paragraph at lines 371--371
+Overfull \hbox (5.73026pt too wide) in paragraph at lines 378--378
 \OT1/cmr/m/n/12 tasks?  
  []
 
 
-LaTeX Warning: Marginpar on page 4 moved.
+LaTeX Warning: Marginpar on page 5 moved.
 
 
 
 pdfTeX warning: pdflatex (file ./gannt_chart.pdf): PDF inclusion: found PDF ver
 sion <1.7>, but at most version <1.5> allowed
-<gannt_chart.pdf, id=36, 1194.98447pt x 845.07718pt>
+<gannt_chart.pdf, id=37, 1194.98447pt x 845.07718pt>
 File: gannt_chart.pdf Graphic file (type pdf)
  <use gannt_chart.pdf>
-Package pdftex.def Info: gannt_chart.pdf used on input line 379.
+Package pdftex.def Info: gannt_chart.pdf used on input line 386.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 
 
@@ -1225,7 +1190,7 @@ pdfTeX warning: pdflatex (file ./gannt_chart.pdf): PDF inclusion: found PDF ver
 sion <1.7>, but at most version <1.5> allowed
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf>
-Package pdftex.def Info: gannt_chart.pdf used on input line 379.
+Package pdftex.def Info: gannt_chart.pdf used on input line 386.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 
 
@@ -1235,68 +1200,66 @@ sion <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: pdflatex (file ./gannt_chart.pdf): PDF inclusion: found PDF ver
 sion <1.7>, but at most version <1.5> allowed
-<gannt_chart.pdf, id=39, page=1, 1194.98447pt x 845.07718pt>
+<gannt_chart.pdf, id=40, page=1, 1194.98447pt x 845.07718pt>
 File: gannt_chart.pdf Graphic file (type pdf)
 
 <use gannt_chart.pdf, page 1>
-Package pdftex.def Info: gannt_chart.pdf, page1 used on input line 379.
+Package pdftex.def Info: gannt_chart.pdf, page1 used on input line 386.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 File: gannt_chart.pdf Graphic file (type pdf)
  <use gannt_chart.pdf, page 1>
-Package pdftex.def Info: gannt_chart.pdf, page1 used on input line 379.
+Package pdftex.def Info: gannt_chart.pdf, page1 used on input line 386.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
- [4 <./images/project_evaluation.png>]
+ [5]
+File: gannt_chart.pdf Graphic file (type pdf)
+
+<use gannt_chart.pdf, page 1>
+Package pdftex.def Info: gannt_chart.pdf, page1 used on input line 386.
+(pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 File: gannt_chart.pdf Graphic file (type pdf)
  <use gannt_chart.pdf, page 1>
-Package pdftex.def Info: gannt_chart.pdf, page1 used on input line 379.
-(pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
-File: gannt_chart.pdf Graphic file (type pdf)
- <use gannt_chart.pdf, page 1>
-Package pdftex.def Info: gannt_chart.pdf, page1 used on input line 379.
+Package pdftex.def Info: gannt_chart.pdf, page1 used on input line 386.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 
 <use gannt_chart.pdf, page 1>
-Package pdftex.def Info: gannt_chart.pdf, page1 used on input line 379.
+Package pdftex.def Info: gannt_chart.pdf, page1 used on input line 386.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
- [5 <./gannt_chart.pdf>]
+ [6 <./gannt_chart.pdf>]
 
 pdfTeX warning: pdflatex (file ./gannt_chart.pdf): PDF inclusion: found PDF ver
 sion <1.7>, but at most version <1.5> allowed
-<gannt_chart.pdf, id=65, page=2, 1194.98447pt x 845.07718pt>
+<gannt_chart.pdf, id=66, page=2, 1194.98447pt x 845.07718pt>
 File: gannt_chart.pdf Graphic file (type pdf)
 
 <use gannt_chart.pdf, page 2>
-Package pdftex.def Info: gannt_chart.pdf, page2 used on input line 379.
+Package pdftex.def Info: gannt_chart.pdf, page2 used on input line 386.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 File: gannt_chart.pdf Graphic file (type pdf)
  <use gannt_chart.pdf, page 2>
-Package pdftex.def Info: gannt_chart.pdf, page2 used on input line 379.
+Package pdftex.def Info: gannt_chart.pdf, page2 used on input line 386.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 
 <use gannt_chart.pdf, page 2>
-Package pdftex.def Info: gannt_chart.pdf, page2 used on input line 379.
+Package pdftex.def Info: gannt_chart.pdf, page2 used on input line 386.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
- [6 <./gannt_chart.pdf>] (Duayenler_Proposal.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+ [7 <./gannt_chart.pdf>] (Duayenler_Proposal.aux) ) 
 Here is how much of TeX's memory you used:
- 29827 strings out of 493333
- 694900 string characters out of 3136576
- 993549 words of memory out of 3000000
- 32776 multiletter control sequences out of 15000+200000
+ 29813 strings out of 493333
+ 694738 string characters out of 3136576
+ 990549 words of memory out of 3000000
+ 32775 multiletter control sequences out of 15000+200000
  11920 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,19n,96p,786b,714s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><
-C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on Duayenler_Proposal.pdf (7 pages, 1077947 bytes).
+<C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+Output written on Duayenler_Proposal.pdf (8 pages, 1037702 bytes).
 PDF statistics:
  82 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 78 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 73 words of extra memory for PDF output out of 10000 (max. 10000000)
 
