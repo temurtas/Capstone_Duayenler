@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.15)  4 NOV 2018 10:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.15)  4 NOV 2018 11:35
 entering extended mode
 **./2018_11_05_Weekly_Report.tex
 (2018_11_05_Weekly_Report.tex
@@ -1040,58 +1040,65 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 103.
 
-<project-systems.png, id=8, 915.42pt x 979.66pt>
-File: project-systems.png Graphic file (type png)
- <use project-systems.png>
-Package pdftex.def Info: project-systems.png used on input line 119.
-(pdftex.def)             Requested size: 448.07085pt x 479.51442pt.
+<product-subsystems.png, id=8, 1850.915pt x 835.12pt>
+File: product-subsystems.png Graphic file (type png)
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-1.def"
+<use product-subsystems.png>
+Package pdftex.def Info: product-subsystems.png used on input line 118.
+(pdftex.def)             Requested size: 448.06967pt x 202.16592pt.
+ <project-systems.png, id=9, 915.42pt x 979.66pt>
+File: project-systems.png Graphic file (type png)
+
+<use project-systems.png>
+Package pdftex.def Info: project-systems.png used on input line 124.
+(pdftex.def)             Requested size: 448.07085pt x 479.51442pt.
+ ("D:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-1.def"
 File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
 )
-<../../../Documents/logos/logo2-page-with-stroke.png, id=9, 376.0449pt x 376.04
-49pt>
+<../../../Documents/logos/logo2-page-with-stroke.png, id=10, 376.0449pt x 376.0
+449pt>
 File: ../../../Documents/logos/logo2-page-with-stroke.png Graphic file (type pn
 g)
  <use ../../../Documents/logos/logo2-page-with-stroke.png>
 Package pdftex.def Info: ../../../Documents/logos/logo2-page-with-stroke.png us
-ed on input line 122.
+ed on input line 127.
 (pdftex.def)             Requested size: 62.59596pt x 62.59557pt.
  [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
  <../../../Documents/logos/logo3-with-stroke.png> <./objective_tree.png> <./pro
 ject_evaluation.png> <../../../Documents/logos/logo2-page-with-stroke.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 File: ../../../Documents/logos/logo2-page-with-stroke.png Graphic file (type pn
 g)
-
 <use ../../../Documents/logos/logo2-page-with-stroke.png>
 Package pdftex.def Info: ../../../Documents/logos/logo2-page-with-stroke.png us
-ed on input line 131.
+ed on input line 160.
 (pdftex.def)             Requested size: 62.59596pt x 62.59557pt.
- [2 <./project-systems.png>]
+ [2 <./product-subsystems.png>]
 File: ../../../Documents/logos/logo2-page-with-stroke.png Graphic file (type pn
 g)
  <use ../../../Documents/logos/logo2-page-with-stroke.png>
 Package pdftex.def Info: ../../../Documents/logos/logo2-page-with-stroke.png us
-ed on input line 150.
+ed on input line 160.
 (pdftex.def)             Requested size: 62.59596pt x 62.59557pt.
- [3]
-(2018_11_05_Weekly_Report.aux) ) 
+ [3 <./project-systems.png>] (2018_11_05_Weekly_Report.aux) ) 
 Here is how much of TeX's memory you used:
- 29221 strings out of 493323
- 684203 string characters out of 3139065
+ 29227 strings out of 493323
+ 684356 string characters out of 3139065
  994840 words of memory out of 3000000
- 32199 multiletter control sequences out of 15000+200000
+ 32204 multiletter control sequences out of 15000+200000
  5108 words of font info for 19 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,15n,96p,791b,772s stack positions out of 5000i,500n,10000p,200000b,50000s
-<D:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmbx12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmr12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb>
-Output written on 2018_11_05_Weekly_Report.pdf (3 pages, 520463 bytes).
+<D:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on 2018_11_05_Weekly_Report.pdf (3 pages, 570662 bytes).
 PDF statistics:
- 37 PDF objects out of 1000 (max. 8388607)
+ 38 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

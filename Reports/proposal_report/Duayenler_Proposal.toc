@@ -12,8 +12,9 @@
 \contentsline {section}{\numberline {2}Executive Summary}{2}
 \contentsline {section}{\numberline {3}Introduction}{2}
 \contentsline {section}{\numberline {4}Team Organization}{2}
-\contentsline {section}{\numberline {5}Requirement Analysis}{2}
-\contentsline {section}{\numberline {6}Standards Section}{3}
-\contentsline {section}{\numberline {7}Solution Procedure}{3}
-\contentsline {section}{\numberline {8}Expected Deliverables}{3}
-\contentsline {section}{\numberline {9}Conclusion}{3}
+\contentsline {section}{\numberline {5}Requirement Analysis}{3}
+\contentsline {section}{\numberline {6}Standards Section}{6}
+\contentsline {section}{\numberline {7}Solution Procedure}{6}
+\contentsline {section}{\numberline {8}Expected Deliverables}{6}
+\contentsline {section}{\numberline {9}Conclusion}{6}
+\contentsline {section}{Appendix \numberline {A}Gannt Chart}{6}
