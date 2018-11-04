@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 \babel@toc {english}{}
 \babel@toc {english}{}
 \contentsline {section}{\numberline {1}notes}{4}
@@ -39,3 +40,30 @@
 \contentsline {section}{\numberline {8}Expected Deliverables}{13}
 \contentsline {section}{\numberline {9}Conclusion}{13}
 \contentsline {section}{Appendix \numberline {A}Gannt Chart}{14}
+=======
+\select@language {english}
+\select@language {english}
+\contentsline {section}{\numberline {1}notes}{3}
+\contentsline {subsection}{\numberline {1.1}specific requirements and objectives of the project}{3}
+\contentsline {subsection}{\numberline {1.2}approach to the solution of the problem}{3}
+\contentsline {subsection}{\numberline {1.3}outline of the requirements for any standards that the product would need to comply with,}{3}
+\contentsline {subsection}{\numberline {1.4}deliverables and expected outcomes of the project,}{3}
+\contentsline {subsection}{\numberline {1.5}tentative cost-budget analysis,}{3}
+\contentsline {section}{\numberline {2}Executive Summary}{3}
+\contentsline {section}{\numberline {3}Introduction}{3}
+\contentsline {section}{\numberline {4}Our Team}{4}
+\contentsline {section}{\numberline {5}Requirement Analysis}{4}
+\contentsline {subsection}{\numberline {5.1}Pairwise Comparisons for Project Selection}{4}
+\contentsline {subsection}{\numberline {5.2}Systems \& Subsystems of Chosen Project}{6}
+\contentsline {subsection}{\numberline {5.3}Solution Alternatives for Systems \& Subsystems }{7}
+\contentsline {subsection}{\numberline {5.4}Design Options}{8}
+\contentsline {subsection}{\numberline {5.5}Pairwise Comparisons for Design Selection}{8}
+\contentsline {section}{\numberline {6}Standards Section}{10}
+\contentsline {section}{\numberline {7}Solution Procedure}{10}
+\contentsline {subsection}{\numberline {7.1}Sensing Subsystem}{10}
+\contentsline {subsubsection}{\numberline {7.1.1}Lane Detection Unit }{10}
+\contentsline {subsubsection}{\numberline {7.1.2}Vehicle Detection Unit }{11}
+\contentsline {section}{\numberline {8}Expected Deliverables}{11}
+\contentsline {section}{\numberline {9}Conclusion}{11}
+\contentsline {section}{Appendix \numberline {A}Gannt Chart}{12}
+>>>>>>> f7e9a797f3d178daebf92e864102de292f421fc4

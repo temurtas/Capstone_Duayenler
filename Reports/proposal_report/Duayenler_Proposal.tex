@@ -205,38 +205,79 @@ This report includes;
 
 	\subsection{Solution Alternatives for Systems \& Subsystems }
 	
-	\subsubsection{Possible Solutions for Lane Detection Unit}		
 	
-	\begin{enumerate}
-		\item 
-		
-	\end{enumerate}
-
-	\subsubsection{Possible Solutions for Vehicle Detection Unit}			
-		
-	\subsubsection{Possible Solutions for Data Processing Unit}			
-	
-	\subsubsection{Possible Solutions for Controller Unit}			
-
-	\subsubsection{Possible Solutions for Motors Unit}	
-	
-	\subsubsection{Possible Solutions for Wheels Unit}
-	
-	\subsubsection{Possible Solutions for Speed Unit}
-	
-	\subsubsection{Possible Solutions for Direction Unit}			
-				
-				
 			
-		
-	\subsection{Design Option 1}
 	
-	\subsection{Design Option 2}
+\begin{table}[H]
+  \centering
+ 
+    \begin{tabular}{c | c c c}
+       Unit & Possible Solution 1 & Possible Solution 2  & Possible Solution 3 \\ \hline
+       Lane Detection  & Color Sensor Array & Infrared Sensor Array & \specialcell{ Infrared Sensor  Array \\ with  Camera Support}  \\ 
+       \- \\
+       Vehicle Detection & Laser sensor  & Ultrasonic sensor & \specialcell{Camera to back \\of the vehicle } \\
+       \- \\ 
+       Data Processing & Raspberry Pi & Arduino & Asus Thinkerboard \\ 
+       \- \\
+       Controller & P & PI & PID \\ 
+       \- \\
+       Motors & Brushed Motors & Brushless Motors \\
+       \- \\
+%		Wheels & \specialcell{3 Wheels \\(2 Wheels with \\ DC Motors + \\ 1 Ball Caster) } &\specialcell{4 Wheels \\(2 Wheels with \\DC Motors + Palette)}  &\specialcell{4 Wheels \\(2 Wheels with DC Motors + \\2 Wheels with Servo Motors) }   \\
+		Wheels & 3 Wheels  &  \specialcell{4 Wheels \\with Palette}  & \specialcell{4 Wheels \\with Servo Motors}   \\
+		\- \\
+%		Speed & Lane Detection Output & \specialcell{Gyroscope (Balance Detection) \\to Speed Reduction}   \\
+		Speed & \specialcell{Lane Detection \\Output} & \specialcell{Gyroscope \\(Balance Detection)}   \\
+		\-\\
+		Direction & Differential Drive & \specialcell{Servo Motors \\ for front wheels}  
+       
+       
+       \\\hline
+      
+  \end{tabular}
+  \caption{table}
+  \label{tab:table}
+\end{table}				
 	
-	\subsection{Design Option 3}
+	
+	\subsection{Design Options}
 	
 	
-	\subsection{Pairwise Comparisons for Solution Selection}	
+	\begin{table}[H]
+  \centering
+ 
+    \begin{tabular}{ c | c c c }
+       Unit & Design Option 1 & Design Option 2  & Design Option 3 \\ \hline
+       Lane Detection  & Color Sensor Array & Infrared Sensor Array & \specialcell{ Infrared Sensor  Array \\ with  Camera Support}  \\ 
+       \- \\
+       Vehicle Detection &   \specialcell{Camera to back \\of the vehicle }  & Ultrasonic sensor & Laser sensor   \\
+       \- \\ 
+       Data Processing & Arduino & Arduino & \specialcell{Raspberry Pi+\\Arduino} \\ 
+       \- \\
+       Controller & P & PI & PID \\ 
+       \-  \\
+       Motors & Brushed Motors & Brushed Motors & Brushed Motors \\
+       \- \\
+%		Wheels & \specialcell{3 Wheels \\(2 Wheels with \\ DC Motors + \\ 1 Ball Caster) } &\specialcell{4 Wheels \\(2 Wheels with \\DC Motors + Palette)}  &\specialcell{4 Wheels \\(2 Wheels with DC Motors + \\2 Wheels with Servo Motors) }   \\
+		Wheels & 3 Wheels  &  \specialcell{4 Wheels \\with Palette}  & \specialcell{4 Wheels \\with Servo Motors}   \\
+		\- \\
+%		Speed & Lane Detection Output & \specialcell{Gyroscope (Balance Detection) \\to Speed Reduction}   \\
+		Speed & \specialcell{Lane Detection \\Output} &  \specialcell{Lane Detection \\Output} & \specialcell{Lane Detection \\Output +  Gyroscope }   \\
+		\-\\
+		Direction & Differential Drive  & Differential Drive & \specialcell{Servo Motors \\ for front wheels}  
+       
+       
+       \\\hline
+      
+  \end{tabular}
+  \caption{table}
+  \label{tab:table}
+\end{table}			
+				
+
+	
+	
+	\subsection{Pairwise Comparisons for Design Selection}	
 	
 	\begin{figure}[H]
 		\centering
