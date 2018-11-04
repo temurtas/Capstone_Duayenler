@@ -42,162 +42,11 @@
 %\usepackage{epstopdf} % useful when matlab is involved
 %\usepackage{placeins} % prevents the text after figure to go above figure with \FloatBarrier 
 %\usepackage{listingsutf8,mcode} %import .m or any other code file mcode is for matlab highlighting
-
+\usepackage{setspace}
 %-----end of packages
 
-%-----specifications-----
-\definecolor{mGreen}{rgb}{0,0.6,0} % for python
-\definecolor{mGray}{rgb}{0.5,0.5,0.5}
-\definecolor{mPurple}{rgb}{0.58,0,0.82}
-\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue for matlab
-\definecolor{mylilas}{RGB}{170,55,241}
-
-\setcounter{secnumdepth}{5} % how many sectioning levels to assign numbers to
-\setcounter{tocdepth}{5}    % how many sectioning levels to show in ToC
-
-\lstdefinestyle{CStyle}{
-	commentstyle=\color{mGreen},
-	keywordstyle=\color{magenta},
-	numberstyle=\tiny\color{mGray},
-	stringstyle=\color{mPurple},
-	basicstyle=\footnotesize,
-	breakatwhitespace=false,         
-	breaklines=true,
-	frame=single,
-	rulecolor=\color{black!40},                 
-	captionpos=b,                    
-	keepspaces=true,                 
-	numbers=left,                    
-	numbersep=5pt,                  
-	showspaces=false,                
-	showstringspaces=false,
-	showtabs=false,                  
-	tabsize=2,
-	language=C
-}
-
-\lstset{language=Matlab,%
-	%basicstyle=\color{red},
-	breaklines=true,%
-	frame=single,
-	rulecolor=\color{black!40},
-	morekeywords={matlab2tikz},
-	keywordstyle=\color{blue},%
-	morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
-	identifierstyle=\color{black},%
-	stringstyle=\color{mylilas},
-	commentstyle=\color{mygreen},%
-	showstringspaces=false,%without this there will be a symbol in the places where there is a space
-	numbers=left,%
-	numberstyle={\tiny \color{black}},% size of the numbers
-	numbersep=9pt, % this defines how far the numbers are from the text
-	emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
-	%emph=[2]{word1,word2}, emphstyle=[2]{style},    
-}
-
-
-\tikzset{
-	desicion/.style={
-		diamond,
-		draw,
-		text width=4em,
-		text badly centered,
-		inner sep=0pt
-	},
-	block/.style={
-		rectangle,
-		draw,
-		text width=10em,
-		text centered,
-		rounded corners
-	},
-	cloud/.style={
-		draw,
-		ellipse,
-		minimum height=2em
-	},
-	descr/.style={
-		fill=white,
-		inner sep=2.5pt
-	},
-	connector/.style={
-		-latex,
-		font=\scriptsize
-	},
-	rectangle connector/.style={
-		connector,
-		to path={(\tikztostart) -- ++(#1,0pt) \tikztonodes |- (\tikztotarget) },
-		pos=0.5
-	},
-	rectangle connector/.default=-2cm,
-	straight connector/.style={
-		connector,
-		to path=--(\tikztotarget) \tikztonodes
-	}
-}
-
-\tikzset{
-	desicion/.style={
-		diamond,
-		draw,
-		text width=4em,
-		text badly centered,
-		inner sep=0pt
-	},
-	block/.style={
-		rectangle,
-		draw,
-		text width=10em,
-		text centered,
-		rounded corners
-	},
-	cloud/.style={
-		draw,
-		ellipse,
-		minimum height=2em
-	},
-	descr/.style={
-		fill=white,
-		inner sep=2.5pt
-	},
-	connector/.style={
-		-latex,
-		font=\scriptsize
-	},
-	rectangle connector/.style={
-		connector,
-		to path={(\tikztostart) -- ++(#1,0pt) \tikztonodes |- (\tikztotarget) },
-		pos=0.5
-	},
-	rectangle connector/.default=-2cm,
-	straight connector/.style={
-		connector,
-		to path=--(\tikztotarget) \tikztonodes
-	}
-}
-%-----end of specifications-----
-
-
-%----commands----
-\newcommand\nd{\textsuperscript{nd}\xspace}
-\newcommand\rd{\textsuperscript{rd}\xspace}
-\newcommand\nth{\textsuperscript{th}\xspace} %\th is taken already
-\newcommand{\specialcell}[2][c]{ \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}} % for too long table lines
-
-\newcommand{\blankpage}{
-	\- \\[9cm]	
-	{ \centering \textit{This page intentionally left blank.} \par }
-	\- \\[9cm]
-}% For Blank Page
-
-\makeatletter
-\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
-	{-2.5ex\@plus -1ex \@minus -.25ex}%
-	{1.25ex \@plus .25ex}%
-	{\normalfont\normalsize\bfseries}}
-\makeatother
-%-----end of commands-----
-
+\input{../../Documents/configuration.tex}
+\onehalfspacing
 \begin{document}
 
 \begin{titlepage}
@@ -218,15 +67,14 @@
 
 \begin{minipage}[l]{0.6\textwidth}
 \raggedright
-		
 		\large{\textbf{Supervisor:}}	Assoc. Prof. Emre Özkan \\
-		\hspace{3.05cm}ADDDRESSS
+		\hspace{3.05cm}\color{red} ADDDRESSS
 
 \end{minipage}
 \begin{minipage}[r]{0.35\textwidth}
 \raggedright
-		\textbf{Project Start:} 16.16.6227\\
-		\textbf{Project End:} 16.16.6227\\
+		\textbf{Project Start:} 4/10/2018\\
+		\textbf{Project End:} \ \  26/5/2019\\
 		\textbf{Project Budget:} \$450
 
 \end{minipage}\\[1cm]
@@ -236,17 +84,15 @@
 		\begin{table}[H]
 			\begin{tabular}{l l l l}
 				\hline
-				\textbf{Members} \\ \hline
+				\textbf{Members}&\textbf{Title}& \textbf{ID}&\textbf{Phone} \\ \hline
 				Sarper Sertel & Electronics Engineer& 2094449 & 0542 515 6039  \\ 
-				Enes Taştan & Hardware Design Engineer & 2068989 & 0543 63 4336  \\ 
+				Enes Taştan & Hardware Design Engineer & 2068989 & 0543 683 4336  \\ 
 				Erdem Tuna & Embedded Systems Engineer& 2617419 & 0535 256 3320  \\ 
 				Halil Temurtaş & Control Engineer& 2094522 & 0531 632 2194  \\
 				İlker Sağlık & Software Engineer& 2094423 & 0541 722 9573  \\ \hline
 				
 				
 			\end{tabular}
-			%\caption{table}
-			%\label{tab:table}
 		\end{table}
 	\end{flushleft}
 \end{minipage}\\[1cm]
@@ -261,10 +107,8 @@
 \tableofcontents
 \newpage
 
-%Enes uses \qquad instead of \-\indent he thinks that it is simpler. Just a thought though
 
-
-	
+	\section{notes}
 \subsection{problem statement, societal impact of the project,}
 
 \subsection{company organization (human resources, etc.),}
