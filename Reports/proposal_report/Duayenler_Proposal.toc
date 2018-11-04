@@ -1,5 +1,5 @@
-\select@language {english}
-\select@language {english}
+\babel@toc {english}{}
+\babel@toc {english}{}
 \contentsline {section}{\numberline {1}notes}{4}
 \contentsline {subsection}{\numberline {1.1}specific requirements and objectives of the project}{4}
 \contentsline {subsection}{\numberline {1.2}approach to the solution of the problem}{4}
@@ -33,6 +33,9 @@
 \contentsline {subsection}{\numberline {7.2}Computation Subsystem}{12}
 \contentsline {subsubsection}{\numberline {7.2.1}Data Processing Unit}{12}
 \contentsline {subsubsection}{\numberline {7.2.2}Controller Unit}{12}
-\contentsline {section}{\numberline {8}Expected Deliverables}{12}
-\contentsline {section}{\numberline {9}Conclusion}{12}
-\contentsline {section}{Appendix \numberline {A}Gannt Chart}{13}
+\contentsline {subsection}{\numberline {7.3}Structure Subsystem}{12}
+\contentsline {subsubsection}{\numberline {7.3.1}Chassis Unit}{12}
+\contentsline {subsubsection}{\numberline {7.3.2}Printed Circuit Board Unit}{13}
+\contentsline {section}{\numberline {8}Expected Deliverables}{13}
+\contentsline {section}{\numberline {9}Conclusion}{13}
+\contentsline {section}{Appendix \numberline {A}Gannt Chart}{14}
