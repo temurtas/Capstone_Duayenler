@@ -111,23 +111,11 @@
 
 
 
-	\section{notes}
-
-
-\subsection{specific requirements and objectives of the project}
-
-
-\subsection{approach to the solution of the problem}
-
-
-\subsection{outline of the requirements for any standards that the product would need to comply with,}
-
+\section{notes}
 
 \subsection{deliverables and expected outcomes of the project,}
 
-
 \subsection{tentative cost-budget analysis,}
-
 
 \section{Executive Summary}
 
@@ -142,7 +130,7 @@ DUAYENLER Ltd. Şti. is launched with the aim of innovating automation technolog
 
 This report includes;
 \begin{itemize}
-	\item organization of the company by explaining of the qualifications of the members. 
+	\item Organization of the company by explaining of the qualifications of the members. 
 	\item Requirements for physically realizing the intended vehicle
 	\item Possible solutions in system and subsystem levels by explaining their operations
 	\item Timeline and cost of the project
@@ -358,6 +346,21 @@ This unit is the main algorithm application level. Data from sensor will be aggr
 
 \subsubsection{Controller Unit}
 Mathematical models will be implemented in this unit to realize controllers such as P, PI, PID. The output of the controller unit will be sent to driving subsystem. This output will be the ultimate decision to realize a desired operation according to the data sent from sensor.
+
+\subsection{Driving Subsystem}
+This unit takes an input from the controller unit. That input involves information about what the new orientation should be. Driving subsystem, then, takes action to move vehicle according to the required direction with maximum possible speed. This subsystem consists of two units: Direction and Speed.
+\subsubsection{Direction Unit}
+Direction unit is responsible for the orientation of the vehicle. It stores the last required orientation and the new one coming from the controller. After that, it tries to make the orientation as close as new one. Both data can be represented as vectors.The angle between those two vector is tried to be minimized by the controller. Before moving on to the operation, note that the angle can be used as a measure of the error that the direction unit have. The less the angle the more correctly operates the direction unit.\\
+
+Depending on the configuration of the wheels, exact control of the vehicle might vary. However, there are certain methods to accomplish orientation. The vehicle will definitely have two wheels or palettes that will be driven by two separate DC motors. That configuration allows differential drive method to orient the vehicle. PWM values of the motors can be adjusted such that the speed difference between them results in a turn as much as desired angle. The exact difference values on the PWM values depends on the specs of the used motors and voltage sources. \\
+
+Two different H-bridge motor drivers are proposed to be used to drive DC motors: L298N and L293D. Both can drive two motors separately with one IC. However, maximum current rating of the former one is larger being 2A while L293D can supply 0.6A per channel. \\
+
+As in the case of another configuration that involves one or two servo motors to control the directions of the front wheels. This configuration is more robust compared to ball caster utilization. However, there are more motors to control and it requires more complicated differential drive algorithms involving both DC motor differential and servo PWM to orient the front wheels.
+\subsubsection{Speed Unit}
+
+This unit acts as a complementary module for direction unit. It will act as a state machine. In one state, the unit will try to increase the speed of the vehicle by making overall increase in both PWM values of DC motors. The feedback of this  system will be the cost function mentioned in driving unit. If that cost exceeds a specified level, unit goes to another state in which the unit will decrease the overall speed to allow direction unit to operate more correctly. In short, this unit tries to compensate the error of the direction unit by changing the overall speed of the vehicle.
+ 
 
 \subsection{Structure Subsystem}
 This part contains chassis and PCB sections of the robot. 
