@@ -161,6 +161,7 @@ This report includes;
 	\caption{\label{fig:company_tree}Company Tree of DUAYENLER.}
 \end{figure}
 
+\newpage
 
 \section{Requirement Analysis}
 	
@@ -171,14 +172,7 @@ This report includes;
 		\centering
 		\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/objective_tree} 
 		\caption{\label{fig:pairwise_comp}Pairwise Comparison Charts}
-	\end{figure}
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/project_evaluation2} 
-		\caption{\label{fig:project_eval}Project Evaluation Chart}
-	\end{figure}
-	
+	\end{figure}	
 	
 	\begin{figure}[H]
 		\centering
@@ -187,8 +181,35 @@ This report includes;
 	\end{figure}
 	
 	
+	\subsection{Project Selection}	
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/project_evaluation2} 
+		\caption{\label{fig:project_eval}Project Evaluation Chart}
+	\end{figure}
+	
+	
+	\subsection{Pairwise Comparisons for Solution Selection}	
+	
+	
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/proje_objective_tree_2} 
+		\caption{\label{fig:sub_project_objective_tree}Pairwise Comparison Charts for Sub-Objectives}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=.7\textwidth,center]{objective-tree/objective-tree} 
+		\caption{\label{fig:product_tree}Weighted Objective Tree}
+	\end{figure}
+	
+	
 	
 	\subsection{Systems \& Subsystems of Chosen Project}	
+	After choosing the project, the systems and subsystems of the project was determined by the group members. While disassembling the project to its systems, it is decided that the project will be investigated under two main parts, electrical and mechanical systems. Then, the electrical unit is then divided into three parts, that is, sensing, computation and driving subsystems. The mechanical system is also divided into two parts, that is, motion and structure subsystems. The system diagram of the chosen project can be seen at \textit{Figure~\ref{fig:system_diagram}}. System tree of the project can be seen at \textit{Figure~\ref{fig:systems_project}}.
 	
 	\begin{figure}[H]
 		\centering
@@ -205,106 +226,117 @@ This report includes;
 
 	\subsection{Solution Alternatives for Systems \& Subsystems }
 	
-	
+	Following the division of the project into its sub-blocks, solution alternatives are created for these subsystems and units. 
+		
+	\begin{itemize}
+		\item It is decided that the line detection unit will use sensor array to detect the borders of the path. The array might be consist of color sensors of infrared sensors. A camera might also be used to back the sensor array for more reliable operation.	
+		\item Vehicle detection unit might utilize ultrasonic, laser sensor or camera in order to identify the opponent.
+		\item  Arduino, Raspberry Pi or Asus Thinkerboard can be utilized as a microcontroller by the data processing unit.
+		\item The controller unit can adopt P,PI or PID controller.
+		\item Motor unit might consist of brushed or brushless motors.
+		\item The project might consisist of three wheels (two of them driven by DC motors and one of the is ball caster), palette system(4+ Wheels) or four wheels (two of them driven by DC motors and two front wheels directed by servo motors)
+		\item Speed unit might use only the output of the lane detection unit or the output data can be combined with gyroscope that can detect disturbances for speed reduction.  
+		\item Direction unit might benefit from the advantages of differential drive or can combine these benefits with the servo motors that can determine the position of the front wheels.
+	\end{itemize}	  
 			
+		The solution alternatives for units in compact form can be seen at \textit{Table~\ref{tab:solns}}.
 	
 \begin{table}[H]
   \centering
  
-    \begin{tabular}{c | c  c  c}
+    \begin{tabular}{| c | c  c  c |}
+    \hline 
+    	&&& \\
        Unit & Possible Solution 1 & Possible Solution 2  & Possible Solution 3 \\ \hline
-       \- \\
+       &&& \\
        Lane Detection  & Color Sensor Array & Infrared Sensor Array & \specialcell{ Infrared Sensor  Array \\ with  Camera Support}  \\
        \hline 
-       \- \\
+       &&& \\
        Vehicle Detection & Laser sensor  & Ultrasonic sensor & \specialcell{Camera to back \\of the vehicle } \\
 
        \hline 
-       \- \\
+       &&& \\
        Data Processing & Raspberry Pi & Arduino & Asus Thinkerboard \\ 
-      \hline 
-      \- \\
+       \hline 
+       &&& \\
        Controller & P & PI & PID \\ 
        \hline 
-       \- \\
-       Motors & Brushed Motors & Brushless Motors \\
+       &&& \\
+       Motors & Brushed Motors & Brushless Motors & \\
        \hline 
-       \- \\
+       &&& \\
 %		Wheels & \specialcell{3 Wheels \\(2 Wheels with \\ DC Motors + \\ 1 Ball Caster) } &\specialcell{4 Wheels \\(2 Wheels with \\DC Motors + Palette)}  &\specialcell{4 Wheels \\(2 Wheels with DC Motors + \\2 Wheels with Servo Motors) }   \\
 		Wheels & 3 Wheels  &  \specialcell{4 Wheels \\with Palette}  & \specialcell{4 Wheels \\with Servo Motors}   \\
 		\hline 
-		\- \\
+		&&& \\
 %		Speed & Lane Detection Output & \specialcell{Gyroscope (Balance Detection) \\to Speed Reduction}   \\
-		Speed & \specialcell{Lane Detection \\Output} & \specialcell{Gyroscope \\(Balance Detection)}   \\
+		Speed & \specialcell{Lane Detection \\Output} & \specialcell{Gyroscope \\(Balance Detection)}  & \\
 		\hline 
-		\- \\
-		Direction & Differential Drive & \specialcell{Servo Motors \\ for front wheels}  
+		&&& \\
+		Direction & Differential Drive & \specialcell{Servo Motors \\ for front wheels}   &
        
        
        \\\hline
       
   \end{tabular}
-  \caption{table}
-  \label{tab:table}
+  \caption{Possible Solution Alternatives for the  Units of the Project}
+  \label{tab:solns}
 \end{table}				
 	
 	
 	\subsection{Design Options}
 	
+	After determining the possible solution alternatives, it is decided that these alternatives might be combined in a design packages that can be compared with each other by using the selection objectives determined earlier.  In order the combine the solution ideas, three different design option according to its complexities is considered to ease the decision process. Named as design 1, most basic design is formed considering the simpler alternatives, design 2 is formed considering the more reasonable alternatives that would satisfy the expectations and the design 3 is formed considering the best possible outcome. The design alternatives in a comparable form can be seen at \textit{Table~\ref{tab:designs}}. 
 	
 	\begin{table}[H]
   \centering
  
-    \begin{tabular}{ c | c c c }
-       Unit & Design Option 1 & Design Option 2  & Design Option 3 \\ \hline
+    \begin{tabular}{| c | c | c | c |}
+    	\hline 
+    	&&& \\
+    	Unit & Design Option 1 & Design Option 2  & Design Option 3 \\ \hline
        Lane Detection  & Color Sensor Array & Infrared Sensor Array & \specialcell{ Infrared Sensor  Array \\ with  Camera Support}  \\ 
-       \- \\
+       & & & \\
        Vehicle Detection &   \specialcell{Camera to back \\of the vehicle }  & Ultrasonic sensor & Laser sensor   \\
-       \- \\ 
+       &&& \\ 
        Data Processing & Arduino & Arduino & \specialcell{Raspberry Pi+\\Arduino} \\ 
-       \- \\
+       &&& \\
        Controller & P & PI & PID \\ 
-       \-  \\
+       &&&  \\
        Motors & Brushed Motors & Brushed Motors & Brushed Motors \\
-       \- \\
+       &&& \\
 %		Wheels & \specialcell{3 Wheels \\(2 Wheels with \\ DC Motors + \\ 1 Ball Caster) } &\specialcell{4 Wheels \\(2 Wheels with \\DC Motors + Palette)}  &\specialcell{4 Wheels \\(2 Wheels with DC Motors + \\2 Wheels with Servo Motors) }   \\
 		Wheels & 3 Wheels  &  \specialcell{4 Wheels \\with Palette}  & \specialcell{4 Wheels \\with Servo Motors}   \\
-		\- \\
+		&&& \\
 %		Speed & Lane Detection Output & \specialcell{Gyroscope (Balance Detection) \\to Speed Reduction}   \\
 		Speed & \specialcell{Lane Detection \\Output} &  \specialcell{Lane Detection \\Output} & \specialcell{Lane Detection \\Output +  Gyroscope }   \\
-		\-\\
+		&&&\\
 		Direction & Differential Drive  & Differential Drive & \specialcell{Servo Motors \\ for front wheels}  
        
        
        \\\hline
       
   \end{tabular}
-  \caption{table}
-  \label{tab:table}
+  \caption{Design Options for the Chosen Project}
+  \label{tab:designs}
 \end{table}			
 				
 
 	
-	
-	\subsection{Pairwise Comparisons for Design Selection}	
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/proje_objective_tree_2} 
-		\caption{\label{fig:sub_project_objective_tree}Pairwise Comparison Charts for Sub-Objectives}
-	\end{figure}	
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=.7\textwidth,center]{objective-tree/objective-tree} 
-		\caption{\label{fig:product_tree}Weighted Objective Tree}
-	\end{figure}
 	
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=\textwidth,center]{images/soln_selection} 
 		\caption{\label{fig:soln_selection}Pairwise Comparison Charts for Solution Selection}
 	\end{figure}
+	
+	
+	
+	\subsection{Pairwise Comparisons for Design Selection}	
+	
+	
+	
+	
 
 
 %	\begin{figure}[H]
