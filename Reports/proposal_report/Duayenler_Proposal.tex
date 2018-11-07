@@ -155,7 +155,7 @@ This report includes;
 \section{Requirement Analysis}
 	
 	\subsection{Pairwise Comparisons for Project Selection}
-		Pairwise comparisons technique can be use to assess objectives of the project. Then, these objectives can be very useful as the desired project is selected out of all potential project. For this purpose, tables at \textit{Figures~\ref{fig:pairwise_comp},\ref{fig:project_eval}} is created by consensus of all project-pairs. The weighted objectives are then used to construct the weighted objective tree at \textit{Figure~\ref{fig:objective_tree}}. 
+		Pairwise comparisons technique can be used to assess objectives of the project. Then, these objectives can be very useful as the desired project is selected out of all potential project. For this purpose, tables at \textit{Figures~\ref{fig:pairwise_comp},\ref{fig:project_eval}} is created by consensus of all project-pairs. The weighted objectives are then used to construct the weighted objective tree at \textit{Figure~\ref{fig:objective_tree}}. 
 
 	\begin{figure}[H]
 		\centering
@@ -198,7 +198,7 @@ This report includes;
 	
 	
 	\subsection{Systems \& Subsystems of Chosen Project}	
-	After choosing the project, the systems and subsystems of the project was determined by the group members. While disassembling the project to its systems, it is decided that the project will be investigated under two main parts, electrical and mechanical systems. Then, the electrical unit is then divided into three parts, that is, sensing, computation and driving subsystems. The mechanical system is also divided into two parts, that is, motion and structure subsystems. The system diagram of the chosen project can be seen at \textit{Figure~\ref{fig:system_diagram}}. System tree of the project can be seen at \textit{Figure~\ref{fig:systems_project}}.
+	After choosing the project, the systems and subsystems of the project were determined by the group members. While disassembling the project to its systems, it is decided that the project will be investigated under two main parts, electrical and mechanical systems. Then, the electrical unit is then divided into three parts, that is, sensing, computation and driving subsystems. The mechanical system is also divided into two parts, that is, motion and structure subsystems. The system diagram of the chosen project can be seen at \textit{Figure~\ref{fig:system_diagram}}. System tree of the project can be seen at \textit{Figure~\ref{fig:systems_project}}.
 	
 	\begin{figure}[H]
 		\centering
@@ -218,12 +218,12 @@ This report includes;
 	Following the division of the project into its sub-blocks, solution alternatives are created for these subsystems and units. 
 		
 	\begin{itemize}
-		\item It is decided that the line detection unit will use sensor array to detect the borders of the path. The array might be consist of color sensors of infrared sensors. A camera might also be used to back the sensor array for more reliable operation.	
-		\item Vehicle detection unit might utilize ultrasonic, laser sensor or camera in order to identify the opponent.
+		\item It is decided that the line detection unit will use sensor array to detect the borders of the path. The array might be consist of color sensors of infrared sensors. A camera might also be used to back up the sensor array for more reliable operation.	
+		\item Vehicle detection unit might utilize ultrasonic, infrared distance sensors or camera in order to identify the opponent.
 		\item  Arduino, Raspberry Pi or Asus Thinkerboard can be utilized as a microcontroller by the data processing unit.
 		\item The controller unit can adopt P,PI or PID controller.
 		\item Motor unit might consist of brushed or brushless motors.
-		\item The project might consisist of three wheels (two of them driven by DC motors and one of the is ball caster), palette system(4+ Wheels) or four wheels (two of them driven by DC motors and two front wheels directed by servo motors)
+		\item The project might consisist of three wheels (two of them are driven by DC motors and one of them is a ball caster), palette system(4+ Wheels) or four wheels (two of them driven by DC motors and two front wheels directed by servo motors)
 		\item Speed unit might use only the output of the lane detection unit or the output data can be combined with gyroscope that can detect disturbances for speed reduction.  
 		\item Direction unit might benefit from the advantages of differential drive or can combine these benefits with the servo motors that can determine the position of the front wheels.
 	\end{itemize}	  
@@ -275,7 +275,7 @@ This report includes;
 	
 	\subsection{Design Options}
 	
-	After determining the possible solution alternatives, it is decided that these alternatives might be combined in a design packages that can be compared with each other by using the selection objectives determined earlier.  In order the combine the solution ideas, three different design option according to its complexities is considered to ease the decision process. Named as design 1, most basic design is formed considering the simpler alternatives, design 2 is formed considering the more reasonable alternatives that would satisfy the expectations and the design 3 is formed considering the best possible outcome. The design alternatives in a comparable form can be seen at \textit{Table~\ref{tab:designs}}. 
+	After determining the possible solution alternatives, it is decided that these alternatives might be combined into design packages that can be compared with each other by using the selection objectives determined earlier.  In order the combine the solution ideas, three different design options according to their complexities are considered to ease the decision process. Named as design 1, most basic design is formed considering the simpler alternatives, design 2 is formed considering the more reasonable alternatives that would satisfy the expectations and the design 3 is formed considering the best possible outcome. The design alternatives in a comparable form can be seen at \textit{Table~\ref{tab:designs}}. 
 	
 	\begin{table}[H]
   \centering
@@ -343,13 +343,13 @@ This report includes;
 	
 
 \section{Standards Section}
-Standards will be the base block that project will be built on. There are several issues should be standardized before development phase. 
+Standards will be the base block that the project will be built on. There are several issues should be standardized before development phase. 
 
-One of the issue is the handshake protocol. An option is use Bluetooth modules. When the distance of the two vehicle is less than 5 cm, both vehicle may send handshake signal to kill motion. Benefit of this standard is that each vehicle need to have only one distance sensor on the back or the on the front. Another approach is having no communication protocol, but instead of this, each vehicle has 2 distance sensors which are placed back and front to detected each other, after detection, both vehicle stops individually. However, this method has a requirement that is detection platform. The reason obtain precise measurement. Otherwise, measurement may have error.  
+One of these issues is the handshake protocol. An option is using Bluetooth modules. When the distance between the two vehicles is less than 5 cm, both vehicles may send handshake signal to kill the motion. Benefit of this standard is that each vehicle needs to have only one distance sensor on the back or on the front. Another approach is having no communication protocol, but instead of this, each vehicle has 2 distance sensors which are placed back and front to detected each other, after detection, both vehicles stop individually. However, this method has a requirement that is detection platform. The reason obtain precise measurement. Otherwise, measurement may have error.  
 
 Elevation of path is another problem that should be discussed. Some of the Infrared sensors operate between 0 to 15 mm, so after discussion, it can be decided whether or not use of the sensor. 
 
-Breaking criteria should be agreed upon by teams who choose this project because deceleration difference could cause collusion between the vehicle. Therefore, it should be standardized.      
+Braking criteria should be agreed by teams who chose this project because deceleration difference could cause collusion between the vehicle. Therefore, it should be standardized.      
 
 
 
@@ -359,7 +359,7 @@ Breaking criteria should be agreed upon by teams who choose this project because
 This unit has two main tasks which are observing lane and another vehicle on the path. 
 \subsubsection{Lane Detection Unit}
 To solve this problem, path and environmental differences, such as color difference, contrast difference could be used. In addition to these, image processing could be an alternative to detection of lane and vehicle. 
-Infrared sensors can be used to solve lane detection problem. Line follower vehicle logic can be implemented to this problem, by placing two sensor arrays to both sides of the path to align vehicle at the center. Sensors gives current proportional to reflection of the surfaces. By using such outputs, an algorithm to be developed to track the path on the center. 
+Infrared sensors can be used to solve lane detection problem. Line follower vehicle logic can be implemented to this problem, by placing two sensor arrays to both sides of the path to align vehicle at the center. Sensors gives current proportional to reflection of the surfaces. By using such outputs, an algorithm is to be developed to track the path on the center. 
 
 Another approach to detect the lane is using camera and image processing. Camera can be placed at an angle to see the path, and by using the raspberry pi, the path can be followed. To clarify, captured frames can be analyzed by the raspberry pi, and utilizing open source image processing libraries. An example analysis can be summaries as follows: Firstly, distortions in the image can be beautified, and then color thresholding can be applied to sharply detect the elevated path. Optionally, to increase accuracy of the detection, Canny edge detection can be used. Lastly, center line can be calculated by using processed image. 
 
@@ -397,7 +397,7 @@ This unit acts as a complementary module for direction unit. It will act as a st
 \subsection{Structure Subsystem}
 This part contains chassis and PCB sections of the robot. 
 \subsubsection{Chassis Unit}
-Main purposes of this section are protection of the critical elements of the robot and holding components together. The most important part of this section is weight distribution. The chassis is supposed to be light and strong because of the competition purposes. However, it should be balanced the robot to be able to handle with turns. 
+Main purposes of this section are protection of the critical elements of the robot and holding components together. The most important part of this section is weight distribution. The chassis is supposed to be light and strong because of the competition purposes. However, it should balance the robot to be able to handle with turns. 
 \subsubsection{Printed Circuit Board Unit}
 The main role of this part is decreasing connection mass and increase vibration strength of the robot against disturbances. Also, this section increases rigidity of the whole system. 
 \subsection{Motion Subsystem}
@@ -420,6 +420,14 @@ Another option is brushless DC motors. Brushless DC motors do not use brushes. T
 Last option is servo motors. Servo motors are high-torque motors that can turn in an desired angle. Servos can be utilized in the direction of the vehicle on the front wheels. By using this solution, turning radius can be decrease significantly.
 
 \section{Expected Deliverables}
+
+The services and products that DUAYENLER Ltd. Şti. provides their customers can be listed as below.
+\begin{itemize}
+	\item A robot vehicle that is trying to catch the opponent in an elliptic path with varying width will be provided.
+	\item The user will be provided with the elevated elliptical path with varying width.
+	\item DUAYENLER Ltd. Şti. provides one(1) year warranty except the user faults.
+	\item Also, a manual  which contains information about the usage of the vehicle will be included in the box. This manual will especially be helpful for the first usage of the device.
+\end{itemize} 
 
 
 \section{Conclusion}
