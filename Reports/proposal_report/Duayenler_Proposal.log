@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  8 NOV 2018 21:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  8 NOV 2018 22:29
 entering extended mode
 **./Duayenler_Proposal.tex
 (Duayenler_Proposal.tex
@@ -991,130 +991,150 @@ Underfull \hbox (badness 10000) in paragraph at lines 108--109
 \openout4 = `Duayenler_Proposal.toc'.
 
  [3]
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 127.
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 137.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 127.
- [4]
-<../../Documents/company/company-tree.png, id=28, 1034.86626pt x 482.80376pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 137.
+ [5]
+<../../Documents/company/company-tree.png, id=31, 1034.86626pt x 482.80376pt>
 File: ../../Documents/company/company-tree.png Graphic file (type png)
 
 <use ../../Documents/company/company-tree.png>
 Package pdftex.def Info: ../../Documents/company/company-tree.png used on input
- line 142.
+ line 152.
 (pdftex.def)             Requested size: 448.07881pt x 209.0455pt.
- [5 <../../Documents/company/company-tree.png>] <images/objective_tree3.png, id
-=33, 3920.6475pt x 1251.92719pt>
+ [6 <../../Documents/company/company-tree.png>] <images/objective_tree3.png, id
+=37, 3920.6475pt x 1251.92719pt>
 File: images/objective_tree3.png Graphic file (type png)
 
 <use images/objective_tree3.png>
-Package pdftex.def Info: images/objective_tree3.png used on input line 159.
+Package pdftex.def Info: images/objective_tree3.png used on input line 169.
 (pdftex.def)             Requested size: 448.07378pt x 143.0612pt.
 
-<pre-objective-tree/pre-objective-tree.jpg, id=34, 1489.565pt x 969.6225pt>
+<pre-objective-tree/pre-objective-tree.jpg, id=38, 1489.565pt x 969.6225pt>
 File: pre-objective-tree/pre-objective-tree.jpg Graphic file (type jpg)
 
 <use pre-objective-tree/pre-objective-tree.jpg>
 Package pdftex.def Info: pre-objective-tree/pre-objective-tree.jpg used on inpu
-t line 167.
+t line 177.
 (pdftex.def)             Requested size: 268.847pt x 174.99796pt.
- [6 <./images/objective_tree3.png>] <images/project_evaluation4.png, id=41, 111
+ [7 <./images/objective_tree3.png>] <images/project_evaluation4.png, id=44, 111
 4.1625pt x 386.94562pt>
 File: images/project_evaluation4.png Graphic file (type png)
 
 <use images/project_evaluation4.png>
-Package pdftex.def Info: images/project_evaluation4.png used on input line 179.
+Package pdftex.def Info: images/project_evaluation4.png used on input line 189.
 
 (pdftex.def)             Requested size: 448.07121pt x 155.6139pt.
- [7 <./pre-objective-tree/pre-objective-tree.jpg> <./images/project_evaluation4
+ [8 <./pre-objective-tree/pre-objective-tree.jpg> <./images/project_evaluation4
 .png>]
-<images/proje_objective_tree_2a.png, id=46, 2737.97906pt x 624.83438pt>
+<images/proje_objective_tree_2a.png, id=49, 2737.97906pt x 624.83438pt>
 File: images/proje_objective_tree_2a.png Graphic file (type png)
 
 <use images/proje_objective_tree_2a.png>
 Package pdftex.def Info: images/proje_objective_tree_2a.png used on input line 
-211.
+221.
 (pdftex.def)             Requested size: 448.07059pt x 102.25421pt.
 
-<objective-tree/objective-tree.png, id=47, 915.42pt x 979.66pt>
+<objective-tree/objective-tree.png, id=50, 915.42pt x 979.66pt>
 File: objective-tree/objective-tree.png Graphic file (type png)
 
 <use objective-tree/objective-tree.png>
 Package pdftex.def Info: objective-tree/objective-tree.png used on input line 2
-19.
+29.
 (pdftex.def)             Requested size: 313.65027pt x 335.65112pt.
- [8 <./images/proje_objective_tree_2a.png>] <product-tree/system-flow.jpg, id=5
-2, 1131.62775pt x 85.5195pt>
+ [9 <./images/proje_objective_tree_2a.png>] <product-tree/system-flow.jpg, id=5
+5, 1131.62775pt x 85.5195pt>
 File: product-tree/system-flow.jpg Graphic file (type jpg)
 
 <use product-tree/system-flow.jpg>
-Package pdftex.def Info: product-tree/system-flow.jpg used on input line 231.
+Package pdftex.def Info: product-tree/system-flow.jpg used on input line 241.
 (pdftex.def)             Requested size: 448.06728pt x 33.86137pt.
 
-<product-tree/product-tree.png, id=53, 1850.915pt x 835.12pt>
+<product-tree/product-tree.png, id=56, 1850.915pt x 835.12pt>
 File: product-tree/product-tree.png Graphic file (type png)
 
 <use product-tree/product-tree.png>
-Package pdftex.def Info: product-tree/product-tree.png used on input line 238.
+Package pdftex.def Info: product-tree/product-tree.png used on input line 248.
 (pdftex.def)             Requested size: 448.06967pt x 202.16592pt.
- [9 <./objective-tree/objective-tree.png> <./product-tree/system-flow.jpg>] [10
- <./product-tree/product-tree.png>]
-Overfull \hbox (16.72607pt too wide) in paragraph at lines 262--298
+ [10 <./objective-tree/objective-tree.png> <./product-tree/system-flow.jpg>] [1
+1 <./product-tree/product-tree.png>]
+Overfull \hbox (16.72607pt too wide) in paragraph at lines 272--308
  [][] 
  []
 
 
-Overfull \hbox (16.72607pt too wide) in paragraph at lines 308--335
+Overfull \hbox (16.72607pt too wide) in paragraph at lines 318--345
  [][] 
  []
 
-[11] <images/soln_selection3.png, id=63, 1202.24156pt x 367.3725pt>
+[12] <images/soln_selection3.png, id=67, 1202.24156pt x 367.3725pt>
 File: images/soln_selection3.png Graphic file (type png)
 
 <use images/soln_selection3.png>
-Package pdftex.def Info: images/soln_selection3.png used on input line 347.
+Package pdftex.def Info: images/soln_selection3.png used on input line 357.
 (pdftex.def)             Requested size: 448.07378pt x 136.91788pt.
- [12] [13 <./images/soln_selection3.png>]
-[14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 437--438
+ [13] [14 <./images/soln_selection3.png>]
+[15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 447--448
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 439--440
+Underfull \hbox (badness 10000) in paragraph at lines 449--450
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 441--442
+Underfull \hbox (badness 10000) in paragraph at lines 451--452
 
  []
 
-[16] [17] [18] [19]
+[17] [18] [19] [20]
 
 pdfTeX warning: pdflatex (file ./gannt2.pdf): PDF inclusion: found PDF version 
 <1.7>, but at most version <1.5> allowed
-<gannt2.pdf, id=91, 1194.98447pt x 845.07718pt>
+<gannt2.pdf, id=94, 1194.98447pt x 845.07718pt>
 File: gannt2.pdf Graphic file (type pdf)
  <use gannt2.pdf>
-Package pdftex.def Info: gannt2.pdf used on input line 490.
+Package pdftex.def Info: gannt2.pdf used on input line 500.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 
 
@@ -1122,7 +1142,7 @@ pdfTeX warning: pdflatex (file ./gannt2.pdf): PDF inclusion: found PDF version
 <1.7>, but at most version <1.5> allowed
 File: gannt2.pdf Graphic file (type pdf)
 <use gannt2.pdf>
-Package pdftex.def Info: gannt2.pdf used on input line 490.
+Package pdftex.def Info: gannt2.pdf used on input line 500.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 
 
@@ -1132,75 +1152,75 @@ pdfTeX warning: pdflatex (file ./gannt2.pdf): PDF inclusion: found PDF version
 
 pdfTeX warning: pdflatex (file ./gannt2.pdf): PDF inclusion: found PDF version 
 <1.7>, but at most version <1.5> allowed
-<gannt2.pdf, id=94, page=1, 1194.98447pt x 845.07718pt>
+<gannt2.pdf, id=97, page=1, 1194.98447pt x 845.07718pt>
 File: gannt2.pdf Graphic file (type pdf)
 
 <use gannt2.pdf, page 1>
-Package pdftex.def Info: gannt2.pdf, page1 used on input line 490.
+Package pdftex.def Info: gannt2.pdf, page1 used on input line 500.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 File: gannt2.pdf Graphic file (type pdf)
  <use gannt2.pdf, page 1>
-Package pdftex.def Info: gannt2.pdf, page1 used on input line 490.
+Package pdftex.def Info: gannt2.pdf, page1 used on input line 500.
 (pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
 File: gannt2.pdf Graphic file (type pdf)
  <use gannt2.pdf, page 1>
-Package pdftex.def Info: gannt2.pdf, page1 used on input line 490.
+Package pdftex.def Info: gannt2.pdf, page1 used on input line 500.
 (pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
 File: gannt2.pdf Graphic file (type pdf)
 
 <use gannt2.pdf, page 1>
-Package pdftex.def Info: gannt2.pdf, page1 used on input line 490.
+Package pdftex.def Info: gannt2.pdf, page1 used on input line 500.
 (pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
 File: gannt2.pdf Graphic file (type pdf)
  <use gannt2.pdf, page 1>
-Package pdftex.def Info: gannt2.pdf, page1 used on input line 490.
-(pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
- [20 <./gannt2.pdf>]
-File: gannt2.pdf Graphic file (type pdf)
-
-<use gannt2.pdf>
-Package pdftex.def Info: gannt2.pdf used on input line 491.
-(pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
-
-
-pdfTeX warning: pdflatex (file ./gannt2.pdf): PDF inclusion: found PDF version 
-<1.7>, but at most version <1.5> allowed
-File: gannt2.pdf Graphic file (type pdf)
-<use gannt2.pdf>
-Package pdftex.def Info: gannt2.pdf used on input line 491.
-(pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
-
-
-pdfTeX warning: pdflatex (file ./gannt2.pdf): PDF inclusion: found PDF version 
-<1.7>, but at most version <1.5> allowed
-
-
-pdfTeX warning: pdflatex (file ./gannt2.pdf): PDF inclusion: found PDF version 
-<1.7>, but at most version <1.5> allowed
-<gannt2.pdf, id=121, page=2, 1194.98447pt x 845.07718pt>
-File: gannt2.pdf Graphic file (type pdf)
-
-<use gannt2.pdf, page 2>
-Package pdftex.def Info: gannt2.pdf, page2 used on input line 491.
-(pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
-File: gannt2.pdf Graphic file (type pdf)
- <use gannt2.pdf, page 2>
-Package pdftex.def Info: gannt2.pdf, page2 used on input line 491.
-(pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
-File: gannt2.pdf Graphic file (type pdf)
- <use gannt2.pdf, page 2>
-Package pdftex.def Info: gannt2.pdf, page2 used on input line 491.
-(pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
-File: gannt2.pdf Graphic file (type pdf)
-
-<use gannt2.pdf, page 2>
-Package pdftex.def Info: gannt2.pdf, page2 used on input line 491.
-(pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
-File: gannt2.pdf Graphic file (type pdf)
- <use gannt2.pdf, page 2>
-Package pdftex.def Info: gannt2.pdf, page2 used on input line 491.
+Package pdftex.def Info: gannt2.pdf, page1 used on input line 500.
 (pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
  [21 <./gannt2.pdf>]
+File: gannt2.pdf Graphic file (type pdf)
+
+<use gannt2.pdf>
+Package pdftex.def Info: gannt2.pdf used on input line 501.
+(pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
+
+
+pdfTeX warning: pdflatex (file ./gannt2.pdf): PDF inclusion: found PDF version 
+<1.7>, but at most version <1.5> allowed
+File: gannt2.pdf Graphic file (type pdf)
+<use gannt2.pdf>
+Package pdftex.def Info: gannt2.pdf used on input line 501.
+(pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
+
+
+pdfTeX warning: pdflatex (file ./gannt2.pdf): PDF inclusion: found PDF version 
+<1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./gannt2.pdf): PDF inclusion: found PDF version 
+<1.7>, but at most version <1.5> allowed
+<gannt2.pdf, id=124, page=2, 1194.98447pt x 845.07718pt>
+File: gannt2.pdf Graphic file (type pdf)
+
+<use gannt2.pdf, page 2>
+Package pdftex.def Info: gannt2.pdf, page2 used on input line 501.
+(pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
+File: gannt2.pdf Graphic file (type pdf)
+ <use gannt2.pdf, page 2>
+Package pdftex.def Info: gannt2.pdf, page2 used on input line 501.
+(pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
+File: gannt2.pdf Graphic file (type pdf)
+ <use gannt2.pdf, page 2>
+Package pdftex.def Info: gannt2.pdf, page2 used on input line 501.
+(pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
+File: gannt2.pdf Graphic file (type pdf)
+
+<use gannt2.pdf, page 2>
+Package pdftex.def Info: gannt2.pdf, page2 used on input line 501.
+(pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
+File: gannt2.pdf Graphic file (type pdf)
+ <use gannt2.pdf, page 2>
+Package pdftex.def Info: gannt2.pdf, page2 used on input line 501.
+(pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
+ [22 <./gannt2.pdf>]
 (Duayenler_Proposal.aux) ) 
 Here is how much of TeX's memory you used:
  29800 strings out of 493333
@@ -1217,9 +1237,9 @@ sfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmti12.pfb>
-Output written on Duayenler_Proposal.pdf (22 pages, 1224101 bytes).
+Output written on Duayenler_Proposal.pdf (23 pages, 1226449 bytes).
 PDF statistics:
- 146 PDF objects out of 1000 (max. 8388607)
+ 149 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  98 words of extra memory for PDF output out of 10000 (max. 10000000)
 
