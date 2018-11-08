@@ -1,5 +1,5 @@
-\select@language {english}
-\select@language {english}
+\babel@toc {english}{}
+\babel@toc {english}{}
 \contentsline {section}{\numberline {1}Executive Summary}{4}
 \contentsline {section}{\numberline {2}Introduction}{5}
 \contentsline {section}{\numberline {3}The Team}{5}
