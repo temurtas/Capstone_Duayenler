@@ -1,0 +1,192 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Weekly Report 
+% LaTeX Template
+% Version 1.3 (26/10/2018)
+% Modified by
+% Enes TAŞTAN
+% Erdem TUNA
+% Halil TEMURTAŞ
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[a4paper,12pt]{article}
+%-----packages------
+\usepackage[a4paper, total={6.2in, 8.5in}, headheight=110pt]{geometry}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{gensymb} % this could be problem
+\usepackage{float}
+\usepackage{fancyref}
+\usepackage{subcaption}
+\usepackage[toc,page]{appendix} %appendix package
+\usepackage{xcolor}
+\usepackage{listings}
+
+
+\usepackage[export]{adjustbox}
+
+\usepackage{xspace}
+\usepackage{amssymb}
+\usepackage{nicefrac}
+\usepackage{gensymb}
+\usepackage{fancyhdr}
+\usepackage{lipsum}  % for lipsum
+\usepackage[final]{pdfpages}  % pdf include
+\usepackage{array} %allows more options in tables
+\usepackage{pgfplots,pgf,tikz} %coding plots in latex
+\usepackage{capt-of} % allows caption outside the figure environment
+\usepackage[export]{adjustbox} %more options for adjusting the images
+\usepackage{multicol,multirow,slashbox} % allows tables like table1
+%\usepackage[hyperfootnotes=false]{hyperref} % clickable references
+\usepackage{epstopdf} % useful when matlab is involved
+%\usepackage{placeins} % prevents the text after figure to go above figure with \FloatBarrier 
+%\usepackage{listingsutf8,mcode} %import .m or any other code file mcode is for matlab highlighting
+
+%-----end of packages
+\input{../../../Documents/configuration.tex}
+
+
+
+\pagestyle{fancy}
+\setlength\headheight{130pt}
+\setlength{\footskip}{2.5cm}
+\fancyhead[LO,LE]{\textbf{Duayenler Ltd. Şti.} \\ \textbf{Members :\\ } 
+			Enes Taştan, \ \ \  2068989, 0543 683 4336 \\ 
+			Halil Temurtaş, 2094522, 0531 632 2194  		
+}
+\fancyhead[RO,RE]{
+			\textbf{November 12, 2018} \\
+			Sarper Sertel, 2094449, 0542 515 6039 \\
+			Erdem Tuna, 2167419, 0535 256 3320 \\ 
+			İlker Sağlık, 2094423, 0541 722 9573}
+%\fancyhead[RO]{Sarper Sertel (05435156039),\\Enes Taştan (05436834336), Erdem Tuna (05352563320),\\Halil Temurtaş (05316322194), İlker Sağlık (05417229573)}
+\rfoot{\includegraphics[width=2.2cm]{../../../Documents/logos/logo2-page-with-stroke}}
+
+\begin{document}
+	
+\begin{figure}
+	\vspace*{-.7cm}
+	\centering
+	\begin{figure}[H]
+		\centering
+		\setlength{\unitlength}{\textwidth} 
+		\includegraphics[width=0.9\unitlength]{../../../Documents/logos/logo3-with-stroke}
+	\end{figure}
+\end{figure}
+\vspace*{-1.7cm}
+\begin{center}
+	\Large\textbf{November 5 - 12 Weekly Report}
+	\end{center}
+
+
+
+\section{Progress}
+	
+
+\begin{itemize}
+	
+\item {[Team]} Preparation of Proposal Report\vspace{-.2cm}
+
+	
+\item {[Team]} Solution alternatives for handshake protocol is discussed, proposed algorithmic state machine chart can be seen in \textit{Figure~\ref{fig:race_starter}}. \vspace{-.2cm}
+ 
+ 	\begin{figure}[h!]
+		\centering
+		\setlength{\unitlength}{\textwidth} 
+		\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{race_starter}
+		\caption{\label{fig:race_starter} Pairwise Comparison Chart for Module Decision}
+	\end{figure}
+
+\item {[Team]} For handshaking, Bluetooth and RF transceivers can be used. RF modules uses SPI interface whereas Bluetooth modules use UART. UART is somewhat problematic in booting of the realated device, as suggested on related forums. To make a first choice, pairwise comparison table is constructed as in \textit{Table~\ref{tab:rf_blue} }. \vspace{-.2cm}
+	\begin{table}[h!]
+		\centering
+		\setlength{\unitlength}{\textwidth} 
+		\includegraphics[width=\textwidth,]{rf_blue}
+		\caption{\label{tab:rf_blue} Algorithmic State Machine Chart for Handshake Protocol}
+	\end{table}
+	
+\item {[Team]}  Color sensor TCS3200 is tested to understand the use of sensors. \vspace{-.2cm}
+
+\item {[Team]}  The core chip of the color sensor TCS3200 can be used to construct a sensor array for color detection purpose (with SMD LEDs).\vspace{-.2cm}
+\section{Plans}
+	\item  {[Team]} Orders will be placed for Bluetooth and RF modules.\vspace{-.2cm}
+	\item  {[Team]} Testing of the modules.\vspace{-.2cm}
+	\item  {[Team]} Finding suitable camera choice for Raspberry Pis.\vspace{-.2cm}
+
+\end{itemize}
+
+%\section{Problems}	
+
+%\begin{itemize}
+	
+%\end{itemize}
+
+
+%\lipsum[1-5]
+
+\end{document}
+
+%----samples------
+%\begin{itemize}
+%\item Item
+%\item Item
+%\end{itemize}
+
+%\begin{figure}[H]
+%\center
+%\setlength{\unitlength}{\textwidth} 
+%\includegraphics[width=0.7\unitlength]{images/logo1}
+%\caption{\label{fig:logo}Logo }
+%\end{figure}
+
+%\begin{figure}[H]
+%	\setlength{\unitlength}{\textwidth} 
+%	\centering
+%	\begin{subfigure}{.5\textwidth}
+%  		\centering
+%  		\includegraphics[width=0.48\unitlength]{images/logo1}
+%  		\caption{\label{fig:logo1}Logo1 }
+%	\end{subfigure}%
+%	\begin{subfigure}{.5\textwidth}
+%  		\centering
+%		\includegraphics[width=0.48\unitlength]{images/logo2}
+%  		\caption{\label{fig:logo2}Logo2}
+%	\end{subfigure}
+%\caption{\label{fig:calisandegree} Small Logos   }
+%\end{figure}
+	
+%\begin{table}[H]
+%  \centering
+% 
+%    \begin{tabular}{c|c|c}
+%       $$A$$ & $$B$$ & $$C$$ \\ \hline
+%       1 & 2 & 3  \\ \hline
+%       2 & 3 & 4  \\ \hline
+%       3 & 4 & 5  \\ \hline
+%       4 & 5 & 6  
+%      
+%  \end{tabular}
+%  \caption{table}
+%  \label{tab:table}
+%\end{table}
+	
+%\begin{table}[H]
+%  \centering
+% 
+%    \begin{tabular}{c|c|c}
+%       \backslashbox{$A$}{$a$} & $$\specialcell{ Average deviation \\ after subtracting out the  \\ frequency error }$$ & $$C$$ \\ \hline
+%       \multirow{2}{*}{1} & 2 & 3  \\ \cline{2-3}
+%        & 3 & 4  \\ \hline
+%       3 & \multicolumn{2}{c}{4}  \\ \hline
+%       4 & 5 & 6  
+%      
+%  \end{tabular}
+%  \caption{table}
+%  \label{tab:table}
+%\end{table}
+%-----end of samples-----
