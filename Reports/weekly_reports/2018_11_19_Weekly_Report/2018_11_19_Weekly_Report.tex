@@ -1,0 +1,221 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Weekly Report 
+% LaTeX Template
+% Version 1.3 (26/10/2018)
+% Modified by
+% Enes TAŞTAN
+% Erdem TUNA
+% Halil TEMURTAŞ
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[a4paper,12pt]{article}
+%-----packages------
+\usepackage[a4paper, total={6.2in, 8.5in}, headheight=110pt]{geometry}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{gensymb} % this could be problem
+\usepackage{float}
+\usepackage{fancyref}
+\usepackage{subcaption}
+\usepackage[toc,page]{appendix} %appendix package
+\usepackage{xcolor}
+\usepackage{listings}
+
+
+\usepackage[export]{adjustbox}
+
+\usepackage{xspace}
+\usepackage{amssymb}
+\usepackage{nicefrac}
+\usepackage{gensymb}
+\usepackage{fancyhdr}
+\usepackage{lipsum}  % for lipsum
+\usepackage[final]{pdfpages}  % pdf include
+\usepackage{array} %allows more options in tables
+\usepackage{pgfplots,pgf,tikz} %coding plots in latex
+\usepackage{capt-of} % allows caption outside the figure environment
+\usepackage[export]{adjustbox} %more options for adjusting the images
+\usepackage{multicol,multirow,slashbox} % allows tables like table1
+%\usepackage[hyperfootnotes=false]{hyperref} % clickable references
+\usepackage{epstopdf} % useful when matlab is involved
+%\usepackage{placeins} % prevents the text after figure to go above figure with \FloatBarrier 
+%\usepackage{listingsutf8,mcode} %import .m or any other code file mcode is for matlab highlighting
+
+%-----end of packages
+\input{../../../Documents/configuration.tex}
+
+
+
+\pagestyle{fancy}
+\setlength\headheight{130pt}
+\setlength{\footskip}{2.5cm}
+\fancyhead[LO,LE]{\textbf{Duayenler Ltd. Şti.} \\ \textbf{Members :\\ } 
+			Enes Taştan, \ \ \  2068989, 0543 683 4336 \\ 
+			Halil Temurtaş, 2094522, 0531 632 2194  		
+}
+\fancyhead[RO,RE]{
+			\textbf{November 19, 2018} \\
+			Sarper Sertel, 2094449, 0542 515 6039 \\
+			Erdem Tuna, 2167419, 0535 256 3320 \\ 
+			İlker Sağlık, 2094423, 0541 722 9573}
+%\fancyhead[RO]{Sarper Sertel (05435156039),\\Enes Taştan (05436834336), Erdem Tuna (05352563320),\\Halil Temurtaş (05316322194), İlker Sağlık (05417229573)}
+\rfoot{\includegraphics[width=2.2cm]{../../../Documents/logos/logo2-page-with-stroke}}
+
+\begin{document}
+	
+\begin{figure}
+	\vspace*{-.7cm}
+	\centering
+	\begin{figure}[H]
+		\centering
+		\setlength{\unitlength}{\textwidth} 
+		\includegraphics[width=0.9\unitlength]{../../../Documents/logos/logo3-with-stroke}
+	\end{figure}
+\end{figure}
+\vspace*{-1.7cm}
+\begin{center}
+	\Large\textbf{November 12 - 18 Weekly Report}
+	\end{center}
+
+
+
+\section{Progress}
+	
+
+\begin{itemize}
+	
+	
+\item {[Team]} Discuss for solution alternatives for handshake protocol is finished for standard committee. Proposed algorithmic state machine chart can be seen in \textit{Appendix~\ref{handshake}}. \vspace{-.2cm}
+ 
+
+\item {[Team]} For handshaking, Bluetooth and RF transceivers were tested. RF modules uses SPI interface whereas Bluetooth modules use UART. Bluetooth modules have more complicated connection procedures(slave/master etc.) than RF modules. And the latency in connection of bluetooth modules is more than desired.
+	
+	
+\item {[Team]} Newly ordered color sensor TCS3200 is tested to fully understand the sensor. Yet, the sensor did not satisfy our expectations. \vspace{-.2cm}
+
+\item {[Team]} Two different IR sensors, which are TCRT5000 and QRD1114 , were tested for the detection of the path on two different materials. TCRT500 had more differentiable outputs in comparison to other sensor. However, the performance of RF modules exceeded our expectations. The test test environment can be seen at \textit{Figure~\ref{fig:rf1}}. \vspace{-.2cm}
+
+\item {[Team]} Ordered Raspberry Pi camera, Waveshare Model E, was tested. The test enverimont can be seen at \textit{Figures~\ref{fig:cam1}},\ref{fig:cam2}.  \vspace{-.2cm}
+\item  {[Team]} The different solution alternatives for path properties were discussed. \vspace{-.2cm}
+
+
+\section{Plans}
+	\item  {[Team]} Introduction to open-cv environment using Raspberry Pi and camera. \vspace{-.2cm}
+	\item  {[Team]} Discussion for integration of camera output and sensor array output\vspace{-.2cm}
+	
+
+
+
+
+\end{itemize}
+
+\begin{appendices}
+
+\section{Photos}
+
+	\begin{figure}[H]
+		\centering
+		\setlength{\unitlength}{\textwidth} 
+		\includegraphics[width=\textwidth,]{rf1}
+		\caption{\label{fig:rf1} RF Module Test Environment}
+	\end{figure}
+
+
+ 	\begin{figure}[H]
+		\centering
+		\setlength{\unitlength}{\textwidth} 
+		\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{cam1}
+		\caption{\label{fig:cam1} Camera Module Test Environment}
+	\end{figure}
+
+	\begin{figure}[H]
+		\centering
+		\setlength{\unitlength}{\textwidth} 
+		\includegraphics[width=\textwidth,]{cam2}
+		\caption{\label{fig:cam2} Other Camera Module Test Environment }
+	\end{figure}
+
+
+\section{Standard Committee Homework}
+
+	JSON Protocol is considered for communication between opponents, and the proposed states can be seen below;
+	\begin{itemize}
+		\item Send\_Pairing\_Message\{"1":"ID","2":"Pair"\}		
+		\item ACK\{"1":"ID","2":"ACK"\}
+		\item Send\_Stop(W)\{"1":"ID","2":"STOP"\}
+		\item Send\_Ans(L)\{"1":"ID","2":"OK"\}
+
+	\end{itemize}
+
+\includepdf[pages=1, scale=0.7,angle=0,pagecommand=\subsection{Proposed Handshake Protocol}\label{handshake}]{handshake-protocol2.pdf}
+%\lipsum[1-5]
+
+\end{appendices}
+
+\end{document}
+
+%----samples------
+%\begin{itemize}
+%\item Item
+%\item Item
+%\end{itemize}
+
+%\begin{figure}[H]
+%\center
+%\setlength{\unitlength}{\textwidth} 
+%\includegraphics[width=0.7\unitlength]{images/logo1}
+%\caption{\label{fig:logo}Logo }
+%\end{figure}
+
+%\begin{figure}[H]
+%	\setlength{\unitlength}{\textwidth} 
+%	\centering
+%	\begin{subfigure}{.5\textwidth}
+%  		\centering
+%  		\includegraphics[width=0.48\unitlength]{images/logo1}
+%  		\caption{\label{fig:logo1}Logo1 }
+%	\end{subfigure}%
+%	\begin{subfigure}{.5\textwidth}
+%  		\centering
+%		\includegraphics[width=0.48\unitlength]{images/logo2}
+%  		\caption{\label{fig:logo2}Logo2}
+%	\end{subfigure}
+%\caption{\label{fig:calisandegree} Small Logos   }
+%\end{figure}
+	
+%\begin{table}[H]
+%  \centering
+% 
+%    \begin{tabular}{c|c|c}
+%       $$A$$ & $$B$$ & $$C$$ \\ \hline
+%       1 & 2 & 3  \\ \hline
+%       2 & 3 & 4  \\ \hline
+%       3 & 4 & 5  \\ \hline
+%       4 & 5 & 6  
+%      
+%  \end{tabular}
+%  \caption{table}
+%  \label{tab:table}
+%\end{table}
+	
+%\begin{table}[H]
+%  \centering
+% 
+%    \begin{tabular}{c|c|c}
+%       \backslashbox{$A$}{$a$} & $$\specialcell{ Average deviation \\ after subtracting out the  \\ frequency error }$$ & $$C$$ \\ \hline
+%       \multirow{2}{*}{1} & 2 & 3  \\ \cline{2-3}
+%        & 3 & 4  \\ \hline
+%       3 & \multicolumn{2}{c}{4}  \\ \hline
+%       4 & 5 & 6  
+%      
+%  \end{tabular}
+%  \caption{table}
+%  \label{tab:table}
+%\end{table}
+%-----end of samples-----
