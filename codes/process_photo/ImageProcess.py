@@ -15,6 +15,7 @@ class ImageProcess:
 		self.lap1 = "-laplacianed-1"
 
 		self.cannyProcess1()
+		self.cannyProcess2()
 		self.laplacianProcess()
 
 	def cannyProcess1(self):
@@ -25,6 +26,23 @@ class ImageProcess:
 		img = cv2.imread(self.baseDir + self.imgName)
 		gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 		edges = cv2.Canny(gray,50,120)
+		cv2.imwrite(saveDir, edges)
+
+	def cannyProcess2(self):
+		index = self.imgName.index('.')
+		editName = self.imgName[:index] + self.canny2
+		saveDir = self.baseDir + editName + self.extension
+
+		img = cv2.imread(self.baseDir + self.imgName)
+		lower_red = np.array([40, 100, 50])
+		upper_red = np.array([90, 255, 255])
+
+		hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+
+		mask = cv2.inRange(hsv, lower_red, upper_red)
+		res = cv2.bitwise_and(img, img, mask=mask)
+
+		edges = cv2.Canny(res, 100, 200)
 		cv2.imwrite(saveDir, edges)
 
 	def laplacianProcess(self):
