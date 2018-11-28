@@ -82,38 +82,24 @@
 	\end{center}
 
 
-	\section{Handshake Protocol}
+\section{Standard Committee Homework}
+\subsection{Path Structure}
+
+Our proposed material is styrofoam. Isolation type styrofoams are more durable and strong compared to ordinary ones. A sample can be seen in \textit{Figure \ref{strofor}}
+\begin{figure}[h]
+	\includegraphics[width=.4\textwidth,center]{strofor.jpg}
+	\caption{A sample material}\label{strofor}
+\end{figure}
+
+The green color RGB(0,255,0) is proposed as the path color.
+
+\subsection{Vehicle Appearance}
+
+A plate with dimensions 8cm x 10 cm should be installed with 3cm levitation from ground level. The color of the plate should be blue RGB(0,0,255).
 
 
 
-	JSON Protocol is considered for communication between opponents, and the proposed states can be seen below;
-	\begin{itemize}
-		\item Send\_Pairing\_Message\{"1":"ID","2":"Pair"\}		
-		\item ACK\{"1":"ID","2":"ACK"\}
-		\item Send\_Stop(W)\{"1":"ID","2":"STOP"\}
-		\item Send\_Ans(L)\{"1":"ID","2":"OK"\}
 
-	\end{itemize}
-
-	The proposed state machine for handshake protocol can be seen at \textbf{Appendix~\ref{handshake}}.\\
-	\section{Path Structure}
-	The path is proposed to have following properties:
-	\begin{itemize}
-		\item The color should be mat green or red.
-		\item The elevation of the path should be 20mm
-	\end{itemize}
-	Both colors are tested using edge detection algorithm and best results obtained in specified colors.
-
-	
-%\begin{appendices}
-
-
-\begin{appendices}
-\includepdf[pages=1, scale=0.6,angle=0,pagecommand=\section{Proposed Handshake Protocol}\label{handshake}]{handshake-protocol2.pdf}
-%\lipsum[1-5]
-
-\end{appendices}
-%\end{appendices}
 
 \end{document}
 
