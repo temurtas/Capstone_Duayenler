@@ -1,4 +1,0 @@
-- Downloading and Installing: First instal all dependicies just in Section 01 of [this tutorial](https://linuxize.com/post/how-to-install-opencv-on-ubuntu-18e-04/). Then just follow [this tutorial](https://mindchasers.com/dev/ubuntu-opencv) word by word. This completely configures everything.
-- Compiling the code: The general structure for compiling from the terminal
-	- `gcc -g <code_file_name> -I <base_lib_directory> -l <include_lib1> ... -l <include_libN> -o <output_file_name>`
-	- e.g. `gcc -g edge.cpp -I/usr/local/include/opencv4 -lstdc++ -lopencv_highgui -lopencv_imgcodecs -lopencv_core -lopencv_imgproc -o edge`
