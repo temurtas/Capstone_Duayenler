@@ -12,4 +12,4 @@ Please write only the name (not surname) with same capitalization!
 | Enes   | Anahtar Çekimi   | 10 TL  | **NO**  |
 | İlker  | Colored A4  | 2.5 TL  | **NO** |
 | Enes   | RC Car   | 150 TL  | **NO**  |
-
+| Sarper | motor-teker    | 150 TL  | **NO**  |
