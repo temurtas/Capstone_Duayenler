@@ -3,20 +3,24 @@
 #include "opencv2/imgcodecs.hpp"
 #include <iostream>
 #include <fstream>
+#include "LaneDetector.hpp"
+#include "LaneDetector.cpp"
+#include "opencv2/imgproc/imgproc_c.h"
 
 using namespace cv;
 
 /** Global Variables */
 //const int max_value_H = 360 / 2;
 //const int max_value = 255;
-
 /** HSV VALUE SETTINGS **/
 const int max_value_H = 360 / 4;
 const int max_value = 255;
 const String window_capture_name = "Video Capture";
 const String window_detection_name = "Object Detection";
-int low_H = 40, low_S = 40, low_V = 50;
+int low_H = 40, low_S = 45, low_V = 50;
 int high_H = max_value_H, high_S = max_value, high_V = max_value;
+int maxGap = 50;
+int minLength = 50;
 /** HSV VALUE SETTINGS **/
 
 //! [low]
@@ -53,12 +57,33 @@ static void on_high_V_thresh_trackbar(int, void *) {
 	setTrackbarPos("High V", window_detection_name, high_V);
 }
 
+static void on_maxGap_thresh_trackbar(int, void *) {
+	maxGap = min(high_H - 1, maxGap);
+	setTrackbarPos("Low H", window_detection_name, low_H);
+}
+static void on_minLength_thresh_trackbar(int, void *) {
+	minLength = min(high_H - 1, minLength);
+	setTrackbarPos("Low H", window_detection_name, low_H);
+}
+
+
 int main(int argc, char* argv[]) {
 	//! [cap]
-	VideoCapture cap("./green-640-7.mp4");
+	VideoCapture cap("./green-640-10.mp4");
 	//! [cap]
+	LaneDetector lanedetector;  // Create the class object
 
+	cv::Mat img_denoise;
+	cv::Mat img_edges;
+	cv::Mat img_mask;
+	cv::Mat img_lines;
+	std::vector<cv::Vec4i> lines;
+	std::vector<std::vector<cv::Vec4i> > left_right_lines;
+	std::vector<cv::Point> lane;
+	std::string turn;
+	int flag_plot = -1;
 	double t;
+	Mat whiteFrame(426, 640, CV_8UC3, Scalar(255, 255, 255));
 	//! [window]
 	namedWindow(window_capture_name);
 	namedWindow(window_detection_name);
@@ -77,6 +102,10 @@ int main(int argc, char* argv[]) {
 			on_low_V_thresh_trackbar);
 	createTrackbar("High V", window_detection_name, &high_V, max_value,
 			on_high_V_thresh_trackbar);
+	createTrackbar("maxGap", window_detection_name, &maxGap, max_value_H,
+			on_maxGap_thresh_trackbar);
+	createTrackbar("minLength", window_detection_name, &minLength, max_value_H,
+			on_minLength_thresh_trackbar);
 	/** TRACKBAR FOR SIMULTANEOUS HSV THRESHING **/
 
 	/** OUTPUT VIDEO CONFGURATIONS**/
@@ -94,7 +123,9 @@ int main(int argc, char* argv[]) {
 
 	// Loop to read frames from the input capture and write it to the output capture
 	Mat frame, frame_p, frame_HSV, frame_threshold;
+	int a = 0;
 	while (true) {
+		//a++;
 		t = (double) getTickCount(); //processing time counter
 		//! [while]
 		cap >> frame;
@@ -116,81 +147,64 @@ int main(int argc, char* argv[]) {
 		inRange(frame_HSV, Scalar(low_H, low_S, low_V),
 				Scalar(high_H, high_S, high_V), frame_threshold);
 
-/* CHECK MASKING AND CANNY */
+		/* CHECK MASKING AND CANNY */
 
 		// Mask the filtered image with the original image
 		bitwise_and(frame_threshold, frame_threshold, frame_p);
 
 		// Canny edge detection to the masked image
 		Canny(frame_threshold, frame_threshold, 200, 400, 3);
-/**/
-	    Mat  cdst, cdstP;
+		/**/
+		Mat cdst, cdstP;
 
-	    //![load]
+		// Copy edges to the images that will display the results in BGR
+		cvtColor(frame_threshold, cdst, COLOR_GRAY2BGR);
+		cdstP = cdst.clone();
 
+		//![hough_lines]
+		// Standard Hough Line Transform
+		std::vector<Vec2f> lines; // will hold the results of the detection
 
-	    //![edge_detection]
-	    // Edge detection
-	    //![edge_detection]
+		std::ofstream myfile;
+		myfile.open("test.txt", std::ios_base::app);
+		//![hough_lines_p]
+		// Probabilistic Line Transform
+		std::vector<Vec4i> linesP; // will hold the results of the detection
 
-	    // Copy edges to the images that will display the results in BGR
-	    cvtColor(frame_threshold, cdst, COLOR_GRAY2BGR);
-	    cdstP = cdst.clone();
+		HoughLinesP(frame_threshold, linesP, 1, CV_PI / 180, 50, minLength, maxGap); // runs the actual detection
 
-	    //![hough_lines]
-	    // Standard Hough Line Transform
-	    std::vector<Vec2f> lines; // will hold the results of the detection
-	    HoughLines(frame_threshold, lines, 1, CV_PI/180, 150, 0, 0 ); // runs the actual detection
-	    //![hough_lines]
-	    //![draw_lines]
-	    // Draw the lines
-//	    for( size_t i = 0; i < lines.size(); i++ )
-//	    {
-//	        float rho = lines[i][0], theta = lines[i][1];
-//	        Point pt1, pt2;
-//	        double a = cos(theta), b = sin(theta);
-//	        double x0 = a*rho, y0 = b*rho;
-//	        pt1.x = cvRound(x0 + 1000*(-b));
-//	        pt1.y = cvRound(y0 + 1000*(a));
-//	        pt2.x = cvRound(x0 - 1000*(-b));
-//	        pt2.y = cvRound(y0 - 1000*(a));
-//	        line( cdst, pt1, pt2, Scalar(0,0,255), 3, LINE_AA);
-//	    }
+//////////////////////////////////////////
+		if (!linesP.empty()) {
+			// Separate lines into left and right lines
+			left_right_lines = lanedetector.lineSeparation(linesP,
+					frame_threshold);
 
-	    std::ofstream myfile;
-	    myfile.open("test.txt", std::ios_base::app);
-	    //![hough_lines_p]
-	    // Probabilistic Line Transform
-	    std::vector<Vec4i> linesP; // will hold the results of the detection
-	    HoughLinesP(frame_threshold, linesP, 1, CV_PI/180, 50, 50, 10 ); // runs the actual detection
-	    //![hough_lines_p]
-	    //![draw_lines_p]
-	    // Draw the lines
-	    for( size_t i = 0; i < linesP.size(); i++ )
-	    {
-	        Vec4i l = linesP[i];
-	        line( cdstP, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(0,0,255), 3, LINE_AA);
-	    }
-	    //![draw_lines_p]
-	    std::cout << "THISSTART" <<std::endl;
-	    //myfile <<  format(cdstP, Formatter::FMT_PYTHON) << std::endl;
-	    myfile.close();
+			// Apply regression to obtain only one line for each side of the lane
+			lane = lanedetector.regression(left_right_lines, frame);
+
+			// Predict the turn by determining the vanishing point of the the lines
+			turn = lanedetector.predictTurn();
+
+			// Plot lane detection
+			flag_plot = lanedetector.plotLane(frame, lane, turn);
+		}
+		for (size_t i = 0; i < linesP.size(); i++) {
+			Vec4i l = linesP[i];
+			line(cdstP, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(0, 0, 255),
+					3, LINE_AA);
+		}
+
+//////////////////////////////////////////
+
 //	std::cout << "xTrainData (python)  = " << std::endl << format(cdstP, Formatter::FMT_PYTHON) << std::endl << std::endl;
-	    std::cout << "THISEND" <<std::endl;
-	    bitwise_and(cdstP, cdstP, frame_threshold);
-	    //![imshow]
-	    // Show results
-	    //imshow("Source", src);
-	    //imshow("Detected Lines (in red) - Standard Hough Line Transform", cdst);
-/**/	//std::cout << "xTrainData (python)  = " << std::endl << format(cdstP, Formatter::FMT_PYTHON) << std::endl << std::endl;
-		// save the video
-	    bitwise_and(frame_threshold, cdstP, frame_threshold);
+		bitwise_and(whiteFrame, cdstP, frame_threshold);
+		bitwise_and(frame_threshold, cdstP, frame_threshold);
+
 		output_cap.write(frame_threshold);
 
 		/** TOTAL PROCESS TIME **/
 		t = ((double) getTickCount() - t) / getTickFrequency();
-		std::cout << "Built-in filter2D time passed in seconds:     " << t
-				<< std::endl;
+		std::cout << "The process time in seconds:     " << t << std::endl;
 		//std::cout << frame_threshold << std::endl;
 		/** TOTAL PROCESS TIME **/
 
