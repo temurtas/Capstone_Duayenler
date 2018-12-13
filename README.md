@@ -1,7 +1,7 @@
 ﻿# Capstone_Duayenler
 Private repository of Duayenler Ltd. Şti.
 
-![Alt text](Documents/logos/logo3-with-stroke.png?raw=true "Title")
+![Alt text](documents/logos/logo3-with-stroke.png?raw=true "Title")
 
 # Contributors
 * [Halil Temurtaş](https://github.com/temurtas)
@@ -12,18 +12,18 @@ Private repository of Duayenler Ltd. Şti.
 
 # Use of Repository
 
-## Codes Folder
+## codes Folder
 All files for codes, simulations, drawings and designs go here. 
 Foldering can be left (not as an exercise) to what is to come.
 
-## Documents Folder
+## documents Folder
 Contains files related to the course and the company with its people.
 
 ## docs Folder
 Contains source code for website : [Official Website!](https://temurtas.github.io/Capstone_Duayenler)
 
 
-## Reports Foler
+## reports Foler
 Contains
 
 * bussiness_statement_report Folder,
@@ -38,8 +38,20 @@ Contains
 		that stores the LaTeX template for the weekly reports. 
 		Just copy the .tex file and rename it under the named by date folder.
 
-## Resources Folder
+## resources Folder
 Contains files whose explanations of existence is written in them and	
+
+* Expenses.md
+	
+	Which includes all the spendings for the project
+
+* Path Photos for proccessing
+
+* OpenCV related papers
+
+* Chassis ideas folder
+
+* Component xlxs
 
 * Datasheets Folder 	
 	
