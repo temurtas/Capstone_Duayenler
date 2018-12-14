@@ -13,3 +13,5 @@ Please write only the name (not surname) with same capitalization!
 | İlker  | Colored A4  | 2.5 TL  | **NO** |
 | Enes   | RC Car   | 150 TL  | **NO**  |
 | Sarper | motor-teker    | 150 TL  | **NO**  |
+| Erdem  | Kamera_2 | 123.77 TL | **NO** |
+
