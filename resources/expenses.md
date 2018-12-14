@@ -16,7 +16,12 @@ Please write only the name (not surname) with same capitalization!
 | Erdem  | Kamera_2 | 123.77 TL | **NO** |
 
 
+Aşağısı Totaller
+
+
+
 | Person | Total Spent  | Average Spent  | Debt  |
+|---|---|---|---|
 | Erdem  | 154.77 TL | 159.07 TL | 4.3 TL |
 | Enes   | 355.55 TL | 159.07 TL | -196.48  |
 | Halil  | 121.55 TL | 159.07 TL | 37.52 TL |
