@@ -32,6 +32,7 @@ def server_program():
     print("from connected user: " + str(data))
 
     conn.close()  # close the connection
+	input("Press enter to close terminal.")
     sys.exit()
 
 def main():

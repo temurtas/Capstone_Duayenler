@@ -24,6 +24,7 @@ def client_program():
     message = "ID10"  # stop message
     client_socket.send(message.encode())  # send message
     client_socket.close()  # close the connection
+	input("Press enter to close terminal.")
     sys.exit()
 
 def main():
