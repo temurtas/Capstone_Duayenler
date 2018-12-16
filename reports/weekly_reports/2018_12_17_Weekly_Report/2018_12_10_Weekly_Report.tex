@@ -100,7 +100,8 @@
 	\setlength{\unitlength}{\textwidth} 
 	\includegraphics[width=0.75\unitlength]{laneDetection}
 	\caption{\label{fig:LaneDetection} [Left]Output of Our Image Detection Algorithm Under Low Light Conditions, The Red Lines represents the Detected Line Edges  and the [Right] Original unprocessed Photo }
-\end{figure}
+	\end{figure}
+		
 \newpage
 	\item Chasis and new camera holding arm is designed and integrated as a single body. 
 	\begin{figure}[H]
@@ -108,8 +109,13 @@
 	\setlength{\unitlength}{\textwidth} 
 	\includegraphics[width=0.75\unitlength]{carAssembled.jpg}
 	\caption{\label{fig:carAssembled} Vehicle Assembly and Camera Holding Arm.}
-\end{figure}
-	\end{itemize}
+	\end{figure}
+	\item Socket programming in Python and C++ was studied to implement the handshake algorithm. Main concepts are similar in both languages, yet because of the fact that Python was more convenient to implement, it was preferred . Two codes, both for client and server sides were written. The algorithms for client and server sides can be summarized as follows:
+	\begin{itemize}
+		\item For the client side, the socket must be created using socket.socket() command. Server's ip and port numbers must be defined. Then, using s.connect() command, connection to the server can be established. Then, the messages can be send or received using s.recv() or s.send() commands. At the end of the communication, socket must be closed using s.close() command.
+		\item For the server side, the algorithms are similar. Socket creation procedure is the same. Server's ip and port numbers must also be defined. Then, defined ip and port numbers must be bound to the server using the s.bind() command. In the next step, the maximum number of clients that can be connected to the socket must be defined using s.listen() command. Then, s.accept() command returns the ip and port number of the client connected to that server. Similarly, s.send() and s.recv() commands enables message sending or receiving. Lastly, server socket must be closed using s.close() command.
+	\end{itemize}	
+\end{itemize}
 
 \section{Plans}
 
