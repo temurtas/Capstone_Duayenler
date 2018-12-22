@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  22 DEC 2018 20:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  22 DEC 2018 21:09
 entering extended mode
 **./Duayenler_Conceptual.tex
 (Duayenler_Conceptual.tex
@@ -987,13 +987,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 108--109
  []
 
 (Duayenler_Conceptual.toc [1] [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 48.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 54.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 48.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 54.
 )
 \tf@toc=\write4
 \openout4 = `Duayenler_Conceptual.toc'.
@@ -1009,37 +1009,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 127--128
  []
 
 [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--170
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 171--172
+Underfull \hbox (badness 10000) in paragraph at lines 177--178
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 191--192
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 193--194
-
- []
-
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 197--198
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
 
  []
 
@@ -1048,7 +1028,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 199--200
 
  []
 
-
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 201--202
 
  []
@@ -1063,11 +1043,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 205--206
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--212
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
+
+ []
+
 [8] [9] [10] ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 368.
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 389.
 
 [11] [12] (Duayenler_Conceptual.aux) ) 
 Here is how much of TeX's memory you used:
@@ -1085,7 +1085,7 @@ e1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/cm/cmti12.pfb>
-Output written on Duayenler_Conceptual.pdf (13 pages, 166058 bytes).
+Output written on Duayenler_Conceptual.pdf (13 pages, 167937 bytes).
 PDF statistics:
  75 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

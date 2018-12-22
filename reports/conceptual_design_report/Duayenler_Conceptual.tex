@@ -131,10 +131,10 @@
 
 \section{Solutions}
 
-	\subsection{Systems \& Subsystems}
+	\subsection{Description of individual sub-systems}
 
 	\subsubsection{Sensing System}
-		This unit has two main tasks which are observing lane and another vehicle on the path. 
+		Sensing system has two main subsystems which are "Lane Detection Subsystem" and "Vehicle Detection Subsystem".
 		
 		\paragraph{Detection Subsystem}
 			To solve this problem, path and environmental differences, such as color difference, contrast difference could be used. In addition to these, image processing could be an alternative to detection of lane and vehicle. 
@@ -160,6 +160,14 @@ Infrared sensors can be another approach to this problem, they may provide bette
 		\paragraph{Controller Subsystem}
 			Mathematical models will be implemented in this unit to realize controllers such as P, PI, PID. The output of the controller unit will be sent to driving subsystem. This output will be the ultimate decision to realize a desired operation according to the data sent from sensor.
 
+
+	\subsubsection{Communication System}
+	
+		\paragraph{Internal Communication Subsystem}
+		
+		\paragraph{External Communication Subsystem}
+		
+		
 	\subsubsection{Driving System}
 		This unit takes an input from the controller unit. That input involves information about what the new orientation should be. Driving subsystem, then, takes action to move vehicle according to the required direction with maximum possible speed. This subsystem consists of two units: Direction and Speed.
 
@@ -347,6 +355,19 @@ Last implementation is 2+2 configuration. In this configuration 2 wheels can be 
 
 
 
+	
+
+
+
+	\subsection{Solution for each subsystem and relevant algorithms}
+	
+	
+	\subsection{Subsystem level risk assessment, and alternative solutions (Plan-B)}
+	
+	
+	\subsection{ Error sources, their impact and ways to mitigate}
+	
+	
 	\subsection{System \& Subsystem Tests }
 	
 
@@ -392,7 +413,10 @@ Last implementation is 2+2 configuration. In this configuration 2 wheels can be 
 	\paragraph{Chasis Subsystem Tests}	
 		
 	\paragraph{PCB Subsystem Tests}
-
+	
+	
+	\subsection{Technical drawing of the expected design}
+	
 
 \section{Plans}
 
