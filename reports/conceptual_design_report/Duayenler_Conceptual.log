@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  22 DEC 2018 21:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  22 DEC 2018 22:59
 entering extended mode
 **./Duayenler_Conceptual.tex
 (Duayenler_Conceptual.tex
@@ -987,18 +987,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 108--109
  []
 
 (Duayenler_Conceptual.toc [1] [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 54.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 78.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 54.
-)
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 78.
+ [3])
 \tf@toc=\write4
 \openout4 = `Duayenler_Conceptual.toc'.
 
- [3]
+ [4]
 Underfull \hbox (badness 10000) in paragraph at lines 125--126
 
  []
@@ -1008,30 +1008,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 127--128
 
  []
 
-<v-models/lane_detection_subsystem.png, id=25, 1146.684pt x 202.95825pt>
+<v-models/lane_detection_subsystem.png, id=28, 1146.684pt x 202.95825pt>
 File: v-models/lane_detection_subsystem.png Graphic file (type png)
 
 <use v-models/lane_detection_subsystem.png>
 Package pdftex.def Info: v-models/lane_detection_subsystem.png used on input li
 ne 134.
 (pdftex.def)             Requested size: 448.07378pt x 79.30823pt.
- [4] [5 <./v-models/lane_detection_subsystem.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 176--177
-
- []
-
-
+ [5] [6 <./v-models/lane_detection_subsystem.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 178--179
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 180--181
-
- []
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 200--201
 
  []
 
@@ -1041,60 +1026,95 @@ Underfull \hbox (badness 10000) in paragraph at lines 202--203
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--205
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 206--207
 
  []
 
+[8] [9] [10] <images/socket_funcs.png, id=48, 309.40594pt x 550.30594pt>
+File: images/socket_funcs.png Graphic file (type png)
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--209
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 212--213
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 214--215
-
- []
-
-[8] [9] [10] ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
+<use images/socket_funcs.png>
+Package pdftex.def Info: images/socket_funcs.png used on input line 387.
+(pdftex.def)             Requested size: 246.44194pt x 438.33923pt.
+ [11] [12 <./images/socket_funcs.png>]
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 390.
+Underfull \hbox (badness 10000) in paragraph at lines 412--413
 
-[11] [12] (Duayenler_Conceptual.aux) ) 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 414--415
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 434--435
+
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 493--494
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 495--496
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 499--500
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 501--502
+
+ []
+
+[16] [17]
+LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 543.
+ <images/handshake1.png, id=72, 416.30531pt x 148.30406pt>
+File: images/handshake1.png Graphic file (type png)
+
+<use images/handshake1.png>
+Package pdftex.def Info: images/handshake1.png used on input line 560.
+(pdftex.def)             Requested size: 336.05533pt x 119.72055pt.
+ [18]
+<images/handshake2.png, id=78, 422.32782pt x 145.29282pt>
+File: images/handshake2.png Graphic file (type png)
+
+<use images/handshake2.png>
+Package pdftex.def Info: images/handshake2.png used on input line 567.
+(pdftex.def)             Requested size: 336.05533pt x 115.61586pt.
+ [19 <./images/handshake1.png> <./images/handshake2.png>] [20] (Duayenler_Conce
+ptual.aux) ) 
 Here is how much of TeX's memory you used:
- 29983 strings out of 493333
- 695240 string characters out of 3136576
- 987549 words of memory out of 3000000
- 32938 multiletter control sequences out of 15000+200000
+ 30006 strings out of 493333
+ 695704 string characters out of 3136576
+ 988549 words of memory out of 3000000
+ 32957 multiletter control sequences out of 15000+200000
  12522 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,11n,96p,1329b,658s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmbsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmti12.pfb>
-Output written on Duayenler_Conceptual.pdf (13 pages, 183003 bytes).
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mbsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+bx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcs
+c10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12
+.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb
+>
+Output written on Duayenler_Conceptual.pdf (21 pages, 220855 bytes).
 PDF statistics:
- 76 PDF objects out of 1000 (max. 8388607)
+ 105 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 38 words of extra memory for PDF output out of 10000 (max. 10000000)
 

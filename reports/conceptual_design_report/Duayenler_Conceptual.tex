@@ -146,23 +146,24 @@
 			The subsystem basically detects the lane. This subsystem uses OpenCV libraries for processing camera frames. The input is captured from a Raspberry Pi camera that is mounted to the vehicle. The captured frame is firstly, preprocessed by a denoising filter. Then, the edges in the frame is detected by Canny Edge Detector algorithm. The output of Canny is a binary image filled with ones and zeros. The Hough Lines technique probabilistically extracts possible lines in a given binary image. Thus, possible line constituting points are obtained from Hough Lines function. Next, points of the lines are classified as left or right borders of the lane. The elimination of the wrong points are done concurrently with the classification. Then, filtered points are fitted in two separate lines to create left and right borders of the lane. As the lane borders are found, the next and the last step is to determine the direction of the vehicle. The output of this subsystem is a turning angle and a direction.
 
 		\paragraph{Vehicle Detection Subsystem}
-			The detection of the opponent can be implemented using distance sensors. In order to stop the robot when it catches the opponent, or it is caught, a sensor must be placed at the front and the back. The most common distance sensors are ultrasonic, infrared and laser sensors. 
-
-Ultrasonic sensors have acceptable range. They send a sound wave and take back the echo, then give a PWM voltage related to the distance. However, using ultrasonic sensors can cause problems if the opponent also uses ultrasonic sensors; because of the interference. Besides, when measurement is angled, measuring is failing. 
-
-Infrared sensors can be another approach to this problem, they may provide better accuracy. Moreover, Laser distance measurement can be applied to solve this problem. They have the best accuracy, but their price is the highest among the rest.
+			The subsystem is the first step of safely computing with an opponent in a racing path. This subsystem uses two laser distance sensors one at the back of the vehicle responsible for detecting the chasing opponent and one at the front of the vehicle responsible for detecting the chased opponent. The subsystem produces positive output if the chasing vehicle or chased vehicle is within a range of 5 cm from the vehicle.			
 
 	\subsubsection{Computation System}
-		Functionality of computation subsystem will be presented in this section.
+		
+		Sensing system has two main subsystems which are "Data Processing Subsystem" and "Controller Subsystem Subsystem".
 	
 		\paragraph{Data Processing Subsystem}
-		This unit is the main algorithm application level. Data from sensor will be aggregated in this unit and will be pre-processed. Then, processed data will be output to the controller unit. Processing will mainly be done using Arduino and Raspberry Pi (if used). Suitable algorithms will be developed to realize desired operations with the controller unit
+		
+			This unit is the main algorithm application level. Data from sensor will be aggregated in this unit and will be pre-processed. Then, processed data will be output to the controller unit. Processing will mainly be done using Arduino and Raspberry Pi (if used). Suitable algorithms will be developed to realize desired operations with the controller unit
 
-		\paragraph{Controller Subsystem}
-			Mathematical models will be implemented in this unit to realize controllers such as P, PI, PID. The output of the controller unit will be sent to driving subsystem. This output will be the ultimate decision to realize a desired operation according to the data sent from sensor.
+		\paragraph{PID Controller Subsystem}
+			
+			The output of the data processing subsystem does not mean anything for the vehicle. The motors should be driven using some sort of closed loop system. PID controllers are the most used controller in the robotics field. The purpose of the PID controller is basically to eliminate the error from the desired steady state. In our case the desired steady state  error to be companseted by the
 
 
 	\subsubsection{Communication System}
+	
+		Communication system has two main subsystems which are "Internal Communication Subsystem" and "External Communication Subsystem Subsystem".
 	
 		\paragraph{Internal Communication Subsystem}
 		
@@ -170,23 +171,21 @@ Infrared sensors can be another approach to this problem, they may provide bette
 		
 		
 	\subsubsection{Driving System}
-		This unit takes an input from the controller unit. That input involves information about what the new orientation should be. Driving subsystem, then, takes action to move vehicle according to the required direction with maximum possible speed. This subsystem consists of two units: Direction and Speed.
+		
+		Driving system has two main subsystems which are "Direction Subsystem" and "Speed Subsystem Subsystem".
 
 		\paragraph{Direction Subsystem}
 			Direction unit is responsible for the orientation of the vehicle. It stores the last required orientation and the new one coming from the controller. After that, it tries to make the orientation as close as new one. Both data can be represented as vectors.The angle between those two vector is tried to be minimized by the controller. Before moving on to the operation, note that the angle can be used as a measure of the error that the direction unit have. The less the angle the more correctly operates the direction unit.\\
 
-			Depending on the configuration of the wheels, exact control of the vehicle might vary. However, there are certain methods to accomplish orientation. The vehicle will definitely have two wheels or palettes that will be driven by two separate DC motors. That configuration allows differential drive method to orient the vehicle. PWM values of the motors can be adjusted such that the speed difference between them results in a turn as much as desired angle. The exact difference values on the PWM values depends on the specs of the used motors and voltage sources. \\
+			
+		\paragraph{Speed Subsystem}
 
-			Two different H-bridge motor drivers are proposed to be used to drive DC motors: L298N and L293D. Both can drive two motors separately with one IC. However, maximum current rating of the former one is larger being 2A while L293D can supply 0.6A per channel. \\
-
-			As in the case of another configuration that involves one or two servo motors to control the directions of the front wheels. This configuration is more robust compared to ball caster utilization. However, there are more motors to control and it requires more complicated differential drive algorithms involving both DC motor differential and servo PWM to orient the front wheels.
-		\paragraph{Speed Unit}
-
-		This unit acts as a complementary module for direction unit. It will act as a state machine. In one state, the unit will try to increase the speed of the vehicle by making overall increase in both PWM values of DC motors. The feedback of this  system will be the cost function mentioned in driving unit. If that cost exceeds a specified level, unit goes to another state in which the unit will decrease the overall speed to allow direction unit to operate more correctly. In short, this unit tries to compensate the error of the direction unit by changing the overall speed of the vehicle.
+		"This unit acts as a complementary module for direction unit. It will act as a state machine. In one state, the unit will try to increase the speed of the vehicle by making overall increase in both PWM values of DC motors. The feedback of this  system will be the cost function mentioned in driving unit. If that cost exceeds a specified level, unit goes to another state in which the unit will decrease the overall speed to allow direction unit to operate more correctly. In short, this unit tries to compensate the error of the direction unit by changing the overall speed of the vehicle.
  
 
-	\subsubsection{Structure Subsystem}
-		This part contains chassis and PCB sections of the robot. 
+	\subsubsection{Structure System}
+	
+		Structure system has two main subsystems which are "Chassis Subsystem" and "Printed Circuit Board Subsystem".
 		
 		\paragraph{Chassis Subsystem}
 			Main purposes of this section are protection of the critical elements of the robot and holding components together. The most important part of this section is weight distribution. The chassis is supposed to be light and strong because of the competition purposes. However, it should balance the robot to be able to handle with turns. 
@@ -195,24 +194,21 @@ Infrared sensors can be another approach to this problem, they may provide bette
 	
 	
 	\subsubsection{Motion System}
-		Motion of the system is detailed in this section.
+			
+			Motion system has two main subsystems which are "Wheels Subsystem" and "Motors Subsystem Subsystem".		
+		
+		
 		\paragraph{Wheels Subsystem}
 			There are possible solution for wheel placement on the chassis, and several wheel types. Some wheels are designed for better gripping on different surfaces. To avoids obstacles on the path, gripping of the wheel is an important concept. Some wheel types are ball caster, toy car wheel and palette. Besides, wheel placement and the wheel number should be combined with the wheel type choice. \\
 	
-			One of the possible wheel placement is 2+1 combination. This combination can be assembled by placing 2 car wheels (with motors) to the back and the one boll caster to the front or vice versa. These configurations provide easy implementation and fairly reliable handling on the path. However, for certain obstacles may significantly disturb vehicles balance in this configuration.\\
-
-			Another combination is palette system. This system is used in real world where robust vehicles are needed. Similarly, this configuration can help handling obstacle in the path, but it costs for harder implementation and driving.\\
-
-Last implementation is 2+2 configuration. In this configuration 2 wheels can be placed at the back and the rest at the front by placing motors to back wheels. To ease turning of the vehicle, front wheels can be controlled with a servo motor as back wheels operate in the differential drive mode. This combination may provide both enhanced grip and reliable	 operation. \\
+			
 		\paragraph{Motors Subsystem}
 			Motors are one of the most important physical components of the project. There are possible motor types in the market.\\
 
-			One of the widely used motor type is brushed DC motors. Such motors might be implemented with gears. Gears are utilized to adjust torque and RPM of the motor, which is very suitable for a racing vehicle's needs. \\
+			One of the widely used motor type is brushed DC motors. 
+			Another option is brushless DC motors. 
 
-			Another option is brushless DC motors. Brushless DC motors do not use brushes. This results in high torque. Brushless motors are more suitable for high RPM required areas such as CD drivers and drones.\\
-
-			Last option is servo motors. Servo motors are high-torque motors that can turn in an desired angle. Servos can be utilized in the direction of the vehicle on the front wheels. By using this solution, turning radius can be decrease significantly.\\
-
+			Last option is servo motors.
 \subsection{System \& Subsystem Level Requirements}
 		
 	
@@ -362,38 +358,216 @@ Last implementation is 2+2 configuration. In this configuration 2 wheels can be 
 
 	\subsection{Solution for each subsystem and relevant algorithms}
 	
+		\subsubsection{Solution for Vehicle Detection Subsystem}
+		
+			Laser Sensor
 	
+	
+		\subsubsection{Solution for Data Processing Subsystem}
+			
+
+		\subsubsection{Solution for Controller Subsystem}
+			
+			PID Controller
+		
+		\subsubsection{Solution for Internal Communication Subsystem}
+		
+			Serial Comm
+			
+		\subsubsection{Solution for External Communication Subsystem}
+		
+			Communication subsystem enables the robot to communicate with the opponent using the handshaking. According to the standard committee, Wi-Fi modules must be used to implement handshaking. Since Raspberry Pi was used in the project, there is no need to get a separate Wi-fi module; the internal Wi-fi module of the Raspberry Pi was used. 
+			
+			Socket programming is an effective tool to implement client-server communication algorithms. It can be implemented in Python or C++.  Our algorithms are written in Python for now, yet it can easily be converted to C++ if the team members decide it is necessary. The algorithms for client and server sides are slightly different. \textit{Figure~\ref{fig:socket_funcs}} shows the functions that are used for client and server sides to create communication between client and server.
+			
+			
+			\begin{figure}[H]
+				\center
+				\setlength{\unitlength}{\textwidth} 
+				\includegraphics[width=0.55\textwidth]{images/socket_funcs}
+				\caption{\label{fig:socket_funcs}TBasic Functions in Python Socket Programming to Implement Handshaking}
+			\end{figure}
+
+			Here is the summary of the key functions from socket library:
+			
+			\begin{itemize}
+				\item socket.socket(): Creates a new socket using the given address family, socket type and protocol number.
+				\item s.bind(address): Binds the socket to the address defined previously.
+      \item s.listen(backlog): Sets up the maximum number of connections that can be made to the socket, which must be at 1 for the project.
+\item	s.accept(): Waits until connection arrives, than accept the client connection. Returns the client socket connected to the server as (conn, address) pair, where conn is a new socket object and address is the address bound to this socket
+\item	s.connect(): Provides client to connect to the server
+\item	s.send(): Transmits message to the remote socket.
+\item	s.recv(): Receives message from the remote socket
+\item	socket.close(): closes the socket; i.e., ends the communication with the opponent at the end of the race.
+			\end{itemize}
+
+			It is stated in the standard committee that each team must be assigned a static IP to communicate with the other robots. Duayenler has the static IP stated as “192.168.1.7” and the ID as “07”. Since Raspberry Pi 3 comes with a built-in wireless adapter, configuring it as a Wi-Fi hotspot is possible. To assign given IP to the robot, Raspberry Pi must be set as an access point from the terminal.
+  In the algorithm that was implemented for the handshake, in a continuous loop, the front and rear sensors’ values are been checked. There are two functions which are for client and server modes, respectively. If the front sensor senses the opponent in 5 cm range, our main code visits the client mode function. If the rear sensor senses the opponent in 5 cm range, server mode function runs. If our robot is in the server mode, the rear sensor value is again checked. The acknowledge message(<ID>01) or reject message(<ID>11) is sent according to the sensor value.
+
+
+		
+		\subsubsection{Solution for Direction Subsystem}
+		
+		
+			Depending on the configuration of the wheels, exact control of the vehicle might vary. However, there are certain methods to accomplish orientation. The vehicle will definitely have two wheels or palettes that will be driven by two separate DC motors. That configuration allows differential drive method to orient the vehicle. PWM values of the motors can be adjusted such that the speed difference between them results in a turn as much as desired angle. The exact difference values on the PWM values depends on the specs of the used motors and voltage sources. \\
+
+			Two different H-bridge motor drivers are proposed to be used to drive DC motors: L298N and L293D. Both can drive two motors separately with one IC. However, maximum current rating of the former one is larger being 2A while L293D can supply 0.6A per channel. \\
+
+			
+			
+		\subsubsection{Solution for Speed Subsystem}
+
+			
+
+		
+		\subsubsection{Solution for Chassis Subsystem}
+			
+			
+			
+		\subsubsection{Solution for Printed Circuit Board Subsystem}
+			
+	
+		
+		\subsubsection{Solution for Wheels Subsystem}
+			
+	
+			One of the possible wheel placement is 2+1 combination. This combination can be assembled by placing 2 car wheels (with motors) to the back and the one boll caster to the front or vice versa. These configurations provide easy implementation and fairly reliable handling on the path. However, for certain obstacles may significantly disturb vehicles balance in this configuration.\\
+
+			
+		\subsubsection{Solution for Motors Subsystem}
+			
+			One of the widely used motor type is brushed DC motors. Such motors might be implemented with gears. Gears are utilized to adjust torque and RPM of the motor, which is very suitable for a racing vehicle's needs. \\
+
+			
+	\newpage
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+		
 	\subsection{Subsystem level risk assessment, and alternative solutions (Plan-B)}
 	
 	
+		\subsubsection{Alternative Solutions for Lane Detection Subsystem}
+		
+			After the module demo result of the camera-oriented lane detection, former solutions are considered to support camera result and enhance robustness of the tracking. Possible future solutions are the followings;  
+			
+			\paragraph{Laser sensor}
+				As IR sensor array solution, which is already considered at the beginning of the term, laser approximate sensors can be constructed as array and used to detect edges of the lane. The expected enhancement is that laser sensors are more robust under extreme illumination conditions. To clarify the solution, two laser sensor arrays sense both sides of the lane. According to array’s data, vehicle orients itself.  
+
+
+			\paragraph{Color sensor}
+				This approach is similar to laser sensor solution, regarding the sensor array construction. However, color sensor working principle is based on RGB recognition, so in this solution green output of the arrays is focused point. According to green output, path will be detected.
+
+	
+		\subsubsection{Alternative Solutions for Vehicle Detection Subsystem}
+		
+			Ultrasonic sensors have acceptable range. They send a sound wave and take back the echo, then give a PWM voltage related to the distance. However, using ultrasonic sensors can cause problems if the opponent also uses ultrasonic sensors; because of the interference. Besides, when measurement is angled, measuring is failing. 
+
+		Infrared sensors can be another approach to this problem, they may provide better accuracy. Moreover, Laser distance measurement can be applied to solve this problem. They have the best accuracy, but their price is the highest among the rest.
+	
+		\subsubsection{Alternative Solutions for Data Processing Subsystem}
+			
+		\subsubsection{Alternative Solutions for Controller Subsystem}
+			
+		
+		\subsubsection{Alternative Solutions for Internal Communication Subsystem}
+		
+		\subsubsection{Alternative Solutions for External Communication Subsystem}
+		
+		\subsubsection{Alternative Solutions for Direction Subsystem}
+		
+			As in the case of another configuration that involves one or two servo motors to control the directions of the front wheels. This configuration is more robust compared to ball caster utilization. However, there are more motors to control and it requires more complicated differential drive algorithms involving both DC motor differential and servo PWM to orient the front wheels.
+			
+			
+		\subsubsection{Alternative Solutions for Speed Subsystem}
+
+		
+		\subsubsection{Alternative Solutions for Chassis Subsystem}
+			
+		\subsubsection{Alternative Solutions for Printed Circuit Board Subsystem}
+			
+	
+		
+		\subsubsection{Alternative Solutions for Wheels Subsystem}
+		
+			Another combination is palette system. This system is used in real world where robust vehicles are needed. Similarly, this configuration can help handling obstacle in the path, but it costs for harder implementation and driving.\\
+
+Last implementation is 2+2 configuration. In this configuration 2 wheels can be placed at the back and the rest at the front by placing motors to back wheels. To ease turning of the vehicle, front wheels can be controlled with a servo motor as back wheels operate in the differential drive mode. This combination may provide both enhanced grip and reliable	 operation. \\
+			
+		\subsubsection{Alternative Solutions for Motors Subsystem}
+			
+			Another option is brushless DC motors. Brushless DC motors do not use brushes. This results in high torque. Brushless motors are more suitable for high RPM required areas such as CD drivers and drones.\\
+
+			Last option is servo motors. Servo motors are high-torque motors that can turn in an desired angle. Servos can be utilized in the direction of the vehicle on the front wheels. By using this solution, turning radius can be decrease significantly.\\
+
+			
+	\newpage
 	\subsection{ Error sources, their impact and ways to mitigate}
 	
 	
+	\newpage
+
 	\subsection{System \& Subsystem Tests }
-	
+
 
 	\subsubsection{Sensing System Tests}
-	
-		
 
 	\paragraph{Lane Detection Subsystem Tests}	
 	
-		\paragraph{Light Condition Test}
+		\subparagraph{Light Condition Test}
 		
-		\paragraph{Visual Disturbance Test}
+			\begin{itemize}
+				\item Mirror the Raspberry Pi screen into Laptop via VNC 
+				\item Execute the lane detection algorithm in Raspberry Pi
+				\item Change the location of the camera and Pi to conduct test
+				\item Observe the results in different locations  
+				\item If the visible lane sides can be detected without any additional object, the result of the test can be considered as success.
+			\end{itemize}
 		
-		\paragraph{}
+		\subparagraph{Visual Disturbance Test}
+		
+			\begin{itemize}
+				\item Mirror the Raspberry Pi screen into Laptop via VNC 
+				\item Execute the lane detection algorithm in Raspberry Pi
+				\item Put different objects into lane
+				\item Observe the results with different disturbances
+				\item If the objects outside of lane is not detected and the objects inside the road only detected only at its border with road, the result of the test can be considered as success.
+			\end{itemize}
+		
 	 
 	 
 	\paragraph{Vehicle Detection Subsystem Tests}
 	
-		\paragraph{•}
+		\subparagraph{•}
+		
 	\subsubsection{Computation System Tests}
 	
 	\paragraph{Data Processing Subsystem Tests}	
 		
 	\paragraph{PID Controller Subsystem Tests}
 	
+	\subsubsection{Communication System Tests}
+	
+	\paragraph{External Communication Tests}
+	
+		The codes that were written in Python were tested in 3 different combinations. The first and simplest test has been done on one computer (or raspberry pi) using the same device as client and server, at the same time. To achieve that, the computer’s (or raspberry pi’s) IP address should be defined in the host section defined in the client mode function. Secondly, the codes were tested on two computers. Thirdly, one raspberry pi and one computer were used for the test. All tests were successful if the server side is connected to the internet and client side is connected to the server via hotspot. The outputs of the tests were given in the \textit{Figure~\ref{fig:handshake1}} and \textit{Figure~\ref{fig:handshake2}}.
+		
+		
+		
+		\begin{figure}[H]
+				\center
+				\setlength{\unitlength}{\textwidth} 
+				\includegraphics[width=0.75\textwidth]{images/handshake1}
+				\caption{\label{fig:handshake1}Test Results of Handshaking for Client Side}
+		\end{figure}
+
+		\begin{figure}[H]
+			\center
+			\setlength{\unitlength}{\textwidth} 
+			\includegraphics[width=0.75\textwidth]{images/handshake2}
+			\caption{\label{fig:handshake2}Test Results of Handshaking for Server Side}
+		\end{figure}			
+			
 	
 	\subsubsection{Driving System Tests}
 	
