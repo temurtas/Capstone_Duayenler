@@ -1,0 +1,204 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University Assignment Title Page 
+% LaTeX Template
+% Version 2.1 (18/10/18)
+% Modified by
+% Erdem TUNA &
+% Halil TEMURTAŞ &
+% Enes TAŞTAN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[a4paper,12pt]{article}
+%-----packages------
+\usepackage[a4paper, total={6.2in, 9in}]{geometry}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{gensymb} % this could be problem
+\usepackage{float}
+\usepackage{fancyref}
+\usepackage{subcaption}
+\usepackage[titletoc]{appendix} %appendix package
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{xspace}
+\usepackage{amssymb}
+\usepackage{nicefrac}
+\usepackage{gensymb}
+\usepackage{fancyhdr}
+\usepackage{lipsum}  % for dummy text \lipsum[1-4]
+\usepackage[final]{pdfpages}  % pdf include
+%\usepackage{array} %allows more options in tables
+\usepackage{pgfplots,pgf,tikz} %coding plots in latex
+%\usepackage{capt-of} % allows caption outside the figure environment
+\usepackage[export]{adjustbox} %more options for adjusting the images
+%\usepackage{multicol,multirow,slashbox} % allows tables like table1
+%\usepackage[hyperfootnotes=false]{hyperref} % clickable references
+%\usepackage{epstopdf} % useful when matlab is involved
+%\usepackage{placeins} % prevents the text after figure to go above figure with \FloatBarrier 
+%\usepackage{listingsutf8,mcode} %import .m or any other code file mcode is for matlab highlighting
+\usepackage{setspace}
+%-----end of packages
+
+
+
+\input{../../documents/configuration.tex}
+%\onehalfspacing
+\begin{document}
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+\centering 
+
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{../../documents/logos/logo3-with-stroke}\\[0.5cm]
+
+\textsc{\LARGE Middle East Technical University}\\[0.5cm] % Name of your university/college
+\textsc{\Large Department of \\Electrical and Electronics Engineering }\\[0.5cm] % Major heading such as course name
+\textsc{\large EE493 ENGINEERING DESIGN I}\\[0.5cm] % Minor heading such as course title
+
+
+\HRule \\[0cm]
+{ \huge \bfseries  Car Chasing Robot\\[0.1cm] \LARGE \bfseries Conceptual Design Report}\\[0cm] % Title of your document
+\HRule \\[1cm]
+
+\begin{minipage}[l]{0.6\textwidth}
+\raggedright
+		\large{\textbf{Supervisor:}}	Assoc. Prof. Emre Özkan \\
+		\hspace{3.05cm}  METU EE / C-112
+
+\end{minipage}
+\begin{minipage}[r]{0.35\textwidth}
+\raggedright
+		\textbf{Project Start:} 4/10/2018\\
+		\textbf{Project End:} \ \  26/5/2019\\
+		\textbf{Project Budget:} \$450
+
+\end{minipage}\\[1cm]
+\begin{minipage}{\textwidth}
+	\begin{flushleft}
+		\large{\textbf{Company Name :}}	Duayenler Ltd. Şti.\\
+		\begin{table}[H]
+			\begin{tabular}{l l l l}
+				\hline
+				\textbf{Members}&\textbf{Title}& \textbf{ID}&\textbf{Phone} \\ \hline
+				Sarper Sertel & Electronics Engineer& 2094449 & 0542 515 6039  \\ 
+				Enes Taştan & Hardware Design Engineer & 2068989 & 0543 683 4336  \\ 
+				Erdem Tuna & Embedded Systems Engineer& 2617419 & 0535 256 3320  \\ 
+				Halil Temurtaş & Control Engineer& 2094522 & 0531 632 2194  \\
+				İlker Sağlık & Software Engineer& 2094423 & 0541 722 9573  \\ \hline
+				
+				
+			\end{tabular}
+		\end{table}
+	\end{flushleft}
+\end{minipage}\\[1cm]
+
+\begin{flushbottom}
+{\large December 26, 2018} % Date, change the \today to a set date if you want to be precise
+\end{flushbottom}
+
+\end{titlepage}
+
+\blankpage
+\tableofcontents
+\newpage
+
+\section{Executive Summary}
+
+	
+
+\section{Introduction}
+	DUAYENLER is established with the aim of developing autonomous car technologies for near future. To serve that purpose,  Car Chasing Project is initiated by the company. The project can be summarized as a vehicle that can autonomously follow a path and detect the other surrounding vehicle as well as communicating them to have a reliable driving environment.  With this project, the company aims to accomplish the following objectives:
+	\begin{enumerate}
+		\item Sensing the environment and other vehicles on the roads
+		\item Automatic adaptive lane detection
+		\item Self driving
+		\item Autonomous wireless communication with surrounding counterparts		
+	\end{enumerate}
+	
+	A considerable amount of effort and work force has been put on the project to fulfill the required objectives. So far, the team has figured out several important steps towards the realization of the project.To start with, the wireless communication between the vehicles is modeled and implemented. A reliable communication environment is established using Wi-Fi protocol. Currently, the vehicles can communicate with each others by means of associated handshake protocol messages in a race scenario. Secondly, computer vision algorithms are developed and implemented as a solution to lane detection problem. The algorithms are developed based on open source computer vision library OpenCV. To obtain a direction predicting results, color thresholding, edge detection, hough transform algorithms are used respectively. Furthermore, the communication between image processing platform and microcontrollers for motor driving is constructed. It is the essential part of solving the self driving problem. On the mechanical part, different motor\&wheel combinations are tested to obtain the best performance. To test the computer vision on board, a prototype vehicle is assembled and necessary equipment is mounted on it. Currently, the team is working on the improvement of computer vision algorithms.\\
+	
+	In this report, the company provides technical details about the implemented solutions, other possible solution alternatives with objective comparisons as well as a clear action plan showing the necessary further steps for realization of the project. The emphasis on this report is primarily put on the detailed analysis of proposed solutions, supported with relevant test results in both system and subsystem level. In addition, future plans including new test designs for current solutions as well as for other alternatives, the action plan in case of unexpected outcomes by clearly specifying the responsibilities of each member in the team. \\
+	
+
+
+
+\section{Solutions}
+
+\section{Plans}
+
+
+\section{Conclusion}
+
+
+
+\section{Disclaimer}
+
+
+\end{document}
+
+%----samples------
+%\begin{itemize}
+%\item Item
+%\item Item
+%\end{itemize}
+
+%\begin{figure}[H]
+%\center
+%\setlength{\unitlength}{\textwidth} 
+%\includegraphics[width=0.7\unitlength]{images/logo1}
+%\caption{\label{fig:logo}Logo }
+%\end{figure}
+
+%\begin{figure}[H]
+%	\setlength{\unitlength}{\textwidth} 
+%	\centering
+%	\begin{subfigure}{.5\textwidth}
+%  		\centering
+%  		\includegraphics[width=0.48\unitlength]{images/logo1}
+%  		\caption{\label{fig:logo1}Logo1 }
+%	\end{subfigure}%
+%	\begin{subfigure}{.5\textwidth}
+%  		\centering
+%		\includegraphics[width=0.48\unitlength]{images/logo2}
+%  		\caption{\label{fig:logo2}Logo2}
+%	\end{subfigure}
+%\caption{\label{fig:calisandegree} Small Logos   }
+%\end{figure}
+	
+%\begin{table}[H]
+%  \centering
+% 
+%    \begin{tabular}{c|c|c}
+%       $$A$$ & $$B$$ & $$C$$ \\ \hline
+%       1 & 2 & 3  \\ \hline
+%       2 & 3 & 4  \\ \hline
+%       3 & 4 & 5  \\ \hline
+%       4 & 5 & 6  
+%      
+%  \end{tabular}
+%  \caption{table}
+%  \label{tab:table}
+%\end{table}
+	
+%\begin{table}[H]
+%  \centering
+% 
+%    \begin{tabular}{c|c|c}
+%       \backslashbox{$A$}{$a$} & $$\specialcell{ Average deviation \\ after subtracting out the  \\ frequency error }$$ & $$C$$ \\ \hline
+%       \multirow{2}{*}{1} & 2 & 3  \\ \cline{2-3}
+%        & 3 & 4  \\ \hline
+%       3 & \multicolumn{2}{c}{4}  \\ \hline
+%       4 & 5 & 6  
+%      
+%  \end{tabular}
+%  \caption{table}
+%  \label{tab:table}
+%\end{table}
+%-----end of samples-----

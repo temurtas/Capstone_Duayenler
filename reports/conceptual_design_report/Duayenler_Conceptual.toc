@@ -1,0 +1,8 @@
+\select@language {english}
+\select@language {english}
+\contentsline {section}{\numberline {1}Executive Summary}{3}
+\contentsline {section}{\numberline {2}Introduction}{3}
+\contentsline {section}{\numberline {3}Solutions}{4}
+\contentsline {section}{\numberline {4}Plans}{4}
+\contentsline {section}{\numberline {5}Conclusion}{4}
+\contentsline {section}{\numberline {6}Disclaimer}{4}
