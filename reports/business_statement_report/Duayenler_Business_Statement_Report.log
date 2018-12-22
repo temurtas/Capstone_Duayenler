@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.15)  8 NOV 2018 22:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.21)  22 DEC 2018 11:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -76,20 +76,311 @@ Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks16
 \inpenc@posthook=\toks17
 
-(/usr/share/texlive/texmf-dist/tex/latex/ucs/utf8x.def
-File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
-))
-(/usr/share/texlive/texmf-dist/tex/latex/ucs/ucs.sty
-Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2015/12/03 v1.1r UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
 
-(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-global.def
-File: uni-global.def 2013/05/13 UCS: Unicode global data
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
+File: t1enc.dfu 2015/12/03 v1.1r UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00AD (decimal 173)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0100 (decimal 256)
+   defining Unicode char U+0101 (decimal 257)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+0108 (decimal 264)
+   defining Unicode char U+0109 (decimal 265)
+   defining Unicode char U+010A (decimal 266)
+   defining Unicode char U+010B (decimal 267)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0112 (decimal 274)
+   defining Unicode char U+0113 (decimal 275)
+   defining Unicode char U+0114 (decimal 276)
+   defining Unicode char U+0115 (decimal 277)
+   defining Unicode char U+0116 (decimal 278)
+   defining Unicode char U+0117 (decimal 279)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011C (decimal 284)
+   defining Unicode char U+011D (decimal 285)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0120 (decimal 288)
+   defining Unicode char U+0121 (decimal 289)
+   defining Unicode char U+0122 (decimal 290)
+   defining Unicode char U+0123 (decimal 291)
+   defining Unicode char U+0124 (decimal 292)
+   defining Unicode char U+0125 (decimal 293)
+   defining Unicode char U+0128 (decimal 296)
+   defining Unicode char U+0129 (decimal 297)
+   defining Unicode char U+012A (decimal 298)
+   defining Unicode char U+012B (decimal 299)
+   defining Unicode char U+012C (decimal 300)
+   defining Unicode char U+012D (decimal 301)
+   defining Unicode char U+012E (decimal 302)
+   defining Unicode char U+012F (decimal 303)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0134 (decimal 308)
+   defining Unicode char U+0135 (decimal 309)
+   defining Unicode char U+0136 (decimal 310)
+   defining Unicode char U+0137 (decimal 311)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013B (decimal 315)
+   defining Unicode char U+013C (decimal 316)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0145 (decimal 325)
+   defining Unicode char U+0146 (decimal 326)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+014C (decimal 332)
+   defining Unicode char U+014D (decimal 333)
+   defining Unicode char U+014E (decimal 334)
+   defining Unicode char U+014F (decimal 335)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0156 (decimal 342)
+   defining Unicode char U+0157 (decimal 343)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015C (decimal 348)
+   defining Unicode char U+015D (decimal 349)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+0168 (decimal 360)
+   defining Unicode char U+0169 (decimal 361)
+   defining Unicode char U+016A (decimal 362)
+   defining Unicode char U+016B (decimal 363)
+   defining Unicode char U+016C (decimal 364)
+   defining Unicode char U+016D (decimal 365)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0172 (decimal 370)
+   defining Unicode char U+0173 (decimal 371)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+01CD (decimal 461)
+   defining Unicode char U+01CE (decimal 462)
+   defining Unicode char U+01CF (decimal 463)
+   defining Unicode char U+01D0 (decimal 464)
+   defining Unicode char U+01D1 (decimal 465)
+   defining Unicode char U+01D2 (decimal 466)
+   defining Unicode char U+01D3 (decimal 467)
+   defining Unicode char U+01D4 (decimal 468)
+   defining Unicode char U+01E2 (decimal 482)
+   defining Unicode char U+01E3 (decimal 483)
+   defining Unicode char U+01E6 (decimal 486)
+   defining Unicode char U+01E7 (decimal 487)
+   defining Unicode char U+01E8 (decimal 488)
+   defining Unicode char U+01E9 (decimal 489)
+   defining Unicode char U+01EA (decimal 490)
+   defining Unicode char U+01EB (decimal 491)
+   defining Unicode char U+01F0 (decimal 496)
+   defining Unicode char U+01F4 (decimal 500)
+   defining Unicode char U+01F5 (decimal 501)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+01E02 (decimal 7682)
+   defining Unicode char U+01E03 (decimal 7683)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
 )
-\uc@secondtry=\count91
-\uc@combtoks=\toks18
-\uc@combtoksb=\toks19
-\uc@temptokena=\toks20
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
+File: ot1enc.dfu 2015/12/03 v1.1r UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AD (decimal 173)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
 )
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
+File: omsenc.dfu 2015/12/03 v1.1r UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2016/03/03 v2.15a AMS math features
 \@mathmargin=\skip43
@@ -100,7 +391,7 @@ Package: amstext 2000/06/29 v2.01 AMS text
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks21
+\@emptytoks=\toks18
 \ex@=\dimen112
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
@@ -110,13 +401,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count92
+\inf@bad=\count91
 LaTeX Info: Redefining \frac on input line 199.
-\uproot@=\count93
-\leftroot@=\count94
+\uproot@=\count92
+\leftroot@=\count93
 LaTeX Info: Redefining \overline on input line 297.
-\classnum@=\count95
-\DOTSCASE@=\count96
+\classnum@=\count94
+\DOTSCASE@=\count95
 LaTeX Info: Redefining \ldots on input line 394.
 LaTeX Info: Redefining \dots on input line 397.
 LaTeX Info: Redefining \cdots on input line 518.
@@ -125,26 +416,26 @@ LaTeX Info: Redefining \cdots on input line 518.
 \big@size=\dimen114
 LaTeX Font Info:    Redeclaring font encoding OML on input line 630.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
-\macc@depth=\count97
-\c@MaxMatrixCols=\count98
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
 \dotsspace@=\muskip10
-\c@parentequation=\count99
-\dspbrk@lvl=\count100
-\tag@help=\toks22
-\row@=\count101
-\column@=\count102
-\maxfields@=\count103
-\andhelp@=\toks23
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
+\tag@help=\toks19
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
+\andhelp@=\toks20
 \eqnshift@=\dimen115
 \alignsep@=\dimen116
 \tagshift@=\dimen117
 \tagwidth@=\dimen118
 \totwidth@=\dimen119
 \lineht@=\dimen120
-\@envbody=\toks24
+\@envbody=\toks21
 \multlinegap=\skip44
 \multlinetaggap=\skip45
-\mathdisplay@stack=\toks25
+\mathdisplay@stack=\toks22
 LaTeX Info: Redefining \[ on input line 2735.
 LaTeX Info: Redefining \] on input line 2736.
 )
@@ -171,7 +462,7 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count104
+\Gread@gobject=\count103
 ))
 \Gin@req@height=\dimen121
 \Gin@req@width=\dimen122
@@ -188,10 +479,10 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks26
-\XKV@tempa@toks=\toks27
+\XKV@toks=\toks23
+\XKV@tempa@toks=\toks24
 )
-\XKV@depth=\count105
+\XKV@depth=\count104
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
@@ -215,7 +506,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks28
+\pgfutil@everybye=\toks25
 \pgfutil@tempdima=\dimen123
 \pgfutil@tempdimb=\dimen124
 
@@ -236,12 +527,12 @@ Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
 Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks29
-\pgfkeys@temptoks=\toks30
+\pgfkeys@pathtoks=\toks26
+\pgfkeys@temptoks=\toks27
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
 ex
-\pgfkeys@tmptoks=\toks31
+\pgfkeys@tmptoks=\toks28
 ))
 \pgf@x=\dimen125
 \pgf@y=\dimen126
@@ -253,13 +544,13 @@ ex
 \pgf@yc=\dimen132
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count106
-\c@pgf@countb=\count107
-\c@pgf@countc=\count108
-\c@pgf@countd=\count109
-\t@pgf@toka=\toks32
-\t@pgf@tokb=\toks33
-\t@pgf@tokc=\toks34
+\c@pgf@counta=\count105
+\c@pgf@countb=\count106
+\c@pgf@countc=\count107
+\c@pgf@countd=\count108
+\t@pgf@toka=\toks29
+\t@pgf@tokb=\toks30
+\t@pgf@tokc=\toks31
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
@@ -275,8 +566,8 @@ File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
 tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count110
-\pgfsyssoftpath@bigbuffer@items=\count111
+\pgfsyssoftpath@smallbuffer@items=\count109
+\pgfsyssoftpath@bigbuffer@items=\count110
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
 tex
@@ -290,11 +581,11 @@ Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen133
-\pgfmath@count=\count112
+\pgfmath@count=\count111
 \pgfmath@box=\box29
-\pgfmath@toks=\toks35
-\pgfmath@stack@operand=\toks36
-\pgfmath@stack@operation=\toks37
+\pgfmath@toks=\toks32
+\pgfmath@stack@operand=\toks33
+\pgfmath@stack@operation=\toks34
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
@@ -314,7 +605,7 @@ tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
 thmetics.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count113
+\c@pgfmathroundto@lastzeros=\count112
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
 x
@@ -352,7 +643,7 @@ File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box30
 \pgf@hbox=\box31
 \pgf@layerbox@main=\box32
-\pgf@picture@serial@count=\count114
+\pgf@picture@serial@count=\count113
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
@@ -385,7 +676,7 @@ File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
 \pgf@max=\dimen157
-\pgf@sys@shading@range@num=\count115
+\pgf@sys@shading@range@num=\count114
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
@@ -433,8 +724,8 @@ Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen160
 \pgffor@skip=\dimen161
-\pgffor@stack=\toks38
-\pgffor@toks=\toks39
+\pgffor@stack=\toks35
+\pgffor@toks=\toks36
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
@@ -442,7 +733,7 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
 .code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count116
+\pgf@plot@mark@count=\count115
 \pgfplotmarksize=\dimen162
 )
 \tikz@lastx=\dimen163
@@ -455,18 +746,18 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikz@figbox@bg=\box36
 \tikz@tempbox=\box37
 \tikz@tempbox@bg=\box38
-\tikztreelevel=\count117
-\tikznumberofchildren=\count118
-\tikznumberofcurrentchild=\count119
-\tikz@fig@count=\count120
+\tikztreelevel=\count116
+\tikznumberofchildren=\count117
+\tikznumberofcurrentchild=\count118
+\tikz@fig@count=\count119
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count121
-\pgfmatrixcurrentcolumn=\count122
-\pgf@matrix@numberofcolumns=\count123
+\pgfmatrixcurrentrow=\count120
+\pgfmatrixcurrentcolumn=\count121
+\pgf@matrix@numberofcolumns=\count122
 )
-\tikz@expandcount=\count124
+\tikz@expandcount=\count123
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
@@ -478,28 +769,28 @@ File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count125
-\calc@Bcount=\count126
+\calc@Acount=\count124
+\calc@Bcount=\count125
 \calc@Adimen=\dimen169
 \calc@Bdimen=\dimen170
 \calc@Askip=\skip46
 \calc@Bskip=\skip47
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count127
+\calc@Ccount=\count126
 \calc@Cskip=\skip48
 )
-\c@@todonotes@numberoftodonotes=\count128
+\c@@todonotes@numberoftodonotes=\count127
 )
 (/usr/share/texlive/texmf-dist/tex/latex/was/gensymb.sty
 Package: gensymb 2003/07/02 v1.0 (WaS)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count129
-\float@exts=\toks40
+\c@float@type=\count128
+\float@exts=\toks37
 \float@box=\box39
-\@float@everytoks=\toks41
+\@float@everytoks=\toks38
 \@floatcapt=\box40
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fancyref/fancyref.sty
@@ -507,7 +798,7 @@ Package: fancyref 1999/02/03 v0.9c Fancy cross-referencing
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/varioref.sty
 Package: varioref 2015/09/22 v1.5b package for extended references (FMi)
-\c@vrcnt=\count130
+\c@vrcnt=\count129
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
@@ -526,36 +817,36 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 \caption@parindent=\dimen176
 \caption@hangindent=\dimen177
 )
-\c@ContinuedFloat=\count131
+\c@ContinuedFloat=\count130
 Package caption Info: float package is loaded.
 )
-\c@subfigure=\count132
-\c@subtable=\count133
+\c@subfigure=\count131
+\c@subtable=\count132
 )
 (/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
-\c@@pps=\count134
-\c@@ppsavesec=\count135
-\c@@ppsaveapp=\count136
+\c@@pps=\count133
+\c@@ppsavesec=\count134
+\c@@ppsaveapp=\count135
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count137
+\lst@mode=\count136
 \lst@gtempboxa=\box41
-\lst@token=\toks42
-\lst@length=\count138
+\lst@token=\toks39
+\lst@length=\count137
 \lst@currlwidth=\dimen178
-\lst@column=\count139
-\lst@pos=\count140
+\lst@column=\count138
+\lst@pos=\count139
 \lst@lostspace=\dimen179
 \lst@width=\dimen180
-\lst@newlines=\count141
-\lst@lineno=\count142
+\lst@newlines=\count140
+\lst@lineno=\count141
 \lst@maxwidth=\dimen181
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count143
-\lst@skipnumbers=\count144
+\c@lstnumber=\count142
+\lst@skipnumbers=\count143
 \lst@framebox=\box42
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
@@ -582,22 +873,20 @@ Package: nicefrac 1998/08/04 v0.9b Nice fractions
 \L@UnitsRaiseTextstyle=\skip50
 \L@UnitsRaiseScriptstyle=\skip51
 )
-(/home/enes/texmf/tex/latex/local/fancyhdr.sty
-Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
-s
-\f@nch@headwidth=\skip52
-\f@nch@O@elh=\skip53
-\f@nch@O@erh=\skip54
-\f@nch@O@olh=\skip55
-\f@nch@O@orh=\skip56
-\f@nch@O@elf=\skip57
-\f@nch@O@erf=\skip58
-\f@nch@O@olf=\skip59
-\f@nch@O@orf=\skip60
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip52
+\f@ncyO@elh=\skip53
+\f@ncyO@erh=\skip54
+\f@ncyO@olh=\skip55
+\f@ncyO@orh=\skip56
+\f@ncyO@elf=\skip57
+\f@ncyO@erf=\skip58
+\f@ncyO@olf=\skip59
+\f@ncyO@orf=\skip60
 )
 (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
-\c@lips@count=\count145
+\c@lips@count=\count144
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
 Package: pdfpages 2015/09/18 v0.5d Insert pages of external PDF documents (AM)
@@ -615,9 +904,17 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 File: pppdftex.def 2015/09/18 v0.5d Pdfpages driver for pdfTeX (AM)
 )
 \AM@pagebox=\box43
-\AM@toc@title=\toks43
-\c@AM@survey=\count146
+\AM@toc@title=\toks40
+\c@AM@survey=\count145
 \AM@templatesizebox=\box44
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen184
+\extrarowheight=\dimen185
+\NC@list=\toks41
+\extratabsurround=\skip61
+\backup@length=\skip62
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplots.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
@@ -625,12 +922,12 @@ Package: pgfplots 2016/01/06 v1.13 Data Visualization (1.13)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks44
-\t@pgfplots@tokb=\toks45
-\t@pgfplots@tokc=\toks46
-\pgfplots@tmpa=\dimen184
-\c@pgfplots@coordindex=\count147
-\c@pgfplots@scanlineindex=\count148
+\t@pgfplots@toka=\toks42
+\t@pgfplots@tokb=\toks43
+\t@pgfplots@tokc=\toks44
+\pgfplots@tmpa=\dimen186
+\c@pgfplots@coordindex=\count146
+\c@pgfplots@scanlineindex=\count147
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code
 .tex))
@@ -646,7 +943,7 @@ Package pgfplots: loading complementary arithmetics for your pgf version...
 gfsupp_pgflibraryfpu.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
 gfsupp_pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count149
+\c@pgfmathroundto@lastzeros=\count148
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotslists
@@ -655,14 +952,14 @@ tructure.code.tex)
 tructureext.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray
 .code.tex
-\c@pgfplotsarray@tmp=\count150
+\c@pgfplotsarray@tmp=\count149
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatri
 x.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshare
 d.code.tex
-\c@pgfplotstable@counta=\count151
-\t@pgfplotstable@a=\toks47
+\c@pgfplotstable@counta=\count150
+\t@pgfplotstable@a=\toks45
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque
 .code.tex)
@@ -674,7 +971,7 @@ de.tex))
 .tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.sur
 fshading.code.tex
-\c@pgfplotslibrarysurf@no=\count152
+\c@pgfplotslibrarysurf@no=\count151
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surf
 shading.pgfsys-pdftex.def)))
@@ -701,14 +998,14 @@ e.tex)
 zlibrarydecorations.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.cod
 e.tex
-\pgfdecoratedcompleteddistance=\dimen185
-\pgfdecoratedremainingdistance=\dimen186
-\pgfdecoratedinputsegmentcompleteddistance=\dimen187
-\pgfdecoratedinputsegmentremainingdistance=\dimen188
-\pgf@decorate@distancetomove=\dimen189
-\pgf@decorate@repeatstate=\count153
-\pgfdecorationsegmentamplitude=\dimen190
-\pgfdecorationsegmentlength=\dimen191
+\pgfdecoratedcompleteddistance=\dimen187
+\pgfdecoratedremainingdistance=\dimen188
+\pgfdecoratedinputsegmentcompleteddistance=\dimen189
+\pgfdecoratedinputsegmentremainingdistance=\dimen190
+\pgf@decorate@distancetomove=\dimen191
+\pgf@decorate@repeatstate=\count152
+\pgfdecorationsegmentamplitude=\dimen192
+\pgfdecorationsegmentlength=\dimen193
 )
 \tikz@lib@dec@box=\box45
 )
@@ -720,13 +1017,13 @@ decorations.pathmorphing.code.tex))
 zlibrarydecorations.pathreplacing.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
 decorations.pathreplacing.code.tex))
-\pgfplots@numplots=\count154
-\pgfplots@xmin@reg=\dimen192
-\pgfplots@xmax@reg=\dimen193
-\pgfplots@ymin@reg=\dimen194
-\pgfplots@ymax@reg=\dimen195
-\pgfplots@zmin@reg=\dimen196
-\pgfplots@zmax@reg=\dimen197
+\pgfplots@numplots=\count153
+\pgfplots@xmin@reg=\dimen194
+\pgfplots@xmax@reg=\dimen195
+\pgfplots@ymin@reg=\dimen196
+\pgfplots@ymax@reg=\dimen197
+\pgfplots@zmin@reg=\dimen198
+\pgfplots@zmax@reg=\dimen199
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryplotmarks.code.tex
@@ -749,30 +1046,30 @@ Package: trimclip 2012/05/16 v1.0 Trim and clip general TeX material
 Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
 \collectedbox=\box46
 )
-\tc@llx=\dimen198
-\tc@lly=\dimen199
-\tc@urx=\dimen256
-\tc@ury=\dimen257
+\tc@llx=\dimen256
+\tc@lly=\dimen257
+\tc@urx=\dimen258
+\tc@ury=\dimen259
 Package trimclip Info: Using driver 'tc-pdftex.def'.
 
 (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
 File: tc-pdftex.def 2012/05/13 v1.0 Clipping driver for pdftex
 ))
-\adjbox@Width=\dimen258
-\adjbox@Height=\dimen259
-\adjbox@Depth=\dimen260
-\adjbox@Totalheight=\dimen261
+\adjbox@Width=\dimen260
+\adjbox@Height=\dimen261
+\adjbox@Depth=\dimen262
+\adjbox@Totalheight=\dimen263
 
 (/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2011/09/13 v1.0 Conditionals for odd/even page detection
-\c@checkoddpage=\count155
+\c@checkoddpage=\count154
 )
 (/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box47
-\sift@deathcycles=\count156
-\@vwid@loff=\dimen262
-\@vwid@roff=\dimen263
+\sift@deathcycles=\count155
+\@vwid@loff=\dimen264
+\@vwid@roff=\dimen265
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
@@ -780,18 +1077,18 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (./Duayenler_Business_Statement_Report.aux)
 \openout1 = `Duayenler_Business_Statement_Report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -827,22 +1124,19 @@ LaTeX Font Info:    ... okay on input line 201.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
-File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
-)
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count157
-\scratchdimen=\dimen264
+\scratchcounter=\count156
+\scratchdimen=\dimen266
 \scratchbox=\box48
-\nofMPsegments=\count158
-\nofMParguments=\count159
-\everyMPshowfont=\toks48
-\MPscratchCnt=\count160
-\MPscratchDim=\dimen265
-\MPnumerator=\count161
-\makeMPintoPDFobject=\count162
-\everyMPtoPDFconversion=\toks49
+\nofMPsegments=\count157
+\nofMParguments=\count158
+\everyMPshowfont=\toks46
+\MPscratchCnt=\count159
+\MPscratchDim=\dimen267
+\MPnumerator=\count160
+\makeMPintoPDFobject=\count161
+\everyMPtoPDFconversion=\toks47
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -888,22 +1182,22 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-LaTeX Info: Redefining \celsius on input line 201.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 201
+LaTeX Info: Redefining \celsius on input line 200.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 200
 .
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 201.
-Package gensymb Info: Using \Omega for \ohm on input line 201.
+LaTeX Info: Redefining \ohm on input line 200.
+Package gensymb Info: Using \Omega for \ohm on input line 200.
 
 Package gensymb Warning: Not defining \micro.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count163
+\c@lstlisting=\count162
 \AtBeginShipoutBox=\box49
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/pdflscape.sty
 Package: pdflscape 2008/08/11 v0.10 Display of landscape pages in PDF (HO)
@@ -917,27 +1211,20 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 80.
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.13} into 
 your preamble.
- on input line 201.
+ on input line 200.
 
 <images/logo3-with-stroke.png, id=4, 1508.63625pt x 379.4175pt>
 File: images/logo3-with-stroke.png Graphic file (type png)
 
 <use images/logo3-with-stroke.png>
-Package pdftex.def Info: images/logo3-with-stroke.png used on input line 208.
+Package pdftex.def Info: images/logo3-with-stroke.png used on input line 207.
 (pdftex.def)             Requested size: 448.05945pt x 112.68561pt.
-
-(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
-File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
-)
-(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-1.def
-File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
-)
-LaTeX Font Info:    Try loading font information for U+msa on input line 230.
+LaTeX Font Info:    Try loading font information for U+msa on input line 229.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 230.
+LaTeX Font Info:    Try loading font information for U+msb on input line 229.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -950,40 +1237,37 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout4 = `Duayenler_Business_Statement_Report.toc'.
 
  [1]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 275.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 274.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 275.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 274.
  [2]
 <images/meeting2.jpg, id=23, 1284.8pt x 963.6pt>
 File: images/meeting2.jpg Graphic file (type jpg)
  <use images/meeting2.jpg>
-Package pdftex.def Info: images/meeting2.jpg used on input line 280.
+Package pdftex.def Info: images/meeting2.jpg used on input line 279.
 (pdftex.def)             Requested size: 403.26341pt x 302.44756pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 287--288
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
 
  []
 
 [3 <./images/meeting2.jpg>]
-(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
-File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)
-Underfull \hbox (badness 10000) in paragraph at lines 300--301
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 309--310
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 315--316
+Underfull \hbox (badness 10000) in paragraph at lines 314--315
 
  []
 
@@ -991,7 +1275,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 315--316
 File: images/schedule.png Graphic file (type png)
 
 <use images/schedule.png>
-Package pdftex.def Info: images/schedule.png used on input line 331.
+Package pdftex.def Info: images/schedule.png used on input line 330.
 (pdftex.def)             Requested size: 448.04713pt x 312.59102pt.
 
 
@@ -1002,7 +1286,7 @@ See the pdfpages package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.345 ...../Documents/personal_data/CVs/Sarper_CV}
+l.344 ...../Documents/personal_data/CVs/Sarper_CV}
                                                   
 This error message was generated by an \errmessage
 command, so I can't give any explicit help.
@@ -1012,7 +1296,7 @@ and deduce the truth by order and method.
 ! Undefined control sequence.
 \AM@checkpagenumber #1->\ifnum #1>\AM@pagecount 
                                                 \relax \ifthenelse {\boolean...
-l.345 ...../Documents/personal_data/CVs/Sarper_CV}
+l.344 ...../Documents/personal_data/CVs/Sarper_CV}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1023,7 +1307,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.345 ...../Documents/personal_data/CVs/Sarper_CV}
+l.344 ...../Documents/personal_data/CVs/Sarper_CV}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1036,7 +1320,7 @@ See the pdfpages package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.345 ...../Documents/personal_data/CVs/Sarper_CV}
+l.344 ...../Documents/personal_data/CVs/Sarper_CV}
                                                   
 You have set a wrong page number in the `pages' option. Document 
 `\AM@currentdocname ' does not have 1 pages.
@@ -1044,7 +1328,7 @@ You have set a wrong page number in the `pages' option. Document
 ! Undefined control sequence.
 \AM@checkpagenumber #1->\ifnum #1>\AM@pagecount 
                                                 \relax \ifthenelse {\boolean...
-l.345 ...../Documents/personal_data/CVs/Sarper_CV}
+l.344 ...../Documents/personal_data/CVs/Sarper_CV}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1055,7 +1339,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.345 ...../Documents/personal_data/CVs/Sarper_CV}
+l.344 ...../Documents/personal_data/CVs/Sarper_CV}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1068,7 +1352,7 @@ See the pdfpages package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.345 ...../Documents/personal_data/CVs/Sarper_CV}
+l.344 ...../Documents/personal_data/CVs/Sarper_CV}
                                                   
 You have set a wrong page number in the `pages' option. Document 
 `\AM@currentdocname ' does not have 2 pages.
@@ -1080,7 +1364,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.345 ...../Documents/personal_data/CVs/Sarper_CV}
+l.344 ...../Documents/personal_data/CVs/Sarper_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1093,7 +1377,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.345 ...../Documents/personal_data/CVs/Sarper_CV}
+l.344 ...../Documents/personal_data/CVs/Sarper_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1107,7 +1391,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.345 ...../Documents/personal_data/CVs/Sarper_CV}
+l.344 ...../Documents/personal_data/CVs/Sarper_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1120,7 +1404,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.345 ...../Documents/personal_data/CVs/Sarper_CV}
+l.344 ...../Documents/personal_data/CVs/Sarper_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1133,7 +1417,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.345 ...../Documents/personal_data/CVs/Sarper_CV}
+l.344 ...../Documents/personal_data/CVs/Sarper_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1147,7 +1431,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.345 ...../Documents/personal_data/CVs/Sarper_CV}
+l.344 ...../Documents/personal_data/CVs/Sarper_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1160,7 +1444,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.345 ...../Documents/personal_data/CVs/Sarper_CV}
+l.344 ...../Documents/personal_data/CVs/Sarper_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1173,7 +1457,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.345 ...../Documents/personal_data/CVs/Sarper_CV}
+l.344 ...../Documents/personal_data/CVs/Sarper_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1188,14 +1472,14 @@ See the pdfpages package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.346 ..../../Documents/personal_data/CVs/Enes_CV}
+l.345 ..../../Documents/personal_data/CVs/Enes_CV}
                                                   
 (That was another \errmessage.)
 
 ! Undefined control sequence.
 \AM@checkpagenumber #1->\ifnum #1>\AM@pagecount 
                                                 \relax \ifthenelse {\boolean...
-l.346 ..../../Documents/personal_data/CVs/Enes_CV}
+l.345 ..../../Documents/personal_data/CVs/Enes_CV}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1206,7 +1490,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.346 ..../../Documents/personal_data/CVs/Enes_CV}
+l.345 ..../../Documents/personal_data/CVs/Enes_CV}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1219,7 +1503,7 @@ See the pdfpages package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.346 ..../../Documents/personal_data/CVs/Enes_CV}
+l.345 ..../../Documents/personal_data/CVs/Enes_CV}
                                                   
 You have set a wrong page number in the `pages' option. Document 
 `\AM@currentdocname ' does not have 1 pages.
@@ -1227,7 +1511,7 @@ You have set a wrong page number in the `pages' option. Document
 ! Undefined control sequence.
 \AM@checkpagenumber #1->\ifnum #1>\AM@pagecount 
                                                 \relax \ifthenelse {\boolean...
-l.346 ..../../Documents/personal_data/CVs/Enes_CV}
+l.345 ..../../Documents/personal_data/CVs/Enes_CV}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1238,7 +1522,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.346 ..../../Documents/personal_data/CVs/Enes_CV}
+l.345 ..../../Documents/personal_data/CVs/Enes_CV}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1251,7 +1535,7 @@ See the pdfpages package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.346 ..../../Documents/personal_data/CVs/Enes_CV}
+l.345 ..../../Documents/personal_data/CVs/Enes_CV}
                                                   
 You have set a wrong page number in the `pages' option. Document 
 `\AM@currentdocname ' does not have 2 pages.
@@ -1263,7 +1547,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.346 ..../../Documents/personal_data/CVs/Enes_CV}
+l.345 ..../../Documents/personal_data/CVs/Enes_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1276,7 +1560,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.346 ..../../Documents/personal_data/CVs/Enes_CV}
+l.345 ..../../Documents/personal_data/CVs/Enes_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1289,7 +1573,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.346 ..../../Documents/personal_data/CVs/Enes_CV}
+l.345 ..../../Documents/personal_data/CVs/Enes_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1302,7 +1586,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.346 ..../../Documents/personal_data/CVs/Enes_CV}
+l.345 ..../../Documents/personal_data/CVs/Enes_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1315,7 +1599,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.346 ..../../Documents/personal_data/CVs/Enes_CV}
+l.345 ..../../Documents/personal_data/CVs/Enes_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1329,7 +1613,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.346 ..../../Documents/personal_data/CVs/Enes_CV}
+l.345 ..../../Documents/personal_data/CVs/Enes_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1342,7 +1626,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.346 ..../../Documents/personal_data/CVs/Enes_CV}
+l.345 ..../../Documents/personal_data/CVs/Enes_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1355,7 +1639,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.346 ..../../Documents/personal_data/CVs/Enes_CV}
+l.345 ..../../Documents/personal_data/CVs/Enes_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1370,14 +1654,14 @@ See the pdfpages package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.347 .../../Documents/personal_data/CVs/Erdem_CV}
+l.346 .../../Documents/personal_data/CVs/Erdem_CV}
                                                   
 (That was another \errmessage.)
 
 ! Undefined control sequence.
 \AM@checkpagenumber #1->\ifnum #1>\AM@pagecount 
                                                 \relax \ifthenelse {\boolean...
-l.347 .../../Documents/personal_data/CVs/Erdem_CV}
+l.346 .../../Documents/personal_data/CVs/Erdem_CV}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1388,7 +1672,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.347 .../../Documents/personal_data/CVs/Erdem_CV}
+l.346 .../../Documents/personal_data/CVs/Erdem_CV}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1401,7 +1685,7 @@ See the pdfpages package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.347 .../../Documents/personal_data/CVs/Erdem_CV}
+l.346 .../../Documents/personal_data/CVs/Erdem_CV}
                                                   
 You have set a wrong page number in the `pages' option. Document 
 `\AM@currentdocname ' does not have 1 pages.
@@ -1409,7 +1693,7 @@ You have set a wrong page number in the `pages' option. Document
 ! Undefined control sequence.
 \AM@checkpagenumber #1->\ifnum #1>\AM@pagecount 
                                                 \relax \ifthenelse {\boolean...
-l.347 .../../Documents/personal_data/CVs/Erdem_CV}
+l.346 .../../Documents/personal_data/CVs/Erdem_CV}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1420,7 +1704,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.347 .../../Documents/personal_data/CVs/Erdem_CV}
+l.346 .../../Documents/personal_data/CVs/Erdem_CV}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1433,7 +1717,7 @@ See the pdfpages package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.347 .../../Documents/personal_data/CVs/Erdem_CV}
+l.346 .../../Documents/personal_data/CVs/Erdem_CV}
                                                   
 You have set a wrong page number in the `pages' option. Document 
 `\AM@currentdocname ' does not have 2 pages.
@@ -1445,7 +1729,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.347 .../../Documents/personal_data/CVs/Erdem_CV}
+l.346 .../../Documents/personal_data/CVs/Erdem_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1458,7 +1742,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.347 .../../Documents/personal_data/CVs/Erdem_CV}
+l.346 .../../Documents/personal_data/CVs/Erdem_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1471,7 +1755,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.347 .../../Documents/personal_data/CVs/Erdem_CV}
+l.346 .../../Documents/personal_data/CVs/Erdem_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1484,7 +1768,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.347 .../../Documents/personal_data/CVs/Erdem_CV}
+l.346 .../../Documents/personal_data/CVs/Erdem_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1497,7 +1781,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.347 .../../Documents/personal_data/CVs/Erdem_CV}
+l.346 .../../Documents/personal_data/CVs/Erdem_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1511,7 +1795,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.347 .../../Documents/personal_data/CVs/Erdem_CV}
+l.346 .../../Documents/personal_data/CVs/Erdem_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1524,7 +1808,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.347 .../../Documents/personal_data/CVs/Erdem_CV}
+l.346 .../../Documents/personal_data/CVs/Erdem_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1537,7 +1821,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.347 .../../Documents/personal_data/CVs/Erdem_CV}
+l.346 .../../Documents/personal_data/CVs/Erdem_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1552,14 +1836,14 @@ See the pdfpages package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.348 .../../Documents/personal_data/CVs/Halil_CV}
+l.347 .../../Documents/personal_data/CVs/Halil_CV}
                                                   
 (That was another \errmessage.)
 
 ! Undefined control sequence.
 \AM@checkpagenumber #1->\ifnum #1>\AM@pagecount 
                                                 \relax \ifthenelse {\boolean...
-l.348 .../../Documents/personal_data/CVs/Halil_CV}
+l.347 .../../Documents/personal_data/CVs/Halil_CV}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1570,7 +1854,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.348 .../../Documents/personal_data/CVs/Halil_CV}
+l.347 .../../Documents/personal_data/CVs/Halil_CV}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1583,7 +1867,7 @@ See the pdfpages package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.348 .../../Documents/personal_data/CVs/Halil_CV}
+l.347 .../../Documents/personal_data/CVs/Halil_CV}
                                                   
 You have set a wrong page number in the `pages' option. Document 
 `\AM@currentdocname ' does not have 1 pages.
@@ -1591,7 +1875,7 @@ You have set a wrong page number in the `pages' option. Document
 ! Undefined control sequence.
 \AM@checkpagenumber #1->\ifnum #1>\AM@pagecount 
                                                 \relax \ifthenelse {\boolean...
-l.348 .../../Documents/personal_data/CVs/Halil_CV}
+l.347 .../../Documents/personal_data/CVs/Halil_CV}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1602,7 +1886,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.348 .../../Documents/personal_data/CVs/Halil_CV}
+l.347 .../../Documents/personal_data/CVs/Halil_CV}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1615,7 +1899,7 @@ See the pdfpages package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.348 .../../Documents/personal_data/CVs/Halil_CV}
+l.347 .../../Documents/personal_data/CVs/Halil_CV}
                                                   
 You have set a wrong page number in the `pages' option. Document 
 `\AM@currentdocname ' does not have 2 pages.
@@ -1627,7 +1911,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.348 .../../Documents/personal_data/CVs/Halil_CV}
+l.347 .../../Documents/personal_data/CVs/Halil_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1640,7 +1924,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.348 .../../Documents/personal_data/CVs/Halil_CV}
+l.347 .../../Documents/personal_data/CVs/Halil_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1653,7 +1937,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.348 .../../Documents/personal_data/CVs/Halil_CV}
+l.347 .../../Documents/personal_data/CVs/Halil_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1666,7 +1950,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.348 .../../Documents/personal_data/CVs/Halil_CV}
+l.347 .../../Documents/personal_data/CVs/Halil_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1679,7 +1963,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.348 .../../Documents/personal_data/CVs/Halil_CV}
+l.347 .../../Documents/personal_data/CVs/Halil_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1693,7 +1977,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.348 .../../Documents/personal_data/CVs/Halil_CV}
+l.347 .../../Documents/personal_data/CVs/Halil_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1706,7 +1990,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.348 .../../Documents/personal_data/CVs/Halil_CV}
+l.347 .../../Documents/personal_data/CVs/Halil_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1719,7 +2003,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.348 .../../Documents/personal_data/CVs/Halil_CV}
+l.347 .../../Documents/personal_data/CVs/Halil_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1734,14 +2018,14 @@ See the pdfpages package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.349 .../../Documents/personal_data/CVs/Ilker_CV}
+l.348 .../../Documents/personal_data/CVs/Ilker_CV}
                                                   
 (That was another \errmessage.)
 
 ! Undefined control sequence.
 \AM@checkpagenumber #1->\ifnum #1>\AM@pagecount 
                                                 \relax \ifthenelse {\boolean...
-l.349 .../../Documents/personal_data/CVs/Ilker_CV}
+l.348 .../../Documents/personal_data/CVs/Ilker_CV}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1752,7 +2036,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.349 .../../Documents/personal_data/CVs/Ilker_CV}
+l.348 .../../Documents/personal_data/CVs/Ilker_CV}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1765,7 +2049,7 @@ See the pdfpages package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.349 .../../Documents/personal_data/CVs/Ilker_CV}
+l.348 .../../Documents/personal_data/CVs/Ilker_CV}
                                                   
 You have set a wrong page number in the `pages' option. Document 
 `\AM@currentdocname ' does not have 1 pages.
@@ -1777,7 +2061,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.349 .../../Documents/personal_data/CVs/Ilker_CV}
+l.348 .../../Documents/personal_data/CVs/Ilker_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1790,7 +2074,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.349 .../../Documents/personal_data/CVs/Ilker_CV}
+l.348 .../../Documents/personal_data/CVs/Ilker_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1803,7 +2087,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.349 .../../Documents/personal_data/CVs/Ilker_CV}
+l.348 .../../Documents/personal_data/CVs/Ilker_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1816,7 +2100,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.349 .../../Documents/personal_data/CVs/Ilker_CV}
+l.348 .../../Documents/personal_data/CVs/Ilker_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -1829,29 +2113,32 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.349 .../../Documents/personal_data/CVs/Ilker_CV}
+l.348 .../../Documents/personal_data/CVs/Ilker_CV}
                                                   
 Using draft setting for this image.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[15] (./Duayenler_Business_Statement_Report.aux) ) 
+[15] (./Duayenler_Business_Statement_Report.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 29186 strings out of 494953
- 668684 string characters out of 6180976
- 945196 words of memory out of 5000000
- 31905 multiletter control sequences out of 15000+600000
+ 27912 strings out of 494953
+ 652302 string characters out of 6180976
+ 935509 words of memory out of 5000000
+ 30640 multiletter control sequences out of 15000+600000
  12129 words of font info for 45 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 62i,18n,94p,1029b,666s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmtt12.pfb>
-Output written on Duayenler_Business_Statement_Report.pdf (16 pages, 470828 byt
+ 62i,18n,94p,1029b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on Duayenler_Business_Statement_Report.pdf (16 pages, 470994 byt
 es).
 PDF statistics:
  89 PDF objects out of 1000 (max. 8388607)
