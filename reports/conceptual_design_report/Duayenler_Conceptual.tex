@@ -144,7 +144,7 @@
 		Sensing system has two main subsystems which are "Lane Detection Subsystem" and "Vehicle Detection Subsystem".
 		
 		\paragraph{Lane Detection Subsystem}
-			The subsystem basically detects the lane. This subsystem uses OpenCV libraries for processing camera frames. The input is captured from a Raspberry Pi camera that is mounted to the vehicle. The captured frame is firstly, preprocessed by a denoising filter. Then, the edges in the frame is detected by Canny Edge Detector algorithm. The output of Canny is a binary image filled with ones and zeros. The Hough Lines technique probabilistically extracts possible lines in a given binary image. Thus, possible line constituting points are obtained from Hough Lines function. Next, points of the lines are classified as left or right borders of the lane. The elimination of the wrong points are done concurrently with the classification. Then, filtered points are fitted in two separate lines to create left and right borders of the lane. As the lane borders are found, the next and the last step is to determine the direction of the vehicle. The output of this subsystem is a turning angle and a direction.
+			The subsystem basically detects the lane. This subsystem uses OpenCV libraries for processing camera frames. The input is captured from a Raspberry Pi camera that is mounted to the vehicle. The captured frame is firstly, preprocessed by a denoising filter and HSV color filter. The edges in the frame is detected by Canny Edge Detector algorithm. The output of Canny is a binary image filled with ones and zeros. The resulting binary image is sent to Data Processing Subsystem.
 
 		\paragraph{Vehicle Detection Subsystem}
 			The subsystem is the first step of safely computing with an opponent in a racing path. This subsystem uses two laser distance sensors one at the back of the vehicle responsible for detecting the chasing opponent and one at the front of the vehicle responsible for detecting the chased opponent. The subsystem produces positive output if the chasing vehicle or chased vehicle is within a range of 5 cm from the vehicle.			
@@ -155,7 +155,7 @@
 	
 		\paragraph{Data Processing Subsystem}
 		
-			This unit is the main algorithm application level. Data from sensor will be aggregated in this unit and will be pre-processed. Then, processed data will be output to the controller unit. Processing will mainly be done using Arduino and Raspberry Pi (if used). Suitable algorithms will be developed to realize desired operations with the controller unit
+ The input of this system is an edge detected binary image. To find points constituting a line, Hough Lines function is used. The Hough Lines technique probabilistically extracts possible lines in a given binary image. Thus, possible line constituting points are obtained from Hough Lines function. Next, points of the lines are classified as left or right borders of the lane. The elimination of the wrong points are done concurrently with the classification. Then, filtered points are fitted in two separate lines to create left and right borders of the lane. As the lane borders are found, the next and the last step is to determine the direction of the vehicle. The output of this subsystem is a turning angle and a direction.
 
 		\paragraph{PID Controller Subsystem}
 			
@@ -358,56 +358,54 @@
 
 
 	\subsection{Solution for each subsystem and relevant algorithms}
-<<<<<<< HEAD
+
 		The applied algorithms, solution steps and solution methodology are presented in this section in a detailed manner.
 			\subsubsection{Lane Detection Subsystem}
-				The first processing on the captured frame is denoising by blurring. The blurring filter is a GaussianBlur of (3x3) matrix with zero variance both in x and y directions. Next, the filtered image is processed by Canny Edge Detector. This process eliminates all pixels except those are constituting an edge. Edge pixels are usually formed when there is a transition from one object to other. 
+				The first processing on the captured frame is denoising by blurring. The blurring filter is a GaussianBlur of (3x3) matrix with zero variance both in x and y directions. Next, the filtered image is color filtered in HSV color space. The filter range of the HSV filter is adjusted only to include shades green. The lower bound for HSV filter is [H=60, S=120, V=106] and the higher bound is [H=82, S=255, V=235]. Later the color filtered image is processed by Canny Edge Detector. This process eliminates all pixels except those are constituting an edge. Edge pixels are usually formed when there is a transition from one object to other. The edge detected frame is sent to Data Processing Subsystem.
 				
-				Then those detected pixels are input to Hough Lines function. This function outputs two pixels points on the image that form a line. The output of the function is tens of such line points. The accuracy of the function can be adjusted by playing with the input parameters. The function basically draws all lines that might go through a point in the free space (in polar coordinates) and intersects those lines. If the origin points of the intersected lines are within a specified bound, then the line is defined and it can be expanded further. If found points on a line don't exceed a threshold, that line is discarded. The adjustment of such parameters are done with trial and error approach. An important note is that this function is probabilistic, meaning that even if the input frame is never changed, the output line points would be close to previous point but not the same. An example call for this function together with its parameters is given \textit{Script~\ref{sc:hough-call}}.
-				
-	\begin{lstlisting}[language=C++,float=t,numbers=left,frame=single,caption=Hough Lines Function with its Parameters, captionpos=b, label=sc:hough-call]
-HoughLinesP(input=img_threshed, output=line,
-	rho=1, theta=CV_PI / 180, threshold=15, 
-	minLineLength=30, maxLineGap=40);
-	\end{lstlisting}
-				Then next step is to classify the line points as left or right. The lines are firstly eliminated according to their slopes. If slope of a line is not in invalid slope region of $\pm$0.005, then it is a valid line. This process is done to get rid of unnecessary low sloped lines. After elimination, line points set must be determined as left or right. At this point, this classification is done according to double checking. the center of the image, that is 320th vertical pixel. If initial and final horizontal points of the image is in the same half, the line belongs to that half. This method works nicely in most regions of the path. However, it is a bit error prone in case of a sharp turning angle or losing one of the lanes . This algorithm will be improved to be more robust.
-	\begin{lstlisting}[language=C++,float=t,numbers=left,frame=single,caption=The Algorithm to Classify the Lane Lines as Right or Left, captionpos=b, label=sc:left-right-lines]
-std::vector<cv::Vec4i> lines // like a 4x4 matrix
-double slope_thresh = 0.005; // absolute threshold slope
-for (lines_points) {}
-	ini = Point(x1, y1);
-	fini = Point(x2, y2);
-		line_slope = fini/ini;
-	if(abs(line_slope) >= slope_thresh) line_is_valid;
-		else line_is_not_valid;
-
-for (lines_is_valid)	
-	if(x1>320 && x2>320)
-		it_is_right_line;
-	else if(x1<320 && x2<320)
-		it_is_left_line;
-	else discard_the_line;
-\end{lstlisting}
-
-			After finding the all left and right line points, actual left and right lines are constructed by applying least square method to the both point sets. The result of this method is 4 points (x1,y1,x2,y2) to refer the left lane line and 4 points to refer the right lane line.
 			
-			The last process on the image is predicting the turn angle and direction. The prediction of direction is done by comparing the slopes of the left and the right lines. The turning is to be made to the side of the lane line having less slope. The angle is determined by computing the angle between the normal line of the current direction and guide line. Guide line is constructed with the average of the middle points of the right and the left lines and current point of the vehicle. Vehicle's current point is assumed to be in the middle of the beginning of the image. Thus, the beginning point of the guideline is the current position of the vehicle and the endpoint is the target point to be reached. The output of this processing is shown in \textit{Figure~\ref{fig:turn-prediction-explained}}.
-				
-\begin{figure}[H]
-	\center
-	\setlength{\unitlength}{\textwidth} 
-	\includegraphics[width=0.6\textwidth]{images/turn-prediction-explained}
-	\caption{\label{fig:turn-prediction-explained}The Prediction of Turn Angle and Direction.}
-\end{figure}
-=======
-	
 		\subsubsection{Solution for Vehicle Detection Subsystem}
 		
 			Laser Sensor
 	
 	
 		\subsubsection{Solution for Data Processing Subsystem}
-			
+	Then those detected pixels are input to Hough Lines function. This function outputs two pixels points on the image that form a line. The output of the function is tens of such line points. The accuracy of the function can be adjusted by playing with the input parameters. The function basically draws all lines that might go through a point in the free space (in polar coordinates) and intersects those lines. If the origin points of the intersected lines are within a specified bound, then the line is defined and it can be expanded further. If found points on a line don't exceed a threshold, that line is discarded. The adjustment of such parameters are done with trial and error approach. An important note is that this function is probabilistic, meaning that even if the input frame is never changed, the output line points would be close to previous point but not the same. An example call for this function together with its parameters is given \textit{Script~\ref{sc:hough-call}}.
+
+\begin{lstlisting}[language=C++,float=t,numbers=left,frame=single,caption=Hough Lines Function with its Parameters, captionpos=b, label=sc:hough-call]
+HoughLinesP(input=img_threshed, output=line,
+rho=1, theta=CV_PI / 180, threshold=15, 
+minLineLength=30, maxLineGap=40);
+\end{lstlisting}
+Then next step is to classify the line points as left or right. The lines are firstly eliminated according to their slopes. If slope of a line is not in invalid slope region of $\pm$0.005, then it is a valid line. This process is done to get rid of unnecessary low sloped lines. After elimination, line points set must be determined as left or right. At this point, this classification is done according to double checking. the center of the image, that is 320th vertical pixel. If initial and final horizontal points of the image is in the same half, the line belongs to that half. This method works nicely in most regions of the path. However, it is a bit error prone in case of a sharp turning angle or losing one of the lanes . This algorithm will be improved to be more robust.
+\begin{lstlisting}[language=C++,float=t,numbers=left,frame=single,caption=The Algorithm to Classify the Lane Lines as Right or Left, captionpos=b, label=sc:left-right-lines]
+std::vector<cv::Vec4i> lines // like a 4x4 matrix
+double slope_thresh = 0.005; // absolute threshold slope
+for (lines_points) {}
+ini = Point(x1, y1);
+fini = Point(x2, y2);
+line_slope = fini/ini;
+if(abs(line_slope) >= slope_thresh) line_is_valid;
+else line_is_not_valid;
+
+for (lines_is_valid)	
+if(x1>320 && x2>320)
+it_is_right_line;
+else if(x1<320 && x2<320)
+it_is_left_line;
+else discard_the_line;
+\end{lstlisting}
+
+After finding the all left and right line points, actual left and right lines are constructed by applying least square method to the both point sets. The result of this method is 4 points (x1,y1,x2,y2) to refer the left lane line and 4 points to refer the right lane line.
+
+The last process on the image is predicting the turn angle and direction. The prediction of direction is done by comparing the slopes of the left and the right lines. The turning is to be made to the side of the lane line having less slope. The angle is determined by computing the angle between the normal line of the current direction and guide line. Guide line is constructed with the average of the middle points of the right and the left lines and current point of the vehicle. Vehicle's current point is assumed to be in the middle of the beginning of the image. Thus, the beginning point of the guideline is the current position of the vehicle and the endpoint is the target point to be reached. The output of this processing is shown in \textit{Figure~\ref{fig:turn-prediction-explained}}. The turning angle and the direction is sent to PID Controller Subsystem.
+
+\begin{figure}[H]
+	\center
+	\setlength{\unitlength}{\textwidth} 
+	\includegraphics[width=0.6\textwidth]{images/turn-prediction-explained}
+	\caption{\label{fig:turn-prediction-explained}The Prediction of Turn Angle and Direction.}
+\end{figure}	
 
 		\subsubsection{Solution for Controller Subsystem}
 			

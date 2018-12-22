@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.15)  22 DEC 2018 23:24
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  22 DEC 2018 22:59
->>>>>>> 4b252a4703aec6dffacf7457c343de22bdf502d3
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.15)  22 DEC 2018 23:36
 entering extended mode
 **./Duayenler_Conceptual.tex
 (Duayenler_Conceptual.tex
@@ -962,33 +958,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 109--110
  []
 
 (Duayenler_Conceptual.toc [1] [2]
-<<<<<<< HEAD
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 55.
-=======
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 78.
->>>>>>> 4b252a4703aec6dffacf7457c343de22bdf502d3
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 79.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-<<<<<<< HEAD
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 55.
-)
-\tf@toc=\write4
-\openout4 = `Duayenler_Conceptual.toc'.
-
- [3]
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
-=======
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 78.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 79.
  [3])
 \tf@toc=\write4
 \openout4 = `Duayenler_Conceptual.toc'.
 
  [4]
-Underfull \hbox (badness 10000) in paragraph at lines 125--126
->>>>>>> 4b252a4703aec6dffacf7457c343de22bdf502d3
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
 
@@ -1004,212 +986,133 @@ File: v-models/lane_detection_subsystem.png Graphic file (type png)
 Package pdftex.def Info: v-models/lane_detection_subsystem.png used on input li
 ne 135.
 (pdftex.def)             Requested size: 448.07378pt x 79.30823pt.
-<<<<<<< HEAD
- [4] [5 <./v-models/lane_detection_subsystem.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 177--178
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
-=======
  [5] [6 <./v-models/lane_detection_subsystem.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 178--179
-
- []
-
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 202--203
->>>>>>> 4b252a4703aec6dffacf7457c343de22bdf502d3
-
- []
-
-
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
-
- []
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 201--202
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
 
  []
 
 [7]
 Underfull \hbox (badness 10000) in paragraph at lines 203--204
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 206--207
-
- []
-
-[8] [9] [10] <images/socket_funcs.png, id=48, 309.40594pt x 550.30594pt>
-File: images/socket_funcs.png Graphic file (type png)
-
-<use images/socket_funcs.png>
-Package pdftex.def Info: images/socket_funcs.png used on input line 387.
-(pdftex.def)             Requested size: 246.44194pt x 438.33923pt.
- [11] [12 <./images/socket_funcs.png>]
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
-File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)
-Underfull \hbox (badness 10000) in paragraph at lines 412--413
->>>>>>> 4b252a4703aec6dffacf7457c343de22bdf502d3
 
  []
 
 
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 205--206
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 414--415
->>>>>>> 4b252a4703aec6dffacf7457c343de22bdf502d3
-
- []
-
-
-<<<<<<< HEAD
 Underfull \hbox (badness 10000) in paragraph at lines 207--208
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 209--210
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 434--435
-
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 439--440
->>>>>>> 4b252a4703aec6dffacf7457c343de22bdf502d3
-
- []
-
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 493--494
-
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 211--212
-=======
- []
-
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 495--496
->>>>>>> 4b252a4703aec6dffacf7457c343de22bdf502d3
-
- []
-
-
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 213--214
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 499--500
->>>>>>> 4b252a4703aec6dffacf7457c343de22bdf502d3
-
- []
-
-
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 215--216
-
- []
-
-[8] [9] [10] ("D:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+[8] [9] [10] [11] ("D:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty
+"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
-("D:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+) ("D:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 ("D:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 378.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 382.
 
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 378.
- [11]
-<images/turn-prediction-explained.png, id=51, 275.22826pt x 338.4645pt>
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 382.
+ [12]
+<images/turn-prediction-explained.png, id=57, 275.22826pt x 338.4645pt>
 File: images/turn-prediction-explained.png Graphic file (type png)
 
 <use images/turn-prediction-explained.png>
 Package pdftex.def Info: images/turn-prediction-explained.png used on input lin
-e 402.
+e 406.
 (pdftex.def)             Requested size: 268.847pt x 330.62389pt.
- [12]
+ [13 <./images/turn-prediction-explained.png>] <images/socket_funcs.png, id=61,
+ 309.40594pt x 550.30594pt>
+File: images/socket_funcs.png Graphic file (type png)
+
+<use images/socket_funcs.png>
+Package pdftex.def Info: images/socket_funcs.png used on input line 428.
+(pdftex.def)             Requested size: 246.44194pt x 438.33923pt.
+ [14 <./images/socket_funcs.png>]
 ("D:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 429.
- [13 <./images/turn-prediction-explained.png>] [14] (Duayenler_Conceptual.aux) 
-) 
-Here is how much of TeX's memory you used:
- 30336 strings out of 493323
- 695109 string characters out of 3139065
- 1044188 words of memory out of 3000000
- 33289 multiletter control sequences out of 15000+200000
- 12522 words of font info for 46 fonts, out of 3000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 62i,11n,99p,1329b,1490s stack positions out of 5000i,500n,10000p,200000b,50000s
-<D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><D:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><D:/Program Files/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/Program Files/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmr6.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmti12.pfb>
-Output written on Duayenler_Conceptual.pdf (15 pages, 425119 bytes).
-PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 501--502
+Underfull \hbox (badness 10000) in paragraph at lines 453--454
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 455--456
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 475--476
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 480--481
 
  []
 
 [16] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 535--536
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 537--538
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 541--542
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 543--544
+
+ []
+
+[18] [19]
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 543.
- <images/handshake1.png, id=72, 416.30531pt x 148.30406pt>
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 585.
+ <images/handshake1.png, id=82, 416.30531pt x 148.30406pt>
 File: images/handshake1.png Graphic file (type png)
 
 <use images/handshake1.png>
-Package pdftex.def Info: images/handshake1.png used on input line 560.
+Package pdftex.def Info: images/handshake1.png used on input line 602.
 (pdftex.def)             Requested size: 336.05533pt x 119.72055pt.
- [18]
-<images/handshake2.png, id=78, 422.32782pt x 145.29282pt>
+ [20]
+<images/handshake2.png, id=87, 422.32782pt x 145.29282pt>
 File: images/handshake2.png Graphic file (type png)
 
 <use images/handshake2.png>
-Package pdftex.def Info: images/handshake2.png used on input line 567.
+Package pdftex.def Info: images/handshake2.png used on input line 609.
 (pdftex.def)             Requested size: 336.05533pt x 115.61586pt.
- [19 <./images/handshake1.png> <./images/handshake2.png>] [20] (Duayenler_Conce
+ [21 <./images/handshake1.png> <./images/handshake2.png>] [22] (Duayenler_Conce
 ptual.aux) ) 
 Here is how much of TeX's memory you used:
- 30006 strings out of 493333
- 695704 string characters out of 3136576
- 988549 words of memory out of 3000000
- 32957 multiletter control sequences out of 15000+200000
+ 30354 strings out of 493323
+ 695520 string characters out of 3139065
+ 1042188 words of memory out of 3000000
+ 33304 multiletter control sequences out of 15000+200000
  12522 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,11n,96p,1329b,658s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mbsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-bx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcs
-c10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12
-.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.p
-fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb
->
-Output written on Duayenler_Conceptual.pdf (21 pages, 220855 bytes).
+ 62i,11n,99p,1329b,1490s stack positions out of 5000i,500n,10000p,200000b,50000s
+<D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10
+.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><D:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Program Files/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmti12.pfb>
+Output written on Duayenler_Conceptual.pdf (23 pages, 462271 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
+ 120 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
->>>>>>> 4b252a4703aec6dffacf7457c343de22bdf502d3
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
