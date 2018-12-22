@@ -139,11 +139,8 @@
 	\subsection{Description of individual sub-systems}
 
 	\subsubsection{Sensing System}
-<<<<<<< HEAD
+
 		Sensing system has two main subsystems which are "Lane Detection Subsystem" and "Vehicle Detection Subsystem".
-=======
-		This unit has two main subsystems which are observing lane and another vehicle on the path. 
->>>>>>> 2ca5b1cc4ec65f41c061efad317265ce5c62fce8
 		
 		\paragraph{Lane Detection Subsystem}
 			The subsystem basically detects the lane. This subsystem uses OpenCV libraries for processing camera frames. The input is captured from a Raspberry Pi camera that is mounted to the vehicle. The captured frame is firstly, preprocessed by a denoising filter. Then, the edges in the frame is detected by Canny Edge Detector algorithm. The output of Canny is a binary image filled with ones and zeros. The Hough Lines technique probabilistically extracts possible lines in a given binary image. Thus, possible line constituting points are obtained from Hough Lines function. Next, points of the lines are classified as left or right borders of the lane. The elimination of the wrong points are done concurrently with the classification. Then, filtered points are fitted in two separate lines to create left and right borders of the lane. As the lane borders are found, the next and the last step is to determine the direction of the vehicle. The output of this subsystem is a turning angle and a direction.
