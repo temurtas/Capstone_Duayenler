@@ -11,11 +11,17 @@
 const int max_value_H = 360 / 4;
 const int max_value = 255;
 const cv::String window_detection_name = "Lane Detection";
-int low_H = 40, low_S = 45, low_V = 50;
+int low_H = 60, low_S = 120, low_V = 106; // low_S = 144,introduces bug
 int high_H = max_value_H, high_S = max_value, high_V = max_value;
 int maxGap = 50;
 int minLength = 50;
 /** HSV PARAMETER SETTINGS **/
+
+/** **/
+int 	threshold = 20;
+int 	maxLineGap = 20;
+int 	minLineLength = 30;
+/** **/
 
 static void on_low_H_thresh_trackbar(int, void *);
 static void on_high_H_thresh_trackbar(int, void *);
@@ -23,6 +29,10 @@ static void on_low_S_thresh_trackbar(int, void *);
 static void on_high_S_thresh_trackbar(int, void *);
 static void on_low_V_thresh_trackbar(int, void *);
 static void on_high_V_thresh_trackbar(int, void *);
+
+static void on_threshold_thresh_trackbar(int, void *);
+static void on_maxLineGap_trackbar(int, void *);
+static void on_minLineLength_thresh_trackbar(int, void *);
 
 /**
  *@brief Function main executes the algorithm of the lane detection.
@@ -33,8 +43,10 @@ static void on_high_V_thresh_trackbar(int, void *);
  */
 int main(int argc, char* argv[]) {
 
-	cv::VideoCapture cap("./green-640-15.mp4");
+	//cv::VideoCapture cap("../green-640-15.mp4");
+	cv::VideoCapture cap(0, cv::CAP_V4L2);
 	LaneDetector lanedetector;  // Create the class object
+	//LaneDetector lanedetector;  // Create the class object
 
 	// variables for calculating average process time
 	double avgRunTime;
@@ -74,6 +86,13 @@ int main(int argc, char* argv[]) {
 	cv::createTrackbar("High V", window_detection_name, &high_V, max_value,
 			on_high_V_thresh_trackbar);
 
+	cv::createTrackbar("threshold", window_detection_name, &threshold, max_value,
+			on_threshold_thresh_trackbar);
+	cv::createTrackbar("maxLineGap", window_detection_name, &maxLineGap, max_value,
+			on_maxLineGap_trackbar);
+	cv::createTrackbar("minLineLength", window_detection_name, &minLineLength, max_value,
+			on_minLineLength_thresh_trackbar);
+
 	cv::Mat frame_HSV;
 	cv::Mat frame_orig, frame_fitered2D, frame_threshed, frame_cannied,
 			frame_final;
@@ -81,6 +100,8 @@ int main(int argc, char* argv[]) {
 			(cv::Mat_<char>(3, 3) << 0, -1, 0, -1, 5, -1, 0, -1, 0);
 	cv::Mat frame_houghP;
 	std::vector<cv::Vec4i> lines_houghP; // will hold the results of the detection
+
+
 
 	// loop through live frames
 	while (true) {
@@ -109,7 +130,8 @@ int main(int argc, char* argv[]) {
 				cv::Scalar(high_H, high_S, high_V), frame_threshed);
 
 		// canny edge detection to the color thresholded image
-		Canny(frame_threshed, frame_cannied, 200, 400, 3);
+		// (50,200,3)
+		Canny(frame_threshed, frame_cannied, 133, 400, 5, true);
 
 		// copy cannied image
 		cv::cvtColor(frame_cannied, frame_houghP, cv::COLOR_GRAY2BGR);
@@ -119,8 +141,8 @@ int main(int argc, char* argv[]) {
 
 		//img_mask = lanedetector.cropROI(frame_cannied);
 		// runs the line detection
-
-		lines_houghP = lanedetector.houghLines(frame_cannied);
+		std::vector<cv::Vec4i> line;
+		HoughLinesP(frame_cannied, lines_houghP, 1, CV_PI / 180, threshold,(double) maxLineGap, (double)minLineLength);
 
 		if (!lines_houghP.empty()) {
 			// Separate lines into left and right lines
@@ -191,4 +213,16 @@ static void on_low_V_thresh_trackbar(int, void *) {
 static void on_high_V_thresh_trackbar(int, void *) {
 	high_V = cv::max(high_V, low_V + 1);
 	cv::setTrackbarPos("High V", window_detection_name, high_V);
+}
+static void on_threshold_thresh_trackbar(int, void *) {
+	threshold = cv::min(high_V - 1, threshold);
+	cv::setTrackbarPos("threshold", window_detection_name, threshold);
+}
+static void on_maxLineGap_trackbar(int, void *) {
+	maxLineGap = cv::min(high_V - 1, maxLineGap);
+	cv::setTrackbarPos("maxLineGap", window_detection_name, maxLineGap);
+}
+static void on_minLineLength_thresh_trackbar(int, void *) {
+	minLineLength = cv::min(high_V - 1, minLineLength);
+	cv::setTrackbarPos("minLineLength", window_detection_name, minLineLength);
 }

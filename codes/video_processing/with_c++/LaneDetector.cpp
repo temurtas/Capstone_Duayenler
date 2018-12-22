@@ -94,7 +94,7 @@ std::vector<cv::Vec4i> LaneDetector::houghLines(cv::Mat img_mask) {
 	std::vector<cv::Vec4i> line;
 
 	// rho and theta are selected by trial and error
-	HoughLinesP(img_mask, line, 1, CV_PI / 180, 20, 20, 30);
+	HoughLinesP(img_mask, line, 1, CV_PI / 180, 15, 30, 40);
 
 	return line;
 }
@@ -336,4 +336,5 @@ int LaneDetector::plotLane(cv::Mat inputImage, std::vector<cv::Point> lane) {
 
 	return 0;
 }
+
 
