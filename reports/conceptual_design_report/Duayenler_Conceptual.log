@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.15)  25 DEC 2018 23:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.15)  26 DEC 2018 00:01
 entering extended mode
 **./Duayenler_Conceptual.tex
 (Duayenler_Conceptual.tex
@@ -1075,18 +1075,15 @@ LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <12> not available
 ("D:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-Underfull \hbox (badness 10000) in paragraph at lines 335--344
+Underfull \hbox (badness 10000) in paragraph at lines 335--347
 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 355--356
+Underfull \hbox (badness 10000) in paragraph at lines 358--359
 
  []
 
@@ -1094,110 +1091,114 @@ Underfull \hbox (badness 10000) in paragraph at lines 355--356
 File: images/socket_funcs.png Graphic file (type png)
 
 <use images/socket_funcs.png>
-Package pdftex.def Info: images/socket_funcs.png used on input line 362.
-(pdftex.def)             Requested size: 246.44194pt x 438.33923pt.
- [12] [13 <./images/socket_funcs.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 379--380
+Package pdftex.def Info: images/socket_funcs.png used on input line 365.
+(pdftex.def)             Requested size: 224.03688pt x 398.48715pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[12] [13 <./images/socket_funcs.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 382--383
 
  []
 
 
-Overfull \hbox (3.95946pt too wide) in paragraph at lines 382--382
+Overfull \hbox (3.95946pt too wide) in paragraph at lines 385--385
 [][][][]\OT1/cmr/m/n/12 EDIT 
  []
 
 
-Overfull \hbox (22.06343pt too wide) in paragraph at lines 382--382
+Overfull \hbox (22.06343pt too wide) in paragraph at lines 385--385
 \OT1/cmr/m/n/12 BUYUK- 
  []
 
 
-Overfull \hbox (4.61221pt too wide) in paragraph at lines 382--382
+Overfull \hbox (4.61221pt too wide) in paragraph at lines 385--385
 \OT1/cmr/m/n/12 CUK- 
  []
 
 
-Overfull \hbox (12.1191pt too wide) in paragraph at lines 382--382
+Overfull \hbox (12.1191pt too wide) in paragraph at lines 385--385
 \OT1/cmr/m/n/12 ARET- 
  []
 
 
-Overfull \hbox (6.40527pt too wide) in paragraph at lines 382--382
+Overfull \hbox (6.40527pt too wide) in paragraph at lines 385--385
 \OT1/cmr/m/n/12 LERI- 
  []
 
 
-Overfull \hbox (3.95946pt too wide) in paragraph at lines 382--382
+Overfull \hbox (3.95946pt too wide) in paragraph at lines 385--385
 [][][][]\OT1/cmr/m/n/12 EDIT 
  []
 
 
-Overfull \hbox (22.06343pt too wide) in paragraph at lines 382--382
+Overfull \hbox (22.06343pt too wide) in paragraph at lines 385--385
 \OT1/cmr/m/n/12 BUYUK- 
  []
 
 
-Overfull \hbox (4.61221pt too wide) in paragraph at lines 382--382
+Overfull \hbox (4.61221pt too wide) in paragraph at lines 385--385
 \OT1/cmr/m/n/12 CUK- 
  []
 
 
-Overfull \hbox (12.1191pt too wide) in paragraph at lines 382--382
+Overfull \hbox (12.1191pt too wide) in paragraph at lines 385--385
 \OT1/cmr/m/n/12 ARET- 
  []
 
 
-Overfull \hbox (6.40527pt too wide) in paragraph at lines 382--382
+Overfull \hbox (6.40527pt too wide) in paragraph at lines 385--385
 \OT1/cmr/m/n/12 LERI- 
  []
 
 
-Overfull \hbox (3.95946pt too wide) in paragraph at lines 382--382
+Overfull \hbox (3.95946pt too wide) in paragraph at lines 385--385
 [][][][]\OT1/cmr/m/n/12 EDIT 
  []
 
 
-Overfull \hbox (22.06343pt too wide) in paragraph at lines 382--382
+Overfull \hbox (22.06343pt too wide) in paragraph at lines 385--385
 \OT1/cmr/m/n/12 BUYUK- 
  []
 
 
-Overfull \hbox (4.61221pt too wide) in paragraph at lines 382--382
+Overfull \hbox (4.61221pt too wide) in paragraph at lines 385--385
 \OT1/cmr/m/n/12 CUK- 
  []
 
 
-Overfull \hbox (12.1191pt too wide) in paragraph at lines 382--382
+Overfull \hbox (12.1191pt too wide) in paragraph at lines 385--385
 \OT1/cmr/m/n/12 ARET- 
  []
 
 
-Overfull \hbox (6.40527pt too wide) in paragraph at lines 382--382
+Overfull \hbox (6.40527pt too wide) in paragraph at lines 385--385
 \OT1/cmr/m/n/12 LERI- 
  []
 
 
-Overfull \hbox (3.95946pt too wide) in paragraph at lines 382--382
+Overfull \hbox (3.95946pt too wide) in paragraph at lines 385--385
 [][][][]\OT1/cmr/m/n/12 EDIT 
  []
 
 
-Overfull \hbox (22.06343pt too wide) in paragraph at lines 382--382
+Overfull \hbox (22.06343pt too wide) in paragraph at lines 385--385
 \OT1/cmr/m/n/12 BUYUK- 
  []
 
 
-Overfull \hbox (4.61221pt too wide) in paragraph at lines 382--382
+Overfull \hbox (4.61221pt too wide) in paragraph at lines 385--385
 \OT1/cmr/m/n/12 CUK- 
  []
 
 
-Overfull \hbox (12.1191pt too wide) in paragraph at lines 382--382
+Overfull \hbox (12.1191pt too wide) in paragraph at lines 385--385
 \OT1/cmr/m/n/12 ARET- 
  []
 
 
-Overfull \hbox (6.40527pt too wide) in paragraph at lines 382--382
+Overfull \hbox (6.40527pt too wide) in paragraph at lines 385--385
 \OT1/cmr/m/n/12 LERI- 
  []
 
@@ -1205,81 +1206,81 @@ Overfull \hbox (6.40527pt too wide) in paragraph at lines 382--382
 File: images/handshake1.png Graphic file (type png)
 
 <use images/handshake1.png>
-Package pdftex.def Info: images/handshake1.png used on input line 392.
+Package pdftex.def Info: images/handshake1.png used on input line 395.
 (pdftex.def)             Requested size: 336.05533pt x 119.72055pt.
 
 <images/handshake2.png, id=64, 422.32782pt x 145.29282pt>
 File: images/handshake2.png Graphic file (type png)
 
 <use images/handshake2.png>
-Package pdftex.def Info: images/handshake2.png used on input line 399.
+Package pdftex.def Info: images/handshake2.png used on input line 402.
 (pdftex.def)             Requested size: 336.05533pt x 115.61586pt.
  [14 <./images/handshake1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 405--406
+Underfull \hbox (badness 10000) in paragraph at lines 408--409
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 420--421
+Underfull \hbox (badness 10000) in paragraph at lines 423--424
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 422--423
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
 
  []
 
 [15 <./images/handshake2.png>] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 482--483
+Underfull \hbox (badness 10000) in paragraph at lines 485--486
 
  []
 
 
-Overfull \hbox (170.94676pt too wide) in paragraph at lines 496--496
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 499--499
 [][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
  []
 
 
-Overfull \hbox (170.94676pt too wide) in paragraph at lines 496--496
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 499--499
 [][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
  []
 
 
-Overfull \hbox (170.94676pt too wide) in paragraph at lines 496--496
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 499--499
 [][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
  []
 
 
-Overfull \hbox (170.94676pt too wide) in paragraph at lines 496--496
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 499--499
 [][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--497
+Underfull \hbox (badness 10000) in paragraph at lines 499--500
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 508--509
+Underfull \hbox (badness 10000) in paragraph at lines 511--512
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 512--513
+Underfull \hbox (badness 10000) in paragraph at lines 515--516
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 514--515
+Underfull \hbox (badness 10000) in paragraph at lines 517--518
 
  []
 
 [18] [19] (Duayenler_Conceptual.aux) ) 
 Here is how much of TeX's memory you used:
- 30890 strings out of 493323
- 703557 string characters out of 3139065
- 1038319 words of memory out of 3000000
- 33825 multiletter control sequences out of 15000+200000
+ 30908 strings out of 493323
+ 703850 string characters out of 3139065
+ 1045850 words of memory out of 3000000
+ 33843 multiletter control sequences out of 15000+200000
  12782 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,11n,118p,1329b,1490s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1292,7 +1293,7 @@ s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/Program Files/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmti12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/u
 rw/courier/ucrr8a.pfb>
-Output written on Duayenler_Conceptual.pdf (20 pages, 439079 bytes).
+Output written on Duayenler_Conceptual.pdf (20 pages, 441204 bytes).
 PDF statistics:
  111 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
