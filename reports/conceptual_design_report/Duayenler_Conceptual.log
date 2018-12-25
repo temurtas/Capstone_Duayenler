@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.21)  25 DEC 2018 22:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.21)  25 DEC 2018 23:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1090,194 +1090,187 @@ LaTeX Font Info:    Try loading font information for OT1+pcr on input line 328.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) [10]
+Underfull \hbox (badness 10000) in paragraph at lines 337--338
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 339.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omspcr.fd
+File: omspcr.fd 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 328--329
-
- []
-
-[10]
-LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <12> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 335.
-
-Underfull \hbox (badness 10000) in paragraph at lines 339--340
-
- []
-
-
-LaTeX Warning: Reference `sc:serial' on page 11 undefined on input line 341.
+LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 339.
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-Underfull \hbox (badness 10000) in paragraph at lines 361--362
+Underfull \hbox (badness 10000) in paragraph at lines 349--361
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 367--368
+Underfull \hbox (badness 10000) in paragraph at lines 366--367
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 375--376
+Underfull \hbox (badness 10000) in paragraph at lines 374--375
 
  []
 
-<images/socket_funcs.png, id=54, 309.40594pt x 550.30594pt>
+<images/socket_funcs.png, id=53, 309.40594pt x 550.30594pt>
 File: images/socket_funcs.png Graphic file (type png)
 
 <use images/socket_funcs.png>
-Package pdftex.def Info: images/socket_funcs.png used on input line 382.
+Package pdftex.def Info: images/socket_funcs.png used on input line 381.
 (pdftex.def)             Requested size: 224.03688pt x 398.48715pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 399--400
+Underfull \hbox (badness 10000) in paragraph at lines 398--399
 
  []
 
 [13 <./images/socket_funcs.png>]
-<images/handshake1.png, id=64, 416.30531pt x 148.30406pt>
+<images/handshake1.png, id=63, 416.30531pt x 148.30406pt>
 File: images/handshake1.png Graphic file (type png)
 
 <use images/handshake1.png>
-Package pdftex.def Info: images/handshake1.png used on input line 411.
+Package pdftex.def Info: images/handshake1.png used on input line 410.
 (pdftex.def)             Requested size: 336.05533pt x 119.72055pt.
 
-<images/handshake2.png, id=65, 422.32782pt x 145.29282pt>
+<images/handshake2.png, id=64, 422.32782pt x 145.29282pt>
 File: images/handshake2.png Graphic file (type png)
 
 <use images/handshake2.png>
-Package pdftex.def Info: images/handshake2.png used on input line 418.
+Package pdftex.def Info: images/handshake2.png used on input line 417.
 (pdftex.def)             Requested size: 336.05533pt x 115.61586pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 424--425
+Underfull \hbox (badness 10000) in paragraph at lines 423--424
 
  []
 
 [14 <./images/handshake1.png> <./images/handshake2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 433--434
+Underfull \hbox (badness 10000) in paragraph at lines 432--433
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 442--443
+Underfull \hbox (badness 10000) in paragraph at lines 441--442
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 444--445
+Underfull \hbox (badness 10000) in paragraph at lines 443--444
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 453--454
+Underfull \hbox (badness 10000) in paragraph at lines 452--453
 
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 466--467
+Underfull \hbox (badness 10000) in paragraph at lines 465--466
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 480--481
+Underfull \hbox (badness 10000) in paragraph at lines 479--480
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 491--492
+Underfull \hbox (badness 10000) in paragraph at lines 490--491
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 503--504
+Underfull \hbox (badness 10000) in paragraph at lines 502--503
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 512--513
+Underfull \hbox (badness 10000) in paragraph at lines 511--512
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 520--521
+Underfull \hbox (badness 10000) in paragraph at lines 519--520
 
  []
 
 
-Overfull \hbox (170.94676pt too wide) in paragraph at lines 534--534
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 533--533
 [][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
  []
 
 
-Overfull \hbox (170.94676pt too wide) in paragraph at lines 534--534
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 533--533
 [][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
  []
 
 
-Overfull \hbox (170.94676pt too wide) in paragraph at lines 534--534
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 533--533
 [][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
  []
 
 
-Overfull \hbox (170.94676pt too wide) in paragraph at lines 534--534
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 533--533
 [][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 534--535
+Underfull \hbox (badness 10000) in paragraph at lines 533--534
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 539--540
+Underfull \hbox (badness 10000) in paragraph at lines 538--539
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 548--549
+Underfull \hbox (badness 10000) in paragraph at lines 547--548
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 552--553
+Underfull \hbox (badness 10000) in paragraph at lines 551--552
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 554--555
+Underfull \hbox (badness 10000) in paragraph at lines 553--554
 
  []
 
-[18] [19] (./Duayenler_Conceptual.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[18] [19] (./Duayenler_Conceptual.aux) ) 
 Here is how much of TeX's memory you used:
- 30302 strings out of 494953
- 683141 string characters out of 6180976
- 1016863 words of memory out of 5000000
- 32993 multiletter control sequences out of 15000+600000
- 13297 words of font info for 49 fonts, out of 8000000 for 9000
+ 30295 strings out of 494953
+ 683162 string characters out of 6180976
+ 1019032 words of memory out of 5000000
+ 32985 multiletter control sequences out of 15000+600000
+ 12782 words of font info for 47 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  62i,11n,118p,1326b,1490s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on Duayenler_Conceptual.pdf (20 pages, 404821 bytes).
+{/usr/share/texlive/texmf-dist/fonts/en
+c/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmc
+sc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on Duayenler_Conceptual.pdf (20 pages, 397992 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
+ 112 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  38 words of extra memory for PDF output out of 10000 (max. 10000000)
 

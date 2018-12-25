@@ -253,9 +253,9 @@
 	The detected pixels are input to Hough Lines function. This function outputs two pixels points on the image that form a line. The output of the function is tens of such line points. The accuracy of the function can be adjusted by playing with the input parameters. The function basically draws all lines that might go through a point in the free space (in polar coordinates) and intersects those lines. If the origin points of the intersected lines are within a specified bound, then the line is defined and it can be expanded further. If found points on a line don't exceed a threshold, that line is discarded. The adjustment of such parameters are done with trial and error approach. An important note is that this function is probabilistic, meaning that even if the input frame is never changed, the output line points would be close to previous point but not the same. An example call for this function together with its parameters is given \textit{Script~\ref{sc:hough-call}}.
 	
 	\begin{lstlisting}[language=C++,float=t,numbers=left,frame=single,caption=Hough Lines Function with its Parameters, captionpos=b, label=sc:hough-call]
-	HoughLinesP(input=img_threshed, output=line,
-	rho=1, theta=CV_PI / 180, threshold=15, 
-	minLineLength=30, maxLineGap=40);
+HoughLinesP(input=img_threshed, output=line,
+rho=1, theta=CV_PI / 180, threshold=15, 
+minLineLength=30, maxLineGap=40);
 	\end{lstlisting}
 	Then next step is to classify the line points as left or right. The lines are firstly eliminated according to their slopes. If slope of a line is not in invalid slope region of $\pm$0.005, then it is a valid line. This process is done to get rid of unnecessary low sloped lines. After elimination, line points set must be determined as left or right. At this point, this classification is done according to double checking. the center of the image, that is 320th vertical pixel. If initial and final horizontal points of the image is in the same half, the line belongs to that half. This method works nicely in most regions of the path. However, it is a bit error prone in case of a sharp turning angle or losing one of the lanes . This algorithm will be improved to be more robust.
 	\begin{lstlisting}[language=C++,float=t,numbers=left,frame=single,caption=The Algorithm to Classify the Lane Lines as Right or Left, captionpos=b, label=sc:left-right-lines]
@@ -325,24 +325,23 @@ for (lines_is_valid)
 		\item The internal communication speed should be compatible with the processing speed of the lane detection subsystem  
 	\end{itemize}
 	
-	There are several serial communication protocols that can be used to maintain the connection such as SPI, I2C. However, the first choice is to use USB serial port of the Arduino. Since RPi is practically a computer, it can recognize Arduino as a device using a serial port such as \lstinline[language=Arduino]|/ttyUSB0| in case of a Linux based OS. When recognized, RPi can send any piece of strings to the Arduino via USB cable. \\
-	
-	The process of communication is as follows:
+	There are several serial communication protocols that can be used to maintain the connection such as SPI, I2C. However, the first choice is to use USB serial port of the Arduino. Since RPi is practically a computer, it can recognize Arduino as a device using a serial port such as \lstinline[language=Arduino]|/ttyUSB0| in case of a Linux based OS. When recognized, RPi can send any piece of strings to the Arduino via USB cable. The process of communication is as follows:
 	\begin{enumerate}
 		\item Arduino should be connected to the Pi.
 		\item Using Arduino IDE or any other method such as listing serial ports and checking for Arduino and so on, the serial port name should be detected
 		\item Baud rates of two sides should be the same. 9600 is generally enough but if needed, it can be incremented to satisfy fast communication
-		\item On Arduino side, \lstinline[language=Arduino]|Serial.begin(9600)| command should be executed and serial port should be read repeatedly to capture the incoming data
+		\item On Arduino side, \texttt{Serial.begin(9600)} command should be executed and serial port should be read repeatedly to capture the incoming data
 		\item On Pi side, using any language C++ or Python, messages to serial port can be send
 	\end{enumerate}
 	
 	There are minor differences when implementing the code in Python, C++  and C. Python is the most practical one:\\
 	
-	Python has a library called serial by which any type of data can be send through serial ports. Script \ref{sc:serial} is used to declare a serial object. Then using \lstinline[language=Python]|ar.write("some string \r".encode())|, the string "some string" can be send to Arduino. Note that "\r" carriage return character carries a high importance because it shows that a string is terminated and any other incoming data belongs to the new piece of string.  
+	Python has a library called serial by which any type of data can be send through serial ports. Script \ref{sc:serial_python} is used to declare a serial object. Then using \texttt{ar.write("some string \textbackslash r".encode())}, the string "some string" can be send to Arduino. Note that "\r" carriage return character carries a high importance because it shows that a string is terminated and any other incoming data belongs to the new piece of string.  
 	
 	\begin{lstlisting}[language=Python,float=h,numbers=left,frame=single,caption=Serial object decleration in Python,label=sc:serial_python, captionpos=b ] 
 	import serial
 	ar=serial.Serial("/dev/ttyUSB0",9600)
+
 	\end{lstlisting}
 	
 	As alternatives, the implementation on C is also examined. 
@@ -357,10 +356,10 @@ char str_send[2][BUF_SIZE]; // send data buffer
 unsigned char str_recv[BUF_SIZE]; // recv data buffer
 RS232_OpenComport(cport_nr, bdrate, mode)
 	\end{lstlisting}
+	%\lstinline[language=Arduino]|<SerialCommand.h>| 
+	On Arduino  side, there are also several option that we can read the incoming data. Using \texttt{Serial.read()}  command is one of the simplest solutions. However, it contains some issues like conversion from string to integer and when to stop. Furthermore, the incoming data should be considered in character basis for the exact control. \\
 	
-	On Arduino  side, there are also several option that we can read the incoming data. Using \lstinline[language=Arduino]|Serial.read()| command is one of the simples solutions. However, it contains some issues like conversion from string to integer and when to stop. Furthermore, the incoming data should be considered in character basis for the exact control. \\
-	
-	There is also a more sophisticated solution. There is a \lstinline[language=Arduino]|<SerialCommand.h>| library for the Arduino which allows executing a function depending on the incoming string. Using \lstinline[language=Arduino]|.addCommand("str",func)| of the library any function can be associated with any string coming from serial port. Moreover, the functions can have argument. For example, let the string "PWMSET" be execute a function \lstinline[language=Arduino]|setpwm()| but the pwm value is required. If incoming string is of the form "PWMSET 150", using \lstinline[language=Arduino]|.next()| function of the library, the value 150 can be read and converted into integer and interpreted as the PWM value to be set. 
+	There is also a more sophisticated solution. There is a \texttt{SerialCommand.h} library for the Arduino which allows executing a function depending on the incoming string. Using \lstinline[language=Arduino]|.addCommand("str",func)| of the library any function can be associated with any string coming from serial port. Moreover, the functions can have argument. For example, let the string "PWMSET" be execute a function \lstinline[language=Arduino]|setpwm()| but the pwm value is required. If incoming string is of the form "PWMSET 150", using \lstinline[language=Arduino]|.next()| function of the library, the value 150 can be read and converted into integer and interpreted as the PWM value to be set. 
 	
 	\subsubsection{External Communication Subsystem}
 	
