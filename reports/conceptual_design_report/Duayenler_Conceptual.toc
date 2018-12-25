@@ -5,9 +5,7 @@
 \contentsline {section}{\numberline {3}Solutions}{4}
 \contentsline {subsection}{\numberline {3.1}Sensing System}{4}
 \contentsline {subsubsection}{\numberline {3.1.1}Lane Detection Subsystem}{4}
-\contentsline {paragraph}{\numberline {3.1.1.1}Alternative Solutions for Lane Detection Subsystem\\}{5}
-\contentsline {subparagraph}{\numberline {3.1.1.1.1}Laser sensor:}{5}
-\contentsline {subparagraph}{\numberline {3.1.1.1.2}Color sensor:}{5}
+\contentsline {paragraph}{\numberline {3.1.1.1}Alternative Solutions for Lane Detection Subsystem}{5}
 \contentsline {paragraph}{\numberline {3.1.1.2}Lane Detection Subsystem Tests}{5}
 \contentsline {subparagraph}{\numberline {3.1.1.2.1}Light Condition Test}{5}
 \contentsline {subparagraph}{\numberline {3.1.1.2.2}Visual Disturbance Test}{5}
@@ -28,7 +26,7 @@
 \contentsline {subsubsection}{\numberline {3.5.1}Chassis Subsystem}{16}
 \contentsline {subsubsection}{\numberline {3.5.2}Printed Circuit Board Subsystem}{16}
 \contentsline {subsection}{\numberline {3.6}Motion System}{16}
-\contentsline {subsubsection}{\numberline {3.6.1}Wheels Subsystem}{16}
+\contentsline {subsubsection}{\numberline {3.6.1}Wheels Subsystem}{17}
 \contentsline {paragraph}{\numberline {3.6.1.1}Alternative Solutions for Wheels Subsystem}{17}
 \contentsline {subsubsection}{\numberline {3.6.2}Motors Subsystem}{17}
 \contentsline {paragraph}{\numberline {3.6.2.1}Alternative Solutions for Motors Subsystem}{18}

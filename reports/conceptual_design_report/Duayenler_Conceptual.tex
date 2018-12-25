@@ -87,12 +87,12 @@
 				\begin{table}[H]
 					\begin{tabular}{l l l l}
 						\hline
-						\textbf{Members}&\textbf{Title}& \textbf{ID}&\textbf{Phone} \\ \hline
-						Sarper Sertel & Electronics Engineer& 2094449 & 0542 515 6039  \\ 
-						Enes Taştan & Hardware Design Engineer & 2068989 & 0543 683 4336  \\ 
-						Erdem Tuna & Embedded Systems Engineer& 2617419 & 0535 256 3320  \\ 
-						Halil Temurtaş & Control Engineer& 2094522 & 0531 632 2194  \\
-						İlker Sağlık & Software Engineer& 2094423 & 0541 722 9573  \\ \hline
+						\textbf{Members} & \textbf{Title}            & \textbf{ID} & \textbf{Phone} \\ \hline
+						Sarper Sertel    & Electronics Engineer      & 2094449     & 0542 515 6039  \\ 
+						Enes Taştan     & Hardware Design Engineer  & 2068989     & 0543 683 4336  \\ 
+						Erdem Tuna       & Embedded Systems Engineer & 2617419     & 0535 256 3320  \\ 
+						Halil Temurtaş  & Control Engineer          & 2094522     & 0531 632 2194  \\
+						İlker Sağlık  & Software Engineer         & 2094423     & 0541 722 9573  \\ \hline
 						
 						
 					\end{tabular}
@@ -174,16 +174,14 @@
 	The first processing on the captured frame is denoising by blurring. The blurring filter is a GaussianBlur of (3x3) matrix with zero variance both in x and y directions. Next, the filtered image is color filtered in HSV color space. The filter range of the HSV filter is adjusted only to include shades green. The lower bound for HSV filter is [H=60, S=120, V=106] and the higher bound is [H=82, S=255, V=235]. Later the color filtered image is processed by Canny Edge Detector. This process eliminates all pixels except those are constituting an edge. Edge pixels are usually formed when there is a transition from one object to other. The edge detected frame is sent to Data Processing Subsystem.
 	
 	
-	\paragraph{Alternative Solutions for Lane Detection Subsystem\\}
+	\paragraph{Alternative Solutions for Lane Detection Subsystem}
 	
 	After the module demo result of the camera-oriented lane detection, former solutions are considered to support camera result and enhance robustness of the tracking. Possible future solutions are the followings;  
-	
-	\subparagraph{Laser sensor:}
-	As IR sensor array solution, which is already considered at the beginning of the term, laser approximate sensors can be constructed as array and used to detect edges of the lane. The expected enhancement is that laser sensors are more robust under extreme illumination conditions. To clarify the solution, two laser sensor arrays sense both sides of the lane. According to array’s data, vehicle orients itself.  
-	
-	
-	\subparagraph{Color sensor:}
-	This approach is similar to laser sensor solution, regarding the sensor array construction. However, color sensor working principle is based on RGB recognition, so in this solution green output of the arrays is focused point. According to green output, path will be detected.
+	\begin{itemize}
+		\item {Laser sensor:} As IR sensor array solution, which is already considered at the beginning of the term, laser approximate sensors can be constructed as array and used to detect edges of the lane. The expected enhancement is that laser sensors are more robust under extreme illumination conditions. To clarify the solution, two laser sensor arrays sense both sides of the lane. According to array’s data, vehicle orients itself.  
+		
+		\item{Color sensor:} 	This approach is similar to laser sensor solution, regarding the sensor array construction. However, color sensor working principle is based on RGB recognition, so in this solution green output of the arrays is focused point. According to green output, path will be detected.
+	\end{itemize}
 	
 	\paragraph{Lane Detection Subsystem Tests}	
 	
@@ -208,7 +206,7 @@
 	\end{itemize}
 	
 	\subsubsection{Vehicle Detection Subsystem}
-	The subsystem is the first step of safely computing with an opponent in a racing path. This subsystem uses two laser distance sensors one at the back of the vehicle responsible for detecting the chasing opponent and one at the front of the vehicle responsible for detecting the chased opponent. The subsystem produces positive output if the chasing vehicle or chased vehicle is within a range of 5 cm from the vehicle.\\
+	The subsystem is the first step of safely computing with an opponent in a racing path. This subsystem uses two time of flight distance sensor which is enhanced IR sensor. one at the back of the vehicle responsible for detecting the chasing opponent and one at the front of the vehicle responsible for detecting the chased opponent. The subsystem produces positive output if the chasing vehicle or chased vehicle is within a range of 5 cm from the vehicle.\\
 	
 	\textbf{Vehicle Detection Subsystem Requirements}
 	
@@ -219,18 +217,18 @@
 	
 	
 	%solution starts
-	Laser Sensor
+SOLUTIONNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 	
 	\paragraph{Alternative Solutions for Vehicle Detection Subsystem\\}
-	
-	Ultrasonic sensors have acceptable range. They send a sound wave and take back the echo, then give a PWM voltage related to the distance. However, using ultrasonic sensors can cause problems if the opponent also uses ultrasonic sensors; because of the interference. Besides, when measurement is angled, measuring is failing. 
-	
-	Infrared sensors can be another approach to this problem, they may provide better accuracy. Moreover, Laser distance measurement can be applied to solve this problem. They have the best accuracy, but their price is the highest among the rest.
-	
+	\begin{itemize}
+		\item {Ultrasonic sensor:} These can be another approach to this problem. They send a sound wave and take back the echo, then give a PWM voltage related to the distance. However, using ultrasonic sensors can cause problems if the opponent also uses ultrasonic sensors; because of the interference. Besides, when measurement is angled, measuring is failing. In our case, we try to avoid from this solution because half of the lane has sharp turn.
+		
+		\item {Infrared sensor:} Using these sensors Infrared sensors are the most trivial solution to measuring distance. However, IR sensors are weak to use in outside, especially sunshine. Although they are so sensitive to sun, they can still be a solution, if the first choice is failed, unexpectedly, this solution can reconsider.
+	\end{itemize}
 	
 	\subsection{Computation System}
 	
-	Computation system has two main subsystems which are "Data Processing Subsystem" and "PID Controller Subsystem".\\
+	Computation system has two main subsystems which are Data Processing Subsystem and PID Controller Subsystem.\\
 	
 	\textbf{Computation System Requirements}
 	\begin{itemize}
@@ -241,7 +239,7 @@
 	
 	\subsubsection{Data Processing Subsystem}
 	
-	The input of this system is an edge detected binary image. To find points constituting a line, Hough Lines function is used. The Hough Lines technique probabilistically extracts possible lines in a given binary image. Thus, possible line constituting points are obtained from Hough Lines function. Next, points of the lines are classified as left or right borders of the lane. The elimination of the wrong points are done concurrently with the classification. Then, filtered points are fitted in two separate lines to create left and right borders of the lane. As the lane borders are found, the next and the last step is to determine the direction of the vehicle. The output of this subsystem is a turning angle and a direction.\\
+	The input of this system is an edge detected binary image. To find points constituting a line, Hough Lines function is used. The Hough Lines technique probabilistically extracts possible lines in a given binary image. Thus, possible line constituting points are obtained from Hough Lines function. Next, points of the lines are classified as left or right borders of the lane. The elimination of the wrong points are done concurrently with the classification. Then, filtered points are fitted in two separate lines to create left and right borders of the lane. As the lane borders are found, the next and the last step is to determine the direction of the vehicle. The output of this subsystem is a turning angle and a direction. The requirements of this subsystem are listed below.\\
 	
 	\textbf{Data Processing Subsystem Requirements:}	
 	
@@ -261,20 +259,18 @@
 	\end{lstlisting}
 	Then next step is to classify the line points as left or right. The lines are firstly eliminated according to their slopes. If slope of a line is not in invalid slope region of $\pm$0.005, then it is a valid line. This process is done to get rid of unnecessary low sloped lines. After elimination, line points set must be determined as left or right. At this point, this classification is done according to double checking. the center of the image, that is 320th vertical pixel. If initial and final horizontal points of the image is in the same half, the line belongs to that half. This method works nicely in most regions of the path. However, it is a bit error prone in case of a sharp turning angle or losing one of the lanes . This algorithm will be improved to be more robust.
 	\begin{lstlisting}[language=C++,float=t,numbers=left,frame=single,caption=The Algorithm to Classify the Lane Lines as Right or Left, captionpos=b, label=sc:left-right-lines]
-	std::vector<cv::Vec4i> lines // like a 4x4 matrix
-	double slope_thresh = 0.005; // absolute threshold slope
-	for (lines_points) {}
-	ini = Point(x1, y1);
-	fini = Point(x2, y2);
-	line_slope = fini/ini;
+std::vector<cv::Vec4i> lines // like a 4x4 matrix
+double slope_thresh = 0.005; // absolute threshold slope
+for (lines_points)
+	startP = Point(x1, y1);
+	endP = Point(x2, y2);
+	line_slope = startP/endP;
 	if(abs(line_slope) >= slope_thresh) line_is_valid;
 	else line_is_not_valid;
-	
-	for (lines_is_valid)	
-	if(x1>320 && x2>320)
-	it_is_right_line;
-	else if(x1<320 && x2<320)
-	it_is_left_line;
+
+for (lines_is_valid)	
+	if(x1>320 && x2>320) it_is_right_line;
+	else if(x1<320 && x2<320) it_is_left_line;
 	else discard_the_line;
 	\end{lstlisting}
 	
@@ -291,7 +287,7 @@
 	
 	\subsubsection{PID Controller Subsystem}
 	\todo{değiştir!!!!!}
-	The output of the data processing subsystem does not mean anything for the vehicle. The motors should be driven using some sort of closed loop system. PID controllers are the most used controller in the robotics field. The purpose of the PID controller is basically to eliminate the error from the desired steady state. In our case the desired steady state  error to be companseted by the \\
+	The output of the data processing subsystem does not mean anything for the vehicle. The motors should be driven using some sort of closed loop system. PID controllers are the most used controller in the robotics field. The purpose of the PID controller is basically to eliminate the error from the desired steady state. In our case the desired steady state  error to be companseted by the ...The requirements of this subsystem are listed below.\\
 	
 	
 	\textbf{PID Controller Subsystem Requirements:}
@@ -316,7 +312,7 @@
 	
 	
 	\subsubsection{Internal Communication Subsystem}
-	This subsystem covers the communication of the components inside vehicle. Currently, Raspberry Pi and Arduino are two components that requires communication. To prevent the large amount of cable connection, a serial communication protocol is implemented.\\
+	This subsystem covers the communication of the components inside vehicle. Currently, Raspberry Pi and Arduino are two components that requires communication. To prevent the large amount of cable connection, a serial communication protocol is implemented. The requirements of this subsystem are listed below.\\
 	
 	\textbf{Internal Communication Subsystem Requirements:}
 	\begin{itemize}
@@ -339,7 +335,7 @@
 	
 	Python has a library called serial by which any type of data can be send through serial ports. Script \ref{sc:serial} is used to declare a serial object. Then using \lstinline[language=Python]|ar.write("some string \r".encode())|, the string "some string" can be send to Arduino. Note that "\r" carriage return character carries a high importance because it shows that a string is terminated and any other incoming data belongs to the new piece of string.  
 	
-	 \begin{lstlisting}[language=Python,float=t,numbers=left,frame=single,caption=Serial object decleration in Python,label=sc:serial_python, captionpos=b ] 
+	\begin{lstlisting}[language=Python,float=t,numbers=left,frame=single,caption=Serial object decleration in Python,label=sc:serial_python, captionpos=b ] 
 	import serial
 	ar=serial.Serial("/dev/ttyUSB0",9600)
 	\end{lstlisting}
@@ -360,7 +356,7 @@
 	
 	\subsubsection{External Communication Subsystem}
 	
-	This subsystem covers basically the handshake protocol i.e. communication with the other vehicles on the path.
+	This subsystem covers basically the handshake protocol i.e. communication with the other vehicles on the path. The requirements of this subsystem are listed below.\\
 	
 	\textbf{External Communication Subsystem Requirements:}	
 	\begin{itemize}
@@ -417,7 +413,7 @@
 	
 	\subsection{Driving System}
 	
-	Driving system has two main subsystems which are "Direction Subsystem" and "Speed Subsystem Subsystem". \\
+	Driving system has two main subsystems which are Direction Subsystem and Speed Subsystem Subsystem. The requirements of this system are listed below.\\
 	
 	\textbf{Driving System Requirements:}
 	\begin{itemize}
@@ -426,7 +422,7 @@
 	
 	
 	\subsubsection{Direction Subsystem}
-	Direction unit is responsible for the orientation of the vehicle. It stores the last required orientation and the new one coming from the controller. After that, it tries to make the orientation as close as new one. Both data can be represented as vectors.The angle between those two vector is tried to be minimized by the controller. Before moving on to the operation, note that the angle can be used as a measure of the error that the direction unit have. The less the angle the more correctly operates the direction unit.\\
+	Direction unit is responsible for the orientation of the vehicle. It stores the last required orientation and the new one coming from the controller. After that, it tries to make the orientation as close as new one. Both data can be represented as vectors.The angle between those two vector is tried to be minimized by the controller. Before moving on to the operation, note that the angle can be used as a measure of the error that the direction unit have. The less the angle the more correctly operates the direction unit. The requirements of this subsystem are listed below.\\
 	
 	
 	\textbf{Direction Subsystem Requirements:}
@@ -446,7 +442,7 @@
 	
 	\subsubsection{Speed Subsystem}
 	
-	This unit acts as a complementary module for direction unit. It will act as a state machine. In one state, the unit will try to increase the speed of the vehicle by making overall increase in both PWM values of DC motors. The feedback of this  system will be the cost function mentioned in driving unit. If that cost exceeds a specified level, unit goes to another state in which the unit will decrease the overall speed to allow direction unit to operate more correctly. In short, this unit tries to compensate the error of the direction unit by changing the overall speed of the vehicle.\\
+	This unit acts as a complementary module for direction unit. It will act as a state machine. In one state, the unit will try to increase the speed of the vehicle by making overall increase in both PWM values of DC motors. The feedback of this  system will be the cost function mentioned in driving unit. If that cost exceeds a specified level, unit goes to another state in which the unit will decrease the overall speed to allow direction unit to operate more correctly. In short, this unit tries to compensate the error of the direction unit by changing the overall speed of the vehicle. The requirements of this subsystem are listed below.\\
 	
 	
 	\textbf{Speed Subsystem Requirements:}
@@ -459,7 +455,7 @@
 	
 	\subsection{Structure System}
 	
-	Structure system has two main subsystems which are "Chassis Subsystem" and "Printed Circuit Board Subsystem".\\
+	Structure system has two main subsystems which are Chassis Subsystem and Printed Circuit Board Subsystem. The requirements of this system are listed below.\\
 	
 	
 	
@@ -473,7 +469,7 @@
 	
 	
 	\subsubsection{Chassis Subsystem}
-	Main purposes of this section are protection of the critical elements of the robot and holding components together. The most important part of this section is weight distribution. The chassis is supposed to be light and strong because of the competition purposes. However, it should balance the robot to be able to handle with turns. \\
+	Main purposes of this section are protection of the critical elements of the robot and holding components together. The most important part of this section is weight distribution. The chassis is supposed to be light and strong because of the competition purposes. However, it should balance the robot to be able to handle with turns. The requirements of this subsystem are listed below.\\
 	
 	\textbf{Chasis Subsystem Requirements:}	
 	\begin{itemize}
@@ -484,7 +480,7 @@
 	
 	
 	\subsubsection{Printed Circuit Board Subsystem}
-	The main role of this part is decreasing connection mass and increase vibration strength of the robot against disturbances. Also, this section increases rigidity of the whole system. 
+	The main role of this part is decreasing connection mass and increase vibration strength of the robot against disturbances. Also, this section increases rigidity of the whole system. The requirements of this subsystem are listed below.\\
 	
 	
 	\textbf{PCB Subsystem Requirements:}
@@ -496,7 +492,7 @@
 	
 	\subsection{Motion System}
 	
-	Motion system has two main subsystems which are "Wheels Subsystem" and "Motors Subsystem Subsystem".\\		
+	Motion system has two main subsystems which are Wheels Subsystem and Motors Subsystem Subsystem. The requirements of this system are listed below.\\	
 	
 	\textbf{Motion System Requirements:}
 	\begin{itemize}
@@ -505,7 +501,7 @@
 	
 	
 	\subsubsection{Wheels Subsystem}
-	There are possible solution for wheel placement on the chassis, and several wheel types. Some wheels are designed for better gripping on different surfaces. To avoids obstacles on the path, gripping of the wheel is an important concept. Some wheel types are ball caster, toy car wheel and palette. Besides, wheel placement and the wheel number should be combined with the wheel type choice. \\
+	There are possible solution for wheel placement on the chassis, and several wheel types. Some wheels are designed for better gripping on different surfaces. To avoids obstacles on the path, gripping of the wheel is an important concept. Some wheel types are ball caster, toy car wheel and palette. Besides, wheel placement and the wheel number should be combined with the wheel type choice. The requirements of this subsystem are listed below.\\
 	
 	\textbf{Wheels Subsystem Requirements:}
 	\begin{itemize}
@@ -522,7 +518,7 @@
 	Last implementation is 2+2 configuration. In this configuration 2 wheels can be placed at the back and the rest at the front by placing motors to back wheels. To ease turning of the vehicle, front wheels can be controlled with a servo motor as back wheels operate in the differential drive mode. This combination may provide both enhanced grip and reliable	 operation. \\
 	
 	\subsubsection{Motors Subsystem}
-	Motors are one of the most important physical components of the project. There are possible motor types in the market.\\
+	\todo{EDĞİŞTİRRRRRRRRRRRRRRRRR}Motors are one of the most important physical components of the project. There are possible motor types in the market.\\
 	
 	One of the widely used motor type is brushed DC motors. 
 	Another option is brushless DC motors. 
