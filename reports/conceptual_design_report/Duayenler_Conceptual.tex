@@ -340,19 +340,22 @@ for (lines_is_valid)
 	
 	Python has a library called serial by which any type of data can be send through serial ports. Script \ref{sc:serial} is used to declare a serial object. Then using \lstinline[language=Python]|ar.write("some string \r".encode())|, the string "some string" can be send to Arduino. Note that "\r" carriage return character carries a high importance because it shows that a string is terminated and any other incoming data belongs to the new piece of string.  
 	
-	\begin{lstlisting}[language=Python,float=t,numbers=left,frame=single,caption=Serial object decleration in Python,label=sc:serial_python, captionpos=b ] 
+	\begin{lstlisting}[language=Python,float=h,numbers=left,frame=single,caption=Serial object decleration in Python,label=sc:serial_python, captionpos=b ] 
 	import serial
 	ar=serial.Serial("/dev/ttyUSB0",9600)
 	\end{lstlisting}
 	
-	As alternatives, the implementation on C and C++ are also examined. 
+	As alternatives, the implementation on C is also examined. 
 	
-	Sample codes to implement the same communication in C++ and C are in Script \ref{sc:serial_c++} and Script \ref{sc:serial_c} respectively.
-	\begin{lstlisting}[language=C++,float=h,numbers=left,frame=single,caption=Serial communication setup in C++,label=sc:serial_c++, captionpos=b ] 
-	<insert C++ serial code here>
-	\end{lstlisting}
-	\begin{lstlisting}[language=C,float=h,numbers=left,frame=single,caption=Serial communication setup in C,label=sc:serial_c, captionpos=b ] 
-	<insert C serial code here>
+	Sample codes to implement the same communication in C is in Script \ref{sc:serial_c}. Since it is a low level language, specification of buffer size and other parameters should be done in the code.
+	 \begin{lstlisting}[language=C,float=h,numbers=left,frame=single,caption=Serial communication setup in C,label=sc:serial_c, captionpos=b ] 
+#include "./arduinoModule/rs232.h"
+int cport_nr = 24; /* /dev/ttyUSB0 */
+int bdrate = 9600; /* 9600 baud */
+char mode[] = { '8', 'N', '1', 0 }; // 8 data bits, no parity, 1 stop bit
+char str_send[2][BUF_SIZE]; // send data buffer
+unsigned char str_recv[BUF_SIZE]; // recv data buffer
+RS232_OpenComport(cport_nr, bdrate, mode)
 	\end{lstlisting}
 	
 	On Arduino  side, there are also several option that we can read the incoming data. Using \lstinline[language=Arduino]|Serial.read()| command is one of the simples solutions. However, it contains some issues like conversion from string to integer and when to stop. Furthermore, the incoming data should be considered in character basis for the exact control. \\
@@ -373,10 +376,10 @@ for (lines_is_valid)
 	
 	Socket programming is an effective tool to implement client-server communication algorithms. It can be implemented in Python or C++.  Our algorithms are written in Python for now, yet it can easily be converted to C++ if the team members decide that it is necessary. The algorithms for client and server sides are slightly different. \textit{Figure~\ref{fig:socket_funcs}} shows the functions that are used for client and server sides to create communication between client and server.
 	
-	\begin{figure}[H]
+	\begin{figure}[h]
 		\center
 		\setlength{\unitlength}{\textwidth} 
-		\includegraphics[width=0.55\textwidth]{images/socket_funcs}
+		\includegraphics[width=0.5\textwidth]{images/socket_funcs}
 		\caption{\label{fig:socket_funcs}TBasic Functions in Python Socket Programming to Implement Handshaking}
 	\end{figure}
 	

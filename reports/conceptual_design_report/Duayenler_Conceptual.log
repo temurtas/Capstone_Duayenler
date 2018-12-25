@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.21)  25 DEC 2018 22:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.21)  25 DEC 2018 22:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1109,17 +1109,17 @@ LaTeX Warning: Reference `sc:serial' on page 11 undefined on input line 341.
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-Underfull \hbox (badness 10000) in paragraph at lines 358--359
+Underfull \hbox (badness 10000) in paragraph at lines 361--362
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 364--365
+Underfull \hbox (badness 10000) in paragraph at lines 367--368
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 372--373
+Underfull \hbox (badness 10000) in paragraph at lines 375--376
 
  []
 
@@ -1127,136 +1127,141 @@ Underfull \hbox (badness 10000) in paragraph at lines 372--373
 File: images/socket_funcs.png Graphic file (type png)
 
 <use images/socket_funcs.png>
-Package pdftex.def Info: images/socket_funcs.png used on input line 379.
-(pdftex.def)             Requested size: 246.44194pt x 438.33923pt.
- [12] [13 <./images/socket_funcs.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 396--397
+Package pdftex.def Info: images/socket_funcs.png used on input line 382.
+(pdftex.def)             Requested size: 224.03688pt x 398.48715pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 399--400
 
  []
 
+[13 <./images/socket_funcs.png>]
 <images/handshake1.png, id=64, 416.30531pt x 148.30406pt>
 File: images/handshake1.png Graphic file (type png)
 
 <use images/handshake1.png>
-Package pdftex.def Info: images/handshake1.png used on input line 408.
+Package pdftex.def Info: images/handshake1.png used on input line 411.
 (pdftex.def)             Requested size: 336.05533pt x 119.72055pt.
 
 <images/handshake2.png, id=65, 422.32782pt x 145.29282pt>
 File: images/handshake2.png Graphic file (type png)
 
 <use images/handshake2.png>
-Package pdftex.def Info: images/handshake2.png used on input line 415.
+Package pdftex.def Info: images/handshake2.png used on input line 418.
 (pdftex.def)             Requested size: 336.05533pt x 115.61586pt.
- [14 <./images/handshake1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 421--422
+
+Underfull \hbox (badness 10000) in paragraph at lines 424--425
+
+ []
+
+[14 <./images/handshake1.png> <./images/handshake2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 433--434
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 430--431
+Underfull \hbox (badness 10000) in paragraph at lines 442--443
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 439--440
+Underfull \hbox (badness 10000) in paragraph at lines 444--445
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 441--442
+Underfull \hbox (badness 10000) in paragraph at lines 453--454
 
  []
 
-[15 <./images/handshake2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 450--451
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 463--464
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 466--467
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 477--478
+Underfull \hbox (badness 10000) in paragraph at lines 480--481
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--492
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 488--489
+Underfull \hbox (badness 10000) in paragraph at lines 503--504
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 500--501
+Underfull \hbox (badness 10000) in paragraph at lines 512--513
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 509--510
+Underfull \hbox (badness 10000) in paragraph at lines 520--521
+
+ []
+
+
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 534--534
+[][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
+ []
+
+
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 534--534
+[][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
+ []
+
+
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 534--534
+[][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
+ []
+
+
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 534--534
+[][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 534--535
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 517--518
+Underfull \hbox (badness 10000) in paragraph at lines 539--540
 
  []
 
 
-Overfull \hbox (170.94676pt too wide) in paragraph at lines 531--531
-[][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
- []
-
-
-Overfull \hbox (170.94676pt too wide) in paragraph at lines 531--531
-[][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
- []
-
-
-Overfull \hbox (170.94676pt too wide) in paragraph at lines 531--531
-[][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
- []
-
-
-Overfull \hbox (170.94676pt too wide) in paragraph at lines 531--531
-[][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 531--532
+Underfull \hbox (badness 10000) in paragraph at lines 548--549
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 536--537
+Underfull \hbox (badness 10000) in paragraph at lines 552--553
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 545--546
+Underfull \hbox (badness 10000) in paragraph at lines 554--555
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 549--550
-
- []
-
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 551--552
-
- []
-
-[19] [20] (./Duayenler_Conceptual.aux)
+[18] [19] (./Duayenler_Conceptual.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 30284 strings out of 494953
- 682848 string characters out of 6180976
- 1016856 words of memory out of 5000000
- 32975 multiletter control sequences out of 15000+600000
+ 30302 strings out of 494953
+ 683141 string characters out of 6180976
+ 1016863 words of memory out of 5000000
+ 32993 multiletter control sequences out of 15000+600000
  13297 words of font info for 49 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  62i,11n,118p,1326b,1490s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1269,10 +1274,10 @@ s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1
 amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on Duayenler_Conceptual.pdf (21 pages, 402919 bytes).
+Output written on Duayenler_Conceptual.pdf (20 pages, 404821 bytes).
 PDF statistics:
- 119 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
+ 116 PDF objects out of 1000 (max. 8388607)
+ 78 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  38 words of extra memory for PDF output out of 10000 (max. 10000000)
 
