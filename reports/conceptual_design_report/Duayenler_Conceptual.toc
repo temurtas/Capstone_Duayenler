@@ -1,5 +1,5 @@
-\select@language {english}
-\select@language {english}
+\babel@toc {english}{}
+\babel@toc {english}{}
 \contentsline {section}{\numberline {1}Executive Summary}{2}
 \contentsline {section}{\numberline {2}Introduction}{3}
 \contentsline {section}{\numberline {3}Solutions}{4}
@@ -24,13 +24,13 @@
 \contentsline {paragraph}{\numberline {3.4.1.1}Alternative Solutions for Direction Subsystem}{16}
 \contentsline {subsubsection}{\numberline {3.4.2}Speed Subsystem}{16}
 \contentsline {subsection}{\numberline {3.5}Structure System}{16}
-\contentsline {subsubsection}{\numberline {3.5.1}Chassis Subsystem}{17}
+\contentsline {subsubsection}{\numberline {3.5.1}Chassis Subsystem}{16}
 \contentsline {subsubsection}{\numberline {3.5.2}Printed Circuit Board Subsystem}{17}
 \contentsline {subsection}{\numberline {3.6}Motion System}{17}
 \contentsline {subsubsection}{\numberline {3.6.1}Wheels Subsystem}{17}
 \contentsline {paragraph}{\numberline {3.6.1.1}Alternative Solutions for Wheels Subsystem}{18}
 \contentsline {subsubsection}{\numberline {3.6.2}Motors Subsystem}{18}
-\contentsline {paragraph}{\numberline {3.6.2.1}Alternative Solutions for Motors Subsystem}{19}
+\contentsline {paragraph}{\numberline {3.6.2.1}Alternative Solutions for Motors Subsystem}{18}
 \contentsline {subsection}{\numberline {3.7} Error sources, their impact and ways to mitigate}{20}
 \contentsline {subsection}{\numberline {3.8}Technical drawing of the expected design}{20}
 \contentsline {section}{\numberline {4}Plans}{20}
