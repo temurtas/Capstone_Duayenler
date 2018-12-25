@@ -47,7 +47,7 @@
 %-----end of packages
 
 
-
+\input{../../documents/arduinoLanguage.tex}
 \input{../../documents/configuration.tex}
 %\onehalfspacing
 \begin{document}
@@ -111,7 +111,13 @@
 	\newpage
 	
 	\section{Executive Summary}
+	Recently, with the quick development of the computers and internet, a revolutionary change is about happen. The operation speed of electronics have dramatically increased as the sizes have shrinked. Thus, developing and integrating new systems into the cars are easier than it has ever been. Along with such advances, as a result, intelligent cars have been around for a few years. The intelligent vehicle technologies enable simpler vehicle operations and better driving safety. Such technologies involve autonomous driving, lane departure assistance, ambient dependent headlight adjustment and other safety related features. To address the needs in the development phases of the aforementioned technologies, DUAYENLER Ltd. Şti. (DUAYENLER) is founded. DUAYENLER aims to be one of the Lodestars in the industry with its innovative approaches.\\
 	
+	The company consists of talented engineers from different but closely related fields, namely, computer, electronics and control. This combination is what makes DUAYENLER advantageous in R\&D phase. Easy looking technologies involve complex development phases. And complexity can only be resolved by a team work. The members of the company are self-aware and cooperate closely to each other. With all its synergy, DUAYENLER is capable of accomplishing the tasks and overcoming possible problems.\\
+	
+	The main technology that DUAYENLER focuses on is autonomous driving. Such technology yields a contemporary and innovative solution for car industry. The development consists of combination of several systems. The sensing system is responsible for understanding and mapping the environment properties such as detecting lane boundaries and possible obstacles. This system is one of the most important elements in the project together with computation system. Not only being able to map surroundings as image is important but also extracting meaningful data out of them and convert them to a useful data for rest of the systems. The computation unit is the core system of the project. Furthermore, the processed data must be output as a physical phenomena, that is, steering of the wheels. This is realized by the combination of driving and motion subsystems. Since a vehicle is generally not solo, the project consists of a system dedicated to communicate with other vehicles. This is the communication system. As anticipated, the whole system must be assembled on a single body. The structure system realizes such needs in the project.\\
+	
+	The aim of this report is to give reader a solid understanding of the project from DUAYENLER's point of view. The duration of the project is expected to last 33 weeks, from the beginning of October 2018 to May 2018. The estimated cost for research and development phase is about \$ 450 whereas mass manufacturing would not exceed \$200. Along with the vehicle, the customer will be provided with deliverables such as technical manuals, elliptical path, rechargeable battery and the charger. The vehicle will have two (2) years of warranty.
 	
 	
 	\section{Introduction}
@@ -310,10 +316,7 @@
 	
 	
 	\subsubsection{Internal Communication Subsystem}
-	This subsystem covers the communication of the components inside vehicle. Currently, Raspberry Pi and Arduino are two components that requires communication. 
-	
-	
-	To prevent the large amount of cable connection, a serial communication protocol is implemented.\\
+	This subsystem covers the communication of the components inside vehicle. Currently, Raspberry Pi and Arduino are two components that requires communication. To prevent the large amount of cable connection, a serial communication protocol is implemented.\\
 	
 	\textbf{Internal Communication Subsystem Requirements:}
 	\begin{itemize}
@@ -321,9 +324,43 @@
 		\item The internal communication speed should be compatible with the processing speed of the lane detection subsystem  
 	\end{itemize}
 	
+	There are several serial communication protocols that can be used to maintain the connection such as SPI, I2C. However, the first choice is to use USB serial port of the Arduino. Since RPi is practically a computer, it can recognize Arduino as a device using a serial port such as \lstinline[language=Arduino]|/ttyUSB0| in case of a Linux based OS. When recognized, RPi can send any piece of strings to the Arduino via USB cable. \\
+	
+	The process of communication is the following:
+	\begin{enumerate}
+		\item Arduino should be connected to the Pi.
+		\item Using Arduino IDE or any other method such as listing serial ports and checking for Arduino and so on, the serial port name should be detected
+		\item Baud rates of two sides should be the same. 9600 is generally enough but if needed, it can be incremented to satisfy fast communication
+		\item On Arduino side, \lstinline[language=Arduino]|Serial.begin(9600)| command should be executed and serial port should be read repeatedly to capture the incoming data
+		\item On Pi side, using any language C++ or Python, messages to serial port can be send
+	\end{enumerate}
+	
+	There are minor differences when implementing the code in Python, C++  and C. Python is the most practical one:\\
+	
+	Python has a library called serial by which any type of data can be send through serial ports. Script \ref{sc:serial} is used to declare a serial object. Then using \lstinline[language=Python]|ar.write("some string \r".encode())|, the string "some string" can be send to Arduino. Note that "\r" carriage return character carries a high importance because it shows that a string is terminated and any other incoming data belongs to the new piece of string.  
+	
+	 \begin{lstlisting}[language=Python,float=t,numbers=left,frame=single,caption=Serial object decleration in Python,label=sc:serial_python, captionpos=b ] 
+	import serial
+	ar=serial.Serial("/dev/ttyUSB0",9600)
+	\end{lstlisting}
+	
+	As alternatives, the implementation on C and C++ are also examined. 
+	
+	Sample codes to implement the same communication in C++ and C are in Script \ref{sc:serial_c++} and Script \ref{sc:serial_c} respectively.
+	\begin{lstlisting}[language=C++,float=h,numbers=left,frame=single,caption=Serial communication setup in C++,label=sc:serial_c++, captionpos=b ] 
+	<insert C++ serial code here>
+	\end{lstlisting}
+	\begin{lstlisting}[language=C,float=h,numbers=left,frame=single,caption=Serial communication setup in C,label=sc:serial_c, captionpos=b ] 
+	<insert C serial code here>
+	\end{lstlisting}
+	
+	On Arduino  side, there are also several option that we can read the incoming data. Using \lstinline[language=Arduino]|Serial.read()| command is one of the simples solutions. However, it contains some issues like conversion from string to integer and when to stop. Furthermore, the incoming data should be considered in character basis for the exact control. \\
+	
+	There is also a more sophisticated solution. There is a \lstinline[language=Arduino]|<SerialCommand.h>| library for the Arduino which allows executing a function depending on the incoming string. Using \lstinline[language=Arduino]|.addCommand("str",func)| of the library any function can be associated with any string coming from serial port. Moreover, the functions can have argument. For example, let the string "PWMSET" be execute a function \lstinline[language=Arduino]|setpwm()| but the pwm value is required. If incoming string is of the form "PWMSET 150", using \lstinline[language=Arduino]|.next()| function of the library, the value 150 can be read and converted into integer and interpreted as the PWM value to be set. 
+	
 	\subsubsection{External Communication Subsystem}
 	
-	
+	This subsystem covers basically the handshake protocol i.e. communication with the other vehicles on the path.
 	
 	\textbf{External Communication Subsystem Requirements:}	
 	\begin{itemize}
