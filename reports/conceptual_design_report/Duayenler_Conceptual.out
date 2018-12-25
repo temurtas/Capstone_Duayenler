@@ -1,0 +1,94 @@
+\BOOKMARK [1][-]{section.1}{Executive Summary}{}% 1
+\BOOKMARK [1][-]{section.2}{Introduction}{}% 2
+\BOOKMARK [1][-]{section.3}{Solutions}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Description of individual sub-systems}{section.3}% 4
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Sensing System}{subsection.3.1}% 5
+\BOOKMARK [4][-]{paragraph.3.1.1.1}{Lane Detection Subsystem}{subsubsection.3.1.1}% 6
+\BOOKMARK [4][-]{paragraph.3.1.1.2}{Vehicle Detection Subsystem}{subsubsection.3.1.1}% 7
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Computation System}{subsection.3.1}% 8
+\BOOKMARK [4][-]{paragraph.3.1.2.1}{Data Processing Subsystem}{subsubsection.3.1.2}% 9
+\BOOKMARK [4][-]{paragraph.3.1.2.2}{PID Controller Subsystem}{subsubsection.3.1.2}% 10
+\BOOKMARK [3][-]{subsubsection.3.1.3}{Communication System}{subsection.3.1}% 11
+\BOOKMARK [4][-]{paragraph.3.1.3.1}{Internal Communication Subsystem}{subsubsection.3.1.3}% 12
+\BOOKMARK [4][-]{paragraph.3.1.3.2}{External Communication Subsystem}{subsubsection.3.1.3}% 13
+\BOOKMARK [3][-]{subsubsection.3.1.4}{Driving System}{subsection.3.1}% 14
+\BOOKMARK [4][-]{paragraph.3.1.4.1}{Direction Subsystem}{subsubsection.3.1.4}% 15
+\BOOKMARK [4][-]{paragraph.3.1.4.2}{Speed Subsystem}{subsubsection.3.1.4}% 16
+\BOOKMARK [3][-]{subsubsection.3.1.5}{Structure System}{subsection.3.1}% 17
+\BOOKMARK [4][-]{paragraph.3.1.5.1}{Chassis Subsystem}{subsubsection.3.1.5}% 18
+\BOOKMARK [4][-]{paragraph.3.1.5.2}{Printed Circuit Board Subsystem}{subsubsection.3.1.5}% 19
+\BOOKMARK [3][-]{subsubsection.3.1.6}{Motion System}{subsection.3.1}% 20
+\BOOKMARK [4][-]{paragraph.3.1.6.1}{Wheels Subsystem}{subsubsection.3.1.6}% 21
+\BOOKMARK [4][-]{paragraph.3.1.6.2}{Motors Subsystem}{subsubsection.3.1.6}% 22
+\BOOKMARK [2][-]{subsection.3.2}{System \046 Subsystem Level Requirements}{section.3}% 23
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Sensing System Requirements}{subsection.3.2}% 24
+\BOOKMARK [4][-]{paragraph.3.2.1.1}{Lane Detection Subsystem Requirements}{subsubsection.3.2.1}% 25
+\BOOKMARK [4][-]{paragraph.3.2.1.2}{Vehicle Detection Subsystem Requirements}{subsubsection.3.2.1}% 26
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Computation System Requirements}{subsection.3.2}% 27
+\BOOKMARK [4][-]{paragraph.3.2.2.1}{Data Processing Subsystem Requirements}{subsubsection.3.2.2}% 28
+\BOOKMARK [4][-]{paragraph.3.2.2.2}{PID Controller Subsystem Requirements}{subsubsection.3.2.2}% 29
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Communication System Requirements}{subsection.3.2}% 30
+\BOOKMARK [4][-]{paragraph.3.2.3.1}{Internal Communication Subsystem Requirements}{subsubsection.3.2.3}% 31
+\BOOKMARK [4][-]{paragraph.3.2.3.2}{External Communication Subsystem Requirements}{subsubsection.3.2.3}% 32
+\BOOKMARK [3][-]{subsubsection.3.2.4}{Driving System Requirements}{subsection.3.2}% 33
+\BOOKMARK [4][-]{paragraph.3.2.4.1}{Speed Subsystem Requirements}{subsubsection.3.2.4}% 34
+\BOOKMARK [4][-]{paragraph.3.2.4.2}{Direction Subsystem Requirements}{subsubsection.3.2.4}% 35
+\BOOKMARK [3][-]{subsubsection.3.2.5}{Motion System Requirements}{subsection.3.2}% 36
+\BOOKMARK [4][-]{paragraph.3.2.5.1}{Wheels Subsystem Requirements}{subsubsection.3.2.5}% 37
+\BOOKMARK [4][-]{paragraph.3.2.5.2}{Motors Subsystem Requirements}{subsubsection.3.2.5}% 38
+\BOOKMARK [3][-]{subsubsection.3.2.6}{Structure System Requirements}{subsection.3.2}% 39
+\BOOKMARK [4][-]{paragraph.3.2.6.1}{Chasis Subsystem Requirements}{subsubsection.3.2.6}% 40
+\BOOKMARK [4][-]{paragraph.3.2.6.2}{PCB Subsystem Requirements}{subsubsection.3.2.6}% 41
+\BOOKMARK [2][-]{subsection.3.3}{Solution for each subsystem and relevant algorithms}{section.3}% 42
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Solution for Vehicle Detection Subsystem}{subsection.3.3}% 43
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Solution for Data Processing Subsystem}{subsection.3.3}% 44
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Solution for Controller Subsystem}{subsection.3.3}% 45
+\BOOKMARK [3][-]{subsubsection.3.3.4}{Solution for Internal Communication Subsystem}{subsection.3.3}% 46
+\BOOKMARK [3][-]{subsubsection.3.3.5}{Solution for External Communication Subsystem}{subsection.3.3}% 47
+\BOOKMARK [3][-]{subsubsection.3.3.6}{Solution for Direction Subsystem}{subsection.3.3}% 48
+\BOOKMARK [3][-]{subsubsection.3.3.7}{Solution for Speed Subsystem}{subsection.3.3}% 49
+\BOOKMARK [3][-]{subsubsection.3.3.8}{Solution for Chassis Subsystem}{subsection.3.3}% 50
+\BOOKMARK [3][-]{subsubsection.3.3.9}{Solution for Printed Circuit Board Subsystem}{subsection.3.3}% 51
+\BOOKMARK [3][-]{subsubsection.3.3.10}{Solution for Wheels Subsystem}{subsection.3.3}% 52
+\BOOKMARK [3][-]{subsubsection.3.3.11}{Solution for Motors Subsystem}{subsection.3.3}% 53
+\BOOKMARK [2][-]{subsection.3.4}{Subsystem level risk assessment, and alternative solutions \(Plan-B\)}{section.3}% 54
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Alternative Solutions for Lane Detection Subsystem}{subsection.3.4}% 55
+\BOOKMARK [4][-]{paragraph.3.4.1.1}{Laser sensor}{subsubsection.3.4.1}% 56
+\BOOKMARK [4][-]{paragraph.3.4.1.2}{Color sensor}{subsubsection.3.4.1}% 57
+\BOOKMARK [3][-]{subsubsection.3.4.2}{Alternative Solutions for Vehicle Detection Subsystem}{subsection.3.4}% 58
+\BOOKMARK [3][-]{subsubsection.3.4.3}{Alternative Solutions for Data Processing Subsystem}{subsection.3.4}% 59
+\BOOKMARK [3][-]{subsubsection.3.4.4}{Alternative Solutions for Controller Subsystem}{subsection.3.4}% 60
+\BOOKMARK [3][-]{subsubsection.3.4.5}{Alternative Solutions for Internal Communication Subsystem}{subsection.3.4}% 61
+\BOOKMARK [3][-]{subsubsection.3.4.6}{Alternative Solutions for External Communication Subsystem}{subsection.3.4}% 62
+\BOOKMARK [3][-]{subsubsection.3.4.7}{Alternative Solutions for Direction Subsystem}{subsection.3.4}% 63
+\BOOKMARK [3][-]{subsubsection.3.4.8}{Alternative Solutions for Speed Subsystem}{subsection.3.4}% 64
+\BOOKMARK [3][-]{subsubsection.3.4.9}{Alternative Solutions for Chassis Subsystem}{subsection.3.4}% 65
+\BOOKMARK [3][-]{subsubsection.3.4.10}{Alternative Solutions for Printed Circuit Board Subsystem}{subsection.3.4}% 66
+\BOOKMARK [3][-]{subsubsection.3.4.11}{Alternative Solutions for Wheels Subsystem}{subsection.3.4}% 67
+\BOOKMARK [3][-]{subsubsection.3.4.12}{Alternative Solutions for Motors Subsystem}{subsection.3.4}% 68
+\BOOKMARK [2][-]{subsection.3.5}{ Error sources, their impact and ways to mitigate}{section.3}% 69
+\BOOKMARK [2][-]{subsection.3.6}{System \046 Subsystem Tests }{section.3}% 70
+\BOOKMARK [3][-]{subsubsection.3.6.1}{Sensing System Tests}{subsection.3.6}% 71
+\BOOKMARK [4][-]{paragraph.3.6.1.1}{Lane Detection Subsystem Tests}{subsubsection.3.6.1}% 72
+\BOOKMARK [5][-]{subparagraph.3.6.1.1.1}{Light Condition Test}{paragraph.3.6.1.1}% 73
+\BOOKMARK [5][-]{subparagraph.3.6.1.1.2}{Visual Disturbance Test}{paragraph.3.6.1.1}% 74
+\BOOKMARK [4][-]{paragraph.3.6.1.2}{Vehicle Detection Subsystem Tests}{subsubsection.3.6.1}% 75
+\BOOKMARK [5][-]{subparagraph.3.6.1.2.1}{\200}{paragraph.3.6.1.2}% 76
+\BOOKMARK [3][-]{subsubsection.3.6.2}{Computation System Tests}{subsection.3.6}% 77
+\BOOKMARK [4][-]{paragraph.3.6.2.1}{Data Processing Subsystem Tests}{subsubsection.3.6.2}% 78
+\BOOKMARK [4][-]{paragraph.3.6.2.2}{PID Controller Subsystem Tests}{subsubsection.3.6.2}% 79
+\BOOKMARK [3][-]{subsubsection.3.6.3}{Communication System Tests}{subsection.3.6}% 80
+\BOOKMARK [4][-]{paragraph.3.6.3.1}{External Communication Tests}{subsubsection.3.6.3}% 81
+\BOOKMARK [3][-]{subsubsection.3.6.4}{Driving System Tests}{subsection.3.6}% 82
+\BOOKMARK [4][-]{paragraph.3.6.4.1}{Speed Subsystem Tests}{subsubsection.3.6.4}% 83
+\BOOKMARK [4][-]{paragraph.3.6.4.2}{Direction Subsystem Tests}{subsubsection.3.6.4}% 84
+\BOOKMARK [3][-]{subsubsection.3.6.5}{Motion System Tests}{subsection.3.6}% 85
+\BOOKMARK [4][-]{paragraph.3.6.5.1}{Wheels Subsystem Tests}{subsubsection.3.6.5}% 86
+\BOOKMARK [4][-]{paragraph.3.6.5.2}{Motors Subsystem Tests}{subsubsection.3.6.5}% 87
+\BOOKMARK [3][-]{subsubsection.3.6.6}{Structure System Tests}{subsection.3.6}% 88
+\BOOKMARK [4][-]{paragraph.3.6.6.1}{Chasis Subsystem Tests}{subsubsection.3.6.6}% 89
+\BOOKMARK [4][-]{paragraph.3.6.6.2}{PCB Subsystem Tests}{subsubsection.3.6.6}% 90
+\BOOKMARK [2][-]{subsection.3.7}{Technical drawing of the expected design}{section.3}% 91
+\BOOKMARK [1][-]{section.4}{Plans}{}% 92
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 93
+\BOOKMARK [1][-]{section.6}{Disclaimer}{}% 94
