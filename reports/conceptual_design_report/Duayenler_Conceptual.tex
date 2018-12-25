@@ -144,9 +144,7 @@
 	
 	\subsection{Sensing System}
 	
-	Sensing system has two main subsystems which are "Lane Detection Subsystem" and "Vehicle Detection Subsystem".\\
-	
-	\textbf{Sensing System Requirements:}
+	Sensing system has two main subsystems which are Lane Detection Subsystem and Vehicle Detection Subsystem. The requirements of this subsystem are listed below:
 	\begin{itemize}
 		\item The system should detect the sides of the road.
 		\item The system should not be effected from external disturbances.
@@ -155,9 +153,7 @@
 	
 	
 	\subsubsection{Lane Detection Subsystem}
-	The subsystem basically detects the lane. This subsystem uses OpenCV libraries for processing camera frames. The input is captured from a Raspberry Pi camera that is mounted to the vehicle. The captured frame is firstly, preprocessed by a denoising filter and HSV color filter. The edges in the frame is detected by Canny Edge Detector algorithm. The output of Canny is a binary image filled with ones and zeros. The resulting binary image is sent to Data Processing Subsystem. \\
-	
-	\textbf{Lane Detection Subsystem Requirements:}	
+	The subsystem basically detects the lane. This subsystem uses OpenCV libraries for processing camera frames. The input is captured from a Raspberry Pi camera that is mounted to the vehicle. The captured frame is firstly, preprocessed by a denoising filter and HSV color filter. The edges in the frame is detected by Canny Edge Detector algorithm. The output of Canny is a binary image filled with ones and zeros. The resulting binary image is processed with Hough Line detector to find pixels that possibly form a line. After the lines are found, the processed frame is sent to Data Processing Subsystem. The block diagram of this subsystem is given in \textit{Figure~\ref{fig:lane_detection_subsystem}}. The requirements of this subsystem are listed below:
 	\begin{itemize}
 		\item The subsystem should be able to detect only the shades of green color
 		\item The subsystem should be able to detect edges in the camera frame in any light condition
@@ -166,18 +162,24 @@
 	\end{itemize}
 	
 	%solution starts here
-	\begin{figure}[H]
+	\begin{figure}[t]
 		\center
 		\setlength{\unitlength}{\textwidth} 
-		\includegraphics[width=\textwidth]{v-models/lane_detection_subsystem}
+		\includegraphics[width=0.8\textwidth]{v-models/lane_detection_subsystem}
 		\caption{\label{fig:lane_detection_subsystem}The Proposed Algorithm for the Lane Detection.}
 	\end{figure}
-	The first processing on the captured frame is denoising by blurring. The blurring filter is a GaussianBlur of (3x3) matrix with zero variance both in x and y directions. Next, the filtered image is color filtered in HSV color space. The filter range of the HSV filter is adjusted only to include shades green. The lower bound for HSV filter is [H=60, S=120, V=106] and the higher bound is [H=82, S=255, V=235]. Later the color filtered image is processed by Canny Edge Detector. This process eliminates all pixels except those are constituting an edge. Edge pixels are usually formed when there is a transition from one object to other. The edge detected frame is sent to Data Processing Subsystem.
+	The first processing on the captured frame is denoising by blurring. The blurring filter is a GaussianBlur of (3x3) matrix with zero variance both in x and y directions. Next, the filtered image is color filtered in HSV color space. The filter range of the HSV filter is adjusted only to include shades green. The lower bound for HSV filter is [H=60, S=120, V=106] and the higher bound is [H=82, S=255, V=235]. Later the color filtered image is processed by Canny Edge Detector. This process eliminates all pixels except those are constituting an edge. Edge pixels are usually formed when there is a transition from one object to other. To find pixels constituting a line, Hough Lines function is used.
 	
+	Hough Lines function outputs two pixels points on the image that form a line. The output of the function is tens of such line points. The accuracy of the function can be adjusted by playing with the input parameters. The function basically draws all lines that might go through a point in the free space (in polar coordinates) and intersects those lines. If the origin points of the intersected lines are within a specified bound, then the line is defined and it can be expanded further. If found points on a line don't exceed a threshold, that line is discarded. The adjustment of such parameters are done with trial and error approach. An important note is that this function is probabilistic, meaning that even if the input frame is never changed, the output line points would be close to previous point but not the same. An example call for this function together with its parameters is given \textit{Script~\ref{sc:hough-call}}. The output, line detected frame, is sent to Data Processing Subsystem.
+		\begin{lstlisting}[language=C++,float=h,numbers=left,frame=single,caption=Hough Lines Function with its Parameters, captionpos=b, label=sc:hough-call]
+HoughLinesP(input=img_threshed, output=line,
+rho=1, theta=CV_PI / 180, threshold=15, 
+minLineLength=30, maxLineGap=40);
+	\end{lstlisting}
 	
 	\paragraph{Alternative Solutions for Lane Detection Subsystem}
 	
-	After the module demo result of the camera-oriented lane detection, former solutions are considered to support camera result and enhance robustness of the tracking. Possible future solutions are the followings;  
+	After the module demo result of the camera-oriented lane detection, former solutions are considered to support camera result and enhance robustness of the tracking. Possible future solutions are the followings:
 	\begin{itemize}		
 		\item{Light sensor:} The purpose of using this sensor is to adjust color filtering in the lane detection. In the test phase, it is observed that color filter in HSV space had inaccuracies such as detecting colors other than green. Even though HSV mostly eliminates the illumination change in a color, an adaptive threshold setting might be a good option for color filtering to work more robust in extreme low and extreme high lighting conditions. Lighting sensor will have the luminosity of the medium and this data should adaptively set the color filter range.
 		
@@ -187,31 +189,28 @@
 	\end{itemize}
 	
 	\paragraph{Lane Detection Subsystem Tests}	
-	
-	\subparagraph{Light Condition Test}
-	
+	The test procedure that will make sure correct functioning of this subsystem are list in the following sections.
 	\begin{itemize}
-		\item Mirror the Raspberry Pi screen into Laptop via VNC 
-		\item Execute the lane detection algorithm in Raspberry Pi
-		\item Change the location of the camera and Pi to conduct test
-		\item Observe the results in different locations  
-		\item If the visible lane sides can be detected without any additional object, the result of the test can be considered as success.
-	\end{itemize}
-	
-	\subparagraph{Visual Disturbance Test}
-	
-	\begin{itemize}
-		\item Mirror the Raspberry Pi screen into Laptop via VNC 
-		\item Execute the lane detection algorithm in Raspberry Pi
-		\item Put different objects into lane
-		\item Observe the results with different disturbances
-		\item If the objects outside of lane is not detected and the objects inside the road only detected only at its border with road, the result of the test can be considered as success.
+		\item{Light Condition Test}
+				\begin{itemize}
+				\item Mirror the Raspberry Pi screen into Laptop via VNC 
+				\item Execute the lane detection algorithm in Raspberry Pi
+				\item Change the location of the camera and Pi to conduct test
+				\item Observe the results in different locations  
+				\item If the visible lane sides can be detected without any additional object, the result of the test can be considered as success.
+			\end{itemize}
+		\item{Visual Disturbance Test}
+			\begin{itemize}
+			\item Mirror the Raspberry Pi screen into Laptop via VNC 
+			\item Execute the lane detection algorithm in Raspberry Pi
+			\item Put different objects into lane
+			\item Observe the results with different disturbances
+			\item If the objects outside of lane is not detected and the objects inside the road only detected only at its border with road, the result of the test can be considered as success.
+		\end{itemize}
 	\end{itemize}
 	
 	\subsubsection{Vehicle Detection Subsystem}
-	The subsystem is the first step of safely computing with an opponent in a racing path. This subsystem uses two time of flight distance sensor which is enhanced IR sensor. one at the back of the vehicle responsible for detecting the chasing opponent and one at the front of the vehicle responsible for detecting the chased opponent. The subsystem produces positive output if the chasing vehicle or chased vehicle is within a range of 5 cm from the vehicle. Since the sensor reading is planned to be performed using Arduino, the required trigger for handshake protocol can be  easily send through serial commutation or directly implemented in the Arduino as an alternative.\\
-	
-	\textbf{Vehicle Detection Subsystem Requirements}
+	The subsystem is the first step of safely computing with an opponent in a racing path. This subsystem uses two time of flight distance sensor which is enhanced IR sensor. one at the back of the vehicle responsible for detecting the chasing opponent and one at the front of the vehicle responsible for detecting the chased opponent. The subsystem produces positive output if the chasing vehicle or chased vehicle is within a range of 5 cm from the vehicle. Since the sensor reading is planned to be performed using Arduino, the required trigger for handshake protocol can be  easily send through serial commutation or directly implemented in the Arduino as an alternative. The requirements of this subsystem are listed below:
 	
 	\begin{itemize}
 		\item The subsystem should detect the opponent to be caught with in a 5 cm 
@@ -219,7 +218,7 @@
 		\item The subsystem should trigger the handshake protocol 
 	\end{itemize}
 	
-	\paragraph{Alternative Solutions for Vehicle Detection Subsystem\\}
+	\paragraph{Alternative Solutions for Vehicle Detection Subsystem}
 	\begin{itemize}
 		\item {Ultrasonic sensor:} These can be another approach to this problem. They send a sound wave and take back the echo, then give a PWM voltage related to the distance. However, using ultrasonic sensors can cause problems if the opponent also uses ultrasonic sensors due to the interference. Besides, when measurement is angled, the sensor reading fails. The reason why this is not the first option is that the specified path involves many sharp turns.
 		
@@ -228,18 +227,21 @@
 	
 	\subsection{Computation System}
 	
-	Computation system has two main subsystems which are Data Processing Subsystem and PID Controller Subsystem.\\
-	
-	\textbf{Computation System Requirements}
+	Computation system has two main subsystems which are Data Processing Subsystem and PID Controller Subsystem. The requirements of this system are listed below:
 	\begin{itemize}
 		\item The system should	be able to produce middle line to follow
 		\item The system should be able to control the robot
 	\end{itemize}	
 	
-	
+		\begin{figure}[t]
+		\center
+		\setlength{\unitlength}{\textwidth} 
+		\includegraphics[width=0.8\textwidth]{v-models/data_processing_subsystem}
+		\caption{\label{fig:data_processing_subsystem}The Proposed Algorithm for Data Processing Subsystem.}
+	\end{figure}
 	\subsubsection{Data Processing Subsystem}
 	
-	The input of this system is an edge detected binary image. To find points constituting a line, Hough Lines function is used. The Hough Lines technique probabilistically extracts possible lines in a given binary image. Thus, possible line constituting points are obtained from Hough Lines function. Next, points of the lines are classified as left or right borders of the lane. The elimination of the wrong points are done concurrently with the classification. Then, filtered points are fitted in two separate lines to create left and right borders of the lane. As the lane borders are found, the next and the last step is to determine the direction of the vehicle. The output of this subsystem is a turning angle and a direction. The requirements of this subsystem are listed below.\\
+	The input of this system is an edge detected binary image.  Next, points of the lines are classified as left or right borders of the lane. The elimination of the wrong points are done concurrently with the classification. Then, filtered points are fitted in two separate lines to create left and right borders of the lane. As the lane borders are found, the next and the last step is to determine the direction of the vehicle. The output of this subsystem is a turning angle and a direction. The whole process is sumarized in \textit{Figure~\ref{fig:data_processing_subsystem}} as a block diagram. The requirements of this subsystem are listed below.\\
 	
 	\textbf{Data Processing Subsystem Requirements:}	
 	
@@ -249,14 +251,7 @@
 		\item The subsystem should be able to work on Raspberry Pi
 		\item The subsystem should be able to process one frame at most in 100 milliseconds
 	\end{itemize}
-	
-	The detected pixels are input to Hough Lines function. This function outputs two pixels points on the image that form a line. The output of the function is tens of such line points. The accuracy of the function can be adjusted by playing with the input parameters. The function basically draws all lines that might go through a point in the free space (in polar coordinates) and intersects those lines. If the origin points of the intersected lines are within a specified bound, then the line is defined and it can be expanded further. If found points on a line don't exceed a threshold, that line is discarded. The adjustment of such parameters are done with trial and error approach. An important note is that this function is probabilistic, meaning that even if the input frame is never changed, the output line points would be close to previous point but not the same. An example call for this function together with its parameters is given \textit{Script~\ref{sc:hough-call}}.
-	
-	\begin{lstlisting}[language=C++,float=t,numbers=left,frame=single,caption=Hough Lines Function with its Parameters, captionpos=b, label=sc:hough-call]
-HoughLinesP(input=img_threshed, output=line,
-rho=1, theta=CV_PI / 180, threshold=15, 
-minLineLength=30, maxLineGap=40);
-	\end{lstlisting}
+
 	Then next step is to classify the line points as left or right. The lines are firstly eliminated according to their slopes. If slope of a line is not in invalid slope region of $\pm$0.005, then it is a valid line. This process is done to get rid of unnecessary low sloped lines. After elimination, line points set must be determined as left or right. At this point, this classification is done according to double checking. the center of the image, that is 320th vertical pixel. If initial and final horizontal points of the image is in the same half, the line belongs to that half. This method works nicely in most regions of the path. However, it is a bit error prone in case of a sharp turning angle or losing one of the lanes . This algorithm will be improved to be more robust.
 	\begin{lstlisting}[language=C++,float=t,numbers=left,frame=single,caption=The Algorithm to Classify the Lane Lines as Right or Left, captionpos=b, label=sc:left-right-lines]
 std::vector<cv::Vec4i> lines // like a 4x4 matrix
@@ -284,7 +279,7 @@ for (lines_is_valid)
 		\includegraphics[width=0.6\textwidth]{images/turn-prediction-explained}
 		\caption{\label{fig:turn-prediction-explained}The Prediction of Turn Angle and Direction.}
 	\end{figure}
-	\paragraph{Data Processing Subsystem}
+	\paragraph{Alternatve Solutions for Data Processing Subsystem}
 		The proposed algorithm for data processing has some flaws that are already discussed. To overcome those problems, DUAYENLER has some alternative solutions. An improvement might be on finding lane boundaries. This operation is currently realized with Hough Lines function. Another approach would be to scan rows an accurately edge detected image. If a white pixel is encountered, this would imply a lane boundary and the last time a white pixel is encountered would mean te other lane boundary. If the edge detected image contains noise, the solution might yield a wrong result. However, this can be overcomed by setting maximum number of white points that can be detected in a row.
 		
 		Another improvement could be on positioning on the lane. The proposed algorithm assumes that the vehicle follows the lane always in the center. This assumption is not the case always. The new algorithm will differentiate between the center of the lane and center of the capture image. By averaging coordinate points of both lane boundaries the actual lane center can be found and this point must be in some proximity with respect to the center of the image.
@@ -292,10 +287,7 @@ for (lines_is_valid)
 	
 	\subsubsection{PID Controller Subsystem}
 	\todo{değiştir!!!!!}
-	The output of the data processing subsystem does not mean anything for the vehicle. The motors should be driven using some sort of closed loop system. PID controllers are the most used controller in the robotics field. The purpose of the PID controller is basically to eliminate the error from the desired steady state. In our case the desired steady state  error to be companseted by the ...The requirements of this subsystem are listed below.\\
-	
-	
-	\textbf{PID Controller Subsystem Requirements:}
+	The output of the data processing subsystem does not mean anything for the vehicle. The motors should be driven using some sort of closed loop system. PID controllers are the most used controller in the robotics field. The purpose of the PID controller is basically to eliminate the error from the desired steady state. In our case the desired steady state  error to be companseted by the ...The requirements of this subsystem are listed below:
 	\begin{itemize}
 		\item The subsystem should be able to control the motors
 		\item The subsystem should be able to react the external disturbances
@@ -305,10 +297,7 @@ for (lines_is_valid)
 	
 	\subsection{Communication System}
 	
-	Communication system has two main subsystems which are "Internal Communication Subsystem" and "External Communication  Subsystem".\\
-	
-	
-	\textbf{Communication System Requirements:}
+	Communication system has two main subsystems which are Internal Communication Subsystem and External Communication  Subsystem. The requirements of this system are listed below::
 	\begin{itemize}
 		\item The subsystem should ensure safe internal communication
 		\item The subsystem should ensure safe external communication
@@ -317,9 +306,7 @@ for (lines_is_valid)
 	
 	
 	\subsubsection{Internal Communication Subsystem}
-	This subsystem covers the communication of the components inside vehicle. Currently, Raspberry Pi and Arduino are two components that requires communication. To prevent the large amount of cable connection, a serial communication protocol is implemented. The requirements of this subsystem are listed below.\\
-	
-	\textbf{Internal Communication Subsystem Requirements:}
+	This subsystem covers the communication of the components inside vehicle. Currently, Raspberry Pi and Arduino are two components that requires communication. To prevent the large amount of cable connection, a serial communication protocol is implemented. The requirements of this subsystem are listed below:
 	\begin{itemize}
 		\item The microcontrollers should be able to communicate with each other via serial communication
 		\item The internal communication speed should be compatible with the processing speed of the lane detection subsystem  
@@ -338,7 +325,7 @@ for (lines_is_valid)
 	
 	Python has a library called serial by which any type of data can be send through serial ports. Script \ref{sc:serial_python} is used to declare a serial object. Then using \texttt{ar.write("some string \textbackslash r".encode())}, the string "some string" can be send to Arduino. Note that "\r" carriage return character carries a high importance because it shows that a string is terminated and any other incoming data belongs to the new piece of string.  
 	
-	\begin{lstlisting}[language=Python,float=t,numbers=left,frame=single,caption=Serial object decleration in Python,label=sc:serial_python, captionpos=b ] 
+	\begin{lstlisting}[language=Python,float=b,numbers=left,frame=single,caption=Serial object decleration in Python,label=sc:serial_python, captionpos=b ] 
 import serial
 ar=serial.Serial("/dev/ttyUSB0",9600)
 	\end{lstlisting}
@@ -359,9 +346,7 @@ ar=serial.Serial("/dev/ttyUSB0",9600)
 	
 	\subsubsection{External Communication Subsystem}
 	
-	This subsystem covers basically the handshake protocol i.e. communication with the other vehicles on the path. The requirements of this subsystem are listed below.\\
-	
-	\textbf{External Communication Subsystem Requirements:}	
+	This subsystem covers basically the handshake protocol i.e. communication with the other vehicles on the path. The requirements of this subsystem are listed below:
 	\begin{itemize}
 		\item The subsystem should be able to communicate with the opponent via Wi-fi protocol
 		\item The subsystem should be able to execute handshake protocol
@@ -394,6 +379,7 @@ ar=serial.Serial("/dev/ttyUSB0",9600)
 	It is stated in the standard committee that each team must be assigned a static IP to communicate with the other robots. Duayenler has the static IP stated as “192.168.1.7” and the ID as “07”. Since Raspberry Pi 3 comes with a built-in wireless adapter, configuring it as a Wi-Fi hotspot is possible. To assign given IP to the robot, Raspberry Pi must be set as an access point from the terminal.\\
 	
 	In the algorithm that was implemented for the handshake, in a continuous loop, the front and rear sensors’ values are been checked. There are two functions which are for client and server modes, respectively. If the front sensor senses the opponent in 5 cm range, our main code visits the client mode function. If the rear sensor senses the opponent in 5 cm range, server mode function runs. If our robot is in the server mode, the rear sensor value is again checked. The acknowledge message(<ID>01) or reject message(<ID>11) is sent according to the sensor value.
+	\todo{EDIT BUYUKTUR KUCUKTUR ISARETLERIIIIIIIII}
 	
 	\paragraph{External Communication Tests}
 	
@@ -425,10 +411,7 @@ ar=serial.Serial("/dev/ttyUSB0",9600)
 	
 	
 	\subsubsection{Direction Subsystem}
-	Direction unit is responsible for the orientation of the vehicle. It stores the last required orientation and the new one coming from the controller. After that, it tries to make the orientation as close as new one. Both data can be represented as vectors.The angle between those two vector is tried to be minimized by the controller. Before moving on to the operation, note that the angle can be used as a measure of the error that the direction unit have. The less the angle the more correctly operates the direction unit. The requirements of this subsystem are listed below.\\
-	
-	
-	\textbf{Direction Subsystem Requirements:}
+	Direction unit is responsible for the orientation of the vehicle. It stores the last required orientation and the new one coming from the controller. After that, it tries to make the orientation as close as new one. Both data can be represented as vectors.The angle between those two vector is tried to be minimized by the controller. Before moving on to the operation, note that the angle can be used as a measure of the error that the direction unit have. The less the angle the more correctly operates the direction unit. The requirements of this subsystem are listed below:
 	\begin{itemize}
 		\item The subsystem should drive the motors according to computation system outputs
 		\item The system should ensure that the vehicle follows the lane 
@@ -445,10 +428,7 @@ ar=serial.Serial("/dev/ttyUSB0",9600)
 	
 	\subsubsection{Speed Subsystem}
 	
-	This unit acts as a complementary module for direction unit. It will act as a state machine. In one state, the unit will try to increase the speed of the vehicle by making overall increase in both PWM values of DC motors. The feedback of this  system will be the cost function mentioned in driving unit. If that cost exceeds a specified level, unit goes to another state in which the unit will decrease the overall speed to allow direction unit to operate more correctly. In short, this unit tries to compensate the error of the direction unit by changing the overall speed of the vehicle. The requirements of this subsystem are listed below.\\
-	
-	
-	\textbf{Speed Subsystem Requirements:}
+	This unit acts as a complementary module for direction unit. It will act as a state machine. In one state, the unit will try to increase the speed of the vehicle by making overall increase in both PWM values of DC motors. The feedback of this  system will be the cost function mentioned in driving unit. If that cost exceeds a specified level, unit goes to another state in which the unit will decrease the overall speed to allow direction unit to operate more correctly. In short, this unit tries to compensate the error of the direction unit by changing the overall speed of the vehicle. The requirements of this subsystem are listed below:
 	\begin{itemize}
 		\item The subsystem should decrease the vehicle speed at the narrow lane 
 		\item The subsystem should increase the vehicle speed at the wide lane 
@@ -458,11 +438,7 @@ ar=serial.Serial("/dev/ttyUSB0",9600)
 	
 	\subsection{Structure System}
 	
-	Structure system has two main subsystems which are Chassis Subsystem and Printed Circuit Board Subsystem. The requirements of this system are listed below.\\
-	
-	
-	
-	\textbf{Structure System Requirements:}
+	Structure system has two main subsystems which are Chassis Subsystem and Printed Circuit Board Subsystem. The requirements of this system are listed below:
 	\begin{itemize}
 		\item The system should	ensure that structure is robust for external effects 
 		\item The system should	ensure that structure is balanced to increase handling
@@ -472,9 +448,7 @@ ar=serial.Serial("/dev/ttyUSB0",9600)
 	
 	
 	\subsubsection{Chassis Subsystem}
-	Main purposes of this section are protection of the critical elements of the robot and holding components together. The most important part of this section is weight distribution. The chassis is supposed to be light and strong because of the competition purposes. However, it should balance the robot to be able to handle with turns. The requirements of this subsystem are listed below.\\
-	
-	\textbf{Chasis Subsystem Requirements:}	
+	Main purposes of this section are protection of the critical elements of the robot and holding components together. The most important part of this section is weight distribution. The chassis is supposed to be light and strong because of the competition purposes. However, it should balance the robot to be able to handle with turns. The requirements of this subsystem are listed below:
 	\begin{itemize}
 		\item The subsystem should ensure that the chassis is rigid 
 		\item The subsystem should ensure that the chassis have enough space for components
@@ -483,10 +457,7 @@ ar=serial.Serial("/dev/ttyUSB0",9600)
 	
 	
 	\subsubsection{Printed Circuit Board Subsystem}
-	The main role of this part is decreasing connection mass and increase vibration strength of the robot against disturbances. Also, this section increases rigidity of the whole system. The requirements of this subsystem are listed below.\\
-	
-	
-	\textbf{PCB Subsystem Requirements:}
+	The main role of this part is decreasing connection mass and increase vibration strength of the robot against disturbances. Also, this section increases rigidity of the whole system. The requirements of this subsystem are listed below:
 	\begin{itemize}
 		\item The subsystem should ensure that all the electronic components are placed on PCB
 		\item The subsystem should ensure that all the connections are firmly secured and robust to vibrations.
@@ -495,18 +466,14 @@ ar=serial.Serial("/dev/ttyUSB0",9600)
 	
 	\subsection{Motion System}
 	
-	Motion system has two main subsystems which are Wheels Subsystem and Motors Subsystem Subsystem. The requirements of this system are listed below.\\	
-	
-	\textbf{Motion System Requirements:}
+	Motion system has two main subsystems which are Wheels Subsystem and Motors Subsystem Subsystem. The requirements of this system are listed below:
 	\begin{itemize}
 		\item The system should	ensure that the vehicle can drive itself with enough power
 	\end{itemize}
 	
 	
 	\subsubsection{Wheels Subsystem}
-	There are possible solution for wheel placement on the chassis, and several wheel types. Some wheels are designed for better gripping on different surfaces. To avoids obstacles on the path, gripping of the wheel is an important concept. Some wheel types are ball caster, toy car wheel and palette. Besides, wheel placement and the wheel number should be combined with the wheel type choice. The requirements of this subsystem are listed below.\\
-	
-	\textbf{Wheels Subsystem Requirements:}
+	There are possible solution for wheel placement on the chassis, and several wheel types. Some wheels are designed for better gripping on different surfaces. To avoids obstacles on the path, gripping of the wheel is an important concept. Some wheel types are ball caster, toy car wheel and palette. Besides, wheel placement and the wheel number should be combined with the wheel type choice. The requirements of this subsystem are listed below:
 	\begin{itemize}
 		\item The subsystem should ensure that the wheels can grip lane without slipping in all conditions 	
 	\end{itemize}
@@ -531,9 +498,7 @@ ar=serial.Serial("/dev/ttyUSB0",9600)
 	One of the widely used motor type is brushed DC motors. 
 	Another option is brushless DC motors. 
 	
-	Last option is servo motors.\\
-	
-	\textbf{Motors Subsystem Requirements:}
+	Last option is servo motors:
 	\begin{itemize}
 		\item The subsystem should ensure that the motors can supply enough torque to accelerate the vehicle		
 		\item  The subsystem should ensure that the motors can execute driving system outputs without deviation 
