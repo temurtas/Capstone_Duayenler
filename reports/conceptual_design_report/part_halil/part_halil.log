@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  22 DEC 2018 18:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  26 DEC 2018 00:24
 entering extended mode
 **./part_halil.tex
 (part_halil.tex
@@ -810,6 +810,10 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
+(../../../Documents/arduinoLanguage.tex
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\courier.sty"
+Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
+))
 (../../../Documents/configuration.tex
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
@@ -986,45 +990,357 @@ Underfull \hbox (badness 10000) in paragraph at lines 108--109
 
  []
 
-(part_halil.toc [1] [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 52.
+(part_halil.toc [1] [2])
+\tf@toc=\write4
+\openout4 = `part_halil.toc'.
+
+ [3]
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 150.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 52.
- [3])
-\tf@toc=\write4
-\openout4 = `part_halil.toc'.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 150.
+ [6]
+<../v-models/lane_detection_subsystem.png, id=35, 1067.187pt x 551.05875pt>
+File: ../v-models/lane_detection_subsystem.png Graphic file (type png)
 
- [4]
-[5] [6] [7] [8] [9] [10] [11]
+<use ../v-models/lane_detection_subsystem.png>
+Package pdftex.def Info: ../v-models/lane_detection_subsystem.png used on input
+ line 169.
+(pdftex.def)             Requested size: 358.46039pt x 185.09561pt.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+) [7 <../v-models/lane_detection_subsystem.png>]
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+) [8] [9]
+<../v-models/data_processing_subsystem.png, id=46, 1047.915pt x 551.05875pt>
+File: ../v-models/data_processing_subsystem.png Graphic file (type png)
+
+<use ../v-models/data_processing_subsystem.png>
+Package pdftex.def Info: ../v-models/data_processing_subsystem.png used on inpu
+t line 240.
+(pdftex.def)             Requested size: 358.46039pt x 188.50104pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
+
+ []
+
+[10 <../v-models/data_processing_subsystem.png>]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 258.
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 458.
- [12] [13]
-[14] (part_halil.aux) ) 
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 258.
+ [11]
+<../images/turn-prediction-explained.png, id=53, 275.22826pt x 338.4645pt>
+File: ../images/turn-prediction-explained.png Graphic file (type png)
+
+<use ../images/turn-prediction-explained.png>
+Package pdftex.def Info: ../images/turn-prediction-explained.png used on input 
+line 280.
+(pdftex.def)             Requested size: 268.847pt x 330.62389pt.
+ [12] [13 <../images/turn-prediction-explained.png>]
+Overfull \hbox (28.51196pt too wide) in paragraph at lines 290--290
+[][][][]\OT1/cmr/m/n/12 degistir!!!!!  
+ []
+
+
+Overfull \hbox (28.51196pt too wide) in paragraph at lines 290--290
+[][][][]\OT1/cmr/m/n/12 degistir!!!!!  
+ []
+
+
+Overfull \hbox (28.51196pt too wide) in paragraph at lines 290--290
+[][][][]\OT1/cmr/m/n/12 degistir!!!!!  
+ []
+
+
+Overfull \hbox (28.51196pt too wide) in paragraph at lines 290--290
+[][][][]\OT1/cmr/m/n/12 degistir!!!!!  
+ []
+
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 316.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) [14]
+Underfull \hbox (badness 10000) in paragraph at lines 325--326
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 327.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omspcr.fd"
+File: omspcr.fd 
+)
+LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 327.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+Underfull \hbox (badness 10000) in paragraph at lines 336--348
+
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 359--360
+
+ []
+
+<../images/socket_funcs.png, id=69, 309.40594pt x 550.30594pt>
+File: ../images/socket_funcs.png Graphic file (type png)
+
+<use ../images/socket_funcs.png>
+Package pdftex.def Info: ../images/socket_funcs.png used on input line 366.
+(pdftex.def)             Requested size: 224.03688pt x 398.48715pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[16] [17 <../images/socket_funcs.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 383--384
+
+ []
+
+
+Overfull \hbox (3.95946pt too wide) in paragraph at lines 386--386
+[][][][]\OT1/cmr/m/n/12 EDIT 
+ []
+
+
+Overfull \hbox (22.06343pt too wide) in paragraph at lines 386--386
+\OT1/cmr/m/n/12 BUYUK- 
+ []
+
+
+Overfull \hbox (4.61221pt too wide) in paragraph at lines 386--386
+\OT1/cmr/m/n/12 CUK- 
+ []
+
+
+Overfull \hbox (12.1191pt too wide) in paragraph at lines 386--386
+\OT1/cmr/m/n/12 ARET- 
+ []
+
+
+Overfull \hbox (6.40527pt too wide) in paragraph at lines 386--386
+\OT1/cmr/m/n/12 LERI- 
+ []
+
+
+Overfull \hbox (3.95946pt too wide) in paragraph at lines 386--386
+[][][][]\OT1/cmr/m/n/12 EDIT 
+ []
+
+
+Overfull \hbox (22.06343pt too wide) in paragraph at lines 386--386
+\OT1/cmr/m/n/12 BUYUK- 
+ []
+
+
+Overfull \hbox (4.61221pt too wide) in paragraph at lines 386--386
+\OT1/cmr/m/n/12 CUK- 
+ []
+
+
+Overfull \hbox (12.1191pt too wide) in paragraph at lines 386--386
+\OT1/cmr/m/n/12 ARET- 
+ []
+
+
+Overfull \hbox (6.40527pt too wide) in paragraph at lines 386--386
+\OT1/cmr/m/n/12 LERI- 
+ []
+
+
+Overfull \hbox (3.95946pt too wide) in paragraph at lines 386--386
+[][][][]\OT1/cmr/m/n/12 EDIT 
+ []
+
+
+Overfull \hbox (22.06343pt too wide) in paragraph at lines 386--386
+\OT1/cmr/m/n/12 BUYUK- 
+ []
+
+
+Overfull \hbox (4.61221pt too wide) in paragraph at lines 386--386
+\OT1/cmr/m/n/12 CUK- 
+ []
+
+
+Overfull \hbox (12.1191pt too wide) in paragraph at lines 386--386
+\OT1/cmr/m/n/12 ARET- 
+ []
+
+
+Overfull \hbox (6.40527pt too wide) in paragraph at lines 386--386
+\OT1/cmr/m/n/12 LERI- 
+ []
+
+
+Overfull \hbox (3.95946pt too wide) in paragraph at lines 386--386
+[][][][]\OT1/cmr/m/n/12 EDIT 
+ []
+
+
+Overfull \hbox (22.06343pt too wide) in paragraph at lines 386--386
+\OT1/cmr/m/n/12 BUYUK- 
+ []
+
+
+Overfull \hbox (4.61221pt too wide) in paragraph at lines 386--386
+\OT1/cmr/m/n/12 CUK- 
+ []
+
+
+Overfull \hbox (12.1191pt too wide) in paragraph at lines 386--386
+\OT1/cmr/m/n/12 ARET- 
+ []
+
+
+Overfull \hbox (6.40527pt too wide) in paragraph at lines 386--386
+\OT1/cmr/m/n/12 LERI- 
+ []
+
+<../images/handshake1.png, id=77, 416.30531pt x 148.30406pt>
+File: ../images/handshake1.png Graphic file (type png)
+
+<use ../images/handshake1.png>
+Package pdftex.def Info: ../images/handshake1.png used on input line 396.
+(pdftex.def)             Requested size: 336.05533pt x 119.72055pt.
+ [18]
+<../images/handshake2.png, id=82, 422.32782pt x 145.29282pt>
+File: ../images/handshake2.png Graphic file (type png)
+
+<use ../images/handshake2.png>
+Package pdftex.def Info: ../images/handshake2.png used on input line 403.
+(pdftex.def)             Requested size: 336.05533pt x 115.61586pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 409--410
+
+ []
+
+[19 <../images/handshake1.png> <../images/handshake2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 424--425
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 426--427
+
+ []
+
+[20] [21]
+Underfull \hbox (badness 10000) in paragraph at lines 486--487
+
+ []
+
+
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 500--500
+[][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
+ []
+
+
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 500--500
+[][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
+ []
+
+
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 500--500
+[][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
+ []
+
+
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 500--500
+[][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 500--501
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 512--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 516--517
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 518--519
+
+ []
+
+[23] [24] (part_halil.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 29973 strings out of 493333
- 694864 string characters out of 3136576
- 985549 words of memory out of 3000000
- 32930 multiletter control sequences out of 15000+200000
- 12522 words of font info for 46 fonts, out of 3000000 for 9000
+ 31098 strings out of 493333
+ 710128 string characters out of 3136576
+ 1053310 words of memory out of 3000000
+ 34022 multiletter control sequences out of 15000+200000
+ 12782 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,11n,96p,778b,658s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmbsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmcsc10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmti12.pfb>
-Output written on part_halil.pdf (15 pages, 159071 bytes).
+ 62i,11n,118p,1319b,1490s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on part_halil.pdf (25 pages, 509672 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
+ 129 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 48 words of extra memory for PDF output out of 10000 (max. 10000000)
 
