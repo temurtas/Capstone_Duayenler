@@ -135,12 +135,7 @@
 	
 	
 	
-	\begin{figure}[H]
-		\center
-		\setlength{\unitlength}{\textwidth} 
-		\includegraphics[width=\textwidth]{v-models/lane_detection_subsystem}
-		\caption{\label{fig:lane_detection_subsystem}The Proposed Algorithm for the Lane Detection.}
-	\end{figure}
+	
 	
 	
 	\section{Solutions}
@@ -171,6 +166,12 @@
 	\end{itemize}
 	
 	%solution starts here
+	\begin{figure}[H]
+		\center
+		\setlength{\unitlength}{\textwidth} 
+		\includegraphics[width=\textwidth]{v-models/lane_detection_subsystem}
+		\caption{\label{fig:lane_detection_subsystem}The Proposed Algorithm for the Lane Detection.}
+	\end{figure}
 	The first processing on the captured frame is denoising by blurring. The blurring filter is a GaussianBlur of (3x3) matrix with zero variance both in x and y directions. Next, the filtered image is color filtered in HSV color space. The filter range of the HSV filter is adjusted only to include shades green. The lower bound for HSV filter is [H=60, S=120, V=106] and the higher bound is [H=82, S=255, V=235]. Later the color filtered image is processed by Canny Edge Detector. This process eliminates all pixels except those are constituting an edge. Edge pixels are usually formed when there is a transition from one object to other. The edge detected frame is sent to Data Processing Subsystem.
 	
 	
@@ -208,20 +209,21 @@
 	\end{itemize}
 	
 	\subsubsection{Vehicle Detection Subsystem}
-	The subsystem is the first step of safely computing with an opponent in a racing path. This subsystem uses two time of flight distance sensor which is enhanced IR sensor. one at the back of the vehicle responsible for detecting the chasing opponent and one at the front of the vehicle responsible for detecting the chased opponent. The subsystem produces positive output if the chasing vehicle or chased vehicle is within a range of 5 cm from the vehicle.\\
+	The subsystem is the first step of safely computing with an opponent in a racing path. This subsystem uses two time of flight distance sensor which is enhanced IR sensor. one at the back of the vehicle responsible for detecting the chasing opponent and one at the front of the vehicle responsible for detecting the chased opponent. The subsystem produces positive output if the chasing vehicle or chased vehicle is within a range of 5 cm from the vehicle. Since the sensor reading is planned to be performed using Arduino, the required trigger for handshake protocol can be  easily send through serial commutation or directly implemented in the Arduino as an alternative.\\
 	
 	\textbf{Vehicle Detection Subsystem Requirements}
 	
 	\begin{itemize}
 		\item The subsystem should detect the opponent to be caught with in a 5 cm 
-		\item The subsystem should detect the chasing opponent if it reaches from back with in a 5 cm  
+		\item The subsystem should detect the chasing opponent if it reaches from back with in a 5 cm 
+		\item The subsystem should trigger the handshake protocol 
 	\end{itemize}
 	
 	\paragraph{Alternative Solutions for Vehicle Detection Subsystem\\}
 	\begin{itemize}
-		\item {Ultrasonic sensor:} These can be another approach to this problem. They send a sound wave and take back the echo, then give a PWM voltage related to the distance. However, using ultrasonic sensors can cause problems if the opponent also uses ultrasonic sensors; because of the interference. Besides, when measurement is angled, measuring is failing. In our case, we try to avoid from this solution because half of the lane has sharp turn.
+		\item {Ultrasonic sensor:} These can be another approach to this problem. They send a sound wave and take back the echo, then give a PWM voltage related to the distance. However, using ultrasonic sensors can cause problems if the opponent also uses ultrasonic sensors due to the interference. Besides, when measurement is angled, the sensor reading fails. The reason why this is not the first option is that the specified path involves many sharp turns.
 		
-		\item {Infrared sensor:} Using these sensors Infrared sensors are the most trivial solution to measuring distance. However, IR sensors are weak to use in outside, especially sunshine. Although they are so sensitive to sun, they can still be a solution, if the first choice is failed, unexpectedly, this solution can reconsider.
+		\item {Infrared sensor:} Using these sensors Infrared sensors are the most trivial solution to measuring distance. However, IR sensors are weak to use in outside, especially sunshine. Although they are so sensitive to sun, they can still be a solution, if the first choice is failed, unexpectedly, this solution can be reconsidered.
 	\end{itemize}
 	
 	\subsection{Computation System}
