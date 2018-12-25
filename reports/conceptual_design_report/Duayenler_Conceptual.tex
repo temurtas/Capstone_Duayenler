@@ -177,7 +177,9 @@
 	\paragraph{Alternative Solutions for Lane Detection Subsystem}
 	
 	After the module demo result of the camera-oriented lane detection, former solutions are considered to support camera result and enhance robustness of the tracking. Possible future solutions are the followings;  
-	\begin{itemize}
+	\begin{itemize}		
+		\item{Light sensor:} The purpose of using this sensor is to adjust color filtering in the lane detection. In the test phase, it is observed that color filter in HSV space had inaccuracies such as detecting colors other than green. Even though HSV mostly eliminates the illumination change in a color, an adaptive threshold setting might be a good option for color filtering to work more robust in extreme low and extreme high lighting conditions. Lighting sensor will have the luminosity of the medium and this data should adaptively set the color filter range.
+		
 		\item {Laser sensor:} As IR sensor array solution, which is already considered at the beginning of the term, laser approximate sensors can be constructed as array and used to detect edges of the lane. The expected enhancement is that laser sensors are more robust under extreme illumination conditions. To clarify the solution, two laser sensor arrays sense both sides of the lane. According to array’s data, vehicle orients itself.  
 		
 		\item{Color sensor:} 	This approach is similar to laser sensor solution, regarding the sensor array construction. However, color sensor working principle is based on RGB recognition, so in this solution green output of the arrays is focused point. According to green output, path will be detected.
@@ -214,10 +216,6 @@
 		\item The subsystem should detect the opponent to be caught with in a 5 cm 
 		\item The subsystem should detect the chasing opponent if it reaches from back with in a 5 cm  
 	\end{itemize}
-	
-	
-	%solution starts
-SOLUTIONNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 	
 	\paragraph{Alternative Solutions for Vehicle Detection Subsystem\\}
 	\begin{itemize}
@@ -284,6 +282,11 @@ for (lines_is_valid)
 		\includegraphics[width=0.6\textwidth]{images/turn-prediction-explained}
 		\caption{\label{fig:turn-prediction-explained}The Prediction of Turn Angle and Direction.}
 	\end{figure}
+	\paragraph{Data Processing Subsystem}
+		The proposed algorithm for data processing has some flaws that are already discussed. To overcome those problems, DUAYENLER has some alternative solutions. An improvement might be on finding lane boundaries. This operation is currently realized with Hough Lines function. Another approach would be to scan rows an accurately edge detected image. If a white pixel is encountered, this would imply a lane boundary and the last time a white pixel is encountered would mean te other lane boundary. If the edge detected image contains noise, the solution might yield a wrong result. However, this can be overcomed by setting maximum number of white points that can be detected in a row.
+		
+		Another improvement could be on positioning on the lane. The proposed algorithm assumes that the vehicle follows the lane always in the center. This assumption is not the case always. The new algorithm will differentiate between the center of the lane and center of the capture image. By averaging coordinate points of both lane boundaries the actual lane center can be found and this point must be in some proximity with respect to the center of the image.
+	
 	
 	\subsubsection{PID Controller Subsystem}
 	\todo{değiştir!!!!!}
@@ -322,7 +325,7 @@ for (lines_is_valid)
 	
 	There are several serial communication protocols that can be used to maintain the connection such as SPI, I2C. However, the first choice is to use USB serial port of the Arduino. Since RPi is practically a computer, it can recognize Arduino as a device using a serial port such as \lstinline[language=Arduino]|/ttyUSB0| in case of a Linux based OS. When recognized, RPi can send any piece of strings to the Arduino via USB cable. \\
 	
-	The process of communication is the following:
+	The process of communication is as follows:
 	\begin{enumerate}
 		\item Arduino should be connected to the Pi.
 		\item Using Arduino IDE or any other method such as listing serial ports and checking for Arduino and so on, the serial port name should be detected
@@ -512,10 +515,15 @@ for (lines_is_valid)
 	One of the possible wheel placement is 2+1 combination. This combination can be assembled by placing 2 car wheels (with motors) to the back and the one boll caster to the front or vice versa. These configurations provide easy implementation and fairly reliable handling on the path. However, for certain obstacles may significantly disturb vehicles balance in this configuration.\\
 	
 	\paragraph{Alternative Solutions for Wheels Subsystem}
+	\todo{add explanation}
+	\begin{itemize}
+		\item{Palettes:} 	Another combination is palette system. This system is used in real world where robust vehicles are needed. Similarly, this configuration can help handling obstacle in the path, but it costs for harder implementation and driving.
+		
+		\item{2+2 Wheels} 	Last implementation is 2+2 configuration. In this configuration 2 wheels can be placed at the back and the rest at the front by placing motors to back wheels. To ease turning of the vehicle, front wheels can be controlled with a servo motor as back wheels operate in the differential drive mode. This combination may provide both enhanced grip and reliable	 operation.
+	\end{itemize}
+
 	
-	Another combination is palette system. This system is used in real world where robust vehicles are needed. Similarly, this configuration can help handling obstacle in the path, but it costs for harder implementation and driving.\\
-	
-	Last implementation is 2+2 configuration. In this configuration 2 wheels can be placed at the back and the rest at the front by placing motors to back wheels. To ease turning of the vehicle, front wheels can be controlled with a servo motor as back wheels operate in the differential drive mode. This combination may provide both enhanced grip and reliable	 operation. \\
+
 	
 	\subsubsection{Motors Subsystem}
 	\todo{EDĞİŞTİRRRRRRRRRRRRRRRRR}Motors are one of the most important physical components of the project. There are possible motor types in the market.\\
@@ -536,7 +544,7 @@ for (lines_is_valid)
 	
 	\paragraph{Alternative Solutions for Motors Subsystem}
 	
-	Another option is brushless DC motors. Brushless DC motors do not use brushes. This results in high torque. Brushless motors are more suitable for high RPM required areas such as CD drivers and drones.\\
+ 	Another option is brushless DC motors. Brushless DC motors do not use brushes. This results in high torque. Brushless motors are more suitable for high RPM required areas such as CD drivers and drones.\\
 	
 	Last option is servo motors. Servo motors are high-torque motors that can turn in an desired angle. Servos can be utilized in the direction of the vehicle on the front wheels. By using this solution, turning radius can be decrease significantly.\\
 	
@@ -555,6 +563,7 @@ for (lines_is_valid)
 	
 	
 	\section{Plans}
+	
 	
 	
 	\section{Conclusion}

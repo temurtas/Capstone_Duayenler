@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.15)  25 DEC 2018 21:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.15)  25 DEC 2018 22:14
 entering extended mode
 **./Duayenler_Conceptual.tex
 (Duayenler_Conceptual.tex
@@ -1009,26 +1009,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 163--164
 ("D:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 ) [5]
-Underfull \hbox (badness 10000) in paragraph at lines 209--210
+Underfull \hbox (badness 10000) in paragraph at lines 211--212
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 222--222
+Underfull \hbox (badness 10000) in paragraph at lines 220--220
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 231--232
+Underfull \hbox (badness 10000) in paragraph at lines 229--230
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 242--243
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 240--241
 
  []
 
-[6] ("D:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+("D:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 ("D:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
@@ -1037,237 +1037,228 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 ("D:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 262.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 260.
 
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 262.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 260.
  [7]
-<images/turn-prediction-explained.png, id=37, 275.22826pt x 338.4645pt>
+<images/turn-prediction-explained.png, id=36, 275.22826pt x 338.4645pt>
 File: images/turn-prediction-explained.png Graphic file (type png)
 
 <use images/turn-prediction-explained.png>
 Package pdftex.def Info: images/turn-prediction-explained.png used on input lin
-e 284.
+e 282.
 (pdftex.def)             Requested size: 268.847pt x 330.62389pt.
  [8]
-Overfull \hbox (28.51196pt too wide) in paragraph at lines 289--289
+Overfull \hbox (28.51196pt too wide) in paragraph at lines 292--292
 [][][][]\OT1/cmr/m/n/12 degistir!!!!!  
  []
 
 
-Overfull \hbox (28.51196pt too wide) in paragraph at lines 289--289
+Overfull \hbox (28.51196pt too wide) in paragraph at lines 292--292
 [][][][]\OT1/cmr/m/n/12 degistir!!!!!  
  []
 
 
-Overfull \hbox (28.51196pt too wide) in paragraph at lines 289--289
+Overfull \hbox (28.51196pt too wide) in paragraph at lines 292--292
 [][][][]\OT1/cmr/m/n/12 degistir!!!!!  
  []
 
 
-Overfull \hbox (28.51196pt too wide) in paragraph at lines 289--289
+Overfull \hbox (28.51196pt too wide) in paragraph at lines 292--292
 [][][][]\OT1/cmr/m/n/12 degistir!!!!!  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--291
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 303--304
+Underfull \hbox (badness 10000) in paragraph at lines 292--294
 
  []
 
 [9 <./images/turn-prediction-explained.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 315--316
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
 
  []
 
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 323.
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
+
+ []
+
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 326.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 323--324
+Underfull \hbox (badness 10000) in paragraph at lines 326--327
 
  []
 
+[10]
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <12> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 330.
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 333.
 
-Underfull \hbox (badness 10000) in paragraph at lines 334--335
+Underfull \hbox (badness 10000) in paragraph at lines 337--338
 
  []
 
 
-LaTeX Warning: Reference `sc:serial' on page 10 undefined on input line 336.
+LaTeX Warning: Reference `sc:serial' on page 11 undefined on input line 339.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-) [10]
-Underfull \hbox (badness 10000) in paragraph at lines 353--354
+)
+Underfull \hbox (badness 10000) in paragraph at lines 356--357
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 362--363
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 359--360
+Underfull \hbox (badness 10000) in paragraph at lines 370--371
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 367--368
-
- []
-
-[11] <images/socket_funcs.png, id=53, 309.40594pt x 550.30594pt>
+<images/socket_funcs.png, id=53, 309.40594pt x 550.30594pt>
 File: images/socket_funcs.png Graphic file (type png)
 
 <use images/socket_funcs.png>
-Package pdftex.def Info: images/socket_funcs.png used on input line 374.
+Package pdftex.def Info: images/socket_funcs.png used on input line 377.
 (pdftex.def)             Requested size: 246.44194pt x 438.33923pt.
- [12 <./images/socket_funcs.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 391--392
+ [12] [13 <./images/socket_funcs.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 394--395
 
  []
 
-<images/handshake1.png, id=60, 416.30531pt x 148.30406pt>
+<images/handshake1.png, id=63, 416.30531pt x 148.30406pt>
 File: images/handshake1.png Graphic file (type png)
 
 <use images/handshake1.png>
-Package pdftex.def Info: images/handshake1.png used on input line 403.
+Package pdftex.def Info: images/handshake1.png used on input line 406.
 (pdftex.def)             Requested size: 336.05533pt x 119.72055pt.
- [13]
+
 <images/handshake2.png, id=64, 422.32782pt x 145.29282pt>
 File: images/handshake2.png Graphic file (type png)
 
 <use images/handshake2.png>
-Package pdftex.def Info: images/handshake2.png used on input line 410.
+Package pdftex.def Info: images/handshake2.png used on input line 413.
 (pdftex.def)             Requested size: 336.05533pt x 115.61586pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 416--417
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 425--426
+ [14 <./images/handshake1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 419--420
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 434--435
-
- []
-
-[14 <./images/handshake1.png> <./images/handshake2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 436--437
+Underfull \hbox (badness 10000) in paragraph at lines 428--429
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 445--446
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--459
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
 
  []
 
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 472--473
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 483--484
+[15 <./images/handshake2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 448--449
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 495--496
+Underfull \hbox (badness 10000) in paragraph at lines 461--462
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 504--505
+Underfull \hbox (badness 10000) in paragraph at lines 475--476
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 512--513
+Underfull \hbox (badness 10000) in paragraph at lines 486--487
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 516--517
+Underfull \hbox (badness 10000) in paragraph at lines 498--499
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 518--519
-
- []
-
-
-Overfull \hbox (170.94676pt too wide) in paragraph at lines 521--521
-[][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
- []
-
-
-Overfull \hbox (170.94676pt too wide) in paragraph at lines 521--521
-[][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
- []
-
-
-Overfull \hbox (170.94676pt too wide) in paragraph at lines 521--521
-[][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
- []
-
-
-Overfull \hbox (170.94676pt too wide) in paragraph at lines 521--521
-[][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 521--522
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 526--527
+Underfull \hbox (badness 10000) in paragraph at lines 507--508
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 535--536
+Underfull \hbox (badness 10000) in paragraph at lines 515--516
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 539--540
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 529--529
+[][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
+ []
+
+
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 529--529
+[][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
+ []
+
+
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 529--529
+[][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
+ []
+
+
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 529--529
+[][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 529--530
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 541--542
+Underfull \hbox (badness 10000) in paragraph at lines 534--535
 
  []
 
-[18] [19] (Duayenler_Conceptual.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 543--544
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 547--548
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 549--550
+
+ []
+
+[19] [20] (Duayenler_Conceptual.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 30875 strings out of 493323
- 702939 string characters out of 3139065
- 1048823 words of memory out of 3000000
- 33812 multiletter control sequences out of 15000+200000
+ 30883 strings out of 493323
+ 703124 string characters out of 3139065
+ 1051495 words of memory out of 3000000
+ 33820 multiletter control sequences out of 15000+200000
  13297 words of font info for 49 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,11n,118p,1329b,1490s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1280,9 +1271,9 @@ onts/cm/cmr6.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
 sy10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb
 ><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrb8a.pfb><D:/Program Fi
 les/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on Duayenler_Conceptual.pdf (20 pages, 412782 bytes).
+Output written on Duayenler_Conceptual.pdf (21 pages, 414981 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
+ 117 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  38 words of extra memory for PDF output out of 10000 (max. 10000000)
 
