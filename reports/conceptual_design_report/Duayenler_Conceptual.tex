@@ -1047,6 +1047,7 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	
 	
 	\subsection{Communication System Plans}
+		According to the test results, server side must be connected to the internet, and client side must be connected to the server via hotspot to establish communication. However, it is not the desired result; since both sides must be connected to each other in the project. The main plan regarding this subsystem is to solve this problem. Also, the input of the external communication subsystem must be the data coming from the sensors of the vehicle detection subsystem. Since the vehicle detection subsystem was not set up on the robot yet; the input of the external communication subsystem was not the sensors. In the upcoming weeks, the handshaking tests taking the data from vehicle detection subsystem will be conducted.
 	\subsection{Driving System Plans}
 		The direction subsystem will be enhanced by the Enes and Halil following the successful communication between Raspberry Pi and Arduino and initial version of PID controller subsystem is successfully combined with data processing subsystem output. \\
 		
