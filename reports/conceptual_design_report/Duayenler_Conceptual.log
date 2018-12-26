@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.16)  26 DEC 2018 14:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.16)  26 DEC 2018 14:36
 entering extended mode
 **./Duayenler_Conceptual.tex
 (Duayenler_Conceptual.tex
@@ -1409,54 +1409,60 @@ Underfull \hbox (badness 10000) in paragraph at lines 537--538
 
  []
 
-<images/handshake1.png, id=118, 416.30531pt x 148.30406pt>
+
+Overfull \hbox (2.59099pt too wide) in paragraph at lines 543--544
+\OT1/cmr/m/n/12 Alternative so-lu-tion for ex-ter-nal com-mu-ni-ca-tion sys-tem
+ is im-ple-ment-ing Net-work(Socket)
+ []
+
+[20]
+<images/handshake1.png, id=121, 416.30531pt x 148.30406pt>
 File: images/handshake1.png Graphic file (type png)
 <use images/handshake1.png>
-Package pdftex.def Info: images/handshake1.png  used on input line 553.
+Package pdftex.def Info: images/handshake1.png  used on input line 562.
 (pdftex.def)             Requested size: 336.05533pt x 119.72055pt.
-[20]
 <images/handshake2.png, id=122, 422.32782pt x 145.29282pt>
 File: images/handshake2.png Graphic file (type png)
 <use images/handshake2.png>
-Package pdftex.def Info: images/handshake2.png  used on input line 560.
+Package pdftex.def Info: images/handshake2.png  used on input line 569.
 (pdftex.def)             Requested size: 336.05533pt x 115.61586pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 566--567
+Underfull \hbox (badness 10000) in paragraph at lines 575--576
 
  []
 
 [21 <./images/handshake1.png> <./images/handshake2.png>] [22] [23]
-Underfull \hbox (badness 10000) in paragraph at lines 679--680
+Underfull \hbox (badness 10000) in paragraph at lines 688--689
 
  []
 
 
-Overfull \hbox (170.94676pt too wide) in paragraph at lines 695--695
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 704--704
 [][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
  []
 
 
-Overfull \hbox (170.94676pt too wide) in paragraph at lines 695--695
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 704--704
 [][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 695--696
+Underfull \hbox (badness 10000) in paragraph at lines 704--705
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 708--709
+Underfull \hbox (badness 10000) in paragraph at lines 717--718
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 712--713
+Underfull \hbox (badness 10000) in paragraph at lines 721--722
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--715
+Underfull \hbox (badness 10000) in paragraph at lines 723--724
 
  []
 
@@ -1467,7 +1473,7 @@ pdfTeX warning: pdflatex.exe (file ./gannt_chart.pdf): PDF inclusion: found PDF
 <gannt_chart.pdf, id=142, 1194.98447pt x 845.07718pt>
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf>
-Package pdftex.def Info: gannt_chart.pdf  used on input line 745.
+Package pdftex.def Info: gannt_chart.pdf  used on input line 754.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 
 
@@ -1475,7 +1481,7 @@ pdfTeX warning: pdflatex.exe (file ./gannt_chart.pdf): PDF inclusion: found PDF
  version <1.7>, but at most version <1.5> allowed
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf>
-Package pdftex.def Info: gannt_chart.pdf  used on input line 745.
+Package pdftex.def Info: gannt_chart.pdf  used on input line 754.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 
 
@@ -1488,28 +1494,28 @@ pdfTeX warning: pdflatex.exe (file ./gannt_chart.pdf): PDF inclusion: found PDF
 <gannt_chart.pdf, id=145, page=1, 1194.98447pt x 845.07718pt>
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 1>
-Package pdftex.def Info: gannt_chart.pdf , page1 used on input line 745.
+Package pdftex.def Info: gannt_chart.pdf , page1 used on input line 754.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 1>
-Package pdftex.def Info: gannt_chart.pdf , page1 used on input line 745.
+Package pdftex.def Info: gannt_chart.pdf , page1 used on input line 754.
 (pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 1>
-Package pdftex.def Info: gannt_chart.pdf , page1 used on input line 745.
+Package pdftex.def Info: gannt_chart.pdf , page1 used on input line 754.
 (pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 1>
-Package pdftex.def Info: gannt_chart.pdf , page1 used on input line 745.
+Package pdftex.def Info: gannt_chart.pdf , page1 used on input line 754.
 (pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 1>
-Package pdftex.def Info: gannt_chart.pdf , page1 used on input line 745.
+Package pdftex.def Info: gannt_chart.pdf , page1 used on input line 754.
 (pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
 [27 <./gannt_chart.pdf>]
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf>
-Package pdftex.def Info: gannt_chart.pdf  used on input line 746.
+Package pdftex.def Info: gannt_chart.pdf  used on input line 755.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 
 
@@ -1517,7 +1523,7 @@ pdfTeX warning: pdflatex.exe (file ./gannt_chart.pdf): PDF inclusion: found PDF
  version <1.7>, but at most version <1.5> allowed
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf>
-Package pdftex.def Info: gannt_chart.pdf  used on input line 746.
+Package pdftex.def Info: gannt_chart.pdf  used on input line 755.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 
 
@@ -1530,23 +1536,23 @@ pdfTeX warning: pdflatex.exe (file ./gannt_chart.pdf): PDF inclusion: found PDF
 <gannt_chart.pdf, id=172, page=2, 1194.98447pt x 845.07718pt>
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 2>
-Package pdftex.def Info: gannt_chart.pdf , page2 used on input line 746.
+Package pdftex.def Info: gannt_chart.pdf , page2 used on input line 755.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 2>
-Package pdftex.def Info: gannt_chart.pdf , page2 used on input line 746.
+Package pdftex.def Info: gannt_chart.pdf , page2 used on input line 755.
 (pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 2>
-Package pdftex.def Info: gannt_chart.pdf , page2 used on input line 746.
+Package pdftex.def Info: gannt_chart.pdf , page2 used on input line 755.
 (pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 2>
-Package pdftex.def Info: gannt_chart.pdf , page2 used on input line 746.
+Package pdftex.def Info: gannt_chart.pdf , page2 used on input line 755.
 (pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 2>
-Package pdftex.def Info: gannt_chart.pdf , page2 used on input line 746.
+Package pdftex.def Info: gannt_chart.pdf , page2 used on input line 755.
 (pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
 [28 <./gannt_chart.pdf>]
 
@@ -1555,38 +1561,38 @@ pdfTeX warning: pdflatex.exe (file ./gannt_chart.pdf): PDF inclusion: found PDF
 <gannt_chart.pdf, id=177, page=3, 1194.98447pt x 845.07718pt>
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 3>
-Package pdftex.def Info: gannt_chart.pdf , page3 used on input line 746.
+Package pdftex.def Info: gannt_chart.pdf , page3 used on input line 755.
 (pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 3>
-Package pdftex.def Info: gannt_chart.pdf , page3 used on input line 746.
+Package pdftex.def Info: gannt_chart.pdf , page3 used on input line 755.
 (pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf, page 3>
-Package pdftex.def Info: gannt_chart.pdf , page3 used on input line 746.
+Package pdftex.def Info: gannt_chart.pdf , page3 used on input line 755.
 (pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
 [29 <./gannt_chart.pdf>]
-Overfull \hbox (13.14651pt too wide) in paragraph at lines 762--774
+Overfull \hbox (13.14651pt too wide) in paragraph at lines 771--783
 [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 762--774
+Underfull \hbox (badness 10000) in paragraph at lines 771--783
 
  []
 
 
-Overfull \hbox (13.1397pt too wide) in paragraph at lines 775--783
+Overfull \hbox (13.1397pt too wide) in paragraph at lines 784--792
 [][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 775--783
+Underfull \hbox (badness 10000) in paragraph at lines 784--792
 
  []
 
 
-Overfull \hbox (15.38225pt too wide) in paragraph at lines 784--792
+Overfull \hbox (15.38225pt too wide) in paragraph at lines 793--801
 [][][] 
  []
 
@@ -1619,7 +1625,7 @@ e1/public/amsfonts/cm/cmss12.pfb><C:/Users/ilker/AppData/Local/Programs/MiKTeX
 grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/ilker/AppDa
 ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/User
 s/ilker/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on Duayenler_Conceptual.pdf (31 pages, 1752569 bytes).
+Output written on Duayenler_Conceptual.pdf (31 pages, 1752870 bytes).
 PDF statistics:
  229 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

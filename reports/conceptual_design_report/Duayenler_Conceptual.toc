@@ -36,7 +36,7 @@
 \contentsline {paragraph}{\numberline {4.3.2.1}Main Solution for External Communication Subsystem}{19}
 \contentsline {paragraph}{\numberline {4.3.2.2}Alternative Solutions for External Communication Subsystem}{20}
 \contentsline {paragraph}{\numberline {4.3.2.3}External Communication Subsystem Tests}{20}
-\contentsline {paragraph}{\numberline {4.3.2.4}Results of External Communication Subsystem Tests}{20}
+\contentsline {paragraph}{\numberline {4.3.2.4}Results of External Communication Subsystem Tests}{21}
 \contentsline {subsection}{\numberline {4.4}Driving System}{21}
 \contentsline {subsubsection}{\numberline {4.4.1}Direction Subsystem}{21}
 \contentsline {paragraph}{\numberline {4.4.1.1}Main Solution for Direction Subsystem}{22}
