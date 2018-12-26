@@ -265,6 +265,8 @@ minLineLength=30, maxLineGap=40);
 		\item{Light sensor:} The purpose of using this sensor is to adjust color filtering in the lane detection. In the test phase, it is observed that color filter in HSV space had inaccuracies such as detecting colors other than green. Even though HSV mostly eliminates the illumination change in a color, an adaptive threshold setting might be a good option for color filtering to work more robust in extreme low and extreme high lighting conditions. Lighting sensor will have the luminosity of the medium and this data should adaptively set the color filter range.
 		
 		\item {Laser sensor:} As IR sensor array solution, which is already considered at the beginning of the term, laser approximate sensors can be constructed as array and used to detect edges of the lane. The expected enhancement is that laser sensors are more robust under extreme illumination conditions. To clarify the solution, two laser sensor arrays sense both sides of the lane. According to array’s data, vehicle orients itself.  
+
+				
 		
 		\item{Color sensor:} 	This approach is similar to laser sensor solution, regarding the sensor array construction. However, color sensor working principle is based on RGB recognition, so in this solution green output of the arrays is focused point. According to green output, path will be detected.
 	\end{itemize}
@@ -290,6 +292,33 @@ minLineLength=30, maxLineGap=40);
 		\end{enumerate}
 	\end{itemize}
 	
+	\paragraph{Results of Lane Detection Subsystem Tests}
+	
+	The lane detection tests were conducted for the detection algorithm of the camera. The results were promising. The algorithm sweeps up the surrounding disturbances completely. The sample outputs together with Data Processing Subsystem are shown in \textit{Figure~\ref{fig:detection-test-results}}.
+	
+	Before making the camera the main solution for the lane detection subsystem. Several tests were conducted using infra-red and color sensors. The tested infrared sensors was TCRT5000 \& QRD1114, and the tested color sensor was TCS3200. The tests were conducted under different illumination conditions and at different locations. These tests conducted for these sensors were modified versions of the tests conducted for the tests conducted for the \textit{Vehicle Detection Subsystem}. The test procedures can be examined at \textit{Section~\ref{sect:vhd}}. The test result for initial test in which two infrared sensors were tested to see whether they can differentiate the height of road from a fixed height can be seen at \textit{Table~\ref{tab:irt}}. Although the results were promising especially for TCRT5000, the tests conducted at CCC revealed that the sensor is not able to cope with highly reflective floors under direct sunlight.
+	
+		
+		\begin{table}[H]
+		  \centering
+		  	\caption{The Results for the IR Sensor Tests}
+		    \begin{tabular}{c|c|c|c|c}
+    		   $$Sensor Name$$ & $$\specialcell{Height \\from base}$$ & $$\specialcell{Output Value\\for Base}$$ & $$\specialcell{Output Value\\for Path} $$ & $$\specialcell{Difference\\(Percentage)}$$\\ \hline
+			   TCRT5000   & 4 & 500 & 900 & 44 \%  \\ \hline
+    		   TCRT5000   & 5 & 690 & 950 &  27 \% \\ \hline
+    		   QRD1114  & 4 & 810 & 960 & 15.6 \%  \\ \hline
+       		   QRD1114 & 5 & 940 & 970 &  3 \%
+  			\end{tabular}
+  			\label{tab:irt}
+		\end{table}
+	
+	
+	
+	\subsubsection{Vehicle Vehicle Detection Subsystem}
+	
+		The subsystem is the first step of safely computing with an opponent in a racing path. By the help of two distance sensors at the back and front of the vehicle the subsystem aims to find whether there is a opponent vehicle nearby.
+		
+		
 	\begin{figure}[H]
 		\setlength{\unitlength}{\textwidth} 
 		\centering
@@ -305,12 +334,9 @@ minLineLength=30, maxLineGap=40);
 		\end{subfigure}
 	\caption{\label{fig:detection-test-results}Lane Detection Test Results. }
 	\end{figure}
-	\paragraph{Results of Lane Detection Subsystem Tests}
-	The lane detection tests are done. The results are promising. The algorithm sweeps up the surrounding distrubances completely. The sample outputs together with Data Processing Subsystem are shown in \textit{Figure~\ref{fig:detection-test-results}}.
 	
-	\subsubsection{Vehicle Vehicle Detection Subsystem}
 	
-		The subsystem is the first step of safely computing with an opponent in a racing path. By the help of two distance sensors at the back and front of the vehicle the subsystem aims to find whether there is a opponent vehicle nearby.
+	
 	
 	\paragraph{Main Solution for  Vehicle Detection Subsystem}
 	
@@ -327,9 +353,14 @@ minLineLength=30, maxLineGap=40);
 		\item {Ultrasonic sensor:} These can be another approach to this problem. They send a sound wave and take back the echo, then give a PWM voltage related to the distance. However, using ultrasonic sensors can cause problems if the opponent also uses ultrasonic sensors due to the interference. Besides, when measurement is angled, the sensor reading fails. The reason why this is not the first option is that the specified path involves many sharp turns.
 		
 		\item {Infrared sensor:} Using these sensors Infrared sensors are the most trivial solution to measuring distance. However, IR sensors are weak to use in outside, especially sunshine. Although they are so sensitive to sun, they can still be a solution, if the first choice is failed, unexpectedly, this solution can be reconsidered.
+		
+		\item {Camera Support:} If required the opponent vehicle can be detected using the camera. As determined in the \textit{Standart Committees}, all vehicles will carry a box that is distinguishable from its surroundings. Using the predefined measurements of this rectangle, actual measurement between vehicle can be found. However, due to budget limitations, this solution may not be applicable for detecting the vehicle at the rear.
+		
 	\end{itemize}
 	
-	\paragraph{Vehicle Detection Subsystem Tests}
+		
+	
+	\paragraph{Vehicle Detection Subsystem Tests}\label{sect:vhd}
 		
 		\begin{itemize}
 		
@@ -351,7 +382,7 @@ minLineLength=30, maxLineGap=40);
 				\item Repeat the test steps of the \textit{Front Vehicle Detection Test in Closed Environment} with the desired sensor for the desired rear sensor.  \vspace{-0.2cm}
 			\end{enumerate}
 		
-		\item Angled Approach Test:
+		\item {Angled Approach Test:}
 			This test aims to validate whether the subsystem is capable of detecting the opponent vehicle that is close to the vehicle more than 5 cm if the vehicles are not perfectly aligned. The test procedure is as follows;
 			\begin{enumerate}
 				\item Make the connection of the desired sensor and Arduino properly \vspace{-0.2cm}
@@ -375,7 +406,25 @@ minLineLength=30, maxLineGap=40);
 	
 	\paragraph{Results of Vehicle Detection Subsystem Tests}
 	
-		No success for standart IRs(model verilebilir) and (Ultrasonişc)(açı özellikle)		
+		All the test procedures mentioned at the \textbf{Section~\ref{sect:vhd}} were applied to the ultrasonic sensor (HC-SR04) and two infrared sensors (TCRT5000 \& QRD1114). The ultrasonic sensor were showed very inaccurate result especially in \textit{Angled Approach Test}. The test results can be examined at \textit{Table`\ref{tab:aat}}. Considering the fact that the path itself is elliptical and there would always be an angle between vehicle even though it may be very small for some cases, it was decided that ultrasonic sensors are not a good choice for this subsystem. However, it is always possible that these sensors can be supportive sensors for the subsystem.
+		
+		\begin{table}[H]
+		  \centering
+		  	\caption{The Results for the Angled Approach Test for HC-SR04}
+		    \begin{tabular}{c|c|c}
+    		   $$Actual Distance$$ & $$The Angle$$ & $$Measuered Distance$$ \\ \hline
+			   3  cm & 90 & 3.15 cm  \\ \hline
+    		   5  cm & 90 & 5 cm  \\ \hline
+    		   20 cm & 90 & 20.01 cm  \\ \hline
+    		   40 cm & 90 & 40.25 cm \\ \hline
+       		   5  cm & 45 & 6.78 cm \\ \hline
+    		   20 cm & 45 & 28.8 cm  \\ \hline
+       		   30 cm & 45 & 42.4 cm  
+  			\end{tabular}
+  			\label{tab:aat}
+		\end{table}
+		
+		 Unlike ultrasonic sensors, infrared sensors showed very accurate result inside the closed environments like laboratory under artificial lights. However, the results under direct sunlight especially in CCC were not as good as expected.  Thus, it was decided that the main solution should be an enhnacnced version of infra-red sensors namely the ones utilizing the "time-of-flight" concept. Moreover, laser sensors might be good alternative for these subsystem.
 		
 	\subsection{Computation System}
 	
@@ -725,16 +774,27 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 			This test aims to find the PWM bias between the two motors. The test procedure is as follows:
 			\begin{enumerate}
 				\item Make the necessary connections between motors, motor controller and the Arduino \vspace{-0.2cm}
-				\item 
+				\item Set the PWM values of the motors equal \vspace{-0.2cm}
+				\item Observe the behaviour of the motors \vspace{-0.2cm}
+				\item Increase the PWM value of the slower motor until a point the vehicle can go in a straight line.
+				\item Record this PWM difference to use in PID controller subsystem
 			\end{enumerate}
 				
 		
 		\item Circular Drive Test:
+			\begin{enumerate}
+				\item Make the necessary connections between motors, motor controller and the Arduino \vspace{-0.2cm}
+				\item Desired curvature is decided \vspace{-0.2cm}
+				\item  According to motion of the vehicle PWMs of the motors are set \vspace{-0.2cm}
+				\item  PID parameters are set according to this test
+			\end{enumerate}
 		
 		
 	\end{itemize}
 	
 	\paragraph{Results of Direction Subsystem Tests}
+		
+		The test were conducted for the motor pairs used in the Critical Module Demo. The test can be repeated for new motor pairs if needed.
 	
 	
 	\subsubsection{Speed Subsystem}
@@ -746,13 +806,13 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 		\item The subsystem should decrease the vehicle speed at the extreme disturbance  
 	\end{itemize}
 	
-	\paragraph{Main Solution for Direction Subsystem}
+	\paragraph{Main Solution for Speed Subsystem}
 	
-	\paragraph{Alternative Solutions for Direction Subsystem}
+	\paragraph{Alternative Solutions for Speed Subsystem}
 	
-	\paragraph{Direction Subsystem Tests}
+	\paragraph{Speed Subsystem Tests}
 	
-	\paragraph{Results of Direction Subsystem Tests}
+	\paragraph{Results of Speed Subsystem Tests}
 	
 	\subsection{Structure System}
 	
@@ -775,11 +835,21 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	
 	\paragraph{Main Solution for Chassis Subsystem}
 	
-	\paragraph{Alternative Solutions for Chassis Subsystem}
+		Early version of chassis which were used in critical module demo can be seen at \textit{Figure~\ref{fig:chassis}}. 
+	
+	% \paragraph{Alternative Solutions for Chassis Subsystem}
+	
+
+		\begin{figure}[H]
+			\center
+			\setlength{\unitlength}{\textwidth} 								 
+			\includegraphics[width=0.75\textwidth]{images/chassis3}
+			\caption{\label{fig:chassis}Early Version of Vehicle Chassis That Was Used in Critical Module Demo}
+		\end{figure}
 	
 	\paragraph{Chassis Subsystem Tests}
 	
-	\paragraph{Results of Chassis Subsystem Tests}
+	% \paragraph{Results of Chassis Subsystem Tests}
 	
 	
 	\subsubsection{Printed Circuit Board Subsystem}
@@ -789,13 +859,19 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 		\item The subsystem should ensure that all the connections are firmly secured and robust to vibrations.
 	\end{itemize}
 	
-	\paragraph{Main Solution for Printed Circuit Board Subsystem}
-	
-	\paragraph{Alternative Solutions for Printed Circuit Board Subsystem}
+	% \paragraph{Main Solution for Printed Circuit Board Subsystem}
+		
+	%\paragraph{Alternative Solutions for Printed Circuit Board Subsystem}
 	
 	\paragraph{Printed Circuit Board Subsystem Tests}
+
+		\begin{enumerate} 
+			\item Open multimeter for short circuit test \vspace{-0.2cm}
+			\item Test every line for short circuit
+		\end{enumerate}
+			
 	
-	\paragraph{Results of Printed Circuit Board Subsystem Tests}
+	%\paragraph{Results of Printed Circuit Board Subsystem Tests}
 	
 	
 	\subsection{Motion System}
@@ -825,9 +901,9 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 		\item{2+2 Wheels} 	Last implementation is 2+2 configuration. In this configuration 2 wheels can be placed at the back and the rest at the front by placing motors to back wheels. To ease turning of the vehicle, front wheels can be controlled with a servo motor as back wheels operate in the differential drive mode. This combination may provide both enhanced grip and reliable	 operation.
 	\end{itemize}
 
-	\paragraph{Wheels Subsystem Tests}
+	%\paragraph{Wheels Subsystem Tests}
 	
-	\paragraph{Results of Wheels Subsystem Tests}
+	%\paragraph{Results of Wheels Subsystem Tests}
 
 	
 	\subsubsection{Motors Subsystem}
@@ -854,7 +930,20 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	
 	\paragraph{Motors Subsystem Tests}
 	
-	\paragraph{Results of Motors Subsystem Tests}
+		\begin{itemize}
+			\item {Torque Test:} 
+				\begin{enumerate}
+					\item Fix the motor at horizontal position with respect to ground \vspace{-0.2cm}
+					\item Attach an object of one kilogram \vspace{-0.2cm}
+					\item Power up the motor \vspace{-0.2cm}
+					\item Increase the weight to a point where the motor is not pulling anymore \vspace{-0.2cm}
+					\item Record the value and check with expected results \vspace{-0.2cm}
+					\item If the result is not comparable with expected values and very low, motor can be considered as broken \vspace{-0.2cm}
+					\item Contact the seller for more information 
+				\end{enumerate}
+		\end{itemize}
+	
+	% \paragraph{Results of Motors Subsystem Tests}
 	
 	
 	
@@ -887,6 +976,10 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	\subsection{Computation System Plans}
 	\subsection{Communication System Plans}
 	\subsection{Driving System Plans}
+		The direction subsystem will be enhanced by the Enes and Halil following the successful communication between Raspberry Pi and Arduino and initial version of PID controller subsystem is successfully combined with data processing subsystem output. \\
+		
+		The speed subsystem will be enhanced following the early outputs of driving subsystem. Different solution approaches will be tried by Sarper and Enes to find perfect speed conditions to finish the path within desired time.
+	
 	\subsection{Structure System Plans}
 	
 	A new chassis is going to be designed considering narrow turn section of the lane and  external obstacles. Rigidity and compactness are  the essential requirement for the chassis. To achieve these requirements, Enes and Sarper are going to design a chassis.\\
