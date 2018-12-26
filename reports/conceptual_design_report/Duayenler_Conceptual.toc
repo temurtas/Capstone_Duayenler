@@ -10,7 +10,7 @@
 \contentsline {paragraph}{\numberline {4.1.1.2}Alternative Solutions for Lane Detection Subsystem}{9}
 \contentsline {paragraph}{\numberline {4.1.1.3}Lane Detection Subsystem Tests}{10}
 \contentsline {paragraph}{\numberline {4.1.1.4}Results of Lane Detection Subsystem Tests}{10}
-\contentsline {subsubsection}{\numberline {4.1.2}Vehicle Vehicle Detection Subsystem}{11}
+\contentsline {subsubsection}{\numberline {4.1.2}Vehicle Detection Subsystem}{11}
 \contentsline {paragraph}{\numberline {4.1.2.1}Main Solution for Vehicle Detection Subsystem}{11}
 \contentsline {paragraph}{\numberline {4.1.2.2}Alternative Solutions for Vehicle Detection Subsystem}{12}
 \contentsline {paragraph}{\numberline {4.1.2.3}Vehicle Detection Subsystem Tests}{12}
@@ -34,22 +34,22 @@
 \contentsline {paragraph}{\numberline {4.3.1.4}Results of Internal Communication Subsystem Tests}{21}
 \contentsline {subsubsection}{\numberline {4.3.2}External Communication Subsystem}{22}
 \contentsline {paragraph}{\numberline {4.3.2.1}Main Solution for External Communication Subsystem}{22}
-\contentsline {paragraph}{\numberline {4.3.2.2}Alternative Solutions for External Communication Subsystem}{23}
+\contentsline {paragraph}{\numberline {4.3.2.2}Alternative Solutions for External Communication Subsystem}{24}
 \contentsline {paragraph}{\numberline {4.3.2.3}External Communication Subsystem Tests}{24}
 \contentsline {paragraph}{\numberline {4.3.2.4}Results of External Communication Subsystem Tests}{24}
 \contentsline {subsection}{\numberline {4.4}Driving System}{25}
 \contentsline {subsubsection}{\numberline {4.4.1}Direction Subsystem}{25}
-\contentsline {paragraph}{\numberline {4.4.1.1}Main Solution for Direction Subsystem}{25}
+\contentsline {paragraph}{\numberline {4.4.1.1}Main Solution for Direction Subsystem}{26}
 \contentsline {paragraph}{\numberline {4.4.1.2}Alternative Solutions for Direction Subsystem}{26}
 \contentsline {paragraph}{\numberline {4.4.1.3}Direction Subsystem Tests}{26}
 \contentsline {paragraph}{\numberline {4.4.1.4}Results of Direction Subsystem Tests}{26}
-\contentsline {subsubsection}{\numberline {4.4.2}Speed Subsystem}{26}
+\contentsline {subsubsection}{\numberline {4.4.2}Speed Subsystem}{27}
 \contentsline {paragraph}{\numberline {4.4.2.1}Main Solution for Speed Subsystem}{27}
-\contentsline {paragraph}{\numberline {4.4.2.2}Alternative Solutions for Speed Subsystem}{27}
-\contentsline {paragraph}{\numberline {4.4.2.3}Speed Subsystem Tests}{27}
+\contentsline {paragraph}{\numberline {4.4.2.2}Alternative Solutions for Speed Subsystem}{28}
+\contentsline {paragraph}{\numberline {4.4.2.3}Speed Subsystem Tests}{28}
 \contentsline {paragraph}{\numberline {4.4.2.4}Results of Speed Subsystem Tests}{28}
 \contentsline {subsection}{\numberline {4.5}Motion System}{28}
-\contentsline {subsubsection}{\numberline {4.5.1}Wheels Subsystem}{28}
+\contentsline {subsubsection}{\numberline {4.5.1}Wheels Subsystem}{29}
 \contentsline {paragraph}{\numberline {4.5.1.1}Main Solution for Wheels Subsystem}{29}
 \contentsline {paragraph}{\numberline {4.5.1.2}Alternative Solutions for Wheels Subsystem}{29}
 \contentsline {subsubsection}{\numberline {4.5.2}Motor Subsystem}{29}
@@ -57,7 +57,7 @@
 \contentsline {paragraph}{\numberline {4.5.2.2}Alternative Solutions for Motors Subsystem}{30}
 \contentsline {paragraph}{\numberline {4.5.2.3}Motors Subsystem Tests}{30}
 \contentsline {paragraph}{\numberline {4.5.2.4}Results of Motors Subsystem Tests}{30}
-\contentsline {subsection}{\numberline {4.6}Structure System}{30}
+\contentsline {subsection}{\numberline {4.6}Structure System}{31}
 \contentsline {subsubsection}{\numberline {4.6.1}Chassis Subsystem}{31}
 \contentsline {paragraph}{\numberline {4.6.1.1}Main Solution for Chassis Subsystem}{31}
 \contentsline {paragraph}{\numberline {4.6.1.2}Chassis Subsystem Tests}{32}
