@@ -872,6 +872,19 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	
 	
 	\section{Conclusion}
+	This report explains the main work that has been done so far.  Specifically, the detailed explanations of subsystems with solution analysis and test results as well as cost analysis and plans were given. Also, the alternative solutions to be considered were given for each subsystem. In a nutshell, the project consists of 5 systems: sensing, computational, communication, driving and structural systems. Each of them has different subsystems. Main solutions and alternative solutions for these subsystems can be summarized as below.
+	\begin{itemize}
+		
+		
+		
+		\item 	Lane detection subsystem detects the line. Main solution processing the data of Raspberry Pi camera using blurring filter, HSV filter, Canny Edge detector and Hough Lines detector, respectively. Alternative solutions are using light sensor, laser sensor and color sensor.
+		\item 	Vehicle detection subsystem aims to find the opponent. Main solution is using two time of flight distance sensors, at the back and front of the car. As an alternative solution, infrared distance sensors can be considered.
+		\item 	Data processing subsystem takes the unorganized data from the lane detection subsystem and outputs the processed data to PID controller subsystem. Main solution for this subsystem is the algorithm to classify left and right lines, fitting best line to detect lanes and predicting turn angle and direction from that lines. As discussed before, to overcome the existing flaws, there are two alternative solutions for this subsystem. Firstly, lane boundaries can be improved using a new algorithm that scans the edge detected image for the white pixels and detects the lane boundaries according to it. Secondly, the positioning on the lane can be improved by differentiating the center of the lane and the center of the capture image.
+		\item 	Internal communication subsystem provides the communication between Arduino and Raspberry Pi. Main solution to this subsystem is connecting Arduino to Pi via USB cable and implementing the necessary functions for both Arduino and Pi side. As an alternative, the communication between Raspberry Pi and Arduino can be realized using
+		other peripheral protocols or libraries, such as “SerialCommand.h” library for Arduino and I2C or SPI protocols. Another solution is to use Wi-Fi communication, instead of alternatives. However, it requires an external Wi-Fi module for Arduino. Lastly, removing Arduino completely from the system is an alternative solution.
+		\item 	External communication subsystem provides the communication with the opponent via the handshake protocol. Main solution for this subsystem creating network sockets for the cases of robot is client or server using Python socket functions. Alternative solution is implementing same functions in C++.
+		\item 	Direction subsystem is responsible for the orientation of the vehicle. It dives the motors according to the computation system outputs. Main solution is using differential drive method to orient the vehicle by two DC motors. It utilizes the speed difference of the motors to turn the robot as much as desired angle. Alternatively, One or two servo motors can be used at the front wheels to orient the vehicle.
+	\end{itemize}
 	
 	\newpage
 \begin{appendices}

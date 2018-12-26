@@ -1,5 +1,5 @@
-\select@language {english}
-\select@language {english}
+\babel@toc {english}{}
+\babel@toc {english}{}
 \contentsline {section}{\numberline {1}Executive Summary}{3}
 \contentsline {section}{\numberline {2}Introduction}{4}
 \contentsline {section}{\numberline {3}Overall Project}{5}
@@ -74,5 +74,5 @@
 \contentsline {subsection}{\numberline {4.8}Technical drawing of the expected design}{29}
 \contentsline {section}{\numberline {5}Plans}{29}
 \contentsline {section}{\numberline {6}Conclusion}{29}
-\contentsline {section}{Appendix \numberline {A}Gannt Chart}{30}
-\contentsline {section}{\numberline {7}Disclaimer}{33}
+\contentsline {section}{Appendix \numberline {A}Gannt Chart}{31}
+\contentsline {section}{\numberline {7}Disclaimer}{34}
