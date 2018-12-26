@@ -204,7 +204,7 @@
 	
 	
 	
-	\section{Detailed Solutions (Subsystem Level),değişebilir başlık}
+	\section{Detailed Solutions to Subsystems}
 	
 	V-Model is a very popular tool for system engineers to plan their projects. To ease the project tracking process, the V-Model was constructed by the DUAYENLER. The overall look of the V-Model can be seen at \textit{Figure~\ref{fig:vmodel}}. This section includes the explanation, requirements, test procedures and test results for the subsystems.
 		
@@ -422,7 +422,19 @@ for (lines_is_valid)
 		\item The microcontrollers should be able to communicate with each other via serial communication
 		\item The internal communication speed should be compatible with the processing speed of the lane detection subsystem  
 	\end{itemize}
-	
+		\begin{lstlisting}[language=Python,float=t,numbers=left,frame=single,caption=Serial object decleration in Python,label=sc:serial_python, captionpos=b ] 
+import serial
+ar=serial.Serial("/dev/ttyUSB0",9600)
+		\end{lstlisting}
+		 \begin{lstlisting}[language=C,float=t,numbers=left,frame=single,caption=Serial communication setup in C,label=sc:serial_c, captionpos=b ] 
+#include "./arduinoModule/rs232.h"
+int cport_nr = 24; /* /dev/ttyUSB0 */
+int bdrate = 9600; /* 9600 baud */
+char mode[] = { '8', 'N', '1', 0 }; // 8 data bits, no parity, 1 stop bit
+char str_send[2][BUF_SIZE]; // send data buffer
+unsigned char str_recv[BUF_SIZE]; // recv data buffer
+RS232_OpenComport(cport_nr, bdrate, mode);
+		\end{lstlisting}
 	\paragraph{Main Solution for Internal Communication Subsystem}
 	
 	There are several serial communication protocols that can be used to maintain the connection such as SPI, I2C. However, the first choice is to use USB serial port of the Arduino. Since RPi is practically a computer, it can recognize Arduino as a device using a serial port such as \lstinline[language=Arduino]|/ttyUSB0| in case of a Linux based OS. When recognized, RPi can send any piece of strings to the Arduino via USB cable. The process of communication is as follows:
@@ -436,36 +448,38 @@ for (lines_is_valid)
 	
 	There are minor differences when implementing the code in Python, C++  and C. Python is the most practical one:\\
 	
-	Python has a library called serial by which any type of data can be send through serial ports. Script \ref{sc:serial_python} is used to declare a serial object. Then using \texttt{ar.write("some string \textbackslash r".encode())}, the string "some string" can be send to Arduino. Note that "\r" carriage return character carries a high importance because it shows that a string is terminated and any other incoming data belongs to the new piece of string.  
+	Python has a library called serial by which any type of data can be send through serial ports. Script \ref{sc:serial_python} is used to declare a serial object. Then using \texttt{ar.write("some string \textbackslash r".encode())}, the string "some string" can be send to Arduino. Note that "\textbackslash r" carriage return character carries a high importance because it shows that a string is terminated and any other incoming data belongs to the new piece of string.  
 	
-<<<<<<<	\begin{lstlisting}[language=Python,float=b,numbers=left,frame=single,caption=Serial object decleration in Python,label=sc:serial_python, captionpos=b ] 
-import serial
-ar=serial.Serial("/dev/ttyUSB0",9600)
-	\end{lstlisting}
+
 	
-	As alternatives, the implementation on C is also examined. 
-	
-	Sample codes to implement the same communication in C is in Script \ref{sc:serial_c}. Since it is a low level language, specification of buffer size and other parameters should be done in the code.
-	 \begin{lstlisting}[language=C,float=h,numbers=left,frame=single,caption=Serial communication setup in C,label=sc:serial_c, captionpos=b ] 
-#include "./arduinoModule/rs232.h"
-int cport_nr = 24; /* /dev/ttyUSB0 */
-int bdrate = 9600; /* 9600 baud */
-char mode[] = { '8', 'N', '1', 0 }; // 8 data bits, no parity, 1 stop bit
-char str_send[2][BUF_SIZE]; // send data buffer
-unsigned char str_recv[BUF_SIZE]; // recv data buffer
-RS232_OpenComport(cport_nr, bdrate, mode)
-	\end{lstlisting}
+	As alternatives, the implementation on C is also examined.	Sample codes to implement the same communication in C is in Script \ref{sc:serial_c}. Since it is a low level language, specification of buffer size and other parameters should be done in the code.
+
 	%\lstinline[language=Arduino]|<SerialCommand.h>| 
-	On Arduino  side, there are also several option that we can read the incoming data. Using \texttt{Serial.read()}  command is one of the simplest solutions. However, it contains some issues like conversion from string to integer and when to stop. Furthermore, the incoming data should be considered in character basis for the exact control. \\
-	
-	There is also a more sophisticated solution. There is a \texttt{SerialCommand.h} library for the Arduino which allows executing a function depending on the incoming string. Using \lstinline|.addCommand("str",func)| of the library any function can be associated with any string coming from serial port. Moreover, the functions can have argument. For example, let the string "PWMSET" be execute a function \lstinline|setpwm()| but the pwm value is required. If incoming string is of the form "PWMSET 150", using \lstinline|.next()| function of the library, the value 150 can be read and converted into integer and interpreted as the PWM value to be set. 
+	On Arduino  side, there are also several option that we can read the incoming data. Using \texttt{Serial.read()}  command is one of the simplest solutions. However, it contains some issues like conversion from string to integer and when to stop. Furthermore, the incoming data should be considered in character basis for the exact control.  
 	
 	\paragraph{Alternative Solutions for Internal Communication Subsystem}
+		The communication between Raspberry Pi and Arduino can be realized by the use of other peripheral protocols or libraries.
 	
-	\paragraph{Internal Communication Subsystem Tests}	
+		There is a \texttt{SerialCommand.h} library for the Arduino which allows executing a function depending on the incoming string. Using \lstinline|.addCommand("str",func)| of the library any function can be associated with any string coming from serial port. Moreover, the functions can have argument. For example, let the string "PWMSET" be execute a function \lstinline|setpwm()| but the pwm value is required. If incoming string is of the form "PWMSET 150", using \lstinline|.next()| function of the library, the value 150 can be read and converted into integer and interpreted as the PWM value to be set.
+		
+		Another solution is to use I2C or SPI protocols to set communication between Arduino and Raspberry Pi. These options require simple wiring connections between the pins. A point to remark is being cautious to operating voltage levels of pins of Arduino and Raspberry Pi.
+		
+		Besides aforementioned alternatives, WiFi communication can also be considered between Arduino and Raspberry Pi. This solution requires deployment of a WiFi module on Arduino. Several hardware exists in market such as ESP8266 and EMW3165. This solution would require a WiFi network in the medium which makes the solution less implementable.
+		
+		A last solution would be to remove Arduino from the system. This would require the handover of operations of Arduino to Raspberry Pi. The resulting system could be considered as a single board solution, that is, all relevant subsystems operate on Raspberry Pi. This option would cause heating problems on Raspberry Pi. A cooling mechanism should also be applicable in this case.
+	\paragraph{Internal Communication Subsystem Tests}
+	This test will enable if communication between Arduino and Raspberry Pi can be realized. Test procedure is as follows:
+	\begin{itemize}
+		\item Generate data on Raspberry Pi in a rate that reflects the time consumed of Data Processing Subsystem. This will yield a realistic data rate.
+		\item Send random text data to Arduino.
+		\item Do the initial integration between Arduino and Raspberry Pi.
+		\item Send data from Raspberry Pi to Arduino.
+		\item Increase data speed to the specified data rate.
+		\item Check the accuracy of the retrieved data.
+	\end{itemize}
 	
 	\paragraph{Results of Internal Communication Subsystem Tests}
-	
+	The results of the tests revealed that all steps are successful but the last step. The data send rate is determined to be 25 strings per second. The string length varies between one and three characters. The data is fully received if the rate is slower than 25 strigs per second. However, the data loss  and  improper decoding is observed on the Arduino side. This must corrected by means of coding or switching to an alternative solution.
 	
 	\subsubsection{External Communication Subsystem}
 	
