@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  26 DEC 2018 15:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  26 DEC 2018 15:47
 entering extended mode
 **./Duayenler_Conceptual.tex
 (Duayenler_Conceptual.tex
@@ -1086,14 +1086,15 @@ File: v-models/data_processing_subsystem.png Graphic file (type png)
 Package pdftex.def Info: v-models/data_processing_subsystem.png used on input l
 ine 382.
 (pdftex.def)             Requested size: 358.46039pt x 188.50104pt.
- [13]
+
 Underfull \hbox (badness 10000) in paragraph at lines 391--392
 
  []
 
+[13]
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 404.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
@@ -1134,41 +1135,36 @@ File: images/socket_funcs.png Graphic file (type png)
 <use images/socket_funcs.png>
 Package pdftex.def Info: images/socket_funcs.png used on input line 604.
 (pdftex.def)             Requested size: 224.03688pt x 398.48715pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
+ [22 <./images/socket_funcs.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 621--622
 
  []
 
-[22]
+
 Overfull \hbox (2.59099pt too wide) in paragraph at lines 627--628
 \OT1/cmr/m/n/12 Alternative so-lu-tion for ex-ter-nal com-mu-ni-ca-tion sys-tem
  is im-ple-ment-ing Net-work(Socket)
  []
 
-[23 <./images/socket_funcs.png>]
-<images/handshake1.png, id=106, 416.30531pt x 148.30406pt>
+[23] <images/handshake1.png, id=106, 416.30531pt x 148.30406pt>
 File: images/handshake1.png Graphic file (type png)
 
 <use images/handshake1.png>
 Package pdftex.def Info: images/handshake1.png used on input line 662.
 (pdftex.def)             Requested size: 336.05533pt x 119.72055pt.
- [24]
-<images/handshake2.png, id=111, 422.32782pt x 145.29282pt>
+
+<images/handshake2.png, id=107, 422.32782pt x 145.29282pt>
 File: images/handshake2.png Graphic file (type png)
 
 <use images/handshake2.png>
 Package pdftex.def Info: images/handshake2.png used on input line 669.
 (pdftex.def)             Requested size: 336.05533pt x 115.61586pt.
-
+ [24 <./images/handshake1.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 675--676
 
  []
 
-[25 <./images/handshake1.png> <./images/handshake2.png>] [26] [27]
+[25 <./images/handshake2.png>] [26] [27]
 Underfull \hbox (badness 10000) in paragraph at lines 795--796
 
  []
@@ -1378,7 +1374,7 @@ ts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
 1/urw/courier/ucrr8a.pfb>
-Output written on Duayenler_Conceptual.pdf (35 pages, 1760057 bytes).
+Output written on Duayenler_Conceptual.pdf (35 pages, 1760410 bytes).
 PDF statistics:
  217 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
