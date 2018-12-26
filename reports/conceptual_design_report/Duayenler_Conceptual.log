@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  26 DEC 2018 15:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  26 DEC 2018 16:12
 entering extended mode
 **./Duayenler_Conceptual.tex
 (Duayenler_Conceptual.tex
@@ -992,11 +992,11 @@ File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
 ) [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <../../documents/logos/log
-o3-with-stroke.png>] (Duayenler_Conceptual.toc [1] [2])
+o3-with-stroke.png>] (Duayenler_Conceptual.toc [1])
 \tf@toc=\write4
 \openout4 = `Duayenler_Conceptual.toc'.
 
- [3]
+ [2]
 Underfull \hbox (badness 10000) in paragraph at lines 114--115
 
  []
@@ -1011,7 +1011,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
 
-[4]
+[3]
 Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
  []
@@ -1021,8 +1021,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
  []
 
-[5] [6]
-<system-diagram/system-diagram-3.png, id=34, 1428.83812pt x 447.17062pt>
+[4] [5]
+<system-diagram/system-diagram-3.png, id=30, 1428.83812pt x 447.17062pt>
 File: system-diagram/system-diagram-3.png Graphic file (type png)
 
 <use system-diagram/system-diagram-3.png>
@@ -1030,13 +1030,13 @@ Package pdftex.def Info: system-diagram/system-diagram-3.png used on input line
  200.
 (pdftex.def)             Requested size: 448.07378pt x 140.23175pt.
 
-<v-models/V-model.png, id=35, 1436.36626pt x 534.49687pt>
+<v-models/V-model.png, id=31, 1436.36626pt x 534.49687pt>
 File: v-models/V-model.png Graphic file (type png)
 
 <use v-models/V-model.png>
 Package pdftex.def Info: v-models/V-model.png used on input line 214.
 (pdftex.def)             Requested size: 403.26366pt x 150.05772pt.
- [7 <./system-diagram/system-diagram-3.png> <./v-models/V-model.png>]
+ [6 <./system-diagram/system-diagram-3.png> <./v-models/V-model.png>]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 222.
 
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
@@ -1044,7 +1044,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 222.
-<v-models/lane_detection_subsystem.png, id=40, 1067.187pt x 551.05875pt>
+<v-models/lane_detection_subsystem.png, id=37, 1067.187pt x 551.05875pt>
 File: v-models/lane_detection_subsystem.png Graphic file (type png)
 
 <use v-models/lane_detection_subsystem.png>
@@ -1060,163 +1060,167 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-) [8]
+) [7]
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-) [9 <./v-models/lane_detection_subsystem.png>]
-<images/detection1-legend.png, id=49, 645.41125pt x 1000.73875pt>
+) [8 <./v-models/lane_detection_subsystem.png>]
+<images/detection1-legend.png, id=46, 645.41125pt x 1000.73875pt>
 File: images/detection1-legend.png Graphic file (type png)
 
 <use images/detection1-legend.png>
 Package pdftex.def Info: images/detection1-legend.png used on input line 293.
 (pdftex.def)             Requested size: 215.07349pt x 333.48206pt.
 
-<images/detection2-legend.png, id=50, 649.42625pt x 998.73125pt>
+<images/detection2-legend.png, id=47, 649.42625pt x 998.73125pt>
 File: images/detection2-legend.png Graphic file (type png)
 
 <use images/detection2-legend.png>
 Package pdftex.def Info: images/detection2-legend.png used on input line 298.
 (pdftex.def)             Requested size: 215.07349pt x 330.75575pt.
- [10] [11 <./images/detection1-legend.png> <./images/detection2-legend.png>] [1
-2]
-<v-models/data_processing_subsystem.png, id=62, 1047.915pt x 551.05875pt>
+ [9] [10 <./images/detection1-legend.png> <./images/detection2-legend.png>] [11
+]
+<v-models/data_processing_subsystem.png, id=58, 1047.915pt x 551.05875pt>
 File: v-models/data_processing_subsystem.png Graphic file (type png)
 
 <use v-models/data_processing_subsystem.png>
 Package pdftex.def Info: v-models/data_processing_subsystem.png used on input l
-ine 382.
+ine 386.
 (pdftex.def)             Requested size: 358.46039pt x 188.50104pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 391--392
+Underfull \hbox (badness 10000) in paragraph at lines 395--396
 
  []
 
-[13]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 404.
+[12]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 408.
 
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 404.
- [14 <./v-models/data_processing_subsystem.png>]
-<images/turn-prediction-explained.png, id=69, 483.37967pt x 420.5877pt>
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 408.
+ [13 <./v-models/data_processing_subsystem.png>]
+<images/turn-prediction-explained.png, id=66, 483.37967pt x 420.5877pt>
 File: images/turn-prediction-explained.png Graphic file (type png)
 
 <use images/turn-prediction-explained.png>
 Package pdftex.def Info: images/turn-prediction-explained.png used on input lin
-e 426.
+e 430.
 (pdftex.def)             Requested size: 268.847pt x 233.9231pt.
- [15] [16 <./images/turn-prediction-explained.png>] [17] [18]
+ [14] [15 <./images/turn-prediction-explained.png>] [16] [17]
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-) [19]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 548.
+)
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 556.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 552--553
+) [18]
+Underfull \hbox (badness 10000) in paragraph at lines 560--561
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+pcr on input line 554.
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 562.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omspcr.fd"
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 554.
- [20] [21]
-<images/socket_funcs.png, id=98, 309.40594pt x 550.30594pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 562.
+ [19]
+<images/socket_funcs.png, id=92, 309.40594pt x 550.30594pt>
 File: images/socket_funcs.png Graphic file (type png)
 
 <use images/socket_funcs.png>
-Package pdftex.def Info: images/socket_funcs.png used on input line 604.
+Package pdftex.def Info: images/socket_funcs.png used on input line 612.
 (pdftex.def)             Requested size: 224.03688pt x 398.48715pt.
- [22 <./images/socket_funcs.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 621--622
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 629--630
 
  []
 
-
-Overfull \hbox (2.59099pt too wide) in paragraph at lines 627--628
+[21 <./images/socket_funcs.png>]
+Overfull \hbox (2.59099pt too wide) in paragraph at lines 635--636
 \OT1/cmr/m/n/12 Alternative so-lu-tion for ex-ter-nal com-mu-ni-ca-tion sys-tem
  is im-ple-ment-ing Net-work(Socket)
  []
 
-[23] <images/handshake1.png, id=106, 416.30531pt x 148.30406pt>
+[22] <images/handshake1.png, id=103, 416.30531pt x 148.30406pt>
 File: images/handshake1.png Graphic file (type png)
 
 <use images/handshake1.png>
-Package pdftex.def Info: images/handshake1.png used on input line 662.
+Package pdftex.def Info: images/handshake1.png used on input line 675.
 (pdftex.def)             Requested size: 336.05533pt x 119.72055pt.
 
-<images/handshake2.png, id=107, 422.32782pt x 145.29282pt>
+<images/handshake2.png, id=104, 422.32782pt x 145.29282pt>
 File: images/handshake2.png Graphic file (type png)
 
 <use images/handshake2.png>
-Package pdftex.def Info: images/handshake2.png used on input line 669.
+Package pdftex.def Info: images/handshake2.png used on input line 682.
 (pdftex.def)             Requested size: 336.05533pt x 115.61586pt.
- [24 <./images/handshake1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 675--676
+
+Underfull \hbox (badness 10000) in paragraph at lines 688--689
 
  []
 
-[25 <./images/handshake2.png>] [26] [27]
-Underfull \hbox (badness 10000) in paragraph at lines 795--796
+[23 <./images/handshake1.png> <./images/handshake2.png>] [24] [25]
+Underfull \hbox (badness 10000) in paragraph at lines 813--814
 
  []
 
-
-Overfull \hbox (170.94676pt too wide) in paragraph at lines 811--811
+[26]
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 829--829
 [][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
  []
 
 
-Overfull \hbox (170.94676pt too wide) in paragraph at lines 811--811
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 829--829
 [][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
  []
 
 
-Overfull \hbox (170.94676pt too wide) in paragraph at lines 811--811
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 829--829
 [][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
  []
 
 
-Overfull \hbox (170.94676pt too wide) in paragraph at lines 811--811
+Overfull \hbox (170.94676pt too wide) in paragraph at lines 829--829
 [][][][]\OT1/cmr/m/n/12 ED[]G[]I[]T[]IRRRRRRRRRRRRRRRRR  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 811--812
-
- []
-
-[28]
-Underfull \hbox (badness 10000) in paragraph at lines 824--825
+Underfull \hbox (badness 10000) in paragraph at lines 829--830
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 828--829
+Underfull \hbox (badness 10000) in paragraph at lines 842--843
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 830--831
+Underfull \hbox (badness 10000) in paragraph at lines 846--847
 
  []
 
-[29] [30]
+
+Underfull \hbox (badness 10000) in paragraph at lines 848--849
+
+ []
+
+[27] [28] [29]
 
 pdfTeX warning: pdflatex (file ./gannt_chart.pdf): PDF inclusion: found PDF ver
 sion <1.7>, but at most version <1.5> allowed
-<gannt_chart.pdf, id=131, 1194.98447pt x 845.07718pt>
+<gannt_chart.pdf, id=127, 1194.98447pt x 845.07718pt>
 File: gannt_chart.pdf Graphic file (type pdf)
  <use gannt_chart.pdf>
-Package pdftex.def Info: gannt_chart.pdf used on input line 861.
+Package pdftex.def Info: gannt_chart.pdf used on input line 879.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 
 
@@ -1224,7 +1228,7 @@ pdfTeX warning: pdflatex (file ./gannt_chart.pdf): PDF inclusion: found PDF ver
 sion <1.7>, but at most version <1.5> allowed
 File: gannt_chart.pdf Graphic file (type pdf)
 <use gannt_chart.pdf>
-Package pdftex.def Info: gannt_chart.pdf used on input line 861.
+Package pdftex.def Info: gannt_chart.pdf used on input line 879.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 
 
@@ -1234,120 +1238,120 @@ sion <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: pdflatex (file ./gannt_chart.pdf): PDF inclusion: found PDF ver
 sion <1.7>, but at most version <1.5> allowed
-<gannt_chart.pdf, id=134, page=1, 1194.98447pt x 845.07718pt>
+<gannt_chart.pdf, id=130, page=1, 1194.98447pt x 845.07718pt>
 File: gannt_chart.pdf Graphic file (type pdf)
 
 <use gannt_chart.pdf, page 1>
-Package pdftex.def Info: gannt_chart.pdf, page1 used on input line 861.
+Package pdftex.def Info: gannt_chart.pdf, page1 used on input line 879.
 (pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
 File: gannt_chart.pdf Graphic file (type pdf)
  <use gannt_chart.pdf, page 1>
-Package pdftex.def Info: gannt_chart.pdf, page1 used on input line 861.
+Package pdftex.def Info: gannt_chart.pdf, page1 used on input line 879.
 (pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 
 <use gannt_chart.pdf, page 1>
-Package pdftex.def Info: gannt_chart.pdf, page1 used on input line 861.
+Package pdftex.def Info: gannt_chart.pdf, page1 used on input line 879.
 (pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
 File: gannt_chart.pdf Graphic file (type pdf)
  <use gannt_chart.pdf, page 1>
-Package pdftex.def Info: gannt_chart.pdf, page1 used on input line 861.
+Package pdftex.def Info: gannt_chart.pdf, page1 used on input line 879.
 (pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 
 <use gannt_chart.pdf, page 1>
-Package pdftex.def Info: gannt_chart.pdf, page1 used on input line 861.
+Package pdftex.def Info: gannt_chart.pdf, page1 used on input line 879.
+(pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
+ [30 <./gannt_chart.pdf>]
+File: gannt_chart.pdf Graphic file (type pdf)
+ <use gannt_chart.pdf>
+Package pdftex.def Info: gannt_chart.pdf used on input line 880.
+(pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
+
+
+pdfTeX warning: pdflatex (file ./gannt_chart.pdf): PDF inclusion: found PDF ver
+sion <1.7>, but at most version <1.5> allowed
+File: gannt_chart.pdf Graphic file (type pdf)
+<use gannt_chart.pdf>
+Package pdftex.def Info: gannt_chart.pdf used on input line 880.
+(pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
+
+
+pdfTeX warning: pdflatex (file ./gannt_chart.pdf): PDF inclusion: found PDF ver
+sion <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./gannt_chart.pdf): PDF inclusion: found PDF ver
+sion <1.7>, but at most version <1.5> allowed
+<gannt_chart.pdf, id=158, page=2, 1194.98447pt x 845.07718pt>
+File: gannt_chart.pdf Graphic file (type pdf)
+
+<use gannt_chart.pdf, page 2>
+Package pdftex.def Info: gannt_chart.pdf, page2 used on input line 880.
+(pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
+File: gannt_chart.pdf Graphic file (type pdf)
+ <use gannt_chart.pdf, page 2>
+Package pdftex.def Info: gannt_chart.pdf, page2 used on input line 880.
+(pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
+File: gannt_chart.pdf Graphic file (type pdf)
+
+<use gannt_chart.pdf, page 2>
+Package pdftex.def Info: gannt_chart.pdf, page2 used on input line 880.
+(pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
+File: gannt_chart.pdf Graphic file (type pdf)
+ <use gannt_chart.pdf, page 2>
+Package pdftex.def Info: gannt_chart.pdf, page2 used on input line 880.
+(pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
+File: gannt_chart.pdf Graphic file (type pdf)
+
+<use gannt_chart.pdf, page 2>
+Package pdftex.def Info: gannt_chart.pdf, page2 used on input line 880.
 (pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
  [31 <./gannt_chart.pdf>]
-File: gannt_chart.pdf Graphic file (type pdf)
- <use gannt_chart.pdf>
-Package pdftex.def Info: gannt_chart.pdf used on input line 862.
-(pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
-
 
 pdfTeX warning: pdflatex (file ./gannt_chart.pdf): PDF inclusion: found PDF ver
 sion <1.7>, but at most version <1.5> allowed
-File: gannt_chart.pdf Graphic file (type pdf)
-<use gannt_chart.pdf>
-Package pdftex.def Info: gannt_chart.pdf used on input line 862.
-(pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
-
-
-pdfTeX warning: pdflatex (file ./gannt_chart.pdf): PDF inclusion: found PDF ver
-sion <1.7>, but at most version <1.5> allowed
-
-
-pdfTeX warning: pdflatex (file ./gannt_chart.pdf): PDF inclusion: found PDF ver
-sion <1.7>, but at most version <1.5> allowed
-<gannt_chart.pdf, id=161, page=2, 1194.98447pt x 845.07718pt>
-File: gannt_chart.pdf Graphic file (type pdf)
-
-<use gannt_chart.pdf, page 2>
-Package pdftex.def Info: gannt_chart.pdf, page2 used on input line 862.
-(pdftex.def)             Requested size: 1194.98155pt x 845.07512pt.
-File: gannt_chart.pdf Graphic file (type pdf)
- <use gannt_chart.pdf, page 2>
-Package pdftex.def Info: gannt_chart.pdf, page2 used on input line 862.
-(pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
-File: gannt_chart.pdf Graphic file (type pdf)
-
-<use gannt_chart.pdf, page 2>
-Package pdftex.def Info: gannt_chart.pdf, page2 used on input line 862.
-(pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
-File: gannt_chart.pdf Graphic file (type pdf)
- <use gannt_chart.pdf, page 2>
-Package pdftex.def Info: gannt_chart.pdf, page2 used on input line 862.
-(pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
-File: gannt_chart.pdf Graphic file (type pdf)
-
-<use gannt_chart.pdf, page 2>
-Package pdftex.def Info: gannt_chart.pdf, page2 used on input line 862.
-(pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
- [32 <./gannt_chart.pdf>]
-
-pdfTeX warning: pdflatex (file ./gannt_chart.pdf): PDF inclusion: found PDF ver
-sion <1.7>, but at most version <1.5> allowed
-<gannt_chart.pdf, id=166, page=3, 1194.98447pt x 845.07718pt>
+<gannt_chart.pdf, id=163, page=3, 1194.98447pt x 845.07718pt>
 File: gannt_chart.pdf Graphic file (type pdf)
 
 <use gannt_chart.pdf, page 3>
-Package pdftex.def Info: gannt_chart.pdf, page3 used on input line 862.
+Package pdftex.def Info: gannt_chart.pdf, page3 used on input line 880.
 (pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
 File: gannt_chart.pdf Graphic file (type pdf)
  <use gannt_chart.pdf, page 3>
-Package pdftex.def Info: gannt_chart.pdf, page3 used on input line 862.
+Package pdftex.def Info: gannt_chart.pdf, page3 used on input line 880.
 (pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
 File: gannt_chart.pdf Graphic file (type pdf)
 
 <use gannt_chart.pdf, page 3>
-Package pdftex.def Info: gannt_chart.pdf, page3 used on input line 862.
+Package pdftex.def Info: gannt_chart.pdf, page3 used on input line 880.
 (pdftex.def)             Requested size: 926.10341pt x 654.92805pt.
- [33 <./gannt_chart.pdf>]
-Overfull \hbox (13.14651pt too wide) in paragraph at lines 878--890
+ [32 <./gannt_chart.pdf>]
+Overfull \hbox (13.14651pt too wide) in paragraph at lines 896--908
 [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 878--890
+Underfull \hbox (badness 10000) in paragraph at lines 896--908
 
  []
 
 
-Overfull \hbox (13.1397pt too wide) in paragraph at lines 891--899
+Overfull \hbox (13.1397pt too wide) in paragraph at lines 909--917
 [][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 891--899
+Underfull \hbox (badness 10000) in paragraph at lines 909--917
 
  []
 
 
-Overfull \hbox (15.38225pt too wide) in paragraph at lines 900--908
+Overfull \hbox (15.38225pt too wide) in paragraph at lines 918--926
 [][][] 
  []
 
-[34] (Duayenler_Conceptual.aux)
+[33] (Duayenler_Conceptual.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1374,9 +1378,9 @@ ts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
 1/urw/courier/ucrr8a.pfb>
-Output written on Duayenler_Conceptual.pdf (35 pages, 1760410 bytes).
+Output written on Duayenler_Conceptual.pdf (34 pages, 1758115 bytes).
 PDF statistics:
- 217 PDF objects out of 1000 (max. 8388607)
+ 214 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  108 words of extra memory for PDF output out of 10000 (max. 10000000)
 

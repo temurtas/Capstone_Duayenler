@@ -325,8 +325,10 @@ minLineLength=30, maxLineGap=40);
 	\end{itemize}
 	
 	\paragraph{Vehicle Detection Subsystem Tests}
-	
-		\subparagraph{Front Vehicle Detection Test in Closed Environment}
+		
+		\begin{itemize}
+		
+		\item Front Vehicle Detection Test in Closed Environment:
 			This test aims to validate whether the subsystem is capable of detecting the opponent vehicle that is close to the vehicle more than 5 cm from the front. The test procedure is as follows; 		
 			
 			\begin{enumerate}
@@ -338,13 +340,13 @@ minLineLength=30, maxLineGap=40);
 				\item If the output of the subsystem generates logical positive for distances smaller than 5 cm and logical zero for distances greater than five, the test result can be considered as success \vspace{-0.2cm}
 			\end{enumerate}					
 		
-		\subparagraph{Rear Vehicle Detection Test in Closed Environment}
+		\item Rear Vehicle Detection Test in Closed Environment:
 			This test aims to validate whether the subsystem is capable of detecting the opponent vehicle that is close to the vehicle more than 5 cm from the rear. The test procedure is as follows; 		
 			\begin{enumerate}
 				\item Repeat the test steps of the \textit{Front Vehicle Detection Test in Closed Environment} with the desired sensor for the desired rear sensor.  \vspace{-0.2cm}
 			\end{enumerate}
 		
-		\subparagraph{Angled Approach Test}
+		\item Angled Approach Test:
 			This test aims to validate whether the subsystem is capable of detecting the opponent vehicle that is close to the vehicle more than 5 cm if the vehicles are not perfectly aligned. The test procedure is as follows;
 			\begin{enumerate}
 				\item Make the connection of the desired sensor and Arduino properly \vspace{-0.2cm}
@@ -355,7 +357,7 @@ minLineLength=30, maxLineGap=40);
 				\item If the output of the subsystem generates logical positive for distances smaller than 5 cm for all angle values with respect to sensor and logical zero for distances greater than 5 cm, the test result can be considered as success \vspace{-0.2cm}
 			\end{enumerate}
 		
-		\subparagraph{Vehicle Detection in Different Sunlight Conditions Test}
+		\item Vehicle Detection in Different Sunlight Conditions Test:
 			This test aims to validate whether the subsystem is capable of detecting the opponent vehicle that is close to the vehicle more than 5 cm in different sunlight conditions. The test procedure is as follows; 		
 			\begin{enumerate}
 				\item Repeat the test steps of the \textit{Front Vehicle Detection Test in Closed Environment} in CCC (KKM) ground under direct sunlight \vspace{-0.2cm}
@@ -363,6 +365,8 @@ minLineLength=30, maxLineGap=40);
 				\item Repeat steps 1 \& 2 for different locations of E Building including Graduation Laboratory \vspace{-0.2cm}
 				\item If the output of the subsystem generates logical positive for distances smaller than 5 cm under all light conditions and logical zero for distances greater than 5 cm, the test result can be considered as success \vspace{-0.2cm}
 			\end{enumerate}
+			
+		\end{itemize}
 	
 	\paragraph{Results of Vehicle Detection Subsystem Tests}
 	
@@ -463,7 +467,8 @@ for (lines_is_valid)
 		$$ G_{PID}(s)=K_{bias}+K_p+K_I\frac{1}{s}+K_Ds	$$
 		
 	\paragraph{PID Controller Subsystem Tests}	
-		\subparagraph{PID Parameters Test for Given Input}
+	\begin{itemize}
+		\item PID Parameters Test for Given Input:
 			The test aims to speed up the process of finding the right PID parameters for the controller. The test procedure is as follows; 		
 			\begin{enumerate}
 				\item Connect the Vehicle Motors to Motor Controller \vspace{-0.2cm}
@@ -475,34 +480,37 @@ for (lines_is_valid)
 			\end{enumerate}
 				
 		
-		\subparagraph{Path Tracking Test}
+		\item Path Tracking Test:
 			The test aims to check the validity of the PID parameters in closed loop feedback system. The test procedure is as follows; 		
 			\begin{enumerate}
-				\item Make the necessary connection between motors Arduino and data processing unit \vspace{-0.7cm}
+				\item Make the necessary connection between motors Arduino and data processing unit \vspace{-0.2cm}
 				\item Place the vehicle to the desired empty path  \vspace{-0.2cm}
 				\item Observe the behaviour of the vehicle \vspace{-0.2cm}
 				\item If the vehicle can follow the path smoothly, the result of the test can be considered as success. \vspace{-0.2cm}
 			\end{enumerate}
 				
 			
-		\subparagraph{Tracking a Path with Obstacles Test}
+		\item Tracking a Path with Obstacles Test:
 			The test aims to check the validity of the PID parameters in closed loop feedback system if there is obstacles. The test procedure is as follows; 		
 			\begin{enumerate}
-				\item Make the necessary connection between motors Arduino and data processing unit \vspace{-0.7cm}
+				\item Make the necessary connection between motors Arduino and data processing unit \vspace{-0.2cm}
 				\item Place the vehicle to the desired path with obstacles \vspace{-0.2cm}
 				\item Observe the behaviour of the vehicle \vspace{-0.2cm}
 				\item If the vehicle can follow the path and compensate the steady state errors due to obstacles without showing oscillatory behaviour and in a reasonable time (in less than 2 seconds), the result of the test can be considered as success. \vspace{-0.2cm}
 			\end{enumerate}
 				
 		
-		\subparagraph{Path Tracking Test with Physical Disturbances}
+		\item Path Tracking Test with Physical Disturbances:
 			The test aims to check the validity of the PID parameters in closed loop feedback system if there is a physical disturbance that effect the location of the vehicle. The test procedure is as follows; 		
 			\begin{enumerate}
-				\item Make the necessary connection between motors Arduino and data processing unit \vspace{-0.7cm}
+				\item Make the necessary connection between motors Arduino and data processing unit \vspace{-0.2cm}
 				\item Place the vehicle to the desired empty path  \vspace{-0.2cm}
 				\item Observe the behaviour of the vehicle \vspace{-0.2cm}
 				\item If the vehicle can follow the path and compensate the steady state errors due to physical disturbance without showing oscillatory behaviour and in a reasonable time (in less than 2 seconds), the result of the test can be considered as success. \vspace{-0.2cm}
 			\end{enumerate}
+		
+		\end{itemize}
+	
 		
 		
 	\paragraph{Results of PID Controller Subsystem Tests}
@@ -627,7 +635,9 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	Alternative solution for external communication system is implementing Network(Socket) Programming algorithm on another programing language; such as C++.
 	\paragraph{External Communication Subsystem Tests}
 		
-		\subparagraph{Raspberry Pi as Client Test}
+		\begin{itemize}
+		
+		\item Raspberry Pi as Client Test:
 			This test aims to validate whether the Raspberry Pi can successfully fulfil the requirements set by \textit{Handshake protocol} as a client.Test procedure is as follows:
 			\begin{enumerate}
 				\item Create a hotspot from the computer \vspace{-0.2cm}
@@ -638,7 +648,8 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 				\item Try the possible combinations from the terminals of both sides \vspace{-0.2cm}
 				\item The test result can be considered as success if both sides respond according to the \textit{Handshake Protocol}.
 			\end{enumerate}		
-		\subparagraph{Raspberry Pi as Server Test}
+		
+		\item Raspberry Pi as Server Test:
 			This test aims to validate whether the Raspberry Pi can successfully fulfil the requirements set by \textit{Handshake protocol} as a client.Test procedure is as follows:
 			\begin{enumerate}
 				\item Create a hotspot from Raspberry Pi. \vspace{-0.2cm}
@@ -649,6 +660,8 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 				\item Try the possible combinations from the terminals of both sides \vspace{-0.2cm}
 				\item The test result can be considered as success if both sides respond according to the \textit{Handshake Protocol}. 
 			\end{enumerate}	
+		
+		\end{itemize}
 		
 
 	\paragraph{Results of External Communication Subsystem Tests}
@@ -701,15 +714,20 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	As in the case of another configuration that involves one or two servo motors to control the directions of the front wheels. This configuration is more robust compared to ball caster utilization. However, there are more motors to control and it requires more complicated differential drive algorithms involving both DC motor differential and servo PWM to orient the front wheels.
 	
 	\paragraph{Direction Subsystem Tests}
-		\subparagraph{Straight Drive Test}
+	\begin{itemize}
+	
+		\item Straight Drive Test:
 			This test aims to find the PWM bias between the two motors. The test procedure is as follows:
 			\begin{enumerate}
-				\item Make the necessary connections between motors, motor controller and the Arduino \vspace{-0.7cm}
+				\item Make the necessary connections between motors, motor controller and the Arduino \vspace{-0.2cm}
 				\item 
 			\end{enumerate}
-			
+				
 		
-		\subparagraph{Circular Drive Test}
+		\item Circular Drive Test:
+		
+		
+	\end{itemize}
 	
 	\paragraph{Results of Direction Subsystem Tests}
 	
