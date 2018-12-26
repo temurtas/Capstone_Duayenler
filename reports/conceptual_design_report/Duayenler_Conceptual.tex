@@ -310,7 +310,7 @@ minLineLength=30, maxLineGap=40);
 	
 	\subsubsection{Vehicle Vehicle Detection Subsystem}
 	
-		The subsystem is the first step of safely computing with an opponent in a racing path. By the help of two distance sensors at the back and front of the vehicle the subsystem aims to find whether there is a opponent vehicle nearby.
+		The subsystem is the first step of safely competing with an opponent in a racing path. By the help of two distance sensors at the back and front of the vehicle the subsystem aims to find whether there is a opponent vehicle nearby.
 	
 	\paragraph{Main Solution for  Vehicle Detection Subsystem}
 	
@@ -326,7 +326,7 @@ minLineLength=30, maxLineGap=40);
 	\begin{itemize}
 		\item {Ultrasonic sensor:} These can be another approach to this problem. They send a sound wave and take back the echo, then give a PWM voltage related to the distance. However, using ultrasonic sensors can cause problems if the opponent also uses ultrasonic sensors due to the interference. Besides, when measurement is angled, the sensor reading fails. The reason why this is not the first option is that the specified path involves many sharp turns.
 		
-		\item {Infrared sensor:} Using these sensors Infrared sensors are the most trivial solution to measuring distance. However, IR sensors are weak to use in outside, especially sunshine. Although they are so sensitive to sun, they can still be a solution, if the first choice is failed, unexpectedly, this solution can be reconsidered.
+		\item {Infrared sensor:} Using these sensors Infrared sensors are the most trivial solution for measuring distance. However, IR sensors are weak to use in outside, especially in sunshine. Although they are so sensitive to sun, they can still be a solution. If the first choice fails, unexpectedly, this solution can be reconsidered.
 	\end{itemize}
 	
 	\paragraph{Vehicle Detection Subsystem Tests}
@@ -746,13 +746,11 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 		\item The subsystem should decrease the vehicle speed at the extreme disturbance  
 	\end{itemize}
 	
-	\paragraph{Main Solution for Direction Subsystem}
+	\paragraph{Main Solution for Speed Subsystem}
 	
 	\paragraph{Alternative Solutions for Direction Subsystem}
 	
-	\paragraph{Direction Subsystem Tests}
 	
-	\paragraph{Results of Direction Subsystem Tests}
 	
 	\subsection{Structure System}
 	
@@ -818,47 +816,48 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	The wheel placement combination that will be utilized is 2+1 combination. This combination can be assembled by placing 2 car wheels (with motors) to the back and the one boll caster to the front or vice versa. These configurations provide easy implementation and fairly reliable handling on the path. However, for certain obstacles may significantly disturb vehicles balance in this configuration.\\
 	
 	\paragraph{Alternative Solutions for Wheels Subsystem}
-	\todo{add explanation}
+	
 	\begin{itemize}
 		\item{Palettes:} 	Another combination is palette system. This system is used in real world where robust vehicles are needed. Similarly, this configuration can help handling obstacle in the path, but it costs for harder implementation and driving.
 		
 		\item{2+2 Wheels} 	Last implementation is 2+2 configuration. In this configuration 2 wheels can be placed at the back and the rest at the front by placing motors to back wheels. To ease turning of the vehicle, front wheels can be controlled with a servo motor as back wheels operate in the differential drive mode. This combination may provide both enhanced grip and reliable	 operation.
 	\end{itemize}
 
-	\paragraph{Wheels Subsystem Tests}
-	
-	\paragraph{Results of Wheels Subsystem Tests}
+%	\paragraph{Wheels Subsystem Tests}
+%	\paragraph{Results of Wheels Subsystem Tests}
 
 	
-	\subsubsection{Motors Subsystem}
-	\todo{EDĞİŞTİRRRRRRRRRRRRRRRRR}Motors are one of the most important physical components of the project. There are possible motor types in the market.\\
-	
-	One of the widely used motor type is brushed DC motors. 
-	Another option is brushless DC motors. 
-	
-	Last option is servo motors:
+	\subsubsection{Motor Subsystem}
+	Motors are the one of the important physical components of the project. They represent the whole system's actions. As stated in the project definition, the path should be completed within 20 seconds and total length of the path is approximately 3 meters. Using this specifications, a simple calculation for RPM requirement yields
+	\begin{equation}
+	\begin{split}
+	v=\frac{3}{20}&=\pi\times D\times\frac{RPM}{60}\\
+	RPM&=\frac{2.865}{D}
+	\end{split}
+	\end{equation}
+	where $D $ is the diameter of the wheels in meter. Currently used wheels has 6.5 cm diameter, which implies that RPM=44. This means that under load average RPM needs to exceed this value. To estimate torque value, it is necessary to predict components weight. When weight of the current components are measured, result is around 1kg, so rated torque of the each motor expected to 3 times larger than this value to obtain well acceleration in loaded condition. \\
+	   
+	The requirements of this subsystem are the followings:
 	\begin{itemize}
-		\item The subsystem should ensure that the motors can supply enough torque to accelerate the vehicle		
-		\item  The subsystem should ensure that the motors can execute driving system outputs without deviation 
+		\item The subsystem should ensure that the motors can supply enough torque to accelerate the vehicle 
+		\item The subsystem should ensure that the motors can execute driving system outputs without deviation
 	\end{itemize}
 	
 	\paragraph{Main Solution for Motors Subsystem}
-	
-	One of the widely used motor type is brushed DC motors. Such motors might be implemented with gears. Gears are utilized to adjust torque and RPM of the motor, which is very suitable for a racing vehicle's needs. \\
-	
+	One of the widely used motor type is brushed gearhead DC motors. They are cheap and require enough torque for this competition. They have mainly two section one is the normal DC motor and gear head. Gear is a must to enhance torque performance of the DC motor. In other words, gear balance rpm and torque of the motor. 
+	 
 	\paragraph{Alternative Solutions for Motors Subsystem}
-	
- 	Another option is brushless DC motors. Brushless DC motors do not use brushes. This results in high torque. Brushless motors are more suitable for high RPM required areas such as CD drivers and drones.\\
-	
-	Last option is servo motors. Servo motors are high-torque motors that can turn in an desired angle. Servos can be utilized in the direction of the vehicle on the front wheels. By using this solution, turning radius can be decrease significantly.\\
-	
+	Another option is servo motors. Servo motors are high-torque motors that can turn in a desired angle. Servos can be utilized in the direction of the vehicle on the front wheels in the four-wheel solution. By using this solution, turning radius can be decrease significantly.
+	 
 	\paragraph{Motors Subsystem Tests}
+	This unit’s test is focusing on two crucial parameters of the motor which are RPM and torque values of the motor. 
+	Basic pulley system is used to calculate torque value of the motor.
+	Distance is measured under the condition that at rated voltage and approximated load, to calculate loaded RPM value calculation.
 	
 	\paragraph{Results of Motors Subsystem Tests}
+	The tests are done. The results are negative because motors torque value did not match with the declaration of the supplier. 3kg-cm is the decelerated value, but motors can only produce 750 g-cm. Therefore, this system is failed in torque requirement, and reconsidered in the following period. \\
 	
-	
-	
-	
+	RPM test has not been done since torque value is not supporting test setup.
 	
 	\newpage
 	\subsection{ Error sources, their impact and ways to mitigate}
@@ -881,8 +880,9 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	\subsection{Sensing System Plans}
 	Lane detection algorithm is reconstructed and develop by Erdem. The main enhancement is focusing on robustness of the algorithm. In other words, detection system should survive in the hardest conditions such as partially detection of road, or obstacle placed at the edge of the lane.\\
 	   
-	Supportive solutions which are color sensor and laser sensor array are going to be studied. More specifically, they are constructed and tested by Sarper during semester holiday. After the results, compatibility of these solutions are going to be discussed.\\
+	Supportive solutions to lane detection which are color sensor and laser sensor array are going to be studied. More specifically, they are constructed and tested by Sarper during semester holiday. After the results, compatibility of these solutions are going to be discussed.\\
 	
+	Sensors for vehicle detection will be ordered and tested before the submission of critical design review report and the most promising one will be selected. 
 	
 	\subsection{Computation System Plans}
 	\subsection{Communication System Plans}
