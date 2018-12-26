@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.21)  26 DEC 2018 18:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.21)  26 DEC 2018 18:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -783,14 +783,7 @@ Package: courier 2005/04/12 PSNFSS-v9.2a (WaS)
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 ))
-(./Duayenler_Conceptual.aux
-
-LaTeX Warning: Label `fig:' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:' multiply defined.
-
-)
+(./Duayenler_Conceptual.aux)
 \openout1 = `Duayenler_Conceptual.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
@@ -1148,12 +1141,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 634--635
 
  []
 
-
-Overfull \hbox (2.59099pt too wide) in paragraph at lines 640--641
-\OT1/cmr/m/n/12 Alternative so-lu-tion for ex-ter-nal com-mu-ni-ca-tion sys-tem
- is im-ple-ment-ing Net-work(Socket)
- []
-
 [24] <images/handshake1.png, id=112, 416.30531pt x 148.30406pt>
 File: images/handshake1.png Graphic file (type png)
 
@@ -1376,33 +1363,30 @@ Overfull \hbox (15.38225pt too wide) in paragraph at lines 953--961
 [][][] 
  []
 
-[37] (./Duayenler_Conceptual.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+[37] (./Duayenler_Conceptual.aux) ) 
 Here is how much of TeX's memory you used:
- 30679 strings out of 494953
- 688128 string characters out of 6180976
+ 30677 strings out of 494953
+ 688112 string characters out of 6180976
  995165 words of memory out of 5000000
- 33356 multiletter control sequences out of 15000+600000
+ 33354 multiletter control sequences out of 15000+600000
  13389 words of font info for 49 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  62i,21n,99p,1326b,1591s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on Duayenler_Conceptual.pdf (38 pages, 1825516 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvi
+ps/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+bx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pf
+b>
+Output written on Duayenler_Conceptual.pdf (38 pages, 1825533 bytes).
 PDF statistics:
  234 PDF objects out of 1000 (max. 8388607)
  152 compressed objects within 2 object streams
