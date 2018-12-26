@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.16)  26 DEC 2018 16:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.16)  26 DEC 2018 16:37
 entering extended mode
 **./Duayenler_Conceptual.tex
 (Duayenler_Conceptual.tex
@@ -1410,13 +1410,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 629--630
 
  []
 
-[21 <./images/socket_funcs.png>]
-Overfull \hbox (2.59099pt too wide) in paragraph at lines 635--636
-\OT1/cmr/m/n/12 Alternative so-lu-tion for ex-ter-nal com-mu-ni-ca-tion sys-tem
- is im-ple-ment-ing Net-work(Socket)
- []
-
-[22]
+[21 <./images/socket_funcs.png>] [22]
 <images/handshake1.png, id=127, 416.30531pt x 148.30406pt>
 File: images/handshake1.png Graphic file (type png)
 <use images/handshake1.png>
@@ -1626,7 +1620,7 @@ e1/public/amsfonts/cm/cmss12.pfb><C:/Users/ilker/AppData/Local/Programs/MiKTeX
 grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/ilker/AppDa
 ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/User
 s/ilker/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on Duayenler_Conceptual.pdf (35 pages, 1764910 bytes).
+Output written on Duayenler_Conceptual.pdf (35 pages, 1764766 bytes).
 PDF statistics:
  241 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
