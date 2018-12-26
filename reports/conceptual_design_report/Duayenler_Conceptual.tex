@@ -822,7 +822,7 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	\paragraph{Speed Subsystem Tests}
 	\begin{itemize}
 		\item Determination of the error input: This test aims to find the correct error input for overall speed controllers. The test procedure is as follows:
-		\begin{itemize}
+		\begin{enumerate}
 			\item Make all the necessary connection
 			\item Start up the vehicle
 			\item Execute lane detection and controller algorithms
@@ -830,18 +830,18 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 			\item Observe the behavior
 			\item Repeat the same process with a linear function of the input
 			\item Observe the success of the tracking algorithm
-		\end{itemize}
+		\end{enumerate}
 		By checking in which case the vehicle is able to follow the path with less error, the error input can be decided.
 
 		\item Determination of the critical error value: This test aims to specify above which error value, the emergency state should be triggered.
-		\begin{itemize}
+		\begin{enumerate}
 			\item Make all the necessary connection
 			\item Start up the vehicle
 			\item Execute lane detection and controller algorithms
 			\item While the vehicle is moving, give disturbance of different types
 			\item Record the maximum value of the error encountered during the disturbances.
 			\item Find the maximum value
-		\end{itemize}
+		\end{enumerate}
 		\end{itemize}
 	\paragraph{Results of Speed Subsystem Tests}
 	No test result is currently available due to mentioned reasons.
@@ -926,14 +926,14 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	Structure system has two main subsystems which are Chassis subsystem and Printed Circuit Board subsystem. The requirements of this system are listed below:
 	\begin{itemize}
 		\item The system should	ensure that structure is robust for external effects 
-		\item The system should	ensure that structure is balanced to increase handling
-		
+		\item The system should	ensure that structure is balanced
+		\item The system should ensure that vehicle has a good appearance
 	\end{itemize}
 	
 	
 	
 	\subsubsection{Chassis Subsystem}
-	Main purposes of this section are protection of the critical elements of the robot and holding components together. The most important part of this section is weight distribution. The chassis is supposed to be light and strong because of the competition purposes. However, it should balance the robot to be able to handle with turns. The requirements of this subsystem are listed below:
+	Main purposes of this subsystem are protection of the critical elements of the robot and holding components together. The most important part of this section is weight distribution. The chassis is supposed to be light and strong because of the competition purposes. However, it should balance the robot to be able to handle turns. The requirements of this subsystem are listed below:
 	\begin{itemize}
 		\item The subsystem should ensure that the chassis is rigid 
 		\item The subsystem should ensure that the chassis have enough space for components
@@ -942,61 +942,79 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	
 	\paragraph{Main Solution for Chassis Subsystem}
 	
-	Early version of chassis which were used in critical module demo can be seen at \textit{Figure~\ref{fig:chassis}}. 
+	Current chasis structure relies on two pre-designed plexiglass layers. Raspberry Pi and Arduino is placed on the upper layer while motor driver and the battery are on lower one. To keep the center of mass of the vehicle close to the ground, battery is placed as low as possible. The connection of the motor driver and Arduino consists of eight cables two of which are the power lines. The cables are placed in a way that they cause no entanglement with any other parts. The connection between RPi and Arduino is currently accomplished by USB cable. \\
 	
-	% \paragraph{Alternative Solutions for Chassis Subsystem}
+	Since there is not much component on the vehicle, the space on the layers are enough to locate the components. However, placing the camera of RPi has been a great problem. The view angle of the camera turned out to be considerable small than expected. Other several cellphone cameras were tried but they are could not satisfy the requirement that both side of the lane should be visible either. The only solution was to elevate the camera. That is why a camera holder structure is designed and added to the system.\\
 	
-	
-	\begin{figure}[H]
+	The requirement for the camera holder can be listed as
+	 \begin{itemize}
+	 	\item It should be integrated to th front of the vehicle
+	 	\item It should be as rigid as possible to reduce the vibration on the camera
+	 	\item It should be light weight so that does not effect the center of mass considerably
+	 	\item It should be adjustable in terms both elevation and camera angle
+	 \end{itemize} 
+	 
+	 To satisfy the requirements the holder is built using 4mm plexiglass. The choice satisfies the rigidity and light weight possible. A thinner one would result in less rigidity and increased vibration on the system. The designed structure, whose layout can be seen in \textit{Figure \ref{fig:camera-holder}}, has the elevation range from 35 cm to 45 cm and a camera angle ranging from $0^o$ to $45^o$. Having manufactured, the camera holder is integrated to the vehicle (\textit{see Figure \ref{fig:chassis}}). After integration, the view of the camera can completely cover the both edges of the path (\textit{see Figure \ref{fig:detection-test-results}})
+	 
+\begin{figure}[h]
+		 \includegraphics[width=\textwidth,center]{images/holder.PNG}
+		 \caption{Camera holder design layout}\label{fig:camera-holder}
+\end{figure}
+
+
+	Current version of chassis which were used in critical module demo can be seen at \textit{Figure~\ref{fig:chassis}}.
+	 
+	\begin{figure}[h]
 		\center
 		\setlength{\unitlength}{\textwidth} 								 
-		\includegraphics[width=0.6\textwidth]{images/chassis3}
-		\caption{\label{fig:chassis}Early Version of Vehicle Chassis That Was Used in Critical Module Demo}
+		\includegraphics[width=0.5\textwidth]{images/chassis3}
+		\caption{\label{fig:chassis}Current version of the chassis }
 	\end{figure}
 	
+	\paragraph{Alternative Solutions for Chassis Subsystem}
+	There are many improvements to be done on the chassis. When all the components such as vehicle detecting sensors are added, the space will not be enough. The best alternative is to make a custom design chassis structure. By that way, many problems can be resolved. By the time each systems are tested and validated and decided to be used as the actual solution, required space will have been clearly defined. After that point the best placement can be configured and chassis will be designed accordingly to the requirements of that time. Moreover, while designing the chassis, the possibility of implementation of an alternative solution will be considered as it affects the overall layout of the vehicle.\\
+	
 	\paragraph{Chassis Subsystem Tests}
-	
-	% \paragraph{Results of Chassis Subsystem Tests}
-	
-	
+	\begin{itemize}
+		\item Inertia test: Aims to deduce a quantifiable measure of stabilization. Test procedure is as follows:
+		\begin{enumerate}
+		\item Prepare a straight path
+		\item Power up the vehicle 
+		\item Execute the edge detection and control algorithm
+		\item Give different type of disturbances 
+		\item Observe the deviation from straight line
+		\item Repeat the process with different component configurations
+		\end{enumerate} 
+	\end{itemize}
+	Currently no test results available due to lack of control algorithm.
 	\subsubsection{Printed Circuit Board Subsystem}
-	The main role of this part is decreasing connection mass and increase vibration strength of the robot against disturbances. Also, this section increases rigidity of the whole system. The requirements of this subsystem are listed below:
+	The main role of this part is decreasing connection mess and increase vibration strength of the robot against disturbances. Also, this section increases rigidity of the whole system. The requirements of this subsystem are listed below:
 	\begin{itemize}
 		\item The subsystem should ensure that all the electronic components are placed on PCB
 		\item The subsystem should ensure that all the connections are firmly secured and robust to vibrations.
 	\end{itemize}
 	
-	% \paragraph{Main Solution for Printed Circuit Board Subsystem}
+	This subsystem aims to make all the circuit connections rigid and compact. Currently, there is wire connections between Arduino-Motor driver and Arduino-RPi. However, addition of vehicle detection sensors and other lane detection alternatives will increase the amount of components, hence, wires. In addition, to use the space occupied by the Arduino UNO board, Arduino Mini can be used. This also allows to build the circuit board as shield for Arduino Mini. After that any other sensors and connections can be made through PCB. In other words, PCB acts as a breakout board for each item integrated to the system in a more rigid and compact way.
 	
-	%\paragraph{Alternative Solutions for Printed Circuit Board Subsystem}
+
 	
 	\paragraph{Printed Circuit Board Subsystem Tests}
-	
-	\begin{enumerate} 
-		\item Open multimeter for short circuit test \vspace{-0.2cm}
-		\item Test every line for short circuit
-	\end{enumerate}
-	
-	
-	%\paragraph{Results of Printed Circuit Board Subsystem Tests}
-	
-	
-	
-
-
-	\newpage
-%	\subsection{ Error sources, their impact and ways to mitigate}
-% anlamıyorsak ne olduğunu, yazmayalım	
-%	Ne demek istiyor bu onkeller, ben anlamamak!
-	
-	\subsection{Technical drawing of the expected design}
-	
-	Please add drawings ,if any, to 4.5 Structure System (mainly to 4.5.1.1)
+	Once completed, the board should be tested if it is built properly and correctly.
+	\begin{itemize}
+		\item Short test: Aims to check all the wanted connections are present. The test procedure is as follows:
+		\begin{enumerate} 
+			\item Open multimeter for short circuit test \vspace{-0.2cm}
+			\item Find the ends of each routing 
+			\item Check the continuity using multimeter probes
+			\item Check if there is any unwanted short circuit
+			\item If exist, eliminate
+		\end{enumerate}
+	\end{itemize}
 	
 	
 	
 	\section{Plans}
-	Each team member is assigned to a subsystem according to their interest and qualification. \textit{Figure \ref{fig:plan-org}} summarizes the assignments. Also a Gannt Chart is prepared to have an detailed overview of future works in \textit{Appendix~\ref{gannt_chart_app}}.
+	Each team member is assigned to a subsystem according to their interest and qualification. \textit{Figure \ref{fig:plan-org}} summarizes the assignments. Besides, a Gannt Chart is prepared to have an detailed overview of future works and available in \textit{Appendix~\ref{gannt_chart_app}}.
 	\begin{figure}[h]
 		\includegraphics[width=\textwidth,center]{images/plan-organization}
 		\caption{Work assignment is subsystem level}\label{fig:plan-org}
@@ -1025,25 +1043,58 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	
 	\subsection{Structure System Plans}
 	
-	A new chassis is going to be designed considering narrow turn section of the lane and  external obstacles. Rigidity and compactness are  the essential requirement for the chassis. To achieve these requirements, Enes and Sarper are going to design a chassis.\\
+	A new chassis is going to be designed considering narrow turn section of the lane and  external obstacles. Rigidity and compactness are  the essential requirement for the chassis. To achieve these requirements, Enes and Sarper are going to design a chassis. In addition, the front and back recognition plates agreed on the standard committee will be installed.\\
 	
 	After all the components are tested and validated to be used in the project, a proper PCB will be designed by Enes. It will provide compactness and robustness to the whole electrical system by significantly reducing excess cabling and possibility of loose connections.
 	
 	\section{Conclusion}
-	This report explains the main work that has been done so far.  Specifically, the detailed explanations of subsystems with solution analysis and test results as well as cost analysis and plans were given. Also, the alternative solutions to be considered were given for each subsystem. In a nutshell, the project consists of 5 systems: sensing, computational, communication, driving and structural systems. Each of them has different subsystems. Main solutions and alternative solutions for these subsystems can be summarized as below.
+	This report consists of a detailed project description and explanation about autonomous vehicle on a predefined path. The solution approaches, alternatives and tests comply with the proof-of-concept idea and prototyping purposes. The further improvements and developments will be on manufacturing level.\\
 	
-	\begin{itemize}
-		
-		\item 	Lane detection subsystem detects the line. Main solution processing the data of Raspberry Pi camera using blurring filter, HSV filter, Canny Edge detector and Hough Lines detector, respectively. Alternative solutions are using light sensor, laser sensor and color sensor.
-		\item 	Vehicle detection subsystem aims to find the opponent. Main solution is using two time of flight distance sensors, at the back and front of the car. As an alternative solution, infrared distance sensors can be considered.
-		\item 	Data processing subsystem takes the unorganized data from the lane detection subsystem and outputs the processed data to PID controller subsystem. Main solution for this subsystem is the algorithm to classify left and right lines, fitting the best line to detect lanes and predicting turn angle and direction from that lines. As discussed before, to overcome the existing flaws, there are two alternative solutions for this subsystem. Firstly, lane boundaries can be improved using a new algorithm that scans the edge detected image for the white pixels and detects the lane boundaries according to it. Secondly, the positioning on the lane can be improved by differentiating the center of the lane and the center of the capture image.
-		\item 	Internal communication subsystem provides the communication between Arduino and Raspberry Pi. Main solution to this subsystem is connecting Arduino to Pi via USB cable and implementing the necessary functions for both Arduino and Pi side. As an alternative, the communication between Raspberry Pi and Arduino can be realized using
-		other peripheral protocols or libraries, such as “SerialCommand.h” library for Arduino and I2C or SPI protocols. Another solution is to use Wi-Fi communication, instead of alternatives. However, it requires an external Wi-Fi module for Arduino. Lastly, removing Arduino completely from the system is an alternative solution.
-		\item 	External communication subsystem provides the communication with the opponent via the handshake protocol. Main solution for this subsystem creating network sockets for the cases of robot is client or server using Python socket functions. Alternative solution is realizing handshaking with a separate Wi-Fi module on Arduino.
-		\item 	Direction subsystem is responsible for the orientation of the vehicle. It dives the motors according to the computation system outputs. Main solution is using differential drive method to orient the vehicle by two DC motors. It utilizes the speed difference of the motors to turn the robot as much as desired angle. Alternatively, One or two servo motors can be used at the front wheels to orient the vehicle.
-	\end{itemize}
+	In particular, a general overview of the systems are given in V-Model together with the system block diagram. Then, subsystems are presented in a detailed manner by explaining current solution approach, used test steps, obtained test results and possible solution alternatives. The whole system has not been merged into a single body yet. The systems are individually functioning with the limitations. One limitation is caused by Data Processing subsystem, that is, the vehicle must be able to see both lane lines. Another limitation is against obstacles on the path. If the obstacles have long enough edges, they are regarded as the part of lane lines and they contribute to lane line drawing. Such limitations will be worked out extensively to develop a more robust vehicle. Besides, some solutions have worked out very nicely such as external communication with other vehicles, adjustable camera arm, wheels and lane detection algorithm. On the other hand, the budget of the project will be kept below the budget limit and the total work will be reproducible with less than \$ 200. The company believes that the reliability of a business depends on staying within company budget. \\
 	
+	DUAYENLER will keep their diligent work to have a more robust and faster vehicle at the end of project. The company members believe that the final work will bring an innovative approach to the design and development of autonomous vehicles with its features and the way that features are implemented.
 	\newpage
+		\section{Disclaimer}
+		\vspace{1cm}
+		
+		\textsf{ All information and content contained in this report are provided solely for proof-of-concept. DUAYENLER Ltd. Şti. guarantees that the report and information contained obeys the restrictions and rules ordered by the Standard Commitee.}
+		
+		\vspace{1cm}
+		
+		
+		\begin{minipage}[b]{0.33\linewidth}
+			\centering
+			\underline{Halil TEMURTAŞ}
+		\end{minipage}%
+		\begin{minipage}[b]{0.33\linewidth}
+			\centering
+			\underline{Erdem TUNA}
+		\end{minipage}%
+		\begin{minipage}[b]{0.33\linewidth}
+			\centering
+			\underline{Enes TAŞTAN}
+		\end{minipage} \\[2.5cm]
+		
+		\begin{minipage}[b]{0.495\linewidth}
+			\centering
+			\underline{Sarper SERTEL}
+		\end{minipage}%
+		\begin{minipage}[b]{0.495\linewidth}
+			\centering
+			\underline{İlker SAĞLIK}
+		\end{minipage}\\[2.5cm]
+		
+		\begin{minipage}[b]{0.745\linewidth}
+			\centering
+			~~
+		\end{minipage}%
+		\begin{minipage}[b]{0.25\linewidth}
+			\centering
+			\underline{27 December 2018}
+		\end{minipage}
+
+\newpage
+
 \begin{appendices}
 	
 		\includepdf[landscape=true,pages=1, scale=0.775,angle=0, label=gannt_chart_app,pagecommand=\section{Gannt Chart}\label{gannt_chart_app}]{gannt_chart.pdf}
@@ -1052,47 +1103,6 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	
 \end{appendices}
 
-	
-	
-	\newpage
-	\section{Disclaimer}
-	\vspace{1cm}
-	
-	\textsf{ All information and content contained in this report are provided solely for proof-of-concept. DUAYENLER Ltd. Şti. guarantees that the report and information contained obeys the restrictions and rules ordered by the Standard Commitee.}
-	
-	\vspace{1cm}
-	
-
-\begin{minipage}[b]{0.33\linewidth}
-\centering
-\underline{Halil TEMURTAŞ}
-\end{minipage}%
-\begin{minipage}[b]{0.33\linewidth}
-\centering
-\underline{Erdem TUNA}
-\end{minipage}%
-\begin{minipage}[b]{0.33\linewidth}
-\centering
-\underline{Enes TAŞTAN}
-\end{minipage} \\[2.5cm]
-
-\begin{minipage}[b]{0.495\linewidth}
-\centering
-\underline{Sarper SERTEL}
-\end{minipage}%
-\begin{minipage}[b]{0.495\linewidth}
-\centering
-\underline{İlker SAĞLIK}
-\end{minipage}\\[2.5cm]
-
-\begin{minipage}[b]{0.745\linewidth}
-\centering
-~~
-\end{minipage}%
-\begin{minipage}[b]{0.25\linewidth}
-\centering
-\underline{27 December 2018}
-\end{minipage}
 
 
 

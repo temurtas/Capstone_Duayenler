@@ -60,16 +60,16 @@
 \contentsline {subsection}{\numberline {4.6}Structure System}{31}
 \contentsline {subsubsection}{\numberline {4.6.1}Chassis Subsystem}{31}
 \contentsline {paragraph}{\numberline {4.6.1.1}Main Solution for Chassis Subsystem}{31}
-\contentsline {paragraph}{\numberline {4.6.1.2}Chassis Subsystem Tests}{32}
-\contentsline {subsubsection}{\numberline {4.6.2}Printed Circuit Board Subsystem}{32}
-\contentsline {paragraph}{\numberline {4.6.2.1}Printed Circuit Board Subsystem Tests}{33}
-\contentsline {subsection}{\numberline {4.7}Technical drawing of the expected design}{34}
+\contentsline {paragraph}{\numberline {4.6.1.2}Alternative Solutions for Chassis Subsystem}{32}
+\contentsline {paragraph}{\numberline {4.6.1.3}Chassis Subsystem Tests}{32}
+\contentsline {subsubsection}{\numberline {4.6.2}Printed Circuit Board Subsystem}{33}
+\contentsline {paragraph}{\numberline {4.6.2.1}Printed Circuit Board Subsystem Tests}{34}
 \contentsline {section}{\numberline {5}Plans}{34}
 \contentsline {subsection}{\numberline {5.1}Sensing System Plans}{34}
 \contentsline {subsection}{\numberline {5.2}Computation System Plans}{35}
-\contentsline {subsection}{\numberline {5.3}Communication System Plans}{35}
-\contentsline {subsection}{\numberline {5.4}Driving System Plans}{35}
-\contentsline {subsection}{\numberline {5.5}Structure System Plans}{35}
-\contentsline {section}{\numberline {6}Conclusion}{35}
-\contentsline {section}{Appendix \numberline {A}Gannt Chart}{37}
-\contentsline {section}{\numberline {7}Disclaimer}{40}
+\contentsline {subsection}{\numberline {5.3}Communication System Plans}{36}
+\contentsline {subsection}{\numberline {5.4}Driving System Plans}{36}
+\contentsline {subsection}{\numberline {5.5}Structure System Plans}{36}
+\contentsline {section}{\numberline {6}Conclusion}{36}
+\contentsline {section}{\numberline {7}Disclaimer}{38}
+\contentsline {section}{Appendix \numberline {A}Gannt Chart}{39}
