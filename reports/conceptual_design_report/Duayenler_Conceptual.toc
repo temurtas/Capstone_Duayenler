@@ -28,27 +28,27 @@
 \contentsline {paragraph}{\numberline {4.2.2.4}Results of PID Controller Subsystem Tests}{19}
 \contentsline {subsection}{\numberline {4.3}Communication System}{19}
 \contentsline {subsubsection}{\numberline {4.3.1}Internal Communication Subsystem}{19}
-\contentsline {paragraph}{\numberline {4.3.1.1}Main Solution for Internal Communication Subsystem}{19}
-\contentsline {paragraph}{\numberline {4.3.1.2}Alternative Solutions for Internal Communication Subsystem}{20}
+\contentsline {paragraph}{\numberline {4.3.1.1}Main Solution for Internal Communication Subsystem}{20}
+\contentsline {paragraph}{\numberline {4.3.1.2}Alternative Solutions for Internal Communication Subsystem}{21}
 \contentsline {paragraph}{\numberline {4.3.1.3}Internal Communication Subsystem Tests}{21}
-\contentsline {paragraph}{\numberline {4.3.1.4}Results of Internal Communication Subsystem Tests}{21}
+\contentsline {paragraph}{\numberline {4.3.1.4}Results of Internal Communication Subsystem Tests}{22}
 \contentsline {subsubsection}{\numberline {4.3.2}External Communication Subsystem}{22}
 \contentsline {paragraph}{\numberline {4.3.2.1}Main Solution for External Communication Subsystem}{22}
 \contentsline {paragraph}{\numberline {4.3.2.2}Alternative Solutions for External Communication Subsystem}{24}
 \contentsline {paragraph}{\numberline {4.3.2.3}External Communication Subsystem Tests}{24}
-\contentsline {paragraph}{\numberline {4.3.2.4}Results of External Communication Subsystem Tests}{24}
+\contentsline {paragraph}{\numberline {4.3.2.4}Results of External Communication Subsystem Tests}{25}
 \contentsline {subsection}{\numberline {4.4}Driving System}{25}
 \contentsline {subsubsection}{\numberline {4.4.1}Direction Subsystem}{25}
 \contentsline {paragraph}{\numberline {4.4.1.1}Main Solution for Direction Subsystem}{26}
 \contentsline {paragraph}{\numberline {4.4.1.2}Alternative Solutions for Direction Subsystem}{26}
 \contentsline {paragraph}{\numberline {4.4.1.3}Direction Subsystem Tests}{26}
-\contentsline {paragraph}{\numberline {4.4.1.4}Results of Direction Subsystem Tests}{26}
+\contentsline {paragraph}{\numberline {4.4.1.4}Results of Direction Subsystem Tests}{27}
 \contentsline {subsubsection}{\numberline {4.4.2}Speed Subsystem}{27}
 \contentsline {paragraph}{\numberline {4.4.2.1}Main Solution for Speed Subsystem}{27}
 \contentsline {paragraph}{\numberline {4.4.2.2}Alternative Solutions for Speed Subsystem}{28}
 \contentsline {paragraph}{\numberline {4.4.2.3}Speed Subsystem Tests}{28}
-\contentsline {paragraph}{\numberline {4.4.2.4}Results of Speed Subsystem Tests}{28}
-\contentsline {subsection}{\numberline {4.5}Motion System}{28}
+\contentsline {paragraph}{\numberline {4.4.2.4}Results of Speed Subsystem Tests}{29}
+\contentsline {subsection}{\numberline {4.5}Motion System}{29}
 \contentsline {subsubsection}{\numberline {4.5.1}Wheels Subsystem}{29}
 \contentsline {paragraph}{\numberline {4.5.1.1}Main Solution for Wheels Subsystem}{29}
 \contentsline {paragraph}{\numberline {4.5.1.2}Alternative Solutions for Wheels Subsystem}{29}
@@ -59,17 +59,17 @@
 \contentsline {paragraph}{\numberline {4.5.2.4}Results of Motors Subsystem Tests}{30}
 \contentsline {subsection}{\numberline {4.6}Structure System}{31}
 \contentsline {subsubsection}{\numberline {4.6.1}Chassis Subsystem}{31}
-\contentsline {paragraph}{\numberline {4.6.1.1}Main Solution for Chassis Subsystem}{31}
+\contentsline {paragraph}{\numberline {4.6.1.1}Main Solution for Chassis Subsystem}{32}
 \contentsline {paragraph}{\numberline {4.6.1.2}Alternative Solutions for Chassis Subsystem}{32}
-\contentsline {paragraph}{\numberline {4.6.1.3}Chassis Subsystem Tests}{32}
+\contentsline {paragraph}{\numberline {4.6.1.3}Chassis Subsystem Tests}{33}
 \contentsline {subsubsection}{\numberline {4.6.2}Printed Circuit Board Subsystem}{33}
 \contentsline {paragraph}{\numberline {4.6.2.1}Printed Circuit Board Subsystem Tests}{34}
-\contentsline {section}{\numberline {5}Plans}{34}
-\contentsline {subsection}{\numberline {5.1}Sensing System Plans}{34}
-\contentsline {subsection}{\numberline {5.2}Computation System Plans}{35}
+\contentsline {section}{\numberline {5}Plans}{35}
+\contentsline {subsection}{\numberline {5.1}Sensing System Plans}{35}
+\contentsline {subsection}{\numberline {5.2}Computation System Plans}{36}
 \contentsline {subsection}{\numberline {5.3}Communication System Plans}{36}
 \contentsline {subsection}{\numberline {5.4}Driving System Plans}{36}
 \contentsline {subsection}{\numberline {5.5}Structure System Plans}{36}
-\contentsline {section}{\numberline {6}Conclusion}{36}
+\contentsline {section}{\numberline {6}Conclusion}{37}
 \contentsline {section}{\numberline {7}Disclaimer}{38}
 \contentsline {section}{Appendix \numberline {A}Gannt Chart}{39}

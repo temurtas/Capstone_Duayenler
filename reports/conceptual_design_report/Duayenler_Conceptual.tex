@@ -266,7 +266,7 @@ minLineLength=30, maxLineGap=40);
 		
 		\item {Laser sensor:} As IR sensor array solution, which is already considered at the beginning of the term, laser approximate sensors can be constructed as array and used to detect edges of the lane. The expected enhancement is that laser sensors are more robust under extreme illumination conditions. To clarify the solution, two laser sensor arrays sense both sides of the lane. According to array’s data, vehicle orients itself.  
 
-				
+		\newpage		
 		
 		\item{Color sensor:} 	This approach is similar to laser sensor solution, regarding the sensor array construction. However, color sensor working principle is based on RGB recognition, so in this solution green output of the arrays is focused point. According to green output, path will be detected.
 	\end{itemize}
@@ -296,7 +296,7 @@ minLineLength=30, maxLineGap=40);
 	
 	The lane detection tests were conducted for the detection algorithm of the camera. The results were promising. The algorithm sweeps up the surrounding disturbances completely. The sample outputs together with Data Processing subsystem are shown in \textit{Figure~\ref{fig:detection-test-results}}.
 	
-	Before making the camera the main solution for the lane detection subsystem. Several tests were conducted using infra-red and color sensors. The tested infrared sensors was TCRT5000 \& QRD1114, and the tested color sensor was TCS3200. The tests were conducted under different illumination conditions and at different locations. These tests conducted for these sensors were modified versions of the tests conducted for the tests conducted for the \textit{Vehicle Detection Subsystem}. The test procedures can be examined at \textit{Section~\ref{sect:vhd}}. The test result for initial test in which two infrared sensors were tested to see whether they can differentiate the height of road from a fixed height can be seen at \textit{Table~\ref{tab:irt}}. Although the results were promising especially for TCRT5000, the tests conducted at CCC revealed that the sensor is not able to cope with highly reflective floors under direct sunlight.
+	Before making the camera the main solution for the lane detection subsystem. Several tests were conducted using infra-red and color sensors. The tested infrared sensors was TCRT5000 \& QRD1114, and the tested color sensor was TCS3200. The tests were conducted under different illumination conditions and at different locations. These tests conducted for these sensors were modified versions of the tests conducted for the tests conducted for the \textit{Vehicle Detection Subsystem}. The test procedures can be examined at \textit{Section~\ref{sect:vhd}}. The test result for initial test in which two infrared sensors were tested to see whether they can differentiate the height of road from a fixed height can be seen at \textit{Table~\ref{tab:irt}}. Although the results were promising especially for TCRT5000, the tests conducted at CCC (Cultural and Convention) revealed that the sensor is not able to cope with highly reflective floors under direct sunlight.
 	
 		
 		\begin{table}[H]
@@ -398,8 +398,8 @@ minLineLength=30, maxLineGap=40);
 		\item Vehicle Detection in Different Sunlight Conditions Test:
 			This test aims to validate whether the subsystem is capable of detecting the opponent vehicle that is close to the vehicle more than 5 cm in different sunlight conditions. The test procedure is as follows; 		
 			\begin{enumerate}
-				\item Repeat the test steps of the \textit{Front Vehicle Detection Test in Closed Environment} in CCC (KKM) ground under direct sunlight \vspace{-0.2cm}
-				\item Repeat step 1 in CCC (KKM) under artificial light, in other words, under no direct sunlight conditions \vspace{-0.2cm}
+				\item Repeat the test steps of the \textit{Front Vehicle Detection Test in Closed Environment} in CCC (Cultural and Convention) ground under direct sunlight \vspace{-0.2cm}
+				\item Repeat step 1 in CCC (Cultural and Convention) under artificial light, in other words, under no direct sunlight conditions \vspace{-0.2cm}
 				\item Repeat steps 1 \& 2 for different locations of E Building including Graduation Laboratory \vspace{-0.2cm}
 				\item If the output of the subsystem generates logical positive for distances smaller than 5 cm under all light conditions and logical zero for distances greater than 5 cm, the test result can be considered as success \vspace{-0.2cm}
 			\end{enumerate}
@@ -515,12 +515,22 @@ for (lines_is_valid)
 	
 	$$ G_{PID}(z)=K_{bias}+K_p+K_I\frac{1}{1-z^{-1}}+K_D(1-z^-1)	$$
 	
+	Using bilateral Tustin transform where 
+	
+	$$ z=\frac{1+\overline{s}}{1-\overline{s}} $$
+	
+	The discrete time controller can be designed as if it is in continues domain.    
+	
+	
+	
 	
 	
 	
 	\paragraph{Alternatve Solutions for PID Controller Subsystem}
 		Theoretically very similar approach for designing a controller is to design in a S-domain. For this kind of controllers, general form of the continues time PID controller may be seen below:
 		$$ G_{PID}(s)=K_{bias}+K_p+K_I\frac{1}{s}+K_Ds	$$
+		
+		Another alternative method is to design the controller directly in discrete domain without using bilateral Tustin transform. 
 		
 	\paragraph{PID Controller Subsystem Tests}	
 	\begin{itemize}
@@ -636,14 +646,14 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 		A last solution would be to remove Arduino from the system. This would require the handover of operations of Arduino to Raspberry Pi. The resulting system could be considered as a single board solution, that is, all relevant subsystems operate on Raspberry Pi. This option would cause heating problems on Raspberry Pi. A cooling mechanism should also be applicable in this case.
 	\paragraph{Internal Communication Subsystem Tests}
 	This test will enable if communication between Arduino and Raspberry Pi can be realized. Test procedure is as follows:
-	\begin{itemize}
+	\begin{enumerate}
 		\item Generate data on Raspberry Pi in a rate that reflects the time consumed of Data Processing subsystem. This will yield a realistic data rate. \vspace{-0.2cm}
 		\item Send random text data to Arduino. \vspace{-0.2cm}
 		\item Do the initial integration between Arduino and Raspberry Pi. \vspace{-0.2cm}
 		\item Send data from Raspberry Pi to Arduino. \vspace{-0.2cm}
 		\item Increase data speed to the specified data rate. \vspace{-0.2cm}
 		\item Check the accuracy of the retrieved data.\vspace{-0.2cm}
-	\end{itemize}
+	\end{enumerate}
 	
 	\paragraph{Results of Internal Communication Subsystem Tests}
 	The results of the tests revealed that all steps are successful but the last step. The data send rate is determined to be 25 strings per second. The string length varies between one and three characters. The data is fully received if the rate is slower than 25 strings per second. However, the data loss  and  improper decoding is observed on the Arduino side. This must corrected by means of coding or switching to an alternative solution.
@@ -782,6 +792,7 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 				\item Record this PWM difference to use in PID controller subsystem
 			\end{enumerate}
 				
+			\newpage
 		
 		\item Circular Drive Test:
 			\begin{enumerate}
@@ -1032,7 +1043,7 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	
 	Another point that data processing subsystem has weakness is if an obstacle is present on the path, the boundaries of the obstacle may constitute a line. This is regarded as the part of lane line in the current processing algorithm. This flaw must be fixed by Erdem, since this implementation leads to a wrong prediction on turn angle and direction.\\
 	
-	Regarding the PID Controller subsystem plans, the current controller is designed Z domain. This applies good in theory but a better approach will be implemented by Halil. This approach is designing the controller in $\overline{S}$ domain by using Tustin transform. This is continuous approximation of Z domain, which may yield more accurate results in the control of the car.
+	Regarding the PID Controller subsystem plans, the current controller is designed $z$ domain. This applies good in theory but a better approach will be implemented by Halil. This approach is designing the controller in $\overline{s}$ domain by using bilateral Tustin transform. This is continuous approximation of $z$ domain, which may yield more accurate results in the control of the car.
 	
 	
 	\subsection{Communication System Plans}
