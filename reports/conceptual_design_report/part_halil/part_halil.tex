@@ -136,10 +136,36 @@
 	
 	
 	
+	\section{Overall Project}
+	
+	The main objective of this project is to design and produce a self driving mini-car that can follow a path with a varying properties with in a 200 dollar budget. The project can be investigated under six main systems and their twelve subsystems.
+	
+	\begin{itemize}
+		\item Sensing System
+			
+		
+		\item Computation System
+		
+		\item Communication System	
+		
+		\item Driving System
+		
+		\item Structure
+		
+		\item Motion System
+	
+	\end{itemize}		
+	
+	General interaction of these subsystems with each other can be investigated at system diagram of the project at \textit{Figure~\ref{fig:system-diagram}}.
+	
+	\begin{figure}[H]
+		\center
+		\setlength{\unitlength}{\textwidth} 
+		\includegraphics[width=0.8\textwidth]{../system-diagram/system-diagram-2}
+		\caption{\label{fig:system-diagram}System Diagram of the Overall Project in Subsystem Level}
+	\end{figure}
 	
 	
-	
-	\section{Solutions}
 	
 	
 	
@@ -151,6 +177,60 @@
 		\item The system should not be effected from external disturbances.
 		\item The system should detect the opponent vehicle.
 	\end{itemize}
+	
+	\subsection{Computation System}
+	
+	Computation system has two main subsystems which are Data Processing Subsystem and PID Controller Subsystem. The requirements of this system are listed below:
+	\begin{itemize}
+		\item The system should	be able to produce middle line to follow
+		\item The system should be able to control the robot
+	\end{itemize}
+	
+	
+	
+	
+	\subsection{Communication System}
+	
+	Communication system has two main subsystems which are Internal Communication Subsystem and External Communication  Subsystem. The requirements of this system are listed below::
+	\begin{itemize}
+		\item The subsystem should ensure safe internal communication
+		\item The subsystem should ensure safe external communication
+	\end{itemize}
+	
+	\subsection{Driving System}
+	
+	Driving system has two main subsystems which are Direction Subsystem and Speed Subsystem Subsystem. The requirements of this system are listed below.\\
+	
+	\textbf{Driving System Requirements:}
+	\begin{itemize}
+		\item The subsystem should control motion subsystem according to output of the computation system
+	\end{itemize}	
+	
+	\subsection{Structure System}
+	
+	Structure system has two main subsystems which are Chassis Subsystem and Printed Circuit Board Subsystem. The requirements of this system are listed below:
+	\begin{itemize}
+		\item The system should	ensure that structure is robust for external effects 
+		\item The system should	ensure that structure is balanced to increase handling
+		
+	\end{itemize}	
+	
+	\subsection{Motion System}
+	
+	Motion system has two main subsystems which are Wheels Subsystem and Motors Subsystem Subsystem. The requirements of this system are listed below:
+	\begin{itemize}
+		\item The system should	ensure that the vehicle can drive itself with enough power
+	\end{itemize}
+	
+	
+	
+	\section{Detailed Solutions (Subsystem Level)}
+	
+	
+	
+	\subsection{Sensing System}
+	
+	Sensing system has two main subsystems which are Lane Detection Subsystem and Vehicle Detection Subsystem.
 	
 	
 	\subsubsection{Lane Detection Subsystem}
@@ -228,11 +308,7 @@ minLineLength=30, maxLineGap=40);
 	
 	\subsection{Computation System}
 	
-	Computation system has two main subsystems which are Data Processing Subsystem and PID Controller Subsystem. The requirements of this system are listed below:
-	\begin{itemize}
-		\item The system should	be able to produce middle line to follow
-		\item The system should be able to control the robot
-	\end{itemize}	
+	Computation system has two main subsystems which are Data Processing Subsystem and PID Controller Subsystem. 
 	
 		\begin{figure}[t]
 		\center
@@ -298,11 +374,7 @@ for (lines_is_valid)
 	
 	\subsection{Communication System}
 	
-	Communication system has two main subsystems which are Internal Communication Subsystem and External Communication  Subsystem. The requirements of this system are listed below::
-	\begin{itemize}
-		\item The subsystem should ensure safe internal communication
-		\item The subsystem should ensure safe external communication
-	\end{itemize}
+	Communication system has two main subsystems which are Internal Communication Subsystem and External Communication  Subsystem. 
 	
 	
 	
@@ -313,7 +385,7 @@ for (lines_is_valid)
 		\item The internal communication speed should be compatible with the processing speed of the lane detection subsystem  
 	\end{itemize}
 	
-	There are several serial communication protocols that can be used to maintain the connection such as SPI, I2C. However, the first choice is to use USB serial port of the Arduino. Since RPi is practically a computer, it can recognize Arduino as a device using a serial port such as \lstinline[language=Arduino] |/ttyUSB0| in case of a Linux based OS. When recognized, RPi can send any piece of strings to the Arduino via USB cable. The process of communication is as follows:
+	There are several serial communication protocols that can be used to maintain the connection such as SPI, I2C. However, the first choice is to use USB serial port of the Arduino. Since RPi is practically a computer, it can recognize Arduino as a device using a serial port such as \lstinline[language=Arduino]|/ttyUSB0 | in case of a Linux based OS. When recognized, RPi can send any piece of strings to the Arduino via USB cable. The process of communication is as follows:
 	\begin{enumerate}
 		\item Arduino should be connected to the Pi.
 		\item Using Arduino IDE or any other method such as listing serial ports and checking for Arduino and so on, the serial port name should be detected
@@ -346,7 +418,7 @@ RS232_OpenComport(cport_nr, bdrate, mode)
 	%\lstinline[language=Arduino]|<SerialCommand.h>| 
 	On Arduino  side, there are also several option that we can read the incoming data. Using \texttt{Serial.read()}  command is one of the simplest solutions. However, it contains some issues like conversion from string to integer and when to stop. Furthermore, the incoming data should be considered in character basis for the exact control. \\
 	
-	There is also a more sophisticated solution. There is a \texttt{SerialCommand.h} library for the Arduino which allows executing a function depending on the incoming string. Using \lstinline[language=Arduino]|.addCommand("str",func)| of the library any function can be associated with any string coming from serial port. Moreover, the functions can have argument. For example, let the string "PWMSET" be execute a function \lstinline[language=Arduino]|setpwm()| but the pwm value is required. If incoming string is of the form "PWMSET 150", using \lstinline[language=Arduino]|.next()| function of the library, the value 150 can be read and converted into integer and interpreted as the PWM value to be set. 
+	There is also a more sophisticated solution. There is a \texttt{SerialCommand.h} library for the Arduino which allows executing a function depending on the incoming string. Using \lstinline|.addCommand("str",func)| of the library any function can be associated with any string coming from serial port. Moreover, the functions can have argument. For example, let the string "PWMSET" be execute a function \lstinline|setpwm()| but the pwm value is required. If incoming string is of the form "PWMSET 150", using \lstinline|.next()|  function of the library, the value 150 can be read and converted into integer and interpreted as the PWM value to be set. 
 	
 	\subsubsection{External Communication Subsystem}
 	
@@ -387,6 +459,9 @@ RS232_OpenComport(cport_nr, bdrate, mode)
 	
 	\paragraph{External Communication Tests}
 	
+	
+	\paragraph{External Communication Test Results}
+	
 	The codes that were written in Python were tested in 3 different combinations. The first and simplest test has been done on one computer (or raspberry pi) using the same device as client and server, at the same time. To achieve that, the computer’s (or raspberry pi’s) IP address should be defined in the host section defined in the client mode function. Secondly, the codes were tested on two computers. Thirdly, one raspberry pi and one computer were used for the test. All tests were successful if the server side is connected to the internet and client side is connected to the server via hotspot. The outputs of the tests were given in the \textit{Figure~\ref{fig:handshake1}} and \textit{Figure~\ref{fig:handshake2}}.
 	
 	
@@ -406,12 +481,7 @@ RS232_OpenComport(cport_nr, bdrate, mode)
 	
 	\subsection{Driving System}
 	
-	Driving system has two main subsystems which are Direction Subsystem and Speed Subsystem Subsystem. The requirements of this system are listed below.\\
-	
-	\textbf{Driving System Requirements:}
-	\begin{itemize}
-		\item The subsystem should control motion subsystem according to output of the computation system
-	\end{itemize}
+	Driving system has two main subsystems which are Direction Subsystem and Speed Subsystem Subsystem. 
 	
 	
 	\subsubsection{Direction Subsystem}
@@ -442,12 +512,7 @@ RS232_OpenComport(cport_nr, bdrate, mode)
 	
 	\subsection{Structure System}
 	
-	Structure system has two main subsystems which are Chassis Subsystem and Printed Circuit Board Subsystem. The requirements of this system are listed below:
-	\begin{itemize}
-		\item The system should	ensure that structure is robust for external effects 
-		\item The system should	ensure that structure is balanced to increase handling
-		
-	\end{itemize}
+	Structure system has two main subsystems which are Chassis Subsystem and Printed Circuit Board Subsystem. 
 	
 	
 	
@@ -470,10 +535,7 @@ RS232_OpenComport(cport_nr, bdrate, mode)
 	
 	\subsection{Motion System}
 	
-	Motion system has two main subsystems which are Wheels Subsystem and Motors Subsystem Subsystem. The requirements of this system are listed below:
-	\begin{itemize}
-		\item The system should	ensure that the vehicle can drive itself with enough power
-	\end{itemize}
+	Motion system has two main subsystems which are Wheels Subsystem and Motors Subsystem Subsystem. 
 	
 	
 	\subsubsection{Wheels Subsystem}
