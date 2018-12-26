@@ -285,8 +285,23 @@ minLineLength=30, maxLineGap=40);
 		\end{itemize}
 	\end{itemize}
 	
-	
-	\paragraph{Results of Lane Detection Subsystem Tests}	
+	\begin{figure}[H]
+		\setlength{\unitlength}{\textwidth} 
+		\centering
+		\begin{subfigure}{.5\textwidth}
+	  		\centering
+	  		\includegraphics[width=0.48\unitlength]{images/detection1-legend}
+	  		\caption{\label{fig:} }
+		\end{subfigure}%
+		\begin{subfigure}{.5\textwidth}
+	  		\centering
+			\includegraphics[width=0.48\unitlength]{images/detection2-legend}
+	  		\caption{\label{fig:}}
+		\end{subfigure}
+	\caption{\label{fig:detection-test-results}Lane Detection Test Results. }
+	\end{figure}
+	\paragraph{Results of Lane Detection Subsystem Tests}
+	The lane detection tests are done. The results are promising. The algorithm sweeps up the surrounding distrubances completely. The sample outputs together with Data Processing Subsystem are shown in \textit{Figure~\ref{fig:detection-test-results}}.
 	
 	\subsubsection{Vehicle Vehicle Detection Subsystem}
 	
@@ -370,15 +385,19 @@ for (lines_is_valid)
 		\includegraphics[width=0.6\textwidth]{images/turn-prediction-explained}
 		\caption{\label{fig:turn-prediction-explained}The Prediction of Turn Angle and Direction.}
 	\end{figure}
-	\paragraph{Alternatve Solutions for Data Processing Subsystem}
+	\paragraph{Alternative Solutions for Data Processing Subsystem}
 		The proposed algorithm for data processing has some flaws that are already discussed. To overcome those problems, DUAYENLER has some alternative solutions. An improvement might be on finding lane boundaries. This operation is currently realized with Hough Lines function. Another approach would be to scan rows an accurately edge detected image. If a white pixel is encountered, this would imply a lane boundary and the last time a white pixel is encountered would mean te other lane boundary. If the edge detected image contains noise, the solution might yield a wrong result. However, this can be overcomed by setting maximum number of white points that can be detected in a row.
 		
 		Another improvement could be on positioning on the lane. The proposed algorithm assumes that the vehicle follows the lane always in the center. This assumption is not the case always. The new algorithm will differentiate between the center of the lane and center of the capture image. By averaging coordinate points of both lane boundaries the actual lane center can be found and this point must be in some proximity with respect to the center of the image.
 		
 	\paragraph{Data Processing Subsystem Tests}	
-	
+		This test will enable if data processing will generate the desired output, namely turn direction and angle. Test procedure is as follows:
+		\begin{itemize}
+			\item Link the output of Lane Detection Subsystem to Data Processing Subsystem.
+			\item Asses if the output coincide with physical reality of the path
+		\end{itemize}
 	\paragraph{Results of Data Processing Subsystem Tests}
-	
+	The tests are done. The results are positive and reflects the expectations. The turn angle and direction are properly output. A flaw of this subsystem is that both right and the left lane lines must be determined. Otherwise, the prediction does not give stable results. This must be improved together with the Lane Detection Subsystem regarding the code algorithm.	The sample outputs can be seen in \textit{Figure~\ref{fig:lane_detection_subsystem} and Figure~\ref{fig:turn-prediction-explained}}.
 	
 	\subsubsection{PID Controller Subsystem}
 	
