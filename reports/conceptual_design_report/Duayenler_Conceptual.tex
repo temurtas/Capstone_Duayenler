@@ -602,7 +602,7 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 		\center
 		\setlength{\unitlength}{\textwidth} 
 		\includegraphics[width=0.5\textwidth]{images/socket_funcs}
-		\caption{\label{fig:socket_funcs}TBasic Functions in Python Socket Programming to Implement Handshaking}
+		\caption{\label{fig:socket_funcs}Basic Functions in Python Socket Programming to Implement Handshaking}
 	\end{figure}
 	
 	Here is the summary of the key functions from socket library:
@@ -624,7 +624,9 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	
 	\paragraph{Alternative Solutions for External Communication Subsystem}
 	
+	Alternative solution for external communication system is implementing Network(Socket) Programming algorithm on another programing language; such as C++.
 	\paragraph{External Communication Subsystem Tests}
+<<<<<<< HEAD
 		
 		\subparagraph{Raspberry Pi as Client Test}
 			This test aims to validate whether the Raspberry Pi can successfully fulfil the requirements set by \textit{Handshake protocol} as a client.Test procedure is as follows:
@@ -649,9 +651,20 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 				\item The test result can be considered as success if both sides respond according to the \textit{Handshake Protocol}.
 			\end{enumerate}	
 		
+=======
+	
+	The codes that were written in Python were tested in 3 different combinations.These are:
+	\begin{itemize}
+		\item Test on the same computer (or Raspberry Pi) using it both as server and as client
+		\item Test on two computers
+		\item Test on a computer and a Raspberry Pi
+	\end{itemize}
+	
+	
+>>>>>>> 73f80804190314d6571d1424496b41babcb574ff
 	\paragraph{Results of External Communication Subsystem Tests}
 	
-	The codes that were written in Python were tested in 3 different combinations. The first and simplest test has been done on one computer (or raspberry pi) using the same device as client and server, at the same time. To achieve that, the computer's (or raspberry pi’s) IP address should be defined in the host section defined in the client mode function. Secondly, the codes were tested on two computers. Thirdly, one raspberry pi and one computer were used for the test. All tests were successful if the server side is connected to the internet and client side is connected to the server via hotspot. The outputs of the tests were given in the \textit{Figure~\ref{fig:handshake1}} and \textit{Figure~\ref{fig:handshake2}}.
+	 The first and simplest test has been done on one computer (or raspberry pi) using the same device as client and server, at the same time. To achieve that, the computer's (or raspberry pi’s) IP address should be defined in the host section defined in the client mode function. Secondly, the codes were tested on two computers. Thirdly, one raspberry pi and one computer were used for the test. All tests were successful if the server side is connected to the internet and client side is connected to the server via hotspot. The outputs of the tests were given in the \textit{Figure~\ref{fig:handshake1}} and \textit{Figure~\ref{fig:handshake2}}.
 	
 	
 	
