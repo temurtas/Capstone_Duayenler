@@ -5,17 +5,18 @@ Please write only the name (not surname) with same capitalization!
 
 | Buyer  | Item  | Cost  | Paid Back?  |
 |---|---|---|---|
-| Enes   | Asma Kilit  | 6 TL |  **NO**  |
-| Sarper | Kalemx2     | 12 TL  | **NO**  |
-| Halil  | Component   | 151.55 TL  | **NO**  |
-| Enes   | Component   | 189.55 TL  | **NO**  |
-| Enes   | Anahtar Çekimi   | 10 TL  | **NO**  |
-| İlker  | Colored A4  | 2.5 TL  | **NO** |
-| Enes   | RC Car   | 150 TL  | **NO**  |
-| Sarper | motor-teker    | 150 TL  | **NO**  |
-| Erdem  | Kamera_2 | 123.77 TL | **NO** |
-| Enes   | camera holder   | 50 TL  | **NO**  |
-| Enes   | Strafor   | 24 TL  | **NO**  |
+| Enes   | Asma Kilit  | 6 TL |  **YES**  |
+| Sarper | Kalemx2     | 12 TL  | **YES**  |
+| Halil  | Component   | 151.55 TL  | **YES**  |
+| Enes   | Component   | 189.55 TL  | **YES**  |
+| Enes   | Anahtar Çekimi   | 10 TL  | **YES**  |
+| İlker  | Colored A4  | 2.5 TL  | **YES** |
+| Enes   | RC Car   | 150 TL  | **YES**  |
+| Sarper | motor-teker    | 150 TL  | **YES**  |
+| Erdem  | Kamera_2 | 123.77 TL | **YES** |
+| Enes   | camera holder   | 50 TL  | **NO**  ?|
+| Enes   | Strafor   | 24 TL  | **NO**  ?|
+| Erdem   | Rapor   | 13 TL  | **NO**  |
 
 Aşağısı Totaller
 
