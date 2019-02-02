@@ -10,7 +10,11 @@
 /** HSV PARAMETER SETTINGS **/
 const int max_value_H = 360 / 4;
 const int max_value = 255;
-const cv::String window_detection_name = "Lane Detection";
+const cv::String window_lane_detected = "Lane Detection";
+const cv::String winodw_hsv_filtered = "HSV Filtered";
+const cv::String window_canny_applied = "Canny Applied";
+const cv::String window_masked = "Masked";
+
 int low_H = 60, low_S = 120, low_V = 106; // low_S = 144,introduces bug
 int high_H = max_value_H, high_S = max_value, high_V = max_value;
 int maxGap = 50;
@@ -43,8 +47,8 @@ static void on_minLineLength_thresh_trackbar(int, void *);
  */
 int main(int argc, char* argv[]) {
 
-	//cv::VideoCapture cap("../green-640-15.mp4");
-	cv::VideoCapture cap(0, cv::CAP_V4L2);
+	cv::VideoCapture cap("./videos/green-640-11.mp4");
+	//cv::VideoCapture cap(0, cv::CAP_V4L2);
 	LaneDetector lanedetector;  // Create the class object
 	//LaneDetector lanedetector;  // Create the class object
 
@@ -59,7 +63,7 @@ int main(int argc, char* argv[]) {
 	int frameHeight = 0;
 	cv::Mat img_denoise;
 	cv::Mat img_edges;
-	cv::Mat img_mask;
+	cv::Mat frame_masked;
 	cv::Mat img_lines;
 	std::vector<cv::Vec4i> lines;
 	std::vector<std::vector<cv::Vec4i> > left_right_lines;
@@ -67,30 +71,34 @@ int main(int argc, char* argv[]) {
 	std::string turn;
 	int flag_plot = -1;
 
+	// colors for hough lines
+	int red = 250;
+	int green = 250;
+
 	//Mat whiteFrame(426, 640, CV_8UC3, Scalar(255, 255, 255));
 
 	// create output window
-	cv::namedWindow(window_detection_name);
+	cv::namedWindow(window_lane_detected);
 
 	// create trackbar for editing the HSV filtering
-	cv::createTrackbar("Low H", window_detection_name, &low_H, max_value_H,
+	cv::createTrackbar("Low H", window_lane_detected, &low_H, max_value_H,
 			on_low_H_thresh_trackbar);
-	cv::createTrackbar("High H", window_detection_name, &high_H, max_value_H,
+	cv::createTrackbar("High H", window_lane_detected, &high_H, max_value_H,
 			on_high_H_thresh_trackbar);
-	cv::createTrackbar("Low S", window_detection_name, &low_S, max_value,
+	cv::createTrackbar("Low S", window_lane_detected, &low_S, max_value,
 			on_low_S_thresh_trackbar);
-	cv::createTrackbar("High S", window_detection_name, &high_S, max_value,
+	cv::createTrackbar("High S", window_lane_detected, &high_S, max_value,
 			on_high_S_thresh_trackbar);
-	cv::createTrackbar("Low V", window_detection_name, &low_V, max_value,
+	cv::createTrackbar("Low V", window_lane_detected, &low_V, max_value,
 			on_low_V_thresh_trackbar);
-	cv::createTrackbar("High V", window_detection_name, &high_V, max_value,
+	cv::createTrackbar("High V", window_lane_detected, &high_V, max_value,
 			on_high_V_thresh_trackbar);
 
-	cv::createTrackbar("threshold", window_detection_name, &threshold, max_value,
+	cv::createTrackbar("threshold", window_lane_detected, &threshold, max_value,
 			on_threshold_thresh_trackbar);
-	cv::createTrackbar("maxLineGap", window_detection_name, &maxLineGap, max_value,
+	cv::createTrackbar("maxLineGap", window_lane_detected, &maxLineGap, max_value,
 			on_maxLineGap_trackbar);
-	cv::createTrackbar("minLineLength", window_detection_name, &minLineLength, max_value,
+	cv::createTrackbar("minLineLength", window_lane_detected, &minLineLength, max_value,
 			on_minLineLength_thresh_trackbar);
 
 	cv::Mat frame_HSV;
@@ -139,15 +147,15 @@ int main(int argc, char* argv[]) {
 //		std::ofstream myfile;
 //		myfile.open("test.txt", std::ios_base::app);
 
-		//img_mask = lanedetector.cropROI(frame_cannied);
+		frame_masked = lanedetector.cropROI(frame_cannied);
 		// runs the line detection
 		std::vector<cv::Vec4i> line;
-		HoughLinesP(frame_cannied, lines_houghP, 1, CV_PI / 180, threshold,(double) maxLineGap, (double)minLineLength);
+		HoughLinesP(frame_masked, lines_houghP, 1, CV_PI / 180, threshold,(double) maxLineGap, (double)minLineLength);
 
 		if (!lines_houghP.empty()) {
 			// Separate lines into left and right lines
 			left_right_lines = lanedetector.lineSeparation(lines_houghP,
-					frame_cannied);
+					frame_masked);
 
 			// Apply regression to obtain only one line for each side of the lane
 			lane = lanedetector.regression(left_right_lines, frame_threshed);
@@ -157,8 +165,13 @@ int main(int argc, char* argv[]) {
 		}
 		for (size_t i = 0; i < lines_houghP.size(); i++) {
 			cv::Vec4i l = lines_houghP[i];
-			cv::line(frame_houghP, cv::Point(l[0], l[1]), cv::Point(l[2], l[3]),
-					cv::Scalar(0, 0, 255), 3, cv::LINE_AA);
+			if (red<0) red = 155;
+			if (green<0) green = 55;
+			cv::line(frame_houghP, cv::Point(l[0], l[1]),
+					cv::Point(l[2], l[3]),
+					cv::Scalar(255, green, red), 3, cv::LINE_AA);
+			red = red - 20;
+			green = green - 20;
 		}
 		//	std::cout << "xTrainData (python)  = " << std::endl << format(frame_houghP, Formatter::FMT_PYTHON) << std::endl << std::endl;
 
@@ -175,54 +188,62 @@ int main(int argc, char* argv[]) {
 			avgRunTime += timeCapture;
 
 		//imshow(window_capture_name, frame_orig);
-		imshow(window_detection_name, frame_houghP);
+		imshow(window_lane_detected, frame_houghP);
+		imshow(winodw_hsv_filtered, frame_threshed);
+		imshow(window_canny_applied, frame_cannied);
+		imshow(window_masked, frame_masked);
+
+		red =250;
+		green = 250;
 
 		char key = (char) cv::waitKey(30);
 		if (key == 'q' || key == 27) {
 			break;
 		}
+
+		std::cin.get();
 	}
 	return 0;
 }
 
 static void on_low_H_thresh_trackbar(int, void *) {
 	low_H = cv::min(high_H - 1, low_H);
-	cv::setTrackbarPos("Low H", window_detection_name, low_H);
+	cv::setTrackbarPos("Low H", window_lane_detected, low_H);
 }
 
 static void on_high_H_thresh_trackbar(int, void *) {
 	high_H = cv::max(high_H, low_H + 1);
-	cv::setTrackbarPos("High H", window_detection_name, high_H);
+	cv::setTrackbarPos("High H", window_lane_detected, high_H);
 }
 
 static void on_low_S_thresh_trackbar(int, void *) {
 	low_S = cv::min(high_S - 1, low_S);
-	cv::setTrackbarPos("Low S", window_detection_name, low_S);
+	cv::setTrackbarPos("Low S", window_lane_detected, low_S);
 }
 
 static void on_high_S_thresh_trackbar(int, void *) {
 	high_S = cv::max(high_S, low_S + 1);
-	cv::setTrackbarPos("High S", window_detection_name, high_S);
+	cv::setTrackbarPos("High S", window_lane_detected, high_S);
 }
 
 static void on_low_V_thresh_trackbar(int, void *) {
 	low_V = cv::min(high_V - 1, low_V);
-	cv::setTrackbarPos("Low V", window_detection_name, low_V);
+	cv::setTrackbarPos("Low V", window_lane_detected, low_V);
 }
 
 static void on_high_V_thresh_trackbar(int, void *) {
 	high_V = cv::max(high_V, low_V + 1);
-	cv::setTrackbarPos("High V", window_detection_name, high_V);
+	cv::setTrackbarPos("High V", window_lane_detected, high_V);
 }
 static void on_threshold_thresh_trackbar(int, void *) {
 	threshold = cv::min(high_V - 1, threshold);
-	cv::setTrackbarPos("threshold", window_detection_name, threshold);
+	cv::setTrackbarPos("threshold", window_lane_detected, threshold);
 }
 static void on_maxLineGap_trackbar(int, void *) {
 	maxLineGap = cv::min(high_V - 1, maxLineGap);
-	cv::setTrackbarPos("maxLineGap", window_detection_name, maxLineGap);
+	cv::setTrackbarPos("maxLineGap", window_lane_detected, maxLineGap);
 }
 static void on_minLineLength_thresh_trackbar(int, void *) {
 	minLineLength = cv::min(high_V - 1, minLineLength);
-	cv::setTrackbarPos("minLineLength", window_detection_name, minLineLength);
+	cv::setTrackbarPos("minLineLength", window_lane_detected, minLineLength);
 }

@@ -70,11 +70,11 @@ cv::Mat LaneDetector::edgeDetector(cv::Mat img_noise) {
 cv::Mat LaneDetector::cropROI(cv::Mat img_edges) {
 	cv::Mat output;
 	cv::Mat mask = cv::Mat::zeros(img_edges.size(), img_edges.type());
-	// a ROI of (img_edges.cols x 200)
-	cv::Point ptsROI[4] = { cv::Point(0, img_edges.rows - 300), cv::Point(0,
-			img_edges.rows - 50), cv::Point(img_edges.cols,
-			img_edges.rows - 300), cv::Point(img_edges.cols,
-			img_edges.rows - 50) };
+	// a ROI of (img_edges.cols x 250)
+	cv::Point ptsROI[4] = { cv::Point(0, img_edges.rows - 300),
+			cv::Point(img_edges.cols,img_edges.rows - 300),
+			cv::Point(img_edges.cols,img_edges.rows - 50),
+			cv::Point(0, img_edges.rows - 50)};
 
 	// create a binary polygon mask
 	cv::fillConvexPoly(mask, ptsROI, 4, cv::Scalar(255, 255, 255));
@@ -111,6 +111,10 @@ std::vector<cv::Vec4i> LaneDetector::houghLines(cv::Mat img_mask) {
 std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 		std::vector<cv::Vec4i> lines, cv::Mat img_edges) {
 	std::vector<std::vector<cv::Vec4i> > output(2);
+	int sum_x_right = 0;
+	int sum_x_left = 0;
+	int counter_x_right = 0;
+	int counter_x_left = 0;
 	size_t j = 0;
 	cv::Point ini;
 	cv::Point fini;
@@ -136,11 +140,28 @@ std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 			//std::cout << i << std::endl;
 			slopes.push_back(slope);
 			selected_lines.push_back(i);
+
+			// add to determine mass point in x axis
+			//std::cout << ini.x + fini.x << std::endl;
+			//std::cout << 2*img_edges.cols << std::endl;
+			if(ini.x + fini.x > img_edges.cols) {
+				sum_x_right += ini.x + fini.x;
+				counter_x_right += 2;
+			}
+			else {
+				sum_x_left += ini.x + fini.x;
+				counter_x_left += 2;
+			}
+
 		}
 	}
-
 	// Split the lines into right and left lines
-	img_center = static_cast<double>((img_edges.cols / 2));
+	sum_x_left = sum_x_left / counter_x_left;
+	sum_x_right = sum_x_right / counter_x_right;
+	std::cout << "left center: " << sum_x_left << " " << "right center: " << sum_x_right << std::endl;
+	std::cout << "avg: "<< (sum_x_left + sum_x_right)/2 << std::endl;
+	//img_center = static_cast<double>((img_edges.cols / 2));
+	img_center = (sum_x_left + sum_x_right)/2;
 	while (j < selected_lines.size()) {
 		ini = cv::Point(selected_lines[j][0], selected_lines[j][1]);
 		fini = cv::Point(selected_lines[j][2], selected_lines[j][3]);
