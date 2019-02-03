@@ -38,6 +38,8 @@ static void on_threshold_thresh_trackbar(int, void *);
 static void on_maxLineGap_trackbar(int, void *);
 static void on_minLineLength_thresh_trackbar(int, void *);
 
+void quickSort(std::vector<cv::Vec4i>& array, int low, int high);
+
 /**
  *@brief Function main executes the algorithm of the lane detection.
  *@brief It reads a video of a green lane and it will output the
@@ -47,7 +49,7 @@ static void on_minLineLength_thresh_trackbar(int, void *);
  */
 int main(int argc, char* argv[]) {
 
-	cv::VideoCapture cap("./videos/green-640-11.mp4");
+	cv::VideoCapture cap("./videos/green-640-15.mp4");
 	//cv::VideoCapture cap(0, cv::CAP_V4L2);
 	LaneDetector lanedetector;  // Create the class object
 	//LaneDetector lanedetector;  // Create the class object
@@ -151,7 +153,15 @@ int main(int argc, char* argv[]) {
 		// runs the line detection
 		std::vector<cv::Vec4i> line;
 		HoughLinesP(frame_masked, lines_houghP, 1, CV_PI / 180, threshold,(double) maxLineGap, (double)minLineLength);
-
+//		for (auto i : lines_houghP) {
+//			std::cout << i << std::endl;
+//		}
+		// sort the found lines from smallest x to largest x coordinate
+		quickSort(lines_houghP, 0, lines_houghP.size());
+		std::cout << lines_houghP[0][1] << std::endl;
+		for (auto i : lines_houghP) {
+			std::cout << i << std::endl;
+		}
 		if (!lines_houghP.empty()) {
 			// Separate lines into left and right lines
 			left_right_lines = lanedetector.lineSeparation(lines_houghP,
@@ -247,3 +257,32 @@ static void on_minLineLength_thresh_trackbar(int, void *) {
 	minLineLength = cv::min(high_V - 1, minLineLength);
 	cv::setTrackbarPos("minLineLength", window_lane_detected, minLineLength);
 }
+
+void quickSort(std::vector<cv::Vec4i>& array, int low, int high) {
+	int i = low;
+	int j = high;
+	int pivot = array[(i + j) / 2][0];
+	int temp;
+
+	while (i <= j) {
+		while (array[i][0] < pivot)
+			i++;
+		while (array[j][0] > pivot)
+			j--;
+		if (i <= j) {
+			/*
+			temp = array[i];
+			array[i] = array[j];
+			array[j] = temp;
+			*/
+			std::swap(array[i],array[j]);
+			i++;
+			j--;
+		}
+	}
+	if (j > low)
+		quickSort(array, low, j);
+	if (i < high)
+		quickSort(array, i, high);
+}
+
