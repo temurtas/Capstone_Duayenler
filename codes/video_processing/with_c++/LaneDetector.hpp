@@ -38,6 +38,8 @@ public:
 	cv::Mat edgeDetector(cv::Mat img_noise); // Filter the image to obtain only edges
 	cv::Mat cropROI(cv::Mat img_edges); // Mask the edges image to only care about ROI
 	std::vector<cv::Vec4i> houghLines(cv::Mat img_mask); // Detect Hough lines in masked edges image
+	void findLineCenter(int& counter_x_left, int& sum_x_left, int& counter_x_right, int& sum_x_right); // *****************
+	void secondDerivativeTest(std::vector<cv::Vec4i> houghLines); // *****************
 	std::vector<std::vector<cv::Vec4i> > lineSeparation(
 			std::vector<cv::Vec4i> lines, cv::Mat img_edges); // Sprt detected lines by their slope into right and left lines
 	std::vector<cv::Point> regression(

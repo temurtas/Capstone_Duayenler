@@ -1,7 +1,7 @@
-/*Copyright (c) 2018 DUAYENLER Ltd. Sti
+/*Copyright (c) 2019 DUAYENLER Ltd. Sti
  */
 /*
- *@copyright Copyright 2018 DUAYENLER Ltd. Sti
+ *@copyright Copyright 2019 DUAYENLER Ltd. Sti
  *@file LaneDetector.cpp
  *@author Erdem Tuna
  *@brief Definition of all the function that form part of the LaneDetector class.
@@ -86,7 +86,8 @@ cv::Mat LaneDetector::cropROI(cv::Mat img_edges) {
 
 // HOUGH LINES
 /**
- *@brief Obtain all the line segments in the masked images which are going to be part of the lane boundaries
+ *@brief Obtain all the line segments in the masked images which are
+ *@brief  going to be part of the lane boundaries
  *@param img_mask is the masked binary image from the previous function
  *@return Vector that contains all the detected lines in the image
  */
@@ -95,8 +96,39 @@ std::vector<cv::Vec4i> LaneDetector::houghLines(cv::Mat img_mask) {
 
 	// rho and theta are selected by trial and error
 	HoughLinesP(img_mask, line, 1, CV_PI / 180, 15, 30, 40);
-
 	return line;
+}
+
+// FIND CENTER of the LINES
+/**
+ *@brief Finds the center of the right and left lines
+ *@param counter_x_left and counter_x_right determines how many x-coordinates are used.
+ *@param sum_x_left and sum_x_right determines aggregated coordinate value.
+ *@return img_center that is a global private variable inside the class
+ */
+void LaneDetector::findLineCenter(int& counter_x_left, int& sum_x_left,
+		int& counter_x_right, int& sum_x_right) {
+	// calculate center x coordinate
+	sum_x_left = sum_x_left / counter_x_left;
+	sum_x_right = sum_x_right / counter_x_right;
+	std::cout << "left center: " << sum_x_left << " " << "right center: "
+			<< sum_x_right << std::endl;
+	std::cout << "img_center: " << (sum_x_left + sum_x_right) / 2 << std::endl;
+	//img_center = static_cast<double>((img_edges.cols / 2));
+	img_center = (sum_x_left + sum_x_right) / 2;
+}
+
+// SECOND DERIVATIVE TEST
+/**
+ *@brief Determine the slope of each hough line and remove the problematic
+ *@brief line segments
+ *@param houghLines is a vector of width 4
+ *@return void.
+ */
+void secondDerivativeTest(std::vector<cv::Vec4i>& houghLines) {
+	double lineSlopes[30];
+	for (auto i : houghLines) {
+	}
 }
 
 // SORT RIGHT AND LEFT LINES
@@ -104,25 +136,36 @@ std::vector<cv::Vec4i> LaneDetector::houghLines(cv::Mat img_mask) {
  *@brief Sort all the detected Hough lines by slope.
  *@brief The lines are classified into right or left depending
  *@brief on the sign of their slope and their approximate location
- *@param lines is the vector that contains all the detected lines
+ *@param lines is the vector that contains all the detected lines sorted from smallest
+ *@param starting coordinate to biggest starting coordinate (with quicksort)
  *@param img_edges is used for determining the image center
  *@return The output is a vector(2) that contains all the classified lines
  */
 std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 		std::vector<cv::Vec4i> lines, cv::Mat img_edges) {
 	std::vector<std::vector<cv::Vec4i> > output(2);
+
+	// variables to find center of the image
 	int sum_x_right = 0;
 	int sum_x_left = 0;
 	int counter_x_right = 0;
 	int counter_x_left = 0;
+
 	size_t j = 0;
+	// initial and final points of a line
 	cv::Point ini;
 	cv::Point fini;
+	// slope threshold
 	double slope_thresh = 0.005;
-	std::vector<double> slopes;
-	std::vector<cv::Vec4i> selected_lines;
+	// vectors to hold slopes of right and left lines
+	std::vector<double> right_slopes, left_slopes;
+	std::vector<double> right_slopes_dx, left_slopes_dx;
+	// vectors to hold coordinates of right and left lines
 	std::vector<cv::Vec4i> right_lines, left_lines;
 
+	std::vector<cv::Vec4i> selected_lines;
+	//double* slope_pointer; // pointer to first item of right_slopes and left_slopes
+	double diff;
 	// Calculate the slope of all the detected lines
 	for (auto i : lines) {
 		ini = cv::Point(i[0], i[1]);
@@ -136,33 +179,63 @@ std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 
 		// If the slope is too horizontal, discard the line
 		// If not, save them  and their respective slope
-		if (std::abs(slope) > slope_thresh) {
-			//std::cout << i << std::endl;
-			slopes.push_back(slope);
-			selected_lines.push_back(i);
+		//if (std::abs(slope) > slope_thresh) {
 
-			// add to determine mass point in x axis
-			//std::cout << ini.x + fini.x << std::endl;
-			//std::cout << 2*img_edges.cols << std::endl;
-			if(ini.x + fini.x > img_edges.cols) {
-				sum_x_right += ini.x + fini.x;
-				counter_x_right += 2;
-			}
-			else {
-				sum_x_left += ini.x + fini.x;
-				counter_x_left += 2;
-			}
+		//slopes.push_back(slope);
+		//selected_lines.push_back(i);
 
+		// add to determine mass point in x axis
+		if (ini.x + fini.x > img_edges.cols) {
+			right_lines.push_back(i); // classify as right line
+			sum_x_right += ini.x + fini.x;
+			counter_x_right += 2;
+			// if a new slope is to be added, find the difference
+			// between two slopes and save the difference
+			if (!right_slopes.empty()) {
+				diff = right_slopes.back() - slope;
+				right_slopes_dx.push_back(diff);
+			}
+			right_slopes.push_back(slope);
+		} else {
+			left_lines.push_back(i); // classify as left line
+			sum_x_left += ini.x + fini.x;
+			counter_x_left += 2;
+			// if a new slope is to be added, find the difference
+			// between two slopes and save the difference
+			if (!left_slopes.empty()) {
+				diff = left_slopes.back() - slope;
+				left_slopes_dx.push_back(diff);
+			}
+			left_slopes.push_back(slope);
 		}
+
+		//}
 	}
-	// Split the lines into right and left lines
-	sum_x_left = sum_x_left / counter_x_left;
-	sum_x_right = sum_x_right / counter_x_right;
-	std::cout << "left center: " << sum_x_left << " " << "right center: " << sum_x_right << std::endl;
-	std::cout << "avg: "<< (sum_x_left + sum_x_right)/2 << std::endl;
-	//img_center = static_cast<double>((img_edges.cols / 2));
-	img_center = (sum_x_left + sum_x_right)/2;
-	while (j < selected_lines.size()) {
+	findLineCenter(counter_x_left,sum_x_left,counter_x_right, sum_x_right);
+/*
+	for(auto i: left_lines)
+		std::cout << i << " ";
+	std::cout << std::endl;
+
+	for(auto i: left_slopes)
+		std::cout << i << " ";
+	std::cout << std::endl;
+
+	for(auto i: left_slopes_dx)
+		std::cout << i << " ";
+	std::cout << std::endl;
+
+	for(auto i: right_slopes)
+		std::cout << i << " ";
+	std::cout << std::endl;
+
+
+	for(auto i: right_slopes_dx)
+		std::cout << i << " ";
+	std::cout << std::endl;
+*/
+
+/*	while (j < selected_lines.size()) {
 		ini = cv::Point(selected_lines[j][0], selected_lines[j][1]);
 		fini = cv::Point(selected_lines[j][2], selected_lines[j][3]);
 
@@ -178,7 +251,7 @@ std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 			//std::cout << "left" << std::endl;
 		}
 		j++;
-	}
+	}*/
 	//std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	output[0] = right_lines;
 	output[1] = left_lines;
@@ -357,5 +430,4 @@ int LaneDetector::plotLane(cv::Mat inputImage, std::vector<cv::Point> lane) {
 
 	return 0;
 }
-
 

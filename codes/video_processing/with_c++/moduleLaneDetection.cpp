@@ -158,10 +158,11 @@ int main(int argc, char* argv[]) {
 //		}
 		// sort the found lines from smallest x to largest x coordinate
 		quickSort(lines_houghP, 0, lines_houghP.size());
-		std::cout << lines_houghP[0][1] << std::endl;
-		for (auto i : lines_houghP) {
+//		std::cout << lines_houghP[0][1] << std::endl;
+/*		for (auto i : lines_houghP) {
 			std::cout << i << std::endl;
 		}
+*/
 		if (!lines_houghP.empty()) {
 			// Separate lines into left and right lines
 			left_right_lines = lanedetector.lineSeparation(lines_houghP,
