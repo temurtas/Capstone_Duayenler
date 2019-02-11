@@ -32,6 +32,8 @@ private:
 	cv::Point left_b;  //
 	double left_m;  //
 	const cv::String window_vision = "Lane and Vehicle Vision";
+	void fixProblems(std::vector<cv::Vec4i> lines, std::vector<double> slopes,
+			std::vector<double> slopes_dx);
 
 public:
 	cv::Mat deNoise(cv::Mat inputImage); // Apply Gaussian blurring to the input Image

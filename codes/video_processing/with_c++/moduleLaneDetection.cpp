@@ -38,7 +38,9 @@ static void on_threshold_thresh_trackbar(int, void *);
 static void on_maxLineGap_trackbar(int, void *);
 static void on_minLineLength_thresh_trackbar(int, void *);
 
-void quickSort(std::vector<cv::Vec4i>& array, int low, int high);
+void quickSort(std::vector<cv::Vec4i> & v, unsigned int low, unsigned int high);
+unsigned int pivot (std::vector<cv::Vec4i> & v, unsigned int start,
+	unsigned int stop, unsigned int position);
 
 /**
  *@brief Function main executes the algorithm of the lane detection.
@@ -259,7 +261,7 @@ static void on_minLineLength_thresh_trackbar(int, void *) {
 	cv::setTrackbarPos("minLineLength", window_lane_detected, minLineLength);
 }
 
-void quickSort(std::vector<cv::Vec4i>& array, int low, int high) {
+/*void quickSort(std::vector<cv::Vec4i>& array, int low, int high) {
 	int i = low;
 	int j = high;
 	int pivot = array[(i + j) / 2][0];
@@ -271,11 +273,11 @@ void quickSort(std::vector<cv::Vec4i>& array, int low, int high) {
 		while (array[j][0] > pivot)
 			j--;
 		if (i <= j) {
-			/*
+
 			temp = array[i];
 			array[i] = array[j];
 			array[j] = temp;
-			*/
+
 			std::swap(array[i],array[j]);
 			i++;
 			j--;
@@ -285,5 +287,51 @@ void quickSort(std::vector<cv::Vec4i>& array, int low, int high) {
 		quickSort(array, low, j);
 	if (i < high)
 		quickSort(array, i, high);
+}*/
+
+
+unsigned int pivot (std::vector<cv::Vec4i> & v, unsigned int start,
+	unsigned int stop, unsigned int position)
+	// partition vector into two groups
+	// values smaller than or equal to pivot
+	// values larger than pivot
+	// return location of pivot element
+{
+		// swap pivot into starting position
+	std::swap (v[start], v[position]);
+
+		// partition values
+	unsigned int low = start + 1;
+	unsigned int high = stop;
+	while (low < high)
+		if (v[low][0] < v[start][0])
+			low++;
+		else if (v[--high][0] < v[start][0])
+			std::swap (v[low], v[high]);
+
+		// then swap pivot back into place
+	std::swap (v[start], v[--low]);
+	return low;
 }
+
+void quickSort(std::vector<cv::Vec4i> & v, unsigned int low, unsigned int high)
+{
+	// no need to sort a vector of zero or one elements
+	if (low >= high)
+		return;
+
+	// select the pivot value
+	unsigned int pivotIndex = (low + high) / 2;
+
+	// partition the vector
+	pivotIndex = pivot (v, low, high, pivotIndex);
+
+	// sort the two sub vectors
+	if (low < pivotIndex)
+		quickSort(v, low, pivotIndex);
+	if (pivotIndex < high)
+		quickSort(v, pivotIndex + 1, high);
+}
+
+
 

@@ -108,6 +108,29 @@ std::vector<cv::Vec4i> LaneDetector::houghLines(cv::Mat img_mask) {
  */
 void LaneDetector::findLineCenter(int& counter_x_left, int& sum_x_left,
 		int& counter_x_right, int& sum_x_right) {
+	if(counter_x_left == 0 && counter_x_right != 0) {
+		// prevent division with 0.
+		// assume center of lines is 200 pixel away from
+		// center of right lines
+		sum_x_right = sum_x_right / counter_x_right;
+		img_center = sum_x_right - 200;
+		return;
+	}
+	else if (counter_x_left != 0 && counter_x_right == 0) {
+		// prevent division with 0.
+		// assume center of lines is 200 pixel away from
+		// center of left lines
+		sum_x_left = sum_x_left / counter_x_right;
+		img_center = sum_x_left + 200;
+		return;
+	}
+	else if (counter_x_left == 0 && counter_x_right == 0) {
+		// prevent division with 0.
+		// assume center of lines is 320th pixel
+		img_center = 320;
+		return;
+	}
+	else {
 	// calculate center x coordinate
 	sum_x_left = sum_x_left / counter_x_left;
 	sum_x_right = sum_x_right / counter_x_right;
@@ -116,6 +139,8 @@ void LaneDetector::findLineCenter(int& counter_x_left, int& sum_x_left,
 	std::cout << "img_center: " << (sum_x_left + sum_x_right) / 2 << std::endl;
 	//img_center = static_cast<double>((img_edges.cols / 2));
 	img_center = (sum_x_left + sum_x_right) / 2;
+	return;
+	}
 }
 
 // SECOND DERIVATIVE TEST
@@ -129,6 +154,53 @@ void secondDerivativeTest(std::vector<cv::Vec4i>& houghLines) {
 	double lineSlopes[30];
 	for (auto i : houghLines) {
 	}
+}
+
+void LaneDetector::fixProblems(std::vector<cv::Vec4i> lines,
+		std::vector<double> slopes, std::vector<double> slopes_dx) {
+	double slopes_dx_thres = 3;
+	double slopes_thres = 0.5;
+	unsigned int current_index = 0;
+	int bad_index1 = -1;
+	int bad_index2 = -1;
+
+	for(auto i: slopes)
+		std::cout << i << " ";
+	std::cout << std::endl;
+
+//	for(auto i: slopes_dx)
+//		std::cout << i << " ";
+//	std::cout << std::endl;
+
+	for (auto &i : slopes_dx) {
+		if (&i == &slopes_dx[0])
+			current_index = 0;
+		else
+			current_index = (&i) - (&slopes_dx[0]);
+
+		if (std::abs(i) > slopes_dx_thres) {
+
+			if ((std::abs(slopes[current_index + 1])) < slopes_thres) {
+				if (bad_index1 == -1 && bad_index2 == -1)
+					bad_index1 = current_index + 1;
+				else if (bad_index1 != -1 && bad_index2 == -1)
+					bad_index2 = current_index + 1;
+				else if (bad_index2 != -1 && (current_index + 1) > bad_index2)
+					bad_index2 = current_index + 1;
+			} else if ((std::abs(slopes[current_index])) < slopes_thres) {
+				if (bad_index1 == -1 && bad_index2 == -1)
+					bad_index1 = current_index;
+				else if (bad_index1 != -1 && bad_index2 == -1)
+					bad_index2 = current_index;
+				else if (bad_index2 != -1 && (current_index + 1) > bad_index2)
+					bad_index2 = current_index;
+			}
+		}
+	}
+
+
+	std::cout << "b1: " << bad_index1 << " b2: " << bad_index2 << std::endl;
+	// check the slope differences
 }
 
 // SORT RIGHT AND LEFT LINES
@@ -192,7 +264,7 @@ std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 			// if a new slope is to be added, find the difference
 			// between two slopes and save the difference
 			if (!right_slopes.empty()) {
-				diff = right_slopes.back() - slope;
+				diff = slope - right_slopes.back();
 				right_slopes_dx.push_back(diff);
 			}
 			right_slopes.push_back(slope);
@@ -203,7 +275,7 @@ std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 			// if a new slope is to be added, find the difference
 			// between two slopes and save the difference
 			if (!left_slopes.empty()) {
-				diff = left_slopes.back() - slope;
+				diff = slope - left_slopes.back();
 				left_slopes_dx.push_back(diff);
 			}
 			left_slopes.push_back(slope);
@@ -212,6 +284,8 @@ std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 		//}
 	}
 	findLineCenter(counter_x_left,sum_x_left,counter_x_right, sum_x_right);
+	fixProblems(left_lines, left_slopes,left_slopes_dx);
+
 /*
 	for(auto i: left_lines)
 		std::cout << i << " ";
@@ -222,6 +296,10 @@ std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 	std::cout << std::endl;
 
 	for(auto i: left_slopes_dx)
+		std::cout << i << " ";
+	std::cout << std::endl;
+
+	for(auto i: right_lines)
 		std::cout << i << " ";
 	std::cout << std::endl;
 
