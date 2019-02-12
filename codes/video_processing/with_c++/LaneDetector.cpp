@@ -13,6 +13,7 @@
 #include "opencv2/opencv.hpp"
 #include "LaneDetector.hpp"
 #include "opencv2/imgproc/imgproc_c.h"
+#include "opencv2/videoio/legacy/constants_c.h"
 #include <thread>
 
 // IMAGE BLURRING
@@ -69,12 +70,14 @@ cv::Mat LaneDetector::edgeDetector(cv::Mat img_noise) {
  */
 cv::Mat LaneDetector::cropROI(cv::Mat img_edges) {
 	cv::Mat output;
+	img_rows = img_edges.rows;
+	img_cols = img_edges.cols;
+
 	cv::Mat mask = cv::Mat::zeros(img_edges.size(), img_edges.type());
 	// a ROI of (img_edges.cols x 250)
-	cv::Point ptsROI[4] = { cv::Point(0, img_edges.rows - 300),
-			cv::Point(img_edges.cols,img_edges.rows - 300),
-			cv::Point(img_edges.cols,img_edges.rows - 50),
-			cv::Point(0, img_edges.rows - 50)};
+	cv::Point ptsROI[4] = { cv::Point(0, img_edges.rows - 300), cv::Point(
+			img_edges.cols, img_edges.rows - 300), cv::Point(img_edges.cols,
+			img_edges.rows - 50), cv::Point(0, img_edges.rows - 50) };
 
 	// create a binary polygon mask
 	cv::fillConvexPoly(mask, ptsROI, 4, cv::Scalar(255, 255, 255));
@@ -108,99 +111,127 @@ std::vector<cv::Vec4i> LaneDetector::houghLines(cv::Mat img_mask) {
  */
 void LaneDetector::findLineCenter(int& counter_x_left, int& sum_x_left,
 		int& counter_x_right, int& sum_x_right) {
-	if(counter_x_left == 0 && counter_x_right != 0) {
+	if (counter_x_left == 0 && counter_x_right != 0) {
 		// prevent division with 0.
 		// assume center of lines is 200 pixel away from
 		// center of right lines
 		sum_x_right = sum_x_right / counter_x_right;
 		img_center = sum_x_right - 200;
 		return;
-	}
-	else if (counter_x_left != 0 && counter_x_right == 0) {
+	} else if (counter_x_left != 0 && counter_x_right == 0) {
 		// prevent division with 0.
 		// assume center of lines is 200 pixel away from
 		// center of left lines
 		sum_x_left = sum_x_left / counter_x_right;
 		img_center = sum_x_left + 200;
 		return;
-	}
-	else if (counter_x_left == 0 && counter_x_right == 0) {
+	} else if (counter_x_left == 0 && counter_x_right == 0) {
 		// prevent division with 0.
 		// assume center of lines is 320th pixel
 		img_center = 320;
 		return;
-	}
-	else {
-	// calculate center x coordinate
-	sum_x_left = sum_x_left / counter_x_left;
-	sum_x_right = sum_x_right / counter_x_right;
-	std::cout << "left center: " << sum_x_left << " " << "right center: "
-			<< sum_x_right << std::endl;
-	std::cout << "img_center: " << (sum_x_left + sum_x_right) / 2 << std::endl;
-	//img_center = static_cast<double>((img_edges.cols / 2));
-	img_center = (sum_x_left + sum_x_right) / 2;
-	return;
-	}
-}
-
-// SECOND DERIVATIVE TEST
-/**
- *@brief Determine the slope of each hough line and remove the problematic
- *@brief line segments
- *@param houghLines is a vector of width 4
- *@return void.
- */
-void secondDerivativeTest(std::vector<cv::Vec4i>& houghLines) {
-	double lineSlopes[30];
-	for (auto i : houghLines) {
+	} else {
+		// calculate center x coordinate
+		sum_x_left = sum_x_left / counter_x_left;
+		sum_x_right = sum_x_right / counter_x_right;
+		std::cout << "left center: " << sum_x_left << " " << "right center: "
+				<< sum_x_right << std::endl;
+		std::cout << "img_center: " << (sum_x_left + sum_x_right) / 2
+				<< std::endl;
+		//img_center = static_cast<double>((img_edges.cols / 2));
+		img_center = (sum_x_left + sum_x_right) / 2;
+		return;
 	}
 }
 
-void LaneDetector::fixProblems(std::vector<cv::Vec4i> lines,
-		std::vector<double> slopes, std::vector<double> slopes_dx) {
-	double slopes_dx_thres = 3;
-	double slopes_thres = 0.5;
-	unsigned int current_index = 0;
-	int bad_index1 = -1;
-	int bad_index2 = -1;
-
-	for(auto i: slopes)
+void LaneDetector::removeBadLines(std::vector<cv::Vec4i>& lines, int& i1,
+		int& i2) {
+	for (auto i : lines)
 		std::cout << i << " ";
 	std::cout << std::endl;
 
-//	for(auto i: slopes_dx)
-//		std::cout << i << " ";
-//	std::cout << std::endl;
+	for (int i = i2; i >= i1; i--) {
+		lines.erase(lines.begin() + i);
+	}
 
+	for (auto i : lines)
+		std::cout << i << " ";
+	std::cout << std::endl;
+	return;
+}
+
+// FIX PROBLEMATIC LINES
+/**
+ *@brief Removes the problematic lines. (problematic is defined in reports)
+ *@brief Fixing is done only if there are 2 problematic index are found.
+ *@brief No fixing is realized if there 1 problematic index
+ *@param lines is the vector that contains all the detected lines
+ *@param slopes is the slopes corresponding to respective line
+ *@param slopes_dx is the slope difference between two consecutive slope
+ *@return index1 stores first problematic index
+ *@return index2 stores second problematic index
+ */
+void LaneDetector::fixProblems(std::vector<cv::Vec4i>& lines,
+		std::vector<double>& slopes, std::vector<double>& slopes_dx,
+		int& index1, int& index2) {
+	double slopes_dx_thres = 3; // second derivative threshold
+	double slopes_thres = 0.5; // first derivative threshold
+	unsigned int current_index = 0;
+
+	for (auto i : slopes)
+		std::cout << i << " ";
+	std::cout << std::endl;
+
+	// iterate for every slope derivative
 	for (auto &i : slopes_dx) {
+		// find the current_index
 		if (&i == &slopes_dx[0])
 			current_index = 0;
 		else
 			current_index = (&i) - (&slopes_dx[0]);
 
+		// spot if second derivative changed abruptly
 		if (std::abs(i) > slopes_dx_thres) {
-
+			// if there is a big slope change,
+			// spot the problem
+			// problem is at the current_index or at the current_index+1
 			if ((std::abs(slopes[current_index + 1])) < slopes_thres) {
-				if (bad_index1 == -1 && bad_index2 == -1)
-					bad_index1 = current_index + 1;
-				else if (bad_index1 != -1 && bad_index2 == -1)
-					bad_index2 = current_index + 1;
-				else if (bad_index2 != -1 && (current_index + 1) > bad_index2)
-					bad_index2 = current_index + 1;
+				if (index1 == -1 && index2 == -1) {
+					index1 = current_index + 1;
+				}
+
+				else if (index1 != -1 && index2 == -1) {
+					index2 = current_index + 1;
+				}
+
+				else if (index2 != -1 && (current_index + 1) > index2) {
+					index2 = current_index + 1;
+				}
+
 			} else if ((std::abs(slopes[current_index])) < slopes_thres) {
-				if (bad_index1 == -1 && bad_index2 == -1)
-					bad_index1 = current_index;
-				else if (bad_index1 != -1 && bad_index2 == -1)
-					bad_index2 = current_index;
-				else if (bad_index2 != -1 && (current_index + 1) > bad_index2)
-					bad_index2 = current_index;
+				if (index1 == -1 && index2 == -1) {
+					index1 = current_index;
+				}
+
+				else if (index1 != -1 && index2 == -1) {
+					index2 = current_index;
+				}
+
+				else if (index2 != -1 && (current_index + 1) > index2) {
+					index2 = current_index;
+				}
+
 			}
 		}
 	}
+	//std::cout << "b1: " << index1 << " b2: " << index2 << std::endl;
 
-
-	std::cout << "b1: " << bad_index1 << " b2: " << bad_index2 << std::endl;
-	// check the slope differences
+	// if there are 2 problematic indexes, clean between
+	if (index1 != -1 && index2 != -1) {
+		// clean out problematic indexes
+		removeBadLines(lines, index1, index2);
+	}
+	return;
 }
 
 // SORT RIGHT AND LEFT LINES
@@ -223,6 +254,12 @@ std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 	int counter_x_right = 0;
 	int counter_x_left = 0;
 
+	// variables to save spotted problematic indexes
+	int bad_index_left1 = -1;
+	int bad_index_left2 = -1;
+	int bad_index_right1 = -1;
+	int bad_index_right2 = -1;
+
 	size_t j = 0;
 	// initial and final points of a line
 	cv::Point ini;
@@ -230,15 +267,20 @@ std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 	// slope threshold
 	double slope_thresh = 0.005;
 	// vectors to hold slopes of right and left lines
+
+	// variables to store slopes and slope derivatives
 	std::vector<double> right_slopes, left_slopes;
 	std::vector<double> right_slopes_dx, left_slopes_dx;
-	// vectors to hold coordinates of right and left lines
+
+	// variables to store line coordinates
 	std::vector<cv::Vec4i> right_lines, left_lines;
 
 	std::vector<cv::Vec4i> selected_lines;
-	//double* slope_pointer; // pointer to first item of right_slopes and left_slopes
-	double diff;
+
+	double diff = 0; // stores line slope difference
+
 	// Calculate the slope of all the detected lines
+	// Forms the slope derivative vector at the same time
 	for (auto i : lines) {
 		ini = cv::Point(i[0], i[1]);
 		fini = cv::Point(i[2], i[3]);
@@ -283,57 +325,66 @@ std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 
 		//}
 	}
-	findLineCenter(counter_x_left,sum_x_left,counter_x_right, sum_x_right);
-	fixProblems(left_lines, left_slopes,left_slopes_dx);
 
-/*
-	for(auto i: left_lines)
-		std::cout << i << " ";
-	std::cout << std::endl;
+	// find the center of the lines
+	findLineCenter(counter_x_left, sum_x_left, counter_x_right, sum_x_right);
 
-	for(auto i: left_slopes)
-		std::cout << i << " ";
-	std::cout << std::endl;
+	// fix the problems if any for both lines
+	fixProblems(left_lines, left_slopes, left_slopes_dx, bad_index_left1,
+			bad_index_left2);
+	fixProblems(right_lines, right_slopes, right_slopes_dx, bad_index_right1,
+			bad_index_right2);
 
-	for(auto i: left_slopes_dx)
-		std::cout << i << " ";
-	std::cout << std::endl;
+	/*	if ((bad_index_left1 != -1 && bad_index_left2 == -1)
+	 && (bad_index_right1 == -1 && bad_index_right2 == -1)) {*/
 
-	for(auto i: right_lines)
-		std::cout << i << " ";
-	std::cout << std::endl;
+	// if there is one problem in left line and there is NOT ONE problem in right line
+	if ((bad_index_left1 != -1 && bad_index_left2 == -1)
+			&& !(bad_index_right1 != -1 && bad_index_right2 == -1)) {
+		int targetIndex = static_cast<int>(left_lines.size()) - 1;
+		double current_index_diff = std::abs(right_slopes.back())
+				/ std::abs(left_slopes[bad_index_left1]);
+		double previous_index_diff = std::abs(right_slopes.back())
+				/ std::abs(left_slopes[bad_index_left1 - 1]);
 
-	for(auto i: right_slopes)
-		std::cout << i << " ";
-	std::cout << std::endl;
-
-
-	for(auto i: right_slopes_dx)
-		std::cout << i << " ";
-	std::cout << std::endl;
-*/
-
-/*	while (j < selected_lines.size()) {
-		ini = cv::Point(selected_lines[j][0], selected_lines[j][1]);
-		fini = cv::Point(selected_lines[j][2], selected_lines[j][3]);
-
-		// Condition to classify line as left side or right side
-		//std::cout << slopes[j];
-		if (slopes[j] > 0 && fini.x > img_center && ini.x > img_center) {
-			right_lines.push_back(selected_lines[j]);
-			right_flag = true;
-			//std::cout << "right" << std::endl;
-		} else if (slopes[j] < 0 && fini.x < img_center && ini.x < img_center) {
-			left_lines.push_back(selected_lines[j]);
-			left_flag = true;
-			//std::cout << "left" << std::endl;
+		// if this is true, than previous indexed lines were more parallel to right line
+		// remove the rest
+		std::cout << "curr: " << current_index_diff << " prev: "
+				<< previous_index_diff << std::endl;
+		if (current_index_diff > previous_index_diff) {
+			//std::cout << "save previous"<< std::endl;
+			removeBadLines(left_lines, bad_index_left1, targetIndex);
+		} else {
+			targetIndex = 0;
+			//std::cout << "save rest"<< std::endl;
+			removeBadLines(left_lines, targetIndex, bad_index_left1);
 		}
-		j++;
-	}*/
-	//std::this_thread::sleep_for(std::chrono::milliseconds(100));
+	} else if ((bad_index_right1 != -1 && bad_index_right2 == -1)
+			&& !(bad_index_left1 != -1 && bad_index_left2 == -1)) {
+		int targetIndex = static_cast<int>(left_lines.size()) - 1;
+		double current_index_diff = std::abs(left_slopes.back())
+				/ std::abs(right_slopes[bad_index_left1]);
+		double previous_index_diff = std::abs(left_slopes.back())
+				/ std::abs(right_slopes[bad_index_left1 - 1]);
+
+		// if this is true, than previous indexed lines were more parallel to right line
+		// remove the rest
+		std::cout << "curr: " << current_index_diff << " prev: "
+				<< previous_index_diff << std::endl;
+		if (current_index_diff > previous_index_diff) {
+			//std::cout << "save previous"<< std::endl;
+			removeBadLines(right_lines, bad_index_right1, targetIndex);
+		} else {
+			targetIndex = 0;
+			//std::cout << "save rest"<< std::endl;
+			removeBadLines(right_lines, targetIndex, bad_index_right1);
+		}
+	}
+
 	output[0] = right_lines;
 	output[1] = left_lines;
-
+	left_flag = true;
+	right_flag = true;
 	return output;
 }
 
@@ -395,8 +446,8 @@ std::vector<cv::Point> LaneDetector::regression(
 	}
 
 	// One the slope and offset points have been obtained, apply the line equation to obtain the line points
-	int ini_y = inputImage.rows;
-	int fin_y = 246;
+	int ini_y = img_rows - 50;
+	int fin_y = img_rows - 175;
 
 	double right_ini_x = ((ini_y - right_b.y) / right_m) + right_b.x;
 	double right_fin_x = ((fin_y - right_b.y) / right_m) + right_b.x;
@@ -421,12 +472,12 @@ std::vector<cv::Point> LaneDetector::regression(
  */
 std::string LaneDetector::predictTurn(double pivot, int angle) {
 	std::string output;
-	double vanish_x;
+	double vanish_x = img_center;
 	double thr_vp = 10;
 
-	// The vanishing point is the point where both lane boundary lines intersect
-	vanish_x = static_cast<double>(((right_m * right_b.x) - (left_m * left_b.x)
-			- right_b.y + left_b.y) / (right_m - left_m));
+/*	// The vanishing point is the point where both lane boundary lines intersect
+//	vanish_x = static_cast<double>(((right_m * right_b.x) - (left_m * left_b.x)
+//			- right_b.y + left_b.y) / (right_m - left_m));
 
 	// The vanishing points location determines where is the road turning
 	if (vanish_x < (pivot - thr_vp))
@@ -434,6 +485,25 @@ std::string LaneDetector::predictTurn(double pivot, int angle) {
 	else if (vanish_x > (pivot + thr_vp))
 		output = "Turn Right";
 	else if (vanish_x >= (pivot - thr_vp) && vanish_x <= (pivot + thr_vp))
+		output = "Go Straight";
+
+	if (angle > 180)
+		angle = 360 - angle; // adjust for left/right turn
+							 // subtract from 360 for left turns
+	output += " " + std::to_string(angle);*/
+
+
+	// The vanishing point is the point where both lane boundary lines intersect
+//	vanish_x = static_cast<double>(((right_m * right_b.x) - (left_m * left_b.x)
+//			- right_b.y + left_b.y) / (right_m - left_m));
+
+	// The vanishing points location determines where is the road turning
+	std::cout << angle << std::endl;
+	if (angle < 360-3 && angle > 100)
+		output = "Turn Left";
+	else if (angle > 3 && angle < 100)
+		output = "Turn Right";
+	else
 		output = "Go Straight";
 
 	if (angle > 180)
@@ -452,14 +522,13 @@ std::string LaneDetector::predictTurn(double pivot, int angle) {
  *@param turn is the output string containing the turn information
  *@return The function returns a 0
  */
-int LaneDetector::plotLane(cv::Mat inputImage, std::vector<cv::Point> lane) {
+int LaneDetector::plotLane(cv::Mat& inputImage, std::vector<cv::Point> lane) {
 	std::vector<cv::Point> poly_points;
 	cv::Mat output;
-	double current_x = (lane[0].x + lane[2].x) / 2;
+	double current_x = img_cols/2;
 	double target_x = (lane[1].x + lane[3].x) / 2;
-	int turnAngle = cv::fastAtan2(-(current_x - target_x), 200); // gives the angle
-
-	std::string turn = this->predictTurn(current_x, turnAngle); // prediction text
+	int turnAngle = cv::fastAtan2(-(current_x - target_x), 125); // gives the angle
+	std::string turn = predictTurn(current_x, turnAngle); // prediction text
 	// create the transparent polygon for a better visualization of the lane
 	inputImage.copyTo(output);
 	//std::cout << lane[2] <<" ";
@@ -470,6 +539,7 @@ int LaneDetector::plotLane(cv::Mat inputImage, std::vector<cv::Point> lane) {
 	poly_points.push_back(lane[0]);
 	poly_points.push_back(lane[1]);
 	poly_points.push_back(lane[3]);
+
 	//std::cout << poly_points <<std::endl;
 	cv::fillConvexPoly(output, poly_points, cv::Scalar(255, 0, 0), CV_AA, 0);
 
@@ -477,7 +547,7 @@ int LaneDetector::plotLane(cv::Mat inputImage, std::vector<cv::Point> lane) {
 	cv::addWeighted(output, 0.3, inputImage, 1.0 - 0.3, 0, inputImage);
 
 	// plot both lines of the lane boundary with DUAYENLER blue
-	cv::line(inputImage, cv::Point(target_x, inputImage.rows - 200),
+	cv::line(inputImage, cv::Point(target_x, img_rows-175),
 			cv::Point(current_x, inputImage.rows), cv::Scalar(0, 255, 255), 5,
 			CV_AA);
 	cv::line(inputImage, lane[0], lane[1], cv::Scalar(164, 76, 20), 5, CV_AA);
@@ -489,22 +559,8 @@ int LaneDetector::plotLane(cv::Mat inputImage, std::vector<cv::Point> lane) {
 			cv::FONT_HERSHEY_DUPLEX, 1, cvScalar(67, 32, 206), 1, CV_AA);
 
 	// show the final output image
-	cv::namedWindow(window_vision);
-	cv::imshow(window_vision, inputImage);
-
-	/*//https://docs.opencv.org/master/df/d94/samples_2cpp_2videowriter_basic_8cpp-example.html#a5
-	 cv::VideoWriter writer;
-	 int codec = cv::VideoWriter::fourcc('M', 'J', 'P', 'G');  // select desired codec (must be available at runtime)
-	 double fps = 30.0;                          // framerate of the created video stream
-	 std::string filename = "./laneDetection.avi";             // name of the output video file
-	 writer.open(filename, codec, fps, inputImage.size(), true);
-	 // check if we succeeded
-	 if (!writer.isOpened()) {
-	 std::cout << "Could not open the output video file for write\n";
-	 return -1;
-	 }
-	 writer.write(inputImage);
-	 */
+	//cv::namedWindow(window_vision);
+	//cv::imshow(window_vision, inputImage);
 
 	return 0;
 }
