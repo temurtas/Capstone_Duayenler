@@ -3,6 +3,7 @@
 //#include "opencv2/imgcodecs.hpp"
 //#include <iostream>
 //#include <fstream>
+//#include <functional> // MIGHT BE UNNECESSARY
 #include "LaneDetector.hpp"
 #include "LaneDetector.cpp"
 #include "opencv2/imgproc/imgproc_c.h"
@@ -40,6 +41,8 @@ static void on_maxLineGap_trackbar(int, void *);
 static void on_minLineLength_thresh_trackbar(int, void *);
 
 void quickSort(std::vector<cv::Vec4i> & v, unsigned int low, unsigned int high);
+void reverseVector(std::vector<cv::Vec4i> & v);
+
 unsigned int pivot(std::vector<cv::Vec4i> & v, unsigned int start,
 		unsigned int stop, unsigned int position);
 
@@ -52,7 +55,7 @@ unsigned int pivot(std::vector<cv::Vec4i> & v, unsigned int start,
  */
 int main(int argc, char* argv[]) {
 
-	cv::VideoCapture cap("./videos/green-640-12.mp4");
+	cv::VideoCapture cap("./videos/green-640-15.mp4");
 	//cv::VideoCapture cap(0, cv::CAP_V4L2);
 	LaneDetector lanedetector;  // Create the class object
 	//LaneDetector lanedetector;  // Create the class object
@@ -127,7 +130,6 @@ int main(int argc, char* argv[]) {
 		timeCapture = (double) cv::getTickCount(); // capture the starting time
 
 		cap >> frame_orig;
-
 		// check if the input video can be opened
 		if (frame_orig.empty()) {
 			std::cout << "!!! Input video could not be opened" << std::endl;
@@ -172,8 +174,10 @@ int main(int argc, char* argv[]) {
 		 }
 		 */
 		if (!lines_houghP.empty()) {
-			// sort the found lines from smallest x to largest x coordinate
+			// sort the found lines from smallest y to largest y coordinate
 			quickSort(lines_houghP, 0, lines_houghP.size());
+			// reverse the order largest y to smallest y coordinate
+			reverseVector(lines_houghP);
 
 			// Separate lines into left and right lines
 			left_right_lines = lanedetector.lineSeparation(lines_houghP,
@@ -215,7 +219,7 @@ int main(int argc, char* argv[]) {
 		imshow(winodw_hsv_filtered, frame_threshed);
 		imshow(window_canny_applied, frame_cannied);
 		imshow(window_masked, frame_masked);
-		cv::imshow(window_vision, frame_orig);
+		imshow(window_vision, frame_orig);
 
 		if (!writer.isOpened()) {
 			std::cout << "Could not open the output video file for write\n";
@@ -284,6 +288,7 @@ unsigned int pivot(std::vector<cv::Vec4i> & v, unsigned int start,
 		// values larger than pivot
 		// return location of pivot element
 		{
+	unsigned int target = 1;
 	// swap pivot into starting position
 	std::swap(v[start], v[position]);
 
@@ -291,9 +296,9 @@ unsigned int pivot(std::vector<cv::Vec4i> & v, unsigned int start,
 	unsigned int low = start + 1;
 	unsigned int high = stop;
 	while (low < high)
-		if (v[low][0] < v[start][0])
+		if (v[low][target] < v[start][target])
 			low++;
-		else if (v[--high][0] < v[start][0])
+		else if (v[--high][target] < v[start][target])
 			std::swap(v[low], v[high]);
 
 	// then swap pivot back into place
@@ -301,9 +306,21 @@ unsigned int pivot(std::vector<cv::Vec4i> & v, unsigned int start,
 	return low;
 }
 
+void reverseVector(std::vector<cv::Vec4i> & v) {/*
+ for(auto i:v)
+ std::cout << i << " ";
+ std::cout << std::endl;*/
+
+	std::reverse(v.begin(), v.end());
+	/*
+	 for(auto i:v)
+	 std::cout << i << " ";
+	 std::cout << std::endl;*/
+	return;
+}
+
 void quickSort(std::vector<cv::Vec4i> & v, unsigned int low,
 		unsigned int high) {
-	// no need to sort a vector of zero or one elements
 	if (low >= high)
 		return;
 
