@@ -17,7 +17,7 @@ Please write only the name (not surname) with same capitalization!
 | Enes   | camera holder   | 50 TL  | **NO**  ?|
 | Enes   | Strafor   | 24 TL  | **NO**  ?|
 | Erdem   | Rapor   | 13 TL  | **NO**  |
-| Halil | Robotistan | 208,43 TL | **NO** | 
+| Halil | Robotistan | 208.43 TL | **NO** | 
 | Enes | Konnektör | 5 TL || **NO** |
 
 Aşağısı Totaller
@@ -26,9 +26,9 @@ Aşağısı Totaller
 
 | Person | Total Spent  | Average Spent  | Debt  |
 |---|---|---|---|
-| Erdem  | 154.77 TL | 159.07 TL | 4.3 TL |
-| Enes   | 355.55 TL | 159.07 TL | -196.48  |
-| Halil  | 121.55 TL | 159.07 TL | 37.52 TL |
-| Sarper | 161.00 TL | 159.07 TL | -1.93 TL |
-| İlker  | 2.5 TL | 159.07 TL | 156.57 TL |
+| Erdem  | 13 TL | 60.08 TL | 47 TL |
+| Enes   | 79 TL | 60.08 TL | -19 TL  |
+| Halil  | 208.43 TL | 60.08 TL | -148 TL |
+| Sarper | 0 TL | 60.08 TL | 60 TL |
+| İlker  | 0 TL | 60.08 TL | 60 TL |
 
