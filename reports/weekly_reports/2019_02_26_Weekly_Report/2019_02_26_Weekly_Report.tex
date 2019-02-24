@@ -60,7 +60,7 @@
 			Halil Temurtaş, 2094522, 0531 632 2194  		
 }
 \fancyhead[RO,RE]{
-			\textbf{February 19, 2019} \\
+			\textbf{February 26, 2019} \\
 			Sarper Sertel, 2094449, 0542 515 6039 \\
 			Erdem Tuna, 2167419, 0535 256 3320 \\ 
 			İlker Sağlık, 2094423, 0541 722 9573}
@@ -80,37 +80,75 @@
 \end{figure}
 \vspace*{-1.7cm}
 \begin{center}
-	\Large\textbf{February 12 - 18 Weekly Report}
+	\Large\textbf{February 19 - 25 Weekly Report}
 	\end{center}
 \section{Progress}
 \begin{itemize}
-	\item Possible problematic cases on the path are analyzed. Some of them are shown in \textit{Figure~\ref{fig:lane-analysis-2}} and \textit{Figure~\ref{fig:lane-analysis-1}}. The image processing is improved according to studying cases.
+	\item Lane detection tests were conducted with different disturbances on different locations of the path. Possible detection errors were again analysed. An example case can be seen at \textit{Figure~\ref{fig:lane-analysis-1}}.
 
-			\begin{figure}[H]
+		\begin{figure}[H]
 			\center
 			\setlength{\unitlength}{\textwidth} 
-			\includegraphics[width=0.75\unitlength]{lane-analysis-2}
-			\caption{\label{fig:lane-analysis-2} Possible Problems on the Path - 1.}
-			\end{figure}
-			\begin{figure}[H]
+			\includegraphics[width=0.75\unitlength]{lane_det}
+			\caption{\label{fig:lane-analysis-1} Possible Problems on the Path - 1.}
+		\end{figure}
+			
+	 \item The chassis parts were drawn in Solidworks. And the placements of the components on top of the chassis were discussed. The main components can be seen from the \textit{Figure~\ref{fig:chass}}. The mounting bracket for the motor can be seen at \textit{Figure~\ref{fig:brac}}. 
+	 
+	 \item Initial consideration on system modelling via Bump Test were discussed. A simulink model was drawn for the expected overdamped system with pure delay. The model can be seen from the \textit{Figure~\ref{fig:cont}}.  
+    
+	    \begin{figure}[H]
 			\center
 			\setlength{\unitlength}{\textwidth} 
-			\includegraphics[width=0.75\unitlength]{lane-analysis-1}
-			\caption{\label{fig:lane-analysis-1} Possible Problems on the Path - 2.}
-			\end{figure}
-
-	 \item Racecourse is constructed.	
-	 \item Testing and Implementation of new motor-wheel pair and Li-Po battery is completed on current chassis. 
-	\item The measurements for new chassis were taken.
-	\item The hotspot connection on Linux machines were studied.
-    \item Measurement tests for ToF distance measurement sensor Polulu VL6180X are conducted.
+			\includegraphics[width=0.7\unitlength]{sasi}
+			\caption{\label{fig:chass} Main Components of the Chassis}
+		\end{figure}
+		
+		\begin{figure}[H]
+			\center
+			\setlength{\unitlength}{\textwidth} 
+			\includegraphics[width=0.4\unitlength]{motor_conn}
+			\caption{\label{fig:brac} Mounting Bracket for the Motor}
+		\end{figure}
+		
+	
+	
+	
+	
+		\begin{figure}[H]
+			\center
+			\setlength{\unitlength}{\textwidth} 
+			\includegraphics[width=1\unitlength]{cont}
+			\caption{\label{fig:cont} A Simulink Model for the Expected Overdamped System}
+		\end{figure}
 	
 	\end{itemize}
 \section{Plans}
 \begin{itemize}
-\item Internal communication subsystem will be studied.
-\item New chassis design will be drawn in 3D CAD software.
+\item New chassis will be built.
+\item Initial attempts to tune PID controller for the lateral movement of the vehicle.  
 \end{itemize}
+
+\section{Problems}
+\begin{itemize}
+	\item The method for gwtting step response step response. Two alternatives can be seen from \textit{Figures~\ref{fig:bupm1}~\&~\ref{fig:bump2}}.
+\end{itemize}
+
+
+		\begin{figure}[H]
+			\center
+			\setlength{\unitlength}{\textwidth} 
+			\includegraphics[width=1\unitlength]{bump_test_dist}
+			\caption{\label{fig:bump1} A Bump Test Set-Up for Distance Control System }
+		\end{figure}
+		
+		
+		\begin{figure}[H]
+			\center
+			\setlength{\unitlength}{\textwidth} 
+			\includegraphics[width=1\unitlength]{bump_test_ang}
+			\caption{\label{fig:bump2} A Bump Test Set-Up for Angle Control System}
+		\end{figure}
 
 
 %\begin{appendices}
