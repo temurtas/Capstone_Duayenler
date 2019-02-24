@@ -3,7 +3,6 @@
 //#include "opencv2/imgcodecs.hpp"
 //#include <iostream>
 //#include <fstream>
-//#include <functional> // MIGHT BE UNNECESSARY
 #include "LaneDetector.hpp"
 #include "LaneDetector.cpp"
 #include "opencv2/imgproc/imgproc_c.h"
@@ -15,7 +14,6 @@ const cv::String window_lane_detected = "Lane Detection";
 const cv::String winodw_hsv_filtered = "HSV Filtered";
 const cv::String window_canny_applied = "Canny Applied";
 const cv::String window_masked = "Masked";
-const cv::String window_vision = "Lane and Vehicle Vision";
 
 int low_H = 60, low_S = 120, low_V = 106; // low_S = 144,introduces bug
 int high_H = max_value_H, high_S = max_value, high_V = max_value;
@@ -24,9 +22,9 @@ int minLength = 50;
 /** HSV PARAMETER SETTINGS **/
 
 /** **/
-int threshold = 20;
-int maxLineGap = 20;
-int minLineLength = 30; //was 30
+int 	threshold = 20;
+int 	maxLineGap = 20;
+int 	minLineLength = 30;
 /** **/
 
 static void on_low_H_thresh_trackbar(int, void *);
@@ -40,11 +38,7 @@ static void on_threshold_thresh_trackbar(int, void *);
 static void on_maxLineGap_trackbar(int, void *);
 static void on_minLineLength_thresh_trackbar(int, void *);
 
-void quickSort(std::vector<cv::Vec4i> & v, unsigned int low, unsigned int high);
-void reverseVector(std::vector<cv::Vec4i> & v);
-
-unsigned int pivot(std::vector<cv::Vec4i> & v, unsigned int start,
-		unsigned int stop, unsigned int position);
+void quickSort(std::vector<cv::Vec4i>& array, int low, int high);
 
 /**
  *@brief Function main executes the algorithm of the lane detection.
@@ -85,10 +79,6 @@ int main(int argc, char* argv[]) {
 
 	//Mat whiteFrame(426, 640, CV_8UC3, Scalar(255, 255, 255));
 
-	cv::VideoWriter writer;
-	int codec = cv::VideoWriter::fourcc('X', 'V', 'I', 'D'); // select desired codec (must be available at runtime)
-	std::string filename = "./laneDetection.avi"; // name of the output video file
-
 	// create output window
 	cv::namedWindow(window_lane_detected);
 
@@ -108,10 +98,10 @@ int main(int argc, char* argv[]) {
 
 	cv::createTrackbar("threshold", window_lane_detected, &threshold, max_value,
 			on_threshold_thresh_trackbar);
-	cv::createTrackbar("maxLineGap", window_lane_detected, &maxLineGap,
-			max_value, on_maxLineGap_trackbar);
-	cv::createTrackbar("minLineLength", window_lane_detected, &minLineLength,
-			max_value, on_minLineLength_thresh_trackbar);
+	cv::createTrackbar("maxLineGap", window_lane_detected, &maxLineGap, max_value,
+			on_maxLineGap_trackbar);
+	cv::createTrackbar("minLineLength", window_lane_detected, &minLineLength, max_value,
+			on_minLineLength_thresh_trackbar);
 
 	cv::Mat frame_HSV;
 	cv::Mat frame_orig, frame_fitered2D, frame_threshed, frame_cannied,
@@ -121,8 +111,7 @@ int main(int argc, char* argv[]) {
 	cv::Mat frame_houghP;
 	std::vector<cv::Vec4i> lines_houghP; // will hold the results of the detection
 
-	cap >> frame_orig;
-	writer.open(filename, codec, fps, frame_orig.size(), true);
+
 
 	// loop through live frames
 	while (true) {
@@ -130,6 +119,7 @@ int main(int argc, char* argv[]) {
 		timeCapture = (double) cv::getTickCount(); // capture the starting time
 
 		cap >> frame_orig;
+
 		// check if the input video can be opened
 		if (frame_orig.empty()) {
 			std::cout << "!!! Input video could not be opened" << std::endl;
@@ -162,23 +152,18 @@ int main(int argc, char* argv[]) {
 		frame_masked = lanedetector.cropROI(frame_cannied);
 		// runs the line detection
 		std::vector<cv::Vec4i> line;
-		HoughLinesP(frame_masked, lines_houghP, 1, CV_PI / 180, threshold,
-				(double) maxLineGap, (double) minLineLength);
+		HoughLinesP(frame_masked, lines_houghP, 1, CV_PI / 180, threshold,(double) maxLineGap, (double)minLineLength);
 //		for (auto i : lines_houghP) {
 //			std::cout << i << std::endl;
 //		}
-
+		// sort the found lines from smallest x to largest x coordinate
+		quickSort(lines_houghP, 0, lines_houghP.size());
 //		std::cout << lines_houghP[0][1] << std::endl;
-		/*		for (auto i : lines_houghP) {
-		 std::cout << i << std::endl;
-		 }
-		 */
+/*		for (auto i : lines_houghP) {
+			std::cout << i << std::endl;
+		}
+*/
 		if (!lines_houghP.empty()) {
-			// sort the found lines from smallest y to largest y coordinate
-			quickSort(lines_houghP, 0, lines_houghP.size());
-			// reverse the order largest y to smallest y coordinate
-			reverseVector(lines_houghP);
-
 			// Separate lines into left and right lines
 			left_right_lines = lanedetector.lineSeparation(lines_houghP,
 					frame_masked);
@@ -191,11 +176,10 @@ int main(int argc, char* argv[]) {
 		}
 		for (size_t i = 0; i < lines_houghP.size(); i++) {
 			cv::Vec4i l = lines_houghP[i];
-			if (red < 0)
-				red = 155;
-			if (green < 0)
-				green = 55;
-			cv::line(frame_houghP, cv::Point(l[0], l[1]), cv::Point(l[2], l[3]),
+			if (red<0) red = 155;
+			if (green<0) green = 55;
+			cv::line(frame_houghP, cv::Point(l[0], l[1]),
+					cv::Point(l[2], l[3]),
 					cv::Scalar(255, green, red), 3, cv::LINE_AA);
 			red = red - 20;
 			green = green - 20;
@@ -219,14 +203,8 @@ int main(int argc, char* argv[]) {
 		imshow(winodw_hsv_filtered, frame_threshed);
 		imshow(window_canny_applied, frame_cannied);
 		imshow(window_masked, frame_masked);
-		imshow(window_vision, frame_orig);
 
-		if (!writer.isOpened()) {
-			std::cout << "Could not open the output video file for write\n";
-			return -1;
-		}
-		writer.write(frame_orig);
-		red = 250;
+		red =250;
 		green = 250;
 
 		char key = (char) cv::waitKey(30);
@@ -234,7 +212,7 @@ int main(int argc, char* argv[]) {
 			break;
 		}
 
-		//std::cin.get();
+		std::cin.get();
 	}
 	return 0;
 }
@@ -281,59 +259,31 @@ static void on_minLineLength_thresh_trackbar(int, void *) {
 	cv::setTrackbarPos("minLineLength", window_lane_detected, minLineLength);
 }
 
-unsigned int pivot(std::vector<cv::Vec4i> & v, unsigned int start,
-		unsigned int stop, unsigned int position)
-		// partition vector into two groups
-		// values smaller than or equal to pivot
-		// values larger than pivot
-		// return location of pivot element
-		{
-	unsigned int target = 1;
-	// swap pivot into starting position
-	std::swap(v[start], v[position]);
+void quickSort(std::vector<cv::Vec4i>& array, int low, int high) {
+	int i = low;
+	int j = high;
+	int pivot = array[(i + j) / 2][0];
+	int temp;
 
-	// partition values
-	unsigned int low = start + 1;
-	unsigned int high = stop;
-	while (low < high)
-		if (v[low][target] < v[start][target])
-			low++;
-		else if (v[--high][target] < v[start][target])
-			std::swap(v[low], v[high]);
-
-	// then swap pivot back into place
-	std::swap(v[start], v[--low]);
-	return low;
-}
-
-void reverseVector(std::vector<cv::Vec4i> & v) {/*
- for(auto i:v)
- std::cout << i << " ";
- std::cout << std::endl;*/
-
-	std::reverse(v.begin(), v.end());
-	/*
-	 for(auto i:v)
-	 std::cout << i << " ";
-	 std::cout << std::endl;*/
-	return;
-}
-
-void quickSort(std::vector<cv::Vec4i> & v, unsigned int low,
-		unsigned int high) {
-	if (low >= high)
-		return;
-
-	// select the pivot value
-	unsigned int pivotIndex = (low + high) / 2;
-
-	// partition the vector
-	pivotIndex = pivot(v, low, high, pivotIndex);
-
-	// sort the two sub vectors
-	if (low < pivotIndex)
-		quickSort(v, low, pivotIndex);
-	if (pivotIndex < high)
-		quickSort(v, pivotIndex + 1, high);
+	while (i <= j) {
+		while (array[i][0] < pivot)
+			i++;
+		while (array[j][0] > pivot)
+			j--;
+		if (i <= j) {
+			/*
+			temp = array[i];
+			array[i] = array[j];
+			array[j] = temp;
+			*/
+			std::swap(array[i],array[j]);
+			i++;
+			j--;
+		}
+	}
+	if (j > low)
+		quickSort(array, low, j);
+	if (i < high)
+		quickSort(array, i, high);
 }
 
