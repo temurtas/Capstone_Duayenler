@@ -19,15 +19,15 @@ Please write only the name (not surname) with same capitalization!
 | Erdem   | Rapor   | 13 TL  | **NO**  |
 | Halil | Robotistan | 208.43 TL | **NO** | 
 | Enes | Konnektör | 5 TL || **NO** |
-
+| Enes | ikinci sensör + nano | 155 TL || **NO** |
 Aşağısı Totaller
 
 
 
 | Person | Total Spent  | Average Spent  | Debt  |
 |---|---|---|---|
-| Erdem  | 13 TL | 60.08 TL | 47 TL |
-| Enes   | 79 TL | 60.08 TL | -19 TL  |
+| Erdem  | 13 TL | 60.08 TL | 47 TL | Verdi
+| Enes   | 79 TL | 60.08 TL | -19 TL  | Aldı
 | Halil  | 208.43 TL | 60.08 TL | -148 TL |
 | Sarper | 0 TL | 60.08 TL | 60 TL |
 | İlker  | 0 TL | 60.08 TL | 60 TL |
