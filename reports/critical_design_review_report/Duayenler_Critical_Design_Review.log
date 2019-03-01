@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  24 FEB 2019 23:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  1 MAR 2019 20:43
 entering extended mode
-**./2019_02_26_Weekly_Report.tex
-(2019_02_26_Weekly_Report.tex
+**./Duayenler_Critical_Design_Review.tex
+(Duayenler_Critical_Design_Review.tex
 LaTeX2e <2016/03/31> patch level 3
 Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
@@ -582,49 +582,6 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\adjustbox\adjustbox.sty"
-Package: adjustbox 2018/04/08 v1.1 Adjusting TeX boxes (trim, clip, ...)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\adjustbox\adjcalc.sty"
-Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
--ends (calc, etex, pgfmath)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\adjustbox\trimclip.sty"
-Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\collectbox\collectbox.sty"
-Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box43
-)
-\tc@llx=\dimen182
-\tc@lly=\dimen183
-\tc@urx=\dimen184
-\tc@ury=\dimen185
-Package trimclip Info: Using driver 'tc-pdftex.def'.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\adjustbox\tc-pdftex.def"
-File: tc-pdftex.def 2018/04/08 v2.1 Clipping driver for pdftex
-))
-\adjbox@Width=\dimen186
-\adjbox@Height=\dimen187
-\adjbox@Depth=\dimen188
-\adjbox@Totalheight=\dimen189
-\adjbox@pwidth=\dimen190
-\adjbox@pheight=\dimen191
-\adjbox@pdepth=\dimen192
-\adjbox@ptotalheight=\dimen193
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ifoddpage\ifoddpage.sty"
-Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count145
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\varwidth.sty"
-Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box44
-\sift@deathcycles=\count146
-\@vwid@loff=\dimen194
-\@vwid@roff=\dimen195
-))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\xspace.sty"
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
@@ -659,7 +616,7 @@ s
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lipsum\lipsum.sty"
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
-\c@lips@count=\count147
+\c@lips@count=\count145
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
 Package: pdfpages 2017/10/31 v0.5l Insert pages of external PDF documents (AM)
@@ -670,25 +627,17 @@ Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
 Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 ))
-\AM@pagewidth=\dimen196
-\AM@pageheight=\dimen197
+\AM@pagewidth=\dimen182
+\AM@pageheight=\dimen183
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.def"
 File: pppdftex.def 2017/10/31 v0.5l Pdfpages driver for pdfTeX (AM)
 )
-\AM@pagebox=\box45
+\AM@pagebox=\box43
 \AM@global@opts=\toks43
 \AM@toc@title=\toks44
-\c@AM@survey=\count148
-\AM@templatesizebox=\box46
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
-Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen198
-\extrarowheight=\dimen199
-\NC@list=\toks45
-\extratabsurround=\skip61
-\backup@length=\skip62
+\c@AM@survey=\count146
+\AM@templatesizebox=\box44
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pgfplots\pgfplots.sty"
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\pgfplots.revision.tex"
@@ -696,12 +645,12 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 Package: pgfplots 2018/03/28 v1.16 Data Visualization (1.16)
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\pgfplots.code.tex"
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\pgfplotscore.code.tex"
-\t@pgfplots@toka=\toks46
-\t@pgfplots@tokb=\toks47
-\t@pgfplots@tokc=\toks48
-\pgfplots@tmpa=\dimen256
-\c@pgfplots@coordindex=\count149
-\c@pgfplots@scanlineindex=\count150
+\t@pgfplots@toka=\toks45
+\t@pgfplots@tokb=\toks46
+\t@pgfplots@tokc=\toks47
+\pgfplots@tmpa=\dimen184
+\c@pgfplots@coordindex=\count147
+\c@pgfplots@scanlineindex=\count148
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\sys\pgfplotssysgeneric
 .code.tex"))
@@ -717,7 +666,7 @@ Package pgfplots: loading complementary arithmetics for your pgf version...
 soldpgfsupp_pgflibraryfpu.code.tex")
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\oldpgfcompatib\pgfplot
 soldpgfsupp_pgfmathfloat.code.tex"
-\c@pgfmathroundto@lastzeros=\count151
+\c@pgfmathroundto@lastzeros=\count149
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\oldpgfcompatib\pgfplot
 soldpgfsupp_leq.code.tex"))
@@ -729,14 +678,14 @@ liststructure.code.tex")
 liststructureext.code.tex")
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\liststructure\pgfplots
 array.code.tex"
-\c@pgfplotsarray@tmp=\count152
+\c@pgfplotsarray@tmp=\count150
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\liststructure\pgfplots
 matrix.code.tex")
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\numtable\pgfplotstable
 shared.code.tex"
-\c@pgfplotstable@counta=\count153
-\t@pgfplotstable@a=\toks49
+\c@pgfplotstable@counta=\count151
+\t@pgfplotstable@a=\toks48
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\liststructure\pgfplots
 deque.code.tex")
@@ -748,7 +697,7 @@ ta.code.tex"))
 .code.tex")
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\libs\pgflibrarypgfplot
 s.surfshading.code.tex"
-\c@pgfplotslibrarysurf@no=\count154
+\c@pgfplotslibrarysurf@no=\count152
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgfplots\sys\pgflibrarypgfplots
 .surfshading.pgfsys-pdftex.def")))
@@ -780,16 +729,16 @@ x")
 s\tikzlibrarydecorations.code.tex"
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduledecoration
 s.code.tex"
-\pgfdecoratedcompleteddistance=\dimen257
-\pgfdecoratedremainingdistance=\dimen258
-\pgfdecoratedinputsegmentcompleteddistance=\dimen259
-\pgfdecoratedinputsegmentremainingdistance=\dimen260
-\pgf@decorate@distancetomove=\dimen261
-\pgf@decorate@repeatstate=\count155
-\pgfdecorationsegmentamplitude=\dimen262
-\pgfdecorationsegmentlength=\dimen263
+\pgfdecoratedcompleteddistance=\dimen185
+\pgfdecoratedremainingdistance=\dimen186
+\pgfdecoratedinputsegmentcompleteddistance=\dimen187
+\pgfdecoratedinputsegmentremainingdistance=\dimen188
+\pgf@decorate@distancetomove=\dimen189
+\pgf@decorate@repeatstate=\count153
+\pgfdecorationsegmentamplitude=\dimen190
+\pgfdecorationsegmentlength=\dimen191
 )
-\tikz@lib@dec@box=\box47
+\tikz@lib@dec@box=\box45
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\librarie
 s\tikzlibrarydecorations.pathmorphing.code.tex"
@@ -799,13 +748,13 @@ brarydecorations.pathmorphing.code.tex"))
 s\tikzlibrarydecorations.pathreplacing.code.tex"
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\libraries\decorations\pgfli
 brarydecorations.pathreplacing.code.tex"))
-\pgfplots@numplots=\count156
-\pgfplots@xmin@reg=\dimen264
-\pgfplots@xmax@reg=\dimen265
-\pgfplots@ymin@reg=\dimen266
-\pgfplots@ymax@reg=\dimen267
-\pgfplots@zmin@reg=\dimen268
-\pgfplots@zmax@reg=\dimen269
+\pgfplots@numplots=\count154
+\pgfplots@xmin@reg=\dimen192
+\pgfplots@xmax@reg=\dimen193
+\pgfplots@ymin@reg=\dimen194
+\pgfplots@ymax@reg=\dimen195
+\pgfplots@zmin@reg=\dimen196
+\pgfplots@zmax@reg=\dimen197
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\librarie
 s\tikzlibraryplotmarks.code.tex"
@@ -815,147 +764,75 @@ File: tikzlibraryplotmarks.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
 ks.code.tex"
 File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
 )))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\capt-of\capt-of.sty"
-Package: capt-of 2009/12/29 v0.2 standard captions outside of floats
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\multicol.sty"
-Package: multicol 2016/04/07 v1.8p multicolumn formatting (FMi)
-\c@tracingmulticols=\count157
-\mult@box=\box48
-\multicol@leftmargin=\dimen270
-\c@unbalance=\count158
-\c@collectmore=\count159
-\doublecol@number=\count160
-\multicoltolerance=\count161
-\multicolpretolerance=\count162
-\full@width=\dimen271
-\page@free=\dimen272
-\premulticols=\dimen273
-\postmulticols=\dimen274
-\multicolsep=\skip63
-\multicolbaselineskip=\skip64
-\partial@page=\box49
-\last@line=\box50
-\maxbalancingoverflow=\dimen275
-\mult@rightbox=\box51
-\mult@grightbox=\box52
-\mult@gfirstbox=\box53
-\mult@firstbox=\box54
-\@tempa=\box55
-\@tempa=\box56
-\@tempa=\box57
-\@tempa=\box58
-\@tempa=\box59
-\@tempa=\box60
-\@tempa=\box61
-\@tempa=\box62
-\@tempa=\box63
-\@tempa=\box64
-\@tempa=\box65
-\@tempa=\box66
-\@tempa=\box67
-\@tempa=\box68
-\@tempa=\box69
-\@tempa=\box70
-\@tempa=\box71
-\c@columnbadness=\count163
-\c@finalcolumnbadness=\count164
-\last@try=\dimen276
-\multicolovershoot=\dimen277
-\multicolundershoot=\dimen278
-\mult@nat@firstbox=\box72
-\colbreak@box=\box73
-\mc@col@check@num=\count165
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
-Package: multirow 2016/10/11 v2.1 Span multiple rows of a table
-\multirow@colwidth=\skip65
-\multirow@cnta=\count166
-\multirow@cntb=\count167
-\multirow@dima=\skip66
-\bigstrutjot=\dimen279
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\slashbox\slashbox.sty"
-slashbox style by K.Yasuoka, May 1993.
-\@slashboxa=\box74
-\@slashboxb=\box75
-\@slashboxc=\box76
-\@slashboxwd=\count168
-\@slashboxht=\count169
-\@slashsepl=\dimen280
-\@slashsepr=\dimen281
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
-Package: epstopdf 2016/05/15 v2.6 Conversion with epstopdf on the fly (HO)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\adjustbox\adjustbox.sty"
+Package: adjustbox 2018/04/08 v1.1 Adjusting TeX boxes (trim, clip, ...)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\adjustbox\adjcalc.sty"
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\adjustbox\trimclip.sty"
+Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\collectbox\collectbox.sty"
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box46
+)
+\tc@llx=\dimen198
+\tc@lly=\dimen199
+\tc@urx=\dimen256
+\tc@ury=\dimen257
+Package trimclip Info: Using driver 'tc-pdftex.def'.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\adjustbox\tc-pdftex.def"
+File: tc-pdftex.def 2018/04/08 v2.1 Clipping driver for pdftex
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+\adjbox@Width=\dimen258
+\adjbox@Height=\dimen259
+\adjbox@Depth=\dimen260
+\adjbox@Totalheight=\dimen261
+\adjbox@pwidth=\dimen262
+\adjbox@pheight=\dimen263
+\adjbox@pdepth=\dimen264
+\adjbox@ptotalheight=\dimen265
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ifoddpage\ifoddpage.sty"
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count155
 )
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
-Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\varwidth.sty"
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box47
+\sift@deathcycles=\count156
+\@vwid@loff=\dimen266
+\@vwid@roff=\dimen267
 ))
-(../../../documents/configuration.tex
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(../../documents/arduinoLanguage.tex
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\courier.sty"
+Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
+))
+(../../documents/configuration.tex
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 ))
+(Duayenler_Critical_Design_Review.aux)
+\openout1 = `Duayenler_Critical_Design_Review.aux'.
 
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 61.
-
-
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 66.
-
-(2019_02_26_Weekly_Report.aux)
-\openout1 = `2019_02_26_Weekly_Report.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -966,18 +843,18 @@ LaTeX Font Info:    ... okay on input line 70.
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(74.71704pt, 448.07378pt, 74.71706pt)
-* v-part:(T,H,B)=(92.30072pt, 614.295pt, 138.45113pt)
+* v-part:(T,H,B)=(77.84674pt, 650.43pt, 116.77011pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
 * \textwidth=448.07378pt
-* \textheight=614.295pt
+* \textheight=650.43pt
 * \oddsidemargin=2.44705pt
 * \evensidemargin=2.44705pt
-* \topmargin=-114.96927pt
-* \headheight=130.0pt
+* \topmargin=-31.42325pt
+* \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
-* \footskip=71.13188pt
+* \footskip=30.0pt
 * \marginparwidth=35.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
@@ -996,35 +873,77 @@ File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count170
-\scratchdimen=\dimen282
-\scratchbox=\box77
-\nofMPsegments=\count171
-\nofMParguments=\count172
-\everyMPshowfont=\toks50
-\MPscratchCnt=\count173
-\MPscratchDim=\dimen283
-\MPnumerator=\count174
-\makeMPintoPDFobject=\count175
-\everyMPtoPDFconversion=\toks51
-) ABD: EveryShipout initializing macros
-LaTeX Info: Redefining \celsius on input line 70.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 70.
+\scratchcounter=\count157
+\scratchdimen=\dimen268
+\scratchbox=\box48
+\nofMPsegments=\count158
+\nofMParguments=\count159
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count160
+\MPscratchDim=\dimen269
+\MPnumerator=\count161
+\makeMPintoPDFobject=\count162
+\everyMPtoPDFconversion=\toks50
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+ABD: EveryShipout initializing macros
+LaTeX Info: Redefining \celsius on input line 53.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 53.
 
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 70.
-Package gensymb Info: Using \Omega for \ohm on input line 70.
+LaTeX Info: Redefining \ohm on input line 53.
+Package gensymb Info: Using \Omega for \ohm on input line 53.
 
 Package gensymb Warning: Not defining \micro.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count176
-\AtBeginShipoutBox=\box78
+\c@lstlisting=\count163
+\AtBeginShipoutBox=\box49
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\pdflscape.sty"
 Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
 
@@ -1037,119 +956,377 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.16} into 
 your preamble.
- on input line 70.
+ on input line 53.
 
 
-<../../../documents/logos/logo3-with-stroke.png, id=4, 1508.63625pt x 379.4175p
-t>
-File: ../../../documents/logos/logo3-with-stroke.png Graphic file (type png)
- <use ../../../documents/logos/logo3-with-stroke.png>
-Package pdftex.def Info: ../../../documents/logos/logo3-with-stroke.png used on
- input line 78.
-(pdftex.def)             Requested size: 403.26366pt x 101.41936pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 87.
+<../../documents/logos/logo3-with-stroke.png, id=4, 1508.63625pt x 379.4175pt>
+File: ../../documents/logos/logo3-with-stroke.png Graphic file (type png)
+
+<use ../../documents/logos/logo3-with-stroke.png>
+Package pdftex.def Info: ../../documents/logos/logo3-with-stroke.png used on in
+put line 60.
+(pdftex.def)             Requested size: 448.05945pt x 112.68561pt.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-0.def"
+File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 76.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 76.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-1.def"
+File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
+) [1
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <../../documents/logos/log
+o3-with-stroke.png>] (Duayenler_Critical_Design_Review.toc [1])
+\tf@toc=\write4
+\openout4 = `Duayenler_Critical_Design_Review.toc'.
+
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
+
+ []
+
+[4] [5]
+
+LaTeX Warning: Reference `fig:system-diagram' on page 6 undefined on input line
+ 200.
+
+
+LaTeX Warning: Reference `fig:vmodel' on page 6 undefined on input line 209.
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 217.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 87.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 217.
 
-<lane_det.png, id=6, 1927.2pt x 1084.05pt>
-File: lane_det.png Graphic file (type png)
- <use lane_det.png>
-Package pdftex.def Info: lane_det.png used on input line 92.
-(pdftex.def)             Requested size: 336.05533pt x 189.01686pt.
 
-Overfull \hbox (2.57674pt too wide) in paragraph at lines 98--99
-[]\OT1/cmr/m/n/12 Initial con-sid-er-a-tion on sys-tem mod-elling via Bump Test
- were dis-cussed. A simulink
+LaTeX Warning: Reference `fig:lane_detection_subsystem' on page 6 undefined on 
+input line 224.
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 236--237
+
  []
 
-<sasi.jpg, id=7, 793.4158pt x 611.57516pt>
-File: sasi.jpg Graphic file (type jpg)
- <use sasi.jpg>
-Package pdftex.def Info: sasi.jpg used on input line 103.
-(pdftex.def)             Requested size: 313.65027pt x 241.76085pt.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-1.def"
-File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-<../../../documents/logos/logo2-page-with-stroke.png, id=8, 376.0449pt x 376.04
-49pt>
-File: ../../../documents/logos/logo2-page-with-stroke.png Graphic file (type pn
-g)
- <use ../../../documents/logos/logo2-page-with-stroke.png>
-Package pdftex.def Info: ../../../documents/logos/logo2-page-with-stroke.png us
-ed on input line 106.
-(pdftex.def)             Requested size: 62.59596pt x 62.59557pt.
- [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+)
 
- <../../../documents/logos/logo3-with-stroke.png> <./lane_det.png> <../../../do
-cuments/logos/logo2-page-with-stroke.png>] <motor_conn.jpg, id=20, 568.05774pt 
-x 572.72032pt>
-File: motor_conn.jpg Graphic file (type jpg)
- <use motor_conn.jpg>
-Package pdftex.def Info: motor_conn.jpg used on input line 110.
-(pdftex.def)             Requested size: 179.22676pt x 180.69624pt.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-<cont.png, id=21, 1416.79312pt x 658.71094pt>
-File: cont.png Graphic file (type png)
- <use cont.png>
-Package pdftex.def Info: cont.png used on input line 121.
-(pdftex.def)             Requested size: 448.07378pt x 208.31923pt.
-File: ../../../documents/logos/logo2-page-with-stroke.png Graphic file (type pn
-g)
+[7] ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+) [8]
 
-<use ../../../documents/logos/logo2-page-with-stroke.png>
-Package pdftex.def Info: ../../../documents/logos/logo2-page-with-stroke.png us
-ed on input line 124.
-(pdftex.def)             Requested size: 62.59596pt x 62.59557pt.
- [2 <./sasi.jpg> <./motor_conn.jpg>] <bump_test_dist.png, id=25, 730.98094pt x 
-268.75406pt>
-File: bump_test_dist.png Graphic file (type png)
+LaTeX Warning: Reference `fig:detection-test-results' on page 9 undefined on in
+put line 281.
 
-<use bump_test_dist.png>
-Package pdftex.def Info: bump_test_dist.png used on input line 141.
-(pdftex.def)             Requested size: 448.07378pt x 164.7394pt.
- <bump_test_ang.png, id=26, 787.44188pt x 639.89063pt>
-File: bump_test_ang.png Graphic file (type png)
+[9] [10] [11] [12]
 
-<use bump_test_ang.png>
-Package pdftex.def Info: bump_test_ang.png used on input line 149.
-(pdftex.def)             Requested size: 448.07378pt x 364.10678pt.
-File: ../../../documents/logos/logo2-page-with-stroke.png Graphic file (type pn
-g)
+LaTeX Warning: Reference `fig:data_processing_subsystem' on page 13 undefined o
+n input line 416.
 
-<use ../../../documents/logos/logo2-page-with-stroke.png>
-Package pdftex.def Info: ../../../documents/logos/logo2-page-with-stroke.png us
-ed on input line 152.
-(pdftex.def)             Requested size: 62.59596pt x 62.59557pt.
- [3 <./cont.png> <./bump_test_dist.png>]
-File: ../../../documents/logos/logo2-page-with-stroke.png Graphic file (type pn
-g)
- <use ../../../documents/logos/logo2-page-with-stroke.png>
-Package pdftex.def Info: ../../../documents/logos/logo2-page-with-stroke.png us
-ed on input line 173.
-(pdftex.def)             Requested size: 62.59596pt x 62.59557pt.
 
-[4 <./bump_test_ang.png>] (2019_02_26_Weekly_Report.aux) ) 
+Underfull \hbox (badness 10000) in paragraph at lines 416--417
+
+ []
+
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 429.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 429.
+
+
+LaTeX Warning: Reference `fig:turn-prediction-explained' on page 13 undefined o
+n input line 446.
+
+[13]
+
+LaTeX Warning: Reference `fig:lane_detection_subsystem' on page 14 undefined on
+ input line 461.
+
+
+LaTeX Warning: Reference `fig:turn-prediction-explained' on page 14 undefined o
+n input line 461.
+
+[14] [15] [16]
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+) [17]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 582.
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 586--587
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 588.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omspcr.fd"
+File: omspcr.fd 
+)
+LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 588.
+
+Underfull \hbox (badness 10000) in paragraph at lines 588--589
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 592--593
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 598--599
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 600--601
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 602--603
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 604--605
+
+ []
+
+[19]
+
+LaTeX Warning: Reference `fig:socket_funcs' on page 20 undefined on input line 
+633.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 650--651
+
+ []
+
+[20]
+
+LaTeX Warning: Reference `fig:handshake1' on page 21 undefined on input line 69
+0.
+
+
+LaTeX Warning: Reference `fig:handshake2' on page 21 undefined on input line 69
+0.
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 698--699
+
+ []
+
+[22] [23]
+Underfull \hbox (badness 10000) in paragraph at lines 767--768
+
+ []
+
+
+LaTeX Warning: Reference `fig:speed-state' on page 24 undefined on input line 7
+69.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 769--770
+
+ []
+
+[24] [25]
+Underfull \hbox (badness 10000) in paragraph at lines 818--819
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 839--841
+
+ []
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 860--861
+
+ []
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 897--898
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 899--900
+
+ []
+
+
+LaTeX Warning: Reference `fig:camera-holder' on page 28 undefined on input line
+ 909.
+
+
+LaTeX Warning: Reference `fig:chassis' on page 28 undefined on input line 909.
+
+
+LaTeX Warning: Reference `fig:detection-test-results' on page 28 undefined on i
+nput line 909.
+
+[28]
+
+LaTeX Warning: Reference `fig:chassis' on page 29 undefined on input line 913.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 918--919
+
+ []
+
+[29]
+
+LaTeX Warning: Reference `fig:plan-org' on page 30 undefined on input line 960.
+
+
+
+LaTeX Warning: Reference `gannt_chart_app' on page 30 undefined on input line 9
+60.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 964--965
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 966--967
+
+ []
+
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 971--972
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 973--974
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 981--982
+
+ []
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 988--989
+
+ []
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 1024--1025
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1026--1027
+
+ []
+
+[33]
+Overfull \hbox (13.14651pt too wide) in paragraph at lines 1038--1050
+[][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1038--1050
+
+ []
+
+
+Overfull \hbox (13.1397pt too wide) in paragraph at lines 1051--1059
+[][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1051--1059
+
+ []
+
+
+Overfull \hbox (15.38225pt too wide) in paragraph at lines 1060--1068
+[][][] 
+ []
+
+[34] (Duayenler_Critical_Design_Review.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 29426 strings out of 493333
- 690357 string characters out of 3136576
- 994900 words of memory out of 3000000
- 32390 multiletter control sequences out of 15000+200000
- 5455 words of font info for 20 fonts, out of 3000000 for 9000
+ 31295 strings out of 493333
+ 710328 string characters out of 3136576
+ 1034548 words of memory out of 3000000
+ 34226 multiletter control sequences out of 15000+200000
+ 13089 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,15n,96p,791b,775s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on 2019_02_26_Weekly_Report.pdf (4 pages, 1856218 bytes).
+ 62i,15n,99p,1341b,1591s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/urw/courier/ucrr8a.pfb>
+Output written on Duayenler_Critical_Design_Review.pdf (35 pages, 299017 bytes)
+.
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
+ 169 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
