@@ -2,7 +2,9 @@
 //All rights are reserved
 // DUAYENLER Ltd. Şti
 
-
+#include <SerialCommand.h>
+SerialCommand scmd;
+#define NOP __asm__ __volatile__ ("nop\n\t")
 #define left_motor_back 6
 #define left_motor_forward 7
 #define right_motor_forward 8
@@ -50,13 +52,26 @@ void setup() {
   pinMode(right_motor_back, OUTPUT);
   pinMode(left_motor_pwm, OUTPUT);
   pinMode(right_motor_pwm, OUTPUT);
-  Serial.begin(19200);
+  Serial.begin(9600);
   digitalWrite(left_motor_back, LOW);
   digitalWrite(left_motor_forward, LOW);
   digitalWrite(right_motor_back, LOW);
   digitalWrite(right_motor_forward, LOW);
-  Serial.begin(57600);
-  
+
+  scmd.addCommand("A",getangle);
+  scmd.addDefaultHandler(defaultt);
+}
+
+void getangle(){
+  char *arg;
+  arg=scmd.next();
+  if(arg !=NULL){
+    ang=atoi(arg);
+  }
+} 
+
+void defaultt(){
+   NOP;
 }
 
 
@@ -65,16 +80,11 @@ void loop() {
   duration = t - p_time;
   p_time = t;
   
-  
-  /* arg=Serial.read();
-  if(arg != NULL){
-    ang=atoi(arg);
-  }*/
 
   //scang = 75;
   
   //Assignment of each variable.
-  ang = 0;
+
   Kp = 3; // Feedback gains (proportional)
   Kd = 0; // Feedback gains (delta)
   Ki = 0; // Feedback gains (sum)
@@ -121,4 +131,3 @@ void initial_start () {
   digitalWrite(right_motor_forward, HIGH);
   digitalWrite(right_motor_back, LOW);
 }
-
