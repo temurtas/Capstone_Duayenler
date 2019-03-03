@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  3 MAR 2019 16:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  3 MAR 2019 16:54
 entering extended mode
 **./Duayenler_Critical_Design_Review.tex
 (Duayenler_Critical_Design_Review.tex
@@ -1271,62 +1271,62 @@ Overfull \hbox (4.68582pt too wide) in paragraph at lines 583--583
 [14]
 
 LaTeX Warning: Reference `fig:detection-test-results' on page 15 undefined on i
-nput line 614.
+nput line 616.
 
 [15] [16]
 
 LaTeX Warning: Reference `fig:lane_detection_subsystem' on page 17 undefined on
- input line 705.
+ input line 707.
 
 
 LaTeX Warning: Reference `fig:turn-prediction-explained' on page 17 undefined o
-n input line 705.
+n input line 707.
 
 [17] [18]
 
 LaTeX Warning: Reference `fig:handshake1' on page 19 undefined on input line 81
-7.
+9.
 
 
 LaTeX Warning: Reference `fig:handshake2' on page 19 undefined on input line 81
-7.
+9.
 
 [19] [20] [21]
-Underfull \hbox (badness 10000) in paragraph at lines 906--907
+Underfull \hbox (badness 10000) in paragraph at lines 908--909
 
  []
 
 [22]
 
-LaTeX Warning: Reference `fig:plan-org' on page 23 undefined on input line 977.
+LaTeX Warning: Reference `fig:plan-org' on page 23 undefined on input line 979.
 
 
 
 LaTeX Warning: Reference `gannt_chart_app' on page 23 undefined on input line 9
-77.
+79.
 
 [23] [24]
-Overfull \hbox (13.14651pt too wide) in paragraph at lines 1024--1036
+Overfull \hbox (13.14651pt too wide) in paragraph at lines 1026--1038
 [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1024--1036
+Underfull \hbox (badness 10000) in paragraph at lines 1026--1038
 
  []
 
 
-Overfull \hbox (13.1397pt too wide) in paragraph at lines 1037--1045
+Overfull \hbox (13.1397pt too wide) in paragraph at lines 1039--1047
 [][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1037--1045
+Underfull \hbox (badness 10000) in paragraph at lines 1039--1047
 
  []
 
 
-Overfull \hbox (15.38225pt too wide) in paragraph at lines 1046--1054
+Overfull \hbox (15.38225pt too wide) in paragraph at lines 1048--1056
 [][][] 
  []
 
@@ -1356,7 +1356,7 @@ fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/urw/courier/ucrr8a.pfb>
-Output written on Duayenler_Critical_Design_Review.pdf (26 pages, 277469 bytes)
+Output written on Duayenler_Critical_Design_Review.pdf (26 pages, 277462 bytes)
 .
 PDF statistics:
  141 PDF objects out of 1000 (max. 8388607)

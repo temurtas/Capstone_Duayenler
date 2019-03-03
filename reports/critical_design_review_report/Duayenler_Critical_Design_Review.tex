@@ -516,7 +516,7 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	\item Motion System Requirements
 		
 		\begin{enumerate}
-			\item *
+			\item The system should ensure that the vehicle can drive itself with enough power
 			
 			\begin{enumerate}
 				\item Wheels Subsystem Requirements
@@ -588,6 +588,8 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	\section{Detailed Tests \& Expectations}
 	
 	
+		
+	
 	\subsection{Lane Detection Subsystem Tests}	
 	The test procedure that will make sure correct functioning of this subsystem are list in the following sections.
 	\begin{itemize}
@@ -609,7 +611,7 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 		\end{enumerate}
 	\end{itemize}
 	
-	\subsection*{Results of Lane Detection Subsystem Tests}
+	\subsection*{Test Results, Encountered Problems and Possible Solutions for the Lane Detection Subsystem}
 	
 	The lane detection tests were conducted for the detection algorithm of the camera. The results were promising. The algorithm sweeps up the surrounding disturbances completely. The sample outputs together with Data Processing subsystem are shown in \textit{Figure~\ref{fig:detection-test-results}}.
 	
