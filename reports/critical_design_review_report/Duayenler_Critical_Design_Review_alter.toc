@@ -1,0 +1,33 @@
+\select@language {english}
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {section}{\numberline {2}Overall System}{3}
+\contentsline {subsection}{\numberline {2.1}Sensing System}{3}
+\contentsline {subsubsection}{\numberline {2.1.1}Lane Detection Subsystem}{3}
+\contentsline {subsubsection}{\numberline {2.1.2}Vehicle Detection Subsystem}{4}
+\contentsline {subsection}{\numberline {2.2}Computation System}{4}
+\contentsline {subsubsection}{\numberline {2.2.1}Data Processing Subsystem}{4}
+\contentsline {subsubsection}{\numberline {2.2.2}PID Controller Subsystem}{6}
+\contentsline {subsection}{\numberline {2.3}Communication System}{6}
+\contentsline {subsubsection}{\numberline {2.3.1}Internal Communication Subsystem}{7}
+\contentsline {subsubsection}{\numberline {2.3.2}External Communication Subsystem}{9}
+\contentsline {subsection}{\numberline {2.4}Driving System}{10}
+\contentsline {subsubsection}{\numberline {2.4.1}Direction Subsystem}{10}
+\contentsline {subsubsection}{\numberline {2.4.2}Speed Subsystem}{10}
+\contentsline {subsection}{\numberline {2.5}Motion System}{11}
+\contentsline {subsubsection}{\numberline {2.5.1}Wheels Subsystem}{11}
+\contentsline {subsubsection}{\numberline {2.5.2}Motors Subsystem}{11}
+\contentsline {subsection}{\numberline {2.6}Structure System}{12}
+\contentsline {subsubsection}{\numberline {2.6.1}Chassis Subsystem}{12}
+\contentsline {subsubsection}{\numberline {2.6.2}Printed Circuit Board Subsystem}{13}
+\contentsline {section}{\numberline {3}Detailed Requirements and Justifications}{13}
+\contentsline {subsection}{\numberline {3.1}System \& Subsystem Requirements}{13}
+\contentsline {subsection}{\numberline {3.2}Justifications on Design}{16}
+\contentsline {section}{\numberline {4}Detailed Tests for the Subsystems}{16}
+\contentsline {section}{\numberline {5}Testing Stage}{21}
+\contentsline {subsection}{\numberline {5.1}Test Results, Encountered Problems and Possible Solutions for Subsystems}{21}
+\contentsline {subsection}{\numberline {5.2}Robustness of the Design}{23}
+\contentsline {section}{\numberline {6}Plans}{23}
+\contentsline {subsection}{\numberline {6.1}Estimated Cost/Power of Project/Gantt}{23}
+\contentsline {section}{\numberline {7}Conclusion}{24}
+\contentsline {section}{\numberline {8}Disclaimer}{25}

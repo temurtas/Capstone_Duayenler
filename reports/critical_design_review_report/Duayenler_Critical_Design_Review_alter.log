@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  3 MAR 2019 16:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  3 MAR 2019 20:11
 entering extended mode
-**./Duayenler_Critical_Design_Review.tex
-(Duayenler_Critical_Design_Review.tex
+**./Duayenler_Critical_Design_Review_alter.tex
+(Duayenler_Critical_Design_Review_alter.tex
 LaTeX2e <2016/03/31> patch level 3
 Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
@@ -818,8 +818,8 @@ Package: courier 2005/04/12 PSNFSS-v9.2a (WaS)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 ))
-(Duayenler_Critical_Design_Review.aux)
-\openout1 = `Duayenler_Critical_Design_Review.aux'.
+(Duayenler_Critical_Design_Review_alter.aux)
+\openout1 = `Duayenler_Critical_Design_Review_alter.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
@@ -985,21 +985,26 @@ File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
 ) [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <../../documents/logos/log
-o3-with-stroke.png>] (Duayenler_Critical_Design_Review.toc)
+o3-with-stroke.png>] (Duayenler_Critical_Design_Review_alter.toc)
 \tf@toc=\write4
-\openout4 = `Duayenler_Critical_Design_Review.toc'.
+\openout4 = `Duayenler_Critical_Design_Review_alter.toc'.
 
  [1]
-
-LaTeX Warning: Reference `fig:lane_detection_subsystem' on page 2 undefined on 
-input line 140.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
 
  []
 
-[2] ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+[2]
+
+LaTeX Warning: Reference `fig:lane_detection_subsystem' on page 3 undefined on 
+input line 144.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
+
+ []
+
+[3] ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
@@ -1009,93 +1014,83 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
 
-LaTeX Warning: Reference `fig:data_processing_subsystem' on page 3 undefined on
- input line 178.
+LaTeX Warning: Reference `fig:data_processing_subsystem' on page 4 undefined on
+ input line 182.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--179
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
 
  []
 
-[3]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 182.
+[4]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 186.
 
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 182.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 186.
 
 
-LaTeX Warning: Reference `fig:turn-prediction-explained' on page 4 undefined on
- input line 199.
+LaTeX Warning: Reference `fig:turn-prediction-explained' on page 5 undefined on
+ input line 203.
 
-[4]
-Overfull \hbox (62.39078pt too wide) in paragraph at lines 234--234
+[5]
+Overfull \hbox (62.39078pt too wide) in paragraph at lines 238--238
 [][][][]\OT1/cmr/m/n/12 aaaaaaaaaaaaaaa  
  []
 
 
-Overfull \hbox (62.39078pt too wide) in paragraph at lines 234--234
+Overfull \hbox (62.39078pt too wide) in paragraph at lines 238--238
 [][][][]\OT1/cmr/m/n/12 aaaaaaaaaaaaaaa  
  []
 
 
-Overfull \hbox (62.39078pt too wide) in paragraph at lines 234--234
+Overfull \hbox (62.39078pt too wide) in paragraph at lines 238--238
 [][][][]\OT1/cmr/m/n/12 aaaaaaaaaaaaaaa  
  []
 
 
-Overfull \hbox (62.39078pt too wide) in paragraph at lines 234--234
+Overfull \hbox (62.39078pt too wide) in paragraph at lines 238--238
 [][][][]\OT1/cmr/m/n/12 aaaaaaaaaaaaaaa  
  []
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 245.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 249.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 245.
- [5]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 258.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 249.
+ [6]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 262.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 262--263
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+pcr on input line 264.
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 268.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omspcr.fd"
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 264.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 268.
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--265
-
- []
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 267--268
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 273--274
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 275--276
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 271--272
 
  []
 
@@ -1109,240 +1104,272 @@ Underfull \hbox (badness 10000) in paragraph at lines 279--280
 
  []
 
-[7]
 
-LaTeX Warning: Reference `fig:socket_funcs' on page 8 undefined on input line 2
-88.
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
-File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)
-Underfull \hbox (badness 10000) in paragraph at lines 305--306
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
 
  []
 
 [8]
-Overfull \hbox (27.45447pt too wide) in paragraph at lines 328--328
-[][][][]\OT1/cmr/m/n/12 line[]angle- 
- []
 
+LaTeX Warning: Reference `fig:socket_funcs' on page 9 undefined on input line 2
+92.
 
-Overfull \hbox (29.21695pt too wide) in paragraph at lines 328--328
-\OT1/cmr/m/n/12 base[]speed  
- []
-
-
-Overfull \hbox (27.45447pt too wide) in paragraph at lines 328--328
-[][][][]\OT1/cmr/m/n/12 line[]angle- 
- []
-
-
-Overfull \hbox (29.21695pt too wide) in paragraph at lines 328--328
-\OT1/cmr/m/n/12 base[]speed  
- []
-
-
-Overfull \hbox (27.45447pt too wide) in paragraph at lines 328--328
-[][][][]\OT1/cmr/m/n/12 line[]angle- 
- []
-
-
-Overfull \hbox (29.21695pt too wide) in paragraph at lines 328--328
-\OT1/cmr/m/n/12 base[]speed  
- []
-
-
-Overfull \hbox (27.45447pt too wide) in paragraph at lines 328--328
-[][][][]\OT1/cmr/m/n/12 line[]angle- 
- []
-
-
-Overfull \hbox (29.21695pt too wide) in paragraph at lines 328--328
-\OT1/cmr/m/n/12 base[]speed  
- []
-
-
-LaTeX Warning: Reference `fig:speed-state' on page 9 undefined on input line 33
-0.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 330--331
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+)
+Underfull \hbox (badness 10000) in paragraph at lines 309--310
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 347--348
-
+Overfull \hbox (27.45447pt too wide) in paragraph at lines 332--332
+[][][][]\OT1/cmr/m/n/12 line[]angle- 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 360--362
+Overfull \hbox (29.21695pt too wide) in paragraph at lines 332--332
+\OT1/cmr/m/n/12 base[]speed  
+ []
+
+
+Overfull \hbox (27.45447pt too wide) in paragraph at lines 332--332
+[][][][]\OT1/cmr/m/n/12 line[]angle- 
+ []
+
+
+Overfull \hbox (29.21695pt too wide) in paragraph at lines 332--332
+\OT1/cmr/m/n/12 base[]speed  
+ []
+
+
+Overfull \hbox (27.45447pt too wide) in paragraph at lines 332--332
+[][][][]\OT1/cmr/m/n/12 line[]angle- 
+ []
+
+
+Overfull \hbox (29.21695pt too wide) in paragraph at lines 332--332
+\OT1/cmr/m/n/12 base[]speed  
+ []
+
+
+Overfull \hbox (27.45447pt too wide) in paragraph at lines 332--332
+[][][][]\OT1/cmr/m/n/12 line[]angle- 
+ []
+
+
+Overfull \hbox (29.21695pt too wide) in paragraph at lines 332--332
+\OT1/cmr/m/n/12 base[]speed  
+ []
+
+
+LaTeX Warning: Reference `fig:speed-state' on page 10 undefined on input line 3
+34.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 334--335
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 377--378
+Underfull \hbox (badness 10000) in paragraph at lines 351--352
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 379--380
+Underfull \hbox (badness 10000) in paragraph at lines 364--366
 
  []
-
-
-LaTeX Warning: Reference `fig:camera-holder' on page 11 undefined on input line
- 381.
-
-
-LaTeX Warning: Reference `fig:chassis' on page 11 undefined on input line 381.
-
-
-LaTeX Warning: Reference `fig:detection-test-results' on page 11 undefined on i
-nput line 381.
 
 [11]
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 383--384
+
+ []
+
+
+LaTeX Warning: Reference `fig:camera-holder' on page 12 undefined on input line
+ 385.
+
 
 LaTeX Warning: Reference `fig:chassis' on page 12 undefined on input line 385.
 
 
-LaTeX Warning: Reference `fig:vmodel' on page 12 undefined on input line 399.
+LaTeX Warning: Reference `fig:detection-test-results' on page 12 undefined on i
+nput line 385.
 
-[12] [13]
-Overfull \hbox (39.34796pt too wide) in paragraph at lines 583--583
+[12]
+
+LaTeX Warning: Reference `fig:chassis' on page 13 undefined on input line 389.
+
+
+LaTeX Warning: Reference `fig:vmodel' on page 13 undefined on input line 403.
+
+[13] [14] [15]
+Overfull \hbox (39.34796pt too wide) in paragraph at lines 587--587
 [][][][]\OT1/cmr/m/n/12 justifications 
  []
 
 
-Overfull \hbox (3.96777pt too wide) in paragraph at lines 583--583
+Overfull \hbox (3.96777pt too wide) in paragraph at lines 587--587
 \OT1/cmr/m/n/12 quire- 
  []
 
 
-Overfull \hbox (4.68582pt too wide) in paragraph at lines 583--583
+Overfull \hbox (4.68582pt too wide) in paragraph at lines 587--587
 \OT1/cmr/m/n/12 ments  
  []
 
 
-Overfull \hbox (39.34796pt too wide) in paragraph at lines 583--583
+Overfull \hbox (39.34796pt too wide) in paragraph at lines 587--587
 [][][][]\OT1/cmr/m/n/12 justifications 
  []
 
 
-Overfull \hbox (3.96777pt too wide) in paragraph at lines 583--583
+Overfull \hbox (3.96777pt too wide) in paragraph at lines 587--587
 \OT1/cmr/m/n/12 quire- 
  []
 
 
-Overfull \hbox (4.68582pt too wide) in paragraph at lines 583--583
+Overfull \hbox (4.68582pt too wide) in paragraph at lines 587--587
 \OT1/cmr/m/n/12 ments  
  []
 
 
-Overfull \hbox (39.34796pt too wide) in paragraph at lines 583--583
+Overfull \hbox (39.34796pt too wide) in paragraph at lines 587--587
 [][][][]\OT1/cmr/m/n/12 justifications 
  []
 
 
-Overfull \hbox (3.96777pt too wide) in paragraph at lines 583--583
+Overfull \hbox (3.96777pt too wide) in paragraph at lines 587--587
 \OT1/cmr/m/n/12 quire- 
  []
 
 
-Overfull \hbox (4.68582pt too wide) in paragraph at lines 583--583
+Overfull \hbox (4.68582pt too wide) in paragraph at lines 587--587
 \OT1/cmr/m/n/12 ments  
  []
 
 
-Overfull \hbox (39.34796pt too wide) in paragraph at lines 583--583
+Overfull \hbox (39.34796pt too wide) in paragraph at lines 587--587
 [][][][]\OT1/cmr/m/n/12 justifications 
  []
 
 
-Overfull \hbox (3.96777pt too wide) in paragraph at lines 583--583
+Overfull \hbox (3.96777pt too wide) in paragraph at lines 587--587
 \OT1/cmr/m/n/12 quire- 
  []
 
 
-Overfull \hbox (4.68582pt too wide) in paragraph at lines 583--583
+Overfull \hbox (4.68582pt too wide) in paragraph at lines 587--587
 \OT1/cmr/m/n/12 ments  
  []
 
-[14]
 
-LaTeX Warning: Reference `fig:detection-test-results' on page 15 undefined on i
-nput line 616.
-
-[15] [16]
-
-LaTeX Warning: Reference `fig:lane_detection_subsystem' on page 17 undefined on
- input line 707.
+Overfull \hbox (34.32162pt too wide) in paragraph at lines 589--589
+[][][][]\OT1/cmr/m/n/12 Compliance 
+ []
 
 
-LaTeX Warning: Reference `fig:turn-prediction-explained' on page 17 undefined o
-n input line 707.
+Overfull \hbox (34.32162pt too wide) in paragraph at lines 589--589
+[][][][]\OT1/cmr/m/n/12 Compliance 
+ []
 
-[17] [18]
 
-LaTeX Warning: Reference `fig:handshake1' on page 19 undefined on input line 81
+Overfull \hbox (34.32162pt too wide) in paragraph at lines 589--589
+[][][][]\OT1/cmr/m/n/12 Compliance 
+ []
+
+
+Overfull \hbox (34.32162pt too wide) in paragraph at lines 589--589
+[][][][]\OT1/cmr/m/n/12 Compliance 
+ []
+
+
+LaTeX Warning: Marginpar on page 16 moved.
+
+[16] [17] [18] [19]
+
+LaTeX Warning: Reference `fig:detection-test-results' on page 20 undefined on i
+nput line 884.
+
+[20]
+
+LaTeX Warning: Reference `fig:lane_detection_subsystem' on page 21 undefined on
+ input line 917.
+
+
+LaTeX Warning: Reference `fig:turn-prediction-explained' on page 21 undefined o
+n input line 917.
+
+[21]
+
+LaTeX Warning: Reference `fig:handshake1' on page 22 undefined on input line 94
 9.
 
 
-LaTeX Warning: Reference `fig:handshake2' on page 19 undefined on input line 81
+LaTeX Warning: Reference `fig:handshake2' on page 22 undefined on input line 94
 9.
 
-[19] [20] [21]
-Underfull \hbox (badness 10000) in paragraph at lines 908--909
+
+Underfull \hbox (badness 10000) in paragraph at lines 987--988
 
  []
 
-[22]
 
-LaTeX Warning: Reference `fig:plan-org' on page 23 undefined on input line 979.
+LaTeX Warning: Reference `fig:plan-org' on page 22 undefined on input line 1009
+.
 
 
+LaTeX Warning: Reference `gannt_chart_app' on page 22 undefined on input line 1
+009.
 
-LaTeX Warning: Reference `gannt_chart_app' on page 23 undefined on input line 9
-79.
-
-[23] [24]
-Overfull \hbox (13.14651pt too wide) in paragraph at lines 1026--1038
+[22] [23] [24]
+Overfull \hbox (13.14651pt too wide) in paragraph at lines 1056--1068
 [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1026--1038
+Underfull \hbox (badness 10000) in paragraph at lines 1056--1068
 
  []
 
 
-Overfull \hbox (13.1397pt too wide) in paragraph at lines 1039--1047
+Overfull \hbox (13.1397pt too wide) in paragraph at lines 1069--1077
 [][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1039--1047
+Underfull \hbox (badness 10000) in paragraph at lines 1069--1077
 
  []
 
 
-Overfull \hbox (15.38225pt too wide) in paragraph at lines 1048--1056
+Overfull \hbox (15.38225pt too wide) in paragraph at lines 1078--1086
 [][][] 
  []
 
-[25] (Duayenler_Critical_Design_Review.aux)
+[25] (Duayenler_Critical_Design_Review_alter.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 31384 strings out of 493333
- 712425 string characters out of 3136576
+ 31392 strings out of 493333
+ 712682 string characters out of 3136576
  1039548 words of memory out of 3000000
- 34315 multiletter control sequences out of 15000+200000
+ 34323 multiletter control sequences out of 15000+200000
  13089 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,15n,99p,1063b,1589s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,15n,99p,1069b,1589s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Fi
 les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files
@@ -1356,8 +1383,8 @@ fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/urw/courier/ucrr8a.pfb>
-Output written on Duayenler_Critical_Design_Review.pdf (26 pages, 277462 bytes)
-.
+Output written on Duayenler_Critical_Design_Review_alter.pdf (26 pages, 275239 
+bytes).
 PDF statistics:
  141 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

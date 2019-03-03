@@ -110,6 +110,10 @@
 	\tableofcontents
 	\newpage
 	
+	\section{Introduction}
+	
+	\- \\[19cm]
+	
 		\section{Overall System}
 	
 			The main objective of this project is to design and produce a self driving mini-car that can follow a path with a varying properties with in a 200 dollar budget. The project can be investigated under six main systems and their twelve subsystems. \textit{Figure \ref{fig:organization}} shows the organization structure of the project.
@@ -399,7 +403,7 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	V-Model is a very popular tool for system engineers to plan their projects. To ease the project tracking process, the V-Model was constructed by the DUAYENLER. The overall look of the V-Model can be seen at \textit{Figure~\ref{fig:vmodel}}. This section includes the explanation, requirements, test procedures and test results for the subsystems.
 		
 	
-
+	\subsection{System \& Subsystem Requirements}
 
 	\begin{enumerate}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -578,92 +582,310 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	\end{enumerate}
 
 	
-
+	\subsection{Justifications on Design}
 	
 	\todo{justifications for requirements}
 	
+	\todo{Compliance with Reqs}
 	
 	
 	
-	\section{Detailed Tests \& Expectations}
+	\section{Detailed Tests for the Subsystems}
 	
-	
-		
-	
-	\subsection{Lane Detection Subsystem Tests}	
-	The test procedure that will make sure correct functioning of this subsystem are list in the following sections.
-	\begin{itemize}
+	\begin{enumerate}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\item {Lane Detection Subsystem Tests}	
+	\begin{enumerate}
 		\item{Light Condition Test}
 				\begin{enumerate}
-				\item Mirror the Raspberry Pi screen into Laptop via VNC  \vspace{-0.2cm}
-				\item Execute the lane detection algorithm in Raspberry Pi \vspace{-0.2cm}
-				\item Change the location of the camera and Pi to conduct test \vspace{-0.2cm}
-				\item Observe the results in different locations   \vspace{-0.2cm}
-				\item If the visible lane sides can be detected without any additional object, the result of the test can be considered as success. \vspace{-0.2cm}
+				\item Mirror the Raspberry Pi screen into Laptop via VNC  
+				\item Execute the lane detection algorithm in Raspberry Pi 
+				\item Change the location of the camera and Pi to conduct test 
+				\item Observe the results in different locations   
+				\item If the visible lane sides can be detected without any additional object, the result of the test can be considered as success. 
 			\end{enumerate}
 		\item{Visual Disturbance Test}
 			\begin{enumerate}
-			\item Mirror the Raspberry Pi screen into Laptop via VNC  \vspace{-0.2cm}
-			\item Execute the lane detection algorithm in Raspberry Pi \vspace{-0.2cm}
-			\item Put different objects into lane \vspace{-0.2cm}
-			\item Observe the results with different disturbances\vspace{-0.2cm}
-			\item If the objects outside of lane is not detected and the objects inside the road only detected only at its border with road, the result of the test can be considered as success. \vspace{-0.2cm}
+			\item Mirror the Raspberry Pi screen into Laptop via VNC   
+			\item Execute the lane detection algorithm in Raspberry Pi  
+			\item Put different objects into lane  
+			\item Observe the results with different disturbances 
+			\item If the objects outside of lane is not detected and the objects inside the road only detected only at its border with road, the result of the test can be considered as success.  
 		\end{enumerate}
-	\end{itemize}
+	\end{enumerate}
 	
-	\subsection*{Test Results, Encountered Problems and Possible Solutions for the Lane Detection Subsystem}
-	
-	The lane detection tests were conducted for the detection algorithm of the camera. The results were promising. The algorithm sweeps up the surrounding disturbances completely. The sample outputs together with Data Processing subsystem are shown in \textit{Figure~\ref{fig:detection-test-results}}.
-	
-			
-	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\item {Vehicle Detection Subsystem Tests}\label{sect:vhd}
 		
-	
-	\subsection{Vehicle Detection Subsystem Tests}\label{sect:vhd}
-		
-		\begin{itemize}
+		\begin{enumerate}
 		
 		\item Front Vehicle Detection Test in Closed Environment:
-			This test aims to validate whether the subsystem is capable of detecting the opponent vehicle that is close to the vehicle more than 5 cm from the front. The test procedure is as follows; 		
-			
 			\begin{enumerate}
-				\item Make the connection of the desired sensor and Arduino properly \vspace{-0.2cm}
-				\item Hold the sensor at an angle of 90 degree with respect to ground \vspace{-0.2cm}
-				\item Place the test object 5 cm in front of the desired \vspace{-0.2cm}
-				\item Observe the output of the subsystem \vspace{-0.2cm}
-				\item Repeat the step 3 \& 4 with different distances \vspace{-0.2cm}
-				\item If the output of the subsystem generates logical positive for distances smaller than 5 cm and logical zero for distances greater than five, the test result can be considered as success \vspace{-0.2cm}
+				\item Make the connection of the desired sensor and Arduino properly  
+				\item Hold the sensor at an angle of 90 degree with respect to ground  
+				\item Place the test object 5 cm in front of the desired  
+				\item Observe the output of the subsystem  
+				\item Repeat the step 3 \& 4 with different distances  
+				\item If the output of the subsystem generates logical positive for distances smaller than 5 cm and logical zero for distances greater than five, the test result can be considered as success  
 			\end{enumerate}					
 		
-		\item Rear Vehicle Detection Test in Closed Environment:
-			This test aims to validate whether the subsystem is capable of detecting the opponent vehicle that is close to the vehicle more than 5 cm from the rear. The test procedure is as follows; 		
+		\item Rear Vehicle Detection Test in Closed Environment:		
 			\begin{enumerate}
-				\item Repeat the test steps of the \textit{Front Vehicle Detection Test in Closed Environment} with the desired sensor for the desired rear sensor.  \vspace{-0.2cm}
+				\item Repeat the test steps of the \textit{Front Vehicle Detection Test in Closed Environment} with the desired sensor for the desired rear sensor.   
 			\end{enumerate}
 		
 		\item {Angled Approach Test:}
-			This test aims to validate whether the subsystem is capable of detecting the opponent vehicle that is close to the vehicle more than 5 cm if the vehicles are not perfectly aligned. The test procedure is as follows;
 			\begin{enumerate}
-				\item Make the connection of the desired sensor and Arduino properly \vspace{-0.2cm}
-				\item Hold the sensor at an angle of 90 degree with respect to ground \vspace{-0.2cm}
-				\item Place the test object 5 cm in front of the sensor with 30 degree angle with respect to the sensor \vspace{-0.2cm}
-				\item Observe the output of the subsystem \vspace{-0.2cm}
-				\item Repeat the step 3 \& 4 with different distance and angle values \vspace{-0.2cm}
-				\item If the output of the subsystem generates logical positive for distances smaller than 5 cm for all angle values with respect to sensor and logical zero for distances greater than 5 cm, the test result can be considered as success \vspace{-0.2cm}
+				\item Make the connection of the desired sensor and Arduino properly  
+				\item Hold the sensor at an angle of 90 degree with respect to ground  
+				\item Place the test object 5 cm in front of the sensor with 30 degree angle with respect to the sensor  
+				\item Observe the output of the subsystem  
+				\item Repeat the step 3 \& 4 with different distance and angle values  
+				\item If the output of the subsystem generates logical positive for distances smaller than 5 cm for all angle values with respect to sensor and logical zero for distances greater than 5 cm, the test result can be considered as success  
 			\end{enumerate}
 		
 		\item Vehicle Detection in Different Sunlight Conditions Test:
-			This test aims to validate whether the subsystem is capable of detecting the opponent vehicle that is close to the vehicle more than 5 cm in different sunlight conditions. The test procedure is as follows; 		
 			\begin{enumerate}
-				\item Repeat the test steps of the \textit{Front Vehicle Detection Test in Closed Environment} in CCC (Cultural and Convention) ground under direct sunlight \vspace{-0.2cm}
-				\item Repeat step 1 in CCC (Cultural and Convention) under artificial light, in other words, under no direct sunlight conditions \vspace{-0.2cm}
-				\item Repeat steps 1 \& 2 for different locations of E Building including Graduation Laboratory \vspace{-0.2cm}
-				\item If the output of the subsystem generates logical positive for distances smaller than 5 cm under all light conditions and logical zero for distances greater than 5 cm, the test result can be considered as success \vspace{-0.2cm}
+				\item Repeat the test steps of the \textit{Front Vehicle Detection Test in Closed Environment} in CCC (Cultural and Convention) ground under direct sunlight  
+				\item Repeat step 1 in CCC (Cultural and Convention) under artificial light, in other words, under no direct sunlight conditions  
+				\item Repeat steps 1 \& 2 for different locations of E Building including Graduation Laboratory  
+				\item If the output of the subsystem generates logical positive for distances smaller than 5 cm under all light conditions and logical zero for distances greater than 5 cm, the test result can be considered as success  
 			\end{enumerate}
 			
-		\end{itemize}
+		\end{enumerate}
+		
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+		
+		\item {Data Processing Subsystem Tests}	
+		\begin{enumerate}
+			\item Data Assessment Test
+				\begin{enumerate}
+					\item Link the output of Lane Detection subsystem to Data Processing subsystem.  
+					\item Asses if the output coincide with physical reality of the path  
+				\end{enumerate}
+			
+		\end{enumerate}
+		
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+		
+		
+		\item {PID Controller Subsystem Tests}	
+	\begin{enumerate}
 	
-	\subsection*{Results of Vehicle Detection Subsystem Tests}
+		\item PID Parameters Test for Given Input:		
+			\begin{enumerate}
+				\item Connect the Vehicle Motors to Motor Controller  
+				\item Connect the Motor Driver to Arduino  
+				\item Give the angle value that the subsystem should compensate   
+				\item Give the power to the motors  
+				\item Observe the behaviour of the vehicle  
+				\item If the vehicle rotates with an angle given in step 3 without any feedback given, the result of the test can be considered as success.  
+			\end{enumerate}
+				
+		
+		\item Path Tracking Test:
+			\begin{enumerate}
+				\item Make the necessary connection between motors Arduino and data processing unit  
+				\item Place the vehicle to the desired empty path   
+				\item Observe the behaviour of the vehicle  
+				\item If the vehicle can follow the path smoothly, the result of the test can be considered as success.  
+			\end{enumerate}
+				
+			
+		\item Tracking a Path with Obstacles Test:	
+			\begin{enumerate}
+				\item Make the necessary connection between motors Arduino and data processing unit  
+				\item Place the vehicle to the desired path with obstacles  
+				\item Observe the behaviour of the vehicle  
+				\item If the vehicle can follow the path and compensate the steady state errors due to obstacles without showing oscillatory behaviour and in a reasonable time (in less than 2 seconds), the result of the test can be considered as success.  
+			\end{enumerate}
+				
+		
+		\item Path Tracking Test with Physical Disturbances:
+			\begin{enumerate}
+				\item Make the necessary connection between motors Arduino and data processing unit  
+				\item Place the vehicle to the desired empty path   
+				\item Observe the behaviour of the vehicle  
+				\item If the vehicle can follow the path and compensate the steady state errors due to physical disturbance without showing oscillatory behaviour and in a reasonable time (in less than 2 seconds), the result of the test can be considered as success.  
+			\end{enumerate}
+		
+		\end{enumerate}
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+		\item {Internal Communication Subsystem Tests}
+		\begin{enumerate}
+			 \item Data Retrieval Test
+			\begin{enumerate}
+					\item Generate data on Raspberry Pi in a rate that reflects the time consumed of Data Processing subsystem. This will yield a realistic data rate.  
+				\item Send random text data to Arduino.  
+				\item Do the initial integration between Arduino and Raspberry Pi.  
+				\item Send data from Raspberry Pi to Arduino.  
+				\item Increase data speed to the specified data rate.  
+				\item Check the accuracy of the retrieved data. 
+	\end{enumerate}
+		\end{enumerate}
+	 
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\item {External Communication Subsystem Tests}
+		
+		\begin{enumerate}
+		
+		\item Raspberry Pi as Client Test:
+
+			\begin{enumerate}
+				\item Create a hotspot from the computer  
+				\item Connect the Raspberry Pi to the hotspot  
+				\item Modify the client code to be tested according to IP address of the computer
+				\item Run the server code from computer  
+				\item Run the client code from the Raspberry Pi  
+				\item Try the possible combinations from the terminals of both sides  
+				\item The test result can be considered as success if both sides respond according to the \textit{Handshake Protocol}.
+			\end{enumerate}		
+		
+		\item Raspberry Pi as Server Test:
+			
+			\begin{enumerate}
+				\item Create a hotspot from Raspberry Pi.  
+				\item Connect the computer to the hotspot  
+				\item Modify the client code to be tested according to IP address of the Raspberry Pi.  
+				\item Run the server code from Raspberry Pi.  
+				\item Run the client code from the computer.  
+				\item Try the possible combinations from the terminals of both sides  
+				\item The test result can be considered as success if both sides respond according to the \textit{Handshake Protocol}. 
+			\end{enumerate}	
+		
+		\end{enumerate}
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\item {Direction Subsystem Tests}
+	\begin{enumerate}
+	
+		\item Straight Drive Test:
+			
+			\begin{enumerate}
+				\item Make the necessary connections between motors, motor controller and the Arduino  
+				\item Set the PWM values of the motors equal  
+				\item Observe the behaviour of the motors  
+				\item Increase the PWM value of the slower motor until a point the vehicle can go in a straight line.
+				\item Record this PWM difference to use in PID controller subsystem
+			\end{enumerate}
+				
+			
+		
+		\item Circular Drive Test:
+			\begin{enumerate}
+				\item Make the necessary connections between motors, motor controller and the Arduino  
+				\item Desired curvature is decided  
+				\item  According to motion of the vehicle PWMs of the motors are set  
+				\item  PID parameters are set according to this test
+			\end{enumerate}
+		
+		
+	\end{enumerate}
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\item {Speed Subsystem Tests}
+	\begin{enumerate}
+		\item Determination of the error input:
+		\begin{enumerate}
+			\item Make all the necessary connection
+			\item Start up the vehicle
+			\item Execute lane detection and controller algorithms
+			\item Set the error input of the both controller algorithms the same
+			\item Observe the behavior
+			\item Repeat the same process with a linear function of the input
+			\item Observe the success of the tracking algorithm
+		\end{enumerate}
+		
+
+		\item Determination of the critical error value: 
+		\begin{enumerate}
+			\item Make all the necessary connection
+			\item Start up the vehicle
+			\item Execute lane detection and controller algorithms
+			\item While the vehicle is moving, give disturbance of different types
+			\item Record the maximum value of the error encountered during the disturbances.
+			\item Find the maximum value
+		\end{enumerate}
+		
+		\item {Torque Test:} 
+				\begin{enumerate}
+					\item Fix the motor at horizontal position with respect to ground  
+					\item Attach an object of one kilogram  
+					\item Power up the motor  
+					\item Increase the weight to a point where the motor is not pulling anymore  
+					\item Record the value and check with expected results  
+					\item If the result is not comparable with expected values and very low, motor can be considered as broken  
+					\item Contact the seller for more information 
+				\end{enumerate}
+		\end{enumerate}
+		
+		
+		
+			
+		
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\item {Chassis Subsystem Tests}
+	\begin{enumerate}
+		\item Inertia test: 
+		\begin{enumerate}
+		\item Prepare a straight path
+		\item Power up the vehicle 
+		\item Execute the edge detection and control algorithm
+		\item Give different type of disturbances 
+		\item Observe the deviation from straight line
+		\item Repeat the process with different component configurations
+		\end{enumerate} 
+	\end{enumerate}
+	
+	
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	
+	\item {Printed Circuit Board Subsystem Tests}
+	
+	\begin{enumerate}
+		\item Short test: Aims to check all the wanted connections are present. The test procedure is as follows:
+		\begin{enumerate} 
+			\item Open multimeter for short circuit test  
+			\item Find the ends of each routing 
+			\item Check the continuity using multimeter probes
+			\item Check if there is any unwanted short circuit
+			\item If exist, eliminate
+		\end{enumerate}
+	\end{enumerate}
+	
+	
+	
+	\end{enumerate}
+		
+	
+	
+	\section{Testing Stage}
+	
+	\subsection{Test Results, Encountered Problems and Possible Solutions for Subsystems}	
+	
+	\subsubsection*{Results of Lane Detection Subsystem Tests}
+		
+	The lane detection tests were conducted for the detection algorithm of the camera. The results were promising. The algorithm sweeps up the surrounding disturbances completely. The sample outputs together with Data Processing subsystem are shown in \textit{Figure~\ref{fig:detection-test-results}}.
+		
+	
+	
+	\subsubsection*{Results of Vehicle Detection Subsystem Tests}
 	
 		All the test procedures mentioned at the \textbf{Section~\ref{sect:vhd}} were applied to the ultrasonic sensor (HC-SR04) and two infrared sensors (TCRT5000 \& QRD1114). The ultrasonic sensor were showed very inaccurate result especially in \textit{Angled Approach Test}. The test results can be examined at \textit{Table`\ref{tab:aat}}. Considering the fact that the path itself is elliptical and there would always be an angle between vehicle even though it may be very small for some cases, it was decided that ultrasonic sensors are not a good choice for this subsystem. However, it is always possible that these sensors can be supportive sensors for the subsystem.
 		
@@ -686,24 +908,12 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 		 Unlike ultrasonic sensors, infrared sensors showed very accurate result inside the closed environments like laboratory under artificial lights. However, the results under direct sunlight especially in CCC were not as good as expected.  Thus, it was decided that the main solution should be an enhanced version of infra-red sensors namely the ones utilizing the "time-of-flight" concept. Moreover, laser sensors might be good alternative for these subsystems.
 	
 	
-	
-	
-	
 		
 	
-
-	
-		
-	\subsection{Data Processing Subsystem Tests}	
-		This test will enable if data processing will generate the desired output, namely turn direction and angle. Test procedure is as follows:
-		\begin{enumerate}
-			\item Link the output of Lane Detection subsystem to Data Processing subsystem. \vspace{-0.2cm}
-			\item Asses if the output coincide with physical reality of the path \vspace{-0.2cm}
-		\end{enumerate}
 		
 		
 		
-	\subsection*{Results of Data Processing Subsystem Tests}
+	\subsubsection*{Results of Data Processing Subsystem Tests}
 	The tests are done. The results are positive and reflects the expectations. The turn angle and direction are properly output. A flaw of this subsystem is that both right and the left lane lines must be determined. Otherwise, the prediction does not give stable results. This must be improved together with the Lane Detection subsystem regarding the code algorithm.	The sample outputs can be seen in \textit{Figure~\ref{fig:lane_detection_subsystem} and Figure~\ref{fig:turn-prediction-explained}}.
 	
 	
@@ -711,54 +921,11 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	
 	
 		
-	\subsection{PID Controller Subsystem Tests}	
-	\begin{itemize}
-		\item PID Parameters Test for Given Input:
-			The test aims to speed up the process of finding the right PID parameters for the controller. The test procedure is as follows; 		
-			\begin{enumerate}
-				\item Connect the Vehicle Motors to Motor Controller \vspace{-0.2cm}
-				\item Connect the Motor Driver to Arduino \vspace{-0.2cm}
-				\item Give the angle value that the subsystem should compensate  \vspace{-0.2cm}
-				\item Give the power to the motors \vspace{-0.2cm}
-				\item Observe the behaviour of the vehicle \vspace{-0.2cm}
-				\item If the vehicle rotates with an angle given in step 3 without any feedback given, the result of the test can be considered as success. \vspace{-0.2cm}
-			\end{enumerate}
-				
-		
-		\item Path Tracking Test:
-			The test aims to check the validity of the PID parameters in closed loop feedback system. The test procedure is as follows; 		
-			\begin{enumerate}
-				\item Make the necessary connection between motors Arduino and data processing unit \vspace{-0.2cm}
-				\item Place the vehicle to the desired empty path  \vspace{-0.2cm}
-				\item Observe the behaviour of the vehicle \vspace{-0.2cm}
-				\item If the vehicle can follow the path smoothly, the result of the test can be considered as success. \vspace{-0.2cm}
-			\end{enumerate}
-				
-			
-		\item Tracking a Path with Obstacles Test:
-			The test aims to check the validity of the PID parameters in closed loop feedback system if there is obstacles. The test procedure is as follows; 		
-			\begin{enumerate}
-				\item Make the necessary connection between motors Arduino and data processing unit \vspace{-0.2cm}
-				\item Place the vehicle to the desired path with obstacles \vspace{-0.2cm}
-				\item Observe the behaviour of the vehicle \vspace{-0.2cm}
-				\item If the vehicle can follow the path and compensate the steady state errors due to obstacles without showing oscillatory behaviour and in a reasonable time (in less than 2 seconds), the result of the test can be considered as success. \vspace{-0.2cm}
-			\end{enumerate}
-				
-		
-		\item Path Tracking Test with Physical Disturbances:
-			The test aims to check the validity of the PID parameters in closed loop feedback system if there is a physical disturbance that effect the location of the vehicle. The test procedure is as follows; 		
-			\begin{enumerate}
-				\item Make the necessary connection between motors Arduino and data processing unit \vspace{-0.2cm}
-				\item Place the vehicle to the desired empty path  \vspace{-0.2cm}
-				\item Observe the behaviour of the vehicle \vspace{-0.2cm}
-				\item If the vehicle can follow the path and compensate the steady state errors due to physical disturbance without showing oscillatory behaviour and in a reasonable time (in less than 2 seconds), the result of the test can be considered as success. \vspace{-0.2cm}
-			\end{enumerate}
-		
-		\end{itemize}
+	
 	
 		
 		
-	\subsection*{Results of PID Controller Subsystem Tests}
+	\subsubsection*{Results of PID Controller Subsystem Tests}
 	
 		Due to other limitations, the initial version of the PID controller subsystem was tested only for \textit{PID Parameters Test for Given Input}. The test results were promising for the time being. Other tests are planning to be conducted on the subsystem in the following semester.
 	
@@ -766,55 +933,18 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	
 	
 	
-	\subsection{Internal Communication Subsystem Tests}
-	This test will enable if communication between Arduino and Raspberry Pi can be realized. Test procedure is as follows:
-	\begin{enumerate}
-		\item Generate data on Raspberry Pi in a rate that reflects the time consumed of Data Processing subsystem. This will yield a realistic data rate. \vspace{-0.2cm}
-		\item Send random text data to Arduino. \vspace{-0.2cm}
-		\item Do the initial integration between Arduino and Raspberry Pi. \vspace{-0.2cm}
-		\item Send data from Raspberry Pi to Arduino. \vspace{-0.2cm}
-		\item Increase data speed to the specified data rate. \vspace{-0.2cm}
-		\item Check the accuracy of the retrieved data.\vspace{-0.2cm}
-	\end{enumerate}
 	
-	\subsection*{Results of Internal Communication Subsystem Tests}
+	
+	\subsubsection*{Results of Internal Communication Subsystem Tests}
 	The results of the tests revealed that all steps are successful but the last step. The data send rate is determined to be 25 strings per second. The string length varies between one and three characters. The data is fully received if the rate is slower than 25 strings per second. However, the data loss  and  improper decoding is observed on the Arduino side. This must corrected by means of coding or switching to an alternative solution.
 	
 
 	
 	
-	\subsection{External Communication Subsystem Tests}
-		
-		\begin{itemize}
-		
-		\item Raspberry Pi as Client Test:
-			This test aims to validate whether the Raspberry Pi can successfully fulfill the requirements set by \textit{Handshake protocol} as a client.Test procedure is as follows:
-			\begin{enumerate}
-				\item Create a hotspot from the computer \vspace{-0.2cm}
-				\item Connect the Raspberry Pi to the hotspot \vspace{-0.2cm}
-				\item Modify the client code to be tested according to IP address of the computer
-				\item Run the server code from computer \vspace{-0.2cm}
-				\item Run the client code from the Raspberry Pi \vspace{-0.2cm}
-				\item Try the possible combinations from the terminals of both sides \vspace{-0.2cm}
-				\item The test result can be considered as success if both sides respond according to the \textit{Handshake Protocol}.
-			\end{enumerate}		
-		
-		\item Raspberry Pi as Server Test:
-			This test aims to validate whether the Raspberry Pi can successfully fulfill the requirements set by \textit{Handshake protocol} as a client.Test procedure is as follows:
-			\begin{enumerate}
-				\item Create a hotspot from Raspberry Pi. \vspace{-0.2cm}
-				\item Connect the computer to the hotspot \vspace{-0.2cm}
-				\item Modify the client code to be tested according to IP address of the Raspberry Pi. \vspace{-0.2cm}
-				\item Run the server code from Raspberry Pi. \vspace{-0.2cm}
-				\item Run the client code from the computer. \vspace{-0.2cm}
-				\item Try the possible combinations from the terminals of both sides \vspace{-0.2cm}
-				\item The test result can be considered as success if both sides respond according to the \textit{Handshake Protocol}. 
-			\end{enumerate}	
-		
-		\end{itemize}
+	
 		
 
-	\subsection*{Results of External Communication Subsystem Tests}
+	\subsubsection*{Results of External Communication Subsystem Tests}
 	
 	 The first and simplest test has been done on one computer (or raspberry pi) using the same device as client and server, at the same time. To achieve that, the computer's (or raspberry pi’s) IP address should be defined in the host section defined in the client mode function. Secondly, the codes were tested on two computers. Thirdly, one raspberry pi and one computer were used for the test. All tests were successful if the server side is connected to the internet and client side is connected to the server via hotspot. The outputs of the tests were given in the \textit{Figure~\ref{fig:handshake1}} and \textit{Figure~\ref{fig:handshake2}}.
 	
@@ -829,33 +959,8 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	
 	
 	
-	\subsection{Direction Subsystem Tests}
-	\begin{itemize}
 	
-		\item Straight Drive Test:
-			This test aims to find the PWM bias between the two motors. The test procedure is as follows:
-			\begin{enumerate}
-				\item Make the necessary connections between motors, motor controller and the Arduino \vspace{-0.2cm}
-				\item Set the PWM values of the motors equal \vspace{-0.2cm}
-				\item Observe the behaviour of the motors \vspace{-0.2cm}
-				\item Increase the PWM value of the slower motor until a point the vehicle can go in a straight line.
-				\item Record this PWM difference to use in PID controller subsystem
-			\end{enumerate}
-				
-			\newpage
-		
-		\item Circular Drive Test:
-			\begin{enumerate}
-				\item Make the necessary connections between motors, motor controller and the Arduino \vspace{-0.2cm}
-				\item Desired curvature is decided \vspace{-0.2cm}
-				\item  According to motion of the vehicle PWMs of the motors are set \vspace{-0.2cm}
-				\item  PID parameters are set according to this test
-			\end{enumerate}
-		
-		
-	\end{itemize}
-	
-	\subsection*{Results of Direction Subsystem Tests}
+	\subsubsection*{Results of Direction Subsystem Tests}
 		
 		The test were conducted for the motor pairs used in the Critical Module Demo. The test can be repeated for new motor pairs if needed.
 	
@@ -865,33 +970,10 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	
 	
 	
-	\subsection{Speed Subsystem Tests}
-	\begin{itemize}
-		\item Determination of the error input: This test aims to find the correct error input for overall speed controllers. The test procedure is as follows:
-		\begin{enumerate}
-			\item Make all the necessary connection
-			\item Start up the vehicle
-			\item Execute lane detection and controller algorithms
-			\item Set the error input of the both controller algorithms the same
-			\item Observe the behavior
-			\item Repeat the same process with a linear function of the input
-			\item Observe the success of the tracking algorithm
-		\end{enumerate}
-		By checking in which case the vehicle is able to follow the path with less error, the error input can be decided.
-
-		\item Determination of the critical error value: This test aims to specify above which error value, the emergency state should be triggered.
-		\begin{enumerate}
-			\item Make all the necessary connection
-			\item Start up the vehicle
-			\item Execute lane detection and controller algorithms
-			\item While the vehicle is moving, give disturbance of different types
-			\item Record the maximum value of the error encountered during the disturbances.
-			\item Find the maximum value
-		\end{enumerate}
-		\end{itemize}
 	
 	
-	\subsection*{Results of Speed Subsystem Tests}
+	
+	\subsubsection*{Results of Speed Subsystem Tests}
 	No test result is currently available due to mentioned reasons.
 
 	
@@ -899,26 +981,12 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	 
 	
 	 
-	\subsection{Motors Subsystem Tests}
-	This unit’s test is focusing on two crucial parameters of the motor which are RPM and torque values of the motor. 
-	Basic pulley system is used to calculate torque value of the motor.
-	Distance is measured under the condition that at rated voltage and approximated load, to calculate loaded RPM value calculation.
 	
-	\subsection*{Results of Motors Subsystem Tests}
+	
+	\subsubsection*{Results of Motors Subsystem Tests}
 	The tests are done. The results are negative because motors torque value did not match with the declaration of the supplier. 3kg-cm is the decelerated value, but motors can only produce 750 g-cm. Therefore, this system is failed in torque requirement, and reconsidered in the following period. \\
 
-		\begin{itemize}
-			\item {Torque Test:} 
-				\begin{enumerate}
-					\item Fix the motor at horizontal position with respect to ground \vspace{-0.2cm}
-					\item Attach an object of one kilogram \vspace{-0.2cm}
-					\item Power up the motor \vspace{-0.2cm}
-					\item Increase the weight to a point where the motor is not pulling anymore \vspace{-0.2cm}
-					\item Record the value and check with expected results \vspace{-0.2cm}
-					\item If the result is not comparable with expected values and very low, motor can be considered as broken \vspace{-0.2cm}
-					\item Contact the seller for more information 
-				\end{enumerate}
-		\end{itemize}
+		
 	
 	RPM test has not been done since torque value is not supporting test setup.
 	
@@ -927,46 +995,8 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	 
 	
 	
-	\subsection{Chassis Subsystem Tests}
-	\begin{itemize}
-		\item Inertia test: Aims to deduce a quantifiable measure of stabilization. Test procedure is as follows:
-		\begin{enumerate}
-		\item Prepare a straight path
-		\item Power up the vehicle 
-		\item Execute the edge detection and control algorithm
-		\item Give different type of disturbances 
-		\item Observe the deviation from straight line
-		\item Repeat the process with different component configurations
-		\end{enumerate} 
-	\end{itemize}
-	Currently no test results available due to lack of control algorithm.
 	
-	
-	
-	
-	
-	
-
-
-
-
-
-	
-	\subsection{Printed Circuit Board Subsystem Tests}
-	Once completed, the board should be tested if it is built properly and correctly.
-	\begin{itemize}
-		\item Short test: Aims to check all the wanted connections are present. The test procedure is as follows:
-		\begin{enumerate} 
-			\item Open multimeter for short circuit test \vspace{-0.2cm}
-			\item Find the ends of each routing 
-			\item Check the continuity using multimeter probes
-			\item Check if there is any unwanted short circuit
-			\item If exist, eliminate
-		\end{enumerate}
-	\end{itemize}
-	
-	
-	
+	\subsection{Robustness of the Design}
 	
 	
 	
@@ -981,7 +1011,7 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	Future plans regarding the improvement of the project are listed here in system level.
 	
 	
-	\subsection{Estimated Cost/Power of Project}
+	\subsection{Estimated Cost/Power of Project/Gantt}
 		Estimated cost anaysis for the project can be investigated at \textit{Table~\ref{tab:cost}}. The reproducible vehicle is expected to cost under 200 dollar as desired by the project requirements.
 	
 	\begin{table}[H]
