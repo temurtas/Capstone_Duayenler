@@ -1,75 +1,61 @@
 \select@language {english}
 \select@language {english}
-\contentsline {section}{\numberline {1}Executive Summary}{3}
-\contentsline {section}{\numberline {2}Introduction}{4}
-\contentsline {section}{\numberline {3}Overall Project}{5}
-\contentsline {section}{\numberline {4}Detailed Solutions to Subsystems}{6}
-\contentsline {subsection}{\numberline {4.1}Sensing System}{6}
-\contentsline {subsubsection}{\numberline {4.1.1}Lane Detection Subsystem}{7}
-\contentsline {paragraph}{\numberline {4.1.1.1}Main Solution for Lane Detection Subsystem}{7}
-\contentsline {paragraph}{\numberline {4.1.1.2}Alternative Solutions for Lane Detection Subsystem}{8}
-\contentsline {paragraph}{\numberline {4.1.1.3}Lane Detection Subsystem Tests}{9}
-\contentsline {paragraph}{\numberline {4.1.1.4}Results of Lane Detection Subsystem Tests}{9}
-\contentsline {subsubsection}{\numberline {4.1.2}Vehicle Detection Subsystem}{10}
-\contentsline {paragraph}{\numberline {4.1.2.1}Main Solution for Vehicle Detection Subsystem}{10}
-\contentsline {paragraph}{\numberline {4.1.2.2}Alternative Solutions for Vehicle Detection Subsystem}{10}
-\contentsline {paragraph}{\numberline {4.1.2.3}Vehicle Detection Subsystem Tests}{11}
-\contentsline {paragraph}{\numberline {4.1.2.4}Results of Vehicle Detection Subsystem Tests}{12}
-\contentsline {subsection}{\numberline {4.2}Computation System}{12}
-\contentsline {subsubsection}{\numberline {4.2.1}Data Processing Subsystem}{13}
-\contentsline {paragraph}{\numberline {4.2.1.1}Main Solution for Data Processing Subsystem}{13}
-\contentsline {paragraph}{\numberline {4.2.1.2}Alternative Solutions for Data Processing Subsystem}{14}
-\contentsline {paragraph}{\numberline {4.2.1.3}Data Processing Subsystem Tests}{14}
-\contentsline {paragraph}{\numberline {4.2.1.4}Results of Data Processing Subsystem Tests}{15}
-\contentsline {subsubsection}{\numberline {4.2.2}PID Controller Subsystem}{15}
-\contentsline {paragraph}{\numberline {4.2.2.1}Main Solution for PID Controller Subsystem}{15}
-\contentsline {paragraph}{\numberline {4.2.2.2}Alternatve Solutions for PID Controller Subsystem}{15}
-\contentsline {paragraph}{\numberline {4.2.2.3}PID Controller Subsystem Tests}{16}
-\contentsline {paragraph}{\numberline {4.2.2.4}Results of PID Controller Subsystem Tests}{17}
-\contentsline {subsection}{\numberline {4.3}Communication System}{17}
-\contentsline {subsubsection}{\numberline {4.3.1}Internal Communication Subsystem}{17}
-\contentsline {paragraph}{\numberline {4.3.1.1}Main Solution for Internal Communication Subsystem}{18}
-\contentsline {paragraph}{\numberline {4.3.1.2}Alternative Solutions for Internal Communication Subsystem}{18}
-\contentsline {paragraph}{\numberline {4.3.1.3}Internal Communication Subsystem Tests}{19}
-\contentsline {paragraph}{\numberline {4.3.1.4}Results of Internal Communication Subsystem Tests}{19}
-\contentsline {subsubsection}{\numberline {4.3.2}External Communication Subsystem}{20}
-\contentsline {paragraph}{\numberline {4.3.2.1}Main Solution for External Communication Subsystem}{20}
-\contentsline {paragraph}{\numberline {4.3.2.2}Alternative Solutions for External Communication Subsystem}{21}
-\contentsline {paragraph}{\numberline {4.3.2.3}External Communication Subsystem Tests}{21}
-\contentsline {paragraph}{\numberline {4.3.2.4}Results of External Communication Subsystem Tests}{22}
-\contentsline {subsection}{\numberline {4.4}Driving System}{22}
-\contentsline {subsubsection}{\numberline {4.4.1}Direction Subsystem}{22}
-\contentsline {paragraph}{\numberline {4.4.1.1}Main Solution for Direction Subsystem}{22}
-\contentsline {paragraph}{\numberline {4.4.1.2}Alternative Solutions for Direction Subsystem}{23}
-\contentsline {paragraph}{\numberline {4.4.1.3}Direction Subsystem Tests}{23}
-\contentsline {paragraph}{\numberline {4.4.1.4}Results of Direction Subsystem Tests}{24}
-\contentsline {subsubsection}{\numberline {4.4.2}Speed Subsystem}{24}
-\contentsline {paragraph}{\numberline {4.4.2.1}Main Solution for Speed Subsystem}{24}
-\contentsline {paragraph}{\numberline {4.4.2.2}Alternative Solutions for Speed Subsystem}{25}
-\contentsline {paragraph}{\numberline {4.4.2.3}Speed Subsystem Tests}{25}
-\contentsline {paragraph}{\numberline {4.4.2.4}Results of Speed Subsystem Tests}{25}
-\contentsline {subsection}{\numberline {4.5}Motion System}{25}
-\contentsline {subsubsection}{\numberline {4.5.1}Wheels Subsystem}{26}
-\contentsline {paragraph}{\numberline {4.5.1.1}Main Solution for Wheels Subsystem}{26}
-\contentsline {paragraph}{\numberline {4.5.1.2}Alternative Solutions for Wheels Subsystem}{26}
-\contentsline {subsubsection}{\numberline {4.5.2}Motor Subsystem}{26}
-\contentsline {paragraph}{\numberline {4.5.2.1}Main Solution for Motors Subsystem}{27}
-\contentsline {paragraph}{\numberline {4.5.2.2}Alternative Solutions for Motors Subsystem}{27}
-\contentsline {paragraph}{\numberline {4.5.2.3}Motors Subsystem Tests}{27}
-\contentsline {paragraph}{\numberline {4.5.2.4}Results of Motors Subsystem Tests}{27}
-\contentsline {subsection}{\numberline {4.6}Structure System}{28}
-\contentsline {subsubsection}{\numberline {4.6.1}Chassis Subsystem}{28}
-\contentsline {paragraph}{\numberline {4.6.1.1}Main Solution for Chassis Subsystem}{28}
-\contentsline {paragraph}{\numberline {4.6.1.2}Alternative Solutions for Chassis Subsystem}{29}
-\contentsline {paragraph}{\numberline {4.6.1.3}Chassis Subsystem Tests}{29}
-\contentsline {subsubsection}{\numberline {4.6.2}Printed Circuit Board Subsystem}{29}
-\contentsline {paragraph}{\numberline {4.6.2.1}Printed Circuit Board Subsystem Tests}{30}
-\contentsline {section}{\numberline {5}Plans}{30}
-\contentsline {subsection}{\numberline {5.1}Sensing System Plans}{30}
-\contentsline {subsection}{\numberline {5.2}Computation System Plans}{31}
-\contentsline {subsection}{\numberline {5.3}Communication System Plans}{31}
-\contentsline {subsection}{\numberline {5.4}Driving System Plans}{31}
-\contentsline {subsection}{\numberline {5.5}Structure System Plans}{32}
-\contentsline {subsection}{\numberline {5.6}Estimated Cost of Project}{32}
-\contentsline {section}{\numberline {6}Conclusion}{33}
-\contentsline {section}{\numberline {7}Disclaimer}{34}
+\contentsline {section}{\numberline {1}Overall Project}{3}
+\contentsline {subsection}{\numberline {1.1}Sensing System}{3}
+\contentsline {subsubsection}{\numberline {1.1.1}Lane Detection Subsystem}{3}
+\contentsline {paragraph}{\numberline {1.1.1.1}Main Solution for Lane Detection Subsystem}{3}
+\contentsline {subsubsection}{\numberline {1.1.2}Vehicle Detection Subsystem}{4}
+\contentsline {paragraph}{\numberline {1.1.2.1}Main Solution for Vehicle Detection Subsystem}{4}
+\contentsline {subsubsection}{\numberline {1.1.3}Data Processing Subsystem}{5}
+\contentsline {paragraph}{\numberline {1.1.3.1}Main Solution for Data Processing Subsystem}{5}
+\contentsline {paragraph}{\numberline {1.1.3.2}Alternative Solutions for Data Processing Subsystem}{6}
+\contentsline {paragraph}{\numberline {1.1.3.3}Main Solution for PID Controller Subsystem}{7}
+\contentsline {paragraph}{\numberline {1.1.3.4}Alternatve Solutions for PID Controller Subsystem}{7}
+\contentsline {subsubsection}{\numberline {1.1.4}Internal Communication Subsystem}{8}
+\contentsline {paragraph}{\numberline {1.1.4.1}Main Solution for Internal Communication Subsystem}{8}
+\contentsline {paragraph}{\numberline {1.1.4.2}Alternative Solutions for Internal Communication Subsystem}{9}
+\contentsline {paragraph}{\numberline {1.1.4.3}Main Solution for External Communication Subsystem}{10}
+\contentsline {paragraph}{\numberline {1.1.4.4}Main Solution for Direction Subsystem}{11}
+\contentsline {paragraph}{\numberline {1.1.4.5}Main Solution for Speed Subsystem}{12}
+\contentsline {paragraph}{\numberline {1.1.4.6}Main Solution for Wheels Subsystem}{12}
+\contentsline {paragraph}{\numberline {1.1.4.7}Main Solution for Motors Subsystem}{12}
+\contentsline {paragraph}{\numberline {1.1.4.8}Main Solution for Chassis Subsystem}{13}
+\contentsline {subsubsection}{\numberline {1.1.5}Printed Circuit Board Subsystem}{13}
+\contentsline {section}{\numberline {2}Detailed Requirements}{14}
+\contentsline {section}{\numberline {3}Detailed Solutions to Subsystems}{14}
+\contentsline {paragraph}{\numberline {3.0.0.1}Lane Detection Subsystem Tests}{14}
+\contentsline {paragraph}{\numberline {3.0.0.2}Results of Lane Detection Subsystem Tests}{15}
+\contentsline {paragraph}{\numberline {3.0.0.3}Vehicle Detection Subsystem Tests}{15}
+\contentsline {paragraph}{\numberline {3.0.0.4}Results of Vehicle Detection Subsystem Tests}{16}
+\contentsline {subsection}{\numberline {3.1}Computation System}{16}
+\contentsline {paragraph}{\numberline {3.1.0.1}Data Processing Subsystem Tests}{17}
+\contentsline {paragraph}{\numberline {3.1.0.2}Results of Data Processing Subsystem Tests}{17}
+\contentsline {subsubsection}{\numberline {3.1.1}PID Controller Subsystem}{17}
+\contentsline {paragraph}{\numberline {3.1.1.1}PID Controller Subsystem Tests}{17}
+\contentsline {paragraph}{\numberline {3.1.1.2}Results of PID Controller Subsystem Tests}{18}
+\contentsline {subsection}{\numberline {3.2}Communication System}{18}
+\contentsline {paragraph}{\numberline {3.2.0.1}Internal Communication Subsystem Tests}{19}
+\contentsline {paragraph}{\numberline {3.2.0.2}Results of Internal Communication Subsystem Tests}{19}
+\contentsline {subsubsection}{\numberline {3.2.1}External Communication Subsystem}{19}
+\contentsline {paragraph}{\numberline {3.2.1.1}External Communication Subsystem Tests}{19}
+\contentsline {paragraph}{\numberline {3.2.1.2}Results of External Communication Subsystem Tests}{20}
+\contentsline {subsection}{\numberline {3.3}Driving System}{20}
+\contentsline {subsubsection}{\numberline {3.3.1}Direction Subsystem}{20}
+\contentsline {paragraph}{\numberline {3.3.1.1}Direction Subsystem Tests}{21}
+\contentsline {paragraph}{\numberline {3.3.1.2}Results of Direction Subsystem Tests}{22}
+\contentsline {subsubsection}{\numberline {3.3.2}Speed Subsystem}{22}
+\contentsline {paragraph}{\numberline {3.3.2.1}Speed Subsystem Tests}{22}
+\contentsline {paragraph}{\numberline {3.3.2.2}Results of Speed Subsystem Tests}{23}
+\contentsline {subsection}{\numberline {3.4}Motion System}{23}
+\contentsline {subsubsection}{\numberline {3.4.1}Wheels Subsystem}{23}
+\contentsline {subsubsection}{\numberline {3.4.2}Motor Subsystem}{23}
+\contentsline {paragraph}{\numberline {3.4.2.1}Motors Subsystem Tests}{24}
+\contentsline {paragraph}{\numberline {3.4.2.2}Results of Motors Subsystem Tests}{24}
+\contentsline {subsection}{\numberline {3.5}Structure System}{24}
+\contentsline {subsubsection}{\numberline {3.5.1}Chassis Subsystem}{25}
+\contentsline {paragraph}{\numberline {3.5.1.1}Chassis Subsystem Tests}{25}
+\contentsline {paragraph}{\numberline {3.5.1.2}Printed Circuit Board Subsystem Tests}{26}
+\contentsline {section}{\numberline {4}Plans}{26}
+\contentsline {subsection}{\numberline {4.1}Estimated Cost/Power of Project}{26}
+\contentsline {section}{\numberline {5}Conclusion}{27}
+\contentsline {section}{\numberline {6}Disclaimer}{28}

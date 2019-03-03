@@ -36,7 +36,7 @@ float Ki = 0; // Feedback gains (sum)
 
 float maxSum = 1; // Optional integral term
 unsigned long delta; //Calculates the derivative of the error
-char *arg;
+char *arg;  
 
 unsigned long t; //time variable
 int incoming[12]; // array that holds the variabels coming from GUI

@@ -110,30 +110,6 @@
 	\tableofcontents
 	\newpage
 	
-	\section{Executive Summary}
-	Recently, with the quick development of the computers and internet, a revolutionary change is about happen. The operation speed of electronics have dramatically increased as the sizes have shrank. Thus, developing and integrating new systems into the cars are easier than it has ever been. Along with such advances, as a result, intelligent cars have been around for a few years. The intelligent vehicle technologies enable simpler vehicle operations and better driving safety. Such technologies involve autonomous driving, lane departure assistance, ambient dependent headlight adjustment and other safety related features. To address the needs in the development phases of the aforementioned technologies, DUAYENLER Ltd. Şti. (DUAYENLER) is founded. DUAYENLER aims to be one of the Lodestars in the industry with its innovative approaches.\\
-	
-	The company consists of talented engineers from different but closely related fields, namely, computer, electronics and control. This combination is what makes DUAYENLER advantageous in R\&D phase. Easy looking technologies involve complex development phases. And complexity can only be resolved by a team work. The members of the company are self-aware and cooperate closely to each other. With all its synergy, DUAYENLER is capable of accomplishing the tasks and overcoming possible problems.\\
-	
-	The main technology that DUAYENLER focuses on is autonomous driving. Such technology yields a contemporary and innovative solution for car industry. The development consists of combination of several systems. The sensing system is responsible for understanding and mapping the environment properties such as detecting lane boundaries and possible obstacles. This system is one of the most important elements in the project together with computation system. Not only being able to map surroundings as image is important but also extracting meaningful data out of them and convert them to a useful data for rest of the systems. The computation unit is the core system of the project. Furthermore, the processed data must be output as a physical phenomenon, that is, steering of the wheels. This is realized by the combination of driving and motion subsystems. Since a vehicle is generally not solo, the project consists of a system dedicated to communicate with other vehicles. This is the communication system. As anticipated, the whole system must be assembled on a single body. The structure system realizes such needs in the project.\\
-	
-	The aim of this report is to give reader a solid understanding of the project from DUAYENLER's point of view. The duration of the project is expected to last 33 weeks, from the beginning of October 2018 to May 2018. The estimated cost for research and development phase is about \$ 450 whereas mass manufacturing would not exceed \$200. Along with the vehicle, the customer will be provided with deliverables such as technical manuals, elliptical path, rechargeable battery and the charger. The vehicle will have two (2) years of warranty.
-	
-	
-	\section{Introduction}
-	DUAYENLER is established with the aim of developing autonomous car technologies for near future. To serve that purpose,  Car Chasing Project is initiated by the company. The project can be summarized as a vehicle that can autonomously follow a path and detect the other surrounding vehicle as well as communicating them to have a reliable driving environment.  With this project, the company aims to accomplish the following objectives:
-	\begin{enumerate}
-		\item Sensing the environment and other vehicles on the roads
-		\item Automatic adaptive lane detection
-		\item Self driving
-		\item Autonomous wireless communication with surrounding counterparts		
-	\end{enumerate}
-	
-	A considerable amount of effort and work force has been put on the project to fulfill the required objectives. So far, the team has figured out several important steps towards the realization of the project.To start with, the wireless communication between the vehicles is modeled and implemented. A reliable communication environment is established using Wi-Fi protocol. Currently, the vehicles can communicate with each others by means of associated handshake protocol messages in a race scenario. Secondly, computer vision algorithms are developed and implemented as a solution to lane detection problem. The algorithms are developed based on open source computer vision library OpenCV. To obtain a direction predicting results, color thresholding, edge detection, hough transform algorithms are used respectively. Furthermore, the communication between image processing platform and microcontrollers for motor driving is constructed. It is the essential part of solving the self driving problem. On the mechanical part, different motor\&wheel combinations are tested to obtain the best performance. To test the computer vision on board, a prototype vehicle is assembled and necessary equipment is mounted on it. Currently, the team is working on the improvement of computer vision algorithms.\\
-	
-	In this report, the company provides technical details about the implemented solutions, other possible solution alternatives with objective comparisons as well as a clear action plan showing the necessary further steps for realization of the project. The emphasis on this report is primarily put on the detailed analysis of proposed solutions, supported with relevant test results in both system and subsystem level. In addition, future plans including new test designs for current solutions as well as for other alternatives, the action plan in case of unexpected outcomes by clearly specifying the responsibilities of each member in the team. \\
-	
-	
 		\section{Overall Project}
 	
 	The main objective of this project is to design and produce a self driving mini-car that can follow a path with a varying properties with in a 200 dollar budget. The project can be investigated under six main systems and their twelve subsystems. \textit{Figure \ref{fig:organization}} shows the organization structure of the project.
@@ -146,6 +122,50 @@
 		\item Sensing System
 			
 			This system is responsible for interpreting data from the environment. It has two subsystems namely,
+			
+			\subsection{Sensing System}
+	
+	Sensing system has two main subsystems which are Lane Detection subsystem and Vehicle Detection subsystem. The requirements of this subsystem are listed below:
+	\begin{itemize}
+		\item The system should detect the sides of the road.
+		\item The system should not be effected from external disturbances.
+		\item The system should detect the opponent vehicle.
+	\end{itemize}
+	
+	
+	\subsubsection{Lane Detection Subsystem}
+	The subsystem basically detects the lane. This subsystem uses OpenCV libraries for processing camera frames. The input is captured from a Raspberry Pi camera that is mounted to the vehicle. The captured frame is firstly, preprocessed by a denoising filter and HSV color filter. The edges in the frame is detected by Canny Edge Detector algorithm. The output of Canny is a binary image filled with ones and zeros. The resulting binary image is processed with Hough Line detector to find pixels that possibly form a line. After the lines are found, the processed frame is sent to Data Processing subsystem. The block diagram of this subsystem is given in \textit{Figure~\ref{fig:lane_detection_subsystem}}. 
+	
+	
+	\paragraph{Main Solution for Lane Detection Subsystem}
+		
+	The first processing on the captured frame is denoising by blurring. The blurring filter is a GaussianBlur of (3x3) matrix with zero variance both in x and y directions. Next, the filtered image is color filtered in HSV color space. The filter range of the HSV filter is adjusted only to include shades green. The lower bound for HSV filter is [H=60, S=120, V=106] and the higher bound is [H=82, S=255, V=235]. Later the color filtered image is processed by Canny Edge Detector. This process eliminates all pixels except those are constituting an edge. Edge pixels are usually formed when there is a transition from one object to other. To find pixels constituting a line, Hough Lines function is used.\\
+	
+	Hough Lines function outputs two pixels points on the image that form a line. The output of the function is tens of such line points. The accuracy of the function can be adjusted by playing with the input parameters. The function basically draws all lines that might go through a point in the free space (in polar coordinates) and intersects those lines. If the origin points of the intersected lines are within a specified bound, then the line is defined and it can be expanded further. If found points on a line don't exceed a threshold, that line is discarded. The adjustment of such parameters are done with trial and error approach. An important note is that this function is probabilistic, meaning that even if the input frame is never changed, the output line points would be close to previous point but not the same. An example call for this function together with its parameters is given \textit{Script~\ref{sc:hough-call}}. The output, line detected frame, is sent to Data Processing subsystem.
+		\begin{lstlisting}[language=C++,float=h,numbers=left,frame=single,caption=Hough Lines Function with its Parameters, captionpos=b, label=sc:hough-call]
+HoughLinesP(input=img_threshed, output=line,
+rho=1, theta=CV_PI / 180, threshold=15, 
+minLineLength=30, maxLineGap=40);
+	\end{lstlisting}
+	
+	
+	\subsubsection{Vehicle Detection Subsystem}
+	
+	The subsystem is the first step of safely competing with an opponent in a racing path. By the help of two distance sensors at the back and front of the vehicle the subsystem aims to find whether there is a opponent vehicle nearby.
+	
+	
+	\paragraph{Main Solution for  Vehicle Detection Subsystem}
+	
+	 This subsystem uses two time of flight distance sensor which is enhanced IR sensor. One at the back of the vehicle responsible for detecting the chasing opponent and one at the front of the vehicle responsible for detecting the chased opponent. The subsystem produces positive output if the chasing vehicle or chased vehicle is within a range of 5 cm from the vehicle. Since the sensor reading is planned to be performed using Arduino, the required trigger for handshake protocol can be  easily send through serial commutation or directly implemented in the Arduino as an alternative. The requirements of this subsystem are listed below:
+	
+	\begin{itemize}
+		\item The subsystem should detect the opponent to be caught with in a 5 cm 
+		\item The subsystem should detect the chasing opponent if it reaches from back with in a 5 cm 
+		\item The subsystem should trigger the handshake protocol 
+	\end{itemize}
+	
+	
+	
 			
 			\begin{enumerate}
 				\item \textit{Lane Detection Subsystem} which is responsible for detecting sides of the path as its name suggests
@@ -164,6 +184,64 @@
 		\item Communication System	
 		
 		This system is responsible for communication inside the vehicle and communication between vehicles. It has two subsystems namely,
+		
+		\subsubsection{Data Processing Subsystem}
+	
+		The data processing subsystem is the main computation unit for the vehicle. The main objective of this subsystem is to give PID controller subsystem a meaningful data from unorganized data coming from lane detection subsystem. 
+	
+	\paragraph{Main Solution for Data Processing Subsystem}
+	
+	The input of this system is an edge detected binary image.  Next, points of the lines are classified as left or right borders of the lane. The elimination of the wrong points are done concurrently with the classification. Then, filtered points are fitted in two separate lines to create left and right borders of the lane. As the lane borders are found, the next and the last step is to determine the direction of the vehicle. The output of this subsystem is a turning angle and a direction. The whole process is summarized in \textit{Figure~\ref{fig:data_processing_subsystem}} as a block diagram. The requirements of this subsystem are listed below.\\
+	
+	Then next step is to classify the line points as left or right. The lines are firstly eliminated according to their slopes. If slope of a line is not in invalid slope region of $\pm$0.005, then it is a valid line. This process is done to get rid of unnecessary low sloped lines. After elimination, line points set must be determined as left or right. At this point, this classification is done according to double checking. The center of the image, that is 320th vertical pixel. If initial and final horizontal points of the image is in the same half, the line belongs to that half. This method works nicely in most regions of the path. However, it is a bit error prone in case of a sharp turning angle or losing one of the lanes . This algorithm will be improved to be more robust.
+	\begin{lstlisting}[language=C++,float=t,numbers=left,frame=single,caption=The Algorithm to Classify the Lane Lines as Right or Left, captionpos=b, label=sc:left-right-lines]
+std::vector<cv::Vec4i> lines // like a 4x4 matrix
+double slope_thresh = 0.005; // absolute threshold slope
+for (lines_points)
+	startP = Point(x1, y1);
+	endP = Point(x2, y2);
+	line_slope = startP/endP;
+	if(abs(line_slope) >= slope_thresh) line_is_valid;
+	else line_is_not_valid;
+
+for (lines_is_valid)	
+	if(x1>320 && x2>320) it_is_right_line;
+	else if(x1<320 && x2<320) it_is_left_line;
+	else discard_the_line;
+	\end{lstlisting}
+	
+	After finding the all left and right line points, actual left and right lines are constructed by applying the least square method to the both point sets. The result of this method is 4 points (x1,y1,x2,y2) to refer the left lane line and 4 points to refer the right lane line.
+	
+	The last process on the image is predicting the turn angle and direction. The prediction of direction is done by comparing the slopes of the left and the right lines. The turning is to be made to the side of the lane line having less slope. The angle is determined by computing the angle between the normal line of the current direction and guide line. Guide line is constructed with the average of the middle points of the right and the left lines and current point of the vehicle. Vehicle's current point is assumed to be in the middle of the beginning of the image. Thus, the beginning point of the guideline is the current position of the vehicle and the endpoint is the target point to be reached. The output of this processing is shown in \textit{Figure~\ref{fig:turn-prediction-explained}}. The turning angle and the direction is sent to PID Controller subsystem.
+	
+	
+	\paragraph{Alternative Solutions for Data Processing Subsystem}
+		The proposed algorithm for data processing has some flaws that are already discussed. To overcome those problems, DUAYENLER has some alternative solutions. An improvement might be on finding lane boundaries. This operation is currently realized with Hough Lines function. Another approach would be to scan rows an accurately edge detected image. If a white pixel is encountered, this would imply a lane boundary and the last time a white pixel is encountered would mean te other lane boundary. If the edge detected image contains noise, the solution might yield a wrong result. However, this can be overcomed by setting maximum number of white points that can be detected in a row.
+		
+		Another improvement could be on positioning on the lane. The proposed algorithm assumes that the vehicle follows the lane always in the center. This assumption is not the case always. The new algorithm will differentiate between the center of the lane and center of the capture image. By averaging coordinate points of both lane boundaries the actual lane center can be found and this point must be in some proximity with respect to the center of the image.
+		
+		\paragraph{Main Solution for PID Controller Subsystem}
+	
+		In our case the desired steady state error to be compensated by the controller is angle information coming from the data processing unit. For this purpose discrete time version of a general PID controller will be utilized. General form for discrete time PID controller may be seen below:
+	
+	$$ G_{PID}(z)=K_{bias}+K_p+K_I\frac{1}{1-z^{-1}}+K_D(1-z^-1)	$$
+	
+	Using bilateral Tustin transform where 
+	
+	$$ z=\frac{1+\overline{s}}{1-\overline{s}} $$
+	
+	The discrete time controller can be designed as if it is in continues domain.    
+	
+	
+	
+	
+	
+	
+	\paragraph{Alternatve Solutions for PID Controller Subsystem}
+		Theoretically very similar approach for designing a controller is to design in a S-domain. For this kind of controllers, general form of the continues time PID controller may be seen below:
+		$$ G_{PID}(s)=K_{bias}+K_p+K_I\frac{1}{s}+K_Ds	$$
+		
+		Another alternative method is to design the controller directly in discrete domain without using bilateral Tustin transform. 
 			
 			\begin{enumerate}
 				\item \textit{Internal Communication Subsystem} which is responsible for communication inside the vehicle mainly the communication between Raspberry Pi and Arduino.						\item \textit{External Communication Subsystem} which is responsible for the communication of the vehicle with the outside world mainly with the opponents.
@@ -177,19 +255,113 @@
 				\item \textit{Direction Subsystem} which is responsible for the orientation of the vehicle and keeps the road and the vehicle aligned.
 				\item \textit{Speed Subsystem} which is responsible for the overall speed of the vehicle by adjusting it considering other effects on the vehicle.
 			\end{enumerate}
+			
+		\subsubsection{Internal Communication Subsystem}
+	This subsystem covers the communication of the components inside vehicle. Currently, Raspberry Pi and Arduino are two components that requires communication. To prevent the large amount of cable connection, a serial communication protocol is implemented. The requirements of this subsystem are listed below:
+	\begin{itemize}
+		\item The microcontrollers should be able to communicate with each other via serial communication
+		\item The internal communication speed should be compatible with the processing speed of the lane detection subsystem  
+	\end{itemize}
+		\begin{lstlisting}[language=Python,float=h!,numbers=left,frame=single,caption=Serial object decleration in Python,label=sc:serial_python, captionpos=b ] 
+import serial
+ar=serial.Serial("/dev/ttyUSB0",9600)
+		\end{lstlisting}
+		 \begin{lstlisting}[language=C,float=h!,numbers=left,frame=single,caption=Serial communication setup in C,label=sc:serial_c, captionpos=b ] 
+#include "./arduinoModule/rs232.h"
+int cport_nr = 24; /* /dev/ttyUSB0 */
+int bdrate = 9600; /* 9600 baud */
+char mode[] = { '8', 'N', '1', 0 }; // 8 data bits, no parity, 1 stop bit
+char str_send[2][BUF_SIZE]; // send data buffer
+unsigned char str_recv[BUF_SIZE]; // recv data buffer
+RS232_OpenComport(cport_nr, bdrate, mode);
+		\end{lstlisting}
+	\paragraph{Main Solution for Internal Communication Subsystem}
+	
+	There are several serial communication protocols that can be used to maintain the connection such as SPI, I2C. However, the first choice is to use USB serial port of the Arduino. Since RPi is practically a computer, it can recognize Arduino as a device using a serial port such as \lstinline|/ttyUSB0| in case of a Linux based OS. When recognized, RPi can send any piece of strings to the Arduino via USB cable. The process of communication is as follows:
+	\begin{enumerate}
+		\item Arduino should be connected to the Pi. \vspace{-0.2cm}
+		\item Using Arduino IDE or any other method such as listing serial ports and checking for Arduino and so on, the serial port name should be detected \vspace{-0.2cm}
+		\item Baud rates of two sides should be the same. 9600 is generally enough but if needed, it can be incremented to satisfy fast communication \vspace{-0.2cm}
+		\item On Arduino side, \texttt{Serial.begin(9600)} command should be executed and serial port should be read repeatedly to capture the incoming data \vspace{-0.2cm}
+		\item On Pi side, using any language C++ or Python, messages to serial port can be send 
+	\end{enumerate}
+	
+	There are minor differences when implementing the code in Python, C++  and C. Python is the most practical one:\\
+	
+	Python has a library called serial by which any type of data can be send through serial ports. Script \ref{sc:serial_python} is used to declare a serial object. Then using \texttt{ar.write("some string \textbackslash r".encode())}, the string "some string" can be send to Arduino. Note that "\textbackslash r" carriage return character carries a high importance because it shows that a string is terminated and any other incoming data belongs to the new piece of string.   \\
+	
+
+	
+	As alternatives, the implementation on C is also examined.	Sample codes to implement the same communication in C is in Script \ref{sc:serial_c}. Since it is a low level language, specification of buffer size and other parameters should be done in the code.\\
+
+	%\lstinline[language=Arduino]|<SerialCommand.h>| 
+	On Arduino  side, there are also several option that we can read the incoming data. Using \texttt{Serial.read()}  command is one of the simplest solutions. However, it contains some issues like conversion from string to integer and when to stop. Furthermore, the incoming data should be considered in character basis for the exact control.  
+	
+	\paragraph{Alternative Solutions for Internal Communication Subsystem}
+		The communication between Raspberry Pi and Arduino can be realized by the use of other peripheral protocols or libraries.\\
+	
+		There is a \texttt{SerialCommand.h} library for the Arduino which allows executing a function depending on the incoming string. Using \lstinline|.addCommand("str",func)| of the library any function can be associated with any string coming from serial port. Moreover, the functions can have argument. For example, let the string "PWMSET" be execute a function \lstinline|setpwm()| but the PWM value is required. If incoming string is of the form "PWMSET 150", using \lstinline|.next()| function of the library, the value 150 can be read and converted into integer and interpreted as the PWM value to be set.\\
 		
+		Another solution is to use I2C or SPI protocols to set communication between Arduino and Raspberry Pi. These options require simple wiring connections between the pins. A point to remark is being cautious to operating voltage levels of pins of Arduino and Raspberry Pi.\\
+		
+		Besides aforementioned alternatives, Wi-Fi communication can also be considered between Arduino and Raspberry Pi. This solution requires deployment of a Wi-Fi module on Arduino. Some hardware exists in market such as ESP8266 and EMW3165. This solution would require a Wi-Fi network in the medium which makes the solution less implementable.\\
+		
+		A last solution would be to remove Arduino from the system. This would require the handover of operations of Arduino to Raspberry Pi. The resulting system could be considered as a single board solution, that is, all relevant subsystems operate on Raspberry Pi. This option would cause heating problems on Raspberry Pi. A cooling mechanism should also be applicable in this case.
+		
+		Communication subsystem enables the robot to communicate with the opponent using the handshake protocol agreed on standard committee. According to the standard committee, Wi-Fi modules must be used to implement handshaking. Since Raspberry Pi was used in the project, there is no need to get a separate Wi-Fi module; the internal Wi-Fi module of the Raspberry Pi was used.
+	
+	\paragraph{Main Solution for External Communication Subsystem}
+	
+	Socket programming is an effective tool to implement client-server communication algorithms. It can be implemented in Python or C++.  Our algorithms are written in Python for now, yet it can easily be converted to C++ if the team members decide that it is necessary. The algorithms for client and server sides are slightly different. \textit{Figure~\ref{fig:socket_funcs}} shows the functions that are used for client and server sides to create communication between client and server.
+	
+	
+	
+	Here is the summary of the key functions from socket library:
+	
+	\begin{itemize}
+		\item socket.socket(): Creates a new socket using the given address family, socket type and protocol number.
+		\item s.bind(address): Binds the socket to the address defined previously.
+		\item s.listen(backlog): Sets up the maximum number of connections that can be made to the socket, which must be at 1 for the project.
+		\item	s.accept(): Waits until connection arrives, then accept the client connection. Returns the client socket connected to the server as (conn, address) pair, where conn is a new socket object and address is the address bound to this socket
+		\item	s.connect(): Provides client to connect to the server
+		\item	s.send(): Transmits message to the remote socket.
+		\item	s.recv(): Receives message from the remote socket
+		\item	socket.close(): closes the socket; i.e., ends the communication with the opponent at the end of the race.
+	\end{itemize}
+	
+	It is stated in the standard committee that each team must be assigned a static IP to communicate with the other robots. Duayenler has the static IP stated as “192.168.1.7” and the ID as “07”. Since Raspberry Pi 3 comes with a built-in wireless adapter, configuring it as a Wi-Fi hotspot is possible. To assign given IP to the robot, Raspberry Pi must be set as an access point from the terminal.\\
+	
+	In the algorithm that was implemented for the handshake, in a continuous loop, the front and rear sensors' values are been checked. There are two functions which are for client and server modes, respectively. If the front sensor senses the opponent in 5 cm range, our main code visits the client mode function. If the rear sensor senses the opponent in 5 cm range, server mode function runs. If our robot is in the server mode, the rear sensor value is again checked. The acknowledge message ($< ID> 01$) or reject message ($< ID> 11$) is sent according to the sensor value.
+	
 		\item Structure System
 		
 		This system is responsible for mechanical structure of the vehicle. Placement and orientations of both electrical and mechanical components are considered in this system. It has two subsystems namely,
+		
+		\paragraph{Main Solution for Direction Subsystem}
+	Depending on the configuration of the wheels, exact control of the vehicle might vary. However, there are certain methods to accomplish orientation. The vehicle will definitely have two wheels or palettes that will be driven by two separate DC motors. That configuration allows differential drive method to orient the vehicle. PWM values of the motors can be adjusted such that the speed difference between them results in a turn as much as desired angle. The exact difference values on the PWM values depends on the specs of the used motors and voltage sources. 
+	
+	Two different H-bridge motor drivers are proposed to be used to drive DC motors: L298N and L293D. Both can drive two motors separately with one IC. However, maximum current rating of the former one is larger being 2A while L293D can supply 0.6A per channel. 
 			
 			\begin{enumerate}
 				\item \textit{Chassis Subsystem} which is responsible for the connections of mechanical components in the vehicle.
 				\item \textit{Printed Circuit Board Subsystem} which is responsible for the placement of electrical components.
 			\end{enumerate}
+			
+		\paragraph{Main Solution for Speed Subsystem}
+	Currently, there is no implementation for the subsystem because its operation depends on the control feedback loop and the success of the direction unit. Once they are operating and the vehicle is capable of following the lane at, least partially, then the speed subsystem will be implemented on top of the control algorithm.\\
+	
+	The best place to implement the state machine is Arduino as motor driving is also controlled by it. Main requirement for this system to operate is a measure of error or success for the direction subsystem. It can be the same as the error input of controller i.e. turning angle or a function of it. The state machine will act depending on the value of the error input. When it is above a critical level, the vehicle will show a steep deceleration to compensate the error of the direction unit. In other cases, It is wise to implement the speed controller in the form of at least PD controller. In other words, the change in the overall speed will also be maintained by a controller whose error input is not necessarily tried to be made zero but rather below a pre-specified level. State machine diagram can be seen in \textit{Figure \ref{fig:speed-state}}\\
 		
 		\item Motion System
 		
 		This system is responsible for maintaining mechanical feasibility of the driving system. It has two subsystems namely,
+		
+	\paragraph{Main Solution for Wheels Subsystem}
+	
+	The wheel placement combination that will be utilized is 2+1 combination. This combination can be assembled by placing 2 car wheels (with motors) to the back and the one boll caster to the front or vice versa. These configurations provide easy implementation and fairly reliable handling on the path. However, for certain obstacles may significantly disturb vehicles balance in this configuration.\\		
+		
+		\paragraph{Main Solution for Motors Subsystem}
+	One of the widely used motor type is brushed gearhead DC motors. They are cheap and require enough torque for this competition. They have mainly two section one is the normal DC motor and gear head. Gear is a must to enhance torque performance of the DC motor. In other words, gear balance rpm and torque of the motor. 
 			
 			\begin{enumerate}
 				\item \textit{Wheels Subsystem} which is responsible for the design of the wheel structure depending on the required speed-torque parameters.
@@ -199,8 +371,28 @@
 	
 	General interaction of these subsystems with each other can be investigated at system diagram of the project at \textit{Figure~\ref{fig:system-diagram}}.
 	
-
 	
+\paragraph{Main Solution for Chassis Subsystem}
+	
+	Current chasis structure relies on two pre-designed plexiglass layers. Raspberry Pi and Arduino is placed on the upper layer while motor driver and the battery are on lower one. To keep the center of mass of the vehicle close to the ground, battery is placed as low as possible. The connection of the motor driver and Arduino consists of eight cables two of which are the power lines. The cables are placed in a way that they cause no entanglement with any other parts. The connection between RPi and Arduino is currently accomplished by USB cable. \\
+	
+	Since there is not much component on the vehicle, the space on the layers are enough to locate the components. However, placing the camera of RPi has been a great problem. The view angle of the camera turned out to be considerable small than expected. Other several cellphone cameras were tried but they are could not satisfy the requirement that both side of the lane should be visible either. The only solution was to elevate the camera. That is why a camera holder structure is designed and added to the system.\\	
+	
+	To satisfy the requirements the holder is built using 4mm plexiglass. The choice satisfies the rigidity and light weight possible. A thinner one would result in less rigidity and increased vibration on the system. The designed structure, whose layout can be seen in \textit{Figure \ref{fig:camera-holder}}, has the elevation range from 35 cm to 45 cm and a camera angle ranging from $0^o$ to $45^o$. Having manufactured, the camera holder is integrated to the vehicle (\textit{see Figure \ref{fig:chassis}}). After integration, the view of the camera can completely cover the both edges of the path (\textit{see Figure \ref{fig:detection-test-results}})
+	
+
+
+	Current version of chassis which were used in critical module demo can be seen at \textit{Figure~\ref{fig:chassis}}.
+	
+	
+	\subsubsection{Printed Circuit Board Subsystem}
+	The main role of this part is decreasing connection mess and increase vibration strength of the robot against disturbances. Also, this section increases rigidity of the whole system. The requirements of this subsystem are listed below:	
+	
+This subsystem aims to make all the circuit connections rigid and compact. Currently, there is wire connections between Arduino-Motor driver and Arduino-RPi. However, addition of vehicle detection sensors and other lane detection alternatives will increase the amount of components, hence, wires. In addition, to use the space occupied by the Arduino UNO board, Arduino Mini can be used. This also allows to build the circuit board as shield for Arduino Mini. After that any other sensors and connections can be made through PCB. In other words, PCB acts as a breakout board for each item integrated to the system in a more rigid and compact way.
+	
+	
+	
+	\section{Detailed Requirements}
 	
 	
 	
@@ -209,19 +401,9 @@
 	V-Model is a very popular tool for system engineers to plan their projects. To ease the project tracking process, the V-Model was constructed by the DUAYENLER. The overall look of the V-Model can be seen at \textit{Figure~\ref{fig:vmodel}}. This section includes the explanation, requirements, test procedures and test results for the subsystems.
 		
 	
-	
-	\subsection{Sensing System}
-	
-	Sensing system has two main subsystems which are Lane Detection subsystem and Vehicle Detection subsystem. The requirements of this subsystem are listed below:
-	\begin{itemize}
-		\item The system should detect the sides of the road.
-		\item The system should not be effected from external disturbances.
-		\item The system should detect the opponent vehicle.
-	\end{itemize}
-	
-	
-	\subsubsection{Lane Detection Subsystem}
-	The subsystem basically detects the lane. This subsystem uses OpenCV libraries for processing camera frames. The input is captured from a Raspberry Pi camera that is mounted to the vehicle. The captured frame is firstly, preprocessed by a denoising filter and HSV color filter. The edges in the frame is detected by Canny Edge Detector algorithm. The output of Canny is a binary image filled with ones and zeros. The resulting binary image is processed with Hough Line detector to find pixels that possibly form a line. After the lines are found, the processed frame is sent to Data Processing subsystem. The block diagram of this subsystem is given in \textit{Figure~\ref{fig:lane_detection_subsystem}}. The requirements of this subsystem are listed below:
+
+
+	The requirements of this subsystem are listed below:
 	\begin{itemize}
 		\item The subsystem should be able to detect only the shades of green color
 		\item The subsystem should be able to detect edges in the camera frame in any light condition
@@ -230,30 +412,6 @@
 	\end{itemize}
 	
 	
-	
-	\paragraph{Main Solution for Lane Detection Subsystem}
-		
-	The first processing on the captured frame is denoising by blurring. The blurring filter is a GaussianBlur of (3x3) matrix with zero variance both in x and y directions. Next, the filtered image is color filtered in HSV color space. The filter range of the HSV filter is adjusted only to include shades green. The lower bound for HSV filter is [H=60, S=120, V=106] and the higher bound is [H=82, S=255, V=235]. Later the color filtered image is processed by Canny Edge Detector. This process eliminates all pixels except those are constituting an edge. Edge pixels are usually formed when there is a transition from one object to other. To find pixels constituting a line, Hough Lines function is used.\\
-	
-	Hough Lines function outputs two pixels points on the image that form a line. The output of the function is tens of such line points. The accuracy of the function can be adjusted by playing with the input parameters. The function basically draws all lines that might go through a point in the free space (in polar coordinates) and intersects those lines. If the origin points of the intersected lines are within a specified bound, then the line is defined and it can be expanded further. If found points on a line don't exceed a threshold, that line is discarded. The adjustment of such parameters are done with trial and error approach. An important note is that this function is probabilistic, meaning that even if the input frame is never changed, the output line points would be close to previous point but not the same. An example call for this function together with its parameters is given \textit{Script~\ref{sc:hough-call}}. The output, line detected frame, is sent to Data Processing subsystem.
-		\begin{lstlisting}[language=C++,float=h,numbers=left,frame=single,caption=Hough Lines Function with its Parameters, captionpos=b, label=sc:hough-call]
-HoughLinesP(input=img_threshed, output=line,
-rho=1, theta=CV_PI / 180, threshold=15, 
-minLineLength=30, maxLineGap=40);
-	\end{lstlisting}
-	
-	\paragraph{Alternative Solutions for Lane Detection Subsystem}\label{para:alt_sol_lane_detect}
-	
-	After the module demo result of the camera-oriented lane detection, former solutions are considered to support camera result and enhance robustness of the tracking. Possible future solutions are the followings:
-	\begin{itemize}		
-		\item{Light sensor:} The purpose of using this sensor is to adjust color filtering in the lane detection. In the test phase, it is observed that color filter in HSV space had inaccuracies such as detecting colors other than green. Even though HSV mostly eliminates the illumination change in a color, an adaptive threshold setting might be a good option for color filtering to work more robust in extreme low and extreme high lighting conditions. Lighting sensor will have the luminosity of the medium and this data should adaptively set the color filter range.
-		
-		\item {Laser sensor:} As IR sensor array solution, which is already considered at the beginning of the term, laser approximate sensors can be constructed as array and used to detect edges of the lane. The expected enhancement is that laser sensors are more robust under extreme illumination conditions. To clarify the solution, two laser sensor arrays sense both sides of the lane. According to array’s data, vehicle orients itself.  
-
-		\newpage		
-		
-		\item{Color sensor:} 	This approach is similar to laser sensor solution, regarding the sensor array construction. However, color sensor working principle is based on RGB recognition, so in this solution green output of the arrays is focused point. According to green output, path will be detected.
-	\end{itemize}
 	
 	\paragraph{Lane Detection Subsystem Tests}	
 	The test procedure that will make sure correct functioning of this subsystem are list in the following sections.
@@ -280,27 +438,10 @@ minLineLength=30, maxLineGap=40);
 	
 	The lane detection tests were conducted for the detection algorithm of the camera. The results were promising. The algorithm sweeps up the surrounding disturbances completely. The sample outputs together with Data Processing subsystem are shown in \textit{Figure~\ref{fig:detection-test-results}}.
 	
-	Before making the camera the main solution for the lane detection subsystem. Several tests were conducted using infra-red and color sensors. The tested infrared sensors was TCRT5000 \& QRD1114, and the tested color sensor was TCS3200. The tests were conducted under different illumination conditions and at different locations. These tests conducted for these sensors were modified versions of the tests conducted for the tests conducted for the \textit{Vehicle Detection Subsystem}. The test procedures can be examined at \textit{Section~\ref{sect:vhd}}. The test result for initial test in which two infrared sensors were tested to see whether they can differentiate the height of road from a fixed height can be seen at \textit{Table~\ref{tab:irt}}. Although the results were promising especially for TCRT5000, the tests conducted at CCC (Cultural and Convention) revealed that the sensor is not able to cope with highly reflective floors under direct sunlight.
+	
 	
 		
-		\begin{table}[H]
-		  \centering
-		  	\caption{The Results for the IR Sensor Tests}
-		    \begin{tabular}{c|c|c|c|c}
-    		   $$Sensor Name$$ & $$\specialcell{Height \\from base}$$ & $$\specialcell{Output Value\\for Base}$$ & $$\specialcell{Output Value\\for Path} $$ & $$\specialcell{Difference\\(Percentage)}$$\\ \hline
-			   TCRT5000   & 4 & 500 & 900 & 44 \%  \\ \hline
-    		   TCRT5000   & 5 & 690 & 950 &  27 \% \\ \hline
-    		   QRD1114  & 4 & 810 & 960 & 15.6 \%  \\ \hline
-       		   QRD1114 & 5 & 940 & 970 &  3 \%
-  			\end{tabular}
-  			\label{tab:irt}
-		\end{table}
-	
-	
-	
-	\subsubsection{Vehicle Detection Subsystem}
-	
-	The subsystem is the first step of safely competing with an opponent in a racing path. By the help of two distance sensors at the back and front of the vehicle the subsystem aims to find whether there is a opponent vehicle nearby.
+			
 	
 	
 		
@@ -309,26 +450,8 @@ minLineLength=30, maxLineGap=40);
 	
 
 	
-	\paragraph{Main Solution for  Vehicle Detection Subsystem}
 	
-	 This subsystem uses two time of flight distance sensor which is enhanced IR sensor. One at the back of the vehicle responsible for detecting the chasing opponent and one at the front of the vehicle responsible for detecting the chased opponent. The subsystem produces positive output if the chasing vehicle or chased vehicle is within a range of 5 cm from the vehicle. Since the sensor reading is planned to be performed using Arduino, the required trigger for handshake protocol can be  easily send through serial commutation or directly implemented in the Arduino as an alternative. The requirements of this subsystem are listed below:
 	
-	\begin{itemize}
-		\item The subsystem should detect the opponent to be caught with in a 5 cm 
-		\item The subsystem should detect the chasing opponent if it reaches from back with in a 5 cm 
-		\item The subsystem should trigger the handshake protocol 
-	\end{itemize}
-	
-	\paragraph{Alternative Solutions for Vehicle Detection Subsystem}
-	\begin{itemize}
-		\item {Ultrasonic sensor:} These can be another approach to this problem. They send a sound wave and take back the echo, then give a PWM voltage related to the distance. However, using ultrasonic sensors can cause problems if the opponent also uses ultrasonic sensors due to the interference. Besides, when measurement is angled, the sensor reading fails. The reason why this is not the first option is that the specified path involves many sharp turns.
-		
-
-		\item {Infrared sensor:} Using these sensors Infrared sensors are the most trivial solution to measuring distance. However, IR sensors are weak to use in outside, especially sunshine. Although they are so sensitive to sun, they can still be a solution, if the first choice is failed, unexpectedly, this solution can be reconsidered.
-		
-		\item {Camera Support:} If required the opponent vehicle can be detected using the camera. As determined in the \textit{Standart Committees}, all vehicles will carry a box that is distinguishable from its surroundings. Using the predefined measurements of this rectangle, actual measurement between vehicle can be found. However, due to budget limitations, this solution may not be applicable for detecting the vehicle at the rear.
-		
-	\end{itemize}
 	
 		
 	
@@ -407,13 +530,7 @@ minLineLength=30, maxLineGap=40);
 	\end{itemize}	
 	
 		
-	\subsubsection{Data Processing Subsystem}
 	
-		The data processing subsystem is the main computation unit for the vehicle. The main objective of this subsystem is to give PID controller subsystem a meaningful data from unorganized data coming from lane detection subsystem. 
-	
-	\paragraph{Main Solution for Data Processing Subsystem}
-	
-	The input of this system is an edge detected binary image.  Next, points of the lines are classified as left or right borders of the lane. The elimination of the wrong points are done concurrently with the classification. Then, filtered points are fitted in two separate lines to create left and right borders of the lane. As the lane borders are found, the next and the last step is to determine the direction of the vehicle. The output of this subsystem is a turning angle and a direction. The whole process is summarized in \textit{Figure~\ref{fig:data_processing_subsystem}} as a block diagram. The requirements of this subsystem are listed below.\\
 	
 	\textbf{Data Processing Subsystem Requirements:}	
 	
@@ -424,32 +541,7 @@ minLineLength=30, maxLineGap=40);
 		\item The subsystem should be able to process one frame at most in 100 milliseconds
 	\end{itemize}
 
-	Then next step is to classify the line points as left or right. The lines are firstly eliminated according to their slopes. If slope of a line is not in invalid slope region of $\pm$0.005, then it is a valid line. This process is done to get rid of unnecessary low sloped lines. After elimination, line points set must be determined as left or right. At this point, this classification is done according to double checking. The center of the image, that is 320th vertical pixel. If initial and final horizontal points of the image is in the same half, the line belongs to that half. This method works nicely in most regions of the path. However, it is a bit error prone in case of a sharp turning angle or losing one of the lanes . This algorithm will be improved to be more robust.
-	\begin{lstlisting}[language=C++,float=t,numbers=left,frame=single,caption=The Algorithm to Classify the Lane Lines as Right or Left, captionpos=b, label=sc:left-right-lines]
-std::vector<cv::Vec4i> lines // like a 4x4 matrix
-double slope_thresh = 0.005; // absolute threshold slope
-for (lines_points)
-	startP = Point(x1, y1);
-	endP = Point(x2, y2);
-	line_slope = startP/endP;
-	if(abs(line_slope) >= slope_thresh) line_is_valid;
-	else line_is_not_valid;
-
-for (lines_is_valid)	
-	if(x1>320 && x2>320) it_is_right_line;
-	else if(x1<320 && x2<320) it_is_left_line;
-	else discard_the_line;
-	\end{lstlisting}
 	
-	After finding the all left and right line points, actual left and right lines are constructed by applying the least square method to the both point sets. The result of this method is 4 points (x1,y1,x2,y2) to refer the left lane line and 4 points to refer the right lane line.
-	
-	The last process on the image is predicting the turn angle and direction. The prediction of direction is done by comparing the slopes of the left and the right lines. The turning is to be made to the side of the lane line having less slope. The angle is determined by computing the angle between the normal line of the current direction and guide line. Guide line is constructed with the average of the middle points of the right and the left lines and current point of the vehicle. Vehicle's current point is assumed to be in the middle of the beginning of the image. Thus, the beginning point of the guideline is the current position of the vehicle and the endpoint is the target point to be reached. The output of this processing is shown in \textit{Figure~\ref{fig:turn-prediction-explained}}. The turning angle and the direction is sent to PID Controller subsystem.
-	
-	
-	\paragraph{Alternative Solutions for Data Processing Subsystem}
-		The proposed algorithm for data processing has some flaws that are already discussed. To overcome those problems, DUAYENLER has some alternative solutions. An improvement might be on finding lane boundaries. This operation is currently realized with Hough Lines function. Another approach would be to scan rows an accurately edge detected image. If a white pixel is encountered, this would imply a lane boundary and the last time a white pixel is encountered would mean te other lane boundary. If the edge detected image contains noise, the solution might yield a wrong result. However, this can be overcomed by setting maximum number of white points that can be detected in a row.
-		
-		Another improvement could be on positioning on the lane. The proposed algorithm assumes that the vehicle follows the lane always in the center. This assumption is not the case always. The new algorithm will differentiate between the center of the lane and center of the capture image. By averaging coordinate points of both lane boundaries the actual lane center can be found and this point must be in some proximity with respect to the center of the image.
 		
 	\paragraph{Data Processing Subsystem Tests}	
 		This test will enable if data processing will generate the desired output, namely turn direction and angle. Test procedure is as follows:
@@ -469,28 +561,7 @@ for (lines_is_valid)
 		\item The subsystem should be able to react the external disturbances
 	\end{itemize} 
 	
-	\paragraph{Main Solution for PID Controller Subsystem}
 	
-		In our case the desired steady state error to be compensated by the controller is angle information coming from the data processing unit. For this purpose discrete time version of a general PID controller will be utilized. General form for discrete time PID controller may be seen below:
-	
-	$$ G_{PID}(z)=K_{bias}+K_p+K_I\frac{1}{1-z^{-1}}+K_D(1-z^-1)	$$
-	
-	Using bilateral Tustin transform where 
-	
-	$$ z=\frac{1+\overline{s}}{1-\overline{s}} $$
-	
-	The discrete time controller can be designed as if it is in continues domain.    
-	
-	
-	
-	
-	
-	
-	\paragraph{Alternatve Solutions for PID Controller Subsystem}
-		Theoretically very similar approach for designing a controller is to design in a S-domain. For this kind of controllers, general form of the continues time PID controller may be seen below:
-		$$ G_{PID}(s)=K_{bias}+K_p+K_I\frac{1}{s}+K_Ds	$$
-		
-		Another alternative method is to design the controller directly in discrete domain without using bilateral Tustin transform. 
 		
 	\paragraph{PID Controller Subsystem Tests}	
 	\begin{itemize}
@@ -553,57 +624,7 @@ for (lines_is_valid)
 	
 	
 	
-	\subsubsection{Internal Communication Subsystem}
-	This subsystem covers the communication of the components inside vehicle. Currently, Raspberry Pi and Arduino are two components that requires communication. To prevent the large amount of cable connection, a serial communication protocol is implemented. The requirements of this subsystem are listed below:
-	\begin{itemize}
-		\item The microcontrollers should be able to communicate with each other via serial communication
-		\item The internal communication speed should be compatible with the processing speed of the lane detection subsystem  
-	\end{itemize}
-		\begin{lstlisting}[language=Python,float=h!,numbers=left,frame=single,caption=Serial object decleration in Python,label=sc:serial_python, captionpos=b ] 
-import serial
-ar=serial.Serial("/dev/ttyUSB0",9600)
-		\end{lstlisting}
-		 \begin{lstlisting}[language=C,float=h!,numbers=left,frame=single,caption=Serial communication setup in C,label=sc:serial_c, captionpos=b ] 
-#include "./arduinoModule/rs232.h"
-int cport_nr = 24; /* /dev/ttyUSB0 */
-int bdrate = 9600; /* 9600 baud */
-char mode[] = { '8', 'N', '1', 0 }; // 8 data bits, no parity, 1 stop bit
-char str_send[2][BUF_SIZE]; // send data buffer
-unsigned char str_recv[BUF_SIZE]; // recv data buffer
-RS232_OpenComport(cport_nr, bdrate, mode);
-		\end{lstlisting}
-	\paragraph{Main Solution for Internal Communication Subsystem}
 	
-	There are several serial communication protocols that can be used to maintain the connection such as SPI, I2C. However, the first choice is to use USB serial port of the Arduino. Since RPi is practically a computer, it can recognize Arduino as a device using a serial port such as \lstinline|/ttyUSB0| in case of a Linux based OS. When recognized, RPi can send any piece of strings to the Arduino via USB cable. The process of communication is as follows:
-	\begin{enumerate}
-		\item Arduino should be connected to the Pi. \vspace{-0.2cm}
-		\item Using Arduino IDE or any other method such as listing serial ports and checking for Arduino and so on, the serial port name should be detected \vspace{-0.2cm}
-		\item Baud rates of two sides should be the same. 9600 is generally enough but if needed, it can be incremented to satisfy fast communication \vspace{-0.2cm}
-		\item On Arduino side, \texttt{Serial.begin(9600)} command should be executed and serial port should be read repeatedly to capture the incoming data \vspace{-0.2cm}
-		\item On Pi side, using any language C++ or Python, messages to serial port can be send 
-	\end{enumerate}
-	
-	There are minor differences when implementing the code in Python, C++  and C. Python is the most practical one:\\
-	
-	Python has a library called serial by which any type of data can be send through serial ports. Script \ref{sc:serial_python} is used to declare a serial object. Then using \texttt{ar.write("some string \textbackslash r".encode())}, the string "some string" can be send to Arduino. Note that "\textbackslash r" carriage return character carries a high importance because it shows that a string is terminated and any other incoming data belongs to the new piece of string.   \\
-	
-
-	
-	As alternatives, the implementation on C is also examined.	Sample codes to implement the same communication in C is in Script \ref{sc:serial_c}. Since it is a low level language, specification of buffer size and other parameters should be done in the code.\\
-
-	%\lstinline[language=Arduino]|<SerialCommand.h>| 
-	On Arduino  side, there are also several option that we can read the incoming data. Using \texttt{Serial.read()}  command is one of the simplest solutions. However, it contains some issues like conversion from string to integer and when to stop. Furthermore, the incoming data should be considered in character basis for the exact control.  
-	
-	\paragraph{Alternative Solutions for Internal Communication Subsystem}
-		The communication between Raspberry Pi and Arduino can be realized by the use of other peripheral protocols or libraries.\\
-	
-		There is a \texttt{SerialCommand.h} library for the Arduino which allows executing a function depending on the incoming string. Using \lstinline|.addCommand("str",func)| of the library any function can be associated with any string coming from serial port. Moreover, the functions can have argument. For example, let the string "PWMSET" be execute a function \lstinline|setpwm()| but the PWM value is required. If incoming string is of the form "PWMSET 150", using \lstinline|.next()| function of the library, the value 150 can be read and converted into integer and interpreted as the PWM value to be set.\\
-		
-		Another solution is to use I2C or SPI protocols to set communication between Arduino and Raspberry Pi. These options require simple wiring connections between the pins. A point to remark is being cautious to operating voltage levels of pins of Arduino and Raspberry Pi.\\
-		
-		Besides aforementioned alternatives, Wi-Fi communication can also be considered between Arduino and Raspberry Pi. This solution requires deployment of a Wi-Fi module on Arduino. Some hardware exists in market such as ESP8266 and EMW3165. This solution would require a Wi-Fi network in the medium which makes the solution less implementable.\\
-		
-		A last solution would be to remove Arduino from the system. This would require the handover of operations of Arduino to Raspberry Pi. The resulting system could be considered as a single board solution, that is, all relevant subsystems operate on Raspberry Pi. This option would cause heating problems on Raspberry Pi. A cooling mechanism should also be applicable in this case.
 	\paragraph{Internal Communication Subsystem Tests}
 	This test will enable if communication between Arduino and Raspberry Pi can be realized. Test procedure is as follows:
 	\begin{enumerate}
@@ -626,34 +647,8 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 		\item The subsystem should be able to execute handshake protocol
 	\end{itemize}
 	
-	Communication subsystem enables the robot to communicate with the opponent using the handshake protocol agreed on standard committee. According to the standard committee, Wi-Fi modules must be used to implement handshaking. Since Raspberry Pi was used in the project, there is no need to get a separate Wi-Fi module; the internal Wi-Fi module of the Raspberry Pi was used.
-	
-	\paragraph{Main Solution for External Communication Subsystem}
-	
-	Socket programming is an effective tool to implement client-server communication algorithms. It can be implemented in Python or C++.  Our algorithms are written in Python for now, yet it can easily be converted to C++ if the team members decide that it is necessary. The algorithms for client and server sides are slightly different. \textit{Figure~\ref{fig:socket_funcs}} shows the functions that are used for client and server sides to create communication between client and server.
 	
 	
-	
-	Here is the summary of the key functions from socket library:
-	
-	\begin{itemize}
-		\item socket.socket(): Creates a new socket using the given address family, socket type and protocol number.
-		\item s.bind(address): Binds the socket to the address defined previously.
-		\item s.listen(backlog): Sets up the maximum number of connections that can be made to the socket, which must be at 1 for the project.
-		\item	s.accept(): Waits until connection arrives, then accept the client connection. Returns the client socket connected to the server as (conn, address) pair, where conn is a new socket object and address is the address bound to this socket
-		\item	s.connect(): Provides client to connect to the server
-		\item	s.send(): Transmits message to the remote socket.
-		\item	s.recv(): Receives message from the remote socket
-		\item	socket.close(): closes the socket; i.e., ends the communication with the opponent at the end of the race.
-	\end{itemize}
-	
-	It is stated in the standard committee that each team must be assigned a static IP to communicate with the other robots. Duayenler has the static IP stated as “192.168.1.7” and the ID as “07”. Since Raspberry Pi 3 comes with a built-in wireless adapter, configuring it as a Wi-Fi hotspot is possible. To assign given IP to the robot, Raspberry Pi must be set as an access point from the terminal.\\
-	
-	In the algorithm that was implemented for the handshake, in a continuous loop, the front and rear sensors' values are been checked. There are two functions which are for client and server modes, respectively. If the front sensor senses the opponent in 5 cm range, our main code visits the client mode function. If the rear sensor senses the opponent in 5 cm range, server mode function runs. If our robot is in the server mode, the rear sensor value is again checked. The acknowledge message ($< ID> 01$) or reject message ($< ID> 11$) is sent according to the sensor value.
-	
-	\paragraph{Alternative Solutions for External Communication Subsystem}
-	
-	Alternative solution for external communication system is implementing handshake protocol using a seperate Wi-Fi module with Arduino.
 	\paragraph{External Communication Subsystem Tests}
 		
 		\begin{itemize}
@@ -710,18 +705,9 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 		\item The system should ensure that the vehicle follows the lane 
 	\end{itemize}
 	
-	\paragraph{Main Solution for Direction Subsystem}
-	Depending on the configuration of the wheels, exact control of the vehicle might vary. However, there are certain methods to accomplish orientation. The vehicle will definitely have two wheels or palettes that will be driven by two separate DC motors. That configuration allows differential drive method to orient the vehicle. PWM values of the motors can be adjusted such that the speed difference between them results in a turn as much as desired angle. The exact difference values on the PWM values depends on the specs of the used motors and voltage sources. 
-	
-	Two different H-bridge motor drivers are proposed to be used to drive DC motors: L298N and L293D. Both can drive two motors separately with one IC. However, maximum current rating of the former one is larger being 2A while L293D can supply 0.6A per channel. 
 	
 	
 	
-	
-	
-	\paragraph{Alternative Solutions for Direction Subsystem}
-	
-	As in the case of another configuration that involves one or two servo motors to control the directions of the front wheels. This configuration is more robust compared to ball caster utilization. However, there are more motors to control and it requires more complicated differential drive algorithms involving both DC motor differential and servo PWM to orient the front wheels.
 	
 	\paragraph{Direction Subsystem Tests}
 	\begin{itemize}
@@ -763,14 +749,9 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 		\item The subsystem should decrease the vehicle speed at the extreme disturbance  
 	\end{itemize}
 	
-	\paragraph{Main Solution for Speed Subsystem}
-	Currently, there is no implementation for the subsystem because its operation depends on the control feedback loop and the success of the direction unit. Once they are operating and the vehicle is capable of following the lane at, least partially, then the speed subsystem will be implemented on top of the control algorithm.\\
-	
-	The best place to implement the state machine is Arduino as motor driving is also controlled by it. Main requirement for this system to operate is a measure of error or success for the direction subsystem. It can be the same as the error input of controller i.e. turning angle or a function of it. The state machine will act depending on the value of the error input. When it is above a critical level, the vehicle will show a steep deceleration to compensate the error of the direction unit. In other cases, It is wise to implement the speed controller in the form of at least PD controller. In other words, the change in the overall speed will also be maintained by a controller whose error input is not necessarily tried to be made zero but rather below a pre-specified level. State machine diagram can be seen in \textit{Figure \ref{fig:speed-state}}\\
 	
 	
-	\paragraph{Alternative Solutions for Speed Subsystem}
-	There are many ways that the state machine can be implemented. Depending on the test results, the state diagram of the machine might me modified by adding new states. Furthermore, the controller type can be changed or completely removed and replaced by some discrete increase or decease levels to control the overall speed. The changes will be applied depending on the test results.
+	
 	\paragraph{Speed Subsystem Tests}
 	\begin{itemize}
 		\item Determination of the error input: This test aims to find the correct error input for overall speed controllers. The test procedure is as follows:
@@ -813,20 +794,9 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 		\item The subsystem should ensure that the wheels can grip lane without slipping in all conditions 	
 	\end{itemize}
 	
-	\paragraph{Main Solution for Wheels Subsystem}
 	
-	The wheel placement combination that will be utilized is 2+1 combination. This combination can be assembled by placing 2 car wheels (with motors) to the back and the one boll caster to the front or vice versa. These configurations provide easy implementation and fairly reliable handling on the path. However, for certain obstacles may significantly disturb vehicles balance in this configuration.\\
 	
-	\paragraph{Alternative Solutions for Wheels Subsystem}
 	
-	\begin{itemize}
-		\item{Palettes:} 	Another combination is palette system. This system is used in real world where robust vehicles are needed. Similarly, this configuration can help to handle obstacle in the path, but it costs for harder implementation and driving.
-		
-		\item{2+2 Wheels} 	Last implementation is 2+2 configuration. In this configuration 2 wheels can be placed at the back and the rest at the front by placing motors to back wheels. To ease turning of the vehicle, front wheels can be controlled with a servo motor as back wheels operate in the differential drive mode. This combination may provide both enhanced grip and reliable	 operation.
-	\end{itemize}
-
-%	\paragraph{Wheels Subsystem Tests}
-%	\paragraph{Results of Wheels Subsystem Tests}
 
 	
 	\subsubsection{Motor Subsystem}
@@ -845,11 +815,9 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 		\item The subsystem should ensure that the motors can execute driving system outputs without deviation
 	\end{itemize}
 	
-	\paragraph{Main Solution for Motors Subsystem}
-	One of the widely used motor type is brushed gearhead DC motors. They are cheap and require enough torque for this competition. They have mainly two section one is the normal DC motor and gear head. Gear is a must to enhance torque performance of the DC motor. In other words, gear balance rpm and torque of the motor. 
+	
 	 
-	\paragraph{Alternative Solutions for Motors Subsystem}
-	Another option is servo motors. Servo motors are high-torque motors that can turn in a desired angle. Servos can be utilized in the direction of the vehicle on the front wheels in the four-wheel solution. By using this solution, turning radius can be decrease significantly.
+	
 	 
 	\paragraph{Motors Subsystem Tests}
 	This unit’s test is focusing on two crucial parameters of the motor which are RPM and torque values of the motor. 
@@ -892,11 +860,7 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 		\item The subsystem should ensure that the chassis can provide low center of mass 
 	\end{itemize}
 	
-	\paragraph{Main Solution for Chassis Subsystem}
 	
-	Current chasis structure relies on two pre-designed plexiglass layers. Raspberry Pi and Arduino is placed on the upper layer while motor driver and the battery are on lower one. To keep the center of mass of the vehicle close to the ground, battery is placed as low as possible. The connection of the motor driver and Arduino consists of eight cables two of which are the power lines. The cables are placed in a way that they cause no entanglement with any other parts. The connection between RPi and Arduino is currently accomplished by USB cable. \\
-	
-	Since there is not much component on the vehicle, the space on the layers are enough to locate the components. However, placing the camera of RPi has been a great problem. The view angle of the camera turned out to be considerable small than expected. Other several cellphone cameras were tried but they are could not satisfy the requirement that both side of the lane should be visible either. The only solution was to elevate the camera. That is why a camera holder structure is designed and added to the system.\\
 	
 	The requirement for the camera holder can be listed as
 	 \begin{itemize}
@@ -906,16 +870,9 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	 	\item It should be adjustable in terms both elevation and camera angle
 	 \end{itemize} 
 	 
-	 To satisfy the requirements the holder is built using 4mm plexiglass. The choice satisfies the rigidity and light weight possible. A thinner one would result in less rigidity and increased vibration on the system. The designed structure, whose layout can be seen in \textit{Figure \ref{fig:camera-holder}}, has the elevation range from 35 cm to 45 cm and a camera angle ranging from $0^o$ to $45^o$. Having manufactured, the camera holder is integrated to the vehicle (\textit{see Figure \ref{fig:chassis}}). After integration, the view of the camera can completely cover the both edges of the path (\textit{see Figure \ref{fig:detection-test-results}})
-	
-
-
-	Current version of chassis which were used in critical module demo can be seen at \textit{Figure~\ref{fig:chassis}}.
+	 
 	 
 	
-	
-	\paragraph{Alternative Solutions for Chassis Subsystem}
-	There are many improvements to be done on the chassis. When all the components such as vehicle detecting sensors are added, the space will not be enough. The best alternative is to make a custom design chassis structure. By that way, many problems can be resolved. By the time each systems are tested and validated and decided to be used as the actual solution, required space will have been clearly defined. After that point the best placement can be configured and chassis will be designed accordingly to the requirements of that time. Moreover, while designing the chassis, the possibility of implementation of an alternative solution will be considered as it affects the overall layout of the vehicle.\\
 	
 	\paragraph{Chassis Subsystem Tests}
 	\begin{itemize}
@@ -930,15 +887,20 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 		\end{enumerate} 
 	\end{itemize}
 	Currently no test results available due to lack of control algorithm.
-	\subsubsection{Printed Circuit Board Subsystem}
-	The main role of this part is decreasing connection mess and increase vibration strength of the robot against disturbances. Also, this section increases rigidity of the whole system. The requirements of this subsystem are listed below:
+	
+	
+	
+	
 	\begin{itemize}
 		\item The subsystem should ensure that all the electronic components are placed on PCB
 		\item The subsystem should ensure that all the connections are firmly secured and robust to vibrations.
 	\end{itemize}
 	
-	This subsystem aims to make all the circuit connections rigid and compact. Currently, there is wire connections between Arduino-Motor driver and Arduino-RPi. However, addition of vehicle detection sensors and other lane detection alternatives will increase the amount of components, hence, wires. In addition, to use the space occupied by the Arduino UNO board, Arduino Mini can be used. This also allows to build the circuit board as shield for Arduino Mini. After that any other sensors and connections can be made through PCB. In other words, PCB acts as a breakout board for each item integrated to the system in a more rigid and compact way.
 	
+
+
+
+
 
 	
 	\paragraph{Printed Circuit Board Subsystem Tests}
@@ -956,40 +918,21 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
 	\section{Plans}
 	Each team member is assigned to a subsystem according to their interest and qualification. \textit{Figure \ref{fig:plan-org}} summarizes the assignments. Besides, a Gannt Chart is prepared to have an detailed overview of future works and available in \textit{Appendix~\ref{gannt_chart_app}}.
 	
 	Future plans regarding the improvement of the project are listed here in system level.
-	\subsection{Sensing System Plans}
-	Lane detection algorithm is reconstructed and develop by Erdem. The main enhancement is focusing on robustness of the algorithm. The algorithm currently detects the boundaries of the placed obstacles on the path. This might be fixed in Data Processing subsystem. But, alternative solutions that are introduced in \textit{Section~\ref{para:alt_sol_lane_detect}} might be applied, compared and assessed in terms of robustness and accuracy.\\
-	   
-	Supportive solutions to lane detection which are color sensor and laser sensor array are going to be studied. More specifically, they are constructed and tested by Sarper during semester holiday. After the results, compatibility of these solutions are going to be discussed.\\
-	
-	Sensors for vehicle detection will be ordered and tested before the submission of critical design review report and the most promising one will be selected considering the requirements.
-	
-	\subsection{Computation System Plans}
-	The Data Processing subsystem has some weak points. For instance, it is not able to predict turn angle and direction in the case of missing lane lines. This will be worked out by Erdem. The plan is that the system will be able to predict urn angle and direction even if one lane is detected on the path.\\
-	
-	Another point that data processing subsystem has weakness is if an obstacle is present on the path, the boundaries of the obstacle may constitute a line. This is regarded as the part of lane line in the current processing algorithm. This flaw must be fixed by Erdem, since this implementation leads to a wrong prediction on turn angle and direction.\\
-	
-	Regarding the PID Controller subsystem plans, the current controller is designed $z$ domain. This applies good in theory but a better approach will be implemented by Halil. This approach is designing the controller in $\overline{s}$ domain by using bilateral Tustin transform. This is continuous approximation of $z$ domain, which may yield more accurate results in the control of the car.
 	
 	
-	\subsection{Communication System Plans}
-		According to the test results, server side must be connected to the internet, and client side must be connected to the server via hotspot to establish communication. However, it is not the desired result; since both sides must be connected to each other in the project. The main plan regarding this subsystem is to solve this problem. Also, the input of the external communication subsystem must be the data coming from the sensors of the vehicle detection subsystem. Since the vehicle detection subsystem was not set up on the robot yet; the input of the external communication subsystem was not the sensors. In the upcoming weeks, the handshaking tests taking the data from vehicle detection subsystem will be conducted.
-	\subsection{Driving System Plans}
-		The direction subsystem will be enhanced by the Enes and Halil following the successful communication between Raspberry Pi and Arduino and initial version of PID controller subsystem is successfully combined with data processing subsystem output. \\
-		
-		The speed subsystem will be enhanced following the early outputs of driving subsystem. Different solution approaches will be tried by Sarper and Enes to find perfect speed conditions to finish the path within desired time.
-	
-	\newpage
-	\subsection{Structure System Plans}
-	
-	A new chassis is going to be designed considering narrow turn section of the lane and  external obstacles. Rigidity and compactness are  the essential requirement for the chassis. To achieve these requirements, Enes and Sarper are going to design a chassis. In addition, the front and back recognition plates agreed on the standard committee will be installed.\\
-	
-	After all the components are tested and validated to be used in the project, a proper PCB will be designed by Enes. It will provide compactness and robustness to the whole electrical system by significantly reducing excess cabling and possibility of loose connections.
-	
-	\subsection{Estimated Cost of Project}
+	\subsection{Estimated Cost/Power of Project}
 		Estimated cost anaysis for the project can be investigated at \textit{Table~\ref{tab:cost}}. The reproducible vehicle is expected to cost under 200 dollar as desired by the project requirements.
 	
 	\begin{table}[H]
@@ -1021,11 +964,7 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 		\newpage
 	
 	\section{Conclusion}
-	This report consists of a detailed project description and explanation about autonomous vehicle on a predefined path. The solution approaches, alternatives and tests comply with the proof-of-concept idea and prototyping purposes. The further improvements and developments will be on manufacturing level.\\
 	
-	In particular, a general overview of the systems are given in V-Model together with the system block diagram. Then, subsystems are presented in a detailed manner by explaining current solution approach, used test steps, obtained test results and possible solution alternatives. The whole system has not been merged into a single body yet. The systems are individually functioning with the limitations. One limitation is caused by Data Processing subsystem, that is, the vehicle must be able to see both lane lines. Another limitation is against obstacles on the path. If the obstacles have long enough edges, they are regarded as the part of lane lines and they contribute to lane line drawing. Such limitations will be worked out extensively to develop a more robust vehicle. Besides, some solutions have worked out very nicely such as external communication with other vehicles, adjustable camera arm, wheels and lane detection algorithm. On the other hand, the budget of the project will be kept below the budget limit and the total work will be reproducible with less than \$ 200. The company believes that the reliability of a business depends on staying within company budget. \\
-	
-	DUAYENLER will keep their diligent work to have a more robust and faster vehicle at the end of project. The company members believe that the final work will bring an innovative approach to the design and development of autonomous vehicles with its features and the way that features are implemented.
 	\newpage
 		\section{Disclaimer}
 		\vspace{1cm}
