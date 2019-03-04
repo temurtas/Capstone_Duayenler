@@ -2,29 +2,29 @@
 \select@language {english}
 \contentsline {section}{\numberline {1}Introduction}{2}
 \contentsline {section}{\numberline {2}Overall System}{3}
-\contentsline {subsection}{\numberline {2.1}Sensing System}{3}
-\contentsline {subsubsection}{\numberline {2.1.1}Lane Detection Subsystem}{3}
-\contentsline {subsubsection}{\numberline {2.1.2}Vehicle Detection Subsystem}{4}
-\contentsline {subsection}{\numberline {2.2}Computation System}{5}
-\contentsline {subsubsection}{\numberline {2.2.1}Data Processing Subsystem}{5}
-\contentsline {subsubsection}{\numberline {2.2.2}PID Controller Subsystem}{7}
-\contentsline {subsection}{\numberline {2.3}Communication System}{10}
-\contentsline {subsubsection}{\numberline {2.3.1}Internal Communication Subsystem}{10}
-\contentsline {subsubsection}{\numberline {2.3.2}External Communication Subsystem}{13}
-\contentsline {subsection}{\numberline {2.4}Driving System}{14}
-\contentsline {subsubsection}{\numberline {2.4.1}Direction Subsystem}{14}
-\contentsline {subsubsection}{\numberline {2.4.2}Speed Subsystem}{15}
-\contentsline {subsection}{\numberline {2.5}Motion System}{16}
-\contentsline {subsubsection}{\numberline {2.5.1}Wheels Subsystem}{16}
-\contentsline {subsubsection}{\numberline {2.5.2}Motors Subsystem}{16}
-\contentsline {subsection}{\numberline {2.6}Structure System}{17}
+\contentsline {subsection}{\numberline {2.1}Sensing System}{4}
+\contentsline {subsubsection}{\numberline {2.1.1}Lane Detection Subsystem}{4}
+\contentsline {subsubsection}{\numberline {2.1.2}Vehicle Detection Subsystem}{6}
+\contentsline {subsection}{\numberline {2.2}Computation System}{6}
+\contentsline {subsubsection}{\numberline {2.2.1}Data Processing Subsystem}{6}
+\contentsline {subsubsection}{\numberline {2.2.2}PID Controller Subsystem}{8}
+\contentsline {subsection}{\numberline {2.3}Communication System}{11}
+\contentsline {subsubsection}{\numberline {2.3.1}Internal Communication Subsystem}{12}
+\contentsline {subsubsection}{\numberline {2.3.2}External Communication Subsystem}{14}
+\contentsline {subsection}{\numberline {2.4}Driving System}{15}
+\contentsline {subsubsection}{\numberline {2.4.1}Direction Subsystem}{15}
+\contentsline {subsubsection}{\numberline {2.4.2}Speed Subsystem}{16}
+\contentsline {subsection}{\numberline {2.5}Motion System}{17}
+\contentsline {subsubsection}{\numberline {2.5.1}Wheels Subsystem}{17}
+\contentsline {subsubsection}{\numberline {2.5.2}Motors Subsystem}{17}
+\contentsline {subsection}{\numberline {2.6}Structure System}{18}
 \contentsline {subsubsection}{\numberline {2.6.1}Chassis Subsystem}{18}
-\contentsline {subsubsection}{\numberline {2.6.2}Printed Circuit Board Subsystem}{19}
-\contentsline {section}{\numberline {3}Detailed Tests for the Subsystems}{19}
-\contentsline {section}{\numberline {4}Testing Stage}{24}
-\contentsline {subsection}{\numberline {4.1}Test Results, Encountered Problems and Possible Solutions for Subsystems}{24}
-\contentsline {subsection}{\numberline {4.2}Robustness of the Design}{26}
-\contentsline {section}{\numberline {5}Plans}{26}
-\contentsline {subsection}{\numberline {5.1}Estimated Cost/Power of Project/Gantt}{26}
-\contentsline {section}{\numberline {6}Conclusion}{28}
-\contentsline {section}{\numberline {7}Disclaimer}{29}
+\contentsline {subsubsection}{\numberline {2.6.2}Printed Circuit Board Subsystem}{20}
+\contentsline {section}{\numberline {3}Detailed Tests for the Subsystems}{21}
+\contentsline {section}{\numberline {4}Testing Stage}{27}
+\contentsline {subsection}{\numberline {4.1}Test Results, Encountered Problems and Possible Solutions for Subsystems}{27}
+\contentsline {subsection}{\numberline {4.2}Robustness of the Design}{29}
+\contentsline {section}{\numberline {5}Plans}{29}
+\contentsline {subsection}{\numberline {5.1}Estimated Cost/Power of Project/Gantt}{29}
+\contentsline {section}{\numberline {6}Conclusion}{30}
+\contentsline {section}{\numberline {7}Disclaimer}{31}

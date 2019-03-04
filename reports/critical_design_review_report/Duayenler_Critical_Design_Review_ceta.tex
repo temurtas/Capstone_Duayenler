@@ -123,13 +123,25 @@
 	\todo{Compliance with Reqs}
 
 	\begin{figure}[h]
-	%	\includegraphics[width=\textwidth,center]{images/organization.png}
-		\caption{System organization of the project}\label{fig:organization}
+		\includegraphics[width=\textwidth,center]{images/system}
+		\caption{System}\label{fig:system}
 	\end{figure}
 	
 	
+	
+	
 	V-Model is a very popular tool for system engineers to plan their projects. To ease the project tracking process, the V-Model was constructed by the DUAYENLER. The overall look of the V-Model can be seen at \textit{Figure~\ref{fig:vmodel}}. This section includes the explanation, requirements, test procedures and test results for the subsystems.
+	
+	\begin{figure}[h]
+		\includegraphics[width=\textwidth,center]{images/vmodel}
+		\caption{V-Model}\label{fig:vmodel}
+	\end{figure}
 			
+			
+	\begin{figure}[h]
+		\includegraphics[width=\textwidth,center]{images/subsys_block}
+		\caption{Block Diagram of the Project and the Interaction of the Subsystems}\label{fig:subsys-block}
+	\end{figure}
 		
 		
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -294,7 +306,7 @@ for (lines_is_valid)
 					
 				\item {Solution for the Subsystem}
 				
-	\textit{PID Controller Subsection} ,as its name suggests, is the main controller element of the vehicle that is responsible for controlling the lateral movement of the vehicle. As the achieved purpose is to stay in the middle of the lane, this subsystem creates a PWM offset differences between motors in order to rotate the vehicle via differential drive. 
+	\textit{PID Controller Subsection} ,as its name suggests, is the main controller element of the vehicle that is responsible for controlling the lateral movement of the vehicle. As the achieved purpose is to stay in the middle of the lane, this subsystem creates a PWM differences between motors in order to rotate the vehicle via differential drive. 
 	
 	For that purpose, the \textit{Data Processing Subsystem} produces the necessary feedback elements for this subsystem. For the control purpose, in ideal circumstances data processing unit determines eight main point on its vision to create processed variables as in \textit{Figure~\ref{fig:controlled-vars}}. These can be explained namely as;
 	\begin{itemize}
@@ -381,7 +393,7 @@ for (lines_is_valid)
 	
 	For implementation, the angle variable $\alpha$ and the distance variable $y2$ can be fed to the Arduino board by the help of \textit{Internal Communication Subsystem}. The implementation is a Arduino code written to produce a PWM-offset value from the error data. The PID parameters found using the simulink can be inserted in this code easily.
 		
-		
+	To sum up, although the basic idea behind control algorithm is same as the algorithm it has been significantly improved after the conceptual design report to compensate our needs and handle the resources the Data Processing Subsystem haave.
 				
 				
 				
@@ -520,7 +532,7 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 			
 		\end{enumerate}
 		
-		This system is responsible for the motion of the vehicle. Two parameters that are the direction and the speed of the vehicle is controlled by this unit accordingly to the information coming from controller. It has two subsystems namely,
+		This system is responsible for the motion of the vehicle. Two parameters that are the direction and the speed of the vehicle is controlled by this unit accordingly to the information coming from the \textit{Computation System}. It has two subsystems namely,
 			
 			\begin{enumerate}
 				\item \textit{Direction Subsystem} which is responsible for the orientation of the vehicle and keeps the road and the vehicle aligned.
@@ -540,11 +552,14 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 				
 			\item {Solution for the Subsystem}
 			
-			Depending on the configuration of the wheels, exact control of the vehicle might vary. However, there are certain methods to accomplish orientation. The vehicle will definitely have two wheels or palettes that will be driven by two separate DC motors. That configuration allows differential drive method to orient the vehicle. PWM values of the motors can be adjusted such that the speed difference between them results in a turn as much as desired angle. The exact difference values on the PWM values depends on the specs of the used motors and voltage sources. 
+	As will be explained in more detail in \textit{Structure System}, the vehicle has two DC motors and one caster-ball as a movement part. This subsystem uses differential drive in order to drive the vehicle. This subsystem will get two inportant parameter from other subsystems, namely;
 	
-	Two different H-bridge motor drivers are proposed to be used to drive DC motors: L298N and L293D. Both can drive two motors separately with one IC. However, maximum current rating of the former one is larger being 2A while L293D can supply 0.6A per channel. 
-			
-		Direction unit is responsible for the orientation of the vehicle. It stores the last required orientation and the new one coming from the controller. After that, it tries to make the orientation as close as new one. Both data can be represented as vectors.The angle between those two vector is tried to be minimized by the controller. Before moving on to the operation, note that the angle can be used as a measure of the error that the direction unit have. The less the angle the more correctly operates the direction unit. The requirements of this subsystem are listed below:
+	\begin{itemize}
+		\item PWM Offset Value that determines the speed of the vehicle at longitudinal movement. This data is acquired from the \textbf{Speed Subsystem.} 	
+		\item PWM Difference Value that determines the speed difrenece between the two motors. This difference helps the vehicle in lateral movement. This data is acquired from the \textbf{PID Controller Subsystem.} 	
+	\end{itemize}	
+	
+	  H-bridge motor drivers are used to drive DC motors. L298N motor driver with voltage regulator is used for this purpose in this project. 
 			
 			\item {Discussions on the Solution}
 			
@@ -582,24 +597,13 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 		\subsection{Motion System}
 		
 		\begin{enumerate}
-			\item The system should ensure that the vehicle can drive itself with enough power
-			
-			
-	
-				
-	
-				
-	
-					
+			\item The system should ensure that the vehicle can drive itself with enough power.	\end{enumerate}	
 		
+		Duty of this system is maintaining mechanical rigidity of the driving system. Construction of this system contain two subsystems which are, wheels Subsystem and motor subsystem.
 			
-		\end{enumerate}	
-		
-		This system is responsible for maintaining mechanical feasibility of the driving system. It has two subsystems namely,
-		
-		\begin{enumerate}
-				\item \textit{Wheels Subsystem} which is responsible for the design of the wheel structure depending on the required speed-torque parameters.
-				\item \textit{Motors Subsystem} which is responsible for the correct selection of the motor that is suitable to requirements.
+			\begin{enumerate}
+				\item \textit{Wheels Subsystem} which is responsible for transferring power from motor shaft to road.
+				\item \textit{Motors Subsystem} which is responsible for converting electrical power to mechanical power
 			\end{enumerate}
 		
 	\subsubsection{Wheels Subsystem}
@@ -614,7 +618,9 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	
 			\item {Solution for the Subsystem}
 			
-			The wheel placement combination that will be utilized is 2+1 combination. This combination can be assembled by placing 2 car wheels (with motors) to the back and the one boll caster to the front or vice versa. These configurations provide easy implementation and fairly reliable handling on the path. However, for certain obstacles may significantly disturb vehicles balance in this configuration.\\		
+			As the previous suggestion in CDR, 2+1 combination (2 wheel with power and 1 caster ball) is preferred due to easier implementation and control. Although this placement weaker in balance and obstacle handling, importance of easier implementation and control are considered more beneficial. 
+While choosing wheels, high friction property is considered. Because of this reason, super soft and slick tire are chosen with lighten aluminum rim. Besides, larger width is preferred to increase hanging on the lane.      
+
 			
 			\item {Discussions on the Solution}
 			
@@ -635,17 +641,9 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 					
 			\item {Solution for the Subsystem}
 			
-			One of the widely used motor type is brushed gearhead DC motors. They are cheap and require enough torque for this competition. They have mainly two section one is the normal DC motor and gear head. Gear is a must to enhance torque performance of the DC motor. In other words, gear balance rpm and torque of the motor. 
-			
-			
-		Motors are the one of the important physical components of the project. They represent the whole system's actions. As stated in the project definition, the path should be completed within 20 seconds and total length of the path is approximately 3 meters. Using this specifications, a simple calculation for RPM requirement yields
-	\begin{equation}
-	\begin{split}
-	v=\frac{3}{20}&=\pi\times D\times\frac{RPM}{60}\\
-	RPM&=\frac{2.865}{D}
-	\end{split}
-	\end{equation}
-	where $D $ is the diameter of the wheels in meter. Currently used wheels has 6.5 cm diameter, which implies that RPM=44. This means that under load average RPM needs to exceed this value. To estimate torque value, it is necessary to predict components weight. When weight of the current components are measured, result is around 1kg, so rated torque of the each motor expected to 3 times larger than this value to obtain well acceleration in loaded condition. \\
+			As the previous suggestion in CDR, DC motor selection did not change. The reason of this brushed gearhead DC motors are designed to this usage. Even though 3kg-cm is proposed, because the size and weight of the motors in this specs are not appropriate under 600 RPM condition, and eliminate the over engineering, this calculation turns into weight = torque at the shaft of the motor. RPM condition is set in CDR with equation (1). According to this equation 95.5 RPM is the minimum condition, but to be a strong competitor, 5 times of this value is idealized to goal speed. To handle with this value 100 RPM margin is set, to health of the motors during competition.   
+ After testing the new motors by using basic pulley structure, 1 kg-cm total torque is obtained.  
+
 			
 			\item {Discussions on the Solution}
 			
@@ -700,7 +698,31 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 	Main purposes of this subsystem are protection of the critical elements of the robot and holding components together. The most important part of this section is weight distribution. The chassis is supposed to be light and strong because of the competition purposes. However, it should balance the robot to be able to handle turns. The requirements of this subsystem are listed below:
 
 	Current version of chassis which were used in critical module demo can be seen at \textit{Figure~\ref{fig:chassis}}.
-			
+	
+	
+		\begin{figure}[h]
+			\includegraphics[width=0.8\textwidth,center]{images/chassis1}
+			\caption{Isometric view of the 3D Drawing of the Vehicle \label{fig:isom} }
+		\end{figure}
+		\-
+		\todo{choose one}
+		\-
+			\begin{figure}[H]
+				\setlength{\unitlength}{\textwidth} 
+				\centering
+				\begin{subfigure}{.5\textwidth}
+	  				\centering
+	  				\includegraphics[width=0.48\unitlength]{images/chassis1}
+	  				\caption{\label{fig:front-isom} Front Isometric View of the Vehicle }
+				\end{subfigure}%
+				\begin{subfigure}{.5\textwidth}
+	  				\centering
+					\includegraphics[width=0.48\unitlength]{images/chassis2}
+	  				\caption{\label{fig:back-isom} Back Isometric Wiew of the Vehicle}
+				\end{subfigure}
+				\caption{\label{fig:isom2} Front \& Back Isometric View of the 3D Drawing of the Vehicle}
+			\end{figure}
+				
 			\item {Discussions on the Solution}
 			
 		\end{enumerate}
@@ -867,6 +889,7 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 		\item {PID Controller Subsystem Tests}	
 	\begin{enumerate}
 	
+				
 		\item PID Parameters Test for Given Input:		
 			\begin{enumerate}
 				\item Connect the Vehicle Motors to Motor Controller  
@@ -876,7 +899,34 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 				\item Observe the behaviour of the vehicle  
 				\item If the vehicle rotates with an angle given in step 3 without any feedback given, the result of the test can be considered as success.  
 			\end{enumerate}
+		
+		\item Bump Test for Distance Control:
+			\begin{enumerate}
+				\item Set-up a lane as in \textit{Figure~\ref{fig:bump-dist}}.
+				\item Make the necessary connection between motors Arduino and data processing unit  
+				\item Drive the vehicle with PID parameters to be tested.
+				\item Collect the distance error between the center of the lane and current position of the vehicle.
+				\item Plot the time vs distance graph at Matlab using the collected distance errors.
+				\item Calculate necessary performance parameters from the plot.
 				
+			\end{enumerate}
+			
+			\begin{figure}[h]
+				\includegraphics[width=0.75\textwidth,center]{images/bump_test_dist}
+				\caption{Bump Test for Distance Control \label{fig:bump-dist} }
+			\end{figure}		
+			
+		\item Bump Test for Angle Control:
+			\begin{enumerate}
+				\item Set-up a lane as in \textit{Figure~\ref{fig:bump-ang}}.
+				\item Follow similar steps with \textit{Bump Test for Distance Control}, this time, however, collect the error angle information and plot accordingly.
+				
+			\end{enumerate}
+			
+			\begin{figure}[h]
+				\includegraphics[width=0.45\textwidth,center]{images/bump_test_ang}
+				\caption{Bump Test for Angle Control \label{fig:bump-ang} }
+			\end{figure}		
 		
 		\item Path Tracking Test:
 			\begin{enumerate}
@@ -1209,20 +1259,20 @@ RS232_OpenComport(cport_nr, bdrate, mode);
   \centering
  	
  	\caption{Estimated Cost Analysis for the Project}
-    \begin{tabular}{c|c}
-       $$Component$$ & $$Price (in Dollar)$$  \\ \hline
-       Raspberry Pi & 48   \\ \hline
-       Camera & 23   \\ \hline
-       Chassis & 20   \\ \hline
-       Arduino & 5 \\ \hline
-       Motors & 22 \\ \hline
-       Wheels & 8 \\ \hline
-       Motor Driver &  2.5 \\ \hline
-       Powerbank & 12 \\ \hline
-       Li-po Battery  & 15 \\ \hline
-       Distance Sensors & 18 \\ \hline
-       Additional Components & 10 \\ \hline
-       Additional Payments & 15 \\ \hline
+    \begin{tabular}{c|c|c}
+       $$Component$$ & $$Number$$ & $$Total Price (in Dollar)$$  \\ \hline
+       Raspberry Pi 3B & 1 & 48   \\ \hline
+       Camera & 1 & 23   \\ \hline
+       Chassis Components & 1 & 20   \\ \hline
+       Arduino Nano & 1 &  5 \\ \hline
+       DC Motor & 2 & 22 \\ \hline
+       Wheel & 2 & 8 \\ \hline
+       Motor Driver & 1 &  2.5 \\ \hline
+       Powerbank & 1 & 12 \\ \hline
+       Li-po Battery  & 1 & 15 \\ \hline
+       Distance Sensor & 2 & 18 \\ \hline
+       Additional Components & - & 10 \\ \hline
+       Additional Payments & - & 15 \\ \hline
        Total Project &  198.5 
          
   
@@ -1272,7 +1322,7 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 		\end{minipage}%
 		\begin{minipage}[b]{0.25\linewidth}
 			\centering
-			\underline{27 December 2018}
+			\underline{08 March 2018}
 		\end{minipage}
 
 \newpage
