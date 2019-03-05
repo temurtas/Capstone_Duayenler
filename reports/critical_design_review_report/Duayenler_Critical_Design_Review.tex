@@ -44,7 +44,11 @@
 %\usepackage{placeins} % prevents the text after figure to go above figure with \FloatBarrier 
 %\usepackage{listingsutf8,mcode} %import .m or any other code file mcode is for matlab highlighting
 \usepackage{setspace}
+%\usepackage{algorithmic} % algorithm block package
+%\usepackage{algorithm} % algorithm block package
+\usepackage[ruled,vlined]{algorithm2e}
 %-----end of packages
+\setlength{\SetCustomAlgoRuledWidth}{0.93\textwidth}
 
 
 \input{../../documents/arduinoLanguage.tex}
@@ -133,7 +137,7 @@
 	V-Model is a very popular tool for system engineers to plan their projects. To ease the project tracking process, the V-Model was constructed by the DUAYENLER. The overall look of the V-Model can be seen at \textit{Figure~\ref{fig:vmodel}}. This section includes the explanation, requirements, test procedures and test results for the subsystems.
 	
 	\begin{figure}[h]
-		\includegraphics[width=\textwidth,center]{images/vmodel}
+		\includegraphics[width=\textwidth,center]{images/vModels/vmodel}
 		\caption{V-Model}\label{fig:vmodel}
 	\end{figure}
 			
@@ -173,36 +177,27 @@
 			\begin{enumerate}
 				\item The subsystem should be able to detect only the shades of green color
 				\item The subsystem should be able to detect edges in the camera frame in any light condition
-				\item The subsystem should be able to tell differences between disturbances and lane
-				\item The subsystem should be able to interpret the middle of the lane if both sides are present at the frame
+
 			\end{enumerate}
 			
 		
 			
-		
+			\begin{figure}[h]
+			\includegraphics[width=0.93\textwidth,center]{images/vModels/laneDetection_subsystem}
+			\caption{Block Diagram of the Lane Detection Subsystem}\label{fig:lane_detection_subsystem}
+		\end{figure}
 		
 			
 			
 			\item {Solution for the Subsystem}
 			
-			The subsystem basically detects the lane. This subsystem uses OpenCV libraries for processing camera frames. The input is captured from a Raspberry Pi camera that is mounted to the vehicle. The captured frame is firstly, preprocessed by a denoising filter and HSV color filter. The edges in the frame is detected by Canny Edge Detector algorithm. The output of Canny is a binary image filled with ones and zeros. The resulting binary image is processed with Hough Line detector to find pixels that possibly form a line. After the lines are found, the processed frame is sent to Data Processing subsystem. The block diagram of this subsystem is given in \textit{Figure~\ref{fig:lane_detection_subsystem}}. 
-	
-	The first processing on the captured frame is denoising by blurring. The blurring filter is a GaussianBlur of (3x3) matrix with zero variance both in x and y directions. Next, the filtered image is color filtered in HSV color space. The filter range of the HSV filter is adjusted only to include shades green. The lower bound for HSV filter is [H=60, S=120, V=106] and the higher bound is [H=82, S=255, V=235]. Later the color filtered image is processed by Canny Edge Detector. This process eliminates all pixels except those are constituting an edge. Edge pixels are usually formed when there is a transition from one object to other. To find pixels constituting a line, Hough Lines function is used.\\
-	
-	Hough Lines function outputs two pixels points on the image that form a line. The output of the function is tens of such line points. The accuracy of the function can be adjusted by playing with the input parameters. The function basically draws all lines that might go through a point in the free space (in polar coordinates) and intersects those lines. If the origin points of the intersected lines are within a specified bound, then the line is defined and it can be expanded further. If found points on a line don't exceed a threshold, that line is discarded. The adjustment of such parameters are done with trial and error approach. An important note is that this function is probabilistic, meaning that even if the input frame is never changed, the output line points would be close to previous point but not the same. An example call for this function together with its parameters is given \textit{Script~\ref{sc:hough-call}}. The output, line detected frame, is sent to Data Processing subsystem.
-	
-	
-		\begin{lstlisting}[language=C++,float=h,numbers=left,frame=single,caption=Hough Lines Function with its Parameters, captionpos=b, label=sc:hough-call]
-HoughLinesP(input=img_threshed, output=line,
-rho=1, theta=CV_PI / 180, threshold=15, 
-minLineLength=30, maxLineGap=40);
-	\end{lstlisting}			
+			The task of the subsystem is to detect the lane lines. The tool utilized to realize the task is OpenCV libraries together with developed pipelined algorithm.
+			 The input to this subsystem is provided by Raspberry Pi camera mounted on top of the vehicle. The proposed solution first masks out a region of interest (ROI) of $480x250 px$. The masking eliminates the process of excessive data and increases the process speed of the pipeline. The explanations and visual of the ROI is provided in \textit{Section~\ref{sect:dataProcessingSubsystem}, Figure~\ref{fig:camera_vision_explained}}. Then, the target color green is filtered by applying Gaussian denoise (with zero mean) and HSV filters. The lower bound for HSV filter is [H=60, S=120, V=106] and the upper bound is [H=82, S=255, V=245]. This process colors the pixels that are in the green threshold to white and the rest to black. Next, the edges are detected by Canny edge detector. As edges are found, the pixels that may constitute a line are found by Hough line detector. The resulting output is an array of coordinates in the form of $[x_1, y_1, x_2, y_2]$ where $(x_1, y_1)$ is the starting point of the line and $(x_2, y_2)$ is the end point of the line. The found coordinate array is passed to Data Processing Subsystem. The block diagram of the subsystem is given in \textit{Figure~\ref{fig:lane_detection_subsystem}}.
+		
 			
 			\item {Discussions on the Solution}
-									
-					
-	
-	
+			
+			The main structure of the proposed solution has not changed since Conceptual Design Report. An addition to process pipeline is extracting a ROI. This is done to both improve the performance and remove possible distractions that are present in the image. A point to note in this algorithm is Hough line detector. It is a probabilistic function, meaning that even if the captured frame is the same as previous frame, the found line coordinates may differentiate a bit. However, this is not a big issue. One weak point was the lane detection under extreme lighting conditions. The filter is adjusted to be able to detect in bright lighting conditions but dark lighting is problematic. To solve this issue, the team decided to place LED strips to front bumper of the vehicle.
 	
 	\subsubsection{Vehicle Detection Subsystem}
 	
@@ -219,6 +214,7 @@ minLineLength=30, maxLineGap=40);
 			The subsystem is the first step of safely competing with an opponent in a racing path. This subsystem uses two time of flight distance sensor which is enhanced IR sensor. One at the back of the vehicle responsible for detecting the chasing opponent and one at the front of the vehicle responsible for detecting the chased opponent. The subsystem produces positive output if the chasing vehicle or chased vehicle is within a range of 5 cm from the vehicle. Since the sensor reading is performed using Raspberry Pi, the required trigger for handshake protocol can be easily accessed by the external communication subsystem.
 			
 			\item {Discussions on the Solution}
+			
 			
 		\end{enumerate}
 	
@@ -245,7 +241,7 @@ minLineLength=30, maxLineGap=40);
 			
 		
 		
-		\subsubsection{Data Processing Subsystem}
+		\subsubsection{Data Processing Subsystem}\label{sect:dataProcessingSubsystem}
 		
 		\begin{enumerate}
 			\item {Requirements for the Solution}
@@ -255,40 +251,104 @@ minLineLength=30, maxLineGap=40);
 					\item The subsystem should be able to produce the angle information required by the controller subsystem
 					\item The subsystem should be able to work on Raspberry Pi
 					\item The subsystem should be able to process one frame at most in 100 milliseconds
+					\item The subsystem should be able to tell differences between disturbances and lane
+					\item The subsystem should be able to interpret the middle of the lane if both sides are present at the frame
 				\end{enumerate}
 				
 			\item {Solution for the Subsystem}
-			
-			The data processing subsystem is the main computation unit for the vehicle. The main objective of this subsystem is to give PID controller subsystem a meaningful data from unorganized data coming from lane detection subsystem. 
+			\begin{figure}[h]
+				\includegraphics[width=0.93\textwidth,center]{images/vModels/dataProcessing_subsystem}
+				\caption{Block Diagram of the Data Processing Subsystem}\label{fig:dataProcessing_subsystem}
+			\end{figure}
+			\begin{figure}[h]
+				\centering
+				\includegraphics[width=0.93\textwidth]{images/camera_vision_explained}
+				\caption{Block Diagram of the Lane Detection Subsystem}\label{fig:camera_vision_explained}
+			\end{figure}
 		
-	The input of this system is an edge detected binary image.  Next, points of the lines are classified as left or right borders of the lane. The elimination of the wrong points are done concurrently with the classification. Then, filtered points are fitted in two separate lines to create left and right borders of the lane. As the lane borders are found, the next and the last step is to determine the direction of the vehicle. The output of this subsystem is a turning angle and a direction. The whole process is summarized in \textit{Figure~\ref{fig:data_processing_subsystem}} as a block diagram. The requirements of this subsystem are listed below.\\
-	
-	Then next step is to classify the line points as left or right. The lines are firstly eliminated according to their slopes. If slope of a line is not in invalid slope region of $\pm$0.005, then it is a valid line. This process is done to get rid of unnecessary low sloped lines. After elimination, line points set must be determined as left or right. At this point, this classification is done according to double checking. The center of the image, that is 320th vertical pixel. If initial and final horizontal points of the image is in the same half, the line belongs to that half. This method works nicely in most regions of the path. However, it is a bit error prone in case of a sharp turning angle or losing one of the lanes . This algorithm will be improved to be more robust.
-	\begin{lstlisting}[language=C++,float=t,numbers=left,frame=single,caption=The Algorithm to Classify the Lane Lines as Right or Left, captionpos=b, label=sc:left-right-lines]
-std::vector<cv::Vec4i> lines // like a 4x4 matrix
-double slope_thresh = 0.005; // absolute threshold slope
-for (lines_points)
-	startP = Point(x1, y1);
-	endP = Point(x2, y2);
-	line_slope = startP/endP;
-	if(abs(line_slope) >= slope_thresh) line_is_valid;
-	else line_is_not_valid;
+			The task of this subsystem is to determine the steering angle of the vehicle so that the vehicle can steer to the target point. The input of the subsystem is the coordinate array produced by Lane Detection subsystem. The input is processed by a detailed algorithm and the output is steering angle. The processing is done by taking into consideration the reference frame. The reference frame is shown in \textit{Figure ~\ref{fig:camera_vision_explained}}. This figure summarizes the three main frames. The Lane Detection subsystem extracted ROI out of full camera frame. The Data Processing subsystem processes the data of ROI but produces output for the Region of Target (ROT). The reason is, ROI is good to determine possible obstacles on the path but steering to a target point that is almost 15 cm away from the vehicle is not realistic.  For this reason ROI is not used for determining steering angle, instead ROT is used.
+			
+			There are four main steps to determine the steering angle.  The first step is to classify the lines as left and right. The second step is to eliminate the possible incorrect lines, if any. The third step is to fit the best lines through the left and right lines and reduce the total number of lines to two that are left and right lines. The last step is to find steering angle by connecting 320th horizontal pixel with the average end points of the lane lines. The block diagram of the subsystem is given in \textit{Figure~\ref{fig:dataProcessing_subsystem}}.
+			
+			Classifying a line is done in two steps. First, lines are divided into two whether they start from right or left of horizontal 320th pixel. Then, the center of both sets are found. Eventually, according to the average of both centers, lines are classified as left or right. This process is summarized in \textit{Algorithm~\ref{algo:classifyLines}}.
 
-for (lines_is_valid)	
-	if(x1>320 && x2>320) it_is_right_line;
-	else if(x1<320 && x2<320) it_is_left_line;
-	else discard_the_line;
-	\end{lstlisting}
+\begin{algorithm}[H]
+	\caption{Classifying Lines as Left and Right}
+	\label{algo:classifyLines}
+	\DontPrintSemicolon
 	
-	After finding the all left and right line points, actual left and right lines are constructed by applying the least square method to the both point sets. The result of this method is 4 points (x1,y1,x2,y2) to refer the left lane line and 4 points to refer the right lane line.
+%	\KwData{Testing set $x$}
+	\For{All Lane Lines}    
+	{ 
+		\If{Starting Point $>$ 320}
+		{
+			Temporarily classify as right line 
+		}
+		\Else
+		{
+			Temporarily classify as left line 
+		}
+	}
+%	\KwData{Testing set $x$}
+	r\_center = center of temporary right lines \;
+	l\_center = center of temporary left lines \;
 	
-	The last process on the image is predicting the turn angle and direction. The prediction of direction is done by comparing the slopes of the left and the right lines. The turning is to be made to the side of the lane line having less slope. The angle is determined by computing the angle between the normal line of the current direction and guide line. Guide line is constructed with the average of the middle points of the right and the left lines and current point of the vehicle. Vehicle's current point is assumed to be in the middle of the beginning of the image. Thus, the beginning point of the guideline is the current position of the vehicle and the endpoint is the target point to be reached. The output of this processing is shown in \textit{Figure~\ref{fig:turn-prediction-explained}}. The turning angle and the direction is sent to PID Controller subsystem.
+	lane\_center = (r\_center + l\_center)/2 \;
+
+	\For{All Lane Lines}    
+{ 
+	\If{Starting Point $>$ lane\_center}
+	{
+		Classify as right line 
+	}
+	\Else
+	{
+		Classify as left line 
+	}
+}
+\end{algorithm}
 	
-		The proposed algorithm for data processing has some flaws that are already discussed. To overcome those problems, DUAYENLER has some alternative solutions. An improvement might be on finding lane boundaries. This operation is currently realized with Hough Lines function. Another approach would be to scan rows an accurately edge detected image. If a white pixel is encountered, this would imply a lane boundary and the last time a white pixel is encountered would mean te other lane boundary. If the edge detected image contains noise, the solution might yield a wrong result. However, this can be overcomed by setting maximum number of white points that can be detected in a row.
-		
-		Another improvement could be on positioning on the lane. The proposed algorithm assumes that the vehicle follows the lane always in the center. This assumption is not the case always. The new algorithm will differentiate between the center of the lane and center of the capture image. By averaging coordinate points of both lane boundaries the actual lane center can be found and this point must be in some proximity with respect to the center of the image.
+	The next step is to determine whether there are disturbances on the lane lines or not. This is the most complex part of the Data Processing subsystem. Actually the correctness of the steering angle depends on how successful this step is realized. The idea behind this step is evaluating the slopes consecutive lines and assessing whether change in the slope is ordinary or abnormal. The \textit{Figure~\ref{fig:dataP_explained}} exemplifies a possible scenario. In this figure, the blue lines represent the detected lines in ROI whereas $\alpha$ and $\beta$ represent the slopes of the detected lines. Clearly, there are no disturbance on left lines since $\alpha$ values are similar to each other. However if $\beta$ values are observed, possibly there is an obstacle on right line covered by $\beta_3$, $\beta_4$ and $\beta_5$. This can be concluded by observing slope differences $(\beta_2 - \beta_3)$ and $(\beta_5 - \beta_6)$. To ignore this obstacle, it is enough to remove lines with slopes $\beta_3$, $\beta_4$ and $\beta_5$ as in \textit{Figure~\ref{fig:dataP_explained2}}. Even though the count of lines is decreased, elimination of incorrect lines are realized and the best line fit will be more correct. Another scenario is shown in \textit{Figure~\ref{fig:dataP_explainedBroken}}. Again the shown lines are the ones in ROI. In this scenario, left line has no problems. Right lines, however, a bit problematic. The problem is revealed when  $(\beta_3 - \beta_4)$ is observed. To determine whether  $(\beta_1, \beta_2, \beta_3)$ or $(\beta_4, \beta_5)$ is the correct set of lines, left lines are observed and the set which is more symmetric to left lines are selected as right lines. The resulting correction is shown in \textit{Figure~\ref{fig:dataP_explained4}}.	This is the basic idea behind eliminating incorrect lines in Data Processing subsystem. This idea is generalized by considering other possible obstacle types and shapes.
+
+\begin{figure}[H]
+	\setlength{\unitlength}{\textwidth} 
+	\centering
+	\begin{subfigure}{.46\textwidth}
+		\centering
+		\includegraphics[width=0.44\unitlength]{images/dataP_explained1}
+		\caption{\label{fig:dataP_explained1} Before Eliminating Incorrect Lines}
+	\end{subfigure}%
+	\begin{subfigure}{.46\textwidth}
+		\centering
+		\includegraphics[width=0.44\unitlength]{images/dataP_explained2}
+		\caption{\label{fig:dataP_explained2} After Eliminating Incorrect Lines}
+	\end{subfigure}
+	\caption{\label{fig:dataP_explained} A Sample Scenario on Eliminating Incorrect Lines}
+\end{figure}
+\begin{figure}[H]
+	\setlength{\unitlength}{\textwidth} 
+	\centering
+	\begin{subfigure}{.46\textwidth}
+		\centering
+		\includegraphics[width=0.44\unitlength]{images/dataP_explained3}
+		\caption{\label{fig:dataP_explained3} Before Eliminating Incorrect Lines}
+	\end{subfigure}%
+	\begin{subfigure}{.46\textwidth}
+		\centering
+		\includegraphics[width=0.44\unitlength]{images/dataP_explained4}
+		\caption{\label{fig:dataP_explained4} After Eliminating Incorrect Lines}
+	\end{subfigure}
+	\caption{\label{fig:dataP_explainedBroken} Another Scenario on Eliminating Incorrect Lines}
+\end{figure}
+
+	The third step is to fit best lines through the remaining lines. This is realized by using built-in Least-Squares method. As a result of this step, the number of lines is dropped to two as left line and right line.
+	Then next step is to classify the line points as left or right. The lines are firstly eliminated according to their slopes. If slope of a line is not in invalid slope region of $\pm$0.005, then it is a valid line. This process is done to get rid of unnecessary low sloped lines. After elimination, line points set must be determined as left or right. At this point, this classification is done according to double checking. The center of the image, that is 320th vertical pixel. If initial and final horizontal points of the image is in the same half, the line belongs to that half. This method works nicely in most regions of the path. However, it is a bit error prone in case of a sharp turning angle or losing one of the lanes . This algorithm will be improved to be more robust.
+	
+	The last step is to find the steering angle. The target point is determined as the average of the middle points left and right lines. So the target point is always in the form of $(x_{avg}, 305)$. The y-coordinate is found by simple math (referencing from \textit{Figure\ref{fig:camera_vision_explained}}) $480px-50px-125px$. The current point of the vehicle is always $(320,480)$. So the line connecting two points to each other constitutes the track path and the $arctan$ of the slope gives the steering angle. Steering angle is in the $[-90,90]$ range where negative values indicate to turn left and positive values indicate to turn right. This output is sent to PID Controller subsystem.
 			
-			\item {Discussions on the Solution}
+		\item {Discussions on the Solution}
+		
+The proposed algorithm is different from the one presented in Conceptual Design Report. The reason is that the old algorithm didn't have any obstacle rejection	feature and it had problems in determining steering angle. For this reason, new algorithm is developed from scratch. The proposed algorithm works nice as test results are discussed in \textit{Section~\ref{label}}\todo{SECTION REFERLE}. The obstacles are most of the time are detected and ignored. One weak point is that, the algorithm may not be able to ignore some obstacles in certain inclinations. That is, as algorithm is based on slope evaluation, certain obstacle placements may fool the algorithm. However, it is seen that these cases are very rare and don't effect the robustness of the vehicle.
 			
 		\end{enumerate}
 	

@@ -133,15 +133,11 @@
 	V-Model is a very popular tool for system engineers to plan their projects. To ease the project tracking process, the V-Model was constructed by the DUAYENLER. The overall look of the V-Model can be seen at \textit{Figure~\ref{fig:vmodel}}. This section includes the explanation, requirements, test procedures and test results for the subsystems.
 	
 	\begin{figure}[h]
-		\includegraphics[width=\textwidth,center]{images/vmodel}
+		\includegraphics[width=\textwidth,center]{images/vModels/vmodel}
 		\caption{V-Model}\label{fig:vmodel}
 	\end{figure}
 			
-			
-	\begin{figure}[h]
-		\includegraphics[width=\textwidth,center]{images/subsys_block}
-		\caption{Block Diagram of the Project and the Interaction of the Subsystems}\label{fig:subsys-block}
-	\end{figure}
+	
 		
 		
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -727,8 +723,7 @@ While choosing wheels, high friction property is considered. Because of this rea
 			
 		\end{enumerate}
 			
-	
-	
+		
 	
 	\subsubsection{Printed Circuit Board Subsystem}
 	
@@ -750,7 +745,14 @@ While choosing wheels, high friction property is considered. Because of this rea
 			
 		\end{enumerate}	
 	
+	\subsection{Compatibility of the Subsystems}
 	
+	\todo{signals are compatible}
+				
+	\begin{figure}[h]
+		\includegraphics[width=\textwidth,center]{images/subsys_block}
+		\caption{Block Diagram of the Project and the Interaction of the Subsystems}\label{fig:subsys-block}
+	\end{figure}
 	
 	
 	
@@ -1059,7 +1061,26 @@ While choosing wheels, high friction property is considered. Because of this rea
 			\item Find the maximum value
 		\end{enumerate}
 		
-		\item {Torque Test:} 
+		\end{enumerate}
+		
+		
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+		\item Wheels Subsystem Tests
+
+		\begin{enumerate}
+				\item {X Test:} 
+				\begin{enumerate}
+					\item  
+				\end{enumerate}
+		\end{enumerate}
+		
+		\item Motors Subsystem Tests
+				
+		\begin{enumerate}
+				\item {Torque Test:} 
 				\begin{enumerate}
 					\item Fix the motor at horizontal position with respect to ground  
 					\item Attach an object of one kilogram  
@@ -1070,9 +1091,10 @@ While choosing wheels, high friction property is considered. Because of this rea
 					\item Contact the seller for more information 
 				\end{enumerate}
 		\end{enumerate}
+					
 		
 		
-		
+	
 			
 		
 		
@@ -1246,40 +1268,74 @@ While choosing wheels, high friction property is considered. Because of this rea
 	
 	
 	
-	\section{Plans}
-	Each team member is assigned to a subsystem according to their interest and qualification. \textit{Figure \ref{fig:plan-org}} summarizes the assignments. Besides, a Gannt Chart is prepared to have an detailed overview of future works and available in \textit{Appendix~\ref{gannt_chart_app}}.
+	\section{Other Considerations}
+
+\todo{gantt}
+Besides, a Gannt Chart is prepared to have an detailed overview of future works and available in \textit{Appendix~\ref{gannt_chart_app}}.
 	
-	Future plans regarding the improvement of the project are listed here in system level.
 	
 	
-	\subsection{Estimated Cost/Power of Project/Gantt}
+	
+	\subsection{Cost Analysis}
 		Estimated cost anaysis for the project can be investigated at \textit{Table~\ref{tab:cost}}. The reproducible vehicle is expected to cost under 200 dollar as desired by the project requirements.
 	
 	\begin{table}[H]
   \centering
  	
- 	\caption{Estimated Cost Analysis for the Project}
+ 	\caption{Cost Analysis for the Project}
     \begin{tabular}{c|c|c}
        $$Component$$ & $$Number$$ & $$Total Price (in Dollar)$$  \\ \hline
        Raspberry Pi 3B & 1 & 48   \\ \hline
        Camera & 1 & 23   \\ \hline
-       Chassis Components & 1 & 20   \\ \hline
-       Arduino Nano & 1 &  5 \\ \hline
+       Chassis Components & 1 & 15   \\ \hline
+       Arduino Nano & 1 &  4.8 \\ \hline
        DC Motor & 2 & 22 \\ \hline
        Wheel & 2 & 8 \\ \hline
        Motor Driver & 1 &  2.5 \\ \hline
        Powerbank & 1 & 12 \\ \hline
-       Li-po Battery  & 1 & 15 \\ \hline
-       Distance Sensor & 2 & 18 \\ \hline
-       Additional Components & - & 10 \\ \hline
-       Additional Payments & - & 15 \\ \hline
-       Total Project &  198.5 
+       Li-po Battery  & 1 & 24 \\ \hline
+       ToF Distance Sensor & 2 & 18 \\ \hline
+       LED headlight/LED & - & 0.2 \\ \hline
+       %% Additional Payments & - & 15 \\ \hline
+       Total Project & - & 176.7 
          
   
   \end{tabular} 
   \label{tab:cost}
+    
+\end{table}
+
+	As seen from the \textit{Table~\ref{tab:cost}}, budget is optimized with some changes such as Arduino Uno is replaced with its nano version, and upper layer of the chassis is designed thinner plexi glass. However, critical components, such as motors, ToF sensors and wheels, are selected for their performance. Powerbank selection is based on its size. The chosen one is the smallest powerbank which can give enough output to supply Raspberry Pi under full load. Camera and Raspberry pi have no other option in this project. Li-Po battery selection is based on duration and output voltage. 12V output is required during motor drive, and long term is required for demonstrations. Therefore, 1750 mAh 11.1V 3S battery is selected. 
+  
+  \subsection{Power Analysis}
+  
+  
+  	\begin{table}[H]
+  \centering
+ 	
+ 	\caption{Estimated Cost Analysis for the Project}
+    \begin{tabular}{c|c|c|c|c}
+       $$Component$$ & $$\specialcell{Current\\ (Avg),A}$$ & $$\specialcell{Power\\(Avg),W}$$ & $$\specialcell{Current\\(Max),A}$$ & $$\specialcell{Power\\(Max),W}$$ \\ \hline
+       Raspberry Pi 3B & 0.85 & 4.25 & 2.5 & 12.5   \\ \hline
+       Arduino Nano & 80m &  0.4 & 0.2 & 1 \\ \hline
+       DC Motors \& Motor Driver & 0.4 & 4.8 & 1.1 & 12.12 \\ \hline
+       Distance Sensor & 19m & 62.7m & 40m & 132m \\ \hline
+       Total  &  1.52m & 9.153 & 3.84 & 25.75         
+  
+  \end{tabular} 
+  \label{tab:power}
+  
   
 \end{table}
+
+	The \textit{Table~\ref{tab:power}} shows the consumption under regular case and extreme case. If extreme scenario is considered, full power consumption of Raspberry Pi is supplied from powerbank while motors are supplied by Li-Po battery as can be seen from the \textit{Figure~\ref{fig:elec}}. Also, sensors and Arduino are supplied from Pi because they do not have high demand. Powerbank has two output could supply 2.5A for 5V output, so Pi could supply in the worst case.
+Li-Po battery has these specs: 1750 mAh 11.1V 3S 25C, so it can supply 43 ampere constants during discharge although the motors demand 1.1 ampere at stall condition. 
+All in all, sources are completely enough for consumption even in the worst case conditions.   
+
+	\begin{figure}[H]
+		\includegraphics[width=0.5\textwidth,center]{images/elec_arch}
+		\caption{Electrical Architecture of the Project}\label{fig:elec}
+	\end{figure}
 		
 		\newpage
 	
@@ -1329,8 +1385,8 @@ While choosing wheels, high friction property is considered. Because of this rea
 
 \begin{appendices}
 	
-%		\includepdf[landscape=true,pages=1, scale=0.775,angle=0, label=gannt_chart_app,pagecommand=\section{Gannt Chart}\label{gannt_chart_app}]{gannt_chart.pdf}
-%		\includepdf[landscape=true,pages=2-3, scale=0.775,angle=0,pagecommand=]{gannt_chart.pdf}
+		\includepdf[landscape=true,pages=1, scale=0.775,angle=0, label=gannt_chart_app,pagecommand=\section{Gannt Chart}\label{gannt_chart_app}]{gantt.pdf}
+		\includepdf[landscape=true,pages=2-3, scale=0.775,angle=0,pagecommand=]{gantt.pdf}
 
 	
 \end{appendices}

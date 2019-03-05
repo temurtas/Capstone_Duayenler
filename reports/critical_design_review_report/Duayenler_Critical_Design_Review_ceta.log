@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  4 MAR 2019 20:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  5 MAR 2019 19:44
 entering extended mode
 **./Duayenler_Critical_Design_Review_ceta.tex
 (Duayenler_Critical_Design_Review_ceta.tex
@@ -1087,33 +1087,23 @@ File: images/system.png Graphic file (type png)
 Package pdftex.def Info: images/system.png used on input line 126.
 (pdftex.def)             Requested size: 448.07378pt x 188.20879pt.
 
-<images/vmodel.png, id=21, 1436.36626pt x 534.49687pt>
-File: images/vmodel.png Graphic file (type png)
- <use images/vmodel.png>
-Package pdftex.def Info: images/vmodel.png used on input line 136.
+<images/vModels/vmodel.png, id=21, 1436.36626pt x 534.49687pt>
+File: images/vModels/vmodel.png Graphic file (type png)
+
+<use images/vModels/vmodel.png>
+Package pdftex.def Info: images/vModels/vmodel.png used on input line 136.
 (pdftex.def)             Requested size: 448.07378pt x 166.73625pt.
+ [3 <./images/system.png> <./images/vModels/vmodel.png>]
 
-<images/subsys_block.png, id=22, 581.5326pt x 297.7524pt>
-File: images/subsys_block.png Graphic file (type png)
-
-<use images/subsys_block.png>
-Package pdftex.def Info: images/subsys_block.png used on input line 142.
-(pdftex.def)             Requested size: 448.07378pt x 229.42906pt.
+LaTeX Warning: Reference `fig:lane_detection_subsystem' on page 4 undefined on 
+input line 184.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[3 <./images/system.png> <./images/vmodel.png>] [4 <./images/subsys_block.png>]
-
-LaTeX Warning: Reference `fig:lane_detection_subsystem' on page 5 undefined on 
-input line 188.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 190--191
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
 
  []
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+[4] ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
@@ -1122,104 +1112,115 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 ) [5]
-[6]
 
-LaTeX Warning: Reference `fig:data_processing_subsystem' on page 7 undefined on
- input line 264.
+LaTeX Warning: Reference `fig:data_processing_subsystem' on page 6 undefined on
+ input line 260.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--265
+Underfull \hbox (badness 10000) in paragraph at lines 260--261
 
  []
 
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 268.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 264.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 268.
-
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 264.
+ [6]
 
 LaTeX Warning: Reference `fig:turn-prediction-explained' on page 7 undefined on
- input line 285.
+ input line 281.
 
-[7] [8]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 313.
+[7]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 309.
 
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 313.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 309.
 
-<images/ang_cont.png, id=48, 163.5711pt x 123.0999pt>
+<images/ang_cont.png, id=43, 163.5711pt x 123.0999pt>
 File: images/ang_cont.png Graphic file (type png)
 
 <use images/ang_cont.png>
-Package pdftex.def Info: images/ang_cont.png used on input line 336.
+Package pdftex.def Info: images/ang_cont.png used on input line 332.
 (pdftex.def)             Requested size: 215.07349pt x 161.86685pt.
 
-<images/dist_cont.png, id=49, 163.5711pt x 123.0999pt>
+<images/dist_cont.png, id=44, 163.5711pt x 123.0999pt>
 File: images/dist_cont.png Graphic file (type png)
 
 <use images/dist_cont.png>
-Package pdftex.def Info: images/dist_cont.png used on input line 341.
+Package pdftex.def Info: images/dist_cont.png used on input line 337.
 (pdftex.def)             Requested size: 215.07349pt x 161.86685pt.
- [9 <./images/ang_cont.png> <./images/dist_cont.png>] <images/simulink/modellin
-g2.png, id=56, 1415.2875pt x 465.23813pt>
+ [8] [9 <./images/ang_cont.png> <./images/dist_cont.png>] <images/simulink/mode
+lling2.png, id=54, 1415.2875pt x 465.23813pt>
 File: images/simulink/modelling2.png Graphic file (type png)
 
 <use images/simulink/modelling2.png>
-Package pdftex.def Info: images/simulink/modelling2.png used on input line 377.
+Package pdftex.def Info: images/simulink/modelling2.png used on input line 373.
 
 (pdftex.def)             Requested size: 336.05533pt x 110.4668pt.
 
-<images/simulink/modelling1.png, id=57, 1415.2875pt x 590.205pt>
+<images/simulink/modelling1.png, id=55, 1415.2875pt x 590.205pt>
 File: images/simulink/modelling1.png Graphic file (type png)
 
 <use images/simulink/modelling1.png>
-Package pdftex.def Info: images/simulink/modelling1.png used on input line 382.
+Package pdftex.def Info: images/simulink/modelling1.png used on input line 378.
 
 (pdftex.def)             Requested size: 448.07378pt x 186.85216pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[10 <./images/simulink/modelling2.png>] [11 <./images/simulink/modelling1.png>]
+ [10 <./images/simulink/modelling2.png> <./images/simulink/modelling1.png>]
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 459.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[11]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 455.
+
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [12]
-Underfull \hbox (badness 10000) in paragraph at lines 463--464
+)
+Underfull \hbox (badness 10000) in paragraph at lines 459--460
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+pcr on input line 465.
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 461.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omspcr.fd"
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 465.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 461.
 
-Overfull \hbox (2.23065pt too wide) in paragraph at lines 465--466
+Overfull \hbox (2.23065pt too wide) in paragraph at lines 461--462
 \OT1/cmr/m/n/12 rial ports. Script 3[] is used to de-clare a se-rial ob-ject. T
 hen us-ing \OT1/pcr/m/n/12 ar.write("some
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 465--466
+Underfull \hbox (badness 10000) in paragraph at lines 461--462
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 464--465
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 468--469
+Underfull \hbox (badness 10000) in paragraph at lines 470--471
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 472--473
 
  []
 
@@ -1233,156 +1234,173 @@ Underfull \hbox (badness 10000) in paragraph at lines 476--477
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 478--479
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 480--481
-
- []
-
 [13]
 
 LaTeX Warning: Reference `fig:socket_funcs' on page 14 undefined on input line 
-500.
+496.
 
-[14] ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-Underfull \hbox (badness 10000) in paragraph at lines 517--518
+Underfull \hbox (badness 10000) in paragraph at lines 513--514
 
  []
 
-[15]
+[14] [15]
 
 LaTeX Warning: Reference `fig:speed-state' on page 16 undefined on input line 5
-83.
+79.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 583--584
+Underfull \hbox (badness 10000) in paragraph at lines 579--580
 
  []
 
-[16]
-Overfull \hbox (27.45447pt too wide) in paragraph at lines 591--591
+
+Overfull \hbox (27.45447pt too wide) in paragraph at lines 587--587
 [][][][]\OT1/cmr/m/n/12 line[]angle- 
  []
 
 
-Overfull \hbox (29.21695pt too wide) in paragraph at lines 591--591
+Overfull \hbox (29.21695pt too wide) in paragraph at lines 587--587
 \OT1/cmr/m/n/12 base[]speed  
  []
 
 
-Overfull \hbox (27.45447pt too wide) in paragraph at lines 591--591
+Overfull \hbox (27.45447pt too wide) in paragraph at lines 587--587
 [][][][]\OT1/cmr/m/n/12 line[]angle- 
  []
 
 
-Overfull \hbox (29.21695pt too wide) in paragraph at lines 591--591
+Overfull \hbox (29.21695pt too wide) in paragraph at lines 587--587
 \OT1/cmr/m/n/12 base[]speed  
  []
 
 
-Overfull \hbox (27.45447pt too wide) in paragraph at lines 591--591
+Overfull \hbox (27.45447pt too wide) in paragraph at lines 587--587
 [][][][]\OT1/cmr/m/n/12 line[]angle- 
  []
 
 
-Overfull \hbox (29.21695pt too wide) in paragraph at lines 591--591
+Overfull \hbox (29.21695pt too wide) in paragraph at lines 587--587
 \OT1/cmr/m/n/12 base[]speed  
  []
 
 
-Overfull \hbox (27.45447pt too wide) in paragraph at lines 591--591
+Overfull \hbox (27.45447pt too wide) in paragraph at lines 587--587
 [][][][]\OT1/cmr/m/n/12 line[]angle- 
  []
 
 
-Overfull \hbox (29.21695pt too wide) in paragraph at lines 591--591
+Overfull \hbox (29.21695pt too wide) in paragraph at lines 587--587
 \OT1/cmr/m/n/12 base[]speed  
  []
 
-[17] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 692--693
+[16] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 688--689
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 694--695
+Underfull \hbox (badness 10000) in paragraph at lines 690--691
 
  []
 
 
-LaTeX Warning: Reference `fig:camera-holder' on page 19 undefined on input line
- 696.
+LaTeX Warning: Reference `fig:camera-holder' on page 18 undefined on input line
+ 692.
 
+
+LaTeX Warning: Reference `fig:chassis' on page 18 undefined on input line 692.
+
+
+LaTeX Warning: Reference `fig:detection-test-results' on page 18 undefined on i
+nput line 692.
+
+[18]
 
 LaTeX Warning: Reference `fig:chassis' on page 19 undefined on input line 696.
 
-
-LaTeX Warning: Reference `fig:detection-test-results' on page 19 undefined on i
-nput line 696.
-
-
-LaTeX Warning: Reference `fig:chassis' on page 19 undefined on input line 700.
-
-<images/chassis1.png, id=89, 1317.42188pt x 846.16125pt>
+<images/chassis1.png, id=87, 1317.42188pt x 846.16125pt>
 File: images/chassis1.png Graphic file (type png)
 
 <use images/chassis1.png>
-Package pdftex.def Info: images/chassis1.png used on input line 704.
+Package pdftex.def Info: images/chassis1.png used on input line 700.
 (pdftex.def)             Requested size: 358.46039pt x 230.23544pt.
+
+Overfull \hbox (7.62329pt too wide) in paragraph at lines 704--704
+[][][][]\OT1/cmr/m/n/12 choose 
+ []
+
+
+Overfull \hbox (7.62329pt too wide) in paragraph at lines 704--704
+[][][][]\OT1/cmr/m/n/12 choose 
+ []
+
+
+Overfull \hbox (7.62329pt too wide) in paragraph at lines 704--704
+[][][][]\OT1/cmr/m/n/12 choose 
+ []
+
+
+Overfull \hbox (7.62329pt too wide) in paragraph at lines 704--704
+[][][][]\OT1/cmr/m/n/12 choose 
+ []
+
+File: images/chassis1.png Graphic file (type png)
+<use images/chassis1.png>
+Package pdftex.def Info: images/chassis1.png used on input line 711.
+(pdftex.def)             Requested size: 215.07349pt x 138.13869pt.
+
+<images/chassis2.png, id=88, 1317.42188pt x 846.16125pt>
+File: images/chassis2.png Graphic file (type png)
+
+<use images/chassis2.png>
+Package pdftex.def Info: images/chassis2.png used on input line 716.
+(pdftex.def)             Requested size: 215.07349pt x 138.13869pt.
+ [19 <./images/chassis1.png>]
+Overfull \hbox (8.34134pt too wide) in paragraph at lines 750--750
+[][][][]\OT1/cmr/m/n/12 signals 
+ []
+
+
+Overfull \hbox (8.34134pt too wide) in paragraph at lines 750--750
+[][][][]\OT1/cmr/m/n/12 signals 
+ []
+
+
+Overfull \hbox (8.34134pt too wide) in paragraph at lines 750--750
+[][][][]\OT1/cmr/m/n/12 signals 
+ []
+
+
+Overfull \hbox (8.34134pt too wide) in paragraph at lines 750--750
+[][][][]\OT1/cmr/m/n/12 signals 
+ []
+
+<images/subsys_block.png, id=93, 581.5326pt x 297.7524pt>
+File: images/subsys_block.png Graphic file (type png)
+
+<use images/subsys_block.png>
+Package pdftex.def Info: images/subsys_block.png used on input line 753.
+(pdftex.def)             Requested size: 448.07378pt x 229.42906pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Overfull \hbox (7.62329pt too wide) in paragraph at lines 708--708
-[][][][]\OT1/cmr/m/n/12 choose 
- []
-
-
-Overfull \hbox (7.62329pt too wide) in paragraph at lines 708--708
-[][][][]\OT1/cmr/m/n/12 choose 
- []
-
-
-Overfull \hbox (7.62329pt too wide) in paragraph at lines 708--708
-[][][][]\OT1/cmr/m/n/12 choose 
- []
-
-
-Overfull \hbox (7.62329pt too wide) in paragraph at lines 708--708
-[][][][]\OT1/cmr/m/n/12 choose 
- []
-
-File: images/chassis1.png Graphic file (type png)
-<use images/chassis1.png>
-Package pdftex.def Info: images/chassis1.png used on input line 715.
-(pdftex.def)             Requested size: 215.07349pt x 138.13869pt.
-
-<images/chassis2.png, id=90, 1317.42188pt x 846.16125pt>
-File: images/chassis2.png Graphic file (type png)
-
-<use images/chassis2.png>
-Package pdftex.def Info: images/chassis2.png used on input line 720.
-(pdftex.def)             Requested size: 215.07349pt x 138.13869pt.
- [19] [20 <./images/chassis1.png> <./images/chassis2.png>] [21] [22] <images/bu
-mp_test_dist.png, id=105, 730.98094pt x 268.75406pt>
+[20 <./images/chassis2.png>] [21 <./images/subsys_block.png>] [22]
+<images/bump_test_dist.png, id=105, 730.98094pt x 268.75406pt>
 File: images/bump_test_dist.png Graphic file (type png)
 
 <use images/bump_test_dist.png>
-Package pdftex.def Info: images/bump_test_dist.png used on input line 915.
+Package pdftex.def Info: images/bump_test_dist.png used on input line 917.
 (pdftex.def)             Requested size: 336.05533pt x 123.55455pt.
 
 <images/bump_test_ang.png, id=106, 787.44188pt x 639.89063pt>
 File: images/bump_test_ang.png Graphic file (type png)
 
 <use images/bump_test_ang.png>
-Package pdftex.def Info: images/bump_test_ang.png used on input line 927.
+Package pdftex.def Info: images/bump_test_ang.png used on input line 929.
 (pdftex.def)             Requested size: 201.63182pt x 163.84854pt.
 
 
@@ -1392,80 +1410,205 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [26]
 
 LaTeX Warning: Reference `fig:detection-test-results' on page 27 undefined on i
-nput line 1125.
-
-
-LaTeX Warning: Reference `fig:lane_detection_subsystem' on page 27 undefined on
- input line 1158.
-
-
-LaTeX Warning: Reference `fig:turn-prediction-explained' on page 27 undefined o
-n input line 1158.
+nput line 1147.
 
 [27]
 
-LaTeX Warning: Reference `fig:handshake1' on page 28 undefined on input line 11
-90.
+LaTeX Warning: Reference `fig:lane_detection_subsystem' on page 28 undefined on
+ input line 1180.
 
 
-LaTeX Warning: Reference `fig:handshake2' on page 28 undefined on input line 11
-90.
+LaTeX Warning: Reference `fig:turn-prediction-explained' on page 28 undefined o
+n input line 1180.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1228--1229
+LaTeX Warning: Reference `fig:handshake1' on page 28 undefined on input line 12
+12.
+
+
+LaTeX Warning: Reference `fig:handshake2' on page 28 undefined on input line 12
+12.
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 1250--1251
 
  []
 
-[28]
 
-LaTeX Warning: Reference `fig:plan-org' on page 29 undefined on input line 1250
-.
+Overfull \hbox (1.35669pt too wide) in paragraph at lines 1273--1273
+[][][][]\OT1/cmr/m/n/12 gantt  
+ []
 
 
-LaTeX Warning: Reference `gannt_chart_app' on page 29 undefined on input line 1
-250.
+Overfull \hbox (1.35669pt too wide) in paragraph at lines 1273--1273
+[][][][]\OT1/cmr/m/n/12 gantt  
+ []
 
-[29] [30]
-Overfull \hbox (13.14651pt too wide) in paragraph at lines 1297--1309
+
+Overfull \hbox (1.35669pt too wide) in paragraph at lines 1273--1273
+[][][][]\OT1/cmr/m/n/12 gantt  
+ []
+
+
+Overfull \hbox (1.35669pt too wide) in paragraph at lines 1273--1273
+[][][][]\OT1/cmr/m/n/12 gantt  
+ []
+
+[29] [30] <images/elec_arch.png, id=135, 300.3722pt x 372.64218pt>
+File: images/elec_arch.png Graphic file (type png)
+
+<use images/elec_arch.png>
+Package pdftex.def Info: images/elec_arch.png used on input line 1336.
+(pdftex.def)             Requested size: 224.03688pt x 277.95139pt.
+ [31 <./images/elec_arch.png>] [32]
+Overfull \hbox (13.14651pt too wide) in paragraph at lines 1353--1365
 [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1297--1309
+Underfull \hbox (badness 10000) in paragraph at lines 1353--1365
 
  []
 
 
-Overfull \hbox (13.1397pt too wide) in paragraph at lines 1310--1318
+Overfull \hbox (13.1397pt too wide) in paragraph at lines 1366--1374
 [][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1310--1318
+Underfull \hbox (badness 10000) in paragraph at lines 1366--1374
 
  []
 
 
-Overfull \hbox (15.38225pt too wide) in paragraph at lines 1319--1327
+Overfull \hbox (15.38225pt too wide) in paragraph at lines 1375--1383
 [][][] 
  []
 
-[31] (Duayenler_Critical_Design_Review_ceta.aux)
+[33]
+
+pdfTeX warning: pdflatex (file ./gantt.pdf): PDF inclusion: found PDF version <
+1.7>, but at most version <1.5> allowed
+<gantt.pdf, id=147, 845.1575pt x 597.23125pt>
+File: gantt.pdf Graphic file (type pdf)
+ <use gantt.pdf>
+Package pdftex.def Info: gantt.pdf used on input line 1388.
+(pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
+
+
+pdfTeX warning: pdflatex (file ./gantt.pdf): PDF inclusion: found PDF version <
+1.7>, but at most version <1.5> allowed
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf>
+Package pdftex.def Info: gantt.pdf used on input line 1388.
+(pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
+
+
+pdfTeX warning: pdflatex (file ./gantt.pdf): PDF inclusion: found PDF version <
+1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./gantt.pdf): PDF inclusion: found PDF version <
+1.7>, but at most version <1.5> allowed
+<gantt.pdf, id=150, page=1, 845.1575pt x 597.23125pt>
+File: gantt.pdf Graphic file (type pdf)
+ <use gantt.pdf, page 1>
+Package pdftex.def Info: gantt.pdf, page1 used on input line 1388.
+(pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
+File: gantt.pdf Graphic file (type pdf)
+
+<use gantt.pdf, page 1>
+Package pdftex.def Info: gantt.pdf, page1 used on input line 1388.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+File: gantt.pdf Graphic file (type pdf)
+ <use gantt.pdf, page 1>
+Package pdftex.def Info: gantt.pdf, page1 used on input line 1388.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+File: gantt.pdf Graphic file (type pdf)
+ <use gantt.pdf, page 1>
+Package pdftex.def Info: gantt.pdf, page1 used on input line 1388.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+File: gantt.pdf Graphic file (type pdf)
+
+<use gantt.pdf, page 1>
+Package pdftex.def Info: gantt.pdf, page1 used on input line 1388.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+ [34 <./gantt.pdf>]
+File: gantt.pdf Graphic file (type pdf)
+ <use gantt.pdf>
+Package pdftex.def Info: gantt.pdf used on input line 1389.
+(pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
+
+
+pdfTeX warning: pdflatex (file ./gantt.pdf): PDF inclusion: found PDF version <
+1.7>, but at most version <1.5> allowed
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf>
+Package pdftex.def Info: gantt.pdf used on input line 1389.
+(pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
+
+
+pdfTeX warning: pdflatex (file ./gantt.pdf): PDF inclusion: found PDF version <
+1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./gantt.pdf): PDF inclusion: found PDF version <
+1.7>, but at most version <1.5> allowed
+<gantt.pdf, id=159, page=2, 845.1575pt x 597.23125pt>
+File: gantt.pdf Graphic file (type pdf)
+ <use gantt.pdf, page 2>
+Package pdftex.def Info: gantt.pdf, page2 used on input line 1389.
+(pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
+File: gantt.pdf Graphic file (type pdf)
+
+<use gantt.pdf, page 2>
+Package pdftex.def Info: gantt.pdf, page2 used on input line 1389.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+File: gantt.pdf Graphic file (type pdf)
+ <use gantt.pdf, page 2>
+Package pdftex.def Info: gantt.pdf, page2 used on input line 1389.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+File: gantt.pdf Graphic file (type pdf)
+ <use gantt.pdf, page 2>
+Package pdftex.def Info: gantt.pdf, page2 used on input line 1389.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+File: gantt.pdf Graphic file (type pdf)
+
+<use gantt.pdf, page 2>
+Package pdftex.def Info: gantt.pdf, page2 used on input line 1389.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+ [35 <./gantt.pdf>]
+
+pdfTeX warning: pdflatex (file ./gantt.pdf): PDF inclusion: found PDF version <
+1.7>, but at most version <1.5> allowed
+<gantt.pdf, id=165, page=3, 845.1575pt x 597.23125pt>
+File: gantt.pdf Graphic file (type pdf)
+ <use gantt.pdf, page 3>
+Package pdftex.def Info: gantt.pdf, page3 used on input line 1389.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+File: gantt.pdf Graphic file (type pdf)
+
+<use gantt.pdf, page 3>
+Package pdftex.def Info: gantt.pdf, page3 used on input line 1389.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+File: gantt.pdf Graphic file (type pdf)
+ <use gantt.pdf, page 3>
+Package pdftex.def Info: gantt.pdf, page3 used on input line 1389.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+ [36 <./gantt.pdf>]
+(Duayenler_Critical_Design_Review_ceta.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 31474 strings out of 493333
- 714429 string characters out of 3136576
- 1037548 words of memory out of 3000000
- 34392 multiletter control sequences out of 15000+200000
+ 31512 strings out of 493333
+ 715203 string characters out of 3136576
+ 1039548 words of memory out of 3000000
+ 34426 multiletter control sequences out of 15000+200000
  13389 words of font info for 49 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,11n,99p,1068b,1662s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,21n,99p,1068b,1662s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Fi
 les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files
@@ -1478,10 +1621,10 @@ eX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2
 /fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
 ts/type1/urw/courier/ucrr8a.pfb>
-Output written on Duayenler_Critical_Design_Review_ceta.pdf (32 pages, 957467 b
-ytes).
+Output written on Duayenler_Critical_Design_Review_ceta.pdf (37 pages, 1454928 
+bytes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
+ 210 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 118 words of extra memory for PDF output out of 10000 (max. 10000000)
 
