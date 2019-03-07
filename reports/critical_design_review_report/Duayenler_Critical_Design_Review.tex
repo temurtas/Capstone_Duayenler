@@ -591,20 +591,6 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 		
 		
 	
-	\begin{itemize}
-		\item socket.socket(): Creates a new socket using the given address family, socket type and protocol number.
-		\item s.bind(address): Binds the socket to the address defined previously.
-		\item s.listen(backlog): Sets up the maximum number of connections that can be made to the socket, which must be at 1 for the project.
-		\item	s.accept(): Waits until connection arrives, then accept the client connection. Returns the client socket connected to the server as (conn, address) pair, where conn is a new socket object and address is the address bound to this socket
-		\item	s.connect(): Provides client to connect to the server
-		\item	s.send(): Transmits message to the remote socket.
-		\item	s.recv(): Receives message from the remote socket
-		\item	socket.close(): closes the socket; i.e., ends the communication with the opponent at the end of the race.
-	\end{itemize}
-	
-	It is stated in the standard committee that each team must be assigned a static IP to communicate with the other robots. Duayenler has the static IP stated as “192.168.1.7” and the ID as “07”. Since Raspberry Pi 3 comes with a built-in wireless adapter, configuring it as a Wi-Fi hotspot is possible. To assign given IP to the robot, Raspberry Pi must be set as an access point from the terminal.\\
-	
-	In the algorithm that was implemented for the handshake, in a continuous loop, the front and rear sensors' values are been checked. There are two functions which are for client and server modes, respectively. If the front sensor senses the opponent in 5 cm range, our main code visits the client mode function. If the rear sensor senses the opponent in 5 cm range, server mode function runs. If our robot is in the server mode, the rear sensor value is again checked. The acknowledge message ($< ID> 01$) or reject message ($< ID> 11$) is sent according to the sensor value.
 	
 			
 			\item {Discussions on the Solution}
