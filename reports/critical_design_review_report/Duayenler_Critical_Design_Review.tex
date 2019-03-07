@@ -166,7 +166,7 @@ Are they done?
 			\end{enumerate}
 	
 	
-		\subsubsection{Lane Detection Subsystem}
+		\subsubsection{Lane Detection Subsystem}\label{sec:LaneDetectionSubsystem}
 
 			\begin{enumerate}
 			\item {Requirements for the Solution}
@@ -353,13 +353,13 @@ Are they done?
 \end{figure}
 
 	The third step is to fit best lines through the remaining lines. This is realized by using built-in Least-Squares method. As a result of this step, the number of lines is dropped to two as left line and right line.
-	Then next step is to classify the line points as left or right. The lines are firstly eliminated according to their slopes. If slope of a line is not in invalid slope region of $\pm$0.005, then it is a valid line. This process is done to get rid of unnecessary low sloped lines. After elimination, line points set must be determined as left or right. At this point, this classification is done according to double checking. The center of the image, that is 320th vertical pixel. If initial and final horizontal points of the image is in the same half, the line belongs to that half. This method works nicely in most regions of the path. However, it is a bit error prone in case of a sharp turning angle or losing one of the lanes . This algorithm will be improved to be more robust.
+	Then next step is to classify the line points as left or right. The lines are firstly eliminated according to their slopes. If slope of a line is not in invalid slope region of $\pm$0.005, then it is a valid line. This process is done to get rid of unnecessary low sloped lines. After elimination, line points set must be determined as left or right. At this point, this classification is done according to double checking. The center of the image, that is 320th vertical pixel. If initial and final horizontal points of the image is in the same half, the line belongs to that half. This method works nicely in most regions of the path. However, it is a bit error prone in case of a sharp turning angle or losing one of the lanes . This algorithm will be improved to be more robust.\todo{YANLIŞ BİLGİ VAR BURADA KİM YAZDI BUNLARI}
 	
-	The last step is to find the steering angle. The target point is determined as the average of the middle points left and right lines. So the target point is always in the form of $(x_{avg}, 305)$. The y-coordinate is found by simple math (referencing from \textit{Figure\ref{fig:camera_vision_explained}}) $480px-50px-125px$. The current point of the vehicle is always $(320,480)$. So the line connecting two points to each other constitutes the track path and the $arctan$ of the slope gives the steering angle. Steering angle is in the $[-90,90]$ range where negative values indicate to turn left and positive values indicate to turn right. This output is sent to PID Controller subsystem.
+	The last step is to find the steering angle. The target point is determined as the average of the middle points left and right lines. So the target point is always in the form of $(x_{avg}, 305)$. The y-coordinate is found by simple math (referencing from \textit{Figure~\ref{fig:camera_vision_explained}}) $480px-50px-125px$. The current point of the vehicle is always $(320,480)$. So the line connecting two points to each other constitutes the track path and the $arctan$ of the slope gives the steering angle. Steering angle is in the $[-90,90]$ range where negative values indicate to turn left and positive values indicate to turn right. This output is sent to PID Controller subsystem.
 			
 		\item {Discussions on the Solution}
 		
-	The proposed algorithm is different from the one presented in Conceptual Design Report. The reason is that the old algorithm didn't have any obstacle rejection	feature and it had problems in determining steering angle. For this reason, new algorithm is developed from scratch. The proposed algorithm works nice as test results are discussed in \textit{Section~\ref{label}}\todo{SECTION REFERLE}. The obstacles are most of the time are detected and ignored. One weak point is that, the algorithm may not be able to ignore some obstacles in certain inclinations. That is, as algorithm is based on slope evaluation, certain obstacle placements may fool the algorithm. However, it is seen that these cases are very rare and don't effect the robustness of the vehicle.
+	The proposed algorithm is different from the one presented in Conceptual Design Report. The reason is that the old algorithm didn't have any obstacle rejection	feature and it had problems in determining steering angle. For this reason, new algorithm is developed from scratch. The proposed algorithm works nice as test results are discussed in \textit{Section~\ref{sec:DataProcessingSubsystemTests}}. The obstacles are most of the time are detected and ignored. One weak point is that, the algorithm may not be able to ignore some obstacles in certain inclinations. That is, as algorithm is based on slope evaluation, certain obstacle placements may fool the algorithm.
 			
 		\end{enumerate}
 	
@@ -404,12 +404,12 @@ Are they done?
 					\centering
 					\begin{subfigure}{.46\textwidth}
 	  					\centering
-	  					\includegraphics[width=0.48\unitlength]{images/ang_cont}
+	  					\includegraphics[width=0.45\unitlength]{images/ang_cont}
 	  					\caption{\label{fig:ang-cont} Controllable Angle Variables }
 				\end{subfigure}%
 				\begin{subfigure}{.46\textwidth}
 	  				\centering
-					\includegraphics[width=0.48\unitlength]{images/dist_cont}
+					\includegraphics[width=0.45\unitlength]{images/dist_cont}
 	  				\caption{\label{fig:dist-cont} Controllable Distance Variables}
 				\end{subfigure}
 				\caption{\label{fig:controlled-vars} Controlled Variables of the System }
@@ -1241,7 +1241,12 @@ While choosing wheels, high friction property is considered. Because of this rea
 	
 	\subsubsection*{Results of Lane Detection Subsystem Tests}
 		
-	The lane detection tests were conducted for the detection algorithm of the camera. The results were promising. The algorithm sweeps up the surrounding disturbances completely. The sample outputs together with Data Processing subsystem are shown in \textit{Figure~\ref{fig:detection-test-results}}.
+	The lane detection tests were conducted for the detection algorithm of the camera. A sample test result is shown in \textit{Figure~\ref{fig:laneD_test}}. The tests reveal that the subsystem satisfies its requirements by detecting edges. Note that, not all lines are detected, only the lines that are in the ROI are detected as discussed in \textit{Section~\ref{sec:LaneDetectionSubsystem}}.
+	
+				\begin{figure}[h]
+		\includegraphics[width=0.75\textwidth,center]{images/laneD_test}
+		\caption{Lane Detection Test Result \label{fig:laneD_test} }
+	\end{figure}
 		
 	
 	
@@ -1273,8 +1278,10 @@ While choosing wheels, high friction property is considered. Because of this rea
 		
 		
 		
-	\subsubsection*{Results of Data Processing Subsystem Tests}
-	The tests are done. The results are positive and reflects the expectations. The turn angle and direction are properly output. A flaw of this subsystem is that both right and the left lane lines must be determined. Otherwise, the prediction does not give stable results. This must be improved together with the Lane Detection subsystem regarding the code algorithm.	The sample outputs can be seen in \textit{Figure~\ref{fig:lane_detection_subsystem} and Figure~\ref{fig:turn-prediction-explained}}.
+	\subsubsection*{Results of Data Processing Subsystem Tests}\label{sec:DataProcessingSubsystemTests}
+	The tests in this section assesses the ability and performance of this subsystem by regarding its requirements. The number of tests realized is quite  bit. The first set of tests cover the robustness of the subsystem by placing an obstacle of the subsystem. This test and its results are presented in \textit{Figure~\ref{fig:dataP_down},\ref{fig:dataP_up} and \ref{fig:dataP_par}}. It can be seen that the algorithm ignores the obstacles in 7 cases out of 9 tests. In two cases, the algorithm fails to ignore the obstacles and determines the steering angle as if obstacle constitutes the lane line. Besides the results, on the presence of obstacles, in some particular obstacle placements, the output of the subsystem is observed to be unstable.
+	
+	The second set of tests cover the robustness of the subsystem as well, but under changing lighting conditions and on different surface materials. The results of this test is presented in \textit{Figure~\ref{fig:dataP_inside} and \ref{fig:dataP_outside}}. The presented results are promising, the steering angles are true. A problem is that these results are a bit unstable when the luminosity difference between the shadows and flighty parts increase. The shadows are sometimes detected as lines and cause untrue lane line evaluations.	
 	
 	\begin{figure}[H]
 	\setlength{\unitlength}{\textwidth} 
@@ -1338,26 +1345,6 @@ While choosing wheels, high friction property is considered. Because of this rea
 	\end{subfigure}
 	\caption{\label{fig:dataP_par} A Test Scenario: Parallel Placed Obstacle on the Path. \\ Upper Half: Proposed Tests, Lower Half: Results}
 \end{figure}		
-	\begin{figure}[H]
-	\setlength{\unitlength}{\textwidth} 
-	\centering
-	\begin{subfigure}{.31\textwidth}
-		\centering
-		\includegraphics[width=0.30\unitlength]{images/path_images/par_1}
-		\caption{\label{fig:dataP_par_1} Obstacle is at the Beginning of the Path}
-	\end{subfigure}%
-	\begin{subfigure}{.31\textwidth}
-		\centering
-		\includegraphics[width=0.30\unitlength]{images/path_images/par_2}
-		\caption{\label{fig:dataP_par_2} Obstacle is at the Middle of the Path}
-	\end{subfigure}
-		\begin{subfigure}{.31\textwidth}
-		\centering
-		\includegraphics[width=0.30\unitlength]{images/path_images/par_3}
-		\caption{\label{fig:dataP_par_3} Obstacle is at the End of the Path.}
-	\end{subfigure}
-	\caption{\label{fig:dataP_par} A Test Scenario: Parallel Placed Obstacle on the Path. \\ Upper Half: Proposed Tests, Lower Half: Results}
-\end{figure}
 
 	\begin{figure}[H]
 	\setlength{\unitlength}{\textwidth} 
@@ -1365,17 +1352,17 @@ While choosing wheels, high friction property is considered. Because of this rea
 	\begin{subfigure}{.31\textwidth}
 		\centering
 		\includegraphics[width=0.30\unitlength]{images/path_images/inside-bb}
-		\caption{\label{fig:dataP_inside-bb} Obstacle is at the Beginning of the Path}
+		\caption{\label{fig:dataP_inside-bb} Path is Placed on Black Marble}
 	\end{subfigure}%
 	\begin{subfigure}{.31\textwidth}
 		\centering
 		\includegraphics[width=0.30\unitlength]{images/path_images/inside-bw}
-		\caption{\label{fig:dataP_inside-bw} Obstacle is at the Middle of the Path}
+		\caption{\label{fig:dataP_inside-bw} Path is Placed on Black and White Marble}
 	\end{subfigure}
 		\begin{subfigure}{.31\textwidth}
 		\centering
 		\includegraphics[width=0.30\unitlength]{images/path_images/inside-ww}
-		\caption{\label{fig:dataP_inside-ww} Obstacle is at the End of the Path.}
+		\caption{\label{fig:dataP_inside-ww} Path is Placed on White Marble}
 	\end{subfigure}
 	\caption{\label{fig:dataP_inside} A Test Scenario Results: KKM Indoor Path Detection}
 \end{figure}
@@ -1386,17 +1373,17 @@ While choosing wheels, high friction property is considered. Because of this rea
 	\begin{subfigure}{.31\textwidth}
 		\centering
 		\includegraphics[width=0.30\unitlength]{images/path_images/outsideObs0}
-		\caption{\label{fig:dataP_outsideObs0} Obstacle is at the Beginning of the Path}
+		\caption{\label{fig:dataP_outsideObs0} Daylight and Shadow Test-1}
 	\end{subfigure}%
 	\begin{subfigure}{.31\textwidth}
 		\centering
 		\includegraphics[width=0.30\unitlength]{images/path_images/outsideObs1}
-		\caption{\label{fig:dataP_outsideObs1} Obstacle is at the Middle of the Path}
+		\caption{\label{fig:dataP_outsideObs1} Daylight and Shadow Test-2}
 	\end{subfigure}
 		\begin{subfigure}{.31\textwidth}
 		\centering
 		\includegraphics[width=0.30\unitlength]{images/path_images/outsideObs2}
-		\caption{\label{fig:dataP_outsideObs2} Obstacle is at the End of the Path.}
+		\caption{\label{fig:dataP_outsideObs2} Daylight and Shadow Test-3}
 	\end{subfigure}
 	\caption{\label{fig:dataP_outside} A Test Scenario Results: KKM Outdoor Path Detection}
 \end{figure}	

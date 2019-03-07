@@ -24,10 +24,10 @@
 \contentsline {section}{\numberline {3}Detailed Tests for the Subsystems}{24}
 \contentsline {section}{\numberline {4}Testing Stage}{30}
 \contentsline {subsection}{\numberline {4.1}Test Results, Encountered Problems and Possible Solutions for Subsystems}{30}
-\contentsline {subsection}{\numberline {4.2}Robustness of the Design}{34}
-\contentsline {section}{\numberline {5}Other Considerations}{34}
-\contentsline {subsection}{\numberline {5.1}Cost Analysis}{34}
-\contentsline {subsection}{\numberline {5.2}Power Analysis}{35}
+\contentsline {subsection}{\numberline {4.2}Robustness of the Design}{35}
+\contentsline {section}{\numberline {5}Other Considerations}{35}
+\contentsline {subsection}{\numberline {5.1}Cost Analysis}{35}
+\contentsline {subsection}{\numberline {5.2}Power Analysis}{36}
 \contentsline {section}{\numberline {6}Conclusion}{37}
 \contentsline {section}{\numberline {7}Disclaimer}{38}
 \contentsline {section}{Appendix \numberline {A}Gannt Chart}{39}
