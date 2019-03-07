@@ -115,7 +115,8 @@
 	\newpage
 	
 	\section{Introduction}
-	The self driving cars have been the buzz concept of the community lately. Many companies have established departments and teams to develop their own self driving cars. Increasing research on the concept brings the increasing demand to new technologies and approaches. DUAYENLER Ltd. Şti. (DUAYENLER) aims to catch this trend and be one of the pioneers in this field. To realize this goal, DUAYENLER develops a vehicle for Car Chasing Project. The outcome of the project is a vehicle that can follow a predefined path in an autonomous way. The vehicle not only drive on the path itself, but it will communicate with other vehicles as well.\\
+	The self driving cars have been the buzz concept of the community lately. Many companies have established departments and teams to develop their own self driving cars. Increasing 
+research on the concept brings the increasing demand to new technologies and approaches. DUAYENLER Ltd. Şti. (DUAYENLER) aims to catch this trend and be one of the pioneers in this field. To realize this goal, DUAYENLER develops a vehicle for Car Chasing Project. The outcome of the project is a vehicle that can follow a predefined path in an autonomous way. The vehicle not only drive on the path itself, but it will communicate with other vehicles as well.\\
 	
 	This project, as most of projects, is a multi disciplinary tasks. It involves image processing, data processing, statistical estimation, networking, mechanical design and mechanical assembly. These disciplines are not adequate by themselves but also integration with each other. So, system design, testing and automation are key concepts to merge everything into a product. Fortunately, DUAYENLER is composed five team members who build up proficiency in those fields.\\
 	
@@ -577,11 +578,11 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 			
 			\item {Solution for the Subsystem}
 			
-			Socket programming is an effective tool to implement client-server communication algorithms. It can be implemented in Python or C++.  Our algorithms are written in Python for now, yet it can easily be converted to C++ if the team members decide that it is necessary. The algorithms for client and server sides are slightly different. \textit{Figure~\ref{fig:socket_funcs}} shows the functions that are used for client and server sides to create communication between client and server.
-	
-	
-	
-	Here is the summary of the key functions from socket library:
+		The main solution for this subsystem is setting the device as a P2P host. Sockets are used to send or receive messages.  Since the host can act as a server as well as a client, both socket functions are used to establish communication. The subsystem requires opponent ID from the user and sensor readings from the vehicle detection subsystem. It can initiate and terminate other subsystems.
+		Firstly, the socket data structures are created in both server and client sides. In the beginning of the race, the peer acting as a server listens to the port 5000, which is specified in Standard Committee. Then, the connect() function is called in the client side, so that the request is sent. At the same time, server side acknowledges the request by means of accept() function. At this moment, client side also sends acknowledgement by default, hence race starts. The peers are connected during the race.
+		The process for the finishing handshake also utilizes socket functions, but the process is a little bit different. For the win case, vehicle detection subsystem (front sensor) initiates the handshake. A catch message (ID00) is sent to the opponent. If acknowledgment is taken from the opponent, stop message (ID10) is sent. On the other hand, for the defeat case, a catch message is received by the opponent. Then, vehicle detection subsystem is called. According to the returned value from the back sensor, the acknowledge (ID01) or reject (ID11) are sent. Also, LEDs corresponding to messages are lid for the finishing handshake.
+		
+		
 	
 	\begin{itemize}
 		\item socket.socket(): Creates a new socket using the given address family, socket type and protocol number.
