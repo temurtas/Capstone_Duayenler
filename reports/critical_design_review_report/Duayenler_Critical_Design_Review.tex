@@ -221,6 +221,7 @@ Are they done?
 			
 			\item {Discussions on the Solution}
 			
+			The proposed method is not entirely different than the one presented in Conceptual Design Report.  The only difference is the devices reading the sensors. In Conceptual Design Report, sensors were connected to Arduino. However, the team decided that it is problematic. For example, in the case of sensor readings from Arduino, when opponent is close, Arduino reads the sensor, sends it to trigger handshake, then Pi sends/receives TCP messages, then sends Arduino to stop the motors. On the other hand, reading sensors from Pi simplifies and accelerates the work by eliminating the step to send sensor reading. Also, since Raspberry Pi is a general-purpose computer, it can handle with complex tasks easily, while Arduino cannot. Therefore, sensors are moved from Arduino to Raspberry Pi.
 			
 		\end{enumerate}
 	
