@@ -65,7 +65,7 @@
 		
 		\textsc{\LARGE Middle East Technical University}\\[0.5cm] % Name of your university/college
 		\textsc{\Large Department of \\Electrical and Electronics Engineering }\\[0.5cm] % Major heading such as course name
-		\textsc{\large EE493 ENGINEERING DESIGN I}\\[0.5cm] % Minor heading such as course title
+		\textsc{\large EE494 ENGINEERING DESIGN II}\\[0.5cm] % Minor heading such as course title
 		
 		
 		\HRule \\[0cm]
@@ -105,7 +105,7 @@
 		\end{minipage}\\[1cm]
 		
 		\begin{flushbottom}
-			{\large December 26, 2018} % Date, change the \today to a set date if you want to be precise
+			{\large March 08, 2019} % Date, change the \today to a set date if you want to be precise
 		\end{flushbottom}
 		
 	\end{titlepage}
@@ -402,12 +402,12 @@ Are they done?
 				\begin{figure}[H]
 					\setlength{\unitlength}{\textwidth} 
 					\centering
-					\begin{subfigure}{.5\textwidth}
+					\begin{subfigure}{.46\textwidth}
 	  					\centering
 	  					\includegraphics[width=0.48\unitlength]{images/ang_cont}
 	  					\caption{\label{fig:ang-cont} Controllable Angle Variables }
 				\end{subfigure}%
-				\begin{subfigure}{.5\textwidth}
+				\begin{subfigure}{.46\textwidth}
 	  				\centering
 					\includegraphics[width=0.48\unitlength]{images/dist_cont}
 	  				\caption{\label{fig:dist-cont} Controllable Distance Variables}
@@ -794,21 +794,21 @@ While choosing wheels, high friction property is considered. Because of this rea
 		\-
 		\todo{choose one}
 		\-
-			\begin{figure}[H]
-				\setlength{\unitlength}{\textwidth} 
-				\centering
-				\begin{subfigure}{.5\textwidth}
-	  				\centering
-	  				\includegraphics[width=0.48\unitlength]{images/chassis1}
-	  				\caption{\label{fig:front-isom} Front Isometric View of the Vehicle }
-				\end{subfigure}%
-				\begin{subfigure}{.5\textwidth}
-	  				\centering
-					\includegraphics[width=0.48\unitlength]{images/chassis2}
-	  				\caption{\label{fig:back-isom} Back Isometric Wiew of the Vehicle}
-				\end{subfigure}
-				\caption{\label{fig:isom2} Front \& Back Isometric View of the 3D Drawing of the Vehicle}
-			\end{figure}
+		%	\begin{figure}[H]
+		%		\setlength{\unitlength}{\textwidth} 
+		%		\centering
+		%		\begin{subfigure}{.5\textwidth}
+	  	%			\centering
+	  	%			\includegraphics[width=0.48\unitlength]{images/chassis1}
+	  	%			\caption{\label{fig:front-isom} Front Isometric View of the Vehicle }
+		%		\end{subfigure}%
+		%		\begin{subfigure}{.5\textwidth}
+	  	%			\centering
+		%			\includegraphics[width=0.48\unitlength]{images/chassis2}
+	  	%			\caption{\label{fig:back-isom} Back Isometric Wiew of the Vehicle}
+		%		\end{subfigure}
+		%		\caption{\label{fig:isom2} Front \& Back Isometric View of the 3D Drawing of the Vehicle}
+		%	\end{figure}
 				
 			\item {Discussions on the Solution}
 			
@@ -1276,13 +1276,130 @@ While choosing wheels, high friction property is considered. Because of this rea
 	\subsubsection*{Results of Data Processing Subsystem Tests}
 	The tests are done. The results are positive and reflects the expectations. The turn angle and direction are properly output. A flaw of this subsystem is that both right and the left lane lines must be determined. Otherwise, the prediction does not give stable results. This must be improved together with the Lane Detection subsystem regarding the code algorithm.	The sample outputs can be seen in \textit{Figure~\ref{fig:lane_detection_subsystem} and Figure~\ref{fig:turn-prediction-explained}}.
 	
+	\begin{figure}[H]
+	\setlength{\unitlength}{\textwidth} 
+	\centering
+	\begin{subfigure}{.31\textwidth}
+		\centering
+		\includegraphics[width=0.30\unitlength]{images/path_images/down_1}
+		\caption{\label{fig:dataP_down_1} Obstacle is at the Beginning of the Path}
+	\end{subfigure}%
+	\begin{subfigure}{.31\textwidth}
+		\centering
+		\includegraphics[width=0.30\unitlength]{images/path_images/down_2}
+		\caption{\label{fig:dataP_down_2} Obstacle is at the Middle of the Path}
+	\end{subfigure}
+		\begin{subfigure}{.31\textwidth}
+		\centering
+		\includegraphics[width=0.30\unitlength]{images/path_images/down_3}
+		\caption{\label{fig:dataP_down_3} Obstacle is at the End of the Path.}
+	\end{subfigure}
+	\caption{\label{fig:dataP_down} A Test Scenario: Downward Inclined Obstacle on the Path. \\ Upper Half: Proposed Tests, Lower Half: Results}
+\end{figure}
 	
+	\begin{figure}[H]
+	\setlength{\unitlength}{\textwidth} 
+	\centering
+	\begin{subfigure}{.31\textwidth}
+		\centering
+		\includegraphics[width=0.30\unitlength]{images/path_images/up_1}
+		\caption{\label{fig:dataP_up_1} Obstacle is at the Beginning of the Path}
+	\end{subfigure}%
+	\begin{subfigure}{.31\textwidth}
+		\centering
+		\includegraphics[width=0.30\unitlength]{images/path_images/up_2}
+		\caption{\label{fig:dataP_up_2} Obstacle is at the Middle of the Path}
+	\end{subfigure}
+		\begin{subfigure}{.31\textwidth}
+		\centering
+		\includegraphics[width=0.30\unitlength]{images/path_images/up_3}
+		\caption{\label{fig:dataP_up_3} Obstacle is at the End of the Path.}
+	\end{subfigure}
+	\caption{\label{fig:dataP_up} A Test Scenario: Upward Inclined Obstacle on the Path. \\ Upper Half: Proposed Tests, Lower Half: Results}
+\end{figure}
 	
-	
-	
-		
-	
-	
+	\begin{figure}[H]
+	\setlength{\unitlength}{\textwidth} 
+	\centering
+	\begin{subfigure}{.31\textwidth}
+		\centering
+		\includegraphics[width=0.30\unitlength]{images/path_images/par_1}
+		\caption{\label{fig:dataP_par_1} Obstacle is at the Beginning of the Path}
+	\end{subfigure}%
+	\begin{subfigure}{.31\textwidth}
+		\centering
+		\includegraphics[width=0.30\unitlength]{images/path_images/par_2}
+		\caption{\label{fig:dataP_par_2} Obstacle is at the Middle of the Path}
+	\end{subfigure}
+		\begin{subfigure}{.31\textwidth}
+		\centering
+		\includegraphics[width=0.30\unitlength]{images/path_images/par_3}
+		\caption{\label{fig:dataP_par_3} Obstacle is at the End of the Path.}
+	\end{subfigure}
+	\caption{\label{fig:dataP_par} A Test Scenario: Parallel Placed Obstacle on the Path. \\ Upper Half: Proposed Tests, Lower Half: Results}
+\end{figure}		
+	\begin{figure}[H]
+	\setlength{\unitlength}{\textwidth} 
+	\centering
+	\begin{subfigure}{.31\textwidth}
+		\centering
+		\includegraphics[width=0.30\unitlength]{images/path_images/par_1}
+		\caption{\label{fig:dataP_par_1} Obstacle is at the Beginning of the Path}
+	\end{subfigure}%
+	\begin{subfigure}{.31\textwidth}
+		\centering
+		\includegraphics[width=0.30\unitlength]{images/path_images/par_2}
+		\caption{\label{fig:dataP_par_2} Obstacle is at the Middle of the Path}
+	\end{subfigure}
+		\begin{subfigure}{.31\textwidth}
+		\centering
+		\includegraphics[width=0.30\unitlength]{images/path_images/par_3}
+		\caption{\label{fig:dataP_par_3} Obstacle is at the End of the Path.}
+	\end{subfigure}
+	\caption{\label{fig:dataP_par} A Test Scenario: Parallel Placed Obstacle on the Path. \\ Upper Half: Proposed Tests, Lower Half: Results}
+\end{figure}
+
+	\begin{figure}[H]
+	\setlength{\unitlength}{\textwidth} 
+	\centering
+	\begin{subfigure}{.31\textwidth}
+		\centering
+		\includegraphics[width=0.30\unitlength]{images/path_images/inside-bb}
+		\caption{\label{fig:dataP_inside-bb} Obstacle is at the Beginning of the Path}
+	\end{subfigure}%
+	\begin{subfigure}{.31\textwidth}
+		\centering
+		\includegraphics[width=0.30\unitlength]{images/path_images/inside-bw}
+		\caption{\label{fig:dataP_inside-bw} Obstacle is at the Middle of the Path}
+	\end{subfigure}
+		\begin{subfigure}{.31\textwidth}
+		\centering
+		\includegraphics[width=0.30\unitlength]{images/path_images/inside-ww}
+		\caption{\label{fig:dataP_inside-ww} Obstacle is at the End of the Path.}
+	\end{subfigure}
+	\caption{\label{fig:dataP_inside} A Test Scenario Results: KKM Indoor Path Detection}
+\end{figure}
+
+	\begin{figure}[H]
+	\setlength{\unitlength}{\textwidth} 
+	\centering
+	\begin{subfigure}{.31\textwidth}
+		\centering
+		\includegraphics[width=0.30\unitlength]{images/path_images/outsideObs0}
+		\caption{\label{fig:dataP_outsideObs0} Obstacle is at the Beginning of the Path}
+	\end{subfigure}%
+	\begin{subfigure}{.31\textwidth}
+		\centering
+		\includegraphics[width=0.30\unitlength]{images/path_images/outsideObs1}
+		\caption{\label{fig:dataP_outsideObs1} Obstacle is at the Middle of the Path}
+	\end{subfigure}
+		\begin{subfigure}{.31\textwidth}
+		\centering
+		\includegraphics[width=0.30\unitlength]{images/path_images/outsideObs2}
+		\caption{\label{fig:dataP_outsideObs2} Obstacle is at the End of the Path.}
+	\end{subfigure}
+	\caption{\label{fig:dataP_outside} A Test Scenario Results: KKM Outdoor Path Detection}
+\end{figure}	
 		
 		
 	\subsubsection*{Results of PID Controller Subsystem Tests}

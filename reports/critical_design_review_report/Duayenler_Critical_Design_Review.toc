@@ -1,5 +1,5 @@
-\babel@toc {english}{}
-\babel@toc {english}{}
+\select@language {english}
+\select@language {english}
 \contentsline {section}{\numberline {1}Introduction}{2}
 \contentsline {section}{\numberline {2}Overall System}{3}
 \contentsline {subsection}{\numberline {2.1}Sensing System}{4}
@@ -21,13 +21,13 @@
 \contentsline {subsubsection}{\numberline {2.6.1}Chassis Subsystem}{21}
 \contentsline {subsubsection}{\numberline {2.6.2}Printed Circuit Board Subsystem}{22}
 \contentsline {subsection}{\numberline {2.7}Compatibility of the Subsystems}{23}
-\contentsline {section}{\numberline {3}Detailed Tests for the Subsystems}{23}
+\contentsline {section}{\numberline {3}Detailed Tests for the Subsystems}{24}
 \contentsline {section}{\numberline {4}Testing Stage}{30}
 \contentsline {subsection}{\numberline {4.1}Test Results, Encountered Problems and Possible Solutions for Subsystems}{30}
-\contentsline {subsection}{\numberline {4.2}Robustness of the Design}{32}
-\contentsline {section}{\numberline {5}Other Considerations}{32}
-\contentsline {subsection}{\numberline {5.1}Cost Analysis}{32}
-\contentsline {subsection}{\numberline {5.2}Power Analysis}{33}
-\contentsline {section}{\numberline {6}Conclusion}{35}
-\contentsline {section}{\numberline {7}Disclaimer}{36}
-\contentsline {section}{Appendix \numberline {A}Gannt Chart}{37}
+\contentsline {subsection}{\numberline {4.2}Robustness of the Design}{34}
+\contentsline {section}{\numberline {5}Other Considerations}{34}
+\contentsline {subsection}{\numberline {5.1}Cost Analysis}{34}
+\contentsline {subsection}{\numberline {5.2}Power Analysis}{35}
+\contentsline {section}{\numberline {6}Conclusion}{37}
+\contentsline {section}{\numberline {7}Disclaimer}{38}
+\contentsline {section}{Appendix \numberline {A}Gannt Chart}{39}
