@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.16)  7 MAR 2019 12:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.16)  7 MAR 2019 12:55
 entering extended mode
 **./Duayenler_Critical_Design_Review.tex
 (Duayenler_Critical_Design_Review.tex
@@ -548,23 +548,1307 @@ File: tikzlibraryfadings.code.tex 2009/11/15 v3.0.1a (rcs-revision 1.2)
 ("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\pg
 flibraryfadings.code.tex"
 File: pgflibraryfadings.code.tex 2008/02/07 v3.0.1a (rcs-revision 1.3)
+)))
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count126
+\calc@Bcount=\count127
+\calc@Adimen=\dimen169
+\calc@Bdimen=\dimen170
+\calc@Askip=\skip46
+\calc@Bskip=\skip47
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count128
+\calc@Cskip=\skip48
+)
+\c@@todonotes@numberoftodonotes=\count129
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\was\gensymb.sty"
+Package: gensymb 2003/07/02 v1.0 (WaS)
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count130
+\float@exts=\toks40
+\float@box=\box39
+\@float@everytoks=\toks41
+\@floatcapt=\box40
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fancyref\fancyref.
+sty"
+Package: fancyref 1999/02/03 v0.9c Fancy cross-referencing
 
-! I can't write on file `Duayenler_Critical_Design_Review.pdf'.
-Please type another file name for output
-! Emergency stop.
-\pgfsys@horishading ...e] >> >>}\pgfutil@tempboxa 
-                                                  \expandafter \xdef \csname...
-l.17 ...t!100); color(100bp)=(pgftransparent!100)}
-                                                  
-*** (job aborted, file error in nonstop mode)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\varioref.sty
+"
+Package: varioref 2016/02/16 v1.5c package for extended references (FMi)
+\c@vrcnt=\count131
+))
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\subcaption
+.sty"
+Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
 
- 
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\caption.st
+y"
+Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\caption3.s
+ty"
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen171
+\captionmargin@=\dimen172
+\captionwidth=\dimen173
+\caption@tempdima=\dimen174
+\caption@indent=\dimen175
+\caption@parindent=\dimen176
+\caption@hangindent=\dimen177
+)
+\c@caption@flags=\count132
+\c@ContinuedFloat=\count133
+Package caption Info: float package is loaded.
+)
+\c@subfigure=\count134
+\c@subtable=\count135
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\appendix\appendix.
+sty"
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count136
+\c@@ppsavesec=\count137
+\c@@ppsaveapp=\count138
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listings.
+sty"
+\lst@mode=\count139
+\lst@gtempboxa=\box41
+\lst@token=\toks42
+\lst@length=\count140
+\lst@currlwidth=\dimen178
+\lst@column=\count141
+\lst@pos=\count142
+\lst@lostspace=\dimen179
+\lst@width=\dimen180
+\lst@newlines=\count143
+\lst@lineno=\count144
+\lst@maxwidth=\dimen181
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstmisc.s
+ty"
+File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
+\c@lstnumber=\count145
+\lst@skipnumbers=\count146
+\lst@framebox=\box42
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listings.
+cfg"
+File: listings.cfg 2018/09/02 1.7 listings configuration
+))
+Package: listings 2018/09/02 1.7 (Carsten Heinz)
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\xspace.sty"
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amssymb.s
+ty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.
+sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\units\nicefrac.sty
+"
+Package: nicefrac 1998/08/04 v0.9b Nice fractions
+\L@UnitsRaiseDisplaystyle=\skip49
+\L@UnitsRaiseTextstyle=\skip50
+\L@UnitsRaiseScriptstyle=\skip51
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.
+sty"
+Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip52
+\f@nch@O@elh=\skip53
+\f@nch@O@erh=\skip54
+\f@nch@O@olh=\skip55
+\f@nch@O@orh=\skip56
+\f@nch@O@elf=\skip57
+\f@nch@O@erf=\skip58
+\f@nch@O@olf=\skip59
+\f@nch@O@orf=\skip60
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lipsum\lipsum.sty"
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty
+"
+Package: expl3 2018-11-19 L3 programming layer (loader) 
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3kernel\expl3-cod
+e.tex"
+Package: expl3 2018-11-19 L3 programming layer (code)
+\c_max_int=\count147
+\l_tmpa_int=\count148
+\l_tmpb_int=\count149
+\g_tmpa_int=\count150
+\g_tmpb_int=\count151
+\g__kernel_prg_map_int=\count152
+\c_log_iow=\count153
+\l_iow_line_count_int=\count154
+\l__iow_line_target_int=\count155
+\l__iow_one_indent_int=\count156
+\l__iow_indent_int=\count157
+\c_zero_dim=\dimen182
+\c_max_dim=\dimen183
+\l_tmpa_dim=\dimen184
+\l_tmpb_dim=\dimen185
+\g_tmpa_dim=\dimen186
+\g_tmpb_dim=\dimen187
+\c_zero_skip=\skip61
+\c_max_skip=\skip62
+\l_tmpa_skip=\skip63
+\l_tmpb_skip=\skip64
+\g_tmpa_skip=\skip65
+\g_tmpb_skip=\skip66
+\c_zero_muskip=\muskip11
+\c_max_muskip=\muskip12
+\l_tmpa_muskip=\muskip13
+\l_tmpb_muskip=\muskip14
+\g_tmpa_muskip=\muskip15
+\g_tmpb_muskip=\muskip16
+\l_keys_choice_int=\count158
+\l__intarray_loop_int=\count159
+\c__intarray_sp_dim=\dimen188
+\g__intarray_font_int=\count160
+\c__fp_leading_shift_int=\count161
+\c__fp_middle_shift_int=\count162
+\c__fp_trailing_shift_int=\count163
+\c__fp_big_leading_shift_int=\count164
+\c__fp_big_middle_shift_int=\count165
+\c__fp_big_trailing_shift_int=\count166
+\c__fp_Bigg_leading_shift_int=\count167
+\c__fp_Bigg_middle_shift_int=\count168
+\c__fp_Bigg_trailing_shift_int=\count169
+\c__kernel_randint_max_int=\count170
+\g__fp_array_int=\count171
+\l__fp_array_loop_int=\count172
+\l__sort_length_int=\count173
+\l__sort_min_int=\count174
+\l__sort_top_int=\count175
+\l__sort_max_int=\count176
+\l__sort_true_max_int=\count177
+\l__sort_block_int=\count178
+\l__sort_begin_int=\count179
+\l__sort_end_int=\count180
+\l__sort_A_int=\count181
+\l__sort_B_int=\count182
+\l__sort_C_int=\count183
+\l__tl_analysis_normal_int=\count184
+\l__tl_analysis_index_int=\count185
+\l__tl_analysis_nesting_int=\count186
+\l__tl_analysis_type_int=\count187
+\l__regex_internal_a_int=\count188
+\l__regex_internal_b_int=\count189
+\l__regex_internal_c_int=\count190
+\l__regex_balance_int=\count191
+\l__regex_group_level_int=\count192
+\l__regex_mode_int=\count193
+\c__regex_cs_in_class_mode_int=\count194
+\c__regex_cs_mode_int=\count195
+\l__regex_catcodes_int=\count196
+\l__regex_default_catcodes_int=\count197
+\c__regex_catcode_D_int=\count198
+\c__regex_catcode_S_int=\count199
+\c__regex_catcode_L_int=\count266
+\c__regex_catcode_O_int=\count267
+\c__regex_catcode_A_int=\count268
+\c__regex_all_catcodes_int=\count269
+\l__regex_show_lines_int=\count270
+\l__regex_min_state_int=\count271
+\l__regex_max_state_int=\count272
+\l__regex_left_state_int=\count273
+\l__regex_right_state_int=\count274
+\l__regex_capturing_group_int=\count275
+\l__regex_min_pos_int=\count276
+\l__regex_max_pos_int=\count277
+\l__regex_curr_pos_int=\count278
+\l__regex_start_pos_int=\count279
+\l__regex_success_pos_int=\count280
+\l__regex_curr_char_int=\count281
+\l__regex_curr_catcode_int=\count282
+\l__regex_last_char_int=\count283
+\l__regex_case_changed_char_int=\count284
+\l__regex_curr_state_int=\count285
+\l__regex_step_int=\count286
+\l__regex_min_active_int=\count287
+\l__regex_max_active_int=\count288
+\l__regex_replacement_csnames_int=\count289
+\l__regex_match_count_int=\count290
+\l__regex_min_submatch_int=\count291
+\l__regex_submatch_int=\count292
+\l__regex_zeroth_submatch_int=\count293
+\g__regex_trace_regex_int=\count294
+\c_empty_box=\box43
+\l_tmpa_box=\box44
+\l_tmpb_box=\box45
+\g_tmpa_box=\box46
+\g_tmpb_box=\box47
+\l__box_top_dim=\dimen189
+\l__box_bottom_dim=\dimen190
+\l__box_left_dim=\dimen191
+\l__box_right_dim=\dimen192
+\l__box_top_new_dim=\dimen193
+\l__box_bottom_new_dim=\dimen194
+\l__box_left_new_dim=\dimen195
+\l__box_right_new_dim=\dimen196
+\l__box_internal_box=\box48
+\l__coffin_internal_box=\box49
+\l__coffin_internal_dim=\dimen197
+\l__coffin_offset_x_dim=\dimen198
+\l__coffin_offset_y_dim=\dimen199
+\l__coffin_x_dim=\dimen256
+\l__coffin_y_dim=\dimen257
+\l__coffin_x_prime_dim=\dimen258
+\l__coffin_y_prime_dim=\dimen259
+\c_empty_coffin=\box50
+\l__coffin_aligned_coffin=\box51
+\l__coffin_aligned_internal_coffin=\box52
+\l_tmpa_coffin=\box53
+\l_tmpb_coffin=\box54
+\l__coffin_display_coffin=\box55
+\l__coffin_display_coord_coffin=\box56
+\l__coffin_display_pole_coffin=\box57
+\l__coffin_display_offset_dim=\dimen260
+\l__coffin_display_x_dim=\dimen261
+\l__coffin_display_y_dim=\dimen262
+\g__file_internal_ior=\read2
+\l__coffin_bounding_shift_dim=\dimen263
+\l__coffin_left_corner_dim=\dimen264
+\l__coffin_right_corner_dim=\dimen265
+\l__coffin_bottom_corner_dim=\dimen266
+\l__coffin_top_corner_dim=\dimen267
+\l__coffin_scaled_total_height_dim=\dimen268
+\l__coffin_scaled_width_dim=\dimen269
+\l__seq_internal_a_int=\count295
+\l__seq_internal_b_int=\count296
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3kernel\l3pdfmode
+.def"
+File: l3pdfmode.def 2018-11-19 v L3 Experimental driver: PDF mode
+\l__driver_color_stack_int=\count297
+))
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3packages\xparse\
+xparse.sty"
+Package: xparse 2018-10-17 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count298
+\g__xparse_grabber_int=\count299
+\l__xparse_m_args_int=\count300
+\l__xparse_mandatory_args_int=\count301
+\l__xparse_v_nesting_int=\count302
+)
+Package: lipsum 2018/11/24 v2.1a 150 paragraphs of Lorem Ipsum dummy text
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.
+sty"
+Package: pdfpages 2017/10/31 v0.5l Insert pages of external PDF documents (AM)
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.st
+y"
+Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\atbegsh
+i.sty"
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infware
+rr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds
+.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+\AM@pagewidth=\dimen270
+\AM@pageheight=\dimen271
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.
+def"
+File: pppdftex.def 2017/10/31 v0.5l Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box58
+\AM@global@opts=\toks43
+\AM@toc@title=\toks44
+\c@AM@survey=\count303
+\AM@templatesizebox=\box59
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgfplots\pgfplots.
+sty"
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+s.revision.tex")
+Package: pgfplots 2018/03/28 v1.16 Data Visualization (1.16)
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+s.code.tex"
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+score.code.tex"
+\t@pgfplots@toka=\toks45
+\t@pgfplots@tokb=\toks46
+\t@pgfplots@tokc=\toks47
+\pgfplots@tmpa=\dimen272
+\c@pgfplots@coordindex=\count304
+\c@pgfplots@scanlineindex=\count305
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\sys\pgf
+plotssysgeneric.code.tex"))
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\libs\pg
+fplotslibrary.code.tex")
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\oldpgfc
+ompatib\pgfplotsoldpgfsupp_loader.code.tex"
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\pg
+flibraryfpu.code.tex")
+Package pgfplots: loading complementary arithmetics for your pgf version...
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\oldpgfc
+ompatib\pgfplotsoldpgfsupp_pgflibraryfpu.code.tex")
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\oldpgfc
+ompatib\pgfplotsoldpgfsupp_pgfmathfloat.code.tex"
+\c@pgfmathroundto@lastzeros=\count306
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\oldpgfc
+ompatib\pgfplotsoldpgfsupp_leq.code.tex"))
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\util\pg
+fplotsutil.code.tex"
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\liststr
+ucture\pgfplotsliststructure.code.tex")
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\liststr
+ucture\pgfplotsliststructureext.code.tex")
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\liststr
+ucture\pgfplotsarray.code.tex"
+\c@pgfplotsarray@tmp=\count307
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\liststr
+ucture\pgfplotsmatrix.code.tex")
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\numtabl
+e\pgfplotstableshared.code.tex"
+\c@pgfplotstable@counta=\count308
+\t@pgfplotstable@a=\toks48
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\liststr
+ucture\pgfplotsdeque.code.tex")
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\util\pg
+fplotsbinary.code.tex"
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\util\pg
+fplotsbinary.data.code.tex"))
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\util\pg
+fplotsutil.verb.code.tex")
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\libs\pg
+flibrarypgfplots.surfshading.code.tex"
+\c@pgfplotslibrarysurf@no=\count309
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\sys\pgf
+librarypgfplots.surfshading.pgfsys-pdftex.def")))
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\util\pg
+fplotscolormap.code.tex"
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\util\pg
+fplotscolor.code.tex"))
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+sstackedplots.code.tex")
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+splothandlers.code.tex"
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+smeshplothandler.code.tex"
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+smeshplotimage.code.tex")))
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+s.scaling.code.tex")
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+scoordprocessing.code.tex")
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+s.errorbars.code.tex")
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+s.markers.code.tex")
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+sticks.code.tex")
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+s.paths.code.tex")
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlaye
+r\tikz\libraries\tikzlibrarydecorations.code.tex"
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pgfm
+oduledecorations.code.tex"
+\pgfdecoratedcompleteddistance=\dimen273
+\pgfdecoratedremainingdistance=\dimen274
+\pgfdecoratedinputsegmentcompleteddistance=\dimen275
+\pgfdecoratedinputsegmentremainingdistance=\dimen276
+\pgf@decorate@distancetomove=\dimen277
+\pgf@decorate@repeatstate=\count310
+\pgfdecorationsegmentamplitude=\dimen278
+\pgfdecorationsegmentlength=\dimen279
+)
+\tikz@lib@dec@box=\box60
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlaye
+r\tikz\libraries\tikzlibrarydecorations.pathmorphing.code.tex"
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\de
+corations\pgflibrarydecorations.pathmorphing.code.tex"))
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlaye
+r\tikz\libraries\tikzlibrarydecorations.pathreplacing.code.tex"
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\de
+corations\pgflibrarydecorations.pathreplacing.code.tex"))
+\pgfplots@numplots=\count311
+\pgfplots@xmin@reg=\dimen280
+\pgfplots@xmax@reg=\dimen281
+\pgfplots@ymin@reg=\dimen282
+\pgfplots@ymax@reg=\dimen283
+\pgfplots@zmin@reg=\dimen284
+\pgfplots@zmax@reg=\dimen285
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlaye
+r\tikz\libraries\tikzlibraryplotmarks.code.tex"
+File: tikzlibraryplotmarks.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\pg
+flibraryplotmarks.code.tex"
+File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
+)))
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\adjustbox\adjustbo
+x.sty"
+Package: adjustbox 2018/04/08 v1.1 Adjusting TeX boxes (trim, clip, ...)
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\adjustbox\adjcalc.
+sty"
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\adjustbox\trimclip
+.sty"
+Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\collectbox\collect
+box.sty"
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box61
+)
+\tc@llx=\dimen286
+\tc@lly=\dimen287
+\tc@urx=\dimen288
+\tc@ury=\dimen289
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\adjustbox\tc-pdfte
+x.def"
+File: tc-pdftex.def 2018/04/08 v2.1 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen290
+\adjbox@Height=\dimen291
+\adjbox@Depth=\dimen292
+\adjbox@Totalheight=\dimen293
+\adjbox@pwidth=\dimen294
+\adjbox@pheight=\dimen295
+\adjbox@pdepth=\dimen296
+\adjbox@ptotalheight=\dimen297
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ifoddpage\ifoddpag
+e.sty"
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count312
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\varwidth\varwidth.
+sty"
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box62
+\sift@deathcycles=\count313
+\@vwid@loff=\dimen298
+\@vwid@roff=\dimen299
+))
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\setspace\setspace.
+sty"
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\algorithm2e\algori
+thm2e.sty"
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count314
+\algocf@hangindent=\skip67
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\relsize\relsize.st
+y"
+Package: relsize 2013/03/29 ver 4.1
+)
+\skiptotal=\skip68
+\skiplinenumber=\skip69
+\skiprule=\skip70
+\skiphlne=\skip71
+\skiptext=\skip72
+\skiplength=\skip73
+\algomargin=\skip74
+\skipalgocfslide=\skip75
+\algowidth=\dimen300
+\inoutsize=\dimen301
+\inoutindent=\dimen302
+\interspacetitleruled=\dimen303
+\interspacealgoruled=\dimen304
+\interspacetitleboxruled=\dimen305
+\algocf@ruledwidth=\skip76
+\algocf@inoutbox=\box63
+\algocf@inputbox=\box64
+\AlCapSkip=\skip77
+\AlCapHSkip=\skip78
+\algoskipindent=\skip79
+\algocf@nlbox=\box65
+\algocf@hangingbox=\box66
+\algocf@untilbox=\box67
+\algocf@skipuntil=\skip80
+\algocf@capbox=\box68
+\algocf@lcaptionbox=\skip81
+\algoheightruledefault=\skip82
+\algoheightrule=\skip83
+\algotitleheightruledefault=\skip84
+\algotitleheightrule=\skip85
+\c@algocfline=\count315
+\c@algocfproc=\count316
+\c@algocf=\count317
+\algocf@algoframe=\box69
+\algocf@algobox=\box70
+) (../../documents/arduinoLanguage.tex
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\courier.sty
+"
+Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
+)) (../../documents/configuration.tex
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstlang1.
+sty"
+File: lstlang1.sty 2018/09/02 1.7 listings language file
+)) (Duayenler_Critical_Design_Review.aux)
+\openout1 = `Duayenler_Critical_Design_Review.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(74.71704pt, 448.07378pt, 74.71706pt)
+* v-part:(T,H,B)=(77.84674pt, 650.43pt, 116.77011pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=448.07378pt
+* \textheight=650.43pt
+* \oddsidemargin=2.44705pt
+* \evensidemargin=2.44705pt
+* \topmargin=-31.42325pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ucs\ucsencs.def"
+File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
+ii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count318
+\scratchdimen=\dimen306
+\scratchbox=\box71
+\nofMPsegments=\count319
+\nofMParguments=\count320
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count321
+\MPscratchDim=\dimen307
+\MPnumerator=\count322
+\makeMPintoPDFobject=\count323
+\everyMPtoPDFconversion=\toks50
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-
+base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext.st
+y"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvdefin
+ekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptions
+.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvsetke
+ys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\etexcmd
+s.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifluate
+x.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\pdftexc
+mds.sty"
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+) ABD: EveryShipout initializing macros
+
+Package todonotes Warning: The length marginparwidth is less than 2cm and will 
+most likely cause issues with the appearance of inserted todonotes. The issue c
+an be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to 
+loading the todonotes package. on input line 57.
+
+LaTeX Info: Redefining \celsius on input line 57.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 57.
+
+
+Package gensymb Warning: Not defining \perthousand.
+
+LaTeX Info: Redefining \ohm on input line 57.
+Package gensymb Info: Using \Omega for \ohm on input line 57.
+
+Package gensymb Warning: Not defining \micro.
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count324
+\AtBeginShipoutBox=\box72
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\pdflscape
+.sty"
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\lscape.st
+y"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+
+Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
+ick labels; missing features). Consider writing \pgfplotsset{compat=1.16} into 
+your preamble.
+ on input line 57.
+
+<../../documents/logos/logo3-with-stroke.png, id=28, 1508.63625pt x 379.4175pt>
+
+File: ../../documents/logos/logo3-with-stroke.png Graphic file (type png)
+<use ../../documents/logos/logo3-with-stroke.png>
+Package pdftex.def Info: ../../documents/logos/logo3-with-stroke.png  used on i
+nput line 64.
+(pdftex.def)             Requested size: 448.05945pt x 112.68561pt.
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ucs\uni-0.def"
+File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 80.
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 80.
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) ("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ucs\uni-1.def"
+File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
+)
+[1
+
+{C:/Users/ilker/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <../../docum
+ents/logos/logo3-with-stroke.png>] (Duayenler_Critical_Design_Review.toc)
+\tf@toc=\write4
+\openout4 = `Duayenler_Critical_Design_Review.toc'.
+
+
+[1]
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+
+ []
+
+[2]
+<images/system.png, id=44, 1851.91875pt x 777.90625pt>
+File: images/system.png Graphic file (type png)
+<use images/system.png>
+Package pdftex.def Info: images/system.png  used on input line 130.
+(pdftex.def)             Requested size: 448.07378pt x 188.20879pt.
+<images/vModels/vmodel.png, id=45, 1436.36626pt x 534.49687pt>
+File: images/vModels/vmodel.png Graphic file (type png)
+<use images/vModels/vmodel.png>
+Package pdftex.def Info: images/vModels/vmodel.png  used on input line 140.
+(pdftex.def)             Requested size: 448.07378pt x 166.73625pt.
+
+Overfull \hbox (39.34796pt too wide) in paragraph at lines 147--147
+[][][][]\OT1/cmr/m/n/12 justifications 
+ []
+
+
+Overfull \hbox (3.96777pt too wide) in paragraph at lines 147--147
+\OT1/cmr/m/n/12 quire- 
+ []
+
+
+Overfull \hbox (4.68582pt too wide) in paragraph at lines 147--147
+\OT1/cmr/m/n/12 ments  
+ []
+
+
+Overfull \hbox (39.34796pt too wide) in paragraph at lines 147--147
+[][][][]\OT1/cmr/m/n/12 justifications 
+ []
+
+
+Overfull \hbox (3.96777pt too wide) in paragraph at lines 147--147
+\OT1/cmr/m/n/12 quire- 
+ []
+
+
+Overfull \hbox (4.68582pt too wide) in paragraph at lines 147--147
+\OT1/cmr/m/n/12 ments  
+ []
+
+
+Overfull \hbox (34.32162pt too wide) in paragraph at lines 147--147
+[][][][]\OT1/cmr/m/n/12 Compliance 
+ []
+
+
+Overfull \hbox (34.32162pt too wide) in paragraph at lines 147--147
+[][][][]\OT1/cmr/m/n/12 Compliance 
+ []
+
+[3 <./images/system.png> <./images/vModels/vmodel.png>]
+
+LaTeX Warning: Marginpar on page 4 moved.
+
+
+LaTeX Warning: Marginpar on page 4 moved.
+
+<images/vModels/laneDetection_subsystem.png, id=51, 1150.2975pt x 383.031pt>
+File: images/vModels/laneDetection_subsystem.png Graphic file (type png)
+<use images/vModels/laneDetection_subsystem.png>
+Package pdftex.def Info: images/vModels/laneDetection_subsystem.png  used on in
+put line 187.
+(pdftex.def)             Requested size: 416.70532pt x 138.75604pt.
+[4 <./images/vModels/laneDetection_subsystem.png>] [5]
+<images/vModels/dataProcessing_subsystem.png, id=60, 1141.26375pt x 287.27325pt
+>
+File: images/vModels/dataProcessing_subsystem.png Graphic file (type png)
+<use images/vModels/dataProcessing_subsystem.png>
+Package pdftex.def Info: images/vModels/dataProcessing_subsystem.png  used on i
+nput line 271.
+(pdftex.def)             Requested size: 416.70532pt x 104.89111pt.
+<images/camera_vision_explained.png, id=61, 350.62994pt x 147.9126pt>
+File: images/camera_vision_explained.png Graphic file (type png)
+<use images/camera_vision_explained.png>
+Package pdftex.def Info: images/camera_vision_explained.png  used on input line
+ 276.
+(pdftex.def)             Requested size: 416.70532pt x 175.78795pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[6] [7 <./images/vModels/dataProcessing_subsystem.png> <./images/camera_vision_
+explained.png>]
+Overfull \hbox (29.3747pt too wide) in paragraph at lines 286--320
+$[]$ 
+ []
+
+<images/dataP_explained1.png, id=70, 161.6439pt x 121.05225pt>
+File: images/dataP_explained1.png Graphic file (type png)
+<use images/dataP_explained1.png>
+Package pdftex.def Info: images/dataP_explained1.png  used on input line 329.
+(pdftex.def)             Requested size: 197.15355pt x 147.64656pt.
+<images/dataP_explained2.png, id=71, 161.6439pt x 121.05225pt>
+File: images/dataP_explained2.png Graphic file (type png)
+<use images/dataP_explained2.png>
+Package pdftex.def Info: images/dataP_explained2.png  used on input line 334.
+(pdftex.def)             Requested size: 197.15355pt x 147.64656pt.
+<images/dataP_explained3.png, id=72, 161.6439pt x 121.05225pt>
+File: images/dataP_explained3.png Graphic file (type png)
+<use images/dataP_explained3.png>
+Package pdftex.def Info: images/dataP_explained3.png  used on input line 344.
+(pdftex.def)             Requested size: 197.15355pt x 147.64656pt.
+<images/dataP_explained4.png, id=73, 161.6439pt x 121.05225pt>
+File: images/dataP_explained4.png Graphic file (type png)
+<use images/dataP_explained4.png>
+Package pdftex.def Info: images/dataP_explained4.png  used on input line 349.
+(pdftex.def)             Requested size: 197.15355pt x 147.64656pt.
+[8] [9 <./images/dataP_explained1.png> <./images/dataP_explained2.png> <./image
+s/dataP_explained3.png> <./images/dataP_explained4.png>]
+
+LaTeX Warning: Reference `label' on page 10 undefined on input line 362.
+
+
+Overfull \hbox (27.9467pt too wide) in paragraph at lines 362--362
+[][][][]\OT1/cmr/m/n/12 SECTION 
+ []
+
+
+Overfull \hbox (30.55367pt too wide) in paragraph at lines 362--362
+\OT1/cmr/m/n/12 REFERLE  
+ []
+
+
+Overfull \hbox (27.9467pt too wide) in paragraph at lines 362--362
+[][][][]\OT1/cmr/m/n/12 SECTION 
+ []
+
+
+Overfull \hbox (30.55367pt too wide) in paragraph at lines 362--362
+\OT1/cmr/m/n/12 REFERLE  
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 384.
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 384.
+<images/ang_cont.png, id=87, 163.5711pt x 123.0999pt>
+File: images/ang_cont.png Graphic file (type png)
+<use images/ang_cont.png>
+Package pdftex.def Info: images/ang_cont.png  used on input line 407.
+(pdftex.def)             Requested size: 215.07349pt x 161.86685pt.
+<images/dist_cont.png, id=88, 163.5711pt x 123.0999pt>
+File: images/dist_cont.png Graphic file (type png)
+<use images/dist_cont.png>
+Package pdftex.def Info: images/dist_cont.png  used on input line 412.
+(pdftex.def)             Requested size: 215.07349pt x 161.86685pt.
+
+[10] [11 <./images/ang_cont.png> <./images/dist_cont.png>]
+<images/simulink/modelling2.png, id=97, 1415.2875pt x 465.23813pt>
+File: images/simulink/modelling2.png Graphic file (type png)
+<use images/simulink/modelling2.png>
+Package pdftex.def Info: images/simulink/modelling2.png  used on input line 448
+.
+(pdftex.def)             Requested size: 336.05533pt x 110.4668pt.
+<images/simulink/modelling1.png, id=98, 1415.2875pt x 590.205pt>
+File: images/simulink/modelling1.png Graphic file (type png)
+<use images/simulink/modelling1.png>
+Package pdftex.def Info: images/simulink/modelling1.png  used on input line 453
+.
+(pdftex.def)             Requested size: 448.07378pt x 186.85216pt.
+ [12 <./images/simulink/modelling2.png> <./images/simulink/modelling1.png>] [13
+]
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstlang1.
+sty"
+File: lstlang1.sty 2018/09/02 1.7 listings language file
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstlang1.
+sty"
+File: lstlang1.sty 2018/09/02 1.7 listings language file
+)
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstmisc.s
+ty"
+File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
+)
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 532.
+
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 536--537
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 538.
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omspcr.fd"
+File: omspcr.fd 
+)
+LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 538.
+
+Overfull \hbox (2.23065pt too wide) in paragraph at lines 538--539
+\OT1/cmr/m/n/12 rial ports. Script 1[] is used to de-clare a se-rial ob-ject. T
+hen us-ing \OT1/pcr/m/n/12 ar.write("some
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 538--539
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 541--542
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 547--548
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 549--550
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 551--552
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 553--554
+
+ []
+
+[15]
+
+LaTeX Warning: Reference `fig:socket_funcs' on page 16 undefined on input line 
+573.
+
+("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+)
+Underfull \hbox (badness 10000) in paragraph at lines 590--591
+
+ []
+
+[16] [17]
+
+LaTeX Warning: Reference `fig:speed-state' on page 18 undefined on input line 6
+60.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 660--661
+
+ []
+
+[18]
+Overfull \hbox (27.45447pt too wide) in paragraph at lines 670--670
+[][][][]\OT1/cmr/m/n/12 line[]angle- 
+ []
+
+
+Overfull \hbox (29.21695pt too wide) in paragraph at lines 670--670
+\OT1/cmr/m/n/12 base[]speed  
+ []
+
+
+Overfull \hbox (27.45447pt too wide) in paragraph at lines 670--670
+[][][][]\OT1/cmr/m/n/12 line[]angle- 
+ []
+
+
+Overfull \hbox (29.21695pt too wide) in paragraph at lines 670--670
+\OT1/cmr/m/n/12 base[]speed  
+ []
+
+[19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 779--780
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 781--782
+
+ []
+
+
+LaTeX Warning: Reference `fig:camera-holder' on page 21 undefined on input line
+ 783.
+
+
+LaTeX Warning: Reference `fig:chassis' on page 21 undefined on input line 783.
+
+
+LaTeX Warning: Reference `fig:detection-test-results' on page 21 undefined on i
+nput line 783.
+
+[21]
+
+LaTeX Warning: Reference `fig:chassis' on page 22 undefined on input line 787.
+
+<images/chassis1.png, id=133, 1317.42188pt x 846.16125pt>
+File: images/chassis1.png Graphic file (type png)
+<use images/chassis1.png>
+Package pdftex.def Info: images/chassis1.png  used on input line 791.
+(pdftex.def)             Requested size: 358.46039pt x 230.23544pt.
+
+Overfull \hbox (7.62329pt too wide) in paragraph at lines 795--795
+[][][][]\OT1/cmr/m/n/12 choose 
+ []
+
+
+Overfull \hbox (7.62329pt too wide) in paragraph at lines 795--795
+[][][][]\OT1/cmr/m/n/12 choose 
+ []
+
+File: images/chassis1.png Graphic file (type png)
+<use images/chassis1.png>
+Package pdftex.def Info: images/chassis1.png  used on input line 802.
+(pdftex.def)             Requested size: 215.07349pt x 138.13869pt.
+<images/chassis2.png, id=134, 1317.42188pt x 846.16125pt>
+File: images/chassis2.png Graphic file (type png)
+<use images/chassis2.png>
+Package pdftex.def Info: images/chassis2.png  used on input line 807.
+(pdftex.def)             Requested size: 215.07349pt x 138.13869pt.
+[22 <./images/chassis1.png> <./images/chassis2.png>]
+<images/subsys_block.png, id=140, 581.5326pt x 297.7524pt>
+File: images/subsys_block.png Graphic file (type png)
+<use images/subsys_block.png>
+Package pdftex.def Info: images/subsys_block.png  used on input line 851.
+(pdftex.def)             Requested size: 448.07378pt x 229.42906pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[23] [24 <./images/subsys_block.png>] [25]
+<images/bump_test_dist.png, id=152, 730.98094pt x 268.75406pt>
+File: images/bump_test_dist.png Graphic file (type png)
+<use images/bump_test_dist.png>
+Package pdftex.def Info: images/bump_test_dist.png  used on input line 1013.
+(pdftex.def)             Requested size: 336.05533pt x 123.55455pt.
+<images/bump_test_ang.png, id=153, 787.44188pt x 639.89063pt>
+File: images/bump_test_ang.png Graphic file (type png)
+<use images/bump_test_ang.png>
+Package pdftex.def Info: images/bump_test_ang.png  used on input line 1025.
+(pdftex.def)             Requested size: 201.63182pt x 163.84854pt.
+ [26 <./images/bump_test_dist.png> <./images/bump_test_ang.png>] [27] [28] [29]
+
+
+LaTeX Warning: Reference `fig:detection-test-results' on page 30 undefined on i
+nput line 1244.
+
+[30]
+
+LaTeX Warning: Reference `fig:turn-prediction-explained' on page 31 undefined o
+n input line 1277.
+
+
+LaTeX Warning: Reference `fig:handshake1' on page 31 undefined on input line 13
+09.
+
+
+LaTeX Warning: Reference `fig:handshake2' on page 31 undefined on input line 13
+09.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1347--1348
+
+ []
+
+[31] [32]
+<images/elec_arch.png, id=178, 300.3722pt x 372.64218pt>
+File: images/elec_arch.png Graphic file (type png)
+<use images/elec_arch.png>
+Package pdftex.def Info: images/elec_arch.png  used on input line 1432.
+(pdftex.def)             Requested size: 224.03688pt x 277.95139pt.
+ [33] [34 <./images/elec_arch.png>] [35]
+Overfull \hbox (13.14651pt too wide) in paragraph at lines 1449--1461
+[][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1449--1461
+
+ []
+
+
+Overfull \hbox (13.1397pt too wide) in paragraph at lines 1462--1470
+[][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1462--1470
+
+ []
+
+
+Overfull \hbox (15.38225pt too wide) in paragraph at lines 1471--1479
+[][][] 
+ []
+
+[36]
+
+pdfTeX warning: pdflatex.exe (file ./gantt.pdf): PDF inclusion: found PDF versi
+on <1.7>, but at most version <1.5> allowed
+<gantt.pdf, id=194, 845.1575pt x 597.23125pt>
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf>
+Package pdftex.def Info: gantt.pdf  used on input line 1484.
+(pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./gantt.pdf): PDF inclusion: found PDF versi
+on <1.7>, but at most version <1.5> allowed
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf>
+Package pdftex.def Info: gantt.pdf  used on input line 1484.
+(pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./gantt.pdf): PDF inclusion: found PDF versi
+on <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./gantt.pdf): PDF inclusion: found PDF versi
+on <1.7>, but at most version <1.5> allowed
+<gantt.pdf, id=197, page=1, 845.1575pt x 597.23125pt>
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf, page 1>
+Package pdftex.def Info: gantt.pdf , page1 used on input line 1484.
+(pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf, page 1>
+Package pdftex.def Info: gantt.pdf , page1 used on input line 1484.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf, page 1>
+Package pdftex.def Info: gantt.pdf , page1 used on input line 1484.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf, page 1>
+Package pdftex.def Info: gantt.pdf , page1 used on input line 1484.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf, page 1>
+Package pdftex.def Info: gantt.pdf , page1 used on input line 1484.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+[37 <./gantt.pdf>]
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf>
+Package pdftex.def Info: gantt.pdf  used on input line 1485.
+(pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./gantt.pdf): PDF inclusion: found PDF versi
+on <1.7>, but at most version <1.5> allowed
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf>
+Package pdftex.def Info: gantt.pdf  used on input line 1485.
+(pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./gantt.pdf): PDF inclusion: found PDF versi
+on <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./gantt.pdf): PDF inclusion: found PDF versi
+on <1.7>, but at most version <1.5> allowed
+<gantt.pdf, id=206, page=2, 845.1575pt x 597.23125pt>
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf, page 2>
+Package pdftex.def Info: gantt.pdf , page2 used on input line 1485.
+(pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf, page 2>
+Package pdftex.def Info: gantt.pdf , page2 used on input line 1485.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf, page 2>
+Package pdftex.def Info: gantt.pdf , page2 used on input line 1485.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf, page 2>
+Package pdftex.def Info: gantt.pdf , page2 used on input line 1485.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf, page 2>
+Package pdftex.def Info: gantt.pdf , page2 used on input line 1485.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+[38 <./gantt.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./gantt.pdf): PDF inclusion: found PDF versi
+on <1.7>, but at most version <1.5> allowed
+<gantt.pdf, id=212, page=3, 845.1575pt x 597.23125pt>
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf, page 3>
+Package pdftex.def Info: gantt.pdf , page3 used on input line 1485.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf, page 3>
+Package pdftex.def Info: gantt.pdf , page3 used on input line 1485.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf, page 3>
+Package pdftex.def Info: gantt.pdf , page3 used on input line 1485.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+[39 <./gantt.pdf>] (Duayenler_Critical_Design_Review.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 12605 strings out of 492970
- 254175 string characters out of 3126593
- 314529 words of memory out of 3000000
- 16243 multiletter control sequences out of 15000+200000
- 3938 words of font info for 15 fonts, out of 3000000 for 9000
+ 41582 strings out of 492970
+ 924372 string characters out of 3126593
+ 1372811 words of memory out of 3000000
+ 44797 multiletter control sequences out of 15000+200000
+ 542087 words of font info for 59 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,1n,79p,489b,135s stack positions out of 5000i,500n,10000p,200000b,50000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 62i,21n,96p,2016b,1664s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/ilker/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
+}<C:/Users/ilker/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb><C:/Users/ilker/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmcsc10.pfb><C:/Users/ilker/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/ilker/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/ilker/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ilke
+r/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C
+:/Users/ilker/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr6.pfb><C:/Users/ilker/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmr8.pfb><C:/Users/ilker/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmss12.pfb><C:/Users/ilker/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ilker/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/ilker/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on Duayenler_Critical_Design_Review.pdf (40 pages, 1800133 bytes
+).
+PDF statistics:
+ 259 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 249 words of extra memory for PDF output out of 10000 (max. 10000000)
+
