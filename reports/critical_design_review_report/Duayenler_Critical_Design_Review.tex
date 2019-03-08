@@ -282,69 +282,72 @@ Are they done?
 			\begin{figure}[h]
 				\centering
 				\includegraphics[width=0.93\textwidth]{images/camera_vision_explained}
-				\caption{Block Diagram of the Lane Detection Subsystem}\label{fig:camera_vision_explained}
+				\caption{The Explanation of Frame Sections}\label{fig:camera_vision_explained}
 			\end{figure}
 		
-			The task of this subsystem is to determine the steering angle of the vehicle so that the vehicle can steer to the target point. The input of the subsystem is the coordinate array produced by Lane Detection subsystem. The input is processed by a detailed algorithm and the output is steering angle. The processing is done by taking into consideration the reference frame. The reference frame is shown in \textit{Figure ~\ref{fig:camera_vision_explained}}. This figure summarizes the three main frames. The Lane Detection subsystem extracted ROI out of full camera frame. The Data Processing subsystem processes the data of ROI but produces output for the Region of Target (ROT). The reason is, ROI is good to determine possible obstacles on the path but steering to a target point that is almost 15 cm away from the vehicle is not realistic.  For this reason ROI is not used for determining steering angle, instead ROT is used.
+			The task of this subsystem is to determine the steering angle of the vehicle so that the vehicle can steer to the target point. The input of the subsystem is the coordinate array produced by Lane Detection subsystem. The input is processed by a detailed algorithm and the output is steering angle. The processing is done by taking into consideration the reference frame. The reference frame is shown in \textit{Figure ~\ref{fig:camera_vision_explained}}. This figure summarizes the three frame sections that are used throughout this report. The Lane Detection subsystem extracted ROI out of full camera frame. The Data Processing subsystem processes the data of ROI but produces output for the Region of Target (ROT). The reason is, ROI is good to determine possible obstacles on the path but steering to a target point that is almost 15 cm away from the vehicle is not realistic.  For this reason ROI is not used for determining steering angle, instead ROT is used.
 			
 			There are four main steps to determine the steering angle.  The first step is to classify the lines as left and right. The second step is to eliminate the possible incorrect lines, if any. The third step is to fit the best lines through the left and right lines and reduce the total number of lines to two that are left and right lines. The last step is to find steering angle by connecting 320th horizontal pixel with the average end points of the lane lines. The block diagram of the subsystem is given in \textit{Figure~\ref{fig:dataProcessing_subsystem}}.
 			
 			Classifying a line is done in two steps. First, lines are divided into two whether they start from right or left of horizontal 320th pixel. Then, the center of both sets are found. Eventually, according to the average of both centers, lines are classified as left or right. This process is summarized in \textit{Algorithm~\ref{algo:classifyLines}}.
+			
+			
+			\begin{algorithm}[b!]
+				\caption{Classifying Lines as Left and Right}
+				\label{algo:classifyLines}
+				\DontPrintSemicolon
+				
+				%	\KwData{Testing set $x$}
+				\For{All Lane Lines}    
+				{ 
+					\If{Starting Point $>$ 320}
+					{
+						Temporarily classify as right line 
+					}
+					\Else
+					{
+						Temporarily classify as left line 
+					}
+				}
+				%	\KwData{Testing set $x$}
+				r\_center = center of temporary right lines \;
+				l\_center = center of temporary left lines \;
+				
+				lane\_center = (r\_center + l\_center)/2 \;
+				
+				\For{All Lane Lines}    
+				{ 
+					\If{Starting Point $>$ lane\_center}
+					{
+						Classify as right line 
+					}
+					\Else
+					{
+						Classify as left line 
+					}
+				}
+			\end{algorithm}
+			\begin{figure}[b!]
+				\setlength{\unitlength}{\textwidth} 
+				\centering
+				\begin{subfigure}{.46\textwidth}
+					\centering
+					\includegraphics[width=0.44\unitlength]{images/dataP_explained1}
+					\caption{\label{fig:dataP_explained1} Before Eliminating Incorrect Lines}
+				\end{subfigure}%
+				\begin{subfigure}{.46\textwidth}
+					\centering
+					\includegraphics[width=0.44\unitlength]{images/dataP_explained2}
+					\caption{\label{fig:dataP_explained2} After Eliminating Incorrect Lines}
+				\end{subfigure}
+				\caption{\label{fig:dataP_explained} A Sample Scenario on Eliminating Incorrect Lines}
+			\end{figure}
 
-\begin{algorithm}[H]
-	\caption{Classifying Lines as Left and Right}
-	\label{algo:classifyLines}
-	\DontPrintSemicolon
-	
-%	\KwData{Testing set $x$}
-	\For{All Lane Lines}    
-	{ 
-		\If{Starting Point $>$ 320}
-		{
-			Temporarily classify as right line 
-		}
-		\Else
-		{
-			Temporarily classify as left line 
-		}
-	}
-%	\KwData{Testing set $x$}
-	r\_center = center of temporary right lines \;
-	l\_center = center of temporary left lines \;
-	
-	lane\_center = (r\_center + l\_center)/2 \;
 
-	\For{All Lane Lines}    
-{ 
-	\If{Starting Point $>$ lane\_center}
-	{
-		Classify as right line 
-	}
-	\Else
-	{
-		Classify as left line 
-	}
-}
-\end{algorithm}
-	
-	The next step is to determine whether there are disturbances on the lane lines or not. This is the most complex part of the Data Processing subsystem. Actually the correctness of the steering angle depends on how successful this step is realized. The idea behind this step is evaluating the slopes consecutive lines and assessing whether change in the slope is ordinary or abnormal. The \textit{Figure~\ref{fig:dataP_explained}} exemplifies a possible scenario. In this figure, the blue lines represent the detected lines in ROI whereas $\alpha$ and $\beta$ represent the slopes of the detected lines. Clearly, there are no disturbance on left lines since $\alpha$ values are similar to each other. However if $\beta$ values are observed, possibly there is an obstacle on right line covered by $\beta_3$, $\beta_4$ and $\beta_5$. This can be concluded by observing slope differences $(\beta_2 - \beta_3)$ and $(\beta_5 - \beta_6)$. To ignore this obstacle, it is enough to remove lines with slopes $\beta_3$, $\beta_4$ and $\beta_5$ as in \textit{Figure~\ref{fig:dataP_explained2}}. Even though the count of lines is decreased, elimination of incorrect lines are realized and the best line fit will be more correct. Another scenario is shown in \textit{Figure~\ref{fig:dataP_explainedBroken}}. Again the shown lines are the ones in ROI. In this scenario, left line has no problems. Right lines, however, a bit problematic. The problem is revealed when  $(\beta_3 - \beta_4)$ is observed. To determine whether  $(\beta_1, \beta_2, \beta_3)$ or $(\beta_4, \beta_5)$ is the correct set of lines, left lines are observed and the set which is more symmetric to left lines are selected as right lines. The resulting correction is shown in \textit{Figure~\ref{fig:dataP_explained4}}.	This is the basic idea behind eliminating incorrect lines in Data Processing subsystem. This idea is generalized by considering other possible obstacle types and shapes.
 
-\begin{figure}[H]
-	\setlength{\unitlength}{\textwidth} 
-	\centering
-	\begin{subfigure}{.46\textwidth}
-		\centering
-		\includegraphics[width=0.44\unitlength]{images/dataP_explained1}
-		\caption{\label{fig:dataP_explained1} Before Eliminating Incorrect Lines}
-	\end{subfigure}%
-	\begin{subfigure}{.46\textwidth}
-		\centering
-		\includegraphics[width=0.44\unitlength]{images/dataP_explained2}
-		\caption{\label{fig:dataP_explained2} After Eliminating Incorrect Lines}
-	\end{subfigure}
-	\caption{\label{fig:dataP_explained} A Sample Scenario on Eliminating Incorrect Lines}
-\end{figure}
-\begin{figure}[H]
+	
+	The next step is to determine whether there are disturbances on the lane lines or not. This is the most complex part of the Data Processing subsystem. Actually the correctness of the steering angle depends on how successful this step is realized. The idea behind this step is evaluating the slopes consecutive lines and assessing whether change in the slope is ordinary or abnormal. The \textit{Figure~\ref{fig:dataP_explained}} exemplifies a possible scenario. In this figure, the blue lines represent the detected lines in ROI whereas $\alpha$ and $\beta$ represent the slopes of the detected lines. Clearly, there are no disturbance on left lines since $\alpha$ values are similar to each other. However if $\beta$ values are observed, possibly there is an obstacle on right line covered by $\beta_3$, $\beta_4$ and $\beta_5$. This can be concluded by observing slope differences $(\beta_2 - \beta_3)$ and $(\beta_5 - \beta_6)$. To ignore this obstacle, it is enough to remove lines with slopes $\beta_3$, $\beta_4$ and $\beta_5$ as in \textit{Figure~\ref{fig:dataP_explained2}}. Even though the count of lines is decreased, elimination of incorrect lines are realized and the best line fit will be more correct. Another scenario is shown in \textit{Figure~\ref{fig:dataP_explainedBroken}}. Again the shown lines are the ones in ROI. In this scenario, left line has no problems. Right lines, however, a bit problematic. The problem is revealed when  $(\beta_3 - \beta_4)$ is observed. To determine whether  $(\beta_1, \beta_2, \beta_3)$ or $(\beta_4, \beta_5)$ is the correct set of lines, left lines are observed and the set which is more symmetric to left lines are selected as right lines. The resulting correction is shown in \textit{Figure~\ref{fig:dataP_explained4}}.	This is the basic idea behind eliminating incorrect lines in Data Processing subsystem. This idea is generalized by considering other possible obstacle types and shapes. The generalized idea is complicated and would take too long to present here. The summarized idea is presented in \textit{Algorithm~\ref{algo:eliminateLines}}.
+	\begin{figure}[b!]
 	\setlength{\unitlength}{\textwidth} 
 	\centering
 	\begin{subfigure}{.46\textwidth}
@@ -359,9 +362,41 @@ Are they done?
 	\end{subfigure}
 	\caption{\label{fig:dataP_explainedBroken} Another Scenario on Eliminating Incorrect Lines}
 \end{figure}
+\begin{algorithm}[b!]
+	\caption{Line Elimination Algorithm}
+	\label{algo:eliminateLines}
+	\DontPrintSemicolon
+	
+	array[n] lines \;
+	array[n] line\_slope\_angles \;
+	array[n-1] slope\_angle\_differences \;
+	
+	slopeAngle\_threshold \;
+	slopeAngle\_difference\_threshold \;
+	
+	%	\KwData{Testing set $x$}
+	\For{slope\_angle\_differences}
+	{ 
+		\If{$k$th item $>$ slopeAngle\_difference\_threshold}
+		{
+			// Check $k$th and $(k+1)$th items in line\_slope\_angles array \;
+			\If{$k$th item in line\_slope\_angles array $>$	slopeAngle\_threshold}
+			{
+				Mark index $k$ in lines array problematic
+			}	
+			\ElseIf{$(k+1)$th item in line\_slope\_angles array $>$	slopeAngle\_threshold}
+			{
+				Mark index $(k+1)$ in lines array problematic
+			}	
+		}
+	}
+	Delete the lines between problematic indexes \;
+	
+\end{algorithm}
+
+
 
 	The third step is to fit best lines through the remaining lines. This is realized by using built-in Least-Squares method. As a result of this step, the number of lines is dropped to two as left line and right line.
-	Then next step is to classify the line points as left or right. The lines are firstly eliminated according to their slopes. If slope of a line is not in invalid slope region of $\pm$0.005, then it is a valid line. This process is done to get rid of unnecessary low sloped lines. After elimination, line points set must be determined as left or right. At this point, this classification is done according to double checking. The center of the image, that is 320th vertical pixel. If initial and final horizontal points of the image is in the same half, the line belongs to that half. This method works nicely in most regions of the path. However, it is a bit error prone in case of a sharp turning angle or losing one of the lanes . This algorithm will be improved to be more robust.\todo{YANLIŞ BİLGİ VAR BURADA KİM YAZDI BUNLARI}
 	
 	The last step is to find the steering angle. The target point is determined as the average of the middle points left and right lines. So the target point is always in the form of $(x_{avg}, 305)$. The y-coordinate is found by simple math (referencing from \textit{Figure~\ref{fig:camera_vision_explained}}) $480px-50px-125px$. The current point of the vehicle is always $(320,480)$. So the line connecting two points to each other constitutes the track path and the $arctan$ of the slope gives the steering angle. Steering angle is in the $[-90,90]$ range where negative values indicate to turn left and positive values indicate to turn right. This output is sent to PID Controller subsystem.
 			

@@ -1,5 +1,5 @@
-\babel@toc {english}{}
-\babel@toc {english}{}
+\select@language {english}
+\select@language {english}
 \contentsline {section}{\numberline {1}Introduction}{2}
 \contentsline {section}{\numberline {2}Overall System}{2}
 \contentsline {subsection}{\numberline {2.1}Sensing System}{3}
@@ -14,13 +14,13 @@
 \contentsline {subsection}{\numberline {2.4}Driving System}{17}
 \contentsline {subsubsection}{\numberline {2.4.1}Direction Subsystem}{17}
 \contentsline {subsubsection}{\numberline {2.4.2}Speed Subsystem}{18}
-\contentsline {subsection}{\numberline {2.5}Motion System}{19}
+\contentsline {subsection}{\numberline {2.5}Motion System}{18}
 \contentsline {subsubsection}{\numberline {2.5.1}Wheels Subsystem}{19}
 \contentsline {subsubsection}{\numberline {2.5.2}Motors Subsystem}{19}
 \contentsline {subsection}{\numberline {2.6}Structure System}{20}
 \contentsline {subsubsection}{\numberline {2.6.1}Chassis Subsystem}{20}
-\contentsline {subsubsection}{\numberline {2.6.2}Printed Circuit Board Subsystem}{22}
-\contentsline {subsection}{\numberline {2.7}Compatibility of the Subsystems}{23}
+\contentsline {subsubsection}{\numberline {2.6.2}Printed Circuit Board Subsystem}{21}
+\contentsline {subsection}{\numberline {2.7}Compatibility of the Subsystems}{22}
 \contentsline {section}{\numberline {3}Detailed Tests for the Subsystems}{23}
 \contentsline {section}{\numberline {4}Testing Stage}{29}
 \contentsline {subsection}{\numberline {4.1}Test Results, Encountered Problems and Possible Solutions for Subsystems}{29}
