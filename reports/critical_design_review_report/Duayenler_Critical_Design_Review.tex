@@ -1286,25 +1286,10 @@ While choosing wheels, high friction property is considered. Because of this rea
 	
 	\subsubsection*{Results of Vehicle Detection Subsystem Tests}
 	
-		All the test procedures mentioned at the \textbf{Section~\ref{sect:vhd}} were applied to the ultrasonic sensor (HC-SR04) and two infrared sensors (TCRT5000 \& QRD1114). The ultrasonic sensor were showed very inaccurate result especially in \textit{Angled Approach Test}. The test results can be examined at \textit{Table`\ref{tab:aat}}. Considering the fact that the path itself is elliptical and there would always be an angle between vehicle even though it may be very small for some cases, it was decided that ultrasonic sensors are not a good choice for this subsystem. However, it is always possible that these sensors can be supportive sensors for the subsystem.
+		All the test procedures mentioned at the \textbf{Section~\ref{sect:vhd}} is applied to the VL6180X Time-of-Flight distance sensor. The sensor is showed very accurate result especially in \textit{Angled Approach Test}. According to test, the sensor gives correct results up to 30 degrees. Considering the fact that the path itself is elliptical and there would always be an angle between vehicle even though it may be very small for some cases, it is confirmed that time of flight sensors are quite good choice for this subsystem.
 		
-		\begin{table}[H]
-		  \centering
-		  	\caption{The Results for the Angled Approach Test for HC-SR04}
-		    \begin{tabular}{c|c|c}
-    		   $$Actual Distance$$ & $$The Angle$$ & $$Measured Distance$$ \\ \hline
-			   3  cm & 90 & 3.15 cm  \\ \hline
-    		   5  cm & 90 & 5 cm  \\ \hline
-    		   20 cm & 90 & 20.01 cm  \\ \hline
-    		   40 cm & 90 & 40.25 cm \\ \hline
-       		   5  cm & 45 & 6.78 cm \\ \hline
-    		   20 cm & 45 & 28.8 cm  \\ \hline
-       		   30 cm & 45 & 42.4 cm  
-  			\end{tabular}
-  			\label{tab:aat}
-		\end{table}
+		Unlike ultrasonic and infrared sensors, time-of-flight sensors shows very accurate result inside the closed environments like laboratory under artificial lights. The results under direct sunlight especially in CCC is also good as expected.  Thus, test results confirms the fact that the main solution should be an enhanced version of infra-red sensors namely the ones utilizing the "time-of-flight" concept. 
 		
-		 Unlike ultrasonic sensors, infrared sensors showed very accurate result inside the closed environments like laboratory under artificial lights. However, the results under direct sunlight especially in CCC were not as good as expected.  Thus, it was decided that the main solution should be an enhanced version of infra-red sensors namely the ones utilizing the "time-of-flight" concept. Moreover, laser sensors might be good alternative for these subsystems.
 	
 	
 		

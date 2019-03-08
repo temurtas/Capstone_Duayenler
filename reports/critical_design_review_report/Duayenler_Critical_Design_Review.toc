@@ -1,5 +1,5 @@
-\select@language {english}
-\select@language {english}
+\babel@toc {english}{}
+\babel@toc {english}{}
 \contentsline {section}{\numberline {1}Introduction}{2}
 \contentsline {section}{\numberline {2}Overall System}{2}
 \contentsline {subsection}{\numberline {2.1}Sensing System}{3}
@@ -28,6 +28,6 @@
 \contentsline {section}{\numberline {5}Other Considerations}{34}
 \contentsline {subsection}{\numberline {5.1}Cost Analysis}{34}
 \contentsline {subsection}{\numberline {5.2}Power Analysis}{35}
-\contentsline {section}{\numberline {6}Conclusion}{37}
-\contentsline {section}{\numberline {7}Disclaimer}{38}
-\contentsline {section}{Appendix \numberline {A}Gannt Chart}{39}
+\contentsline {section}{\numberline {6}Conclusion}{36}
+\contentsline {section}{\numberline {7}Disclaimer}{37}
+\contentsline {section}{Appendix \numberline {A}Gannt Chart}{38}
