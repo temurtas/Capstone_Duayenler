@@ -120,7 +120,8 @@
 	
 		\section{Overall System}
 	
-			The main objective of this project is to design and produce a self driving mini-car that can follow a path with a varying properties with in a 200 dollar budget. The project can be investigated under six main systems and their twelve subsystems. \textit{Figure \ref{fig:system}} shows the organization structure of the project.
+ ONU BUNU ŞUNU SUNUYORUZ. FALAN FİLAN.
+			
 
 	\todo{justifications for requirements}
 	
@@ -214,7 +215,8 @@
 			
 			The subsystem is the first step of safely competing with an opponent in a racing path. This subsystem uses two time of flight distance sensor which is enhanced IR sensor. One at the back of the vehicle responsible for detecting the chasing opponent and one at the front of the vehicle responsible for detecting the chased opponent. The subsystem produces positive output if the chasing vehicle or chased vehicle is within a range of 5 cm from the vehicle. Since the sensor reading is performed using Raspberry Pi, the required trigger for handshake protocol can be easily accessed by the external communication subsystem.
 			
-			\item {Discussions on the Solution}
+			
+\item {Discussions on the Solution}
 			
 			
 		\end{enumerate}
@@ -261,17 +263,18 @@
 				\includegraphics[width=0.93\textwidth,center]{images/vModels/dataProcessing_subsystem}
 				\caption{Block Diagram of the Data Processing Subsystem}\label{fig:dataProcessing_subsystem}
 			\end{figure}
-			\begin{figure}[h]
-				\centering
-				\includegraphics[width=0.93\textwidth]{images/camera_vision_explained}
-				\caption{Block Diagram of the Lane Detection Subsystem}\label{fig:camera_vision_explained}
-			\end{figure}
+%figure}[h]
+%				\centering
+%		\includegraphics[width=0.93\textwidth]{images/camera_vision_explained}
+%				\caption{Block Diagram of the Lane Detection Subsystem}\label{fig:camera_vision_explained}
+%			\end{figure}
+The task of this subsystem is to determine the steering angle of the vehicle so that the vehicle can steer to the target point. The input of the subsystem is the coordinate array produced by Lane Detection subsystem. The input is processed by a detailed algorithm and the output is steering angle. The processing is done by taking into consideration the reference frame. The reference frame is shown in \textit{Figure ~\ref{fig:camera_vision_explained}}. This figure summarizes the three main frames. The Lane Detection subsystem extracted ROI out of full camera frame. The Data Processing subsystem processes the data of ROI but produces output for the Region of Target (ROT). The reason is, ROI is good to determine possible obstacles on the path but steering to a target point that is almost 15 cm away from the vehicle is not realistic.  For this reason ROI is not used for determining steering angle, instead ROT is used.
+			
 		
-			The task of this subsystem is to determine the steering angle of the vehicle so that the vehicle can steer to the target point. The input of the subsystem is the coordinate array produced by Lane Detection subsystem. The input is processed by a detailed algorithm and the output is steering angle. The processing is done by taking into consideration the reference frame. The reference frame is shown in \textit{Figure ~\ref{fig:camera_vision_explained}}. This figure summarizes the three main frames. The Lane Detection subsystem extracted ROI out of full camera frame. The Data Processing subsystem processes the data of ROI but produces output for the Region of Target (ROT). The reason is, ROI is good to determine possible obstacles on the path but steering to a target point that is almost 15 cm away from the vehicle is not realistic.  For this reason ROI is not used for determining steering angle, instead ROT is used.
+	There are four main steps to determine the steering angle.  The first step is to classify the lines as left and right. The second step is to eliminate the possible incorrect lines, if any. The third step is to fit the best lines through the left and right lines and reduce the total number of lines to two that are left and right lines. The last step is to find steering angle by connecting 320th horizontal pixel with the average end points of the lane lines. The block diagram of the subsystem is given in \textit{Figure~\ref{fig:dataProcessing_subsystem}}.
 			
-			There are four main steps to determine the steering angle.  The first step is to classify the lines as left and right. The second step is to eliminate the possible incorrect lines, if any. The third step is to fit the best lines through the left and right lines and reduce the total number of lines to two that are left and right lines. The last step is to find steering angle by connecting 320th horizontal pixel with the average end points of the lane lines. The block diagram of the subsystem is given in \textit{Figure~\ref{fig:dataProcessing_subsystem}}.
 			
-			Classifying a line is done in two steps. First, lines are divided into two whether they start from right or left of horizontal 320th pixel. Then, the center of both sets are found. Eventually, according to the average of both centers, lines are classified as left or right. This process is summarized in \textit{Algorithm~\ref{algo:classifyLines}}.
+Classifying a line is done in two steps. First, lines are divided into two whether they start from right or left of horizontal 320th pixel. Then, the center of both sets are found. Eventually, according to the average of both centers, lines are classified as left or right. This process is summarized in \textit{Algorithm~\ref{algo:classifyLines}}.
 
 \begin{algorithm}[H]
 	\caption{Classifying Lines as Left and Right}
@@ -345,8 +348,8 @@
 	The third step is to fit best lines through the remaining lines. This is realized by using built-in Least-Squares method. As a result of this step, the number of lines is dropped to two as left line and right line.
 	Then next step is to classify the line points as left or right. The lines are firstly eliminated according to their slopes. If slope of a line is not in invalid slope region of $\pm$0.005, then it is a valid line. This process is done to get rid of unnecessary low sloped lines. After elimination, line points set must be determined as left or right. At this point, this classification is done according to double checking. The center of the image, that is 320th vertical pixel. If initial and final horizontal points of the image is in the same half, the line belongs to that half. This method works nicely in most regions of the path. However, it is a bit error prone in case of a sharp turning angle or losing one of the lanes . This algorithm will be improved to be more robustu
 	
-	The last step is to find the steering angle. The target point is determined as the average of the middle points left and right lines. So the target point is always in the form of $(x_{avg}, 305)$. The y-coordinate is found by simple math (referencing from \textit{Figure\ref{fig:camera_vision_explained}}) $480px-50px-125px$. The current point of the vehicle is always $(320,480)$. So the line connecting two points to each other constitutes the track path and the $arctan$ of the slope gives the steering angle. Steering angle is in the $[-90,90]$ range where negative values indicate to turn left and positive values indicate to turn right. This output is sent to PID Controller subsystem.
-			
+tep is to find the steering angle. The target point is determined as the average of the middle points left and right lines. So the target point is always in the form of $(x_{avg}, 305)$. The y-coordinate is found by simple math (referencing from \textit{Figure~\ref{fig:camera_vision_explained}}) $480px-50px-125px$. The current point of the vehicle is always $(320,480)$. So the line connecting two points to each other constitutes the track path and the $arctan$ of the slope gives the steering angle. Steering angle is in the $[-90,90]$ range where negative values indicate to turn left and positive values indicate to turn right. This output is sent to PID Controller subsystem.
+		
 		\item {Discussions on the Solution}
 		
 The proposed algorithm is different from the one presented in Conceptual Design Report. The reason is that the old algorithm didn't have any obstacle rejection	feature and it had problems in determining steering angle. For this reason, new algorithm is developed from scratch. The proposed algorithm works nice as test results are discussed in \textit{Section~\ref{label}}\todo{SECTION REFERLE}. The obstacles are most of the time are detected and ignored. One weak point is that, the algorithm may not be able to ignore some obstacles in certain inclinations. That is, as algorithm is based on slope evaluation, certain obstacle placements may fool the algorithm. However, it is seen that these cases are very rare and don't effect the robustness of the vehicle.
@@ -509,7 +512,7 @@ The proposed algorithm is different from the one presented in Conceptual Design 
 		\item On Pi side, using  C++ messages can be send to serial port
 	\end{enumerate}
 	
-	Since the lane detection algorithm is implemented on C++, serial communication on the Raspberry side is also implemented on C++. Using \lstinline[language=C++]|<wiringPi.h>| and \lstinline[language=C++]|<wiringSerial.h>| libraries any string can be sent to the serial port specified by the string \lstinline[language=C++]|"/dev/ttyACM0"| with a specified baud rate. 
+	Since the lane detection algorithm is implemented on C++, serial communication on the Raspberry side is also implemented on C++. Using \lstinline[language=C++]|<wiringPi.h>| and \lstinline[language=C++]|<wiringSerial.h>| libraries any string can be sent to the serial port specified by the string \lstinline[language=C++]|/dev/ttyACM0"| with a specified baud rate. 
 	
 	\begin{lstlisting}[language=C++,caption={C++ class for serial communication}]
 void ArduinoComm::sendToController(std::string payload) {
@@ -605,9 +608,7 @@ return;
 	  H-bridge motor drivers are used to drive DC motors. L298N motor driver with voltage regulator is used for this purpose in this project. 
 			
 			\item {Discussions on the Solution}
-			
-		
-\end{enumerate}
+
 			
 	
 			
@@ -623,7 +624,7 @@ return;
 				\end{enumerate}
 					
 			\item {Solution for the Subsystem}
-			
+	
 			The best place to implement the state machine is Arduino as motor driving is also controlled by it. Main requirement for this system to operate is a measure of error or success for the direction subsystem. It can be the same as the error input of controller i.e. turning angle or a function of it. The state machine will act depending on the value of the error input. When it is above a critical level, the vehicle will show a steep deceleration to compensate the error of the direction unit. In other cases, It is wise to implement the speed controller in the form of at least PD controller. In other words, the change in the overall speed will also be maintained by a controller whose error input is not necessarily tried to be made zero but rather below a pre-specified level. State machine diagram can be seen in \textit{Figure \ref{fig:speed-state}}\\
 		
 	This unit acts as a complementary module for direction unit. It will act as a state machine. In one state, the unit will try to increase the speed of the vehicle by making overall increase in both PWM values of DC motors. The feedback of this  system will be the cost function mentioned in driving unit. If that cost exceeds a specified level, unit goes to another state in which the unit will decrease the overall speed to allow direction unit to operate more correctly. In short, this unit tries to compensate the error of the direction unit by changing the overall speed of the vehicle.
@@ -632,9 +633,7 @@ return;
 			
 		\end{enumerate}
 			
-	\todo{line\_angle\-base\_speed}
-	
-	
+
 	
 		
 		
@@ -1098,15 +1097,7 @@ While choosing wheels, high friction property is considered. Because of this rea
 			\item Record the maximum value of the error encountered during the disturbances.
 			\item Find the maximum value
 		\end{enumerate}
-		
-		\item {Torque Test:} 
-				\begin{enumerate}
-					\item Fix the motor at horizontal position with respect to ground  
-					\item Attach an object of one kilogram  
-					\item Power up the motor  
-					\item Increase the weight to a point where the motor is not pulling anymore  
-					\item Record the value and check with expected results  
-					\item If the result is not comparable with exrested values and very low, motor can be considered as broken  
+	
 					\item Contact the seller for more information 
 				\end{enumerate}
 		\end{enumerate}
@@ -1169,23 +1160,7 @@ While choosing wheels, high friction property is considered. Because of this rea
 	
 	\subsubsection*{Results of Vehicle Detection Subsystem Tests}
 	
-
-		
-		\begin{table}[H]
-		  \centering
-		  	\caption{The Results for the Angled Approach Test for HC-SR04}
-		    \begin{tabular}{c|c|c}
-    		   $$Actual Distance$$ & $$The Angle$$ & $$Measured Distance$$ \\ \hline
-			   3  cm & 90 & 3.15 cm  \\ \hline
-    		   5  cm & 90 & 5 cm  \\ \hline
-    		   20 cm & 90 & 20.01 cm  \\ \hline
-    		   40 cm & 90 & 40.25 cm \\ \hline
-       		   5  cm & 45 & 6.78 cm \\ \hline
-    		   20 cm & 45 & 28.8 cm  \\ \hline
-       		   30 cm & 45 & 42.4 cm  
-  			\end{tabular}
-  			\label{tab:aat}
-		\end{table}
+est procedures mentioned at the \textbf{Section~\ref{sect:vhd}} is applied to the VL6180X Time-of-Flight distance sensor. The sensor is showed very accurate result especially in \textit{Angled Approach Test}. According to test, the sensor gives correct results up to 30 degrees. Considering the fact that the path itself is elliptical and there would always be an angle between vehicle even though it may be very small for some cases, it is confirmed that time of flight sensors are quite good choice for this subsystem.
 		
 		 Unlike ultrasonic sensors, infrared sensors showed very accurate result inside the closed environments like laboratory under artificial lights. However, the results under direct sunlight especially in CCC were not as good as expected.  Thus, it was decided that the main solution should be an enhanced version of infra-red sensors namely the ones utilizing the "time-of-flight" concept. Moreover, laser sensors might be good alternative for these subsystems.
 	
@@ -1209,7 +1184,7 @@ While choosing wheels, high friction property is considered. Because of this rea
 		
 	\subsubsection*{Results of PID Controller Subsystem Tests}
 	
-		Due to other limitations, the initial version of the PID controller subsystem was tested only for \textit{PID Parameters Test for Given Input}. The test results were promising for the time being. Other tests are planning to be conducted on the subsystem in the following semester.
+  Due to other limitations, the initial version of the PID controller sSubsystem was tested only for \textit{PID Parameters Test for Given Input}. The test results were promising for the time being. Other tests are planning to be conductd on the subsystem in the following semester.
 	
 	
 	
@@ -1227,7 +1202,6 @@ While choosing wheels, high friction property is considered. Because of this rea
 	
 	\subsubsection*{Results of External Communication Subsystem Tests}
 	
-	   Test results can be seen in following figures.\textit{Figure~\ref{fig:hsake_test1}} shows duayenler as server while \textit{Figure~\ref{fig:hsake_test2}} shows duayenler as client.
 	
 	\begin{figure}[h]
 		\includegraphics[width=0.75\textwidth,center]{images/hsake1}
@@ -1260,18 +1234,17 @@ While choosing wheels, high friction property is considered. Because of this rea
 	
 	
 	\subsubsection*{Results of Speed Subsystem Tests}
-	No test result is currently available due to mentioned reasons.
-
-	
+	No test result is currently available due to mentioned reasonscces	
 	
 	 
 	
 	 
 	
 	
-	\subsubsection*{Results of Motors Subsystem Tests}
-	The tests are done. The results are negative because motors torque value did not match with the declaration of the supplier. 3kg-cm is the decelerated value, but motors can only produce 750 g-cm. Therefore, this system is failed in torque requirement, and reconsidered in the following period. \\
-
+	
+\subsubsection*{Results of Motors Subsystem Tests}
+	
+The tesus are done. The results are negative because motors torque value did not match with the declaration of the supplier. 3kg-cm is the decelerated value, but motors can only produce 750 g-cm. Therefore, this system s failed in torque requirement, and reconsidered in the following period. \\
 		
 	
 	RPM test has not been done since torque value is not supporting test setup.
