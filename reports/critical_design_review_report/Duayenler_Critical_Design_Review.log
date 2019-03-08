@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.16)  8 MAR 2019 12:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.16)  8 MAR 2019 12:18
 entering extended mode
 **./Duayenler_Critical_Design_Review.tex
 (Duayenler_Critical_Design_Review.tex
@@ -1811,103 +1811,68 @@ s/path_images/par_3.png> <./images/path_images/inside-bb.png> <./images/path_im
 ages/inside-bw.png> <./images/path_images/inside-ww.png> <./images/path_images/
 outsideObs0.png> <./images/path_images/outsideObs1.png> <./images/path_images/o
 utsideObs2.png>]
-("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
-File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)
 
-LaTeX Warning: Reference `fig:handshake1' on page 33 undefined on input line 14
-32.
+LaTeX Warning: Reference `fig:hsake_test1' on page 33 undefined on input line 1
+433.
 
 
-LaTeX Warning: Reference `fig:handshake2' on page 33 undefined on input line 14
-32.
+LaTeX Warning: Reference `fig:hsake_test2' on page 33 undefined on input line 1
+434.
 
+<images/hsake1.png, id=208, 572.1375pt x 152.82094pt>
+File: images/hsake1.png Graphic file (type png)
+<use images/hsake1.png>
+Package pdftex.def Info: images/hsake1.png  used on input line 1437.
+(pdftex.def)             Requested size: 336.05533pt x 89.76247pt.
+<images/hsake2.png, id=209, 565.36218pt x 155.83218pt>
+File: images/hsake2.png Graphic file (type png)
+<use images/hsake2.png>
+Package pdftex.def Info: images/hsake2.png  used on input line 1443.
+(pdftex.def)             Requested size: 336.05533pt x 92.62975pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1470--1471
+Underfull \hbox (badness 10000) in paragraph at lines 1477--1478
 
  []
 
-[33] [34]
-<images/elec_arch.png, id=214, 300.3722pt x 372.64218pt>
+[33 <./images/hsake1.png> <./images/hsake2.png>] [34]
+<images/elec_arch.png, id=218, 300.3722pt x 372.64218pt>
 File: images/elec_arch.png Graphic file (type png)
 <use images/elec_arch.png>
-Package pdftex.def Info: images/elec_arch.png  used on input line 1555.
+Package pdftex.def Info: images/elec_arch.png  used on input line 1562.
 (pdftex.def)             Requested size: 224.03688pt x 277.95139pt.
- [35 <./images/elec_arch.png>] [36]
-Overfull \hbox (13.14651pt too wide) in paragraph at lines 1572--1584
+ [35] [36 <./images/elec_arch.png>] [37]
+Overfull \hbox (13.14651pt too wide) in paragraph at lines 1579--1591
 [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1572--1584
+Underfull \hbox (badness 10000) in paragraph at lines 1579--1591
 
  []
 
 
-Overfull \hbox (13.1397pt too wide) in paragraph at lines 1585--1593
+Overfull \hbox (13.1397pt too wide) in paragraph at lines 1592--1600
 [][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1585--1593
+Underfull \hbox (badness 10000) in paragraph at lines 1592--1600
 
  []
 
 
-Overfull \hbox (15.38225pt too wide) in paragraph at lines 1594--1602
+Overfull \hbox (15.38225pt too wide) in paragraph at lines 1601--1609
 [][][] 
  []
 
-[37]
+[38]
 
 pdfTeX warning: pdflatex.exe (file ./gantt.pdf): PDF inclusion: found PDF versi
 on <1.7>, but at most version <1.5> allowed
-<gantt.pdf, id=227, 845.1575pt x 597.23125pt>
+<gantt.pdf, id=234, 845.1575pt x 597.23125pt>
 File: gantt.pdf Graphic file (type pdf)
 <use gantt.pdf>
-Package pdftex.def Info: gantt.pdf  used on input line 1607.
-(pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
-
-
-pdfTeX warning: pdflatex.exe (file ./gantt.pdf): PDF inclusion: found PDF versi
-on <1.7>, but at most version <1.5> allowed
-File: gantt.pdf Graphic file (type pdf)
-<use gantt.pdf>
-Package pdftex.def Info: gantt.pdf  used on input line 1607.
-(pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
-
-
-pdfTeX warning: pdflatex.exe (file ./gantt.pdf): PDF inclusion: found PDF versi
-on <1.7>, but at most version <1.5> allowed
-
-
-pdfTeX warning: pdflatex.exe (file ./gantt.pdf): PDF inclusion: found PDF versi
-on <1.7>, but at most version <1.5> allowed
-<gantt.pdf, id=230, page=1, 845.1575pt x 597.23125pt>
-File: gantt.pdf Graphic file (type pdf)
-<use gantt.pdf, page 1>
-Package pdftex.def Info: gantt.pdf , page1 used on input line 1607.
-(pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
-File: gantt.pdf Graphic file (type pdf)
-<use gantt.pdf, page 1>
-Package pdftex.def Info: gantt.pdf , page1 used on input line 1607.
-(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
-File: gantt.pdf Graphic file (type pdf)
-<use gantt.pdf, page 1>
-Package pdftex.def Info: gantt.pdf , page1 used on input line 1607.
-(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
-File: gantt.pdf Graphic file (type pdf)
-<use gantt.pdf, page 1>
-Package pdftex.def Info: gantt.pdf , page1 used on input line 1607.
-(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
-File: gantt.pdf Graphic file (type pdf)
-<use gantt.pdf, page 1>
-Package pdftex.def Info: gantt.pdf , page1 used on input line 1607.
-(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
-[38 <./gantt.pdf>]
-File: gantt.pdf Graphic file (type pdf)
-<use gantt.pdf>
-Package pdftex.def Info: gantt.pdf  used on input line 1608.
+Package pdftex.def Info: gantt.pdf  used on input line 1614.
 (pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
 
 
@@ -1915,7 +1880,7 @@ pdfTeX warning: pdflatex.exe (file ./gantt.pdf): PDF inclusion: found PDF versi
 on <1.7>, but at most version <1.5> allowed
 File: gantt.pdf Graphic file (type pdf)
 <use gantt.pdf>
-Package pdftex.def Info: gantt.pdf  used on input line 1608.
+Package pdftex.def Info: gantt.pdf  used on input line 1614.
 (pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
 
 
@@ -1925,54 +1890,99 @@ on <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: pdflatex.exe (file ./gantt.pdf): PDF inclusion: found PDF versi
 on <1.7>, but at most version <1.5> allowed
-<gantt.pdf, id=239, page=2, 845.1575pt x 597.23125pt>
+<gantt.pdf, id=237, page=1, 845.1575pt x 597.23125pt>
 File: gantt.pdf Graphic file (type pdf)
-<use gantt.pdf, page 2>
-Package pdftex.def Info: gantt.pdf , page2 used on input line 1608.
+<use gantt.pdf, page 1>
+Package pdftex.def Info: gantt.pdf , page1 used on input line 1614.
 (pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
 File: gantt.pdf Graphic file (type pdf)
-<use gantt.pdf, page 2>
-Package pdftex.def Info: gantt.pdf , page2 used on input line 1608.
+<use gantt.pdf, page 1>
+Package pdftex.def Info: gantt.pdf , page1 used on input line 1614.
 (pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
 File: gantt.pdf Graphic file (type pdf)
-<use gantt.pdf, page 2>
-Package pdftex.def Info: gantt.pdf , page2 used on input line 1608.
+<use gantt.pdf, page 1>
+Package pdftex.def Info: gantt.pdf , page1 used on input line 1614.
 (pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
 File: gantt.pdf Graphic file (type pdf)
-<use gantt.pdf, page 2>
-Package pdftex.def Info: gantt.pdf , page2 used on input line 1608.
+<use gantt.pdf, page 1>
+Package pdftex.def Info: gantt.pdf , page1 used on input line 1614.
 (pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
 File: gantt.pdf Graphic file (type pdf)
-<use gantt.pdf, page 2>
-Package pdftex.def Info: gantt.pdf , page2 used on input line 1608.
+<use gantt.pdf, page 1>
+Package pdftex.def Info: gantt.pdf , page1 used on input line 1614.
 (pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
 [39 <./gantt.pdf>]
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf>
+Package pdftex.def Info: gantt.pdf  used on input line 1615.
+(pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
+
 
 pdfTeX warning: pdflatex.exe (file ./gantt.pdf): PDF inclusion: found PDF versi
 on <1.7>, but at most version <1.5> allowed
-<gantt.pdf, id=245, page=3, 845.1575pt x 597.23125pt>
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf>
+Package pdftex.def Info: gantt.pdf  used on input line 1615.
+(pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./gantt.pdf): PDF inclusion: found PDF versi
+on <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./gantt.pdf): PDF inclusion: found PDF versi
+on <1.7>, but at most version <1.5> allowed
+<gantt.pdf, id=246, page=2, 845.1575pt x 597.23125pt>
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf, page 2>
+Package pdftex.def Info: gantt.pdf , page2 used on input line 1615.
+(pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf, page 2>
+Package pdftex.def Info: gantt.pdf , page2 used on input line 1615.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf, page 2>
+Package pdftex.def Info: gantt.pdf , page2 used on input line 1615.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf, page 2>
+Package pdftex.def Info: gantt.pdf , page2 used on input line 1615.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+File: gantt.pdf Graphic file (type pdf)
+<use gantt.pdf, page 2>
+Package pdftex.def Info: gantt.pdf , page2 used on input line 1615.
+(pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
+[40 <./gantt.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./gantt.pdf): PDF inclusion: found PDF versi
+on <1.7>, but at most version <1.5> allowed
+<gantt.pdf, id=252, page=3, 845.1575pt x 597.23125pt>
 File: gantt.pdf Graphic file (type pdf)
 <use gantt.pdf, page 3>
-Package pdftex.def Info: gantt.pdf , page3 used on input line 1608.
+Package pdftex.def Info: gantt.pdf , page3 used on input line 1615.
 (pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
 File: gantt.pdf Graphic file (type pdf)
 <use gantt.pdf, page 3>
-Package pdftex.def Info: gantt.pdf , page3 used on input line 1608.
+Package pdftex.def Info: gantt.pdf , page3 used on input line 1615.
 (pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
 File: gantt.pdf Graphic file (type pdf)
 <use gantt.pdf, page 3>
-Package pdftex.def Info: gantt.pdf , page3 used on input line 1608.
+Package pdftex.def Info: gantt.pdf , page3 used on input line 1615.
 (pdftex.def)             Requested size: 654.9903pt x 462.84943pt.
-[40 <./gantt.pdf>] (Duayenler_Critical_Design_Review.aux)
+[41 <./gantt.pdf>] (Duayenler_Critical_Design_Review.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 41690 strings out of 492970
- 927342 string characters out of 3126593
+ 41448 strings out of 492970
+ 924663 string characters out of 3126593
  1375569 words of memory out of 3000000
- 44889 multiletter control sequences out of 15000+200000
+ 44648 multiletter control sequences out of 15000+200000
  542087 words of font info for 59 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,21n,96p,2175b,1664s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1991,10 +2001,10 @@ e1/public/amsfonts/cm/cmss12.pfb><C:/Users/ilker/AppData/Local/Programs/MiKTeX
 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ilker/AppData/Local/Pro
 grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/ilker/AppD
 ata/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on Duayenler_Critical_Design_Review.pdf (41 pages, 47611315 byte
+Output written on Duayenler_Critical_Design_Review.pdf (42 pages, 47721697 byte
 s).
 PDF statistics:
- 292 PDF objects out of 1000 (max. 8388607)
+ 299 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 324 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 334 words of extra memory for PDF output out of 10000 (max. 10000000)
 
