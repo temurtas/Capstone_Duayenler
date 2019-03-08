@@ -215,24 +215,13 @@ Halil Temurtaş  & Control Engineer          & 2094522     & 0531 632 2194  \\
 
 \section{Introduction}
 
-The self driving cars have been the buzz concept of the community lately. Many companies have established departments and teams to develop their own self driving cars. Increasing 
-
-research on the concept brings the increasing demand to new technologies and approaches. DUAYENLER Ltd. Şti. (DUAYENLER) aims to catch this trend and be one of the pioneers in this field. To realize this goal, DUAYENLER develops a vehicle for Car Chasing Project. The outcome of the project is a vehicle that can follow a predefined path in an autonomous way. The vehicle not only drive on the path itself, but it will communicate with other vehicles as well.\\
-
+The self driving cars have been the buzz concept of the community lately. Many companies have established departments and teams to develop their own self driving cars. Increasing research on the concept brings the increasing demand to new technologies and approaches. DUAYENLER Ltd. Şti. (DUAYENLER) aims to catch this trend and be one of the pioneers in this field. To realize this goal, DUAYENLER develops a vehicle for Car Chasing Project. The outcome of the project is a vehicle that can follow a predefined path in an autonomous way. The vehicle not only drive on the path itself, but it will communicate with other vehicles as well.\\
 
 This project, as most of projects, is a multi disciplinary tasks. It involves image processing, data processing, statistical estimation, networking, mechanical design and mechanical assembly. These disciplines are not adequate by themselves but also integration with each other. So, system design, testing and automation are key concepts to merge everything into a product. Fortunately, DUAYENLER is composed five team members who build up proficiency in those fields.\\
 
+The fundamental blocks of the project are autonomous steering and its control. To build up the fundamental blocks and the project, several systems and subsystems are developed in a reasonable way. Firstly, the objectives of the project was determined. Secondly, the system was divided into six main system and the requirements for these subsystem were determined considering the project objectives. Thirdly, these subsystems then divided into two main subsystems. And the requirements for theses subsystems were constructed considering their parent system requirements. Lastly, the subsystems were designed considering these requirements.\\
 
-%The fundamental blocks of the project are autonomous steering and its control. To build up the fundamental blocks and the project, several systems and subsystems are developed in a reasonable way. First, KRİTERLER BELİRLENDİ, REQUIREMENTLARI BELİRLEDİK, BİR SÜRÜ SOLUTION GELİŞTİRDİK. SONRA BU SOLUTIONLARI \todo{REQ'LERDEN FALAN BAHSEDİLEBİLİR. YAPIYI BEÐENMEZSENİZ İSTEDİÐİNİZİ YAZIN.} TEST ETTIK. VE BU TESTLER NETİCESİNDE Bİ CONCEPTUAL DESİGN YAZDIK. BU RAPOR SİSTEMLER VE SUBSİSTEMLER İÇİN ANA ÇÖÜM ÖNERİLERİMİZİ İÇERİYORDU. ARADA GEÇEN ZAMANDA, RAPORDA SUNDUÐUMUZ ÇÖZÜMLERİ YENİ TESTLER NETİCESİNDE CRİTİCAL SOLUTİONLAR HALİNE GETİRDİK.
-
-
-BU RAPORDA ONU BUNU ŞUNU SUNUYORUZ. FALAN FİLAN.
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5555
-
+This report includes detailed technical solutions for the subsystem blocks, their requirements and the respective justifications for the requirements. In addition to these detailed solutions, the report includes detailed test steps and the discussion on these tests for the subsystems of the project. Lastly, this report includes detailed power and cost analysis for the project and the Gantt chart for the project management purposes.
 \newpage
 
 
@@ -1308,7 +1297,7 @@ The system has two subsystems namely,
 
 \item The subsystem should ensure that the chassis can provide low center of mass 
 
-\item Camera holder should be integrated to th front of the vehicle
+\item Camera holder should be integrated to the front of the vehicle
 
 \item Camera holder should be as rigid as possible to reduce the vibration on the camera
 
@@ -1322,20 +1311,25 @@ The system has two subsystems namely,
 
 \item {Solution for the Subsystem}
 
+Main purposes of this subsystem are protection of the critical elements of the robot and holding components together. The most important part of this section is weight distribution.\\
 
-Current chasis structure relies on two pre-designed plexiglass layers. Raspberry Pi and Arduino is placed on the upper layer while motor driver and the battery are on lower one. To keep the center of mass of the vehicle close to the ground, battery is placed as low as possible. The connection of the motor driver and Arduino consists of eight cables two of which are the power lines. The cables are placed in a way that they cause no entanglement with any other parts. The connection between RPi and Arduino is currently accomplished by USB cable. \\
+Current chassis structure relies on two newly-designed plexiglass layers. Raspberry Pi and Arduino is placed on the upper layer while motor driver and the battery are on lower one. To keep the center of mass of the vehicle close to the ground, battery is placed as low as possible. The connection of the motor driver and Arduino consists of eight cables two of which are the power lines. The cables are placed in a way that they cause no entanglement with any other parts. The connection between RPi and Arduino is currently accomplished by USB cable. \\
 
 
 Since there is not much component on the vehicle, the space on the layers are enough to locate the components. However, placing the camera of RPi has been a great problem. The view angle of the camera turned out to be considerable small than expected. Other several cellphone cameras were tried but they are could not satisfy the requirement that both side of the lane should be visible either. The only solution was to elevate the camera. That is why a camera holder structure is designed and added to the system.\\	
 
 
-To satisfy the requirements the holder is built using 4mm plexiglass. The choice satisfies the rigidity and light weight possible. A thinner one would result in less rigidity and increased vibration on the system. The designed structure, whose layout can be seen in \textit{Figure \ref{fig:camera-holder}}, has the elevation range from 35 cm to 45 cm and a camera angle ranging from $0^o$ to $45^o$. Having manufactured, the camera holder is integrated to the vehicle (\textit{see Figure \ref{fig:chassis}}). After integration, the view of the camera can completely cover the both edges of the path (\textit{see Figure \ref{fig:detection-test-results}})
+To satisfy the requirements the holder is built using 4mm plexiglass. The choice satisfies the rigidity and light weight possible. A thinner one would result in less rigidity and increased vibration on the system. The designed structure has the elevation range from 35 cm to 45 cm and a camera angle ranging from $0^o$ to $45^o$. Having manufactured, the camera holder is integrated to the vehicle (\textit{see Figure \ref{fig:chassis}}). After integration, the view of the camera can completely cover the both edges of the path.\\
+
+In addition, new motor holder part is designed to have better connection of the wheels to the vehicle. 3D isometric view of the piece can be seen in \textit{Figure }.
+\begin{figure}[h]
+	\includegraphics[width=.2\textheight,center]{images/motor-holder.png}
+	\caption{Motor holder 3D view}
+\end{figure}
 
 
-Main purposes of this subsystem are protection of the critical elements of the robot and holding components together. The most important part of this section is weight distribution. The chassis is supposed to be light and strong because of the competition purposes. However, it should balance the robot to be able to handle turns. The requirements of this subsystem are listed below:
 
-
-Current version of chassis which were used in critical module demo can be seen at \textit{Figure~\ref{fig:chassis}}.
+Current version of chassis can be seen in \textit{Figure~\ref{fig:chassis}}.
 
 
 
@@ -1343,44 +1337,13 @@ Current version of chassis which were used in critical module demo can be seen a
 
 \includegraphics[width=0.8\textwidth,center]{images/chassis1}
 
-\caption{Isometric view of the 3D Drawing of the Vehicle \label{fig:isom} }
+\caption{Isometric view of the 3D Drawing of the Vehicle \label{fig:chassis} }
 
 \end{figure}
 
-
-%	\begin{figure}[H]
-
-%		\setlength{\unitlength}{\textwidth} 
-
-%		\centering
-
-%		\begin{subfigure}{.5\textwidth}
-
-%			\centering
-
-%			\includegraphics[width=0.48\unitlength]{images/chassis1}
-
-%			\caption{\label{fig:front-isom} Front Isometric View of the Vehicle }
-
-%		\end{subfigure}%
-
-%		\begin{subfigure}{.5\textwidth}
-
-%			\centering
-
-%			\includegraphics[width=0.48\unitlength]{images/chassis2}
-
-%			\caption{\label{fig:back-isom} Back Isometric Wiew of the Vehicle}
-
-%		\end{subfigure}
-
-%		\caption{\label{fig:isom2} Front \& Back Isometric View of the 3D Drawing of the Vehicle}
-
-%	\end{figure}
-
-
 \item {Discussions on the Solution}
 
+The only change done on this subsystem is to design a new plexiglass layers instead of using pre-designed ones. By that way, much more flexibility is obtained in terms of placement of the components. On the other hand designed motor holder pieces provides rigid connection between chassis and the wheels.  
 
 \end{enumerate}
 
@@ -1413,8 +1376,6 @@ The main role of this part is decreasing connection mess and increase vibration 
 
 This subsystem aims to make all the circuit connections rigid and compact. Currently, there is wire connections between Arduino-Motor driver and Arduino-RPi. However, addition of vehicle detection sensors and other lane detection alternatives will increase the amount of components, hence, wires. In addition, to use the space occupied by the Arduino UNO board, Arduino Mini can be used. This also allows to build the circuit board as shield for Arduino Mini. After that any other sensors and connections can be made through PCB. In other words, PCB acts as a breakout board for each item integrated to the system in a more rigid and compact way.
 
-
-\item {Discussions on the Solution}
 
 
 \end{enumerate}	
@@ -2410,23 +2371,12 @@ The tests proposed in \textit{Section~3} will be conducted after the tests for \
 
 \subsubsection*{Results of Motion System Tests}
 
-
-\todo{sarper}
-
+After tests, handling capability of the system is approved. However, although motors are quite well with high PWM, their low PWM performance cause some problems. Therefore, motor subsystem could need a revision.
 
 
 \subsubsection*{Results of Structure System Tests}
 
-
-\todo{enes}
-
-
-
-\subsection{Robustness of the Design}
-
-
-
-
+As mentioned in Section 3, the disturbances applied on the vehicle and the deviation is between the levels that can be handled by other algorithms although some improvements are still needed. Furthermore, newly-designed chassis added rigidity to the structure which in turn provides better test results
 
 
 

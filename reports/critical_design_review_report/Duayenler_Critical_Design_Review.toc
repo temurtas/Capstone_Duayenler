@@ -19,14 +19,13 @@
 \contentsline {subsubsection}{\numberline {2.5.2}Motors Subsystem}{19}
 \contentsline {subsection}{\numberline {2.6}Structure System}{20}
 \contentsline {subsubsection}{\numberline {2.6.1}Chassis Subsystem}{20}
-\contentsline {subsubsection}{\numberline {2.6.2}Printed Circuit Board Subsystem}{21}
-\contentsline {subsection}{\numberline {2.7}Compatibility of the Subsystems}{22}
+\contentsline {subsubsection}{\numberline {2.6.2}Printed Circuit Board Subsystem}{22}
+\contentsline {subsection}{\numberline {2.7}Compatibility of the Subsystems}{23}
 \contentsline {section}{\numberline {3}Detailed Tests for the Subsystems}{23}
-\contentsline {section}{\numberline {4}Testing Stage}{29}
-\contentsline {subsection}{\numberline {4.1}Test Results, Encountered Problems and Possible Solutions for Subsystems}{29}
-\contentsline {subsection}{\numberline {4.2}Robustness of the Design}{35}
+\contentsline {section}{\numberline {4}Testing Stage}{30}
+\contentsline {subsection}{\numberline {4.1}Test Results, Encountered Problems and Possible Solutions for Subsystems}{30}
 \contentsline {section}{\numberline {5}Other Considerations}{35}
 \contentsline {subsection}{\numberline {5.1}Cost Analysis}{35}
 \contentsline {subsection}{\numberline {5.2}Power Analysis}{36}
-\contentsline {section}{\numberline {6}Conclusion}{37}
-\contentsline {section}{Appendix \numberline {A}Gannt Chart}{38}
+\contentsline {section}{\numberline {6}Conclusion}{38}
+\contentsline {section}{Appendix \numberline {A}Gannt Chart}{39}
