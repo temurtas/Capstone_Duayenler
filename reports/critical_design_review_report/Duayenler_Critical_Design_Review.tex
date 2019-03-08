@@ -120,7 +120,7 @@
 	
 		\section{Overall System}
 	
-			The main objective of this project is to design and produce a self driving mini-car that can follow a path with a varying properties with in a 200 dollar budget. The project can be investigated under six main systems and their twelve subsystems. \textit{Figure \ref{fig:organization}} shows the organization structure of the project.
+			The main objective of this project is to design and produce a self driving mini-car that can follow a path with a varying properties with in a 200 dollar budget. The project can be investigated under six main systems and their twelve subsystems. \textit{Figure \ref{fig:system}} shows the organization structure of the project.
 
 	\todo{justifications for requirements}
 	
@@ -496,62 +496,51 @@ The proposed algorithm is different from the one presented in Conceptual Design 
 			
 				\item {Solution for the Subsystem}
 				
-				This subsystem covers the communication of the components inside vehicle. Currently, Raspberry Pi and Arduino are two components that requires communication. To prevent the large amount of cable connection, a serial communication protocol is implemented. 
-		\begin{lstlisting}[language=Python,float=h!,numbers=left,frame=single,caption=Serial object decleration in Python,label=sc:serial_python, captionpos=b ] 
-import serial
-ar=serial.Serial("/dev/ttyUSB0",9600)
-		\end{lstlisting}
-		 \begin{lstlisting}[language=C,float=h!,numbers=left,frame=single,caption=Serial communication setup in C,label=sc:serial_c, captionpos=b ] 
-#include "./arduinoModule/rs232.h"
-int cport_nr = 24; /* /dev/ttyUSB0 */
-int bdrate = 9600; /* 9600 baud */
-char mode[] = { '8', 'N', '1', 0 }; // 8 data bits, no parity, 1 stop bit
-char str_send[2][BUF_SIZE]; // send data buffer
-unsigned char str_recv[BUF_SIZE]; // recv data buffer
-RS232_OpenComport(cport_nr, bdrate, mode);
-		\end{lstlisting}
-	
-	There are several serial communication protocols that can be used to maintain the connection such as SPI, I2C. However, the first choice is to use USB serial port of the Arduino. Since RPi is practically a computer, it can recognize Arduino as a device using a serial port such as \lstinline|/ttyUSB0| in case of a Linux based OS. When recognized, RPi can send any piece of strings to the Arduino via USB cable. The process of communication is as follows:
+				This subsystem covers the communication of the components inside vehicle. Currently, Raspberry Pi and Arduino are two components that requires communication. To prevent the large amount of cable connection, a serial communication protocol is implemented. \\
+				
+				The serial communication is implemented via USB port. Since RPi is practically a computer, it can recognize Arduino as a device using a serial port such as \lstinline|/ttyUSB0| in case of a Linux based OS. When recognized, RPi can send any piece of strings to the Arduino via USB cable. The process of communication is as follows:
 	\begin{enumerate}
 		\item Arduino should be connected to the Pi. \vspace{-0.2cm}
 		\item Using Arduino IDE or any other method such as listing serial ports and checking for Arduino and so on, the serial port name should be detected \vspace{-0.2cm}
-		\item Baud rates of two sides should be the same. 9600 is generally enough but if needed, it can be incremented to satisfy fast communication \vspace{-0.2cm}
+		\item Baud rates of two sides should be the same. 9600 is generally enough but if needed, it can be incremented to satisfy fast communication rate. \vspace{-0.2cm}
 		\item On Arduino side, \texttt{Serial.begin(9600)} command should be executed and serial port should be read repeatedly to capture the incoming data \vspace{-0.2cm}
-		\item On Pi side, using any language C++ or Python, messages to serial port can be send 
+		\item On Pi side, using  C++ messages can be send to serial port
 	\end{enumerate}
 	
-	There are minor differences when implementing the code in Python, C++  and C. Python is the most practical one:\\
+	Since the lane detection algorithm is implemented on C++, serial communication on the Raspberry side is also implemented on C++. Using \lstinline[language=C++]|<wiringPi.h>| and \lstinline[language=C++]|<wiringSerial.h>| libraries any string can be sent to the serial port specified by the string \lstinline[language=C++]|"/dev/ttyACM0"| with a specified baud rate. 
 	
-	Python has a library called serial by which any type of data can be send through serial ports. Script \ref{sc:serial_python} is used to declare a serial object. Then using \texttt{ar.write("some string \textbackslash r".encode())}, the string "some string" can be send to Arduino. Note that "\textbackslash r" carriage return character carries a high importance because it shows that a string is terminated and any other incoming data belongs to the new piece of string.   \\
+	\begin{lstlisting}[language=C++,caption={C++ class for serial communication}]
+void ArduinoComm::sendToController(std::string payload) {
+/*************************/
+int serialDeviceId = 0;
+serialDeviceId = serialOpen("/dev/ttyACM0", 9600);
+std::cout << "sender " << serialDeviceId << std::endl;
+if (serialDeviceId == -1) {
+std::cout << "Unable to open serial device" << std::endl;
+return;
+}
+if (wiringPiSetup() == -1) {
+return;
+}
+serialPuts(serialDeviceId, payload.c_str());
+return;
+}
+	\end{lstlisting}
+	
+	On the Arduino side, the commands coming from serial port should be listened. The preferred way of achieving that task is to use \texttt{SerialCommand.h} library for the Arduino which allows executing a function depending on the incoming string. Using \lstinline|.addCommand("str",func)| function of the library any function \textit{\lstinline|func|} can be associated with any string coming from serial port. Moreover, the functions can have argument. For example, let the string "PWMSET" be execute a function \lstinline|setpwm()| which requires the PWM value as argument. If incoming string is of the form "PWMSET 150", using \lstinline|.next()| function of the library, the value 150 can be read and converted into integer and interpreted as the PWM value to be set by the function.\\
 	
 
-	As alternatives, the implementation on C is also examined.	Sample codes to implement the same communication in C is in Script \ref{sc:serial_c}. Since it is a low level language, specification of buffer size and other parameters should be done in the code.\\
-
-	%\lstinline[language=Arduino]|<SerialCommand.h>| 
-	On Arduino  side, there are also several option that we can read the incoming data. Using \texttt{Serial.read()}  command is one of the simplest solutions. However, it contains some issues like conversion from string to integer and when to stop. Furthermore, the incoming data should be considered in character basis for the exact control.  
+		
+	\item {Discussions on the Solution}
 	
-	\paragraph*{Alternative Solutions for Internal Communication Subsystem}
-		The communication between Raspberry Pi and Arduino can be realized by the use of other peripheral protocols or libraries.\\
-	
-		There is a \texttt{SerialCommand.h} library for the Arduino which allows executing a function depending on the incoming string. Using \lstinline|.addCommand("str",func)| of the library any function can be associated with any string coming from serial port. Moreover, the functions can have argument. For example, let the string "PWMSET" be execute a function \lstinline|setpwm()| but the PWM value is required. If incoming string is of the form "PWMSET 150", using \lstinline|.next()| function of the library, the value 150 can be read and converted into integer and interpreted as the PWM value to be set.\\
-		
-		Another solution is to use I2C or SPI protocols to set communication between Arduino and Raspberry Pi. These options require simple wiring connections between the pins. A point to remark is being cautious to operating voltage levels of pins of Arduino and Raspberry Pi.\\
-		
-		Besides aforementioned alternatives, Wi-Fi communication can also be considered between Arduino and Raspberry Pi. This solution requires deployment of a Wi-Fi module on Arduino. Some hardware exists in market such as ESP8266 and EMW3165. This solution would require a Wi-Fi network in the medium which makes the solution less implementable.\\
-		
-		A last solution would be to remove Arduino from the system. This would require the handover of operations of Arduino to Raspberry Pi. The resulting system could be considered as a single board solution, that is, all relevant subsystems operate on Raspberry Pi. This option would cause heating problems on Raspberry Pi. A cooling mechanism should also be applicable in this case.
-		
-		Communication subsystem enables the robot to communicate with the opponent using the handshake protocol agreed on standard committee. According to the standard committee, Wi-Fi modules must be used to implement handshaking. Since Raspberry Pi was used in the project, there is no need to get a separate Wi-Fi module; the internal Wi-Fi module of the Raspberry Pi was used.
-			
-				\item {Discussions on the Solution}
-				
+	Using that library, consecutive commands with less that 1ms time separation are sent and the reliability of the library is tested. The results are positive. Since the lane detection algorithm is generating angle and position data approximately in every 7ms, the performance of the library is more than enough for this purpose.			
 			\end{enumerate}
 			
 			
 	
 
 	\subsubsection{External Communication Subsystem}	
-	
+	External communication subsystem enables the robot to communicate with the opponent using the handshake protocol agreed on standard committee. According to the standard committee, Wi-Fi modules must be used to implement handshaking. Since Raspberry Pi was used in the project, there is no need to get a separate Wi-Fi module; the internal Wi-Fi module of the Raspberry Pi was used.
 		\begin{enumerate}
 			\item {Requirements for the Solution}
 			
@@ -642,7 +631,7 @@ RS232_OpenComport(cport_nr, bdrate, mode);
 			
 			The best place to implement the state machine is Arduino as motor driving is also controlled by it. Main requirement for this system to operate is a measure of error or success for the direction subsystem. It can be the same as the error input of controller i.e. turning angle or a function of it. The state machine will act depending on the value of the error input. When it is above a critical level, the vehicle will show a steep deceleration to compensate the error of the direction unit. In other cases, It is wise to implement the speed controller in the form of at least PD controller. In other words, the change in the overall speed will also be maintained by a controller whose error input is not necessarily tried to be made zero but rather below a pre-specified level. State machine diagram can be seen in \textit{Figure \ref{fig:speed-state}}\\
 		
-	This unit acts as a complementary module for direction unit. It will act as a state machine. In one state, the unit will try to increase the speed of the vehicle by making overall increase in both PWM values of DC motors. The feedback of this  system will be the cost function mentioned in driving unit. If that cost exceeds a specified level, unit goes to another state in which the unit will decrease the overall speed to allow direction unit to operate more correctly. In short, this unit tries to compensate the error of the direction unit by changing the overall speed of the vehicle. The requirements of this subsystem are listed below:
+	This unit acts as a complementary module for direction unit. It will act as a state machine. In one state, the unit will try to increase the speed of the vehicle by making overall increase in both PWM values of DC motors. The feedback of this  system will be the cost function mentioned in driving unit. If that cost exceeds a specified level, unit goes to another state in which the unit will decrease the overall speed to allow direction unit to operate more correctly. In short, this unit tries to compensate the error of the direction unit by changing the overall speed of the vehicle.
 			
 			\item {Discussions on the Solution}
 			
@@ -701,7 +690,7 @@ While choosing wheels, high friction property is considered. Because of this rea
 					
 			\item {Solution for the Subsystem}
 			
-			As the previous suggestion in CDR, DC motor selection did not change. The reason of this brushed gearhead DC motors are designed to this usage. Even though 3kg-cm is proposed, because the size and weight of the motors in this specs are not appropriate under 600 RPM condition, and eliminate the over engineering, this calculation turns into weight = torque at the shaft of the motor. RPM condition is set in CDR with equation (1). According to this equation 95.5 RPM is the minimum condition, but to be a strong competitor, 5 times of this value is idealized to goal speed. To handle with this value 100 RPM margin is set, to health of the motors during competition.   
+			As the previous suggestion in CDR, DC motor selection did not change. The reason of this brushed gearhead DC motors are designed for this usage. Even though 3kg-cm is proposed, because the size and weight of the motors in this specs are not appropriate under 600 RPM condition, and eliminate the over engineering, this calculation turns into weight = torque at the shaft of the motor. RPM condition is set in CDR with equation (1). According to this equation 95.5 RPM is the minimum condition, but to be a strong competitor, 5 times of this value is idealized to goal speed. To handle with this value 100 RPM margin is set, to health of the motors during competition.   
  After testing the new motors by using basic pulley structure, 1 kg-cm total torque is obtained.  
 
 			
