@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.21)  8 MAR 2019 12:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.21)  8 MAR 2019 12:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1411,60 +1411,66 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [26]
 
 LaTeX Warning: Reference `fig:detection-test-results' on page 27 undefined on i
-nput line 1165.
+nput line 1166.
 
 [27]
 
 LaTeX Warning: Reference `fig:turn-prediction-explained' on page 28 undefined o
-n input line 1198.
+n input line 1199.
 
-[28] <images/hsake1.PNG, id=140, 572.1375pt x 152.82094pt>
+<images/hsake1.PNG, id=137, 572.1375pt x 152.82094pt>
 File: images/hsake1.PNG Graphic file (type png)
-
-<use images/hsake1.PNG>
-Package pdftex.def Info: images/hsake1.PNG used on input line 1234.
+ <use images/hsake1.PNG>
+Package pdftex.def Info: images/hsake1.PNG used on input line 1233.
 (pdftex.def)             Requested size: 336.05533pt x 89.76247pt.
- <images/hsake2.PNG, id=141, 565.36218pt x 155.83218pt>
-File: images/hsake2.PNG Graphic file (type png)
 
-<use images/hsake2.PNG>
-Package pdftex.def Info: images/hsake2.PNG used on input line 1240.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/hsake2.PNG, id=138, 565.36218pt x 155.83218pt>
+File: images/hsake2.PNG Graphic file (type png)
+ <use images/hsake2.PNG>
+Package pdftex.def Info: images/hsake2.PNG used on input line 1239.
 (pdftex.def)             Requested size: 336.05533pt x 92.62975pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1274--1275
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 1273--1274
 
  []
 
 
-LaTeX Warning: Reference `fig:plan-org' on page 29 undefined on input line 1296
+LaTeX Warning: Reference `fig:plan-org' on page 29 undefined on input line 1295
 .
 
 
 LaTeX Warning: Reference `gannt_chart_app' on page 29 undefined on input line 1
-296.
+295.
 
 [29 <./images/hsake1.PNG> <./images/hsake2.PNG>] [30] [31]
-Overfull \hbox (13.14651pt too wide) in paragraph at lines 1344--1356
+Overfull \hbox (13.14651pt too wide) in paragraph at lines 1343--1355
 [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1344--1356
+Underfull \hbox (badness 10000) in paragraph at lines 1343--1355
 
  []
 
 
-Overfull \hbox (13.1397pt too wide) in paragraph at lines 1357--1365
+Overfull \hbox (13.1397pt too wide) in paragraph at lines 1356--1364
 [][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1357--1365
+Underfull \hbox (badness 10000) in paragraph at lines 1356--1364
 
  []
 
 
-Overfull \hbox (15.38225pt too wide) in paragraph at lines 1366--1374
+Overfull \hbox (15.38225pt too wide) in paragraph at lines 1365--1373
 [][][] 
  []
 
@@ -1493,7 +1499,7 @@ r8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on Duayenler_Critical_Design_Review.pdf (33 pages, 1607095 bytes
+Output written on Duayenler_Critical_Design_Review.pdf (33 pages, 1606245 bytes
 ).
 PDF statistics:
  199 PDF objects out of 1000 (max. 8388607)
