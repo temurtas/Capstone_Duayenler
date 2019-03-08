@@ -1108,6 +1108,7 @@ While choosing wheels, high friction property is considered. Because of this rea
 	
 	\item {External Communication Subsystem Tests}
 		
+		As mentioned in section 2, the main solution for this subsystem is making device a P2P host and communicating with sockets. However, since the Raspberry Pi is not modified as a P2P host yet, the tests are done using hotspot, as previously mentioned in conceptual design report. Note that, unlike P2P, routers are required in this test. However, since sockets are functioning same way in P2P, the test is performed to confirm the approach.
 		\begin{enumerate}
 		
 		\item Raspberry Pi as Client Test:
