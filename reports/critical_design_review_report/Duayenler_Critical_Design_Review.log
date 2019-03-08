@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.21)  8 MAR 2019 12:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.21)  8 MAR 2019 12:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -825,7 +825,71 @@ Package: courier 2005/04/12 PSNFSS-v9.2a (WaS)
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 ))
-(./Duayenler_Critical_Design_Review.aux)
+(./Duayenler_Critical_Design_Review.aux
+! Undefined control sequence.
+l.2 \babel@aux
+              {english}{}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2 \babel@aux{e
+                nglish}{}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.4 \babel@aux
+              {english}{}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Label `pgfid16' multiply defined.
+
+
+LaTeX Warning: Label `pgfid19' multiply defined.
+
+
+LaTeX Warning: Label `pgfid20' multiply defined.
+
+
+LaTeX Warning: Label `pgfid21' multiply defined.
+
+
+LaTeX Warning: Label `pgfid24' multiply defined.
+
+
+LaTeX Warning: Label `pgfid25' multiply defined.
+
+
+LaTeX Warning: Label `fig:isom' multiply defined.
+
+
+LaTeX Warning: Label `sect:vhd' multiply defined.
+
+
+LaTeX Warning: Label `fig:bump-dist' multiply defined.
+
+
+LaTeX Warning: Label `fig:bump-ang' multiply defined.
+
+
+LaTeX Warning: Label `tab:cost' multiply defined.
+
+)
 \openout1 = `Duayenler_Critical_Design_Review.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
@@ -967,10 +1031,11 @@ ick labels; missing features). Consider writing \pgfplotsset{compat=1.13} into
 your preamble.
  on input line 57.
 
+[1
 
-<../../documents/logos/logo3-with-stroke.png, id=4, 1508.63625pt x 379.4175pt>
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+<../../documents/logos/logo3-with-stroke.png, id=10, 1508.63625pt x 379.4175pt>
 File: ../../documents/logos/logo3-with-stroke.png Graphic file (type png)
-
 <use ../../documents/logos/logo3-with-stroke.png>
 Package pdftex.def Info: ../../documents/logos/logo3-with-stroke.png used on in
 put line 64.
@@ -991,19 +1056,63 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-1.def
 File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
-) [1
+) [1 <../../documents/logos/logo3-with-stroke.png>] (./Duayenler_Critical_Desig
+n_Review.toc
+! Undefined control sequence.
+l.1 \babel@toc
+               {english}{}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../../documents/logos/logo
-3-with-stroke.png>] (./Duayenler_Critical_Design_Review.toc)
+! Undefined control sequence.
+l.2 \babel@toc
+               {english}{}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 ...e {section}{\numberline {1}Introduction}{2}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 ...e {section}{\numberline {1}Introduction}{2}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[1])
 \tf@toc=\write4
 \openout4 = `Duayenler_Critical_Design_Review.toc'.
 
- [1]
+ [2]
 Underfull \hbox (badness 10000) in paragraph at lines 119--120
 
  []
 
-[2]
+
+LaTeX Warning: Reference `fig:system' on page 3 undefined on input line 123.
+
+[3]
 Overfull \hbox (39.34796pt too wide) in paragraph at lines 125--125
 [][][][]\OT1/cmr/m/n/12 justifications 
  []
@@ -1084,22 +1193,22 @@ Overfull \hbox (34.32162pt too wide) in paragraph at lines 127--127
  []
 
 
-LaTeX Warning: Marginpar on page 3 moved.
+LaTeX Warning: Marginpar on page 4 moved.
 
-<images/system.png, id=21, 1851.91875pt x 777.90625pt>
+<images/system.png, id=27, 1851.91875pt x 777.90625pt>
 File: images/system.png Graphic file (type png)
  <use images/system.png>
 Package pdftex.def Info: images/system.png used on input line 130.
 (pdftex.def)             Requested size: 448.07378pt x 188.20879pt.
 
-<images/vModels/vmodel.png, id=22, 1436.36626pt x 534.49687pt>
+<images/vModels/vmodel.png, id=28, 1436.36626pt x 534.49687pt>
 File: images/vModels/vmodel.png Graphic file (type png)
 
 <use images/vModels/vmodel.png>
 Package pdftex.def Info: images/vModels/vmodel.png used on input line 140.
 (pdftex.def)             Requested size: 448.07378pt x 166.73625pt.
 
-<images/subsys_block.png, id=23, 581.5326pt x 297.7524pt>
+<images/subsys_block.png, id=29, 581.5326pt x 297.7524pt>
 File: images/subsys_block.png Graphic file (type png)
 
 <use images/subsys_block.png>
@@ -1109,8 +1218,8 @@ Package pdftex.def Info: images/subsys_block.png used on input line 146.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[3 <./images/system.png> <./images/vModels/vmodel.png>]
-<images/vModels/laneDetection_subsystem.png, id=29, 1150.2975pt x 383.031pt>
+[4 <./images/system.png> <./images/vModels/vmodel.png>]
+<images/vModels/laneDetection_subsystem.png, id=35, 1150.2975pt x 383.031pt>
 File: images/vModels/laneDetection_subsystem.png Graphic file (type png)
 
 <use images/vModels/laneDetection_subsystem.png>
@@ -1121,149 +1230,149 @@ ut line 186.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4 <./images/subsys_block.png>] [5 <./images/vModels/laneDetection_subsystem.pn
-g>] [6]
-<images/vModels/dataProcessing_subsystem.png, id=43, 1141.26375pt x 287.27325pt
+[5 <./images/subsys_block.png>] [6 <./images/vModels/laneDetection_subsystem.pn
+g>] [7]
+<images/vModels/dataProcessing_subsystem.png, id=49, 1141.26375pt x 287.27325pt
 >
 File: images/vModels/dataProcessing_subsystem.png Graphic file (type png)
  <use images/vModels/dataProcessing_subsystem.png>
 Package pdftex.def Info: images/vModels/dataProcessing_subsystem.png used on in
-put line 260.
+put line 261.
 (pdftex.def)             Requested size: 416.70532pt x 104.89111pt.
 
-<images/camera_vision_explained.png, id=44, 350.62994pt x 147.9126pt>
+<images/camera_vision_explained.png, id=50, 350.62994pt x 147.9126pt>
 File: images/camera_vision_explained.png Graphic file (type png)
 
 <use images/camera_vision_explained.png>
 Package pdftex.def Info: images/camera_vision_explained.png used on input line 
-265.
+266.
 (pdftex.def)             Requested size: 416.70532pt x 175.78795pt.
- [7 <./images/vModels/dataProcessing_subsystem.png> <./images/camera_vision_exp
+ [8 <./images/vModels/dataProcessing_subsystem.png> <./images/camera_vision_exp
 lained.png>]
-Overfull \hbox (29.3747pt too wide) in paragraph at lines 275--309
+Overfull \hbox (29.3747pt too wide) in paragraph at lines 276--310
 $[]$ 
  []
 
-[8] <images/dataP_explained1.png, id=53, 161.6439pt x 121.05225pt>
+[9] <images/dataP_explained1.png, id=59, 161.6439pt x 121.05225pt>
 File: images/dataP_explained1.png Graphic file (type png)
 
 <use images/dataP_explained1.png>
-Package pdftex.def Info: images/dataP_explained1.png used on input line 318.
+Package pdftex.def Info: images/dataP_explained1.png used on input line 319.
 (pdftex.def)             Requested size: 197.15355pt x 147.64656pt.
 
-<images/dataP_explained2.png, id=54, 161.6439pt x 121.05225pt>
+<images/dataP_explained2.png, id=60, 161.6439pt x 121.05225pt>
 File: images/dataP_explained2.png Graphic file (type png)
 
 <use images/dataP_explained2.png>
-Package pdftex.def Info: images/dataP_explained2.png used on input line 323.
+Package pdftex.def Info: images/dataP_explained2.png used on input line 324.
 (pdftex.def)             Requested size: 197.15355pt x 147.64656pt.
 
-<images/dataP_explained3.png, id=55, 161.6439pt x 121.05225pt>
+<images/dataP_explained3.png, id=61, 161.6439pt x 121.05225pt>
 File: images/dataP_explained3.png Graphic file (type png)
 
 <use images/dataP_explained3.png>
-Package pdftex.def Info: images/dataP_explained3.png used on input line 333.
+Package pdftex.def Info: images/dataP_explained3.png used on input line 334.
 (pdftex.def)             Requested size: 197.15355pt x 147.64656pt.
 
-<images/dataP_explained4.png, id=56, 161.6439pt x 121.05225pt>
+<images/dataP_explained4.png, id=62, 161.6439pt x 121.05225pt>
 File: images/dataP_explained4.png Graphic file (type png)
 
 <use images/dataP_explained4.png>
-Package pdftex.def Info: images/dataP_explained4.png used on input line 338.
+Package pdftex.def Info: images/dataP_explained4.png used on input line 339.
 (pdftex.def)             Requested size: 197.15355pt x 147.64656pt.
- [9 <./images/dataP_explained1.png> <./images/dataP_explained2.png> <./images/d
-ataP_explained3.png> <./images/dataP_explained4.png>]
+ [10 <./images/dataP_explained1.png> <./images/dataP_explained2.png> <./images/
+dataP_explained3.png> <./images/dataP_explained4.png>]
 
-LaTeX Warning: Reference `label' on page 10 undefined on input line 351.
+LaTeX Warning: Reference `label' on page 11 undefined on input line 352.
 
 
-Overfull \hbox (27.9467pt too wide) in paragraph at lines 351--351
+Overfull \hbox (27.9467pt too wide) in paragraph at lines 352--352
 [][][][]\OT1/cmr/m/n/12 SECTION 
  []
 
 
-Overfull \hbox (30.55367pt too wide) in paragraph at lines 351--351
+Overfull \hbox (30.55367pt too wide) in paragraph at lines 352--352
 \OT1/cmr/m/n/12 REFERLE  
  []
 
 
-Overfull \hbox (27.9467pt too wide) in paragraph at lines 351--351
+Overfull \hbox (27.9467pt too wide) in paragraph at lines 352--352
 [][][][]\OT1/cmr/m/n/12 SECTION 
  []
 
 
-Overfull \hbox (30.55367pt too wide) in paragraph at lines 351--351
+Overfull \hbox (30.55367pt too wide) in paragraph at lines 352--352
 \OT1/cmr/m/n/12 REFERLE  
  []
 
 
-Overfull \hbox (27.9467pt too wide) in paragraph at lines 351--351
+Overfull \hbox (27.9467pt too wide) in paragraph at lines 352--352
 [][][][]\OT1/cmr/m/n/12 SECTION 
  []
 
 
-Overfull \hbox (30.55367pt too wide) in paragraph at lines 351--351
+Overfull \hbox (30.55367pt too wide) in paragraph at lines 352--352
 \OT1/cmr/m/n/12 REFERLE  
  []
 
 
-Overfull \hbox (27.9467pt too wide) in paragraph at lines 351--351
+Overfull \hbox (27.9467pt too wide) in paragraph at lines 352--352
 [][][][]\OT1/cmr/m/n/12 SECTION 
  []
 
 
-Overfull \hbox (30.55367pt too wide) in paragraph at lines 351--351
+Overfull \hbox (30.55367pt too wide) in paragraph at lines 352--352
 \OT1/cmr/m/n/12 REFERLE  
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 373.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 374.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 373.
- [10]
-<images/ang_cont.png, id=69, 163.5711pt x 123.0999pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 374.
+ [11]
+<images/ang_cont.png, id=76, 163.5711pt x 123.0999pt>
 File: images/ang_cont.png Graphic file (type png)
 
 <use images/ang_cont.png>
-Package pdftex.def Info: images/ang_cont.png used on input line 396.
+Package pdftex.def Info: images/ang_cont.png used on input line 397.
 (pdftex.def)             Requested size: 215.07349pt x 161.86685pt.
 
-<images/dist_cont.png, id=70, 163.5711pt x 123.0999pt>
+<images/dist_cont.png, id=77, 163.5711pt x 123.0999pt>
 File: images/dist_cont.png Graphic file (type png)
 
 <use images/dist_cont.png>
-Package pdftex.def Info: images/dist_cont.png used on input line 401.
+Package pdftex.def Info: images/dist_cont.png used on input line 402.
 (pdftex.def)             Requested size: 215.07349pt x 161.86685pt.
- [11 <./images/ang_cont.png> <./images/dist_cont.png>] <images/simulink/modelli
-ng2.png, id=76, 1415.2875pt x 465.23813pt>
+ [12 <./images/ang_cont.png> <./images/dist_cont.png>] <images/simulink/modelli
+ng2.png, id=83, 1415.2875pt x 465.23813pt>
 File: images/simulink/modelling2.png Graphic file (type png)
 
 <use images/simulink/modelling2.png>
-Package pdftex.def Info: images/simulink/modelling2.png used on input line 437.
+Package pdftex.def Info: images/simulink/modelling2.png used on input line 438.
 
 (pdftex.def)             Requested size: 336.05533pt x 110.4668pt.
 
-<images/simulink/modelling1.png, id=77, 1415.2875pt x 590.205pt>
+<images/simulink/modelling1.png, id=84, 1415.2875pt x 590.205pt>
 File: images/simulink/modelling1.png Graphic file (type png)
 
 <use images/simulink/modelling1.png>
-Package pdftex.def Info: images/simulink/modelling1.png used on input line 442.
+Package pdftex.def Info: images/simulink/modelling1.png used on input line 443.
 
 (pdftex.def)             Requested size: 448.07378pt x 186.85216pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[12 <./images/simulink/modelling2.png>] [13 <./images/simulink/modelling1.png>]
+[13 <./images/simulink/modelling2.png>] [14 <./images/simulink/modelling1.png>]
 
-Underfull \hbox (badness 10000) in paragraph at lines 499--500
+Underfull \hbox (badness 10000) in paragraph at lines 501--502
 
  []
 
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 506.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 508.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -1277,232 +1386,274 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 510.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 512.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 510.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 512.
 
-Underfull \hbox (badness 10000) in paragraph at lines 530--531
+Underfull \hbox (badness 10000) in paragraph at lines 532--533
 
  []
 
-[14]
+[15]
 
-LaTeX Warning: Reference `fig:socket_funcs' on page 15 undefined on input line 
-549.
+LaTeX Warning: Reference `fig:socket_funcs' on page 16 undefined on input line 
+551.
 
-[15] (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
+[16] (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-Underfull \hbox (badness 10000) in paragraph at lines 566--567
+Underfull \hbox (badness 10000) in paragraph at lines 568--569
 
  []
 
-[16]
 
-LaTeX Warning: Reference `fig:speed-state' on page 17 undefined on input line 6
-32.
+! LaTeX Error: \begin{enumerate} on input line 546 ended by \end{enumee}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.570 ...                             \end{enumee}
+                                                                            ...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 632--633
+! LaTeX Error: \begin{document} ended by \end{enumerate}.
 
- []
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.572 		\end{enumerate}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.572 		\end{enumerate}
+                       
+Things are pretty mixed up, but I think the worst is over.
 
 [17]
-Overfull \hbox (27.45447pt too wide) in paragraph at lines 640--640
+
+LaTeX Warning: Reference `fig:speed-state' on page 18 undefined on input line 6
+25.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 625--626
+
+ []
+
+
+Overfull \hbox (27.45447pt too wide) in paragraph at lines 633--633
 [][][][]\OT1/cmr/m/n/12 line[]angle- 
  []
 
 
-Overfull \hbox (29.21695pt too wide) in paragraph at lines 640--640
+Overfull \hbox (29.21695pt too wide) in paragraph at lines 633--633
 \OT1/cmr/m/n/12 base[]speed  
  []
 
 
-Overfull \hbox (27.45447pt too wide) in paragraph at lines 640--640
+Overfull \hbox (27.45447pt too wide) in paragraph at lines 633--633
 [][][][]\OT1/cmr/m/n/12 line[]angle- 
  []
 
 
-Overfull \hbox (29.21695pt too wide) in paragraph at lines 640--640
+Overfull \hbox (29.21695pt too wide) in paragraph at lines 633--633
 \OT1/cmr/m/n/12 base[]speed  
  []
 
 
-Overfull \hbox (27.45447pt too wide) in paragraph at lines 640--640
+Overfull \hbox (27.45447pt too wide) in paragraph at lines 633--633
 [][][][]\OT1/cmr/m/n/12 line[]angle- 
  []
 
 
-Overfull \hbox (29.21695pt too wide) in paragraph at lines 640--640
+Overfull \hbox (29.21695pt too wide) in paragraph at lines 633--633
 \OT1/cmr/m/n/12 base[]speed  
  []
 
 
-Overfull \hbox (27.45447pt too wide) in paragraph at lines 640--640
+Overfull \hbox (27.45447pt too wide) in paragraph at lines 633--633
 [][][][]\OT1/cmr/m/n/12 line[]angle- 
  []
 
 
-Overfull \hbox (29.21695pt too wide) in paragraph at lines 640--640
+Overfull \hbox (29.21695pt too wide) in paragraph at lines 633--633
 \OT1/cmr/m/n/12 base[]speed  
  []
 
 [18] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 741--742
+Underfull \hbox (badness 10000) in paragraph at lines 736--737
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 738--739
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 743--744
-
- []
-
-
-LaTeX Warning: Reference `fig:camera-holder' on page 20 undefined on input line
- 745.
+LaTeX Warning: Reference `fig:camera-holder' on page 21 undefined on input line
+ 740.
 
 
-LaTeX Warning: Reference `fig:chassis' on page 20 undefined on input line 745.
+LaTeX Warning: Reference `fig:chassis' on page 21 undefined on input line 740.
 
 
-LaTeX Warning: Reference `fig:detection-test-results' on page 20 undefined on i
-nput line 745.
+LaTeX Warning: Reference `fig:detection-test-results' on page 21 undefined on i
+nput line 740.
 
 
-LaTeX Warning: Reference `fig:chassis' on page 20 undefined on input line 749.
+LaTeX Warning: Reference `fig:chassis' on page 21 undefined on input line 744.
 
-<images/chassis1.png, id=106, 1317.42188pt x 846.16125pt>
+<images/chassis1.png, id=112, 1317.42188pt x 846.16125pt>
 File: images/chassis1.png Graphic file (type png)
 
 <use images/chassis1.png>
-Package pdftex.def Info: images/chassis1.png used on input line 753.
+Package pdftex.def Info: images/chassis1.png used on input line 748.
 (pdftex.def)             Requested size: 358.46039pt x 230.23544pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (7.62329pt too wide) in paragraph at lines 757--757
+Overfull \hbox (7.62329pt too wide) in paragraph at lines 752--752
 [][][][]\OT1/cmr/m/n/12 choose 
  []
 
 
-Overfull \hbox (7.62329pt too wide) in paragraph at lines 757--757
+Overfull \hbox (7.62329pt too wide) in paragraph at lines 752--752
 [][][][]\OT1/cmr/m/n/12 choose 
  []
 
 
-Overfull \hbox (7.62329pt too wide) in paragraph at lines 757--757
+Overfull \hbox (7.62329pt too wide) in paragraph at lines 752--752
 [][][][]\OT1/cmr/m/n/12 choose 
  []
 
 
-Overfull \hbox (7.62329pt too wide) in paragraph at lines 757--757
+Overfull \hbox (7.62329pt too wide) in paragraph at lines 752--752
 [][][][]\OT1/cmr/m/n/12 choose 
  []
 
 File: images/chassis1.png Graphic file (type png)
 <use images/chassis1.png>
-Package pdftex.def Info: images/chassis1.png used on input line 764.
+Package pdftex.def Info: images/chassis1.png used on input line 759.
 (pdftex.def)             Requested size: 215.07349pt x 138.13869pt.
 
-<images/chassis2.png, id=107, 1317.42188pt x 846.16125pt>
+<images/chassis2.png, id=113, 1317.42188pt x 846.16125pt>
 File: images/chassis2.png Graphic file (type png)
 
 <use images/chassis2.png>
-Package pdftex.def Info: images/chassis2.png used on input line 769.
+Package pdftex.def Info: images/chassis2.png used on input line 764.
 (pdftex.def)             Requested size: 215.07349pt x 138.13869pt.
- [20] [21 <./images/chassis1.png> <./images/chassis2.png>] [22] [23] <images/bu
-mp_test_dist.png, id=122, 730.98094pt x 268.75406pt>
+ [21 <./images/chassis1.png> <./images/chassis2.png>]
+[22] [23] <images/bump_test_dist.png, id=126, 730.98094pt x 268.75406pt>
 File: images/bump_test_dist.png Graphic file (type png)
 
 <use images/bump_test_dist.png>
-Package pdftex.def Info: images/bump_test_dist.png used on input line 964.
+Package pdftex.def Info: images/bump_test_dist.png used on input line 959.
 (pdftex.def)             Requested size: 336.05533pt x 123.55455pt.
-
-<images/bump_test_ang.png, id=123, 787.44188pt x 639.89063pt>
-File: images/bump_test_ang.png Graphic file (type png)
-
-<use images/bump_test_ang.png>
-Package pdftex.def Info: images/bump_test_ang.png used on input line 976.
-(pdftex.def)             Requested size: 201.63182pt x 163.84854pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[24 <./images/bump_test_dist.png>] [25 <./images/bump_test_ang.png>] [26]
-[27]
+[24] <images/bump_test_ang.png, id=130, 787.44188pt x 639.89063pt>
+File: images/bump_test_ang.png Graphic file (type png)
+
+<use images/bump_test_ang.png>
+Package pdftex.def Info: images/bump_test_ang.png used on input line 971.
+(pdftex.def)             Requested size: 201.63182pt x 163.84854pt.
+ [25 <./images/bump_test_dist.png> <./images/bump_test_ang.png>] [26] [27]
 
 LaTeX Warning: Reference `fig:detection-test-results' on page 28 undefined on i
-nput line 1174.
-
-
-LaTeX Warning: Reference `fig:turn-prediction-explained' on page 28 undefined o
-n input line 1207.
+nput line 1170.
 
 [28]
 
-LaTeX Warning: Reference `fig:handshake1' on page 29 undefined on input line 12
-39.
-
-
-LaTeX Warning: Reference `fig:handshake2' on page 29 undefined on input line 12
-39.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1277--1278
-
- []
+LaTeX Warning: Reference `fig:turn-prediction-explained' on page 29 undefined o
+n input line 1203.
 
 [29]
 
-LaTeX Warning: Reference `fig:plan-org' on page 30 undefined on input line 1299
+LaTeX Warning: Reference `fig:handshake1' on page 30 undefined on input line 12
+35.
+
+
+LaTeX Warning: Reference `fig:handshake2' on page 30 undefined on input line 12
+35.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1273--1274
+
+ []
+
+
+LaTeX Warning: Reference `fig:plan-org' on page 30 undefined on input line 1295
 .
 
+! Undefined control sequence.
+<recently read> \hlin 
+                      
+l.1320 Additional Components & - & 105 \\ \hlin
+                                               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-LaTeX Warning: Reference `gannt_chart_app' on page 30 undefined on input line 1
-299.
-
-[30] [31]
-Overfull \hbox (13.14651pt too wide) in paragraph at lines 1346--1358
+[30] [31] [32]
+Overfull \hbox (13.14651pt too wide) in paragraph at lines 1343--1355
 [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1346--1358
+Underfull \hbox (badness 10000) in paragraph at lines 1343--1355
 
  []
 
 
-Overfull \hbox (13.1397pt too wide) in paragraph at lines 1359--1367
+Overfull \hbox (13.1397pt too wide) in paragraph at lines 1356--1364
 [][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1359--1367
+Underfull \hbox (badness 10000) in paragraph at lines 1356--1364
 
  []
 
 
-Overfull \hbox (15.38225pt too wide) in paragraph at lines 1368--1376
+Overfull \hbox (15.38225pt too wide) in paragraph at lines 1365--1373
 [][][] 
  []
 
-[32] (./Duayenler_Critical_Design_Review.aux)
+[33] (./Duayenler_Critical_Design_Review.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 31426 strings out of 494953
- 701369 string characters out of 6180976
- 1017034 words of memory out of 5000000
- 34098 multiletter control sequences out of 15000+600000
+ 31473 strings out of 494953
+ 702273 string characters out of 6180976
+ 1017515 words of memory out of 5000000
+ 34145 multiletter control sequences out of 15000+600000
  13389 words of font info for 49 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  62i,12n,98p,2014b,1701s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1518,11 +1669,11 @@ r8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on Duayenler_Critical_Design_Review.pdf (33 pages, 1654991 bytes
+Output written on Duayenler_Critical_Design_Review.pdf (35 pages, 1656669 bytes
 ).
 PDF statistics:
- 197 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
+ 203 PDF objects out of 1000 (max. 8388607)
+ 119 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  108 words of extra memory for PDF output out of 10000 (max. 10000000)
 

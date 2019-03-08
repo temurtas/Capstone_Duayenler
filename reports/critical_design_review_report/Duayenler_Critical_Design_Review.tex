@@ -201,7 +201,8 @@
 	
 	\subsubsection{Vehicle Detection Subsystem}
 	
-			\item {Requirements for the Solution}
+		
+	\item {Requirements for the Solution}
 			
 			\begin{enumerate}
 				\item The subsystem should detect the opponent to be caught with in a 5 cm 
@@ -342,7 +343,7 @@
 \end{figure}
 
 	The third step is to fit best lines through the remaining lines. This is realized by using built-in Least-Squares method. As a result of this step, the number of lines is dropped to two as left line and right line.
-	Then next step is to classify the line points as left or right. The lines are firstly eliminated according to their slopes. If slope of a line is not in invalid slope region of $\pm$0.005, then it is a valid line. This process is done to get rid of unnecessary low sloped lines. After elimination, line points set must be determined as left or right. At this point, this classification is done according to double checking. The center of the image, that is 320th vertical pixel. If initial and final horizontal points of the image is in the same half, the line belongs to that half. This method works nicely in most regions of the path. However, it is a bit error prone in case of a sharp turning angle or losing one of the lanes . This algorithm will be improved to be more robust.
+	Then next step is to classify the line points as left or right. The lines are firstly eliminated according to their slopes. If slope of a line is not in invalid slope region of $\pm$0.005, then it is a valid line. This process is done to get rid of unnecessary low sloped lines. After elimination, line points set must be determined as left or right. At this point, this classification is done according to double checking. The center of the image, that is 320th vertical pixel. If initial and final horizontal points of the image is in the same half, the line belongs to that half. This method works nicely in most regions of the path. However, it is a bit error prone in case of a sharp turning angle or losing one of the lanes . This algorithm will be improved to be more robustu
 	
 	The last step is to find the steering angle. The target point is determined as the average of the middle points left and right lines. So the target point is always in the form of $(x_{avg}, 305)$. The y-coordinate is found by simple math (referencing from \textit{Figure\ref{fig:camera_vision_explained}}) $480px-50px-125px$. The current point of the vehicle is always $(320,480)$. So the line connecting two points to each other constitutes the track path and the $arctan$ of the slope gives the steering angle. Steering angle is in the $[-90,90]$ range where negative values indicate to turn left and positive values indicate to turn right. This output is sent to PID Controller subsystem.
 			
@@ -480,7 +481,8 @@ The proposed algorithm is different from the one presented in Conceptual Design 
 		
 		.aaa
 			\begin{enumerate}
-				\item \textit{Internal Communication Subsystem} which is responsible for communication inside the vehicle mainly the communication between Raspberry Pi and Arduino.						\item \textit{External Communication Subsystem} which is responsible for the communication of the vehicle with the outside world mainly with the opponents.
+				\item \textit{Internal Communication Subsystem} which is responsible for communication inside the vehicle mainly the communication between Raspberry Pi and Arduino.						
+\item \textit{External Communication Subsystem} which is responsible for the communication of the vehicle with the outside world mainly with the opponents.
 			\end{enumerate}		
 			
 			
@@ -556,32 +558,22 @@ return;
 		\item socket.socket(): Creates a new socket using the given address family, socket type and protocol number.
 		\item s.bind(address): Binds the socket to the address defined previously.
 		\item s.listen(backlog): Sets up the maximum number of connections that can be made to the socket, which must be at 1 for the project.
-		\item	s.accept(): Waits until connection arrives, then accept the client connection. Returns the client socket connected to the server as (conn, address) pair, where conn is a new socket object and address is the address bound to this socket
+		\item	s.accept(): Waits until connection arrives, then accept the client connection. Returns the client socket connected to the uerver as (conn, address) pair, where conn is a new socket object and address is the address bound to this socket
 		\item	s.connect(): Provides client to connect to the server
 		\item	s.send(): Transmits message to the remote socket.
 		\item	s.recv(): Receives message from the remote socket
 		\item	socket.close(): closes the socket; i.e., ends the communication with the opponent at the end of the race.
 	\end{itemize}
 	
-	It is stated in the standard committee that each team must be assigned a static IP to communicate with the other robots. Duayenler has the static IP stated as “192.168.1.7” and the ID as “07”. Since Raspberry Pi 3 comes with a built-in wireless adapter, configuring it as a Wi-Fi hotspot is possible. To assign given IP to the robot, Raspberry Pi must be set as an access point from the terminal.\\
+	It is stated in the standard committee that each team must be assigned a static IP to communicate with the other robots. Duayenler .ast he static IP stated as “192.168.1.7” andrequest is sent. At the ID as “07”. Since Raspberry Pi 3 comsame tinowledges with a built-in wireless adapterot is possible. To assign given IP to the robot, Raspberry Pi must be set as an access point from the terminal.\\
 	
-	In the algorithm that was implemented for the handshake, in a continuous loop, the front and rear sensors' values are been checked. There are two functions which are for client and server modes, respectively. If the front sensor senses the opponent in 5 cm range, our main code visits the client mode function. If the rear sensor senses the opponent in 5 cm range, server mode function runs. If our robot is in the server mode, the rear sensor value is again checked. The acknowledge message ($< ID> 01$) or reject message ($< ID> 11$) is sent according to the sensor value.
-	
-			
-			\item {Discussions on the Solution}
+	In the algorithm that was implemented for the handshake, in a continuous loop, the front and rear sensors' values are been checked. There are two functions which are for client and server modes, respectively. If the front sensor senses the opponent in 5 cm range, our main code visits the client mode function. If,the rear sensor senses the opponent in 5 cm range, server mode function runs. If our robot is in the server mode, the rear sensor value is again checked. Tdefeat case, a catch message is received by the opponent. Then, vehicle detection subsystem is called. According to the returned value from the back sensor, the acknowledge message ($< ID> (ID01$) o	\item {Discussions on the Solution}                                                	                                                                                                                                                                                            \end{enumee}                                   bsystem should control motion subsystem according to output of the computation subsystem
 			
 		\end{enumerate}
 	
 	
 	
-	\subsection{Driving System}
-	
-		\begin{enumerate}
-			\item The subsystem should control motion subsystem according to output of the computation system
-			
-		\end{enumerate}
-		
-		This system is responsible for the motion of the vehicle. Two parameters that are the direction and the speed of the vehicle is controlled by this unit accordingly to the information coming from the \textit{Computation System}. It has two subsystems namely,
+	This system is responsible for the motion of the vehicle. Two parameters that are the direction and the speed of the vehicle is controlled by this unit accordingly to the information coming from the \textit{Computation System}. It has two subsystems namely,
 			
 			\begin{enumerate}
 				\item \textit{Direction Subsystem} which is responsible for the orientation of the vehicle and keeps the road and the vehicle aligned.
@@ -612,7 +604,8 @@ return;
 			
 			\item {Discussions on the Solution}
 			
-		\end{enumerate}
+		
+\end{enumerate}
 			
 	
 			
@@ -646,7 +639,8 @@ return;
 		\subsection{Motion System}
 		
 		\begin{enumerate}
-			\item The system should ensure that the vehicle can drive itself with enough power.	\end{enumerate}	
+			\item The system should ensure that the vehicle can drive itself with enough power.	
+\end{enumerate}	
 		
 		Duty of this system is maintaining mechanical rigidity of the driving system. Construction of this system contain two subsystems which are, wheels Subsystem and motor subsystem.
 			
@@ -673,7 +667,8 @@ While choosing wheels, high friction property is considered. Because of this rea
 			
 			\item {Discussions on the Solution}
 			
-		\end{enumerate}
+		
+\end{enumerate}
 		
 	
 		
@@ -1115,14 +1110,15 @@ While choosing wheels, high friction property is considered. Because of this rea
 					\item Power up the motor  
 					\item Increase the weight to a point where the motor is not pulling anymore  
 					\item Record the value and check with expected results  
-					\item If the result is not comparable with expected values and very low, motor can be considered as broken  
+					\item If the result is not comparable with exrested values and very low, motor can be considered as broken  
 					\item Contact the seller for more information 
 				\end{enumerate}
 		\end{enumerate}
 		
 		
 		
-			
+		
+	
 		
 		
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1177,7 +1173,7 @@ While choosing wheels, high friction property is considered. Because of this rea
 	
 	\subsubsection*{Results of Vehicle Detection Subsystem Tests}
 	
-		All the test procedures mentioned at the \textbf{Section~\ref{sect:vhd}} were applied to the ultrasonic sensor (HC-SR04) and two infrared sensors (TCRT5000 \& QRD1114). The ultrasonic sensor were showed very inaccurate result especially in \textit{Angled Approach Test}. The test results can be examined at \textit{Table`\ref{tab:aat}}. Considering the fact that the path itself is elliptical and there would always be an angle between vehicle even though it may be very small for some cases, it was decided that ultrasonic sensors are not a good choice for this subsystem. However, it is always possible that these sensors can be supportive sensors for the subsystem.
+		All the test procedures mentioned at the \textbf{Section~\ref{sect:vhd}} were applied to the ultrasonic sensor (HC-SR04) and two infrared sensors (TCRT5000 \& QRD1114). The ultrasonic sensor wereishowed very inaccurate result especially in \textit{Angled Approach Test}. The test results can be examined at \textit{Table`\ref{tab:aat}}According to test, the sensor gives correct rs elliptical and there would always be an angle between vehicle even though it may be very small for some cases, it was decided that ultrasonicis confirmed that time of flight sensors are nobsystem. However, it is always possible that these sensors can be supportive sensors fe subsystem.
 		
 		\begin{table}[H]
 		  \centering
@@ -1320,7 +1316,8 @@ While choosing wheels, high friction property is considered. Because of this rea
        Powerbank & 1 & 12 \\ \hline
        Li-po Battery  & 1 & 15 \\ \hline
        Distance Sensor & 2 & 18 \\ \hline
-       Additional Components & - & 10 \\ \hline
+       
+Additional Components & - & 105 \\ \hlin
        Additional Payments & - & 15 \\ \hline
        Total Project &  198.5 
          
