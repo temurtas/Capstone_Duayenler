@@ -22,8 +22,8 @@
 \contentsline {section}{\numberline {3}Detailed Tests for the Subsystems}{21}
 \contentsline {section}{\numberline {4}Testing Stage}{27}
 \contentsline {subsection}{\numberline {4.1}Test Results, Encountered Problems and Possible Solutions for Subsystems}{27}
-\contentsline {subsection}{\numberline {4.2}Robustness of the Design}{29}
-\contentsline {section}{\numberline {5}Plans}{29}
+\contentsline {subsection}{\numberline {4.2}Robustness of the Design}{28}
+\contentsline {section}{\numberline {5}Plans}{28}
 \contentsline {subsection}{\numberline {5.1}Estimated Cost/Power of Project/Gantt}{29}
 \contentsline {section}{\numberline {6}Conclusion}{30}
 \contentsline {section}{\numberline {7}Disclaimer}{31}
