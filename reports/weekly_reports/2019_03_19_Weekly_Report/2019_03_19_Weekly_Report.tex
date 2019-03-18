@@ -86,9 +86,11 @@
 \begin{itemize}
  
 	 \item Chassis assembly is refined and finalized.
-	 \item Step up and step down converters are imported to the system. However, they burnt out.
-	 \item Vehicle drive with controller is tested. Some of problems were: PWM output of pins were not identical, small PWM difference yielded big voltage difference in motor drivers. This problem took a long time to fix.
+	 \item Step up and step down converters are imported to the system. However, they burnt out and replaced. The design was changed with usage of one step down converter that gives constant 10 volts output to the motor driver from Li-Po battery.
+	 \item Vehicle drive with controller is tested. Some of problems were: PWM output of pins of Arduino were not identical, small voltage difference at same PWM values (around 10mV) yielded big voltage difference in motor driver outputs. This problem took a long time to realise and it is fixed.
+	 \item Another problem was the low torque produced by the robot, It was assumed earlier that the DC motors were capable of driving, however, as we realized the motor were not able to drive the vehicle at very slow speed. Therefore, the sharp turns are very problematic with this motors. The tests with other bigger DC motor pairs were promising but it is required by the design restrictions that a new DC motor pairs should be bought in similar form factor with higher torque capabilities. The rpm capabilities of the motors can be traded in return.
 	 \item Two distance sensors for handshake are implemented on the vehicle and tested with software.
+	 
 	 
     
 
@@ -96,21 +98,21 @@
 	\end{itemize}
 \section{Plans}
 \begin{itemize}
-\item PID controller design parameter tuning.
+\item Initial testings for PID controller design parameter tuning for controller subsystem with varying base speed (with Speed Subsystem).
 
-	\begin{figure}[H]
-	\center
-	\setlength{\unitlength}{\textwidth} 
-	\includegraphics[width=0.6\unitlength]{photo5776198910077939979}
-	\caption{\label{fig:photo5776198910077939979} As Chassis is being Assembled. }
-\end{figure}
+%\begin{figure}[H]
+%	\center
+%	\setlength{\unitlength}{\textwidth} 
+%	\includegraphics[width=0.6\unitlength]{photo5776198910077939979}
+%	\caption{\label{fig:photo5776198910077939979} As Chassis is being Assembled. }
+%\end{figure}
 
-	\begin{figure}[H]
-		\center
-		\setlength{\unitlength}{\textwidth} 
-		\includegraphics[width=0.6\unitlength]{photo5776198910077939977}
-		\caption{\label{fig:photo5776198910077939977} Chassis Assembly }
-	\end{figure}
+%	\begin{figure}[H]
+%		\center
+%		\setlength{\unitlength}{\textwidth} 
+%		\includegraphics[width=0.6\unitlength]{photo5776198910077939977}
+%		\caption{\label{fig:photo5776198910077939977} Chassis Assembly }
+%	\end{figure}
 		
 \end{itemize}
 %\begin{appendices}
