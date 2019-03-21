@@ -15,7 +15,7 @@ SerialCommand scmd;
 // Variable Declerations
 unsigned long deltaT = 1000; // time between samples (usecs) 1000->50000
 const int pastSize = 3; // used for integrating
-float duration = 0; // The duration between two loops
+double duration = 0; // The duration between two loops
 double t = 0;
 double p_time = 0; // A variable to hold past time
 // ********************
@@ -23,8 +23,7 @@ float pastError[pastSize]; //Holds the past errors
 float sum; //Holds the summation of the errors
 // ********************
 float maxSum = 1; // Optional integral term
-unsigned long delta; //Calculates the derivative of the error
-unsigned long t; //time variable
+float delta; //Calculates the derivative of the error
 // ********************
 int dacMax = 255; // Arduino dac is eight bits.
 int adcMax = 1024; //Arduino uses a 10 bit dac, 10th power of 2 = 1024
@@ -42,9 +41,9 @@ char *arg;
 int dist_pix = 0;
 float dist_mm=0;
 float error=0;
-int motorCmd;
-int pastmotorCmd;
-float Ts = 0;
+int motorCmd=0;
+int halfmotorCmd=0;
+// ********************
 
 
 void setup() {
@@ -61,11 +60,11 @@ void setup() {
   digitalWrite(right_motor_back, LOW);
   digitalWrite(right_motor_forward, LOW);
 
-  scmd.addCommand("A",getanglePos);
-  scmd.addCommand("B",getangleNeg);
+  scmd.addCommand("A",getdistPos);
+  scmd.addCommand("B",getdistNeg);
   scmd.addDefaultHandler(defaultt);
 }
-void getanglePos(){
+void getdistPos(){
   char *arg;
   arg=scmd.next();
   if(arg !=NULL){
@@ -73,7 +72,7 @@ void getanglePos(){
   }
 } 
 
-void getangleNeg(){
+void getdistNeg(){
   char *arg;
   arg=scmd.next();
   if(arg !=NULL){
@@ -85,7 +84,6 @@ void getangleNeg(){
 void defaultt(){
    NOP;
 }
-
 
 void loop() {
   scmd.readSerial();
@@ -115,19 +113,20 @@ void loop() {
   sum = min(max(sum + error * float(deltaT) * 1e-6, -1 * maxSum), maxSum);
   // ********************
   // ********************
-  if (error >= 0) {
     motorCmd = int(Kp * error+ Ki * sum + Kd * delta); 
     motorCmd = abs(motorCmd);
-    analogWrite(right_motor_pwm, pwm_offset  );
-    analogWrite(left_motor_pwm, min(pwm_offset + motorCmd, dacMax) ); // Left PWM is Pin 5 
+    halfmotorCmd = motorCmd/2;
+  // ********************
+  // ********************  
+    if (error >= 0) {
+    analogWrite(right_motor_pwm, max ( pwm_offset - halfmotorCmd , 0)  );
+    analogWrite(left_motor_pwm, min(pwm_offset + halfmotorCmd, dacMax) ); // Left PWM is Pin 5 
     initial_start();
   } 
   
   else {
-    motorCmd = int(Kp * error+ Ki * sum + Kd * delta); 
-    motorCmd = abs(motorCmd);
-    analogWrite(left_motor_pwm, pwm_offset);
-    analogWrite(right_motor_pwm, min(pwm_offset + motorCmd , dacMax) ); // Right PWM is Pin 10
+    analogWrite(left_motor_pwm, max (pwm_offset - halfmotorCmd , 0 ) );
+    analogWrite(right_motor_pwm, min(pwm_offset + halfmotorCmd , dacMax) ); // Right PWM is Pin 10
     initial_start();
   }
 
