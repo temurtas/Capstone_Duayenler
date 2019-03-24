@@ -9,6 +9,7 @@
 #include "./headers/ArduinoComm.hpp"
 #include "./sources/ArduinoComm.cpp"
 #include "opencv2/imgproc/imgproc_c.h"
+#include <numeric>
 
 /** HSV PARAMETER SETTINGS **/
 const int max_value_H = 360 / 4;
@@ -65,7 +66,7 @@ int main(int argc, char* argv[]) {
 	// variables for calculating average process time
 	double avgRunTime;
 	int avgCounter = 0;
-	int const fps = 30;
+	int const fps = 5;
 	double timeCapture;
 
 	// image processing variables
@@ -135,11 +136,11 @@ int main(int argc, char* argv[]) {
 
 		cap >> frame_orig;
 		
-		if (frame_counter == 1){
-			frame_counter = 0;
+		if (frame_counter != 2){
+			frame_counter++;
 			}
 		else {
-			frame_counter = 1;
+			frame_counter = 0;
 		// check if the input video can be opened
 		if (frame_orig.empty()) {
 			std::cout << "!!! Input video could not be opened" << std::endl;
@@ -325,10 +326,11 @@ void reverseVector(std::vector<cv::Vec4i> & v) {/*
  std::cout << std::endl;*/
 
 	std::reverse(v.begin(), v.end());
-	/*
+		/*
 	 for(auto i:v)
 	 std::cout << i << " ";
-	 std::cout << std::endl;*/
+	 std::cout << std::endl;*/	
+	
 	return;
 }
 

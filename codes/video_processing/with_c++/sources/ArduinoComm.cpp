@@ -25,7 +25,7 @@
 void ArduinoComm::sendToController(std::string payload) {
 	/*************************/
 	int serialDeviceId = 0;
-	serialDeviceId = serialOpen("/dev/ttyACM0", 9600);
+	serialDeviceId = serialOpen("/dev/ttyUSB0", 9600);
 	std::cout << "sender " << serialDeviceId << std::endl;
 	if (serialDeviceId == -1) {
 		std::cout << "Unable to open serial device" << std::endl;

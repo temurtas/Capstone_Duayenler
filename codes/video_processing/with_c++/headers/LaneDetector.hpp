@@ -13,6 +13,7 @@
 #include <string>
 #include <vector>
 #include "opencv2/opencv.hpp"
+#include <chrono>
 
 /**
  *@brief Definition of the LaneDetector class. It contains all the functions and variables depicted in the
@@ -25,6 +26,8 @@ private:
 	int img_rows;
 	int img_cols;
 	double img_center;
+	double timeCapture = (double) cv::getTickCount();
+	
 	cv::Point ptsROI[4]; // points classifying the ROI
 	bool left_flag = false; // Tells us if there's left boundary of lane detected
 	bool right_flag = false; // Tells us if there's right boundary of lane detected

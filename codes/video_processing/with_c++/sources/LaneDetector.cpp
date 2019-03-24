@@ -18,6 +18,9 @@
 #include <thread>
 
 /*******/
+#include <time.h>
+#include <chrono>
+#include <fstream>
 #include <iostream>
 #include <cstdlib>
 #include <unistd.h>
@@ -26,7 +29,7 @@
 /*******/
 
 // CONSTRUCTOR
-LaneDetector::LaneDetector::LaneDetector() {
+LaneDetector::LaneDetector() {
 	right_m = 1;
 	left_m = 1;
 	img_center = 1;
@@ -381,9 +384,15 @@ std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 
 		//slopes.push_back(slope);
 		//selected_lines.push_back(i);
-
+		
+		//std::cout << i << " ";
+		if (((ini.x + fini.x) > 2*sum_x_left) && ((ini.x + fini.x) < 2*sum_x_right) && (std::abs((ini.x + fini.x) - (2 * img_center)) < 200)) {
+			 // discard the line
+			// std::cout << "discarded" << std::endl;
+		}
+		
 		// add to determine mass point in x axis
-		if (ini.x + fini.x > 2 * img_center) {
+		else if (ini.x + fini.x > 2 * img_center) {
 			right_lines.push_back(i); // classify as right line
 
 			// SLOPE IMPLEMENTATION
@@ -420,12 +429,13 @@ std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 
 		//}
 	}
-//	for (auto i:l_slope_ang)
-//		std::cout << i << " ";
-//	std::cout << std::endl;
-//	for (auto i:l_slope_ang_diff)
-//		std::cout << i << " ";
-//	std::cout << std::endl;
+	std::cout << "leftLines" << std::endl;
+	for (auto i:left_lines)
+		std::cout << i << " ";
+	std::cout << std::endl;
+	for (auto i:right_lines)
+		std::cout << i << " ";
+	std::cout << std::endl;
 
 	// fix the problems if any for both lines
 	fixProblems(left_lines, l_slope_ang, l_slope_ang_diff, l_bad_index_1,
@@ -603,15 +613,17 @@ std::string LaneDetector::predictTurn(double pivot, int angle) {
 		output = "Turn Right";
 	else
 		output = "Go Straight";
+	
+	if (angle > 180) {
 
-	if (angle > 180)
 		angle = angle - 360; // adjust for left/right turn
 							 // subtract from 360 for left turns
+		}
+		else {
+
+			}
 	output += " " + std::to_string(angle);
-/*
-	ArduinoComm arduinoComm;
-	arduinoComm.sendToController(std::to_string(angle));
-	* */
+	
 	return output;
 }
 
@@ -661,11 +673,34 @@ int LaneDetector::plotLane(cv::Mat& inputImage, std::vector<cv::Point> lane) {
 			
 			
 	/*************************/
-	ArduinoComm arduinoComm;
-	arduinoComm.sendToController(std::to_string(target_x - current_x));
-	std::cout << (target_x - current_x) << std::endl;
+	
+		std::ofstream myfile;
+	myfile.open("test.txt", std::ios_base::app);
+	
+	
+	 myfile << ((double) cv::getTickCount() - timeCapture)
+				/ cv::getTickFrequency() * 1000 <<  " " << current_x-target_x << "\n" << std::endl;
+	myfile.close();
+	
+	std::string s;
+	if(current_x-target_x > 0 ) {
+		s.append("A ");
+		s.append(std::to_string(current_x-target_x));
+		std::cout << s << std::endl;
+	}
+	else{
+		s.append("B ");
+		s.append(std::to_string(abs(current_x-target_x)));
+		std::cout << s << std::endl;
+	}
+	s.append("\r");
 
-	/*************************/
+	
+	ArduinoComm arduinoComm;
+	arduinoComm.sendToController(s);
+/**************************/
+	
+	
 
 	// show the final output image
 	//cv::namedWindow(window_vision);
