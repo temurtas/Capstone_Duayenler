@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  18 MAR 2019 13:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  24 MAR 2019 16:36
 entering extended mode
 **./2019_03_19_Weekly_Report.tex
 (2019_03_19_Weekly_Report.tex
@@ -1072,10 +1072,10 @@ ed on input line 137.
 o2-page-with-stroke.png>]
 (2019_03_19_Weekly_Report.aux) ) 
 Here is how much of TeX's memory you used:
- 29384 strings out of 493333
- 689755 string characters out of 3136576
+ 29382 strings out of 493333
+ 689695 string characters out of 3136576
  995900 words of memory out of 3000000
- 32356 multiletter control sequences out of 15000+200000
+ 32354 multiletter control sequences out of 15000+200000
  5108 words of font info for 19 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,15n,96p,791b,705s stack positions out of 5000i,500n,10000p,200000b,50000s
