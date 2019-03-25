@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  25 MAR 2019 13:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  25 MAR 2019 14:07
 entering extended mode
 **./2019_03_26_Weekly_Report.tex
 (2019_03_26_Weekly_Report.tex
@@ -941,7 +941,7 @@ less on input line 61.
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
 less on input line 66.
 
-No file 2019_03_26_Weekly_Report.aux.
+(2019_03_26_Weekly_Report.aux)
 \openout1 = `2019_03_26_Weekly_Report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
@@ -956,6 +956,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
 LaTeX Font Info:    ... okay on input line 70.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
 LaTeX Font Info:    ... okay on input line 70.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1054,37 +1055,57 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 88.
 
+<24_03_responses.png, id=6, 1180.41pt x 481.04718pt>
+File: 24_03_responses.png Graphic file (type png)
+ <use 24_03_responses.png>
+Package pdftex.def Info: 24_03_responses.png used on input line 115.
+(pdftex.def)             Requested size: 448.07378pt x 182.5943pt.
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-1.def"
 File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
 )
-<../../../documents/logos/logo2-page-with-stroke.png, id=6, 376.0449pt x 376.04
+<../../../documents/logos/logo2-page-with-stroke.png, id=7, 376.0449pt x 376.04
 49pt>
 File: ../../../documents/logos/logo2-page-with-stroke.png Graphic file (type pn
 g)
  <use ../../../documents/logos/logo2-page-with-stroke.png>
 Package pdftex.def Info: ../../../documents/logos/logo2-page-with-stroke.png us
-ed on input line 144.
+ed on input line 118.
 (pdftex.def)             Requested size: 62.59596pt x 62.59557pt.
  [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
  <../../../documents/logos/logo3-with-stroke.png> <../../../documents/logos/log
 o2-page-with-stroke.png>]
-(2019_03_26_Weekly_Report.aux) ) 
+<step1.png, id=18, 421.575pt x 316.18124pt>
+File: step1.png Graphic file (type png)
+ <use step1.png>
+Package pdftex.def Info: step1.png used on input line 122.
+(pdftex.def)             Requested size: 336.05533pt x 252.04797pt.
+File: ../../../documents/logos/logo2-page-with-stroke.png Graphic file (type pn
+g)
+
+<use ../../../documents/logos/logo2-page-with-stroke.png>
+Package pdftex.def Info: ../../../documents/logos/logo2-page-with-stroke.png us
+ed on input line 155.
+(pdftex.def)             Requested size: 62.59596pt x 62.59557pt.
+ [2 <./24_03_responses.png (PNG copy)> <./step1.png (PNG copy)>] (2019_03_26_We
+ekly_Report.aux) ) 
 Here is how much of TeX's memory you used:
- 29380 strings out of 493333
- 689639 string characters out of 3136576
- 994900 words of memory out of 3000000
- 32354 multiletter control sequences out of 15000+200000
- 5108 words of font info for 19 fonts, out of 3000000 for 9000
+ 29401 strings out of 493333
+ 689984 string characters out of 3136576
+ 995900 words of memory out of 3000000
+ 32370 multiletter control sequences out of 15000+200000
+ 5455 words of font info for 20 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,15n,96p,791b,705s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb>
-Output written on 2019_03_26_Weekly_Report.pdf (1 page, 217062 bytes).
+ 62i,15n,96p,791b,773s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+ti12.pfb>
+Output written on 2019_03_26_Weekly_Report.pdf (2 pages, 303513 bytes).
 PDF statistics:
- 26 PDF objects out of 1000 (max. 8388607)
+ 35 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

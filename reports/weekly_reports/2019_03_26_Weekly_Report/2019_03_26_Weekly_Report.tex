@@ -87,10 +87,12 @@
  
 	 \item A pair of new DC motors were purchased and assembled to the chassis. New driving tests with these motors were done.
 	 
-	 \item Some problems in lane detection algorithm were noticed. Possible solutions were discussed.
+	 \item Some problems in lane detection algorithm were noticed. The color filtering collapses when blue color is present in the image. The reason couldn't be resolved yet. We are consulting to Stackoverflow community. Possible solutions were discussed.
 	 
 	 \item Initial attempts to control the longitudinal speed with lane angle information were attempted.
 	 
+	 \item Attempts to model the plant further continued, experimental step responses can be seen at \textit{Figure~\ref{fig:responses}} and a step response for a possible closed loop model found by systemIdentification toolbox can be see at \textit{Figure~\ref{fig:step1}}.
+	 	 
 	 \item Migration off python code of handshake protocol to C++ was started.
  	 
 	 
@@ -107,12 +109,21 @@
 
 
 
-%\begin{figure}[H]
-%	\center
-%	\setlength{\unitlength}{\textwidth} 
-%	\includegraphics[width=0.6\unitlength]{photo5776198910077939979}
-%	\caption{\label{fig:photo5776198910077939979} As Chassis is being Assembled. }
-%\end{figure}
+\begin{figure}[H]
+	\center
+	\setlength{\unitlength}{\textwidth} 
+	\includegraphics[width=\unitlength]{24_03_responses}
+	\caption{\label{fig:responses} Experimental Step Responses with P-Controller }
+\end{figure}
+
+\begin{figure}[H]
+	\center
+	\setlength{\unitlength}{\textwidth} 
+	\includegraphics[width=0.75\unitlength]{step1}
+	\caption{\label{fig:step1} A Step Response for a Possible Discrete Time Closed Loop System Model }
+\end{figure}
+
+
 
 %	\begin{figure}[H]
 %		\center
