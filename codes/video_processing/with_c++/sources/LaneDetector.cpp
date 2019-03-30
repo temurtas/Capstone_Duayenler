@@ -12,7 +12,6 @@
 #include <vector>
 #include "opencv2/opencv.hpp"
 #include "./headers/LaneDetector.hpp"
-#include "./headers/ArduinoComm.hpp"
 #include "opencv2/imgproc/imgproc_c.h"
 #include "opencv2/videoio/legacy/constants_c.h"
 #include <thread>
@@ -33,10 +32,11 @@ LaneDetector::LaneDetector() {
 	right_m = 1;
 	left_m = 1;
 	img_center = 1;
+	img_leftBound = 0;
+	img_rightBound = 0;
 	img_rows = 1;
 	img_cols = 1;
 }
-
 
 // IMAGE BLURRING
 /**
@@ -144,7 +144,7 @@ void LaneDetector::findLineCenter(int& counter_x_left, int& sum_x_left,
 		// prevent division with 0.
 		// assume center of lines is 200 pixel away from
 		// center of left lines
-		sum_x_left = sum_x_left / counter_x_right;
+		sum_x_left = sum_x_left / counter_x_left;
 		img_center = sum_x_left + 200;
 		return;
 	} else if (counter_x_left == 0 && counter_x_right == 0) {
@@ -224,7 +224,6 @@ void LaneDetector::fixProblems(std::vector<cv::Vec4i>& lines,
 	double ang_diff_thres_high = 100; // 50 --> -50
 	double ang_diff_thres_avg = 15;
 	double sign_change_thres = -12;
-	double angle_mul = 0;
 
 	unsigned int current_index = 0;
 
@@ -260,8 +259,7 @@ void LaneDetector::fixProblems(std::vector<cv::Vec4i>& lines,
 				std::cout << "criteria 1.3" << std::endl;
 				saveBadIndex(current_index, index1, index2);
 
-			}
-			else if((std::abs(i) > ang_diff_thres_avg)) {
+			} else if ((std::abs(i) > ang_diff_thres_avg)) {
 				std::cout << "criteria 1.4" << std::endl;
 				saveBadIndex(current_index, index1, index2);
 			}
@@ -307,11 +305,8 @@ std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 	std::vector<std::vector<cv::Vec4i> > output(2);
 
 	// variables to find center of the image
-	int mid_x = 0;
 	int sum_x_right = 0;
 	int sum_x_left = 0;
-	int counter_x_right = 0;
-	int counter_x_left = 0;
 
 	// variables to save spotted problematic indexes
 	int l_bad_index_1 = -1;
@@ -319,12 +314,9 @@ std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 	int r_bad_index_1 = -1;
 	int r_bad_index_2 = -1;
 
-	size_t j = 0;
 	// initial and final points of a line
 	cv::Point ini;
 	cv::Point fini;
-	// slope threshold
-	double slope_thresh = 0.005;
 	// vectors to hold slopes of right and left lines
 
 	// variables to store slopes and slope derivatives
@@ -340,38 +332,41 @@ std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 
 	std::vector<cv::Vec4i> selected_lines;
 
-	double diff = 0; // stores line slope difference
 	double ang_diff = 0.1; // stores line slope difference
 	double l_slope_avg = 0;
 	double r_slope_avg = 0;
 
-	// find the center of the lines
-	for (auto i : lines) {
-		ini = cv::Point(i[0], i[1]);
-		fini = cv::Point(i[2], i[3]);
-		if (ini.x + fini.x > img_edges.cols) {
-			sum_x_right += ini.x + fini.x;
-			counter_x_right += 2;
-		} else {
-			sum_x_left += ini.x + fini.x;
-			counter_x_left += 2;
-		}
-	}
-	std::cout << sum_x_right << std::endl;
-	findLineCenter(counter_x_left, sum_x_left, counter_x_right, sum_x_right);
+//	// find the center of the lines
+//	for (auto i : lines) {
+//		ini = cv::Point(i[0], i[1]);
+//		fini = cv::Point(i[2], i[3]);
+//
+//		if (ini.x + fini.x > img_edges.cols) {
+//			sum_x_right += ini.x + fini.x;
+//			counter_x_right += 2;
+//		} else {
+//			sum_x_left += ini.x + fini.x;
+//			counter_x_left += 2;
+//		}
+//
+//	}
+//	std::cout << sum_x_right << std::endl;
+//	findLineCenter(counter_x_left, sum_x_left, counter_x_right, sum_x_right);
 
 	// Calculate the slope of all the detected lines
 	// Forms the slope derivative vector at the same time
 	for (auto i : lines) {
 		ini = cv::Point(i[0], i[1]);
 		fini = cv::Point(i[2], i[3]);
+		if (std::abs(ini.y - fini.y) <= 3) {
+			continue;
+		}
 		double delta_y = (static_cast<double>(fini.y)
 				- static_cast<double>(ini.y));
 		double delta_x = (static_cast<double>(fini.x)
 				- static_cast<double>(ini.x) + 0.00001);
 
 		// Basic algebra: slope = (y1 - y0)/(x1 - x0)
-		double slope = delta_y / delta_x;
 		double m_angle = (cv::fastAtan2(delta_y, delta_x));
 		if (m_angle > 269)
 			m_angle = m_angle - 180;
@@ -384,13 +379,17 @@ std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 
 		//slopes.push_back(slope);
 		//selected_lines.push_back(i);
-		
+
 		//std::cout << i << " ";
-		if (((ini.x + fini.x) > 2*sum_x_left) && ((ini.x + fini.x) < 2*sum_x_right) && (std::abs((ini.x + fini.x) - (2 * img_center)) < 200)) {
-			 // discard the line
+
+		// CHECK HERE BACK!!!!!!! 30.03.2019
+		if (((ini.x + fini.x) > 2 * sum_x_left)
+				&& ((ini.x + fini.x) < 2 * sum_x_right)
+				&& (std::abs((ini.x + fini.x) - (2 * img_center)) < 200)) {
+			// discard the line
 			// std::cout << "discarded" << std::endl;
 		}
-		
+
 		// add to determine mass point in x axis
 		else if (ini.x + fini.x > 2 * img_center) {
 			right_lines.push_back(i); // classify as right line
@@ -429,19 +428,43 @@ std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 
 		//}
 	}
+	std::cout << "right size: " << right_lines.size() << std::endl;
+	if (right_lines.size() == 0) {
+		//right_lines.push_back(cv::Vec4i(img_leftBound + 248, img_edges.rows - 300, img_leftBound + 248, img_edges.rows - 50));
+		right_lines.emplace_back(img_leftBound + 248, img_edges.rows - 300,
+				img_leftBound + 248, img_edges.rows - 50);
+	}
+	if (left_lines.size() == 0) {
+		//left_lines.push_back(cv::Vec4i(img_rightBound - 248, img_edges.rows - 300, img_rightBound - 248, img_edges.rows - 50));
+		left_lines.emplace_back(img_rightBound - 248, img_edges.rows - 300,
+				img_rightBound - 248, img_edges.rows - 50);
+	}
+	std::cout << "right size: " << right_lines.size() << std::endl;
+
 	std::cout << "leftLines" << std::endl;
-	for (auto i:left_lines)
+	for (auto i : left_lines)
 		std::cout << i << " ";
 	std::cout << std::endl;
-	for (auto i:right_lines)
+	for (auto i : right_lines)
 		std::cout << i << " ";
 	std::cout << std::endl;
 
 	// fix the problems if any for both lines
-	fixProblems(left_lines, l_slope_ang, l_slope_ang_diff, l_bad_index_1,
-			l_bad_index_2);
-	fixProblems(right_lines, r_slope_ang, r_slope_ang_diff, r_bad_index_1,
-			r_bad_index_2);
+	if (left_lines.size() > 1) {
+		fixProblems(left_lines, l_slope_ang, l_slope_ang_diff, l_bad_index_1,
+				l_bad_index_2);
+	} else {
+		l_bad_index_1 = -1;
+		l_bad_index_2 = -1;
+	}
+
+	if (right_lines.size() > 1) {
+		fixProblems(right_lines, r_slope_ang, r_slope_ang_diff, r_bad_index_1,
+				r_bad_index_2);
+	} else {
+		r_bad_index_1 = -1;
+		r_bad_index_2 = -1;
+	}
 
 	if ((l_bad_index_1 != -1 && l_bad_index_2 == -1)
 			&& !(r_bad_index_1 != -1 && r_bad_index_2 == -1)) {
@@ -451,19 +474,21 @@ std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 			r_slope_avg += i;
 		r_slope_avg = r_slope_avg / r_slope_ang.size();
 
-		double current_index_diff = std::abs(std::abs(r_slope_avg)
-				- std::abs(l_slope_ang[l_bad_index_1]));
+		double current_index_diff = std::abs(
+				std::abs(r_slope_avg) - std::abs(l_slope_ang[l_bad_index_1]));
 		double next_index_diff = 0;
 		if (l_bad_index_1 != 0)
-			next_index_diff = std::abs(std::abs(r_slope_avg)
-					- std::abs(l_slope_ang[l_bad_index_1 + 1]));
-		std::cout << "LnextD: " << next_index_diff << "LcurrD: " <<current_index_diff << std::endl;
+			next_index_diff = std::abs(
+					std::abs(r_slope_avg)
+							- std::abs(l_slope_ang[l_bad_index_1 + 1]));
+		std::cout << "LnextD: " << next_index_diff << "LcurrD: "
+				<< current_index_diff << std::endl;
 		if (current_index_diff < next_index_diff) {
-			std::cout << "save left"<< std::endl;
+			std::cout << "save left" << std::endl;
 			removeBadLines(left_lines, l_slope_ang, l_bad_index_1, targetIndex);
 		} else {
 			targetIndex = 0;
-			std::cout << "save right"<< std::endl;
+			std::cout << "save right" << std::endl;
 			removeBadLines(left_lines, l_slope_ang, targetIndex, l_bad_index_1);
 		}
 	} else if ((r_bad_index_1 != -1 && r_bad_index_2 == -1)
@@ -474,23 +499,26 @@ std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 			l_slope_avg += i;
 		l_slope_avg = l_slope_avg / l_slope_ang.size();
 
-		double current_index_diff = std::abs(std::abs(l_slope_avg)
-				- std::abs(r_slope_ang[r_bad_index_1]));
+		double current_index_diff = std::abs(
+				std::abs(l_slope_avg) - std::abs(r_slope_ang[r_bad_index_1]));
 		double next_index_diff = 0;
 		if (r_bad_index_1 != 0)
-			double next_index_diff = std::abs(std::abs(l_slope_avg)
-					- std::abs(r_slope_ang[r_bad_index_1 + 1]));
-		std::cout << "RnextD: " << next_index_diff << "RcurrD: " <<current_index_diff << std::endl;
+			double next_index_diff = std::abs(
+					std::abs(l_slope_avg)
+							- std::abs(r_slope_ang[r_bad_index_1 + 1]));
+		std::cout << "RnextD: " << next_index_diff << "RcurrD: "
+				<< current_index_diff << std::endl;
 		if (current_index_diff < next_index_diff) {
-			std::cout << "save left"<< std::endl;
-			removeBadLines(right_lines, r_slope_ang, r_bad_index_1, targetIndex);
+			std::cout << "save left" << std::endl;
+			removeBadLines(right_lines, r_slope_ang, r_bad_index_1,
+					targetIndex);
 		} else {
 			targetIndex = 0;
-			std::cout << "save right"<< std::endl;
-			removeBadLines(right_lines, r_slope_ang, targetIndex, r_bad_index_1);
+			std::cout << "save right" << std::endl;
+			removeBadLines(right_lines, r_slope_ang, targetIndex,
+					r_bad_index_1);
 		}
 	}
-
 	output[0] = right_lines;
 	output[1] = left_lines;
 	left_flag = true;
@@ -582,29 +610,7 @@ std::vector<cv::Point> LaneDetector::regression(
  */
 std::string LaneDetector::predictTurn(double pivot, int angle) {
 	std::string output;
-	double vanish_x = img_center;
-	double thr_vp = 10;
 
-	/*	// The vanishing point is the point where both lane boundary lines intersect
-	 //	vanish_x = static_cast<double>(((right_m * right_b.x) - (left_m * left_b.x)
-	 //			- right_b.y + left_b.y) / (right_m - left_m));
-
-	 // The vanishing points location determines where is the road turning
-	 if (vanish_x < (pivot - thr_vp))
-	 output = "Turn Left";
-	 else if (vanish_x > (pivot + thr_vp))
-	 output = "Turn Right";
-	 else if (vanish_x >= (pivot - thr_vp) && vanish_x <= (pivot + thr_vp))
-	 output = "Go Straight";
-
-	 if (angle > 180)
-	 angle = 360 - angle; // adjust for left/right turn
-	 // subtract from 360 for left turns
-	 output += " " + std::to_string(angle);*/
-
-	// The vanishing point is the point where both lane boundary lines intersect
-//	vanish_x = static_cast<double>(((right_m * right_b.x) - (left_m * left_b.x)
-//			- right_b.y + left_b.y) / (right_m - left_m));
 	// The vanishing points location determines where is the road turning
 	std::cout << angle << std::endl;
 	if (angle < 360 - 3 && angle > 100)
@@ -613,17 +619,16 @@ std::string LaneDetector::predictTurn(double pivot, int angle) {
 		output = "Turn Right";
 	else
 		output = "Go Straight";
-	
+
 	if (angle > 180) {
 
 		angle = angle - 360; // adjust for left/right turn
 							 // subtract from 360 for left turns
-		}
-		else {
+	} else {
 
-			}
+	}
 	output += " " + std::to_string(angle);
-	
+
 	return output;
 }
 
@@ -670,41 +675,87 @@ int LaneDetector::plotLane(cv::Mat& inputImage, std::vector<cv::Point> lane) {
 	cv::putText(inputImage, turn,
 			cv::Point(inputImage.cols / 3, inputImage.rows - 50),
 			cv::FONT_HERSHEY_DUPLEX, 1, cvScalar(67, 32, 206), 1, CV_AA);
-			
-			
-	/*************************/
-	
-		std::ofstream myfile;
-	myfile.open("test.txt", std::ios_base::app);
-	
-	
-	 myfile << ((double) cv::getTickCount() - timeCapture)
-				/ cv::getTickFrequency() * 1000 <<  " " << current_x-target_x << "\n" << std::endl;
-	myfile.close();
-	
-	std::string s;
-	if(current_x-target_x > 0 ) {
-		s.append("A ");
-		s.append(std::to_string(current_x-target_x));
-		std::cout << s << std::endl;
-	}
-	else{
-		s.append("B ");
-		s.append(std::to_string(abs(current_x-target_x)));
-		std::cout << s << std::endl;
-	}
-	s.append("\r");
 
-	
-	ArduinoComm arduinoComm;
-	arduinoComm.sendToController(s);
-/**************************/
-	
-	
+	/*************************
+
+	 std::ofstream myfile;
+	 myfile.open("test.txt", std::ios_base::app);
+
+
+	 myfile << ((double) cv::getTickCount() - timeCapture)
+	 / cv::getTickFrequency() * 1000 <<  " " << current_x-target_x << "\n" << std::endl;
+	 myfile.close();
+
+	 std::string s;
+	 if(current_x-target_x > 0 ) {
+	 s.append("A ");
+	 s.append(std::to_string(current_x-target_x));
+	 std::cout << s << std::endl;
+	 }
+	 else{
+	 s.append("B ");
+	 s.append(std::to_string(abs(current_x-target_x)));
+	 std::cout << s << std::endl;
+	 }
+	 s.append("\r");
+
+
+	 ArduinoComm arduinoComm;
+	 arduinoComm.sendToController(s);
+	 **************************/
 
 	// show the final output image
 	//cv::namedWindow(window_vision);
 	//cv::imshow(window_vision, inputImage);
-
 	return 0;
+}
+
+void LaneDetector::setLineBorders(cv::Mat img) {
+
+	/*std::ofstream myfile;
+	 myfile.open("test.txt", std::ios_base::app);
+	 myfile << img << std::endl;*/
+	const int width = img.cols; // width of the image
+	const int confidenceCount = 250 * 0.75; // up to 360 white counts are acceptable
+
+	int* whitePixels = new int[width]; // create the dynamic array
+	for (int x = 0; x < width; x++) {
+		whitePixels[x] = 0;
+		for (int y = 0; y < img.rows; y++) {
+			if (img.at<uchar>(y, x) == 255) {
+				whitePixels[x]++;
+			}
+		}
+	}
+	/*
+	 for (int i = 0; i < width; i++)
+	 myfile << whitePixels[i] << " ";
+	 myfile << "\n";*/
+
+	// find left bound
+	for (int i = 0; i < width; i++) {
+		//std::cout << "confidenceCount: " << confidenceCount << " " << whitePixels[i]  << std::endl;
+		if (whitePixels[i] > confidenceCount) {
+			img_leftBound = i;
+			break;
+		}
+	}
+	// find right bound
+	//std::cout << "---------------" << std::endl;
+	for (int i = width - 1; i >= 0; i--) {
+		//std::cout << "confidenceCount: " << confidenceCount << " " << whitePixels[i]  << std::endl;
+		if (whitePixels[i] > confidenceCount) {
+			img_rightBound = i;
+			break;
+		}
+	}
+
+	img_center = (img_leftBound + img_rightBound) / 2;
+	std::cout << "confidenceCount: " << confidenceCount << std::endl;
+	std::cout << "left bound: " << img_leftBound << " right bound: "
+			<< img_rightBound << std::endl;
+	std::cout << "img center: " << img_center << std::endl;
+
+	delete [] whitePixels;
+	return;
 }

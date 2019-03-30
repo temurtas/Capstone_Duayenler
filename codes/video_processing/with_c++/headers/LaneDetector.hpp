@@ -26,6 +26,8 @@ private:
 	int img_rows;
 	int img_cols;
 	double img_center;
+	double img_leftBound;
+	double img_rightBound;
 	double timeCapture = (double) cv::getTickCount();
 	
 	cv::Point ptsROI[4]; // points classifying the ROI
@@ -44,6 +46,7 @@ private:
 
 public:
 	LaneDetector();
+	void setLineBorders(cv::Mat img);
 	cv::Mat deNoise(cv::Mat inputImage); // Apply Gaussian blurring to the input Image
 	cv::Mat edgeDetector(cv::Mat img_noise); // Filter the image to obtain only edges
 	cv::Mat cropROI(cv::Mat img_edges); // Mask the edges image to only care about ROI

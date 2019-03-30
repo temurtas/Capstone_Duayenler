@@ -12,8 +12,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <unistd.h>
-#include <./headers/wiringPi.h>
-#include <./headers/wiringSerial.h>
+#include "./headers/wiringPi.h"
+#include "./headers/wiringSerial.h"
 #include "./headers/ArduinoComm.hpp"
 
 // SEND TO CONTROLLER
