@@ -6,20 +6,23 @@
 //#include <functional> // MIGHT BE UNNECESSARY
 #include "./headers/LaneDetector.hpp"
 #include "./sources/LaneDetector.cpp"
+#include "./headers/ArduinoComm.hpp"
+#include "./sources/ArduinoComm.cpp"
 #include "opencv2/imgproc/imgproc_c.h"
 #include <numeric>
 
 /** HSV PARAMETER SETTINGS **/
-const int max_value_H = 360 / 4;
+const int max_value_H = 255;
 const int max_value = 255;
+//const cv::String window_orig = "Lane Detection";
 const cv::String window_lane_detected = "Lane Detection";
 const cv::String winodw_hsv_filtered = "HSV Filtered";
 const cv::String window_canny_applied = "Canny Applied";
 const cv::String window_masked = "Masked";
 const cv::String window_vision = "Lane and Vehicle Vision";
 
-int low_H = 60, low_S = 120, low_V = 106; // low_S = 144,introduces bug
-int high_H = max_value_H, high_S = max_value, high_V = max_value;
+int low_H = 49, low_S = 48, low_V = 130; // low_S = 144,introduces bug
+int high_H = max_value_H, high_S = 100, high_V = 188;
 int maxGap = 50;
 int minLength = 50;
 /** HSV PARAMETER SETTINGS **/
@@ -56,8 +59,8 @@ unsigned int pivot(std::vector<cv::Vec4i> & v, unsigned int start,
  */
 int main(int argc, char* argv[]) {
 
-	cv::VideoCapture cap("./videos/green-640-18.mp4");
-	//cv::VideoCapture cap(0, cv::CAP_V4L);
+	//cv::VideoCapture cap("./videos/green-640-18.mp4");
+	cv::VideoCapture cap(0, cv::CAP_V4L);
 	LaneDetector lanedetector;  // Create the class object
 	//LaneDetector lanedetector;  // Create the class object
 
@@ -151,7 +154,8 @@ int main(int argc, char* argv[]) {
 			img_denoise = lanedetector.deNoise(frame_orig);
 
 			// convert from BGR to HSV colorspace
-			cv::cvtColor(img_denoise, frame_HSV, cv::COLOR_BGR2HSV);
+			// convert from BGR to HSV colorspace
+		cv::cvtColor(img_denoise, frame_HSV, cv::COLOR_BGR2Lab);
 
 			// apply color thresholding HSV range for green color
 			cv::inRange(frame_HSV, cv::Scalar(low_H, low_S, low_V),

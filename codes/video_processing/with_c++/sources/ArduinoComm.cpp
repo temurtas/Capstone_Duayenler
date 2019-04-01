@@ -16,6 +16,10 @@
 #include "./headers/wiringSerial.h"
 #include "./headers/ArduinoComm.hpp"
 
+
+ArduinoComm::ArduinoComm() {
+	serialDeviceId = serialOpen("/dev/ttyUSB0", 9600);
+}
 // SEND TO CONTROLLER
 /**
  *@brief Sends the input payload to Arduino.
@@ -24,8 +28,8 @@
  */
 void ArduinoComm::sendToController(std::string payload) {
 	/*************************/
-	int serialDeviceId = 0;
-	serialDeviceId = serialOpen("/dev/ttyUSB0", 9600);
+	//int serialDeviceId = 0;
+	//serialDeviceId = serialOpen("/dev/ttyUSB0", 9600);
 	std::cout << "sender " << serialDeviceId << std::endl;
 	if (serialDeviceId == -1) {
 		std::cout << "Unable to open serial device" << std::endl;

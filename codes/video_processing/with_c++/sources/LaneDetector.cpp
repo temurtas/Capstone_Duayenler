@@ -12,6 +12,7 @@
 #include <vector>
 #include "opencv2/opencv.hpp"
 #include "./headers/LaneDetector.hpp"
+#include "./headers/ArduinoComm.hpp"
 #include "opencv2/imgproc/imgproc_c.h"
 #include "opencv2/videoio/legacy/constants_c.h"
 #include <thread>
@@ -676,33 +677,49 @@ int LaneDetector::plotLane(cv::Mat& inputImage, std::vector<cv::Point> lane) {
 			cv::Point(inputImage.cols / 3, inputImage.rows - 50),
 			cv::FONT_HERSHEY_DUPLEX, 1, cvScalar(67, 32, 206), 1, CV_AA);
 
-	/*************************
-
-	 std::ofstream myfile;
-	 myfile.open("test.txt", std::ios_base::app);
-
-
+	/*************************/
+	
+		std::ofstream myfile;
+	myfile.open("test.txt", std::ios_base::app);
+	
+	
 	 myfile << ((double) cv::getTickCount() - timeCapture)
-	 / cv::getTickFrequency() * 1000 <<  " " << current_x-target_x << "\n" << std::endl;
-	 myfile.close();
+				/ cv::getTickFrequency() * 1000 <<  " " << current_x-target_x << "\n" << std::endl;
+	myfile.close();
+	
+	std::string s;
+	if(current_x-target_x > 0 ) {
+		s.append("A ");
+		s.append(std::to_string(current_x-target_x));
+	}
+	else{
+		s.append("B ");
+		s.append(std::to_string(abs(current_x-target_x)));
 
-	 std::string s;
-	 if(current_x-target_x > 0 ) {
-	 s.append("A ");
-	 s.append(std::to_string(current_x-target_x));
-	 std::cout << s << std::endl;
-	 }
-	 else{
-	 s.append("B ");
-	 s.append(std::to_string(abs(current_x-target_x)));
-	 std::cout << s << std::endl;
-	 }
-	 s.append("\r");
+	}
+s.append("\r");
+
+std::cout << s << std::endl;
+        //ArduinoComm arduinoComm;
+        arduinoComm.sendToController(s);
 
 
-	 ArduinoComm arduinoComm;
-	 arduinoComm.sendToController(s);
-	 **************************/
+	std::string s1;
+	s1.append("C ");
+	//cv::Point ini = cv::Point(lane[0].x, lane[1].x);
+	//cv::Point fini = cv::Point(lane[2].x, lane[3].x);
+	std::cout << lane[0] << " " << lane[1] << " " << lane[2] << " " << lane[3] << std::endl;
+	float downCenter = static_cast<float>(lane[0].x + lane[2].x) /2;
+	float upCenter = static_cast<float>(lane[1].x + lane[3].x) /2;
+
+	s1.append(std::to_string(cv::fastAtan2(upCenter - downCenter, 125)));
+
+	s1.append("\r");
+			std::cout << s1 << std::endl;
+	
+	arduinoComm.sendToController(s1);
+
+/**************************/
 
 	// show the final output image
 	//cv::namedWindow(window_vision);

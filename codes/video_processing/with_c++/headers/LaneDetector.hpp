@@ -14,6 +14,7 @@
 #include <vector>
 #include "opencv2/opencv.hpp"
 #include <chrono>
+#include "./headers/ArduinoComm.hpp"
 
 /**
  *@brief Definition of the LaneDetector class. It contains all the functions and variables depicted in the
@@ -23,6 +24,7 @@
  */
 class LaneDetector {
 private:
+	ArduinoComm arduinoComm;
 	int img_rows;
 	int img_cols;
 	double img_center;

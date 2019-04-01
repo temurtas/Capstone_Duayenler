@@ -22,7 +22,8 @@
  */
 class ArduinoComm {
 private:
-
+	int serialDeviceId;
 public:
+	ArduinoComm();
 	void sendToController(std::string payload);
 };
