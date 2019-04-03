@@ -1,0 +1,87 @@
+%% Clear
+clc
+clear
+hold off
+%% Template
+Arr = load ('test11_01.txt')
+time=Arr(:,1)/1000
+error=Arr(:,2)
+plot(time,error);
+grid on
+hold on
+%% Template For SystemID
+input15 = load ('input15.txt')
+input15time=input15(:,1)/1000
+input15error=input15(:,2)
+output15 = load ('output15.txt')
+output15time=output15(:,1)/1000
+output15error=output15(:,2)
+plot(input15time,input15error);
+hold on
+plot(output15time,output15error);
+%% Test2 Deneme
+Arr2 = load ('test2.txt')
+time2=Arr2(:,1)/1000
+error2=Arr2(:,2)
+plot(time2,error2);
+grid on
+hold on
+%% Test3 Deneme
+Arr3 = load ('test3.txt')
+time3=Arr3(:,1)/1000
+error3=Arr3(:,2)
+plot(time3,error3);
+grid on
+hold on
+%% Test4 Kp=0.252
+Arr4 = load ('test4.txt')
+time4=(Arr4(:,1)+6821.15-28502)/1000
+error4=Arr4(:,2)
+plot(time4,error4);
+grid on
+hold on
+%% Test5 Kp=0.272
+Arr5 = load ('test5.txt')
+time5=Arr5(:,1)/1000
+error5=Arr5(:,2)
+plot(time5,error5);
+grid on
+hold on
+%% Test5 Kp=0.272 For SystemID
+input5 = load ('input5.txt')
+input5time=input5(:,1)/1000
+input5error=input5(:,2)
+output5 = load ('output5.txt')
+output5time=output5(:,1)/1000
+output5error=output5(:,2)
+%% Test6 Kp=0.3
+Arr6 = load ('test6.txt')
+time6=Arr6(:,1)/1000
+error6=Arr6(:,2)
+plot(time6,error6);
+grid on
+hold on
+%% Test6 Kp=0.3 For SystemID
+input6 = load ('input6.txt')
+input6time=input6(:,1)/1000
+input6error=input6(:,2)
+output6 = load ('output6.txt')
+output6time=output6(:,1)/1000
+output6error=output6(:,2)
+plot(input6time,input6error);
+grid on;
+hold on;
+plot(output6time,output6error);
+%% Test7 Kp=0.36
+Arr7 = load ('test7.txt')
+time7=Arr7(:,1)/1000
+error7=Arr7(:,2)
+plot(time7,error7);
+grid on
+legend('K_p=0.252','K_p=0.272','K_p=0.3','K_p=0.36')
+hold off
+%% -
+Go=P3D/(1-P3D)
+Go=minreal(Go)
+Gp=Go/0.3
+Gp=minreal(Gp)
