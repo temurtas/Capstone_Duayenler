@@ -21,6 +21,7 @@ Please write only the name (not surname) with same capitalization!
 | Enes | Konnektör | 5 TL |**NO**| 
 | Enes | ikinci sensör + nano | 155 TL | **NO**| 
 | Sarper | İğrenÇ karton   | 32 TL  | **NO**  |
+| ENES | ŞASE giderleri??  | xxx TL  | **??**  |
 Aşağısı Totaller
 
 
