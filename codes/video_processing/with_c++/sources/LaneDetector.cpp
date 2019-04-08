@@ -432,13 +432,13 @@ std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 	std::cout << "right size: " << right_lines.size() << std::endl;
 	if (right_lines.size() == 0) {
 		//right_lines.push_back(cv::Vec4i(img_leftBound + 248, img_edges.rows - 300, img_leftBound + 248, img_edges.rows - 50));
-		right_lines.emplace_back(img_leftBound + 248, img_edges.rows - 300,
-				img_leftBound + 248, img_edges.rows - 50);
+		right_lines.emplace_back(img_leftBound + 348, img_edges.rows - 300,
+				img_leftBound + 348, img_edges.rows - 50);
 	}
 	if (left_lines.size() == 0) {
 		//left_lines.push_back(cv::Vec4i(img_rightBound - 248, img_edges.rows - 300, img_rightBound - 248, img_edges.rows - 50));
-		left_lines.emplace_back(img_rightBound - 248, img_edges.rows - 300,
-				img_rightBound - 248, img_edges.rows - 50);
+		left_lines.emplace_back(img_rightBound - 348, img_edges.rows - 300,
+				img_rightBound - 348, img_edges.rows - 50);
 	}
 	std::cout << "right size: " << right_lines.size() << std::endl;
 

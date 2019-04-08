@@ -98,7 +98,7 @@ int main(int argc, char* argv[]) {
 	cv::namedWindow(window_lane_detected);
 
 	// create trackbar for editing the HSV filtering
-	/*
+	
 	 cv::createTrackbar("Low H", window_lane_detected, &low_H, max_value_H,
 	 on_low_H_thresh_trackbar);
 	 cv::createTrackbar("High H", window_lane_detected, &high_H, max_value_H,
@@ -118,7 +118,7 @@ int main(int argc, char* argv[]) {
 	 max_value, on_maxLineGap_trackbar);
 	 cv::createTrackbar("minLineLength", window_lane_detected, &minLineLength,
 	 max_value, on_minLineLength_thresh_trackbar);
-	 */
+	 
 	cv::Mat frame_HSV;
 	cv::Mat frame_orig, frame_fitered2D, frame_threshed, frame_cannied,
 			frame_final;
