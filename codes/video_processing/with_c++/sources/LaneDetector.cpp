@@ -32,11 +32,12 @@
 LaneDetector::LaneDetector() {
 	right_m = 1;
 	left_m = 1;
-	img_center = 1;
-	img_leftBound = 0;
-	img_rightBound = 0;
 	img_rows = 1;
-	img_cols = 1;
+	img_cols = 600;
+
+	img_leftBound = 0;
+	img_rightBound = 600;
+	img_center = 300;
 }
 
 // IMAGE BLURRING
@@ -125,49 +126,52 @@ std::vector<cv::Vec4i> LaneDetector::houghLines(cv::Mat img_mask) {
 	return line;
 }
 
-// FIND CENTER of the LINES
+// FIND LINE BORDERS
 /**
- *@brief Finds the center of the right and left lines
- *@param counter_x_left and counter_x_right determines how many x-coordinates are used.
- *@param sum_x_left and sum_x_right determines aggregated coordinate value.
- *@return img_center that is a global private variable inside the class
+ *@brief This function finds the lane border coordinates in x-axis.
+ *@param img is the input HSV or LAB filtered image containing only white or black pixels.
+ *@return nothing
  */
-void LaneDetector::findLineCenter(int& counter_x_left, int& sum_x_left,
-		int& counter_x_right, int& sum_x_right) {
-	if (counter_x_left == 0 && counter_x_right != 0) {
-		// prevent division with 0.
-		// assume center of lines is 200 pixel away from
-		// center of right lines
-		sum_x_right = sum_x_right / counter_x_right;
-		img_center = sum_x_right - 200;
-		return;
-	} else if (counter_x_left != 0 && counter_x_right == 0) {
-		// prevent division with 0.
-		// assume center of lines is 200 pixel away from
-		// center of left lines
-		sum_x_left = sum_x_left / counter_x_left;
-		img_center = sum_x_left + 200;
-		return;
-	} else if (counter_x_left == 0 && counter_x_right == 0) {
-		// prevent division with 0.
-		// assume center of lines is 320th pixel
-		img_center = img_cols / 2;
-		return;
-	} else {
-		std::cout << "left sum, left coor: " << sum_x_left << " "
-				<< counter_x_left << " " << "right sum: " << counter_x_right
-				<< " " << sum_x_right << std::endl;
-		// calculate center x coordinate
-		sum_x_left = sum_x_left / counter_x_left;
-		sum_x_right = sum_x_right / counter_x_right;
-		std::cout << "left center: " << sum_x_left << " " << "right center: "
-				<< sum_x_right << std::endl;
-		std::cout << "img_center: " << (sum_x_left + sum_x_right) / 2
-				<< std::endl;
-		//img_center = static_cast<double>((img_edges.cols / 2));
-		img_center = (sum_x_left + sum_x_right) / 2;
-		return;
+void LaneDetector::setLineBorders(cv::Mat img) {
+
+	const int width = img.cols; // width of the image
+	const int confidenceCount = 250 * 0.75; // minimum white pixel count in a column
+											// 250 is the row count of ROI
+
+	int* whitePixels = new int[width]; // create the dynamic array
+	for (int x = 0; x < width; x++) {
+		whitePixels[x] = 0;
+		for (int y = 0; y < img.rows; y++) {
+			if (img.at<uchar>(y, x) == 255) {
+				whitePixels[x]++;
+			}
+		}
 	}
+
+	// find left bound
+	for (int i = 0; i < width; i++) {
+		//std::cout << "confidenceCount: " << confidenceCount << " " << whitePixels[i]  << std::endl;
+		if (whitePixels[i] > confidenceCount) {
+			img_leftBound = i;
+			break;
+		}
+	}
+	// find right bound
+	for (int i = width - 1; i >= 0; i--) {
+		//std::cout << "confidenceCount: " << confidenceCount << " " << whitePixels[i]  << std::endl;
+		if (whitePixels[i] > confidenceCount) {
+			img_rightBound = i;
+			break;
+		}
+	}
+
+	img_center = (img_leftBound + img_rightBound) / 2;
+	std::cout << "left bound: " << img_leftBound << " right bound: "
+			<< img_rightBound << std::endl;
+	std::cout << "img center: " << img_center << std::endl;
+
+	delete [] whitePixels;
+	return;
 }
 
 void LaneDetector::saveBadIndex(unsigned int index, int& base_i1,
@@ -725,54 +729,4 @@ std::cout << s << std::endl;
 	//cv::namedWindow(window_vision);
 	//cv::imshow(window_vision, inputImage);
 	return 0;
-}
-
-void LaneDetector::setLineBorders(cv::Mat img) {
-
-	/*std::ofstream myfile;
-	 myfile.open("test.txt", std::ios_base::app);
-	 myfile << img << std::endl;*/
-	const int width = img.cols; // width of the image
-	const int confidenceCount = 250 * 0.75; // up to 360 white counts are acceptable
-
-	int* whitePixels = new int[width]; // create the dynamic array
-	for (int x = 0; x < width; x++) {
-		whitePixels[x] = 0;
-		for (int y = 0; y < img.rows; y++) {
-			if (img.at<uchar>(y, x) == 255) {
-				whitePixels[x]++;
-			}
-		}
-	}
-	/*
-	 for (int i = 0; i < width; i++)
-	 myfile << whitePixels[i] << " ";
-	 myfile << "\n";*/
-
-	// find left bound
-	for (int i = 0; i < width; i++) {
-		//std::cout << "confidenceCount: " << confidenceCount << " " << whitePixels[i]  << std::endl;
-		if (whitePixels[i] > confidenceCount) {
-			img_leftBound = i;
-			break;
-		}
-	}
-	// find right bound
-	//std::cout << "---------------" << std::endl;
-	for (int i = width - 1; i >= 0; i--) {
-		//std::cout << "confidenceCount: " << confidenceCount << " " << whitePixels[i]  << std::endl;
-		if (whitePixels[i] > confidenceCount) {
-			img_rightBound = i;
-			break;
-		}
-	}
-
-	img_center = (img_leftBound + img_rightBound) / 2;
-	std::cout << "confidenceCount: " << confidenceCount << std::endl;
-	std::cout << "left bound: " << img_leftBound << " right bound: "
-			<< img_rightBound << std::endl;
-	std::cout << "img center: " << img_center << std::endl;
-
-	delete [] whitePixels;
-	return;
 }

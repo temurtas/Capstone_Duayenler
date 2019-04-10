@@ -44,7 +44,6 @@ private:
 			std::vector<double>& angles_diff, int& index1, int& index2);
 	void removeBadLines(std::vector<cv::Vec4i>& lines, std::vector<double>& angles, int& i1, int& i2);
 	void saveBadIndex(unsigned int index, int& base_i1, int& base_i2);
-	void findLineCenter(int& counter_x_left, int& sum_x_left, int& counter_x_right, int& sum_x_right); // *****************
 
 public:
 	LaneDetector();

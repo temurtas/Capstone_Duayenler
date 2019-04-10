@@ -71,8 +71,6 @@ int main(int argc, char* argv[]) {
 	double timeCapture;
 
 	// image processing variables
-	int frameWidth = 0;
-	int frameHeight = 0;
 	cv::Mat img_denoise;
 	cv::Mat img_edges;
 	cv::Mat frame_masked;
@@ -81,7 +79,6 @@ int main(int argc, char* argv[]) {
 	std::vector<std::vector<cv::Vec4i> > left_right_lines;
 	std::vector<cv::Point> lane;
 	std::string turn;
-	int flag_plot = -1;
 	int frame_counter = 0;
 
 	// colors for hough lines
@@ -98,32 +95,30 @@ int main(int argc, char* argv[]) {
 	cv::namedWindow(window_lane_detected);
 
 	// create trackbar for editing the HSV filtering
-	
-	 cv::createTrackbar("Low H", window_lane_detected, &low_H, max_value_H,
-	 on_low_H_thresh_trackbar);
-	 cv::createTrackbar("High H", window_lane_detected, &high_H, max_value_H,
-	 on_high_H_thresh_trackbar);
-	 cv::createTrackbar("Low S", window_lane_detected, &low_S, max_value,
-	 on_low_S_thresh_trackbar);
-	 cv::createTrackbar("High S", window_lane_detected, &high_S, max_value,
-	 on_high_S_thresh_trackbar);
-	 cv::createTrackbar("Low V", window_lane_detected, &low_V, max_value,
-	 on_low_V_thresh_trackbar);
-	 cv::createTrackbar("High V", window_lane_detected, &high_V, max_value,
-	 on_high_V_thresh_trackbar);
 
-	 cv::createTrackbar("threshold", window_lane_detected, &threshold, max_value,
-	 on_threshold_thresh_trackbar);
-	 cv::createTrackbar("maxLineGap", window_lane_detected, &maxLineGap,
-	 max_value, on_maxLineGap_trackbar);
-	 cv::createTrackbar("minLineLength", window_lane_detected, &minLineLength,
-	 max_value, on_minLineLength_thresh_trackbar);
-	 
+	cv::createTrackbar("Low H", window_lane_detected, &low_H, max_value_H,
+			on_low_H_thresh_trackbar);
+	cv::createTrackbar("High H", window_lane_detected, &high_H, max_value_H,
+			on_high_H_thresh_trackbar);
+	cv::createTrackbar("Low S", window_lane_detected, &low_S, max_value,
+			on_low_S_thresh_trackbar);
+	cv::createTrackbar("High S", window_lane_detected, &high_S, max_value,
+			on_high_S_thresh_trackbar);
+	cv::createTrackbar("Low V", window_lane_detected, &low_V, max_value,
+			on_low_V_thresh_trackbar);
+	cv::createTrackbar("High V", window_lane_detected, &high_V, max_value,
+			on_high_V_thresh_trackbar);
+
+	cv::createTrackbar("threshold", window_lane_detected, &threshold, max_value,
+			on_threshold_thresh_trackbar);
+	cv::createTrackbar("maxLineGap", window_lane_detected, &maxLineGap,
+			max_value, on_maxLineGap_trackbar);
+	cv::createTrackbar("minLineLength", window_lane_detected, &minLineLength,
+			max_value, on_minLineLength_thresh_trackbar);
+
 	cv::Mat frame_HSV;
 	cv::Mat frame_orig, frame_fitered2D, frame_threshed, frame_cannied,
 			frame_final;
-	cv::Mat sharpenKernel =
-			(cv::Mat_<char>(3, 3) << 0, -1, 0, -1, 5, -1, 0, -1, 0);
 	cv::Mat frame_houghP;
 	std::vector<cv::Vec4i> lines_houghP; // will hold the results of the detection
 
@@ -147,28 +142,22 @@ int main(int argc, char* argv[]) {
 				return -1;
 			}
 			avgCounter++; // increment the process counter
-			frameHeight = frame_orig.rows;
-			frameWidth = frame_orig.cols;
 
 			// denoise the frame using a Gaussian filter
 			img_denoise = lanedetector.deNoise(frame_orig);
 
 			// convert from BGR to HSV colorspace
 			// convert from BGR to HSV colorspace
-		cv::cvtColor(img_denoise, frame_HSV, cv::COLOR_BGR2Lab);
+			cv::cvtColor(img_denoise, frame_HSV, cv::COLOR_BGR2Lab);
 
 			// apply color thresholding HSV range for green color
 			cv::inRange(frame_HSV, cv::Scalar(low_H, low_S, low_V),
 					cv::Scalar(high_H, high_S, high_V), frame_threshed);
 
+			// frame_threshed is reduced to ROI
 			frame_threshed = lanedetector.cropROI(frame_threshed);
 
 			lanedetector.setLineBorders(frame_threshed);
-
-			/*
-			 std::ofstream myfile;
-			 myfile.open("test.txt", std::ios_base::app);
-			 myfile << frame_threshed << std::endl;*/
 
 			// canny edge detection to the color thresholded image
 			// (50,200,3)
@@ -182,15 +171,7 @@ int main(int argc, char* argv[]) {
 			std::vector<cv::Vec4i> line;
 			HoughLinesP(frame_masked, lines_houghP, 1, CV_PI / 180, threshold,
 					(double) maxLineGap, (double) minLineLength);
-//		for (auto i : lines_houghP) {
-//			std::cout << i << std::endl;
-//		}
 
-//		std::cout << lines_houghP[0][1] << std::endl;
-			/*		for (auto i : lines_houghP) {
-			 std::cout << i << std::endl;
-			 }
-			 */
 			if (!lines_houghP.empty()) {
 				// sort the found lines from smallest y to largest y coordinate
 				quickSort(lines_houghP, 0, lines_houghP.size());
@@ -206,7 +187,7 @@ int main(int argc, char* argv[]) {
 						frame_threshed);
 
 				// Plot lane detection
-				flag_plot = lanedetector.plotLane(frame_orig, lane);
+				lanedetector.plotLane(frame_orig, lane);
 			}
 			for (size_t i = 0; i < lines_houghP.size(); i++) {
 				cv::Vec4i l = lines_houghP[i];
@@ -220,7 +201,6 @@ int main(int argc, char* argv[]) {
 				red = red - 20;
 				green = green - 20;
 			}
-			//	std::cout << "xTrainData (python)  = " << std::endl << format(frame_houghP, Formatter::FMT_PYTHON) << std::endl << std::endl;
 
 			// calculate the process time
 			timeCapture = ((double) cv::getTickCount() - timeCapture)
@@ -249,10 +229,11 @@ int main(int argc, char* argv[]) {
 			red = 250;
 			green = 250;
 
+			/*
 			char key = (char) cv::waitKey(30);
 			if (key == 'q' || key == 27) {
 				break;
-			}
+			}*/
 
 			//std::cin.get();
 		}
