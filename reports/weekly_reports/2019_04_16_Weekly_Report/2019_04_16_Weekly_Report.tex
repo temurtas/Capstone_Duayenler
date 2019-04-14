@@ -42,7 +42,7 @@
 \usepackage{capt-of} % allows caption outside the figure environment
 \usepackage[export]{adjustbox} %more options for adjusting the images
 \usepackage{multicol,multirow,slashbox} % allows tables like table1
-%\usepackage[hyperfootnotes=false]{hyperref} % clickable references
+\usepackage[hyperfootnotes=false]{hyperref} % clickable references
 \usepackage{epstopdf} % useful when matlab is involved
 %\usepackage{placeins} % prevents the text after figure to go above figure with \FloatBarrier 
 %\usepackage{listingsutf8,mcode} %import .m or any other code file mcode is for matlab highlighting
@@ -80,12 +80,24 @@
 \end{figure}
 \vspace*{-1.7cm}
 \begin{center}
-	\Large\textbf{April 02 - April 08 Weekly Report}
+	\Large\textbf{April 08 - April 15 Weekly Report}
 	\end{center}
 \section{Progress}
 \begin{itemize}
  
-	 \item Step response of the car is tried to be obtained  to find the model of the vehicle.
+	 \item State Space modelling of the vehicle using Inverse Kinematic Model is attempted. Further analysis can be investigated at Appendix. 
+	 
+	 \item PID parameter optimisation was done. Vehicle can accomplish at least ten full tours. \footnote{ \href{ https://drive.google.com/open?id=1se0yFAcMJst-fzalRnIQb4HR0hAdtwhr}{https://drive.google.com/open?id=1se0yFAcMJst-fzalRnIQb4HR0hAdtwhr} }
+	
+	 \item Small debug on image processing.
+	 
+	 \item Ad-hoc network on Raspberry-Pi is created.
+	 
+	 \item Kalman filter matrices are tried to be tuned. Prediction either followed measurement closely or didn't fit to measurement and added delay.
+	 
+	 \item 
+	 
+	 
 	 
 	 
 	
@@ -96,14 +108,15 @@
 
 \begin{itemize}
 
-\item Further PID controller design parameter tuning for controller subsystem with varying base speed.
+\item Further state-space modelling approaches will be investigated.
 
 
+\end{itemize}
 \newpage
 
 \begin{appendices} 
 
-where 
+Following speed parameters were used at the modelling, other modelling parameters can be investigated at \textit{Figure~\ref{fig:stateFB}}. 
 \begin{itemize}
 	\item $v_r$ is current position linear velocity 
 	\item $w_r$ is current angular velocity 
@@ -112,16 +125,14 @@ where
 	\item $w_R=\cfrac{v_R}{r}$ and right wheel angular velocity
 	\item $w_L=\cfrac{v_L}{r}$ and left wheel angular velocity
 \end{itemize}
-and their relation between linear speed and angular velocity of the vehicle with respect to right and left wheel are as follows \footnote{https://www.researchgate.net/publication/252016633\_Trajectory-tracking\_and\_discrete-time\_sliding-mode\_control\_of\_wheeled\_mobile\_robots}
+and their relation between linear speed and angular velocity of the vehicle with respect to right and left wheel are as follows \footnote{ https://www.researchgate.net/publication/252016633\_Trajectory-tracking\_and\_discrete-time\_sliding-mode\_control\_of\_wheeled\_mobile\_robots}
  \footnote{https://www.dis.uniroma1.it/~labrob/pub/papers/Ramsete01.pdf}
 $$ v_{vehicle}=\frac{v_R+v_L}{2} $$
 $$ w_{vehicle}=\frac{v_R-v_L}{r} $$
 In our case we could you constant base speed $V=\cfrac{v_R+v_L}{2}$ and $\Delta V=v_R-v_L$.
 Thus, 
-$$ v_R=V+\Delta V/2$$
-$$ v_L=V-\Delta V/2$$ 
-
-
+$$ v_R=V+\Delta V/2 $$
+$$ v_L=V-\Delta V/2 $$ 
 $$ \dot{q_r}=
 	\begin{bmatrix} \dot{x_r} \\ \dot{y_r} \\ \dot{\theta_r}  \end{bmatrix}
  	=
@@ -239,7 +250,6 @@ where $\beta$ and $y_1$ are measurable quantities
 %		\caption{\label{fig:photo5776198910077939977} Chassis Assembly }
 %	\end{figure}
 		
-\end{itemize}
 %\begin{appendices}
 %\section{Photos}
 %
