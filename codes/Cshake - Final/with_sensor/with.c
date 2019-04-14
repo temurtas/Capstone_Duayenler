@@ -34,6 +34,39 @@ void print_arguments(char* type ,char* opp_id ,char* opp_ip)
 	printf("OPPONENT IP: %s\n",opp_ip);
 }
 
+void sensor_setup(vl6180* fhandle, vl6180* bhandle)
+{
+  if(wiringPiSetup() == -1)
+  {
+		printf("setup wiringPi failed !\n");
+		exit(-1);
+  }
+  pinMode(sensor1Pin, OUTPUT);
+	pinMode(sensor2Pin, OUTPUT);
+	digitalWrite(sensor1Pin,LOW);
+	digitalWrite(sensor2Pin,LOW);
+
+	digitalWrite(sensor1Pin,HIGH);
+	delay(50);
+	*fhandle = vl6180_initialise(1);
+	if(*fhandle<=0)
+  {
+		printf("ERROR FOR FRONT HANDLE !\n");
+		exit(-1);
+	}
+	vl6180_change_addr(*fhandle,0x54);
+
+	digitalWrite(sensor2Pin,HIGH);
+	delay(50);
+	*bhandle = vl6180_initialise(1);
+	if(*bhandle<=0)
+  {
+		printf("ERROR FOR BACK HANDLE !\n");
+		exit(-1);
+	}
+	vl6180_change_addr(*bhandle,0x56);
+}
+
 int server_funct(char* opp_id)
 {
     int server_fd, new_socket, valread;
@@ -102,7 +135,7 @@ int server_funct(char* opp_id)
     printf("STOP = %s, size = %ld\n", stop, sizeof(catch));
 
     vl6180 fhandle,bhandle;
-    sensor_setup(fhandle, bhandle);
+    sensor_setup(&fhandle, &bhandle);
     int freading,breading;
     struct timeval timeout;
     fd_set rfd;
@@ -246,7 +279,7 @@ int client_funct(char* opp_id, char* server_ip)
     printf("STOP = %s, size = %ld\n", stop, sizeof(catch));
 
     vl6180 fhandle,bhandle;
-    sensor_setup(fhandle, bhandle);
+    sensor_setup(&fhandle, &bhandle);
     int freading,breading;
     struct timeval timeout;
     fd_set rfd;
@@ -338,38 +371,7 @@ int client_funct(char* opp_id, char* server_ip)
     return 0;
 }
 
-void sensor_setup(vl6180& fhandle, vl6180& bhandle)
-{
-  if(wiringPiSetup() == -1)
-  {
-		printf("setup wiringPi failed !\n");
-		exit(-1);
-  }
-  pinMode(sensor1Pin, OUTPUT);
-	pinMode(sensor2Pin, OUTPUT);
-	digitalWrite(sensor1Pin,LOW);
-	digitalWrite(sensor2Pin,LOW);
 
-	digitalWrite(sensor1Pin,HIGH);
-	delay(50);
-	fhandle = vl6180_initialise(1);
-	if(fhandle<=0)
-  {
-		printf("ERROR FOR FRONT HANDLE !\n");
-		exit(-1);
-	}
-	vl6180_change_addr(fhandle,0x54);
-
-	digitalWrite(sensor2Pin,HIGH);
-	delay(50);
-	bhandle = vl6180_initialise(1);
-	if(fhandle<=0)
-  {
-		printf("ERROR FOR BACK HANDLE !\n");
-		exit(-1);
-	}
-	vl6180_change_addr(bhandle,0x56);
-}
 
 int main(int argc, char *argv[])
 {
