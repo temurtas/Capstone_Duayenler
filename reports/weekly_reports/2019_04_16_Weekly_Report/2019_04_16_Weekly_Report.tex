@@ -1,0 +1,322 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Weekly Report 
+% LaTeX Template
+% Version 1.3 (26/10/2018)
+% Modified by
+% Enes TAŞTAN
+% Erdem TUNA
+% Halil TEMURTAŞ
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[a4paper,12pt]{article}
+%-----packages------
+\usepackage[a4paper, total={6.2in, 8.5in}, headheight=110pt]{geometry}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{gensymb} % this could be problem
+\usepackage{float}
+\usepackage{fancyref}
+\usepackage{subcaption}
+\usepackage[toc,page]{appendix} %appendix package
+\usepackage{xcolor}
+\usepackage{listings}
+
+
+\usepackage[export]{adjustbox}
+
+\usepackage{xspace}
+\usepackage{amssymb}
+\usepackage{nicefrac}
+\usepackage{gensymb}
+\usepackage{fancyhdr}
+\usepackage{lipsum}  % for lipsum
+\usepackage[final]{pdfpages}  % pdf include
+\usepackage{array} %allows more options in tables
+\usepackage{pgfplots,pgf,tikz} %coding plots in latex
+\usepackage{capt-of} % allows caption outside the figure environment
+\usepackage[export]{adjustbox} %more options for adjusting the images
+\usepackage{multicol,multirow,slashbox} % allows tables like table1
+%\usepackage[hyperfootnotes=false]{hyperref} % clickable references
+\usepackage{epstopdf} % useful when matlab is involved
+%\usepackage{placeins} % prevents the text after figure to go above figure with \FloatBarrier 
+%\usepackage{listingsutf8,mcode} %import .m or any other code file mcode is for matlab highlighting
+
+%-----end of packages
+\input{../../../documents/configuration.tex}
+
+
+
+\pagestyle{fancy}
+\setlength\headheight{130pt}
+\setlength{\footskip}{2.5cm}
+\fancyhead[LO,LE]{\textbf{Duayenler Ltd. Şti.} \\ \textbf{Members :\\ } 
+			Enes Taştan, \ \ \  2068989, 0543 683 4336 \\ 
+			Halil Temurtaş, 2094522, 0531 632 2194  		
+}
+\fancyhead[RO,RE]{
+			\textbf{April 09, 2019} \\
+			Sarper Sertel, 2094449, 0542 515 6039 \\
+			Erdem Tuna, 2167419, 0535 256 3320 \\ 
+			İlker Sağlık, 2094423, 0541 722 9573}
+%\fancyhead[RO]{Sarper Sertel (05435156039),\\Enes Taştan (05436834336), Erdem Tuna (05352563320),\\Halil Temurtaş (05316322194), İlker Sağlık (05417229573)}
+\rfoot{\includegraphics[width=2.2cm]{../../../documents/logos/logo2-page-with-stroke}}
+
+\begin{document}
+	
+\begin{figure}
+	\vspace*{-.7cm}
+	\centering
+	\begin{figure}[H]
+		\centering
+		\setlength{\unitlength}{\textwidth} 
+		\includegraphics[width=0.9\unitlength]{../../../documents/logos/logo3-with-stroke}
+	\end{figure}
+\end{figure}
+\vspace*{-1.7cm}
+\begin{center}
+	\Large\textbf{April 02 - April 08 Weekly Report}
+	\end{center}
+\section{Progress}
+\begin{itemize}
+ 
+	 \item Step response of the car is tried to be obtained  to find the model of the vehicle.
+	 
+	 
+	
+	\end{itemize}
+
+\section{Plans}
+
+
+\begin{itemize}
+
+\item Further PID controller design parameter tuning for controller subsystem with varying base speed.
+
+
+\newpage
+
+\begin{appendices} 
+
+where 
+\begin{itemize}
+	\item $v_r$ is current position linear velocity 
+	\item $w_r$ is current angular velocity 
+	\item $v_R$ and right wheel linear velocity
+	\item $v_L$ and left wheel linear velocity
+	\item $w_R=\cfrac{v_R}{r}$ and right wheel angular velocity
+	\item $w_L=\cfrac{v_L}{r}$ and left wheel angular velocity
+\end{itemize}
+and their relation between linear speed and angular velocity of the vehicle with respect to right and left wheel are as follows \footnote{https://www.researchgate.net/publication/252016633\_Trajectory-tracking\_and\_discrete-time\_sliding-mode\_control\_of\_wheeled\_mobile\_robots}
+ \footnote{https://www.dis.uniroma1.it/~labrob/pub/papers/Ramsete01.pdf}
+$$ v_{vehicle}=\frac{v_R+v_L}{2} $$
+$$ w_{vehicle}=\frac{v_R-v_L}{r} $$
+In our case we could you constant base speed $V=\cfrac{v_R+v_L}{2}$ and $\Delta V=v_R-v_L$.
+Thus, 
+$$ v_R=V+\Delta V/2$$
+$$ v_L=V-\Delta V/2$$ 
+
+
+$$ \dot{q_r}=
+	\begin{bmatrix} \dot{x_r} \\ \dot{y_r} \\ \dot{\theta_r}  \end{bmatrix}
+ 	=
+  	\begin{bmatrix}
+   	\cos (\theta_r) & 0 \\
+   	\sin (\theta_r) & 0 \\
+    0 & 1 \\
+   	\end{bmatrix}
+	\begin{bmatrix} v_r \\ w_r \end{bmatrix}
+$$ 
+
+$$ \dot{q_d}=
+	\begin{bmatrix} \dot{x_d} \\ \dot{y_d} \\ \dot{\theta_d}  \end{bmatrix}
+ 	=
+  	\begin{bmatrix}
+   	\cos (\theta_d) & 0 \\
+   	\sin (\theta_d) & 0 \\
+    0 & 1 \\
+   	\end{bmatrix}
+	\begin{bmatrix} v_d \\ w_d \end{bmatrix}
+$$
+
+$$ q = q_r-q_d $$
+
+where $v=v_r-v_d$ and $w=w_r-w_d$
+
+$$ \dot{q}=
+	\begin{bmatrix} \dot{x_r}-\dot{x_d} \\ \dot{y_r}-\dot{y_d} \\ \dot{\theta_r}-\dot{\theta_d}  \end{bmatrix}
+	=  	
+  	\begin{bmatrix}
+   	0 & 0 & -v_d \sin (\theta_d) \\
+   	0 & 0 & +v_d \cos (\theta_d) \\
+   	0 & 0 & 0 \\
+   	\end{bmatrix}
+	q
+	+
+	\begin{bmatrix}
+	\cos (\theta_d) & 0 \\
+   	\sin (\theta_d) & 0 \\
+    0 & 1 \\
+	\end{bmatrix}		
+	\begin{bmatrix} v \\ w \end{bmatrix}
+$$
+
+through a rotation matrix 
+
+$$ 
+	q_R
+	=  	
+  	\begin{bmatrix}
+   	\cos (\theta_d) & \sin (\theta_d) & 0 \\
+   	-\sin (\theta_d) & \cos (\theta_d) & 0 \\
+   	0 & 0 & 1 \\
+   	\end{bmatrix}
+   	q
+$$
+
+$$ \dot{q_R}
+	=  	
+  	\begin{bmatrix}
+   	0 & w_d & 0 \\
+   	-w_d & 0 & +v_d  \\
+   	0 & 0 & 0 \\
+   	\end{bmatrix}
+	q_R
+	+
+	\begin{bmatrix}
+	1 & 0 \\
+   	0 & 0 \\
+    0 & 1 \\
+	\end{bmatrix}		
+	\begin{bmatrix} v \\ w \end{bmatrix}
+$$
+
+	Error for a position
+
+
+$$ 
+	\begin{bmatrix} {x_e} \\ {y_e} \\ {\theta_e}  \end{bmatrix}
+ 	=
+  	\begin{bmatrix}
+   	\cos (\theta_d) & \sin (\theta_d) & 0\\
+   	-\sin (\theta_d) & \cos (\theta_d) & 0\\
+    0 & 0 &  -1 \\
+   	\end{bmatrix}
+	\begin{bmatrix} x_d-x_r \\ y_d-y_r \\ \theta_d-\theta_r \end{bmatrix}
+$$
+
+
+$$ 
+	\begin{bmatrix} {x_e} \\ {y_e} \\ {\theta_e}  \end{bmatrix}
+ 	=
+  	\begin{bmatrix}
+   	y_1 \cos (\beta)\\
+   	y_1*\sin (\beta) + 50/\cos (\beta)\\
+    \beta \\
+   	\end{bmatrix}
+$$
+
+where $\beta$ and $y_1$ are measurable quantities
+
+\begin{figure}[H]
+	\center
+	\setlength{\unitlength}{\textwidth} 
+	\includegraphics[width=1.0\unitlength]{state_3}
+	\caption{\label{fig:stateFB} Inverse Kinematic Model for the Differential Drive Motor}
+\end{figure}
+
+
+\end{appendices}
+%	\begin{figure}[H]
+%		\center
+%		\setlength{\unitlength}{\textwidth} 
+%		\includegraphics[width=0.6\unitlength]{photo5776198910077939977}
+%		\caption{\label{fig:photo5776198910077939977} Chassis Assembly }
+%	\end{figure}
+		
+\end{itemize}
+%\begin{appendices}
+%\section{Photos}
+%
+%	\begin{figure}[H]
+%		\center
+%		\setlength{\unitlength}{\textwidth} 
+%		\includegraphics[width=0.75\unitlength]{efso}
+%		\caption{\label{fig:efso} [Left]Output of Our Image Detection Algorithm Under Low Light Conditions, The Red Lines represents the Detected Line Edges  and the [Right] Original unprocessed Photo }
+%	\end{figure}
+
+
+
+	
+
+
+
+
+%\end{appendices}
+
+\end{document}
+
+%----samples------
+%\begin{itemize}
+%\item Item
+%\item Item
+%\end{itemize}
+
+%\begin{figure}[H]
+%\center
+%\setlength{\unitlength}{\textwidth} 
+%\includegraphics[width=0.7\unitlength]{images/logo1}
+%\caption{\label{fig:logo}Logo }
+%\end{figure}
+
+%\begin{figure}[H]
+%	\setlength{\unitlength}{\textwidth} 
+%	\centering
+%	\begin{subfigure}{.5\textwidth}
+%  		\centering
+%  		\includegraphics[width=0.48\unitlength]{images/logo1}
+%  		\caption{\label{fig:logo1}Logo1 }
+%	\end{subfigure}%
+%	\begin{subfigure}{.5\textwidth}
+%  		\centering
+%		\includegraphics[width=0.48\unitlength]{images/logo2}
+%  		\caption{\label{fig:logo2}Logo2}
+%	\end{subfigure}
+%\caption{\label{fig:calisandegree} Small Logos   }
+%\end{figure}
+	
+%\begin{table}[H]
+%  \centering
+% 
+%    \begin{tabular}{c|c|c}
+%       $$A$$ & $$B$$ & $$C$$ \\ \hline
+%       1 & 2 & 3  \\ \hline
+%       2 & 3 & 4  \\ \hline
+%       3 & 4 & 5  \\ \hline
+%       4 & 5 & 6  
+%      
+%  \end{tabular}
+%  \caption{table}
+%  \label{tab:table}
+%\end{table}
+	
+%\begin{table}[H]
+%  \centering
+% 
+%    \begin{tabular}{c|c|c}
+%       \backslashbox{$A$}{$a$} & $$\specialcell{ Average deviation \\ after subtracting out the  \\ frequency error }$$ & $$C$$ \\ \hline
+%       \multirow{2}{*}{1} & 2 & 3  \\ \cline{2-3}
+%        & 3 & 4  \\ \hline
+%       3 & \multicolumn{2}{c}{4}  \\ \hline
+%       4 & 5 & 6  
+%      
+%  \end{tabular}
+%  \caption{table}
+%  \label{tab:table}
+%\end{table}
+%-----end of samples-----
