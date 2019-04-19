@@ -38,6 +38,11 @@ LaneDetector::LaneDetector() {
 	img_leftBound = 0;
 	img_rightBound = 600;
 	img_center = 300;
+
+	processNoise.create(4, 1, CV_32F);
+	measurement.create(2,1);
+	state.create(4,1);
+	initKalman(0, 0);
 }
 
 // IMAGE BLURRING
@@ -99,8 +104,8 @@ cv::Mat LaneDetector::cropROI(cv::Mat img_edges) {
 
 	cv::Mat mask = cv::Mat::zeros(img_edges.size(), img_edges.type());
 	// a ROI of (img_edges.cols x 250)
-	cv::Point ptsROI[4] = { cv::Point(0, img_edges.rows - 300), cv::Point(
-			img_edges.cols, img_edges.rows - 300), cv::Point(img_edges.cols,
+	cv::Point ptsROI[4] = { cv::Point(0, img_edges.rows - 250), cv::Point(
+			img_edges.cols, img_edges.rows - 250), cv::Point(img_edges.cols,
 			img_edges.rows - 50), cv::Point(0, img_edges.rows - 50) };
 
 	// create a binary polygon mask
@@ -135,7 +140,7 @@ std::vector<cv::Vec4i> LaneDetector::houghLines(cv::Mat img_mask) {
 void LaneDetector::setLineBorders(cv::Mat img) {
 
 	const int width = img.cols; // width of the image
-	const int confidenceCount = 250 * 0.75; // minimum white pixel count in a column
+	const int confidenceCount = 190; // minimum white pixel count in a column
 											// 250 is the row count of ROI
 
 	int* whitePixels = new int[width]; // create the dynamic array
@@ -442,7 +447,7 @@ std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 	if (left_lines.size() == 0) {
 		//left_lines.push_back(cv::Vec4i(img_rightBound - 248, img_edges.rows - 300, img_rightBound - 248, img_edges.rows - 50));
 		left_lines.emplace_back(img_rightBound - 348, img_edges.rows - 300,
-				img_rightBound - 348, img_edges.rows - 50);
+				img_rightBound - 348, img_edges.rows - 50); // 
 	}
 	std::cout << "right size: " << right_lines.size() << std::endl;
 
@@ -502,13 +507,14 @@ std::vector<std::vector<cv::Vec4i> > LaneDetector::lineSeparation(
 		int targetIndex = static_cast<int>(right_lines.size()) - 1;
 		for (auto i : l_slope_ang)
 			l_slope_avg += i;
+			
 		l_slope_avg = l_slope_avg / l_slope_ang.size();
 
 		double current_index_diff = std::abs(
 				std::abs(l_slope_avg) - std::abs(r_slope_ang[r_bad_index_1]));
 		double next_index_diff = 0;
 		if (r_bad_index_1 != 0)
-			double next_index_diff = std::abs(
+			next_index_diff = std::abs(
 					std::abs(l_slope_avg)
 							- std::abs(r_slope_ang[r_bad_index_1 + 1]));
 		std::cout << "RnextD: " << next_index_diff << "RcurrD: "
@@ -681,52 +687,138 @@ int LaneDetector::plotLane(cv::Mat& inputImage, std::vector<cv::Point> lane) {
 			cv::Point(inputImage.cols / 3, inputImage.rows - 50),
 			cv::FONT_HERSHEY_DUPLEX, 1, cvScalar(67, 32, 206), 1, CV_AA);
 
-	/*************************/
-	
-		std::ofstream myfile;
-	myfile.open("test.txt", std::ios_base::app);
-	
-	
-	 myfile << ((double) cv::getTickCount() - timeCapture)
-				/ cv::getTickFrequency() * 1000 <<  " " << current_x-target_x << "\n" << std::endl;
-	myfile.close();
-	
-	std::string s;
-	if(current_x-target_x > 0 ) {
-		s.append("A ");
-		s.append(std::to_string(current_x-target_x));
-	}
-	else{
-		s.append("B ");
-		s.append(std::to_string(abs(current_x-target_x)));
 
-	}
-s.append("\r");
-
-std::cout << s << std::endl;
-        //ArduinoComm arduinoComm;
-        arduinoComm.sendToController(s);
-
-
-	std::string s1;
-	s1.append("C ");
 	//cv::Point ini = cv::Point(lane[0].x, lane[1].x);
 	//cv::Point fini = cv::Point(lane[2].x, lane[3].x);
 	std::cout << lane[0] << " " << lane[1] << " " << lane[2] << " " << lane[3] << std::endl;
 	float downCenter = static_cast<float>(lane[0].x + lane[2].x) /2;
 	float upCenter = static_cast<float>(lane[1].x + lane[3].x) /2;
-
-	s1.append(std::to_string(cv::fastAtan2(upCenter - downCenter, 125)));
-
-	s1.append("\r");
-			std::cout << s1 << std::endl;
 	
-	arduinoComm.sendToController(s1);
+	float y1 = downCenter - 320;
+	float y2 = upCenter - 320;
+	float beta = cv::fastAtan2(upCenter - downCenter, 125);
+	
+	/***************KALMAN************/
+	cv::Point sKalman, pKalman;
+	pKalman = kalmanPredict();
+    std::cout << "kalman prediction: " << pKalman.x << " " << pKalman.y << std::endl;
 
+	if(beta>180)
+		sKalman = kalmanCorrect(y1,beta-360);
+    else 
+		sKalman = kalmanCorrect(y1,beta);
+    std::cout << "kalman corrected state: " << sKalman.x << " " << sKalman.y << std::endl;
+    kalmanUpdate();
+    cv::putText(inputImage,  std::to_string(pKalman.x),
+			cv::Point(inputImage.cols / 2, inputImage.rows - 100),
+			cv::FONT_HERSHEY_DUPLEX, 1, cvScalar(67, 32, 206), 1, CV_AA);
+	/************KALMAN***************/
+	
+	std::ofstream myFile;
+	myFile.open("test.txt", std::ios_base::app);
+	myFile << y1 << " " << pKalman.x << " " ;
+	if(beta>180)
+		myFile << beta-360 << " " ;
+	else
+		myFile << beta << " " ;
+		
+	if (pKalman.y > 180)
+	myFile << pKalman.y -360 << std::endl;	
+	else 
+		myFile << pKalman.y << std::endl;	
+	myFile.close();
+	
+/***** SENDING BETA ********/
+//beta = sKalman.y;
+	std::string s1;
+	s1.append("B ");
+	s1.append(std::to_string(beta));
+	s1.append("\r");
+	std::cout << s1 << std::endl;
+	arduinoComm.sendToController(s1);
+	
+/***** SENDING Y2 *******/
+	std::string s2;
+	
+	if(y2 > 0) {
+		s2.append("R ");
+		s2.append(std::to_string(y2));
+		}
+	else {
+		s2.append("L ");
+		s2.append(std::to_string(std::abs(y2)));
+		}
+	s2.append("\r");
+	std::cout << s2 << std::endl;
+	arduinoComm.sendToController(s2);
+	
+/***** SENDING Y1 *******/
+//y1 = pKalman.x;
+	std::string s3;
+	
+	if(y1 > 0) {
+		s3.append("P ");
+		s3.append(std::to_string(y1));
+		}
+	else {
+		s3.append("N ");
+		s3.append(std::to_string(std::abs(y1)));
+		}
+	s3.append("\r");
+	std::cout << s3 << std::endl;
+	arduinoComm.sendToController(s3);
+	
 /**************************/
 
 	// show the final output image
 	//cv::namedWindow(window_vision);
 	//cv::imshow(window_vision, inputImage);
 	return 0;
+}
+
+
+cv::Point LaneDetector::kalmanPredict() {
+	cv::Mat prediction = KF.predict();
+	cv::Point predictPt(prediction.at<float>(0),prediction.at<float>(1));
+    return predictPt;
+}
+
+cv::Point LaneDetector::kalmanCorrect(float x, float y) {
+    measurement(0) = x;
+    measurement(1) = y;
+    cv::Mat estimated = KF.correct(measurement);
+    cv::Point statePt(estimated.at<float>(0),estimated.at<float>(1));
+    return statePt;
+}
+
+void LaneDetector::kalmanUpdate() {
+    cv::randn( processNoise, cv::Scalar(0), cv::Scalar::all(sqrt(KF.processNoiseCov.at<float>(0, 0))));
+    state = KF.transitionMatrix*state + processNoise;
+}
+
+void LaneDetector::initKalman(float x, float y) {
+    // Instantate Kalman Filter with
+    // 4 dynamic parameters and 2 measurement parameters,
+    // where my measurement is: 2D location of object,
+    // and dynamic is: 2D location and 2D velocity.
+    KF.init(4, 2, 0);
+
+    measurement = cv::Mat_<float>::zeros(2,1);
+    measurement.at<float>(0, 0) = x;
+    measurement.at<float>(0, 0) = y;
+
+
+    KF.statePre.setTo(0);
+    KF.statePre.at<float>(0, 0) = x;
+    KF.statePre.at<float>(1, 0) = y;
+
+    KF.statePost.setTo(0);
+    KF.statePost.at<float>(0, 0) = x;
+    KF.statePost.at<float>(1, 0) = y;
+
+    setIdentity(KF.transitionMatrix);
+    setIdentity(KF.measurementMatrix);
+    setIdentity(KF.processNoiseCov, cv::Scalar::all(.5)); //adjust this for faster convergence - but higher noise
+    setIdentity(KF.measurementNoiseCov, cv::Scalar::all(0.1));
+    setIdentity(KF.errorCovPost, cv::Scalar::all(1));
 }

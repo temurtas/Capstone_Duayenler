@@ -229,11 +229,11 @@ int main(int argc, char* argv[]) {
 			red = 250;
 			green = 250;
 
-			/*
+			
 			char key = (char) cv::waitKey(30);
 			if (key == 'q' || key == 27) {
 				break;
-			}*/
+			}
 
 			//std::cin.get();
 		}

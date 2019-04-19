@@ -32,6 +32,12 @@ private:
 	double img_rightBound;
 	double timeCapture = (double) cv::getTickCount();
 	
+		/******KALMAN VARIABLES *////
+	cv::Mat processNoise;
+	cv::KalmanFilter KF;
+	cv::Mat_<float> measurement;
+	cv::Mat_<float> state;
+	
 	cv::Point ptsROI[4]; // points classifying the ROI
 	bool left_flag = false; // Tells us if there's left boundary of lane detected
 	bool right_flag = false; // Tells us if there's right boundary of lane detected
@@ -44,6 +50,11 @@ private:
 			std::vector<double>& angles_diff, int& index1, int& index2);
 	void removeBadLines(std::vector<cv::Vec4i>& lines, std::vector<double>& angles, int& i1, int& i2);
 	void saveBadIndex(unsigned int index, int& base_i1, int& base_i2);
+	
+		cv::Point kalmanPredict();
+	cv::Point kalmanCorrect(float x, float y);
+	void kalmanUpdate ();
+	void initKalman(float x, float y);
 
 public:
 	LaneDetector();
