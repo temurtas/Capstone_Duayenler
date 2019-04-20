@@ -13,22 +13,28 @@
 
 #define CATCH "00"
 #define ACK   "01"
-#define REJ   "11"
 #define STOP  "10"
+#define REJ   "11"
+
 
 #define SCATCH "0700"
 #define SACK   "0701"
-#define SREJ   "0711"
 #define SSTOP  "0710"
+#define SREJ   "0711"
+
 
 #define PORT 5000
 
 #define sensor1Pin 0
 #define sensor2Pin 1
+#define red     2
+#define green   3
+#define blue    4
+#define yellow  5
 
 void print_usage()
 {
-    printf("Usage: -t <HostType(s/c)> -id <OpponentId> -ip <OpponentIp> \n");
+    printf("Usage: -t <HostType(s/c)> \n");
     exit (1);
 }
 
@@ -41,12 +47,7 @@ void print_arguments(char* type ,char* opp_id ,char* opp_ip)
 
 void sensor_setup(vl6180* fhandle, vl6180* bhandle)
 {
-  if(wiringPiSetup() == -1)
-  {
-		printf("setup wiringPi failed !\n");
-		exit(-1);
-  }
-  pinMode(sensor1Pin, OUTPUT);
+    pinMode(sensor1Pin, OUTPUT);
 	pinMode(sensor2Pin, OUTPUT);
 	digitalWrite(sensor1Pin,LOW);
 	digitalWrite(sensor2Pin,LOW);
@@ -138,7 +139,17 @@ int server_funct(char* opp_id)
     printf("ACK = %s\n", ack);
     printf("REJ = %s\n", rej);
     printf("STOP = %s\n", stop);
-
+    
+    if(wiringPiSetup() == -1)
+    {
+		printf("setup wiringPi failed !\n");
+		exit(-1);
+    }
+    pinMode(red, OUTPUT);
+    pinMode(green, OUTPUT);
+    pinMode(blue, OUTPUT);
+    pinMode(yellow, OUTPUT);
+    
     vl6180 fhandle,bhandle;
     sensor_setup(&fhandle, &bhandle);
     int freading,breading;
@@ -151,6 +162,8 @@ int server_funct(char* opp_id)
       printf ("Front sensor value is: %d\n", freading);
       if (freading) {
         send(new_socket , SCATCH , strlen(SCATCH) , 0 );
+        digitalWrite (red, HIGH) ; delay (500) ;
+        digitalWrite (red,  LOW) ;
         FD_ZERO(&rfd);
         FD_SET(new_socket, &rfd);
         timeout.tv_sec =  5;
@@ -165,6 +178,8 @@ int server_funct(char* opp_id)
           {
             memset (buffer, 0x00, 5);
             send ( new_socket , SSTOP , strlen(SSTOP) , 0 );
+            digitalWrite (blue, HIGH) ; delay (500) ;
+            digitalWrite (blue,  LOW) ;
             break;
           } else if (strcmp(buffer,rej) == 0)
           {
@@ -199,6 +214,8 @@ int server_funct(char* opp_id)
             if (breading)
             {
               send(new_socket , SACK , strlen(SACK) , 0 );
+              digitalWrite (green, HIGH) ; delay (500) ;
+              digitalWrite (green,  LOW) ;
               FD_ZERO(&rfd);
               FD_SET(new_socket, &rfd);
               timeout.tv_sec = 5;
@@ -220,6 +237,8 @@ int server_funct(char* opp_id)
             else
             {
               send(new_socket , SREJ , strlen(SREJ) , 0 );
+              digitalWrite (yellow, HIGH) ; delay (500) ;
+              digitalWrite (yellow,  LOW) ;
             }
           }
           else memset (buffer, 0x00, 5);
@@ -282,6 +301,17 @@ int client_funct(char* opp_id, char* server_ip)
     printf("ACK = %s\n", ack);
     printf("REJ = %s\n", rej);
     printf("STOP = %s\n", stop);
+    
+    if(wiringPiSetup() == -1)
+    {
+		printf("setup wiringPi failed !\n");
+		exit(-1);
+    }
+    
+    pinMode(red, OUTPUT);
+    pinMode(green, OUTPUT);
+    pinMode(blue, OUTPUT);
+    pinMode(yellow, OUTPUT);
 
     vl6180 fhandle,bhandle;
     sensor_setup(&fhandle, &bhandle);
@@ -297,6 +327,8 @@ int client_funct(char* opp_id, char* server_ip)
       if (freading<=50)
       {
         send(sock , SCATCH , strlen(SCATCH) , 0 );
+        digitalWrite (red, HIGH) ; delay (500) ;
+        digitalWrite (red,  LOW) ;
         FD_ZERO(&rfd);
         FD_SET(sock, &rfd);
         timeout.tv_sec =  5;
@@ -311,6 +343,8 @@ int client_funct(char* opp_id, char* server_ip)
           {
             memset (buffer, 0x00, 5);
             send(sock , SSTOP , strlen(SSTOP) , 0 );
+            digitalWrite (blue, HIGH) ; delay (500) ;
+            digitalWrite (blue,  LOW) ;
             break;
           }
           else if (strcmp(buffer,rej) == 0)
@@ -346,6 +380,8 @@ int client_funct(char* opp_id, char* server_ip)
             if (breading<=50)
             {
               send(sock , SACK , strlen(SACK) , 0 );
+              digitalWrite (green, HIGH) ; delay (500) ;
+              digitalWrite (green,  LOW) ;
               FD_ZERO(&rfd);
               FD_SET(sock, &rfd);
               timeout.tv_sec = 5;
@@ -367,6 +403,8 @@ int client_funct(char* opp_id, char* server_ip)
             else
             {
               send(sock , SREJ , strlen(SREJ) , 0 );
+              digitalWrite (yellow, HIGH) ; delay (500) ;
+              digitalWrite (yellow,  LOW) ;
             }
           }
           else memset (buffer, 0x00, 5);

@@ -28,7 +28,7 @@
 
 void print_usage()
 {
-    printf("Usage: -t <HostType(s/c)> -id <OpponentId> -ip <OpponentIp> \n");
+    printf("Usage: -t <HostType(s/c)> \n");
     exit (1);
 }
 
