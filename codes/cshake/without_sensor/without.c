@@ -6,24 +6,24 @@
 #include <sys/select.h>
 #include <sys/types.h>
 #include <netinet/in.h>
-#include <netdb.h>
 #include <arpa/inet.h>
-#include "vl6180_pi/vl6180_pi.h"
-#include <wiringPi.h>
+#include <netdb.h>
 
 #define CATCH "00"
 #define ACK   "01"
 #define REJ   "11"
 #define STOP  "10"
 
-#define PORT 5000
+#define SCATCH "0600"
+#define SACK   "0601"
+#define SREJ   "0611"
+#define SSTOP  "0610"
 
-#define sensor1Pin 0
-#define sensor2Pin 1
+#define PORT 5000
 
 void print_usage()
 {
-    printf("Usage: -t <HostType(s/c)> -id <OpponentId> -ip <OpponentIp> \n");
+    printf("Usage: -t <HostType(s/c)>\n");
     exit (1);
 }
 
@@ -32,39 +32,6 @@ void print_arguments(char* type ,char* opp_id ,char* opp_ip)
 	printf("HOST TYPE: %s\n",type);
 	printf("OPPONENT ID: %s\n",opp_id);
 	printf("OPPONENT IP: %s\n",opp_ip);
-}
-
-void sensor_setup(vl6180* fhandle, vl6180* bhandle)
-{
-  if(wiringPiSetup() == -1)
-  {
-		printf("setup wiringPi failed !\n");
-		exit(-1);
-  }
-  pinMode(sensor1Pin, OUTPUT);
-	pinMode(sensor2Pin, OUTPUT);
-	digitalWrite(sensor1Pin,LOW);
-	digitalWrite(sensor2Pin,LOW);
-
-	digitalWrite(sensor1Pin,HIGH);
-	delay(50);
-	*fhandle = vl6180_initialise(1);
-	if(*fhandle<=0)
-  {
-		printf("ERROR FOR FRONT HANDLE !\n");
-		exit(-1);
-	}
-	vl6180_change_addr(*fhandle,0x54);
-
-	digitalWrite(sensor2Pin,HIGH);
-	delay(50);
-	*bhandle = vl6180_initialise(1);
-	if(*bhandle<=0)
-  {
-		printf("ERROR FOR BACK HANDLE !\n");
-		exit(-1);
-	}
-	vl6180_change_addr(*bhandle,0x56);
 }
 
 int server_funct(char* opp_id)
@@ -113,7 +80,7 @@ int server_funct(char* opp_id)
         exit(EXIT_FAILURE);
     }
 
-    // Define message strings to be sent
+    // Define message strings to be received
     char catch[5];
     char ack[5];
     char rej[5];
@@ -129,23 +96,21 @@ int server_funct(char* opp_id)
     strcat(rej, REJ);
     strcat(stop, STOP);
 
-    printf("CATCH = %s, size = %ld\n", catch, sizeof(catch));
-    printf("ACK = %s, size = %ld\n", ack, sizeof(catch));
-    printf("REJ = %s, size = %ld\n", rej, sizeof(catch));
-    printf("STOP = %s, size = %ld\n", stop, sizeof(catch));
+    printf("CATCH = %s\n", catch);
+    printf("ACK = %s\n", ack);
+    printf("REJ = %s\n", rej);
+    printf("STOP = %s\n", stop);
 
-    vl6180 fhandle,bhandle;
-    sensor_setup(&fhandle, &bhandle);
     int freading,breading;
     struct timeval timeout;
     fd_set rfd;
     while (1)
     {
       // Check front sensor data
-      freading = get_distance(fhandle);
-      printf ("Front sensor value is: %d\n", freading);
+      printf ("Did I catch? 1/0: \n");
+      scanf("%d",&freading);
       if (freading) {
-        send(new_socket , catch , strlen(catch) , 0 );
+        send(new_socket , SCATCH , strlen(SCATCH) , 0 );
         FD_ZERO(&rfd);
         FD_SET(new_socket, &rfd);
         timeout.tv_sec =  5;
@@ -159,7 +124,7 @@ int server_funct(char* opp_id)
           if (strcmp(buffer,ack) == 0)
           {
             memset (buffer, 0x00, 5);
-            send ( new_socket , stop , strlen(stop) , 0 );
+            send ( new_socket , SSTOP , strlen(SSTOP) , 0 );
             break;
           } else if (strcmp(buffer,rej) == 0)
           {
@@ -189,11 +154,11 @@ int server_funct(char* opp_id)
 
           if (strcmp(buffer,catch) == 0) {
             memset (buffer, 0x00, 5);
-            breading = get_distance(bhandle);
-            printf ("Back sensor value is: %d\n", breading);
+            printf ("Should I acknowledge? 1/0: \n");
+            scanf("%d",&breading);
             if (breading)
             {
-              send(new_socket , ack , strlen(ack) , 0 );
+              send(new_socket , SACK , strlen(SACK) , 0 );
               FD_ZERO(&rfd);
               FD_SET(new_socket, &rfd);
               timeout.tv_sec = 5;
@@ -214,7 +179,7 @@ int server_funct(char* opp_id)
             }
             else
             {
-              send(new_socket , rej , strlen(rej) , 0 );
+              send(new_socket , SREJ , strlen(SREJ) , 0 );
             }
           }
           else memset (buffer, 0x00, 5);
@@ -257,7 +222,7 @@ int client_funct(char* opp_id, char* server_ip)
         return -1;
     }
 
-    // Define message strings to be sent
+    // Define message strings to be received
     char catch[5];
     char ack[5];
     char rej[5];
@@ -273,25 +238,22 @@ int client_funct(char* opp_id, char* server_ip)
     strcat(rej, REJ);
     strcat(stop, STOP);
 
-    printf("CATCH = %s, size = %ld\n", catch, sizeof(catch));
-    printf("ACK = %s, size = %ld\n", ack, sizeof(catch));
-    printf("REJ = %s, size = %ld\n", rej, sizeof(catch));
-    printf("STOP = %s, size = %ld\n", stop, sizeof(catch));
+    printf("CATCH = %s\n", catch);
+    printf("ACK = %s\n", ack);
+    printf("REJ = %s\n", rej);
+    printf("STOP = %s\n", stop);
 
-    vl6180 fhandle,bhandle;
-    sensor_setup(&fhandle, &bhandle);
     int freading,breading;
     struct timeval timeout;
     fd_set rfd;
     while (1)
     {
       // Check front sensor data
-
-      freading = get_distance(fhandle);
-      printf ("Front sensor value is: %d\n", freading);
-      if (freading<=50)
+      printf ("Did I catch? 1/0: \n");
+      scanf("%d",&freading);
+      if (freading)
       {
-        send(sock , catch , strlen(catch) , 0 );
+        send(sock , SCATCH , strlen(SCATCH) , 0 );
         FD_ZERO(&rfd);
         FD_SET(sock, &rfd);
         timeout.tv_sec =  5;
@@ -302,13 +264,11 @@ int client_funct(char* opp_id, char* server_ip)
         {  // No Time out, i.e. data available, read it
           recv(sock, buffer, sizeof(buffer), 0);
           printf("%s is received.\n", buffer );
-          if (strcmp(buffer,ack) == 0)
-          {
+          if (strcmp(buffer,ack) == 0) {
             memset (buffer, 0x00, 5);
-            send(sock , stop , strlen(stop) , 0 );
+            send(sock , SSTOP , strlen(SSTOP) , 0 );
             break;
-          }
-          else if (strcmp(buffer,rej) == 0)
+          } else if (strcmp(buffer,rej) == 0)
           {
             printf ("I was rejected, checking again... \n");
             memset (buffer, 0x00, 5);
@@ -336,11 +296,11 @@ int client_funct(char* opp_id, char* server_ip)
           if (strcmp(buffer,catch) == 0)
           {
             memset (buffer, 0x00, 5);
-            breading = get_distance(bhandle);
-            printf ("Back sensor value is: %d\n", breading);
-            if (breading<=50)
+            printf ("Should I acknowledge? 1/0: \n");
+            scanf("%d",&breading);
+            if (breading)
             {
-              send(sock , ack , strlen(ack) , 0 );
+              send(sock , SACK , strlen(SACK) , 0 );
               FD_ZERO(&rfd);
               FD_SET(sock, &rfd);
               timeout.tv_sec = 5;
@@ -361,7 +321,7 @@ int client_funct(char* opp_id, char* server_ip)
             }
             else
             {
-              send(sock , rej , strlen(rej) , 0 );
+              send(sock , SREJ , strlen(SREJ) , 0 );
             }
           }
           else memset (buffer, 0x00, 5);
@@ -371,12 +331,10 @@ int client_funct(char* opp_id, char* server_ip)
     return 0;
 }
 
-
-
 int main(int argc, char *argv[])
 {
     char* opp_ip = "127.0.0.1";
-    char* opp_id = "00";
+    char* opp_id = "07";
     char* type;
     int option_index = 0;
     while (( option_index = getopt(argc, argv, "t:")) != -1){
@@ -390,23 +348,23 @@ int main(int argc, char *argv[])
   		}
   	}
 
-    print_arguments(type ,opp_id ,opp_ip);
 
     if (strcmp(type,"s")==0)
     {
-      printf("I am server.\n");
+      print_arguments(type ,opp_id ,opp_ip);
       server_funct(opp_id);
       free(type);
     }
     else if (strcmp(type,"c")==0)
     {
-      printf("I am client.\n");
+      print_arguments(type ,opp_id ,opp_ip);
       client_funct(opp_id, opp_ip);
       free(type);
     }
     else
     {
-      printf("I don't know who am I.\n");
+      printf("I don't know who I am.\n");
+      free(type);
     	print_usage();
     }
 
