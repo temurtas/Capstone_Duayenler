@@ -32,9 +32,17 @@
 #define blue    4
 #define yellow  5
 
+bool DUAYENLERcatched = false;  // set true when, front reading
+                                // is less than 500 and ACK is received
+
+bool DUAYENLERcaught = false;   // set true when,
+
+
+int catchThreshold = 50;
+
 void print_usage()
 {
-    printf("Usage: -t <HostType(s/c)> \n");
+    printf("Usage: -t <HostType(s/c)> -o <OpponentID(2 digits)>\n");
     exit (1);
 }
 
@@ -47,7 +55,7 @@ void print_arguments(char* type ,char* opp_id ,char* opp_ip)
 
 void sensor_setup(vl6180* fhandle, vl6180* bhandle)
 {
-    pinMode(sensor1Pin, OUTPUT);
+  pinMode(sensor1Pin, OUTPUT);
 	pinMode(sensor2Pin, OUTPUT);
 	digitalWrite(sensor1Pin,LOW);
 	digitalWrite(sensor2Pin,LOW);
@@ -75,6 +83,44 @@ void sensor_setup(vl6180* fhandle, vl6180* bhandle)
 
 int server_funct(char* opp_id)
 {
+    // Define message strings to be sent
+    char ctch[5];
+    char ack[5];
+    char rej[5];
+    char stop[5];
+
+    strcpy(ctch, opp_id);
+    strcpy(ack, opp_id);
+    strcpy(rej, opp_id);
+    strcpy(stop, opp_id);
+
+    strcat(ctch, CATCH);
+    strcat(ack, ACK);
+    strcat(rej, REJ);
+    strcat(stop, STOP);
+
+    printf("CATCH = %s\n", ctch);
+    printf("ACK = %s\n", ack);
+    printf("REJ = %s\n", rej);
+    printf("STOP = %s\n", stop);
+
+    if(wiringPiSetup() == -1)
+    {
+		printf("setup wiringPi failed !\n");
+		exit(-1);
+    }
+    pinMode(red, OUTPUT);
+    pinMode(green, OUTPUT);
+    pinMode(blue, OUTPUT);
+    pinMode(yellow, OUTPUT);
+
+    vl6180 fhandle,bhandle;
+    sensor_setup(&fhandle, &bhandle);
+    int freading,breading;
+    struct timeval timeout;
+    fd_set rfd;
+
+    //Initial Connection
     int server_fd, new_socket, valread;
     struct sockaddr_in address;
     int opt = 1;
@@ -119,48 +165,13 @@ int server_funct(char* opp_id)
         exit(EXIT_FAILURE);
     }
 
-    // Define message strings to be sent
-    char ctch[5];
-    char ack[5];
-    char rej[5];
-    char stop[5];
 
-    strcpy(ctch, opp_id);
-    strcpy(ack, opp_id);
-    strcpy(rej, opp_id);
-    strcpy(stop, opp_id);
-
-    strcat(ctch, CATCH);
-    strcat(ack, ACK);
-    strcat(rej, REJ);
-    strcat(stop, STOP);
-
-    printf("CATCH = %s\n", ctch);
-    printf("ACK = %s\n", ack);
-    printf("REJ = %s\n", rej);
-    printf("STOP = %s\n", stop);
-
-    if(wiringPiSetup() == -1)
-    {
-		printf("setup wiringPi failed !\n");
-		exit(-1);
-    }
-    pinMode(red, OUTPUT);
-    pinMode(green, OUTPUT);
-    pinMode(blue, OUTPUT);
-    pinMode(yellow, OUTPUT);
-
-    vl6180 fhandle,bhandle;
-    sensor_setup(&fhandle, &bhandle);
-    int freading,breading;
-    struct timeval timeout;
-    fd_set rfd;
     while (1)
     {
       // Check front sensor data
       freading = get_distance(fhandle);
       printf ("Front sensor value is: %d\n", freading);
-      if (freading) {
+      if (freading <= catchThreshold) {
         send(new_socket , SCATCH , strlen(SCATCH) , 0 );
         digitalWrite (red,  LOW);
         digitalWrite (green,  LOW);
@@ -186,6 +197,7 @@ int server_funct(char* opp_id)
             digitalWrite (blue,  LOW);
             digitalWrite (yellow,  LOW);
             digitalWrite (blue, HIGH) ;
+            DUAYENLERcatched = true;
             break;
           } else if (strcmp(buffer,rej) == 0)
           {
@@ -197,9 +209,8 @@ int server_funct(char* opp_id)
       } // winning case
 
 
-      else {
-
-
+      else
+      {
         FD_ZERO(&rfd);
         FD_SET(new_socket, &rfd);
         timeout.tv_sec =  5;
@@ -213,11 +224,12 @@ int server_funct(char* opp_id)
           recv(new_socket, buffer, sizeof(buffer), 0);
           printf("%s is received.\n", buffer );
 
-          if (strcmp(buffer,ctch) == 0) {
+          if (strcmp(buffer,ctch) == 0)
+          {
             memset (buffer, 0x00, 5);
             breading = get_distance(bhandle);
             printf ("Back sensor value is: %d\n", breading);
-            if (breading)
+            if (breading <= catchThreshold)
             {
               send(new_socket , SACK , strlen(SACK) , 0 );
               digitalWrite (red,  LOW);
@@ -237,6 +249,7 @@ int server_funct(char* opp_id)
                 printf("%s is received.\n", buffer );
                 if (strcmp(buffer, stop)==0)
                 {
+                  DUAYENLERcaught = true;
                   memset (buffer, 0x00, 5);
                   break;
                 }
@@ -263,6 +276,45 @@ int server_funct(char* opp_id)
 
 int client_funct(char* opp_id, char* server_ip)
 {
+    // Define message strings to be sent
+    char ctch[5];
+    char ack[5];
+    char rej[5];
+    char stop[5];
+
+    strcpy(ctch, opp_id);
+    strcpy(ack, opp_id);
+    strcpy(rej, opp_id);
+    strcpy(stop, opp_id);
+
+    strcat(ctch, CATCH);
+    strcat(ack, ACK);
+    strcat(rej, REJ);
+    strcat(stop, STOP);
+
+    printf("CATCH = %s\n", ctch);
+    printf("ACK = %s\n", ack);
+    printf("REJ = %s\n", rej);
+    printf("STOP = %s\n", stop);
+
+    if(wiringPiSetup() == -1)
+    {
+		printf("setup wiringPi failed !\n");
+		exit(-1);
+    }
+
+    pinMode(red, OUTPUT);
+    pinMode(green, OUTPUT);
+    pinMode(blue, OUTPUT);
+    pinMode(yellow, OUTPUT);
+
+    vl6180 fhandle,bhandle;
+    sensor_setup(&fhandle, &bhandle);
+    int freading,breading;
+    struct timeval timeout;
+    fd_set rfd;
+
+    //Initial Connection
     struct sockaddr_in address;
     int sock = 0, valread;
     struct sockaddr_in serv_addr;
@@ -293,50 +345,14 @@ int client_funct(char* opp_id, char* server_ip)
         return -1;
     }
 
-    // Define message strings to be sent
-    char ctch[5];
-    char ack[5];
-    char rej[5];
-    char stop[5];
 
-    strcpy(ctch, opp_id);
-    strcpy(ack, opp_id);
-    strcpy(rej, opp_id);
-    strcpy(stop, opp_id);
-
-    strcat(ctch, CATCH);
-    strcat(ack, ACK);
-    strcat(rej, REJ);
-    strcat(stop, STOP);
-
-    printf("CATCH = %s\n", ctch);
-    printf("ACK = %s\n", ack);
-    printf("REJ = %s\n", rej);
-    printf("STOP = %s\n", stop);
-
-    if(wiringPiSetup() == -1)
-    {
-		printf("setup wiringPi failed !\n");
-		exit(-1);
-    }
-
-    pinMode(red, OUTPUT);
-    pinMode(green, OUTPUT);
-    pinMode(blue, OUTPUT);
-    pinMode(yellow, OUTPUT);
-
-    vl6180 fhandle,bhandle;
-    sensor_setup(&fhandle, &bhandle);
-    int freading,breading;
-    struct timeval timeout;
-    fd_set rfd;
     while (1)
     {
       // Check front sensor data
 
       freading = get_distance(fhandle);
       printf ("Front sensor value is: %d\n", freading);
-      if (freading<=50)
+      if (freading<=catchThreshold)
       {
         send(sock , SCATCH , strlen(SCATCH) , 0 );
         digitalWrite (red,  LOW);
@@ -363,6 +379,7 @@ int client_funct(char* opp_id, char* server_ip)
             digitalWrite (blue,  LOW);
             digitalWrite (yellow,  LOW);
             digitalWrite (blue, HIGH) ;
+            DUAYENLERcatched = true;
             break;
           }
           else if (strcmp(buffer,rej) == 0)
@@ -395,7 +412,7 @@ int client_funct(char* opp_id, char* server_ip)
             memset (buffer, 0x00, 5);
             breading = get_distance(bhandle);
             printf ("Back sensor value is: %d\n", breading);
-            if (breading<=50)
+            if (breading<=catchThreshold)
             {
               send(sock , SACK , strlen(SACK) , 0 );
               digitalWrite (red,  LOW);
@@ -416,6 +433,7 @@ int client_funct(char* opp_id, char* server_ip)
                 if (strcmp(buffer,stop) == 0)
                 {
                   memset (buffer, 0x00, 5);
+                  DUAYENLERcaught = true;
                   break;
                 }
                 else memset (buffer, 0x00, 5);
@@ -442,39 +460,50 @@ int client_funct(char* opp_id, char* server_ip)
 
 int main(int argc, char *argv[])
 {
-    char opp_ip[] = "127.0.0.1";
-    char opp_id[] = "00";
-    char* type;
+    char subnet_addr[] = "192.168.1.";
+    char opp_id[] = "05";
+    char last_octet[4];
+    char opp_ip[20];
+    char type[2];
     int option_index = 0;
-    while (( option_index = getopt(argc, argv, "t:")) != -1){
+    while (( option_index = getopt(argc, argv, "t:o:")) != -1){
   		switch (option_index) {
   		  case 't':
-               type = new char[strlen(optarg)];
   		         strcpy (type, optarg);
   						 break;
+          case 'o':
+                strcpy (opp_id, optarg);
+                break;
   		  default:
   		         print_usage();
   		}
   	}
 
+    if (opp_id[0] == '0')
+    {
+        strcpy(last_octet, &opp_id[1]);
+    }
+
+    else
+    {
+        strcpy(last_octet, opp_id);
+    }
+
+    strcpy(opp_ip,subnet_addr);
+    strcat(opp_ip, last_octet);
     print_arguments(type ,opp_id ,opp_ip);
 
     if (strcmp(type,"s")==0)
     {
-      printf("I am server.\n");
       server_funct(opp_id);
-      delete(type);
     }
     else if (strcmp(type,"c")==0)
     {
-      printf("I am client.\n");
       client_funct(opp_id, opp_ip);
-      delete(type);
     }
     else
     {
       printf("I don't know who I am.\n");
-      delete(type);
     	print_usage();
     }
 
