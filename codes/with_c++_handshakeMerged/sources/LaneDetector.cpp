@@ -39,6 +39,11 @@ LaneDetector::LaneDetector() {
 	img_rightBound = 600;
 	img_center = 300;
 
+	ROI_offset_low = 50;
+	ROT_offset_low = ROI_offset_low;
+	ROI_offset_high = 250;
+	ROT_offset_high = (ROI_offset_low + ((ROI_offset_high - ROI_offset_low)/2) + 25);
+
 	processNoise.create(4, 1, CV_32F);
 	measurement.create(2,1);
 	state.create(4,1);
@@ -122,9 +127,9 @@ cv::Mat LaneDetector::cropROI(cv::Mat img_edges) {
 
 	cv::Mat mask = cv::Mat::zeros(img_edges.size(), img_edges.type());
 	// a ROI of (img_edges.cols x 250)
-	cv::Point ptsROI[4] = { cv::Point(0, img_edges.rows - 250), cv::Point(
-			img_edges.cols, img_edges.rows - 250), cv::Point(img_edges.cols,
-			img_edges.rows - 50), cv::Point(0, img_edges.rows - 50) };
+	cv::Point ptsROI[4] = { cv::Point(0, img_edges.rows - ROI_offset_high), cv::Point(
+			img_edges.cols, img_edges.rows - ROI_offset_high), cv::Point(img_edges.cols,
+			img_edges.rows - ROI_offset_low), cv::Point(0, img_edges.rows - ROI_offset_low) };
 
 	// create a binary polygon mask
 	cv::fillConvexPoly(mask, ptsROI, 4, cv::Scalar(255, 255, 255));
@@ -132,6 +137,13 @@ cv::Mat LaneDetector::cropROI(cv::Mat img_edges) {
 	cv::bitwise_and(img_edges, mask, output);
 
 	return output;
+}
+
+void LaneDetector::updateROIOffset(float distance) {
+	ROI_offset_high = (13.63 * distance) + 9.1;
+	ROT_offset_high = (ROI_offset_low + ((ROI_offset_high - ROI_offset_low)/2) + 25);
+	std::cout << "ROI_offset_high: " << ROI_offset_high << " ROI_offset_low: " << ROI_offset_low << 
+					 " ROT_offset_high: " << ROT_offset_high << " ROT_offset_low: " << ROT_offset_low << std::endl;
 }
 
 // HOUGH LINES
@@ -611,10 +623,10 @@ std::vector<cv::Point> LaneDetector::regression(
 			left_b = cv::Point(left_line[2], left_line[3]);
 		}
 	}
-
+ 
 	// One the slope and offset points have been obtained, apply the line equation to obtain the line points
-	int ini_y = img_rows - 50;
-	int fini_y = img_rows - 175;
+	int ini_y = img_rows - ROT_offset_low;
+	int fini_y = img_rows - ROT_offset_high;
 
 	double right_ini_x = ((ini_y - right_b.y) / right_m) + right_b.x;
 	double right_fin_x = ((fini_y - right_b.y) / right_m) + right_b.x;
@@ -674,7 +686,7 @@ int LaneDetector::plotLane(cv::Mat& inputImage, std::vector<cv::Point> lane) {
 	cv::Mat output;
 	double current_x = img_cols / 2;
 	double target_x = (lane[1].x + lane[3].x) / 2;
-	int turnAngle = cv::fastAtan2(-(current_x - target_x), 125); // gives the angle
+	int turnAngle = cv::fastAtan2(-(current_x - target_x), (ROT_offset_high - ROT_offset_low)); // gives the angle
 	std::string turn = predictTurn(current_x, turnAngle); // prediction text
 	// create the transparent polygon for a better visualization of the lane
 	inputImage.copyTo(output);
@@ -714,7 +726,7 @@ int LaneDetector::plotLane(cv::Mat& inputImage, std::vector<cv::Point> lane) {
 	
 	float y1 = downCenter - 320;
 	float y2 = upCenter - 320;
-	float beta = cv::fastAtan2(upCenter - downCenter, 125);
+	float beta = cv::fastAtan2(upCenter - downCenter, (ROT_offset_high - ROT_offset_low));
 	updateAngleBound(beta); // update estimation
 	
 	/***************KALMAN************/

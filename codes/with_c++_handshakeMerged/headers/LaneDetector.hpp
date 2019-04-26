@@ -31,6 +31,11 @@ private:
 	double img_leftBound;
 	double img_rightBound;
 	double timeCapture = (double) cv::getTickCount();
+
+	int ROI_offset_low;
+	int ROI_offset_high;
+	int ROT_offset_low;
+	int ROT_offset_high;
 	
 	// estimation variable
 	float angle_estimation;
@@ -44,6 +49,7 @@ private:
 	cv::Mat_<float> state;
 	
 	void updateAngleBound(float beta);
+	void updateROIOffset(float distance);
 	
 	cv::Point ptsROI[4]; // points classifying the ROI
 	bool left_flag = false; // Tells us if there's left boundary of lane detected
