@@ -85,16 +85,14 @@ void LaneDetector::updateROVariables(int distance) {
         ROInterest_low = 25;
         ROTarget_high = 175;
         ROTarget_low = 50;
-        }
-    else if ((distance < 14) && (distance > 3)) {
+    } else if ((distance < 14) && (distance > 3)) {
         ROInterest_high = 14 * distance + 43;
         ROTarget_high = ROTarget_low + (ROInterest_high - ROInterest_low) / 2;
-        }
-    else {
+    } else {
         ROInterest_high = 10 * distance + 55;
         ROTarget_high = ROTarget_low + (ROInterest_high - ROInterest_low) / 2;
-        }
     }
+}
 
 // IMAGE BLURRING
 /**
@@ -195,6 +193,11 @@ void LaneDetector::setLineBorders(cv::Mat img) {
     const int confidenceCount = 190; // minimum white pixel count in a column
     // 250 is the row count of ROI
 
+    // NEW ADDITION BY FRIDAY NIGHT
+    /*
+    int left_max = -1;
+    int right_max = -1;*/
+
     int* whitePixels = new int[width](); // create the dynamic array initialized to zero
     /*
     for (int x = 0; x < width; x++) {
@@ -228,6 +231,18 @@ void LaneDetector::setLineBorders(cv::Mat img) {
             break;
         }
     }
+
+    // NEW ADDITION BY FRIDAY NIGHT
+    // find left max
+    /*
+    for (int i = 0; i < width; i++) {
+        //std::cout << "confidenceCount: " << confidenceCount << " " << whitePixels[i]  << std::endl;
+        if (whitePixels[i] == (ROInterest_high - ROInterest_low)) {
+            left_max = i;
+            break;
+        }
+    }*/
+
     // find right bound
     for (int i = width - 1; i >= 0; i--) {
         //std::cout << "confidenceCount: " << confidenceCount << " " << whitePixels[i]  << std::endl;
@@ -237,7 +252,37 @@ void LaneDetector::setLineBorders(cv::Mat img) {
         }
     }
 
-    img_center = (img_leftBound + img_rightBound) / 2;
+    // NEW ADDITION BY FRIDAY NIGHT
+    // find right max
+    /*
+    for (int i = width - 1; i >= 0; i--) {
+        //std::cout << "confidenceCount: " << confidenceCount << " " << whitePixels[i]  << std::endl;
+        if (whitePixels[i] == (ROInterest_high - ROInterest_low)) {
+            right_max = i;
+            break;
+        }
+    }*/
+
+    // NEW ADDITION BY FRIDAY NIGHT
+    /*
+    if((left_max == -1) && (right_max == -1)) {
+        left_max = img_leftBound + 30;
+        right_max = img_rightBound + 30;
+    } else if((left_max == -1) && (right_max != -1)) {
+        left_max = img_leftBound + 30;
+    } else if((left_max != -1) && (right_max == -1)) {
+        right_max = img_rightBound + 30;
+    }*/
+
+    // NEW ADDITION BY FRIDAY NIGHT
+    /*
+    for(int i = 0; i < rows; i++) {
+        for(int j = left_max; j <= right_max; j++) {
+            myData[ i * _stride + j] = 255;
+        }
+    }*/
+
+    img_center = (img_leftBound + img_rightBound) / 2; // set image center
     /** DEBUG PRINT BELOW **/
     /*
     std::cout << "left bound: " << img_leftBound << " right bound: "
