@@ -1,0 +1,1 @@
+sudo g++ -std=c++11 -g moduleLaneDetection.cpp -I/usr/local/include/opencv4 -lstdc++ -lopencv_highgui -lopencv_core -lopencv_imgproc -lopencv_videoio -lopencv_video -I./ -lwiringPi -lvl6180_pi -o moduleLaneDetection -lm -pthread
