@@ -14,23 +14,27 @@ Please write only the name (not surname) with same capitalization!
 | Enes   | RC Car   | 150 TL  | **YES**  |
 | Sarper | motor-teker    | 150 TL  | **YES**  |
 | Erdem  | Kamera_2 | 123.77 TL | **YES** |
-| Enes   | camera holder   | 50 TL  | **NO**  ?|
-| Enes   | Strafor   | 24 TL  | **NO**  ?|
-| Erdem   | Rapor   | 13 TL  | **NO**  |
-| Halil | Robotistan | 208.43 TL | **NO** | 
-| Enes | Konnektör | 5 TL |**NO**| 
+| Enes   | camera holder   | 50 TL  | **YES**  |
+| Enes   | Strafor   | 24 TL  | **YES**  |
+| Erdem   | Rapor   | 13 TL  | **YES**  |
+| Halil | Robotistan | 208.43 TL | **YES** | 
+| Enes | Konnektör | 5 TL |**YES**| 
 | Enes | ikinci sensör + nano | 155 TL | **NO**| 
 | Sarper | İğrenÇ karton   | 32 TL  | **NO**  |
-| ENES | ŞASE giderleri??  | xxx TL  | **??**  |
+| ENES | ŞASE giderleri??  | xxx TL  | **NO**  |
+| Halil | Yapıştırıcı/Karton vs. | 75 TL | |**NO**|
+| Enes | Motor vs 24 Şubat sonrası harcamalar |**NO**|
+| İlker | Sensor | **NO** |
+ 
 Aşağısı Totaller
 
 
 
 | Person | Total Spent  | Average Spent  | Debt  |
 |---|---|---|---|
-| Erdem  | 13 TL | 60.08 TL | 47 TL | Verdi
-| Enes   | 79 TL | 60.08 TL | -19 TL  | Aldı
-| Halil  | 208.43 TL | 60.08 TL | -148 TL |
-| Sarper | 0 TL | 60.08 TL | 60 TL |
-| İlker  | 0 TL | 60.08 TL | 60 TL |
+| Erdem  |  TL |  TL |  TL | 
+| Enes   |  TL |  TL |  TL  |
+| Halil  |  TL |  TL |  TL |
+| Sarper |  TL |  TL |  TL |
+| İlker  |  TL |  TL |  TL |
 
