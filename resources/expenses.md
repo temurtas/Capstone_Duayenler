@@ -21,10 +21,12 @@ Please write only the name (not surname) with same capitalization!
 | Enes | Konnektör | 5 TL |**YES**| 
 | Enes | ikinci sensör + nano | 155 TL | **NO**| 
 | Sarper | İğrenÇ karton   | 32 TL  | **NO**  |
-| ENES | ŞASE giderleri??  | xxx TL  | **NO**  |
+| Enes | şase giderleri   | 55 TL  | **NO**  |
+| Sarper | ilk şase pleksi    | 40 TL  | **NO**  |
 | Halil | Yapıştırıcı/Karton vs. | 75 TL | |**NO**|
-| Enes | Motor vs 24 Şubat sonrası harcamalar |**NO**|
-| İlker | Sensor | **NO** |
+| Enes | Motor | 185.76 TL |**NO**|
+| Enes | Robotistan (27 şubat)  | 114.71 TL  | **NO**  |
+| İlker | Sensor | 66.58 TL | **NO** |
 | Erdem | Köpük | 51.60 TL | **NO** |
  
 Aşağısı Totaller
