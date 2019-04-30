@@ -25,6 +25,7 @@ Please write only the name (not surname) with same capitalization!
 | Halil | Yapıştırıcı/Karton vs. | 75 TL | |**NO**|
 | Enes | Motor vs 24 Şubat sonrası harcamalar |**NO**|
 | İlker | Sensor | **NO** |
+| Erdem | Köpük | 51.60 TL | **NO** |
  
 Aşağısı Totaller
 
