@@ -28,6 +28,9 @@ Please write only the name (not surname) with same capitalization!
 | Enes | Robotistan (27 şubat)  | 114.71 TL  | **NO**  |
 | İlker | Sensor | 66.58 TL | **NO** |
 | Erdem | Köpük | 51.60 TL | **NO** |
+----------------------------------------
+ 
+ 
  
 Aşağısı Totaller
 
@@ -35,9 +38,9 @@ Aşağısı Totaller
 
 | Person | Total Spent  | Average Spent  | Debt  |
 |---|---|---|---|
-| Erdem  |  TL |  TL |  TL | 
-| Enes   |  TL |  TL |  TL  |
-| Halil  |  TL |  TL |  TL |
-| Sarper |  TL |  TL |  TL |
-| İlker  |  TL |  TL |  TL |
+| Erdem  | 51.6 TL | 155.13 TL | -103.53 TL | 
+| Enes   | 510.47 TL | 155.13 TL | +355.34 TL  |
+| Halil  | 75 TL | 155.13 TL | -80.13 TL |
+| Sarper | 72 TL | 155.13 TL | -83.13 TL |
+| İlker  | 66.58 TL | 155.13 TL | -88.55 TL |
 
