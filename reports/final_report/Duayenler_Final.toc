@@ -7,33 +7,33 @@
 \contentsline {subsubsection}{\numberline {2.1.2}Vehicle Detection Subsystem}{7}{subsubsection.2.1.2}% 
 \contentsline {subsection}{\numberline {2.2}Computation System}{8}{subsection.2.2}% 
 \contentsline {subsubsection}{\numberline {2.2.1}Data Processing Subsystem}{8}{subsubsection.2.2.1}% 
-\contentsline {subsubsection}{\numberline {2.2.2}PID Controller Subsystem}{12}{subsubsection.2.2.2}% 
-\contentsline {subsection}{\numberline {2.3}Communication System}{15}{subsection.2.3}% 
+\contentsline {subsubsection}{\numberline {2.2.2}PID Controller Subsystem}{13}{subsubsection.2.2.2}% 
+\contentsline {subsection}{\numberline {2.3}Communication System}{16}{subsection.2.3}% 
 \contentsline {subsubsection}{\numberline {2.3.1}Internal Communication Subsystem}{16}{subsubsection.2.3.1}% 
-\contentsline {subsubsection}{\numberline {2.3.2}External Communication Subsystem}{17}{subsubsection.2.3.2}% 
-\contentsline {subsection}{\numberline {2.4}Driving System}{18}{subsection.2.4}% 
+\contentsline {subsubsection}{\numberline {2.3.2}External Communication Subsystem}{18}{subsubsection.2.3.2}% 
+\contentsline {subsection}{\numberline {2.4}Driving System}{19}{subsection.2.4}% 
 \contentsline {subsubsection}{\numberline {2.4.1}Direction Subsystem}{19}{subsubsection.2.4.1}% 
-\contentsline {subsubsection}{\numberline {2.4.2}Speed Subsystem}{19}{subsubsection.2.4.2}% 
-\contentsline {subsection}{\numberline {2.5}Motion System}{20}{subsection.2.5}% 
-\contentsline {subsubsection}{\numberline {2.5.1}Wheels Subsystem}{20}{subsubsection.2.5.1}% 
+\contentsline {subsubsection}{\numberline {2.4.2}Speed Subsystem}{20}{subsubsection.2.4.2}% 
+\contentsline {subsection}{\numberline {2.5}Motion System}{21}{subsection.2.5}% 
+\contentsline {subsubsection}{\numberline {2.5.1}Wheels Subsystem}{21}{subsubsection.2.5.1}% 
 \contentsline {subsubsection}{\numberline {2.5.2}Motors Subsystem}{21}{subsubsection.2.5.2}% 
-\contentsline {subsection}{\numberline {2.6}Structure System}{21}{subsection.2.6}% 
+\contentsline {subsection}{\numberline {2.6}Structure System}{22}{subsection.2.6}% 
 \contentsline {subsubsection}{\numberline {2.6.1}Chassis Subsystem}{22}{subsubsection.2.6.1}% 
 \contentsline {subsubsection}{\numberline {2.6.2}Printed Circuit Board Subsystem}{24}{subsubsection.2.6.2}% 
-\contentsline {subsection}{\numberline {2.7}Compatibility of the Subsystems}{24}{subsection.2.7}% 
-\contentsline {section}{\numberline {3}Detailed Tests for the Subsystems}{24}{section.3}% 
-\contentsline {section}{\numberline {4}Test Results}{32}{section.4}% 
-\contentsline {subsection}{\numberline {4.1}Test Results, Encountered Problems and Possible Solutions for Subsystems}{32}{subsection.4.1}% 
-\contentsline {section}{\numberline {5}Other Considerations}{37}{section.5}% 
-\contentsline {subsection}{\numberline {5.1}Cost Analysis}{37}{subsection.5.1}% 
-\contentsline {subsection}{\numberline {5.2}Power Analysis}{38}{subsection.5.2}% 
-\contentsline {section}{\numberline {6}Deliverables}{39}{section.6}% 
-\contentsline {section}{\numberline {7}Budget}{39}{section.7}% 
-\contentsline {subsection}{\numberline {7.1}Actual Expenditures}{39}{subsection.7.1}% 
-\contentsline {subsection}{\numberline {7.2}Total Cost}{39}{subsection.7.2}% 
-\contentsline {section}{\numberline {8}Discussions}{39}{section.8}% 
-\contentsline {subsection}{\numberline {8.1}Safety Issues}{39}{subsection.8.1}% 
-\contentsline {subsection}{\numberline {8.2}Application Areas}{39}{subsection.8.2}% 
-\contentsline {subsection}{\numberline {8.3}Environmental Effects}{39}{subsection.8.3}% 
-\contentsline {section}{\numberline {9}Conclusion}{39}{section.9}% 
-\contentsline {section}{Appendix \numberline {A}Gannt Chart}{41}{Appendix.a.A}% 
+\contentsline {subsection}{\numberline {2.7}Compatibility of the Subsystems}{25}{subsection.2.7}% 
+\contentsline {section}{\numberline {3}Detailed Tests for the Subsystems}{25}{section.3}% 
+\contentsline {section}{\numberline {4}Test Results}{33}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Test Results, Encountered Problems and Possible Solutions for Subsystems}{33}{subsection.4.1}% 
+\contentsline {section}{\numberline {5}Other Considerations}{38}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}Cost Analysis}{38}{subsection.5.1}% 
+\contentsline {subsection}{\numberline {5.2}Power Analysis}{39}{subsection.5.2}% 
+\contentsline {section}{\numberline {6}Deliverables}{40}{section.6}% 
+\contentsline {section}{\numberline {7}Budget}{40}{section.7}% 
+\contentsline {subsection}{\numberline {7.1}Actual Expenditures}{40}{subsection.7.1}% 
+\contentsline {subsection}{\numberline {7.2}Total Cost}{40}{subsection.7.2}% 
+\contentsline {section}{\numberline {8}Discussions}{40}{section.8}% 
+\contentsline {subsection}{\numberline {8.1}Safety Issues}{40}{subsection.8.1}% 
+\contentsline {subsection}{\numberline {8.2}Application Areas}{40}{subsection.8.2}% 
+\contentsline {subsection}{\numberline {8.3}Environmental Effects}{40}{subsection.8.3}% 
+\contentsline {section}{\numberline {9}Conclusion}{40}{section.9}% 
+\contentsline {section}{Appendix \numberline {A}Gannt Chart}{42}{Appendix.a.A}% 

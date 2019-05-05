@@ -355,11 +355,33 @@ The input to this subsystem is provided by Raspberry Pi camera mounted on top of
 \end{equation}
 The graphical representation of the equations are given in \textit{Figure~\ref{fig:ROI_crop}}
 
-\begin{figure}[t]
+
+\begin{figure}[t!]
 	
-	\includegraphics[width=0.93\textwidth,center]{images/ROT_ROI/ROI_crop}
+	\setlength{\unitlength}{\textwidth} 
 	
-	\caption{Left, Graph of ROI\_High vs front\_distance \\ Right, ROI\_Height Variation }\label{fig:ROI_crop}
+	\centering
+	
+	\begin{subfigure}{.46\textwidth}
+		
+		\centering
+		
+		\includegraphics[width=0.44\unitlength]{images/ROT_ROI/ROI_HIGH}
+		
+		\caption{ Graph of ROI\_High vs front\_distance}
+		
+	\end{subfigure}%
+	\begin{subfigure}{.46\textwidth}
+		
+		\centering
+		
+		\includegraphics[width=0.44\unitlength]{images/ROT_ROI/ROI}
+		
+		\caption{ ROI\_Height Variation}
+		
+	\end{subfigure}
+	
+	\caption{\label{fig:ROI_crop} Graphs Defining ROI\_Height}
 	
 \end{figure}
 
@@ -495,8 +517,52 @@ This system is responsible for computational works of the vehicle. The system ma
 
 
 
-The task of this subsystem is to extract control parameters so that the vehicle can follow the path without falling on the ground. The input of the subsystem is the line coordinate array produced by Lane Detection Subsystem. The input is processed by a detailed algorithm and the outputs are lane angle and distance of vehicle to the right lane. The output parameters are explained in \ref{sect:ControllerSubsystem}. The outputs are generated for the region of target (ROT) that is shown in \textit{Figure~\ref{fig:explanation_ROI_ROT}}. The Lane Detection Subsystem extracted ROI out of full camera frame. The Data Processing Subsystem processes the data in the ROI but produces output for the ROT. The reason for such a distinction between frame regions is that, ROI is good to determine possible obstacles on the path but producing control outputs that are almost 12 cm away from the vehicle would decrease the performance of the PID Controller Subsystem. For this reason ROI is not used, instead ROT is used.
-
+The task of this subsystem is to extract control parameters so that the vehicle can follow the path without falling on the ground. The input of the subsystem is the line coordinate array produced by Lane Detection Subsystem. The input is processed by a detailed algorithm and the outputs are lane angle and distance of vehicle to the right lane. The output parameters are explained in \ref{sect:ControllerSubsystem}. The outputs are generated for the region of target (ROT) that is shown in \textit{Figure~\ref{fig:explanation_ROI_ROT}}. The Lane Detection Subsystem extracted ROI out of full camera frame. The Data Processing Subsystem processes the data in the ROI but produces output for the ROT. The reason for such a distinction between frame regions is that, ROI is good to determine possible obstacles on the path but producing control outputs that are almost 12 cm away from the vehicle would decrease the performance of the PID Controller Subsystem. For this reason ROI is not used, instead ROT is used. As ROI is adaptive, ROT must also be adaptive to stay in ROI region. The equations that define the ROT are as below. The graphical representation of the equations are given in \textit{Figure~\ref{fig:ROT_crop}}.
+\begin{equation}
+ROT\_Width = 640 px
+\end{equation}
+\begin{equation}
+ROT\_Height = (ROT\_High - ROT\_Low) px
+\end{equation}
+\begin{equation}
+ROT\_Low = 50 px
+\end{equation}
+\begin{equation}
+ROT\_High =
+\begin{cases}
+175, & front\_distance \geq 13 cm \\
+10*(front\_distance) + 45, &3\leq front\_distance <  13 cm \\
+21*(front\_distance) + 12, & front\_distance \leq 3 cm
+\end{cases}
+\end{equation}
+\begin{figure}[t!]
+	
+	\setlength{\unitlength}{\textwidth} 
+	
+	\centering
+	
+	\begin{subfigure}{.46\textwidth}
+		
+		\centering
+		
+		\includegraphics[width=0.44\unitlength]{images/ROT_ROI/ROT_HIGH}
+		
+		\caption{ Graph of ROT\_High vs front\_distance}
+		
+	\end{subfigure}%
+	\begin{subfigure}{.46\textwidth}
+		
+		\centering
+		
+		\includegraphics[width=0.44\unitlength]{images/ROT_ROI/ROT}
+		
+		\caption{ ROT\_Height Variation}
+		
+	\end{subfigure}
+	
+	\caption{\label{fig:ROT_crop} Graphs Defining ROT\_Height}
+	
+\end{figure}
 There are four main steps to determine lane angle and distance of vehicle to the right lane. The first step is to classify the lines as left and right. The second step is to eliminate the possible incorrect lines, if any. The third step is to fit the best lines through the left and right lines and reduce the total number of lines to two that are left and right lane lines. The last step is to find control outputs. The block diagram of the subsystem is given in \textit{Figure~\ref{fig:dataProcessing_subsystem}}.
 
 Classifying a line as left or right requires the knowledge of the center of the path. If a pixel is part of the path, it is indicated by pixel value 255, that is result of HSV filtering. So, the path is constructed by white pixels. Analogously, if white pixels on a column is counted, that counts yield an information regarding the start and end points of the path. The explanation will be made based on an example frame (with ROI masked) as in \textit{Figure~\ref{fig:explanation_center_of_image}}. Obviously, the white pixel count through every column in the arrow directions between red bars is 0. However, from red bars to yellow bars, white pixel count in columns starts to increase. The maximum pixel count in a column is known from ROI equations. If the column indices that are close to maximum pixel count in a columns can be determined, then the right and left bounds of the path are found. Then, the center of the image is simply $(right\_bound + left\_bound)/2$. \textit{Algorithm~\ref{algo:center_image}}. As the center of the image is found, lines can be separated as left or right according to their coordinates.
