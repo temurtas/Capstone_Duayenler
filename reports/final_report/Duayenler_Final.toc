@@ -1,39 +1,38 @@
-\babel@toc {english}{}
-\babel@toc {english}{}
-\contentsline {section}{\numberline {1}Introduction}{3}{section.1}% 
-\contentsline {section}{\numberline {2}Design Description}{4}{section.2}% 
-\contentsline {subsection}{\numberline {2.1}Sensing System}{5}{subsection.2.1}% 
-\contentsline {subsubsection}{\numberline {2.1.1}Lane Detection Subsystem}{5}{subsubsection.2.1.1}% 
-\contentsline {subsubsection}{\numberline {2.1.2}Vehicle Detection Subsystem}{7}{subsubsection.2.1.2}% 
-\contentsline {subsection}{\numberline {2.2}Computation System}{8}{subsection.2.2}% 
-\contentsline {subsubsection}{\numberline {2.2.1}Data Processing Subsystem}{8}{subsubsection.2.2.1}% 
-\contentsline {subsubsection}{\numberline {2.2.2}PID Controller Subsystem}{13}{subsubsection.2.2.2}% 
-\contentsline {subsection}{\numberline {2.3}Communication System}{16}{subsection.2.3}% 
-\contentsline {subsubsection}{\numberline {2.3.1}Internal Communication Subsystem}{16}{subsubsection.2.3.1}% 
-\contentsline {subsubsection}{\numberline {2.3.2}External Communication Subsystem}{18}{subsubsection.2.3.2}% 
-\contentsline {subsection}{\numberline {2.4}Driving System}{19}{subsection.2.4}% 
-\contentsline {subsubsection}{\numberline {2.4.1}Direction Subsystem}{19}{subsubsection.2.4.1}% 
-\contentsline {subsubsection}{\numberline {2.4.2}Speed Subsystem}{20}{subsubsection.2.4.2}% 
-\contentsline {subsection}{\numberline {2.5}Motion System}{21}{subsection.2.5}% 
-\contentsline {subsubsection}{\numberline {2.5.1}Wheels Subsystem}{21}{subsubsection.2.5.1}% 
-\contentsline {subsubsection}{\numberline {2.5.2}Motors Subsystem}{21}{subsubsection.2.5.2}% 
-\contentsline {subsection}{\numberline {2.6}Structure System}{22}{subsection.2.6}% 
-\contentsline {subsubsection}{\numberline {2.6.1}Chassis Subsystem}{22}{subsubsection.2.6.1}% 
-\contentsline {subsubsection}{\numberline {2.6.2}Printed Circuit Board Subsystem}{24}{subsubsection.2.6.2}% 
-\contentsline {subsection}{\numberline {2.7}Compatibility of the Subsystems}{25}{subsection.2.7}% 
-\contentsline {section}{\numberline {3}Detailed Tests for the Subsystems}{25}{section.3}% 
-\contentsline {section}{\numberline {4}Test Results}{33}{section.4}% 
-\contentsline {subsection}{\numberline {4.1}Test Results, Encountered Problems and Possible Solutions for Subsystems}{33}{subsection.4.1}% 
-\contentsline {section}{\numberline {5}Other Considerations}{38}{section.5}% 
-\contentsline {subsection}{\numberline {5.1}Cost Analysis}{38}{subsection.5.1}% 
-\contentsline {subsection}{\numberline {5.2}Power Analysis}{39}{subsection.5.2}% 
-\contentsline {section}{\numberline {6}Deliverables}{40}{section.6}% 
-\contentsline {section}{\numberline {7}Budget}{40}{section.7}% 
-\contentsline {subsection}{\numberline {7.1}Actual Expenditures}{40}{subsection.7.1}% 
-\contentsline {subsection}{\numberline {7.2}Total Cost}{40}{subsection.7.2}% 
-\contentsline {section}{\numberline {8}Discussions}{40}{section.8}% 
-\contentsline {subsection}{\numberline {8.1}Safety Issues}{40}{subsection.8.1}% 
-\contentsline {subsection}{\numberline {8.2}Application Areas}{40}{subsection.8.2}% 
-\contentsline {subsection}{\numberline {8.3}Environmental Effects}{40}{subsection.8.3}% 
-\contentsline {section}{\numberline {9}Conclusion}{40}{section.9}% 
-\contentsline {section}{Appendix \numberline {A}Gannt Chart}{42}{Appendix.a.A}% 
+\select@language {english}
+\select@language {english}
+\contentsline {section}{\numberline {1}Executive Summary}{3}{section.1}
+\contentsline {section}{\numberline {2}Introduction}{3}{section.2}
+\contentsline {section}{\numberline {3}Design Description}{4}{section.3}
+\contentsline {subsection}{\numberline {3.1}Sensing System}{5}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Lane Detection Subsystem}{5}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Vehicle Detection Subsystem}{7}{subsubsection.3.1.2}
+\contentsline {subsection}{\numberline {3.2}Computation System}{8}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Data Processing Subsystem}{8}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}PID Controller Subsystem}{13}{subsubsection.3.2.2}
+\contentsline {subsection}{\numberline {3.3}Communication System}{14}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Internal Communication Subsystem}{14}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}External Communication Subsystem}{15}{subsubsection.3.3.2}
+\contentsline {subsection}{\numberline {3.4}Driving System}{15}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Direction Subsystem}{16}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Speed Subsystem}{16}{subsubsection.3.4.2}
+\contentsline {subsection}{\numberline {3.5}Motion System}{16}{subsection.3.5}
+\contentsline {subsubsection}{\numberline {3.5.1}Wheels Subsystem}{17}{subsubsection.3.5.1}
+\contentsline {subsubsection}{\numberline {3.5.2}Motors Subsystem}{17}{subsubsection.3.5.2}
+\contentsline {subsection}{\numberline {3.6}Structure System}{17}{subsection.3.6}
+\contentsline {subsubsection}{\numberline {3.6.1}Chassis Subsystem}{17}{subsubsection.3.6.1}
+\contentsline {subsubsection}{\numberline {3.6.2}Printed Circuit Board Subsystem}{19}{subsubsection.3.6.2}
+\contentsline {subsection}{\numberline {3.7}Compatibility of the Subsystems}{19}{subsection.3.7}
+\contentsline {section}{\numberline {4}Detailed Tests for the Subsystems}{19}{section.4}
+\contentsline {section}{\numberline {5}Other Considerations}{29}{section.5}
+\contentsline {subsection}{\numberline {5.1}Cost Analysis}{29}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Power Analysis}{30}{subsection.5.2}
+\contentsline {section}{\numberline {6}Deliverables}{30}{section.6}
+\contentsline {section}{\numberline {7}Budget}{30}{section.7}
+\contentsline {subsection}{\numberline {7.1}Actual Expenditures}{31}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Total Cost}{31}{subsection.7.2}
+\contentsline {section}{\numberline {8}Discussions}{31}{section.8}
+\contentsline {subsection}{\numberline {8.1}Safety Issues}{31}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Application Areas}{31}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Environmental Effects}{31}{subsection.8.3}
+\contentsline {section}{\numberline {9}Conclusion}{31}{section.9}
+\contentsline {section}{Appendix \numberline {A}Gannt Chart}{32}{Appendix.a.A}
