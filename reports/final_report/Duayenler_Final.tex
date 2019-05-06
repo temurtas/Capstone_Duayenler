@@ -143,14 +143,15 @@
 
 	\section{Executive Summary}
 
-	%Recently, with the quick development of the computers and internet, a revolutionary change is about happen. The operation speed of electronics have dramatically increased as the sizes have shrank. Thus, developing and integrating new systems into the cars are easier than it has ever been. Along with such advances, as a result, intelligent cars have been around for a few years. The intelligent vehicle technologies enable simpler vehicle operations and better driving safety. Such technologies involve autonomous driving, lane departure assistance, ambient dependent headlight adjustment and other safety related features. To address the needs in the development phases of the aforementioned technologies, DUAYENLER Ltd. Şti. (DUAYENLER) is founded. DUAYENLER aims to be one of the Lodestars in the industry with its innovative approaches.\\
-	
-	%The company consists of talented engineers from different but closely related fields, namely, computer, electronics and control. This combination is what makes DUAYENLER advantageous in R\&D phase. Easy looking technologies involve complex development phases. And complexity can only be resolved by a team work. The members of the company are self-aware and cooperate closely to each other. With all its synergy, DUAYENLER is capable of accomplishing the tasks and overcoming possible problems.\\
-	
-	%The main technology that DUAYENLER focuses on is autonomous driving. Such technology yields a contemporary and innovative solution for car industry. The development consists of combination of several systems. The sensing system is responsible for understanding and mapping the environment properties such as detecting lane boundaries and possible obstacles. This system is one of the most important elements in the project together with computation system. Not only being able to map surroundings as image is important but also extracting meaningful data out of them and convert them to a useful data for rest of the systems. The computation unit is the core system of the project. Furthermore, the processed data must be output as a physical phenomenon, that is, steering of the wheels. This is realized by the combination of driving and motion subsystems. Since a vehicle is generally not solo, the project consists of a system dedicated to communicate with other vehicles. This is the communication system. As anticipated, the whole system must be assembled on a single body. The structure system realizes such needs in the project.\\
-	
-	%The aim of this report is to give reader a solid understanding of the project from DUAYENLER's point of view. The duration of the project is expected to last 33 weeks, from the beginning of October 2018 to May 2018. The estimated cost for research and development phase is about \$ 450 whereas mass manufacturing would not exceed \$200. Along with the vehicle, the customer will be provided with deliverables such as technical manuals, elliptical path, rechargeable battery and the charger. The vehicle will have two (2) years of warranty.
+The developments in microlectronic industry and computer architecture brought the wind at their back to many industries, as automotive industry being one of them. With such advances in technology, automobile industry is trying to come up with different new technologies. Most of them being related the customer comfort, one technology differentiates from the rest, that is autonomous driving. Autonomous driving wil not just provide comfort the people inside the car but it also will change the way traffic works nowadays. The vehicles will create a new network of traffic that will have no human judge on the flow. Autonomous driving will enable many new concepts, however, there are a lot of sub-technologies that must be used in coordination to come up with a clear cut autonomous driving. Some of them are vehicle vision, inter-vehicle communication, vehicle-human interaction, vehicle safety and so on. To address the needs in development of aforementioned technologies, DUAYENLER Ltd. Şti. (DUAYENLER) is founded. DUAYENLER aims to be one of the pioneers of the industry with its novel approaches.
 
+The company consists of talented engineers from different fields, namely computer, electronics and control. DUAYENLER employs an inter-disciplinary work on research and development phase. Indeed, this allows DUAYENLER to develop complex but simple looking technologies. DUAYENLER is able to accomplish and complete the tasks with all its energy and willpower.
+
+DUAYENLER has several focus points to develop an autonomous driving technology. These are, vehicle vision, inter-vehicle communication, vehicle control and physical design of the vehicle. Actually, those are the main building blocks of the main technology. Vehicle vision summarizes the concept of understanding path properties, that is to be able to extract and differentiate path and obstacles in every weather condition. Obviously, inter-vehicle communication provides cooperation environment with opponent vehicles and enables a traffic hierarchy. As the vehicle has path vision, the decision of steering must be made that brings the need for vehicle control. Being able to follow a path and to head towards bends are essential for a vehicle. Besides, the physical structure of the vehicle must be able to suit with the rest of the technologies. The height, the weight, the width of the vehicle, the chassis material choice and additional implementation-specific features are handled in physical design. This structure and combination of the systems provide suitable environment for DUAYENLER to develop autonomous driving technology.
+
+This report gives the reader a solid view and understanding of the project. Detailed design considerations with technical details and test results do not leave any vague point on the implementation. The duration of the project is 33 weeks, from the beginning of October 2018 to the second week of May 2019. The total cost is calculated to be [WRITE HERE ACTUAL COST VALUE], whereas cost to produce the commercial vehicle is [WRITE HERE ONLY PRODUCTION VALUE]. Along with the vehicle, the customer is provided with user manual, elliptical path, rechargeable batter and the charger. The vehicle has two (2) years of warranty.
+\todo{DONT FORGET THESE VALUES}
+\newpage
 	\section{Introduction}
 
 	%The self driving cars have been the buzz concept of the community lately. Many companies have established departments and teams to develop their own self driving cars. Increasing research on the concept brings the increasing demand to new technologies and approaches. DUAYENLER Ltd. Şti. (DUAYENLER) aims to catch this trend and be one of the pioneers in this field. To realize this goal, DUAYENLER develops a vehicle for Car Chasing Project. The outcome of the project is a vehicle that can follow a predefined path in an autonomous way. The vehicle not only drive on the path itself, but it will communicate with other vehicles as well.\\
@@ -256,7 +257,7 @@ The task of the subsystem is to detect the lane lines. The tool utilized to real
 	
 \end{figure}
 
-The input to this subsystem is provided by Raspberry Pi camera mounted on top of the vehicle. The camera frame resolution is 640x480 px. One thing to for the camera frame is that horizontal mapping and the vertical mapping of the pixels are not the same. That is, same amount of pixels in both directions do not correspond to same length in real life. The proposed solution first masks out a region of interest (ROI) of $200x640 px$. The visual explanation of the frame sections is provided in \textit{Figure~\ref{fig:explanation_ROI_ROT}}. The masking eliminates the process of excessive data and increases the process speed of the pipeline. Formerly, ROI size was fixed in $200x640 px$. However, when the opponent vehicle starts to appear in ROI, this was causing wrong line detection in the subsystem. To eliminate such behaviour, adaptive ROI is implemented to avoid such improper situations. Adaptive ROI determines ROI size dynamically with the front distance sensor measurement provided by Vehicle Detection Subsystem and scales ROI size (only in vertical direction) with a linear function. The equations that define the height of ROI are as follows:
+The input to this subsystem is provided by Raspberry Pi camera mounted on top of the vehicle. The camera frame resolution is 640x480 px. One thing to for the camera frame is that horizontal mapping and the vertical mapping of the pixels are not the same. That is, same amount of pixels in both directions do not correspond to same length in real life. The proposed solution first masks out a region of interest (ROI) of $640x200 px$. The visual explanation of the frame sections is provided in \textit{Figure~\ref{fig:explanation_ROI_ROT}}. The masking eliminates the process of excessive data and increases the process speed of the pipeline. Formerly, ROI size was fixed in $640x200 px$. However, when the opponent vehicle starts to appear in ROI, this was causing wrong line detection in the subsystem. To eliminate such behaviour, adaptive ROI is implemented to avoid such improper situations. Adaptive ROI determines ROI size dynamically with the front distance sensor measurement provided by Vehicle Detection Subsystem and scales ROI size (only in vertical direction) with a linear function. The equations that define the height of ROI are as follows:
 \begin{equation}
 	ROI\_Width = 640 px
 \end{equation}
@@ -468,7 +469,7 @@ ROT\_High =
 	
 	\includegraphics[width=0.465\textwidth,center]{images/ROT_ROI/explanation_center_of_image}
 	
-	\caption{Block Diagram of the Data Processing Subsystem}\label{fig:dataProcessing_subsystem}
+	\caption{Finding Center of the Path}\label{fig:explanation_center_of_image}
 	
 \end{figure}
 \begin{algorithm}
@@ -1118,13 +1119,11 @@ return;
 
 
 \section{Detailed Tests for the Subsystems}\label{test_sec}
-
-
-\begin{enumerate}
-
+This section presents followed test procedures and the outcome of the tests.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\item {Lane Detection Subsystem Tests}	
+\subsection {Lane Detection Subsystem Tests and Results}	
+\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
 
 \begin{enumerate}
 
@@ -1160,13 +1159,13 @@ return;
 
 \end{enumerate}
 
+
+
+
+\item{Results of Lane Detection Subsystem Tests}
+
+	The lane detection tests are conducted to asses reliability of the detection pipeline. A sample test result is shown in \textit{Figure~\ref{fig:laneD_test}}. The tests reveal that the subsystem satisfies its requirements by detecting lane lines. Note that, not all lines are detected, only the lines that are in the ROI are detected. One thing to note for the robustness of this subsystem is subsystem works as expected long as HSV filter is tuned for the medium.
 \end{enumerate}
-
-
-\subsubsection*{Results of Lane Detection Subsystem Tests}
-
-	%The lane detection tests were conducted for the detection algorithm of the camera. A sample test result is shown in \textit{Figure~\ref{fig:laneD_test}}. The tests reveal that the subsystem satisfies its requirements by detecting edges. Note that, not all lines are detected, only the lines that are in the ROI are detected as discussed in \textit{Section~\ref{sec:LaneDetectionSubsystem}}.
-
 
 	\begin{figure}[h]
 		\includegraphics[width=0.75\textwidth,center]{images/laneD_test}
@@ -1179,7 +1178,7 @@ return;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\item {Vehicle Detection Subsystem Tests}\label{sect:vhd}
+\subsection {Vehicle Detection Subsystem Tests and Results}\label{sect:vhd}
 	
 	\begin{enumerate}
 		\item Front Vehicle Detection Test in Closed Environment:
@@ -1241,10 +1240,10 @@ return;
 \end{enumerate}
 
 
-\end{enumerate}
 
 
-\subsubsection*{Results of Vehicle Detection Subsystem Tests}
+
+\item{Results of Vehicle Detection Subsystem Tests}
 
 
 
@@ -1252,7 +1251,7 @@ return;
 
 
 	%Unlike ultrasonic and infrared sensors, time-of-flight sensors shows very accurate result inside the closed environments like laboratory under artificial lights. The results under direct sunlight especially in CCC is also good as expected.  Thus, test results confirms the fact that the main solution should be an enhanced version of infra-red sensors namely the ones utilizing the "time-of-flight" concept. 
-
+\end{enumerate}
 
 
 
@@ -1266,7 +1265,7 @@ return;
 
 
 
-\item {Data Processing Subsystem Tests}	
+\subsection {Data Processing Subsystem Tests and Results}	
 
 \begin{enumerate}
 
@@ -1280,19 +1279,37 @@ return;
 
 \end{enumerate}
 
+\item Output Stability Test
 
+\begin{enumerate}
+	
+	\item Place the vehicle on a fixed point on the path
+	
+	\item Observe the variation of the control outputs
+	
 \end{enumerate}
 
+\item{Results of Data Processing Subsystem Tests}\label{sec:DataProcessingSubsystemTests}
 
+	The tests asses the ability and performance of the subsystem. Numerous tests are made. The first set of tests cover the robustness of the subsystem by placing an obstacle of the subsystem. The test scenario and its results are presented in \textit{Figure~\ref{fig:dataP_down},\ref{fig:dataP_up} and \ref{fig:dataP_par}}. It can be seen that the algorithm ignores the obstacles in 7 cases out of 9 tests. In two cases, the algorithm fails to ignore the obstacles and determines the steering angle as if obstacle constitutes the lane line. Besides the results, on the presence of obstacles, in some particular obstacle placements, the output of the subsystem is observed to be unstable. Since the implementation is frozen after Conceptual Design Report, there has not been any significant change in the test performances since then.
 
-\subsubsection*{Results of Data Processing Subsystem Tests}\label{sec:DataProcessingSubsystemTests}
+	The second set of tests cover the robustness of the subsystem as well, but under changing lighting conditions and on different surface materials. The results of this test is presented in \textit{Figure~\ref{fig:dataP_inside} and \ref{fig:dataP_outside}}. The presented results are promising, the steering angles are true. A problem is that these results are a bit unstable when the luminosity difference between the shadows and flighty parts increase. The shadows are sometimes detected as lines and cause untrue lane line evaluations.	
+	
+	The third and the last test is  made to see if the outputs are consistent when the vehicle is fixed on a point on the path. This test reveals the robustness of Data Processing Subsystem as it gives a measure on the stability of control outputs. PID Controller can work as expected, only if the provided inputs are predictable and repeatable. The test case and the results are given in \textit{Figure~\ref{fig:stabilityTestI-dist}, ~\ref{fig:stabilityTestS-dist} and ~\ref{fig:stabilityTestU-dist}}. Statistical measures graphical data is also visible in \textit{Table~\ref{tab:statisticalStability}}. The stability test is satisfactory, as the variance of the three measurements are quite low.
+	
+		\begin{table}[H]
+		\centering
+		\caption{Statistical Stability Results}
+		\begin{tabular}{c|c|c|c|c}
+			$$ Test $$ & $$mean(\beta)$$ & $$variance(\beta)$$ & $$mean(y1)$$ & $$variance(y1)$$ \\ \hline
+			Straight Area & -3.3 & 0.7 & 3.7 & 0.2   \\ \hline
+			Bend Area & -12.3 & 0.2 & -15.6 & 0.1   \\ \hline
+			Curved Area & -21.8 & 1.8 & -44.5 & 0.5 
+		\end{tabular} 
+		\label{tab:statisticalStability}
+	\end{table}
 
-	%The tests in this section assesses the ability and performance of this subsystem by regarding its requirements. The number of tests realized is quite  bit. The first set of tests cover the robustness of the subsystem by placing an obstacle of the subsystem. This test and its results are presented in \textit{Figure~\ref{fig:dataP_down},\ref{fig:dataP_up} and \ref{fig:dataP_par}}. It can be seen that the algorithm ignores the obstacles in 7 cases out of 9 tests. In two cases, the algorithm fails to ignore the obstacles and determines the steering angle as if obstacle constitutes the lane line. Besides the results, on the presence of obstacles, in some particular obstacle placements, the output of the subsystem is observed to be unstable.
-
-
-	%The second set of tests cover the robustness of the subsystem as well, but under changing lighting conditions and on different surface materials. The results of this test is presented in \textit{Figure~\ref{fig:dataP_inside} and \ref{fig:dataP_outside}}. The presented results are promising, the steering angles are true. A problem is that these results are a bit unstable when the luminosity difference between the shadows and flighty parts increase. The shadows are sometimes detected as lines and cause untrue lane line evaluations.	
-
-
+\end{enumerate}
 \begin{figure}[H]
 
 \setlength{\unitlength}{\textwidth} 
@@ -1485,8 +1502,30 @@ return;
 
 \caption{\label{fig:dataP_outside} A Test Scenario Results: KKM Outdoor Path Detection}
 
-\end{figure}	
+\end{figure}
 
+\begin{figure}[h!]
+	
+	\includegraphics[width=.95\textwidth,center]{images/stabilityTestI}
+	
+	\caption{ Left: The Vehicle is placed on Straight Area.\\ Right: The Control Outputs \label{fig:stabilityTestI-dist} }
+	
+\end{figure}		
+
+\begin{figure}[h!]
+	
+	\includegraphics[width=.95\textwidth,center]{images/stabilityTestS}
+	
+	\caption{ Left: The Vehicle is placed on Bended Area.\\ Right: The Control Outputs \label{fig:stabilityTestS-dist} }
+	
+\end{figure}	
+\begin{figure}[h!]
+	
+	\includegraphics[width=.95\textwidth,center]{images/stabilityTestU}
+	
+	\caption{ Left: The Vehicle is placed on Curved Area.\\ Right: The Control Outputs \label{fig:stabilityTestU-dist} }
+	
+\end{figure}	
 
 
 
@@ -1496,7 +1535,7 @@ return;
 
 
 
-\item {PID Controller Subsystem Tests}	
+\subsection {PID Controller Subsystem Tests and Results}	
 
 \begin{enumerate}
 
@@ -1618,22 +1657,22 @@ return;
 \end{enumerate}
 
 
-\end{enumerate}
 
 
-\subsubsection*{Results of PID Controller Subsystem Tests}
+
+\item{Results of PID Controller Subsystem Tests}
 
 
 	%Due to some integration error related to internal communication tests, the controller parameters for the lateral movement were not determined sufficiently, thus the \textbf{PID Controller Subsystem Tests} introduced in \textit{Section 3} were not completely performed on the vehicle. 
 
 
 	%Although the results of \textit{Test~\ref{test:a}} were successful for given error values directly to Arduino, the \textbf{Tests~\ref{test:b} \& \ref{test:c}} showed unsatisfying results due to some communication errors between \textit{Data Processing Subsystem} and \textbf{PID Controller Subsystem}.
-
+\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\item {Internal Communication Subsystem Tests}
+\subsection {Internal Communication Subsystem Tests and Results}
 
 \begin{enumerate}
 
@@ -1655,14 +1694,14 @@ return;
 
 \end{enumerate}
 
-\end{enumerate}
 
 
 
-\subsubsection*{Results of Internal Communication Subsystem Tests}
+\item{Results of Internal Communication Subsystem Tests}
 
 
 	%The results are positive after all the necessary adjustments are done. The test is also repeated with the real lane detection algorithm and the real time sent data is read from LCD display connected to Arduino. The system was working properly at the rate at which lane detection algorithm produces data.
+\end{enumerate}
 
 
 
@@ -1670,7 +1709,7 @@ return;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\item {External Communication Subsystem Tests}
+\subsection {External Communication Subsystem Tests and Results}
 
 
 	%As mentioned in section 2, the main solution for this subsystem is making device a P2P host and communicating with sockets. However, since the Raspberry Pi is not modified as a P2P host yet, the tests are done using hotspot, as previously mentioned in conceptual design report. Note that, unlike P2P, routers are required in this test. However, since sockets are functioning same way in P2P, the test is performed to confirm the approach.
@@ -1722,16 +1761,16 @@ return;
 \end{enumerate}	
 
 
-\end{enumerate}
 
 
 
 
-\subsubsection*{Results of External Communication Subsystem Tests}
+
+\item{Results of External Communication Subsystem Tests}
 
 
 	%Test results can be seen in following figures.\textit{Figure~\ref{fig:hsake_test1}} shows DUAYENLER as server while \textit{Figure~\ref{fig:hsake_test2}} shows DUAYENLER as client.
-
+\end{enumerate}
 
 \begin{figure}[h]
 
@@ -1768,7 +1807,7 @@ return;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\item {Direction Subsystem Tests}
+\subsection {Direction Subsystem Tests and Results}
 
 \begin{enumerate}
 
@@ -1809,7 +1848,6 @@ return;
 
 
 
-\end{enumerate}
 
 
 
@@ -1817,16 +1855,17 @@ return;
 
 
 
-\subsubsection*{Results of Direction Subsystem Tests}
+
+\item{Results of Direction Subsystem Tests}
 
 
 The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit{Section 3} revealed to the team that, the differential drive method is capable of returning as desired and can keep up with the lane to be followed.
-
+\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\item {Speed Subsystem Tests}
+\subsection {Speed Subsystem Tests and Results}
 
 \begin{enumerate}
 
@@ -1867,22 +1906,22 @@ The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit
 
 
 
-\end{enumerate}
 
 
 
 
-\subsubsection*{Results of Speed Subsystem Tests}
+
+\item{Results of Speed Subsystem Tests}
 
 	%The tests proposed in \textit{Section~3} will be conducted after the tests for \textit{Internal Communication Subsystem} is completed and the tests for \textit{PID Controller Subsystem} is completed with constant base speed. 
-
+\end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
-\item Wheels Subsystem Tests
+\subsection{Wheels Subsystem Tests and Results} 
 
 
 \begin{enumerate}
@@ -1905,7 +1944,7 @@ The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit
 \end{enumerate}
 
 
-\item Motors Subsystem Tests
+\subsection {Motors Subsystem Tests and Results} 
 
 
 \begin{enumerate}
@@ -1922,16 +1961,16 @@ The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit
 
 \end{enumerate}
 
-\end{enumerate}
 
 
 
 
 
-\subsubsection*{Results of Motion System Tests}
+
+\item{Results of Motion System Tests}
 
 	%After tests, handling capability of the system is approved. However, although motors are quite well with high PWM, their low PWM performance cause some problems. Therefore, motor subsystem could need a revision.
-
+\end{enumerate}
 
 
 
@@ -1940,7 +1979,7 @@ The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\item {Chassis Subsystem Tests}
+\subsection {Chassis Subsystem Tests and Results}
 
 \begin{enumerate}
 
@@ -1972,7 +2011,7 @@ The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit
 
 
 
-\item {Printed Circuit Board Subsystem Tests}
+\subsection {Printed Circuit Board Subsystem Tests and Results}
 
 
 \begin{enumerate}
@@ -1993,13 +2032,11 @@ The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit
 
 \end{enumerate}
 
-\end{enumerate}
 
-\subsubsection*{Results of Structure System Tests}
+
+\item{Results of Structure System Tests}
 
 	%As mentioned in Section 3, the disturbances applied on the vehicle and the deviation is between the levels that can be handled by other algorithms although some improvements are still needed. Furthermore, newly-designed chassis added rigidity to the structure which in turn provides better test results
-
-
 \end{enumerate}
 
 \section{Other Considerations}
