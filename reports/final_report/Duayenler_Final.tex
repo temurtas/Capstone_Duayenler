@@ -330,30 +330,29 @@ For this subsystem to be stable, HSV filter must produce a clean filtered result
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Vehicle Detection Subsystem}
+\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
 
+\begin{enumerate}
+	\item {Requirements for the Solution}
+	
 	\begin{enumerate}
-		\item {Requirements for the Solution}
-		
-		\begin{enumerate}
-			\item The subsystem should detect the opponent to be caught with in a 5 cm 
-			\item The subsystem should detect the chasing opponent if it reaches from back with in a 5 cm 
-			\item The subsystem should trigger the handshake protocol 
-		\end{enumerate}
-
-	\item {Solution for the Subsystem}
-
-		%The subsystem is the first step of safely competing with an opponent in a racing path. This subsystem uses two time of flight distance sensor which is enhanced IR sensor. One at the back of the vehicle responsible for detecting the chasing opponent and one at the front of the vehicle responsible for detecting the chased opponent. The subsystem produces positive output if the chasing vehicle or chased vehicle is within a range of 5 cm from the vehicle. Since the sensor reading is performed using Raspberry Pi, the required trigger for handshake protocol can be easily accessed by the external communication subsystem.
-
-
-	\newpage
-
-
-	\item {Discussions on the Solution}
-
-		%The proposed method is not entirely different than the one presented in Conceptual Design Report.  The only difference is the devices reading the sensors. In Conceptual Design Report, sensors were connected to Arduino. However, the team decided that it is problematic. For example, in the case of sensor readings from Arduino, when opponent is close, Arduino reads the sensor, sends it to trigger handshake, then Pi sends/receives TCP messages, then sends Arduino to stop the motors. On the other hand, reading sensors from Pi simplifies and accelerates the work by eliminating the step to send sensor reading. Also, since Raspberry Pi is a general-purpose computer, it can handle with complex tasks easily, while Arduino cannot. Therefore, sensors are moved from Arduino to Raspberry Pi.
-
-
+		\item The subsystem should detect the opponent to be caught with in a 5 cm 
+		\item The subsystem should detect the chasing opponent if it reaches from back with in a 5 cm 
+		\item The subsystem should trigger the handshake protocol 
 	\end{enumerate}
+	
+	\item {Solution for the Subsystem}
+	
+	The subsystem is the first step of safely competing with an opponent in a racing path. This subsystem uses two time of flight distance sensors, called vl6180x. Time of flight sensors are enhanced IR sensors. One at the back of the vehicle is responsible for detecting the chasing opponent and one at the front of the vehicle is responsible for detecting the chased opponent. The sensors use I2C protocol. The serial data coming from sensors is between 0 and 255, which corresponds to the reading in terms of millimeters. That is, vl6180x can make measurements up to 25.5 cm. Since sensor reading is performed using Raspberry Pi, the required trigger for handshake protocol can be easily accessed by the external communication subsystem.
+	
+	Note that, having 2 sensors mean that there are 2 I2C slaves. In I2C, master device sends data to slaves according to their addresses. The main problem emerging from this is that if two sensors have the same address, reading sensors is not possible. Therefore, the addresses of the sensors must be changed. However, there is also another problem. Changing address is also done by sending serial data to sensors. If both sensors are connected at the same time to Raspberry Pi, changing addresses is not possible because there are still 2 devices with same addresses. To solve this issue, the chip enable(CE) inputs of the sensors is used. Firstly, only one device is activated by applying high to its CE input pin. After changing its address, other sensor's CE pin can be safely made high. By doing that, two I2C devices with different addresses are obtained. From this point on, sensors can be read successfully.
+	
+	\item {Discussions on the Solution}
+	
+	The proposed method is not changed after Critical Design Review Report. Changing I2C slave addresses is done to successfully use both sensors. Also, the sensor readings are integrated to handshake code.
+	
+	
+\end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%	
