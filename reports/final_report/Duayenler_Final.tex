@@ -821,33 +821,50 @@ return;
 
 
 \subsubsection{External Communication Subsystem}	
+\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
 
 
+\begin{enumerate}
+	\item {Requirements for the Solution}
+	
 	\begin{enumerate}
-		\item {Requirements for the Solution}
+		\item The subsystem should be able to communicate with the opponent via P2P Wi-Fi protocol
+		\item The subsystem should start race with the 3-way handshake mechanism required for establishment of TCP connection
+		\item Similarly, the subsystem should be able to trigger similar handshake mechanism during the race, which is referred as the main handshake mechanism throughout this report
+		\item For the second handshaking, the subsystem should be able to get the sensor data from vehicle detection subsystem to send messages
+		\item LEDs with corresponding colors should be lid to identify and display the messages that are sent
 		
-		\begin{enumerate}
-			\item The subsystem must be able to communicate with the opponent via P2P Wi-Fi protocol
-			\item The subsystem must start race with a handshake mechanism
-			\item Similarly, the subsystem must be able to trigger another handshake mechanism at the end of the race
-			\item For the second handshaking, the subsystem must be able to get the sensor data from vehicle detection subsystem to send messages
-		\end{enumerate}
-
+	\end{enumerate}
+	
 	\item {Solution for the Subsystem}
-
-	%The main solution for this subsystem is setting the device as a P2P host. Sockets are used to send or receive messages.  Since the host can act as a server as well as a client, both socket functions are used to establish communication. The subsystem requires opponent ID from the user and sensor readings from the vehicle detection subsystem. It can initiate and terminate other subsystems.
-		
-	%Firstly, the socket data structures are created in both server and client sides. In the beginning of the race, the peer acting as a server listens to the port 5000, which is specified in Standard Committee. Then, the connect() function is called in the client side, so that the request is sent. At the same time, server side acknowledges the request by means of accept() function. At this moment, client side also sends acknowledgement by default, hence race starts. The peers are connected during the race.
-
-	%The process for the finishing handshake also utilizes socket functions, but the process is a little bit different. For the win case, vehicle detection subsystem (front sensor) initiates the handshake. A catch message (ID00) is sent to the opponent. If acknowledgment is taken from the opponent, stop message (ID10) is sent. On the other hand, for the defeat case, a catch message is received by the opponent. Then, vehicle detection subsystem is called. According to the returned value from the back sensor, the acknowledge (ID01) or reject (ID11) are sent. Also, LEDs corresponding to messages are lid for the finishing handshake.
-
-
-
+	
+	The main solution for this subsystem is setting the device as a P2P host. Sockets are used to send or receive messages.  Since the host can act as a server as well as a client, both socket functions are used to establish communication. The subsystem requires opponent ID and host type(client/server) from the user and sensor readings from the vehicle detection subsystem. It can initiate and terminate other subsystems when necessary.
+	
+	The first step of the game is setting up a Wireless Ad-Hoc Network. The fact that which side will provide the network is decided according to the the agreement with the opponent. After that decision, by changing the Pi's configuration files accordingly, one side sets up the network and the other connects to it after rebooting.
+	
+	To implement the communication, the socket data structures are created in both server and client sides. At the beginning of the race, the peer acting as a server listens to the port 5000, which is specified in Standard Committee. Then, the connect() function is called in the client side, so that the request is sent. At the same time, server side acknowledges the request by means of accept() function. At this moment, client side also sends acknowledgement by default, hence race starts. The peers are connected during the race. This mechanism is common in every protocol that utilizes TCP, and called 3-way handshake.
+	
+	The process for the finishing handshake also utilizes socket functions, but the process is a little bit different. For the win case, vehicle detection subsystem (front sensor) initiates the handshake. A catch message (ID00) is sent to the opponent. If acknowledgment is taken from the opponent, stop message (ID10) is sent. On the other hand, for the defeat case, a catch message is received by the opponent. Then, vehicle detection subsystem is called. According to the returned value from the back sensor, the acknowledge (ID01) or reject (ID11) are sent. Also, LEDs corresponding to messages are lid for the finishing handshake.
+	
+	\begin{figure}[h]
+		\includegraphics[width=0.7\textwidth,center]{images/client_asm}
+		\caption{ASM Chart of the Algorithm of the External Communication Subsystem for Client Side \label{fig:asmclient} }
+	\end{figure}
+	
+	\begin{figure}[h]
+		\includegraphics[width=0.7\textwidth,center]{images/server_asm}
+		\caption{ASM Chart of the Algorithm of the External Communication Subsystem for Server Side \label{fig:asmserver} }
+	\end{figure}
+	
+	
+	The ASM chart describing the algorithm of the external communication subsystem can be seen in \textit{Figure~\ref{fig:asmserver}} and \textit{Figure~\ref{fig:asmclient}}, for client and server sides, respectively. The fact that which team will be server or client is decided with the agreement between the teams before the race. Notice that, the only difference between client and server codes is the TCP connection parts before starting the race. 
+	
+	In the simplest form, there are two repeated actions inside the main loop. Firstly, front sensor is read. Secondly, device waits to receive message before timeout occurs. Setting proper timeout value is a little bit tricky. It is done according to the tests conducted with the opponents. The details of it can be found in the "External Communication Subsystem Tests and Results" section.
+	
+	
 	\item {Discussions on the Solution}
-
-
-		%The proposed method is a minor difference from the one presented in the Conceptual Design Report. In the previous report, creating hotspot on the server side is proposed. In that case, server side needs to connect to a router and client connects to the server. However, since it is stated that there should not be a router in the connection, the solution is rejected. Then, despite implementation difficulties, the team decided that a routerless communication standard such as ad hoc network or Wi-Fi direct is more suitable for the external communication subsystem. 
-
+	
+	The proposed method is not changed after the Critical Design Review Report. In the previous report, creating an ad-hoc wifi is proposed, but was not implemented. Implementation has been done by making appropriate changes in Pi's configuration files. The code was previously written in Python for simplicity. To unite it with image pocessing code, it is rewritten in C++. Besides, improvements such as adding proper timeout value and LED integration is made.
 \end{enumerate}
 
 
