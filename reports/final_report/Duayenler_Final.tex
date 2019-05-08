@@ -635,25 +635,27 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newpage
+
 \subsubsection{PID Controller Subsystem}\label{sect:ControllerSubsystem}
 
-
-\begin{enumerate}
-	\item {Requirements for the Solution}
-
+	\todo{This subsubsection was rewritten for final report}
 	\begin{enumerate}
-		\item The subsystem should be able to control the motors
-		\item The subsystem should be able to react the external disturbances
-	\end{enumerate} 
+		\item {Requirements for the Solution}
+
+		\begin{enumerate}
+			\item The subsystem should be able to control the motors
+			\item The subsystem should be able to react the external disturbances
+		\end{enumerate} 
 
 
 	\item {Solution for the Subsystem}
 
 
-	%\textit{PID Controller Subsection} ,as its name suggests, is the main controller element of the vehicle that is responsible for controlling the lateral movement of the vehicle. As the achieved purpose is to stay in the middle of the lane, this subsystem creates a PWM differences between motors in order to rotate the vehicle via differential drive. 
+	\textit{PID Controller Subsection} is the main subsystem of the vehicle whose reponsibility is keeping the vehicle at the middle of the path it is following. To achieve this task, this subsystem includes a PID controller for the lateral movement of the vehicle. As the achieved purpose is to stay in the middle of the lane, this subsystem creates a PWM differences between motors in order to rotate the vehicle via differential drive. 
 
 
-	%For that purpose, the \textit{Data Processing Subsystem} produces the necessary feedback elements for this subsystem. For the control purpose, in ideal circumstances data processing unit determines eight main point on its vision to create processed variables as in \textit{Figure~\ref{fig:controlled-vars}}. These can be explained namely as;
+	For that purpose, the \textit{Data Processing Subsystem} produces the necessary feedback elements for this subsystem. For the control purpose, in ideal circumstances data processing unit determines eight main point on its vision to create processed variables as in \textit{Figure~\ref{fig:controlled-vars}}. These can be explained namely as;
 
 	\begin{itemize}
 		\item \textbf{A1 \& A2:} Beginning and end points of left line at ROT (Region of Target).
@@ -699,6 +701,16 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 
 
 
+	In our application, we have decided to use distance variable $y_1$ and angle variable for control purposes. The main pupose of the PID Subsystem is to compansate the lateral distance error of the vehicle, i.e., staying exactly on the center lane. In our control design, we have descided to use $y_1$ as control signal and, zero as reference signal. Basic block diagram can be seen at \textit{Figure~\ref{fig:blockdiagram}}. The output of this PID controller then send to the DC motors as PWM difference. The actual base PWM is produced by the Speed Subsystem.
+	
+	
+	\begin{figure}[h]
+		\includegraphics[width=\textwidth,center]{images/Simulink/Block_Diagram}
+		\caption{Block Diagram of the Project and the Interaction of the Subsystems}\label{fig:blockdiagram}
+	\end{figure}
+
+
+
 %\subsubsection*{Modelling the Plant}
 
 	%Modelling a plant is a good practice in controller design applications, however, in our case the model for the vehicle is unstable, thus applying a bump test as in \textit{Figure~\ref{fig:bump2}} results with a exponentially increasing processed data 'y2'. Thus, in this project, our aim is to apply bump test to closed loop system as in \textit{Figure~\ref{fig:bump1}} with a known P-controller. An approximate plant model from there can be found as follows;
@@ -722,19 +734,87 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 		%\caption{Bump Test for the Closed Loop System \label{fig:bump1} }
 	%\end{figure}
 
-\subsubsection*{Design \& Implementation of the Controller }
+	\subsubsection*{ Pulse Transfer Function of a Digital PID Controller }
 
-	%General PID controller can be expressed in \textit{Laplace} domain as
-
-		%$$ G_c(s)=K_c(1+\frac{1}{\tau_I s}+\tau_d s )$$  \todo{transfer to z domain}
+	However, since the controller operates on the microcontroller, therby, on discrete-time domain. We firstly find its pulse transfer function and transferred it to discrete-time domain. General PID controller can be expressed in \textit{Laplace} domain as 
 	
-	%This is a transfer function that accepts the error signal as its input as in \textit{Figure~\ref{fig:bump1}}. Since the reference input is always zero for our case, in other words, it is desired that the variables $\alpha $ and $ y2 $ is equal to zero for all time instants. Therefore, for our case, the error is equal to the negative version of controlled variable.
+	
+		$$ G_c(s)=K_c(1+\frac{1}{\tau_I s}+\tau_d s )$$  
+		
+	
+	\paragraph*{ Discritization of I Controller }
+	
+		Casual discrete time approximation of the I-Controller can be written as;
+	
+	$$  y[k]=y[k-1]+\frac{u[k]+u[k-1]}{2}*T_s $$
+	
+	Where $y[k]$ is output and $u[k]$ is the output. Taking its Z-transform, the pulse transfer function becomes,
+		
+	$$ Y(z) = Y(z) z^{-1}=\frac{T_s}{2}\left(U(z)+U(z)*z^{-1} \right) $$
+	
+	$$ G_I(z)=\frac{Y(z)}{U(z)}=\frac{T_s (1+Z^{-1})}{2 (1+Z^{-1})} $$
+	
+	\paragraph*{ Discritization of D Controller }
+	
+	Casual discrete time approximation of the D-Controller can be written as;
+	
+	$$  y[k]=\frac{e[k]-e[k-1]}{T_s} $$
+	
+	Where $y[k]$ is output and $e[k]$ is the error input. Taking its Z-transform, the pulse transfer function becomes,
+	
+	$$ Y(z) = Y(z) z^{-1}=\frac{T_s}{2}\left(E(z)+E(z) z^{-1} \right) $$
+	
+	$$ G_D(z)=\frac{Y(z)}{E(z)}=\frac{(1-Z^{-1})}{T_s} $$
 
-	%For implementation, the angle variable $\alpha$ and the distance variable $y2$ can be fed to the Arduino board by the help of \textit{Internal Communication Subsystem}. The implementation is a Arduino code written to produce a PWM-offset value from the error data. The PID parameters found using the simulink can be inserted in this code easily.
+
+	Therefore pulse transfer function of the PID controller becomes,
+	
+	$$ G_{PID}(z)=K_p+	\frac{T_s (1+Z^{-1})}{2 (1+Z^{-1})} + \frac{(1-Z^{-1})}{T_s} $$
+
+	$$ \boxed{	 G_{PID}(z)=\cfrac{K_p(1-z^{1})+K_i \frac{T_s (1+z^{-1})}{2}+K_d (1-2z^{-1}+z^{-2})}{1-z^{-1}}	}$$	
+	
+	\subsubsection*{Implementation of the PID Controller}
+	
+	$$ \frac{Y(z)}{E(z)}=\frac{K_p(1-z^{1})+K_i \cfrac{T_s (1+z^{-1})}{2}+\cfrac{K_d}{T_s} (1-2z^{-1}+z^{-2})}{1-z^{-1}}$$
+	$$ Y(z)-z^{-1} Y(z)=K_p E(z)-K_p z^{-1} E(z)+\frac{K_i T_s}{2} E(z) +\frac{K_i T_s}{2} E(Z) z^{-1} .. $$
+	$$ +\cfrac{K_d}{T_s} E(z)-2 z^{-1} E(z)+\cfrac{K_d}{T_s} z^{-2} E(z)	$$
+	$$ y[k]-y[k-1]=K_p e[k]-K_p e[k-1]+\frac{K_i T_s}{2}+K_i T_s e[k-1]/2+\cfrac{K_d}{T_s} e[k]-2 e[k-1] \cfrac{K_d}{T_s}+ \cfrac{K_d}{T_s} e[k-2]	$$
+	$$ y[k]-y[k-1] = (K_p+\frac{K_i T_s}{2}+K_d) e[k]+(-K_p+\frac{K_i T_s}{2}-2 \cfrac{K_d}{T_s} ) e[k-1]+(\cfrac{K_d}{T_s}) e[k-2] $$
+
+	If we add all past terms together to find $y[k]$,
+	
+	\begin{align*}
+		y[k]-y[k-1] = (K_p+\frac{K_i T_s}{2}+\cfrac{K_d}{T_s})&e[k]+(-K_p+\frac{K_i T_s}{2}-2 \cfrac{K_d}{T_s})e[k-1]..\\
+		+(K_d)&e[k-2]\\
+		y[k-1]-y[k-2] = (K_p+\frac{K_i T_s}{2}+\cfrac{K_d}{T_s})&e[k-1]+(-K_p+\frac{K_i T_s}{2}-2 \cfrac{K_d}{T_s})e[k-2]..\\
+		+(K_d)&e[k-3] \\
+		y[k-2]-y[k-1] = (K_p+\frac{K_i T_s}{2}+\cfrac{K_d}{T_s})&e[k-2]+(-K_p+\frac{K_i T_s}{2}-2 \cfrac{K_d}{T_s})e[k-3]..\\
+		+(K_d)&e[k-4]\\
+		...\\
+		...\\
+		y[k-n]-y[k-n-1] = (K_p+\frac{K_i T_s}{2}+\cfrac{K_d}{T_s})&e[k-n]+(-K_p+\frac{K_i T_s}{2}-2 \cfrac{K_d}{T_s})e[k-n-1]..\\
+		+(K_d)&e[k-n-2]\\
+		y[k]-y[k-n-1]= (K_p+\frac{K_i T_s}{2}+\cfrac{K_d}{T_s})&e[k] + (K_i T_s-\cfrac{K_d}{T_s})e[k-1] + (K_i T_s)e[k-2] ..\\ 
+		+ (K_i T_s)&e[k-2]  .... +  (K_i T_s)e[k-n-1]
+	\end{align*}
+	
+	Therefore;
+	
+	$$ 	\boxed{ y[k] = y[k-n-1]  + K_p (e[k] ) + K_d ( \frac{e[k]-e[k-1] }{T_s} )  + K_i (T_s  	 \sum_{i=0}^{n+1} e[k-i])  } $$
+	
+	This equation was utilized on Arduino microcontroller considering the past three errors for the integral term.
+	
+	\paragraph*{Sampling Time Matching and Controller Output Limit}
+		
+	In our implementation, the sampling time of the plant, i.e., the processing time in which the Raspberry Pi processes each picture frame is approximately 54 miliseconds, however, the sampling time of each Arduino loop is very small in comparison to our sampling time. To handle this proplem, we implemented delay function of the Arduino to match the sampling times.
+	
+	A saturation limit is also present to keep the overall PWM signal send to the DC motors within a 0-255 PWM range to prevent oscillation. Another saturation limit also controls the output of the controller subsystem to avoid any undesired errors that might happen at the video processing.
 
 	\item {Discussions on the Solution}
 	
-	%Although the basic idea behind control algorithm is same as the algorithm it has been significantly improved after the conceptual design report to compensate our needs and handle the resources the Data Processing Subsystem have. The \textbf{PID Controller Subsystem Test} explained in \textbf{Section~\ref{test_sec}} were not fully executed due to integration problem between subsystems.  However, the test that were conducted for the bump tests were promising.	
+	The proposed algorithm lacks the modelling of the system, thus, tuning of the PID parameters were handled by try and error. The state-space model of the plant will further be investigated under the term project of the another undergraduate course of our department, EE498:CONTROL SYSTEM DESIGN AND SIMULATION. However course, it was not included due to its incompleteness.	
+	
+	Other than the modelling part, the proposed methods are same as the ones proposed in the conceptual design review report and works as exected. 
 
 
 \end{enumerate}
@@ -1317,7 +1397,7 @@ This section presents followed test procedures and the outcome of the tests.
 		\centering
 		\caption{Statistical Stability Results}
 		\begin{tabular}{c|c|c|c|c}
-			$$ Test $$ & $$mean(\beta)$$ & $$variance(\beta)$$ & $$mean(y1)$$ & $$variance(y1)$$ \\ \hline
+			$$ Test $$ & $$mean($\beta$)$$ & $$variance($\beta$)$$ & $$mean(y1)$$ & $$variance(y1)$$ \\ \hline
 			Straight Area & -3.3 & 0.7 & 3.7 & 0.2   \\ \hline
 			Bend Area & -12.3 & 0.2 & -15.6 & 0.1   \\ \hline
 			Curved Area & -21.8 & 1.8 & -44.5 & 0.5 
@@ -1521,11 +1601,8 @@ This section presents followed test procedures and the outcome of the tests.
 \end{figure}
 
 \begin{figure}[h!]
-	
 	\includegraphics[width=.95\textwidth,center]{images/stabilityTestI}
-	
 	\caption{ Left: The Vehicle is placed on Straight Area.\\ Right: The Control Outputs \label{fig:stabilityTestI-dist} }
-	
 \end{figure}		
 
 \begin{figure}[h!]
