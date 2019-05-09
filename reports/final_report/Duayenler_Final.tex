@@ -2279,7 +2279,14 @@ The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit
 		This sections presents a discussion on several things such as safety issues, application areas and environmental effects of the final product.
 	
 	\subsection{Safety Issues}
-		\todo{THIS PART IS NEW FOR FINAL REPORT.}
+		Safety is the most important consideration of every project, so during design, it is considered after every solution step. Product is tested under tougher than general customer use such as no cooling of raspberry pi or constant usage of 8 hours etc. 
+		
+		The most dangerous sections are Li-Po battery, Arduino and Motor driver, in other words, where the current flows. Although Li-Po battery is dangerous for a toy, in design it placed between two layers of chassis to protect it from damage or direct sun light. Besides of this, these three components share the same ground path, so charging cycle is tested, additionally, to avoid any ground loop. 
+		
+		Raspberry pi is the main computation component of Kobra 6.5, so it has some overheating issues, especially hot days. Therefore, It is cooled by FAN and heat sink system. Additionally, it’s power totally isolated from dangerous high current line (as mentioned previous paragraph) to eliminate any over voltage/current condition. 
+		
+		Thanks to these considerations, if there is no over charging condition of Li-Po battery, this product can be used totally safely.  
+		
 
 	\subsection{Application Areas}
 	At first sight, this project seems like a toy for children. As an RC car, two children can play with each other for fun. However, when project analyses in detail such as considering sub-systems, it is a small model of unmanned vehicle which has anti collusion and obstacle avoidance features. Furthermore, with modification of the sub-systems, this project can be evaluating different areas such as lane tracking algorithm can be enhanced to object tracking and this vehicle can follow specified object, or handshake algorithm can be evaluating to IoT applications which requires machine communications.
