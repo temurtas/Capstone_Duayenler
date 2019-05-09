@@ -843,28 +843,28 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 	
 	Other than the modelling part, the proposed methods are same as the ones proposed in the conceptual design review report. However, due to unidealities in the motors, the controller tuned for the CCW movement failed to pass the test proposed under \textit{Section~4.4}, therefore, the PID parameters and the base speed parameters were seperated in order to have same performance at both sides. To ensure the proper operation following algorithm is utilized.
 	
-	\begin{algorithm}
-		\DontPrintSemicolon	
-	// Update pastYon array \\ 
-	\For {int i = yonSize - 1 \Rightarrow  0} {
-		pastyon[i] = pastyon[i - 1]
-	}
-	pastyon[0]=yon \\
-	yonSum=0 \\
-	\For {int k = 0; k < (yonSize-1) ; k++}
-	{
-		yonSum = yonSum + pastyon[k]
-	}
-	yonAvg=yonSum/yonSize \\ 
-	\If {yonAvg < 0.5}{
-		$yonFin=0$  
-	}   
-	\Else {
-		$yonFin=1$ 
-	}
-	\caption{PID Controller Algorithm}
-	\label{algo:PID}
-	\end{algorithm}
+	%\begin{algorithm}
+	%	\DontPrintSemicolon	
+	%// Update pastYon array \\ 
+	%\For {int i = (yonSize - 1) \Rightarrow  0} {
+	%	pastyon[i] = pastyon[i - 1]
+	%}
+	%$ pastyon[0]=yon $\\
+	% yonSum $=$ 0 \\
+	%\For {int k = 0 \Rightarrow (yonSize-1) }
+	%{
+	%	$ yonSum = yonSum + pastyon[k] $
+	%}
+	%$ yonAvg=yonSum/yonSize $\\ 
+	%\If {yonAvg < 0.5}{
+	%	$yonFin=0$  
+	%}   
+	%\Else {
+	%	$yonFin=1$ 
+	%}
+	%\caption{PID Controller Algorithm}
+	%\label{algo:PID}
+	%\end{algorithm}
 	
 	 
 
