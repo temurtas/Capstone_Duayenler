@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  9 MAY 2019 21:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2018.6.27)  9 MAY 2019 22:02
 entering extended mode
 **./Duayenler_Final.tex
 (Duayenler_Final.tex
@@ -1922,7 +1922,7 @@ File: images/client_asm.jpg Graphic file (type jpg)
 
 <use images/client_asm.jpg>
 Package pdftex.def Info: images/client_asm.jpg used on input line 982.
-(pdftex.def)             Requested size: 313.65027pt x 288.9508pt.
+(pdftex.def)             Requested size: 358.46039pt x 330.2295pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1932,55 +1932,41 @@ File: images/server_asm.jpg Graphic file (type jpg)
 
 <use images/server_asm.jpg>
 Package pdftex.def Info: images/server_asm.jpg used on input line 987.
-(pdftex.def)             Requested size: 313.65027pt x 335.45654pt.
+(pdftex.def)             Requested size: 358.46039pt x 383.3894pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[21] [22 <./images/client_asm.jpg>] [23 <./images/server_asm.jpg>]
-<images/ROT_ROI/baseSpeed_crop.png, id=529, 896.75024pt x 415.67294pt>
+[21] [22 <./images/client_asm.jpg>] [23 <./images/server_asm.jpg>] [24]
+<images/ROT_ROI/baseSpeed_crop.png, id=540, 896.75024pt x 415.67294pt>
 File: images/ROT_ROI/baseSpeed_crop.png Graphic file (type png)
 
 <use images/ROT_ROI/baseSpeed_crop.png>
 Package pdftex.def Info: images/ROT_ROI/baseSpeed_crop.png used on input line 1
 095.
 (pdftex.def)             Requested size: 448.07378pt x 207.70276pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[24] [25 <./images/ROT_ROI/baseSpeed_crop.png>]
-<images/motor-holder.png, id=557, 550.30594pt x 554.82281pt>
+ [25 <./images/ROT_ROI/baseSpeed_crop.png>] [26] <images/motor-holder.png, id=5
+77, 550.30594pt x 554.82281pt>
 File: images/motor-holder.png Graphic file (type png)
 
 <use images/motor-holder.png>
 Package pdftex.def Info: images/motor-holder.png used on input line 1228.
 (pdftex.def)             Requested size: 130.084pt x 131.14531pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<images/chassis1.png, id=559, 1317.42188pt x 846.16125pt>
+<images/chassis1.png, id=579, 1317.42188pt x 846.16125pt>
 File: images/chassis1.png Graphic file (type png)
 
 <use images/chassis1.png>
 Package pdftex.def Info: images/chassis1.png used on input line 1237.
 (pdftex.def)             Requested size: 358.46039pt x 230.23544pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[26] <images/subsys_block.png, id=585, 581.5326pt x 297.7524pt>
+ [27 <./images/motor-holder.png> <./images/chassis1.png>] <images/subsys_block.
+png, id=592, 581.5326pt x 297.7524pt>
 File: images/subsys_block.png Graphic file (type png)
 
 <use images/subsys_block.png>
 Package pdftex.def Info: images/subsys_block.png used on input line 1282.
 (pdftex.def)             Requested size: 448.07378pt x 229.42906pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[27 <./images/motor-holder.png> <./images/chassis1.png>]
 Overfull \hbox (2.32751pt too wide) in paragraph at lines 1299--1299
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
@@ -2061,7 +2047,7 @@ Overfull \hbox (10.81772pt too wide) in paragraph at lines 1299--1299
  []
 
 [28 <./images/subsys_block.png>]
-<images/laneD_test.png, id=614, 479.27055pt x 358.82056pt>
+<images/laneD_test.png, id=609, 479.27055pt x 358.82056pt>
 File: images/laneD_test.png Graphic file (type png)
 
 <use images/laneD_test.png>
@@ -2148,7 +2134,7 @@ Overfull \hbox (10.81772pt too wide) in paragraph at lines 1355--1355
  []
 
 [29 <./images/laneD_test.png>] [30] [31]
-<images/path_images/down_1.png, id=678, 162.1257pt x 245.9589pt>
+<images/path_images/down_1.png, id=676, 162.1257pt x 245.9589pt>
 File: images/path_images/down_1.png Graphic file (type png)
 
 <use images/path_images/down_1.png>
@@ -2156,7 +2142,7 @@ Package pdftex.def Info: images/path_images/down_1.png used on input line 1488.
 
 (pdftex.def)             Requested size: 134.4235pt x 203.9319pt.
 
-<images/path_images/down_2.png, id=679, 162.1257pt x 245.9589pt>
+<images/path_images/down_2.png, id=677, 162.1257pt x 245.9589pt>
 File: images/path_images/down_2.png Graphic file (type png)
 
 <use images/path_images/down_2.png>
@@ -2164,7 +2150,7 @@ Package pdftex.def Info: images/path_images/down_2.png used on input line 1497.
 
 (pdftex.def)             Requested size: 134.4235pt x 203.9319pt.
 
-<images/path_images/down_3.png, id=680, 162.1257pt x 245.9589pt>
+<images/path_images/down_3.png, id=678, 162.1257pt x 245.9589pt>
 File: images/path_images/down_3.png Graphic file (type png)
 
 <use images/path_images/down_3.png>
@@ -2172,21 +2158,21 @@ Package pdftex.def Info: images/path_images/down_3.png used on input line 1506.
 
 (pdftex.def)             Requested size: 134.4235pt x 203.9319pt.
 
-<images/path_images/up_1.png, id=681, 162.00525pt x 245.9589pt>
+<images/path_images/up_1.png, id=679, 162.00525pt x 245.9589pt>
 File: images/path_images/up_1.png Graphic file (type png)
 
 <use images/path_images/up_1.png>
 Package pdftex.def Info: images/path_images/up_1.png used on input line 1527.
 (pdftex.def)             Requested size: 134.4235pt x 204.08952pt.
 
-<images/path_images/up_2.png, id=682, 162.00525pt x 245.9589pt>
+<images/path_images/up_2.png, id=680, 162.00525pt x 245.9589pt>
 File: images/path_images/up_2.png Graphic file (type png)
 
 <use images/path_images/up_2.png>
 Package pdftex.def Info: images/path_images/up_2.png used on input line 1536.
 (pdftex.def)             Requested size: 134.4235pt x 204.08952pt.
 
-<images/path_images/up_3.png, id=683, 162.1257pt x 245.9589pt>
+<images/path_images/up_3.png, id=681, 162.1257pt x 245.9589pt>
 File: images/path_images/up_3.png Graphic file (type png)
 
 <use images/path_images/up_3.png>
@@ -3112,8 +3098,8 @@ LaTeX Warning: Marginpar on page 44 moved.
 
 [44 <./images/elec_arch.png>] [45]
 
-pdfTeX warning: pdflatex.exe (file ./USER_MANUAL.pdf): PDF inclusion: found PDF
- version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex (file ./USER_MANUAL.pdf): PDF inclusion: found PDF ver
+sion <1.7>, but at most version <1.5> allowed
 <USER_MANUAL.pdf, id=922, 614.295pt x 794.97pt>
 File: USER_MANUAL.pdf Graphic file (type pdf)
  <use USER_MANUAL.pdf>
@@ -3121,20 +3107,20 @@ Package pdftex.def Info: USER_MANUAL.pdf used on input line 2302.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 
-pdfTeX warning: pdflatex.exe (file ./USER_MANUAL.pdf): PDF inclusion: found PDF
- version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex (file ./USER_MANUAL.pdf): PDF inclusion: found PDF ver
+sion <1.7>, but at most version <1.5> allowed
 File: USER_MANUAL.pdf Graphic file (type pdf)
 <use USER_MANUAL.pdf>
 Package pdftex.def Info: USER_MANUAL.pdf used on input line 2302.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 
-pdfTeX warning: pdflatex.exe (file ./USER_MANUAL.pdf): PDF inclusion: found PDF
- version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex (file ./USER_MANUAL.pdf): PDF inclusion: found PDF ver
+sion <1.7>, but at most version <1.5> allowed
 
 
-pdfTeX warning: pdflatex.exe (file ./USER_MANUAL.pdf): PDF inclusion: found PDF
- version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex (file ./USER_MANUAL.pdf): PDF inclusion: found PDF ver
+sion <1.7>, but at most version <1.5> allowed
 <USER_MANUAL.pdf, id=925, page=1, 614.295pt x 794.97pt>
 File: USER_MANUAL.pdf Graphic file (type pdf)
 
@@ -3166,20 +3152,20 @@ Package pdftex.def Info: USER_MANUAL.pdf used on input line 2304.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 
-pdfTeX warning: pdflatex.exe (file ./USER_MANUAL.pdf): PDF inclusion: found PDF
- version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex (file ./USER_MANUAL.pdf): PDF inclusion: found PDF ver
+sion <1.7>, but at most version <1.5> allowed
 File: USER_MANUAL.pdf Graphic file (type pdf)
 <use USER_MANUAL.pdf>
 Package pdftex.def Info: USER_MANUAL.pdf used on input line 2304.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 
-pdfTeX warning: pdflatex.exe (file ./USER_MANUAL.pdf): PDF inclusion: found PDF
- version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex (file ./USER_MANUAL.pdf): PDF inclusion: found PDF ver
+sion <1.7>, but at most version <1.5> allowed
 
 
-pdfTeX warning: pdflatex.exe (file ./USER_MANUAL.pdf): PDF inclusion: found PDF
- version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex (file ./USER_MANUAL.pdf): PDF inclusion: found PDF ver
+sion <1.7>, but at most version <1.5> allowed
 <USER_MANUAL.pdf, id=951, page=2, 614.295pt x 794.97pt>
 File: USER_MANUAL.pdf Graphic file (type pdf)
 
@@ -3246,7 +3232,7 @@ pe1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
 /public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/
 courier/ucrr8a.pfb>
-Output written on Duayenler_Final.pdf (48 pages, 50767795 bytes).
+Output written on Duayenler_Final.pdf (48 pages, 50767761 bytes).
 PDF statistics:
  1115 PDF objects out of 1200 (max. 8388607)
  446 named destinations out of 1000 (max. 500000)

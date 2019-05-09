@@ -347,7 +347,7 @@ For this subsystem to be stable, HSV filter must produce a clean filtered result
 	
 	The subsystem is the first step of safely competing with an opponent in a racing path. This subsystem uses two time of flight distance sensors, called vl6180x. Time of flight sensors are enhanced IR sensors. One at the back of the vehicle is responsible for detecting the chasing opponent and one at the front of the vehicle is responsible for detecting the chased opponent. The sensors use I2C protocol. The serial data coming from sensors is between 0 and 255, which corresponds to the reading in terms of millimeters. That is, vl6180x can make measurements up to 25.5 cm. Since sensor reading is performed using Raspberry Pi, the required trigger for handshake protocol can be easily accessed by the external communication subsystem.
 	
-	Note that, having 2 sensors mean that there are 2 I2C slaves. In I2C, master device sends data to slaves according to their addresses. The main problem emerging from this is that if two sensors have the same address, reading sensors is not possible. Therefore, the addresses of the sensors must be changed. However, there is also another problem. Changing address is also done by sending serial data to sensors. If both sensors are connected at the same time to Raspberry Pi, changing addresses is not possible because there are still 2 devices with same addresses. To solve this issue, the chip enable(CE) inputs of the sensors is used. Firstly, only one device is activated by applying high to its CE input pin. After changing its address, other sensor's CE pin can be safely made high. By doing that, two I2C devices with different addresses are obtained. From this point on, sensors can be read successfully.
+	Note that, having 2 sensors means that there are 2 I2C slaves. In I2C, master device sends data to slaves according to their addresses. The main problem emerging from this is that if two sensors have the same address, reading sensors is not possible. Therefore, the addresses of the sensors must be changed. However, there is also another problem. Changing address is also done by sending serial data to sensors. If both sensors are connected at the same time to Raspberry Pi, changing addresses is not possible because there are still 2 devices with same addresses. To solve this issue, the chip enable(CE) inputs of the sensors is used. Firstly, only one device is activated by applying high to its CE input pin. After changing its address, other sensor's CE pin can be safely made high. By doing that, two I2C devices with different addresses are obtained. From this point on, sensors can be read successfully.
 	
 	\item {Discussions on the Solution}
 	
@@ -979,12 +979,12 @@ return;
 	The process for the finishing handshake also utilizes socket functions, but the process is a little bit different. For the win case, vehicle detection subsystem (front sensor) initiates the handshake. A catch message (ID00) is sent to the opponent. If acknowledgment is taken from the opponent, stop message (ID10) is sent. On the other hand, for the defeat case, a catch message is received by the opponent. Then, vehicle detection subsystem is called. According to the returned value from the back sensor, the acknowledge (ID01) or reject (ID11) are sent. Also, LEDs corresponding to messages are lid for the finishing handshake.
 	
 	\begin{figure}[h]
-		\includegraphics[width=0.7\textwidth,center]{images/client_asm}
+		\includegraphics[width=0.8\textwidth,center]{images/client_asm}
 		\caption{ASM Chart of the Algorithm of the External Communication Subsystem for Client Side \label{fig:asmclient} }
 	\end{figure}
 	
 	\begin{figure}[h]
-		\includegraphics[width=0.7\textwidth,center]{images/server_asm}
+		\includegraphics[width=0.8\textwidth,center]{images/server_asm}
 		\caption{ASM Chart of the Algorithm of the External Communication Subsystem for Server Side \label{fig:asmserver} }
 	\end{figure}
 	
@@ -1422,7 +1422,7 @@ This section presents followed test procedures and the outcome of the tests.
 	
 	All the test procedures mentioned at the \textbf{Section~\ref{sect:vhd}} is applied to the VL6180X Time-of-Flight distance sensor. At first, test results were satisfying for the back sensor, but not for the front one. Tests were repeated with switching front and rear sensors. Again, the sensor in the front of the vehicle measured erroneously. Then it is realized that the position of the front sensor is problematic. In the first design of the chasis, the front sensor was placed behind a hole under the the stick supporting camera. It is realized that this configuration was blocking the sensor. Then, in the second chasis design, front sensor is brought in front of the stick. After repeating tests results, it is confirmed that the problem with the front sensor is eliminated. 
 	
-	Unlike ultrasonic and infrared sensors, time-of-flight sensors shows very accurate result inside the closed environments like laboratory under artificial lights. The results under direct sunlight especially in CCC is also good as expected. In addition to different light conditions test, the sensor shows very accurate result especially in \textit{Angled Approach Test}. According to test, the sensor gives correct results up to 30 degrees. Considering the fact that the path itself is elliptical and there would always be an angle between vehicle even though it may be very small for some cases, it is confirmed that time of flight sensors are quite good choice for this subsystem. 
+	Time-of-flight sensors show very accurate result inside the closed environments like laboratory under artificial lights. The results under direct sunlight especially in CCC is also good as expected. In addition to the success in different light conditions test, the sensor shows very accurate result especially in \textit{Angled Approach Test}. According to test, the sensor gives correct results up to 30 degrees. Considering the fact that the path itself is elliptical and there would always be an angle between vehicle even though it may be very small for some cases, it is confirmed that time of flight sensors are quite good choice for this subsystem. 
 	
 \end{enumerate}
 

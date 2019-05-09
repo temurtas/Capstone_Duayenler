@@ -12,7 +12,7 @@
 \contentsline {subsection}{\numberline {3.3}Communication System}{19}{subsection.3.3}
 \contentsline {subsubsection}{\numberline {3.3.1}Internal Communication Subsystem}{20}{subsubsection.3.3.1}
 \contentsline {subsubsection}{\numberline {3.3.2}External Communication Subsystem}{20}{subsubsection.3.3.2}
-\contentsline {subsection}{\numberline {3.4}Driving System}{22}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.4}Driving System}{23}{subsection.3.4}
 \contentsline {subsubsection}{\numberline {3.4.1}Direction Subsystem}{23}{subsubsection.3.4.1}
 \contentsline {subsubsection}{\numberline {3.4.2}Speed Subsystem}{24}{subsubsection.3.4.2}
 \contentsline {subsection}{\numberline {3.5}Motion System}{25}{subsection.3.5}
@@ -24,7 +24,7 @@
 \contentsline {subsection}{\numberline {3.7}Compatibility of the Subsystems}{28}{subsection.3.7}
 \contentsline {section}{\numberline {4}Detailed Tests for the Subsystems}{28}{section.4}
 \contentsline {subsection}{\numberline {4.1}Lane Detection Subsystem Tests and Results}{28}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Vehicle Detection Subsystem Tests and Results}{29}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.2}Vehicle Detection Subsystem Tests and Results}{30}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}Data Processing Subsystem Tests and Results}{31}{subsection.4.3}
 \contentsline {subsection}{\numberline {4.4}PID Controller Subsystem Tests and Results}{34}{subsection.4.4}
 \contentsline {subsection}{\numberline {4.5}Internal Communication Subsystem Tests and Results}{37}{subsection.4.5}
