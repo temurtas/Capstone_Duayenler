@@ -1280,64 +1280,78 @@ This section presents followed test procedures and the outcome of the tests.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection {Vehicle Detection Subsystem Tests and Results}\label{sect:vhd}
+\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
+
+\begin{enumerate}
+	\item Vehicle Detection Test in Closed Environment with One Sensor:
 	
 	\begin{enumerate}
-		\item Front Vehicle Detection Test in Closed Environment:
-
-		\begin{enumerate}
-			\item Make the connection of the desired sensor and Arduino properly  
-			\item Hold the sensor at an angle of 90 degree with respect to ground  
-			\item Place the test object 5 cm in front of the desired  
-
-\item Observe the output of the subsystem  
-
-\item Repeat the step 3 \& 4 with different distances  
-
-\item If the output of the subsystem generates logical positive for distances smaller than 5 cm and logical zero for distances greater than five, the test result can be considered as success  
-
-\end{enumerate}					
-
-
-\item Rear Vehicle Detection Test in Closed Environment:		
-
-\begin{enumerate}
-
-\item Repeat the test steps of the \textit{Front Vehicle Detection Test in Closed Environment} with the desired sensor for the desired rear sensor.   
-
-\end{enumerate}
-
-
-\item {Angled Approach Test:}
-
-\begin{enumerate}
-
-\item Make the connection of the desired sensor and Arduino properly  
-
-\item Hold the sensor at an angle of 90 degree with respect to ground  
-
-\item Place the test object 5 cm in front of the sensor with 30 degree angle with respect to the sensor  
-
-\item Observe the output of the subsystem  
-
-\item Repeat the step 3 \& 4 with different distance and angle values  
-
-\item If the output of the subsystem generates logical positive for distances smaller than 5 cm for all angle values with respect to sensor and logical zero for distances greater than 5 cm, the test result can be considered as success  
-
-\end{enumerate}
-
-
-\item Vehicle Detection in Different Sunlight Conditions Test:
-
-\begin{enumerate}
-
-\item Repeat the test steps of the \textit{Front Vehicle Detection Test in Closed Environment} in CCC (Cultural and Convention) ground under direct sunlight  
-
-\item Repeat step 1 in CCC (Cultural and Convention) under artificial light, in other words, under no direct sunlight conditions  
-
-\item Repeat steps 1 \& 2 for different locations of E Building including Graduation Laboratory  
-
-\item If the output of the subsystem generates logical positive for distances smaller than 5 cm under all light conditions and logical zero for distances greater than 5 cm, the test result can be considered as success  
-
+		\item Make the connection of the desired sensor and Pi properly  
+		\item Hold the sensor at an angle of 90 degree with respect to ground  
+		\item Place the test object 5 cm in front of the desired  
+		
+		\item Observe the output of the subsystem  
+		
+		\item Repeat the step 3 \& 4 with different distances  
+		
+		\item If the output of the subsystem is very closed to the actual measurement (i.e., with an error rate approximately 1 percent) the test result can be considered as success.
+		
+	\end{enumerate}					
+	
+	
+	\item Vehicle Detection Test in Closed Environment with Two Sensors:		
+	
+	\begin{enumerate}
+		
+		\item Repeat the test steps of the \textit{Front Vehicle Detection Test in Closed Environment with One Sensor} when both sensors are connected to the rear of the vehicle.   
+		
+	\end{enumerate}
+	
+	
+	\item {Angled Approach Test:}
+	
+	\begin{enumerate}
+		
+		\item Make the connection of the desired sensor and Pi properly  
+		
+		\item Hold the sensor at an angle of 90 degree with respect to ground  
+		
+		\item Place the test object 5 cm in front of the sensor with 30 degree angle with respect to the sensor  
+		
+		\item Observe the output of the subsystem  
+		
+		\item Repeat the step 3 \& 4 with different distance and angle values  
+		
+		\item If the output of the subsystem is very closed to the actual measurement (i.e., with an error rate approximately 1 percent) the test result can be considered as success. 
+		
+	\end{enumerate}
+	
+	
+	\item Vehicle Detection in Different Sunlight Conditions Test:
+	
+	\begin{enumerate}
+		
+		\item Repeat the test steps of the \textit{Front Vehicle Detection Test in Closed Environment with Two Sensors}  in CCC (Cultural and Convention) ground under direct sunlight  
+		
+		\item Repeat step 1 in CCC (Cultural and Convention) under artificial light, in other words, under no direct sunlight conditions  
+		
+		\item Repeat steps 1 \& 2 for different locations of E Building including Graduation Laboratory  
+		
+		\item If the output of the subsystem is very closed to the actual measurement (i.e., with an error rate approximately 1 percent) the test result can be considered as success. 
+		
+	\end{enumerate}
+	
+	
+	
+	
+	
+	\item{Results of Vehicle Detection Subsystem Tests}
+	
+	
+	All the test procedures mentioned at the \textbf{Section~\ref{sect:vhd}} is applied to the VL6180X Time-of-Flight distance sensor. At first, test results were satisfying for the back sensor, but not for the front one. Tests were repeated with switching front and rear sensors. Again, the sensor in the front of the vehicle measured erroneously. Then it is realized that the position of the front sensor is problematic. In the first design of the chasis, the front sensor was placed behind a hole under the the stick supporting camera. It is realized that this configuration was blocking the sensor. Then, in the second chasis design, front sensor is brought in front of the stick. After repeating tests results, it is confirmed that the problem with the front sensor is eliminated. 
+	
+	Unlike ultrasonic and infrared sensors, time-of-flight sensors shows very accurate result inside the closed environments like laboratory under artificial lights. The results under direct sunlight especially in CCC is also good as expected. In addition to different light conditions test, the sensor shows very accurate result especially in \textit{Angled Approach Test}. According to test, the sensor gives correct results up to 30 degrees. Considering the fact that the path itself is elliptical and there would always be an angle between vehicle even though it may be very small for some cases, it is confirmed that time of flight sensors are quite good choice for this subsystem. 
+	
 \end{enumerate}
 
 
