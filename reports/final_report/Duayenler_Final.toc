@@ -1,5 +1,5 @@
-\select@language {english}
-\select@language {english}
+\babel@toc {english}{}
+\babel@toc {english}{}
 \contentsline {section}{\numberline {1}Executive Summary}{3}{section.1}
 \contentsline {section}{\numberline {2}Introduction}{4}{section.2}
 \contentsline {section}{\numberline {3}Design Description}{5}{section.3}
@@ -25,24 +25,24 @@
 \contentsline {section}{\numberline {4}Detailed Tests for the Subsystems}{27}{section.4}
 \contentsline {subsection}{\numberline {4.1}Lane Detection Subsystem Tests and Results}{27}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Vehicle Detection Subsystem Tests and Results}{28}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Data Processing Subsystem Tests and Results}{29}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}PID Controller Subsystem Tests and Results}{34}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.3}Data Processing Subsystem Tests and Results}{30}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}PID Controller Subsystem Tests and Results}{33}{subsection.4.4}
 \contentsline {subsection}{\numberline {4.5}Internal Communication Subsystem Tests and Results}{36}{subsection.4.5}
-\contentsline {subsection}{\numberline {4.6}External Communication Subsystem Tests and Results}{36}{subsection.4.6}
-\contentsline {subsection}{\numberline {4.7}Direction Subsystem Tests and Results}{38}{subsection.4.7}
-\contentsline {subsection}{\numberline {4.8}Speed Subsystem Tests and Results}{38}{subsection.4.8}
-\contentsline {subsection}{\numberline {4.9}Wheels Subsystem Tests and Results}{39}{subsection.4.9}
+\contentsline {subsection}{\numberline {4.6}External Communication Subsystem Tests and Results}{37}{subsection.4.6}
+\contentsline {subsection}{\numberline {4.7}Direction Subsystem Tests and Results}{39}{subsection.4.7}
+\contentsline {subsection}{\numberline {4.8}Speed Subsystem Tests and Results}{39}{subsection.4.8}
+\contentsline {subsection}{\numberline {4.9}Wheels Subsystem Tests and Results}{40}{subsection.4.9}
 \contentsline {subsection}{\numberline {4.10}Motors Subsystem Tests and Results}{40}{subsection.4.10}
-\contentsline {subsection}{\numberline {4.11}Chassis Subsystem Tests and Results}{40}{subsection.4.11}
-\contentsline {subsection}{\numberline {4.12}Printed Circuit Board Subsystem Tests and Results}{40}{subsection.4.12}
+\contentsline {subsection}{\numberline {4.11}Chassis Subsystem Tests and Results}{41}{subsection.4.11}
+\contentsline {subsection}{\numberline {4.12}Printed Circuit Board Subsystem Tests and Results}{41}{subsection.4.12}
 \contentsline {section}{\numberline {5}Other Considerations}{41}{section.5}
 \contentsline {subsection}{\numberline {5.1}Cost Analysis}{41}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Power Analysis}{41}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.2}Power Analysis}{42}{subsection.5.2}
 \contentsline {section}{\numberline {6}Deliverables}{42}{section.6}
 \contentsline {section}{\numberline {7}Budget}{42}{section.7}
-\contentsline {subsection}{\numberline {7.1}Actual Expenditures}{42}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Total Cost}{42}{subsection.7.2}
-\contentsline {section}{\numberline {8}Discussions}{42}{section.8}
+\contentsline {subsection}{\numberline {7.1}Actual Expenditures}{43}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Total Cost}{43}{subsection.7.2}
+\contentsline {section}{\numberline {8}Discussions}{43}{section.8}
 \contentsline {subsection}{\numberline {8.1}Safety Issues}{43}{subsection.8.1}
 \contentsline {subsection}{\numberline {8.2}Application Areas}{43}{subsection.8.2}
 \contentsline {subsection}{\numberline {8.3}Environmental Effects}{43}{subsection.8.3}
