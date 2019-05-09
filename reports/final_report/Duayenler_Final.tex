@@ -392,249 +392,6 @@ This system is responsible for computational works of the vehicle. The system ma
 
 
 
-\subsubsection{Data Processing Subsystem}\label{sect:dataProcessingSubsystem}
-\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
-
-\begin{enumerate}[A.]
-
-\item {Requirements for the Solution}
-
-
-\begin{enumerate}[1)]
-
-\item The subsystem should be able to analyze data produced by Sensing System.
-
-\item The subsystem should be able to produce the angle information that is sent to the Controller Subsystem.
-
-\item The subsystem should be compatible with Raspberry Pi.
-
-\item The subsystem should be able to process one frame at most in 100 milliseconds together with Lane Detection Subsystem.
-
-\item The subsystem should be able to ignore disturbances on the path.
-
-\end{enumerate}
-
-
-\item {Solution for the Subsystem}
-
-\begin{figure}[h]
-
-\includegraphics[width=0.93\textwidth,center]{images/vModels/dataProcessing_subsystem}
-
-\caption{Block Diagram of the Data Processing Subsystem}\label{fig:dataProcessing_subsystem}
-
-\end{figure}
-
-
-
-	The task of this subsystem is to extract control parameters so that the vehicle can follow the path without falling on the ground. The input of the subsystem is the line coordinate array produced by Lane Detection Subsystem. The input is processed by a detailed algorithm and the outputs are lane angle and distance of vehicle to the right lane. The output parameters are explained in \ref{sect:ControllerSubsystem}. The outputs are generated for the region of target (ROT) that is shown in \textit{Figure~\ref{fig:explanation_ROI_ROT}}. The Lane Detection Subsystem extracted ROI out of full camera frame. The Data Processing Subsystem processes the data in the ROI but produces output for the ROT. The reason for such a distinction between frame regions is that, ROI is good to determine possible obstacles on the path but producing control outputs that are almost 12 cm away from the vehicle would decrease the performance of the PID Controller Subsystem. For this reason ROI is not used, instead ROT is used. As ROI is adaptive, ROT must also be adaptive to stay in ROI region. The equations that define the ROT are as below. The graphical representation of the equations are given in \textit{Figure~\ref{fig:ROT_crop}}.
-\begin{equation}
-ROT\_Width = 640 px
-\end{equation}
-\begin{equation}
-ROT\_Height = (ROT\_High - ROT\_Low) px
-\end{equation}
-\begin{equation}
-ROT\_Low = 50 px
-\end{equation}
-\begin{equation}
-ROT\_High =
-\begin{cases}
-175, & front\_distance \geq 13 cm \\
-10*(front\_distance) + 45, &3\leq front\_distance <  13 cm \\
-21*(front\_distance) + 12, & front\_distance \leq 3 cm
-\end{cases}
-\end{equation}
-\begin{figure}[t!]
-	
-	\setlength{\unitlength}{\textwidth} 
-		\centering
-		\begin{subfigure}{.46\textwidth}
-			\centering
-			\includegraphics[width=0.44\unitlength]{images/ROT_ROI/ROT_HIGH_crop}
-			\caption{ Graph of ROT\_High vs front\_distance}
-		\end{subfigure}%
-		\begin{subfigure}{.46\textwidth}
-			\centering
-			\includegraphics[width=0.44\unitlength]{images/ROT_ROI/ROT_crop}
-			\caption{ ROT\_Height Variation}
-		\end{subfigure}
-		\caption{\label{fig:ROT_crop} Graphs Defining ROT\_Height}
-	\end{figure}
-
-	There are four main steps to determine lane angle and distance of vehicle to the right lane. The first step is to classify the lines as left and right. The second step is to eliminate the possible incorrect lines, if any. The third step is to fit the best lines through the left and right lines and reduce the total number of lines to two that are left and right lane lines. The last step is to find control outputs. The block diagram of the subsystem is given in \textit{Figure~\ref{fig:dataProcessing_subsystem}}.
-
-	Classifying a line as left or right requires the knowledge of the center of the path. If a pixel is part of the path, it is indicated by pixel value 255, that is result of HSV filtering. So, the path is constructed by white pixels. Analogously, if white pixels on a column is counted, that counts yield an information regarding the start and end points of the path. The explanation will be made based on an example frame (with ROI masked) as in \textit{Figure~\ref{fig:explanation_center_of_image}}. Obviously, the white pixel count through every column in the arrow directions between red bars is 0. However, from red bars to yellow bars, white pixel count in columns starts to increase. The maximum pixel count in a column is known from ROI equations. If the column indices that are close to maximum pixel count in a columns can be determined, then the right and left bounds of the path are found. Then, the center of the image is simply $(right\_bound + left\_bound)/2$. \textit{Algorithm~\ref{algo:center_image}}. As the center of the image is found, lines can be separated as left or right according to their coordinates.
-
-\begin{figure}[h]
-	
-	\includegraphics[width=0.465\textwidth,center]{images/ROT_ROI/explanation_center_of_image}
-	
-	\caption{Finding Center of the Path}\label{fig:explanation_center_of_image}
-	
-\end{figure}
-\begin{algorithm}
-	\DontPrintSemicolon
-		$whitePixels[640]$\;
-
-		$confidenceCount = 190 // threshold Pixel Count$\;
-
-		\For{Every Row i}{
-			\For{Every Column j}{
-				\If{frame[i][j] == 255}{
-					$whitePixels[j]++$\;
-
-				}
-				
-			}
-		}
-	
-		\For{Elements of whitePixels from left to right}{
-			Find the first index that has white pixel count greater than confidenceCount;
-
-			That index is left\_bound;
-
-		}
-		
-	\For{Elements of whitePixels from right to left}{
-		Find the first index that has white pixel count greater than confidenceCount;
-		That index is right\_bound;
-	}
-
-	image\_center = (left\_bound + right\_bound)/2
-	
-
-	\caption{Finding Image Center\label{algo:center_image}}
-\end{algorithm}
-
-\begin{figure}[t!]
-
-\setlength{\unitlength}{\textwidth} 
-
-\centering
-
-\begin{subfigure}{.46\textwidth}
-
-\centering
-
-\includegraphics[width=0.44\unitlength]{images/dataP_explained1}
-
-\caption{\label{fig:dataP_explained1} Before Eliminating Incorrect Lines}
-
-\end{subfigure}%
-\begin{subfigure}{.46\textwidth}
-
-\centering
-
-\includegraphics[width=0.44\unitlength]{images/dataP_explained2}
-
-\caption{\label{fig:dataP_explained2} After Eliminating Incorrect Lines}
-
-\end{subfigure}
-
-\caption{\label{fig:dataP_explained} A Sample Scenario on Eliminating Incorrect Lines}
-
-\end{figure}
-
-
-
-
-
-The next step is to determine whether there are disturbances on the lane lines or not. This is the most complex part of the Data Processing subsystem. Actually the correctness of the steering angle depends on how successful this step is realized. The idea behind this step is evaluating the slopes consecutive lines and assessing whether change in the slope is ordinary or abnormal. The \textit{Figure~\ref{fig:dataP_explained}} exemplifies a possible scenario. In this figure, the blue lines represent the detected lines in ROI whereas $\alpha$ and $\beta$ represent the slopes of the detected lines. Clearly, there are no disturbance on left lines since $\alpha$ values are similar to each other. However if $\beta$ values are observed, possibly there is an obstacle on right line covered by $\beta_3$, $\beta_4$ and $\beta_5$. This can be concluded by observing slope differences $(\beta_2 - \beta_3)$ and $(\beta_5 - \beta_6)$. To ignore this obstacle, it is enough to remove lines with slopes $\beta_3$, $\beta_4$ and $\beta_5$ as in \textit{Figure~\ref{fig:dataP_explained2}}. Even though the count of lines is decreased, elimination of incorrect lines are realized and the best line fit will be more correct. Another scenario is shown in \textit{Figure~\ref{fig:dataP_explainedBroken}}. Again the shown lines are the ones in ROI. In this scenario, left line has no problems. Right lines, however, a bit problematic. The problem is revealed when  $(\beta_3 - \beta_4)$ is observed. To determine whether  $(\beta_1, \beta_2, \beta_3)$ or $(\beta_4, \beta_5)$ is the correct set of lines, left lines are observed and the set which is more symmetric to left lines are selected as right lines. The resulting correction is shown in \textit{Figure~\ref{fig:dataP_explained4}}.	This is the basic idea behind eliminating incorrect lines in Data Processing subsystem. This idea is generalized by considering other possible obstacle types and shapes. The generalized idea is complicated and would take too long to present here. The summarized idea is presented in \textit{Algorithm~\ref{algo:eliminateLines}}.
-
-\begin{figure}[t!]
-
-\setlength{\unitlength}{\textwidth} 
-
-\centering
-
-\begin{subfigure}{.46\textwidth}
-
-\centering
-
-\includegraphics[width=0.44\unitlength]{images/dataP_explained3}
-
-\caption{\label{fig:dataP_explained3} Before Eliminating Incorrect Lines}
-
-\end{subfigure}%
-\begin{subfigure}{.46\textwidth}
-
-\centering
-
-\includegraphics[width=0.44\unitlength]{images/dataP_explained4}
-
-\caption{\label{fig:dataP_explained4} After Eliminating Incorrect Lines}
-
-\end{subfigure}
-
-\caption{\label{fig:dataP_explainedBroken} Another Scenario on Eliminating Incorrect Lines}
-
-\end{figure}
-
-The third step is to fit best lines through the remaining lines. This is realized by using built-in Least-Squares method. As a result of this step, the number of lines is dropped to two as left line and right line.
-
-
-The last step is to find the steering angle. The target point is determined as the average of the middle points left and right lines. So the target point is always in the form of $(x_{avg}, 305)$. The y-coordinate is found by simple math (referencing from \textit{Figure~\ref{fig:camera_vision_explained}}) $480px-50px-125px$. The current point of the vehicle is always $(320,480)$. So the line connecting two points to each other constitutes the track path and the $arctan$ of the slope gives the steering angle. Steering angle is in the $[-90,90]$ range where negative values indicate to turn left and positive values indicate to turn right. This output is sent to PID Controller subsystem.
-\begin{algorithm}[t]
-	
-	
-	
-	\DontPrintSemicolon
-	
-	
-	$array[n] lines $\;
-	
-	$array[n] line\_slope\_angles $\;
-	
-	$array[n-1] slope\_angle\_differences$ \;
-	
-	
-	$slopeAngle\_threshold $\;
-	
-	$slopeAngle\_difference\_threshold$ \;
-	
-	
-	%	\KwData{Testing set $x$}
-	
-	\For{slope\_angle\_differences}{ 
-		
-		\If{$k$th item $>$ slopeAngle\_difference\_threshold}{
-			
-			// Check $k$th and $(k+1)$th items in line\_slope\_angles array
-			
-			
-			\If{$k$th item in line\_slope\_angles array $>$	slopeAngle\_threshold}{
-				
-				Mark index $k$ in lines array problematic
-				
-			}	
-			
-			\ElseIf{$(k+1)$th item in line\_slope\_angles array $>$	slopeAngle\_threshold}{
-				
-				Mark index $(k+1)$ in lines array problematic
-				
-			}	
-			
-		}
-		
-	}
-	
-	Delete the lines between problematic indexes 
-	
-	\caption{Line Elimination Algorithm}
-	
-	\label{algo:eliminateLines}
-\end{algorithm}
-
-
-\item {Discussions on the Solution}
-
-
-The proposed algorithm is mostly the same as in Conceptual Design Review Report. An improvement is made on the way algorithm determines the center of the image. With this new approach, image center is always determined correctly. Line classification and obstacle elimination show satisfactory results regarding robustness.
-
-\end{enumerate}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
@@ -821,27 +578,63 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 		maxSum // Integral Wind-up term \\
 		Ts // Sampling time \\
 		// Update of past error array \\
-		\For { int i = pastSize - 1; i > 0; i--} {
+		\For { int i = (pastSize - 1) $\to$ 0 } {
 			pastError[i] = pastError[i - 1] 
 		} 
 		pastError[0] = error \\
 		// Calculation of Derivative Term \\
 		delta = (pastError[0] - pastError[1]) / Ts \\
 		// Calculation of Integral term \\
-		sum = min(max(sum + (pastError[0] + pastError[1] + pastError[2]) / 3 * Ts, -1 * maxSum), maxSum) \\
+		sum = sum + (pastError[0] + pastError[1] + pastError[2]) / 3 * Ts \\
+		sum = min(max(sum , -1 * maxSum), maxSum) // Anti-Wind-up  \\
 		// Calculation of PID output \\
-		motorCmd = int(Kp * error + Kd * delta + Ki * sum)		
-		motorCmd =  min(motorCmd,Max\_Delta\_PWM)
+		motorCmd = int(Kp * error + Kd * delta + Ki * sum)	\\	
+		motorCmd =  min(motorCmd,Max\_Delta\_PWM) \\
 		delay(Ts-duration) // duration:duration of each Arduino loop	
 		\caption{PID Controller Algorithm}
 		\label{algo:PID}
 	\end{algorithm}
 
+	\paragraph*{Classification of Path Rotation}
+	
+		Due to unidealities of the motors, the controller tuned for the CCW movement failed to pass the test proposed under \textit{Section~4.4}, therefore, the PID parameters and the base speed parameters were seperated in order to have same performance at both sides. 
+		
+		It should be also noted that, the \textit{Data Processing Subsystem} produces $\beta$ in $0-180$ degree range if the path is located with a positive angle with respect to vehicle or produces $\beta$ in $180-360$ degree range otherwise.
+		In that notation sense, if the $\beta$ is in $0-180$ degree range the vehicle is being operated on a path at counterclockwise direction and at clockwise diirection if the $\beta$ is in $180-360$ degree range.
+		
+		However, since the main frame of the video input, i.e., orientation of the vehicle is moving constantly, the counterclockwise movement can be understood by the vehicle if an undesired input changes the direction of the vehicle dramatically. To avoid these undesired effect on the controller and base speed calculation, an array that holds past five angle information was created. At every frame, the angle classified as $1$ or $0$ according to its degree range. The purpose of this array is to elliminate the undesired rotation determination array by checking last five angle data. The basic algoithm can be further investigated at \textit{Algorithm~\ref{algo:rotation}}. 
+		
+		According to the value of \textit{yonFin} variable, PID parameters tuned for both direction is fed to the controller algorithm.
+			
+		\begin{algorithm}
+			\DontPrintSemicolon	
+			pastYon[yonSize] // Holds past rotations, has elements 0 or 1 \\
+			// Update pastYon array \\ 
+			\For {int i = (yonSize - 1) $\to$  0} {
+				pastyon[i] = pastyon[i - 1]
+			}
+			$ pastyon[0]=yon $\\
+			yonSum $=$ 0 \\
+			\For {int k $=$ 0  $\to$ (yonSize-1) }
+			{
+				$ yonSum = yonSum + pastyon[k] $
+			}
+			 $ yonAvg=yonSum/yonSize $\\ 
+			\If { yonAvg  $<$  0.5} {
+				$yonFin=0$ 
+			}   
+			\Else {
+				$yonFin=1$ 
+			}
+			\caption{Path Rotation Classification Algorithm}
+			\label{algo:ratation}
+		\end{algorithm}
+
 	\item {Discussions on the Solution}
 	
-	The proposed algorithm lacks the modelling of the system, thus, tuning of the PID parameters were handled by try and error. The state-space model of the plant will further be investigated under the term project of the another undergraduate course of our department, EE498:CONTROL SYSTEM DESIGN AND SIMULATION. However course, it was not included due to its incompleteness.	
+	The proposed algorithm lacks the modelling of the system, thus, tuning of the PID parameters were handled by try and error. The state-space model of the plant will further be investigated under the term project of the another undergraduate course of our department, EE498:CONTROL SYSTEM DESIGN AND SIMULATION. However, it was not included due to its incompleteness.	
 	
-	Other than the modelling part, the proposed methods are same as the ones proposed in the conceptual design review report. However, due to unidealities in the motors, the controller tuned for the CCW movement failed to pass the test proposed under \textit{Section~4.4}, therefore, the PID parameters and the base speed parameters were seperated in order to have same performance at both sides. To ensure the proper operation following algorithm is utilized.
+	Other than the modelling part and rotation sensitivity, the proposed methods are same as the ones proposed in the conceptual design review report. And they function as expected. 
 	
 	%\begin{algorithm}
 	%	\DontPrintSemicolon	
@@ -1052,7 +845,7 @@ return;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Speed Subsystem}
-
+	\todo{This part is rewritten for the final report}
 	\begin{enumerate}
 	\item {Requirements for the Solution}
 	
@@ -1068,7 +861,8 @@ return;
 
 		Main algorithm of this subsystem relies on the inverse ratio principle, that is, as the lane angle increases the base speed for the motors is decreased. This can be formalized as follows;
 		
-		$$ PWM~Offset~=~K_{max}~-K_1 \beta$$
+		
+		$$ PWM~Offset ~=~K_{max}~-K_1 \beta$$
 		
 		where $K_{max}$ is the maximum PWM value the base PWM should reach as it is on the straight path, the value for $K_{max}$ can be determined by try and error test.
 		
@@ -1100,7 +894,7 @@ return;
 
 	\item {Discussions on the Solution}
 
-	%The main solution proposed in the conceptual design for the longitudinal speed control were not fully realizable for the project, thus the algorithm is improved by the usage of the road angle $\beta$. This improvement allowed us more robust results in our tests.
+	The main solution idea is the same as the one proposed at \textit{Conceptual Design Review Report}. The main difference is the dependency of the base PWM value on road rotation as it was explained in \textit{Section~\ref{sect:ControllerSubsystem}}. The test results proved that the algorithm provides satisfactory performance to control longitudinal speed. 
 
 	\end{enumerate}
 
@@ -1273,12 +1067,12 @@ return;
 
 
 \subsection{Compatibility of the Subsystems}
+	\todo{Is rewrite necessary}
+	The block diagram showing the interaction of the subsytem block with each other can be seen from the \textit{Figure~\ref{fig:subsys-block}}. As can be seen from the figure also that, there are two main path within the project. One of them starts by processing the camera vision by the \textit{Lane Detection Subsystem} and ends with the transfer of torque from \textit{Motors Subsystem} to \textit{Wheels Subsystem} which results with a movement of the vehicle. In this path the data before the \textit{PID Controller} and \textit{Speed} subsystems are processed within the Raspberry Pi without any problem, at this point the output data are transferred to Arduino by \textit{Internal Communication Subsystem} without any problem. The rest of this path is processed by the Arduino without any problem as well.
 
-	%The block diagram showing the interaction of the subsytem block with each other can be seen from the \textit{Figure~\ref{fig:subsys-block}}. As can be seen from the figure also that, there are two main path within the project. One of them starts by processing the camera vision by the \textit{Lane Detection Subsystem} and ends with the transfer of torque from \textit{Motors Subsystem} to \textit{Wheels Subsystem} which results with a movement of the vehicle. In this path the data before the \textit{PID Controller} and \textit{Speed} subsystems are processed within the Raspberry Pi without any problem, at this point the output data are transferred to Arduino by \textit{Internal Communication Subsystem} without any problem. The rest of this path is processed by the Arduino without any problem as well.
+	The second path starts with the detection of the opponent by the \textit{Vehicle Detection Subsystem}. The path continues within the Raspberry Pi until the \textit{vehicle stop signal} is transferred to \textit{Motors Subsystem} by \textit{Internal Communication Subsystem} without any problem.
 
-	%The second path starts with the detection of the opponent by the \textit{Vehicle Detection Subsystem}. The path continues within the Raspberry Pi until the \textit{vehicle stop signal} is transferred to \textit{Motors Subsystem} by \textit{Internal Communication Subsystem} without any problem.
-
-	\begin{figure}[h]
+	\begin{figure}[H]
 		\includegraphics[width=\textwidth,center]{images/subsys_block}
 		\caption{Block Diagram of the Project and the Interaction of the Subsystems}\label{fig:subsys-block}
 	\end{figure}
@@ -1295,401 +1089,6 @@ return;
 This section presents followed test procedures and the outcome of the tests.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection {Lane Detection Subsystem Tests and Results}	
-\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
-
-\begin{enumerate}
-
-\item{Light Condition Test}
-
-\begin{enumerate}
-
-\item Mirror the Raspberry Pi screen into Laptop via VNC  
-
-\item Execute the lane detection algorithm in Raspberry Pi 
-
-\item Change the location of the camera and Pi to conduct test 
-
-\item Observe the results in different locations   
-
-\item If the visible lane sides can be detected without any additional object, the result of the test can be considered as success. 
-
-\end{enumerate}
-
-\item{Visual Disturbance Test}
-
-\begin{enumerate}
-
-\item Mirror the Raspberry Pi screen into Laptop via VNC   
-
-\item Execute the lane detection algorithm in Raspberry Pi  
-
-\item Put different objects into lane  
-
-\item Observe the results with different disturbances 
-
-\item If the objects outside of lane is not detected and the objects inside the road only detected only at its border with road, the result of the test can be considered as success.  
-
-\end{enumerate}
-
-
-
-
-\item{Results of Lane Detection Subsystem Tests}
-
-	The lane detection tests are conducted to asses reliability of the detection pipeline. A sample test result is shown in \textit{Figure~\ref{fig:laneD_test}}. The tests reveal that the subsystem satisfies its requirements by detecting lane lines. Note that, not all lines are detected, only the lines that are in the ROI are detected. One thing to note for the robustness of this subsystem is subsystem works as expected long as HSV filter is tuned for the medium.
-\end{enumerate}
-
-	\begin{figure}[h]
-		\includegraphics[width=0.75\textwidth,center]{images/laneD_test}
-		\caption{Lane Detection Test Result \label{fig:laneD_test} }
-	\end{figure}
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection {Vehicle Detection Subsystem Tests and Results}\label{sect:vhd}
-\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
-
-\begin{enumerate}
-	\item Vehicle Detection Test in Closed Environment with One Sensor:
-	
-	\begin{enumerate}
-		\item Make the connection of the desired sensor and Pi properly  
-		\item Hold the sensor at an angle of 90 degree with respect to ground  
-		\item Place the test object 5 cm in front of the desired  
-		
-		\item Observe the output of the subsystem  
-		
-		\item Repeat the step 3 \& 4 with different distances  
-		
-		\item If the output of the subsystem is very closed to the actual measurement (i.e., with an error rate approximately 1 percent) the test result can be considered as success.
-		
-	\end{enumerate}					
-	
-	
-	\item Vehicle Detection Test in Closed Environment with Two Sensors:		
-	
-	\begin{enumerate}
-		
-		\item Repeat the test steps of the \textit{Front Vehicle Detection Test in Closed Environment with One Sensor} when both sensors are connected to the rear of the vehicle.   
-		
-	\end{enumerate}
-	
-	
-	\item {Angled Approach Test:}
-	
-	\begin{enumerate}
-		
-		\item Make the connection of the desired sensor and Pi properly  
-		
-		\item Hold the sensor at an angle of 90 degree with respect to ground  
-		
-		\item Place the test object 5 cm in front of the sensor with 30 degree angle with respect to the sensor  
-		
-		\item Observe the output of the subsystem  
-		
-		\item Repeat the step 3 \& 4 with different distance and angle values  
-		
-		\item If the output of the subsystem is very closed to the actual measurement (i.e., with an error rate approximately 1 percent) the test result can be considered as success. 
-		
-	\end{enumerate}
-	
-	
-	\item Vehicle Detection in Different Sunlight Conditions Test:
-	
-	\begin{enumerate}
-		
-		\item Repeat the test steps of the \textit{Front Vehicle Detection Test in Closed Environment with Two Sensors}  in CCC (Cultural and Convention) ground under direct sunlight  
-		
-		\item Repeat step 1 in CCC (Cultural and Convention) under artificial light, in other words, under no direct sunlight conditions  
-		
-		\item Repeat steps 1 \& 2 for different locations of E Building including Graduation Laboratory  
-		
-		\item If the output of the subsystem is very closed to the actual measurement (i.e., with an error rate approximately 1 percent) the test result can be considered as success. 
-		
-	\end{enumerate}
-	
-	
-	
-	
-	
-	\item{Results of Vehicle Detection Subsystem Tests}
-	
-	
-	All the test procedures mentioned at the \textbf{Section~\ref{sect:vhd}} is applied to the VL6180X Time-of-Flight distance sensor. At first, test results were satisfying for the back sensor, but not for the front one. Tests were repeated with switching front and rear sensors. Again, the sensor in the front of the vehicle measured erroneously. Then it is realized that the position of the front sensor is problematic. In the first design of the chasis, the front sensor was placed behind a hole under the the stick supporting camera. It is realized that this configuration was blocking the sensor. Then, in the second chasis design, front sensor is brought in front of the stick. After repeating tests results, it is confirmed that the problem with the front sensor is eliminated. 
-	
-	Time-of-flight sensors show very accurate result inside the closed environments like laboratory under artificial lights. The results under direct sunlight especially in CCC is also good as expected. In addition to the success in different light conditions test, the sensor shows very accurate result especially in \textit{Angled Approach Test}. According to test, the sensor gives correct results up to 30 degrees. Considering the fact that the path itself is elliptical and there would always be an angle between vehicle even though it may be very small for some cases, it is confirmed that time of flight sensors are quite good choice for this subsystem. 
-	
-\end{enumerate}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-\subsection {Data Processing Subsystem Tests and Results}	
-
-\begin{enumerate}
-
-\item Data Assessment Test
-
-\begin{enumerate}
-
-\item Link the output of Lane Detection subsystem to Data Processing subsystem.  
-
-\item Asses if the output coincide with physical reality of the path  
-
-\end{enumerate}
-
-\item Output Stability Test
-
-\begin{enumerate}
-	
-	\item Place the vehicle on a fixed point on the path
-	
-	\item Observe the variation of the control outputs
-	
-\end{enumerate}
-
-\item{Results of Data Processing Subsystem Tests}\label{sec:DataProcessingSubsystemTests}
-
-	The tests asses the ability and performance of the subsystem. Numerous tests are made. The first set of tests cover the robustness of the subsystem by placing an obstacle of the subsystem. The test scenario and its results are presented in \textit{Figure~\ref{fig:dataP_down},\ref{fig:dataP_up} and \ref{fig:dataP_par}}. It can be seen that the algorithm ignores the obstacles in 7 cases out of 9 tests. In two cases, the algorithm fails to ignore the obstacles and determines the steering angle as if obstacle constitutes the lane line. Besides the results, on the presence of obstacles, in some particular obstacle placements, the output of the subsystem is observed to be unstable. Since the implementation is frozen after Conceptual Design Report, there has not been any significant change in the test performances since then.
-
-	The second set of tests cover the robustness of the subsystem as well, but under changing lighting conditions and on different surface materials. The results of this test is presented in \textit{Figure~\ref{fig:dataP_inside} and \ref{fig:dataP_outside}}. The presented results are promising, the steering angles are true. A problem is that these results are a bit unstable when the luminosity difference between the shadows and flighty parts increase. The shadows are sometimes detected as lines and cause untrue lane line evaluations.	
-	
-	The third and the last test is  made to see if the outputs are consistent when the vehicle is fixed on a point on the path. This test reveals the robustness of Data Processing Subsystem as it gives a measure on the stability of control outputs. PID Controller can work as expected, only if the provided inputs are predictable and repeatable. The test case and the results are given in \textit{Figure~\ref{fig:stabilityTestI-dist}, ~\ref{fig:stabilityTestS-dist} and ~\ref{fig:stabilityTestU-dist}}. Statistical measures graphical data is also visible in \textit{Table~\ref{tab:statisticalStability}}. The stability test is satisfactory, as the variance of the three measurements are quite low.
-	
-		\begin{table}[H]
-		\centering
-		\caption{Statistical Stability Results}
-		\begin{tabular}{c|c|c|c|c}
-			$$ Test $$ & $$mean($\beta$)$$ & $$variance($\beta$)$$ & $$mean(y1)$$ & $$variance(y1)$$ \\ \hline
-			Straight Area & -3.3 & 0.7 & 3.7 & 0.2   \\ \hline
-			Bend Area & -12.3 & 0.2 & -15.6 & 0.1   \\ \hline
-			Curved Area & -21.8 & 1.8 & -44.5 & 0.5 
-		\end{tabular} 
-		\label{tab:statisticalStability}
-	\end{table}
-
-\end{enumerate}
-\begin{figure}[H]
-
-\setlength{\unitlength}{\textwidth} 
-
-\centering
-
-\begin{subfigure}{.31\textwidth}
-
-\centering
-
-\includegraphics[width=0.30\unitlength]{images/path_images/down_1}
-
-\caption{\label{fig:dataP_down_1} Obstacle is at the Beginning of the Path}
-
-\end{subfigure}%
-\begin{subfigure}{.31\textwidth}
-
-\centering
-
-\includegraphics[width=0.30\unitlength]{images/path_images/down_2}
-
-\caption{\label{fig:dataP_down_2} Obstacle is at the Middle of the Path}
-
-\end{subfigure}
-\begin{subfigure}{.31\textwidth}
-
-\centering
-
-\includegraphics[width=0.30\unitlength]{images/path_images/down_3}
-
-\caption{\label{fig:dataP_down_3} Obstacle is at the End of the Path.}
-
-\end{subfigure}
-
-\caption{\label{fig:dataP_down} A Test Scenario: Downward Inclined Obstacle on the Path. \\ Upper Half: Proposed Tests, Lower Half: Results}
-
-\end{figure}
-
-
-\begin{figure}[H]
-
-\setlength{\unitlength}{\textwidth} 
-
-\centering
-
-\begin{subfigure}{.31\textwidth}
-
-\centering
-
-\includegraphics[width=0.30\unitlength]{images/path_images/up_1}
-
-\caption{\label{fig:dataP_up_1} Obstacle is at the Beginning of the Path}
-
-\end{subfigure}%
-\begin{subfigure}{.31\textwidth}
-
-\centering
-
-\includegraphics[width=0.30\unitlength]{images/path_images/up_2}
-
-\caption{\label{fig:dataP_up_2} Obstacle is at the Middle of the Path}
-
-\end{subfigure}
-\begin{subfigure}{.31\textwidth}
-
-\centering
-
-\includegraphics[width=0.30\unitlength]{images/path_images/up_3}
-
-\caption{\label{fig:dataP_up_3} Obstacle is at the End of the Path.}
-
-\end{subfigure}
-
-\caption{\label{fig:dataP_up} A Test Scenario: Upward Inclined Obstacle on the Path. \\ Upper Half: Proposed Tests, Lower Half: Results}
-
-\end{figure}
-
-
-\begin{figure}[H]
-
-\setlength{\unitlength}{\textwidth} 
-
-\centering
-
-\begin{subfigure}{.31\textwidth}
-
-\centering
-
-\includegraphics[width=0.30\unitlength]{images/path_images/par_1}
-
-\caption{\label{fig:dataP_par_1} Obstacle is at the Beginning of the Path}
-
-\end{subfigure}%
-\begin{subfigure}{.31\textwidth}
-
-\centering
-
-\includegraphics[width=0.30\unitlength]{images/path_images/par_2}
-
-\caption{\label{fig:dataP_par_2} Obstacle is at the Middle of the Path}
-
-\end{subfigure}
-\begin{subfigure}{.31\textwidth}
-
-\centering
-
-\includegraphics[width=0.30\unitlength]{images/path_images/par_3}
-
-\caption{\label{fig:dataP_par_3} Obstacle is at the End of the Path.}
-
-\end{subfigure}
-
-\caption{\label{fig:dataP_par} A Test Scenario: Parallel Placed Obstacle on the Path. \\ Upper Half: Proposed Tests, Lower Half: Results}
-
-\end{figure}		
-
-
-\begin{figure}[H]
-
-\setlength{\unitlength}{\textwidth} 
-
-\centering
-
-\begin{subfigure}{.31\textwidth}
-
-\centering
-
-\includegraphics[width=0.30\unitlength]{images/path_images/inside-bb}
-
-\caption{\label{fig:dataP_inside-bb} Path is Placed on Black Marble}
-
-\end{subfigure}%
-\begin{subfigure}{.31\textwidth}
-
-\centering
-
-\includegraphics[width=0.30\unitlength]{images/path_images/inside-bw}
-
-\caption{\label{fig:dataP_inside-bw} Path is Placed on Black and White Marble}
-
-\end{subfigure}
-\begin{subfigure}{.31\textwidth}
-
-\centering
-
-\includegraphics[width=0.30\unitlength]{images/path_images/inside-ww}
-
-\caption{\label{fig:dataP_inside-ww} Path is Placed on White Marble}
-
-\end{subfigure}
-
-\caption{\label{fig:dataP_inside} A Test Scenario Results: KKM Indoor Path Detection}
-
-\end{figure}
-
-
-\begin{figure}[H]
-
-\setlength{\unitlength}{\textwidth} 
-
-\centering
-
-\begin{subfigure}{.31\textwidth}
-
-\centering
-
-\includegraphics[width=0.30\unitlength]{images/path_images/outsideObs0}
-
-\caption{\label{fig:dataP_outsideObs0} Daylight and Shadow Test-1}
-
-\end{subfigure}%
-\begin{subfigure}{.31\textwidth}
-
-\centering
-
-\includegraphics[width=0.30\unitlength]{images/path_images/outsideObs1}
-
-\caption{\label{fig:dataP_outsideObs1} Daylight and Shadow Test-2}
-
-\end{subfigure}
-\begin{subfigure}{.31\textwidth}
-
-\centering
-
-\includegraphics[width=0.30\unitlength]{images/path_images/outsideObs2}
-
-\caption{\label{fig:dataP_outsideObs2} Daylight and Shadow Test-3}
-
-\end{subfigure}
-
-\caption{\label{fig:dataP_outside} A Test Scenario Results: KKM Outdoor Path Detection}
-
-\end{figure}
-
-\begin{figure}[h!]
-	\includegraphics[width=.95\textwidth,center]{images/stabilityTestI}
-	\caption{ Left: The Vehicle is placed on Straight Area.\\ Right: The Control Outputs \label{fig:stabilityTestI-dist} }
-\end{figure}		
-
-\begin{figure}[h!]
-	
-	\includegraphics[width=.95\textwidth,center]{images/stabilityTestS}
-	
-	\caption{ Left: The Vehicle is placed on Bended Area.\\ Right: The Control Outputs \label{fig:stabilityTestS-dist} }
-	
-\end{figure}	
-\begin{figure}[h!]
-	
-	\includegraphics[width=.95\textwidth,center]{images/stabilityTestU}
-	
-	\caption{ Left: The Vehicle is placed on Curved Area.\\ Right: The Control Outputs \label{fig:stabilityTestU-dist} }
-	
-\end{figure}	
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1703,146 +1102,92 @@ This section presents followed test procedures and the outcome of the tests.
 
 
 
-\item PID Parameters Test for Given Input:	 \label{test:a}	
+\item PID Parameters Tuning Test :	 \label{test:a}	
 
 \begin{enumerate}
-
-\item Connect the Vehicle Motors to Motor Controller  
-
-\item Connect the Motor Driver to Arduino  
-
-\item Give the angle value that the subsystem should compensate   
-
-\item Give the power to the motors  
-
-\item Observe the behaviour of the vehicle  
-
-\item If the vehicle rotates with an angle given in step 3 without any feedback given, the result of the test can be considered as success.  
-
+	\item Charge each Li-Po battery cell  up to 3.95 V
+	\item Check the regulator output voltage, if it is not at 10.44, play with internal potentiometer to make it so  
+	\item Start the data processing from Raspberry Pi
+	\item Equate $K_d$ and $K_i$ values to zero
+	\item Give the power to the motors  
+	\item Sweep the $K_p$ value to follow the part wityh unstable, oscillatory behaivor
+	\item Sweep the $K_d$ value to damp these oscillation, stop before the system become unstable
+	\item Sweep the $K_i$ value to reduce steady-state error, stop before the system become unstable	
+	\item Observe the behaviour of the vehicle  
+	\item If the vehicle is able to complete the path at ten consecutive lap, the controller can be classified as working.  
 \end{enumerate}
 
 
 \item Bump Test for Distance Control: \label{test:b}	
 
 \begin{enumerate}
-
-\item Set-up a lane as in \textit{Figure~\ref{fig:bump-dist}}.
-
-\item Make the necessary connection between motors Arduino and data processing unit  
-
-\item Drive the vehicle with PID parameters to be tested.
-
-\item Collect the distance error between the center of the lane and current position of the vehicle.
-
-\item Plot the time vs distance graph at Matlab using the collected distance errors.
-
-\item Calculate necessary performance parameters from the plot.
-
-
+	\item Set-up a lane as in \textit{Figure~\ref{fig:bump-dist}}.
+	\item Make the necessary connection between motors Arduino and data processing unit  
+	\item Drive the vehicle with PID parameters to be tested.
+	\item Collect the distance error between the center of the lane and current position of the vehicle.
+	\item Plot the time vs distance graph at Matlab using the collected distance errors.
+	\item Calculate necessary performance parameters from the plot.
 \end{enumerate}
 
 
-\begin{figure}[h]
-
-\includegraphics[width=0.75\textwidth,center]{images/bump_test_dist}
-
-\caption{Bump Test for Distance Control \label{fig:bump-dist} }
-
+\begin{figure}[H]
+	\includegraphics[width=0.75\textwidth,center]{images/bump_test_dist}
+	\caption{Bump Test for Distance Control \label{fig:bump-dist} }
 \end{figure}		
-
-
-\item Bump Test for Angle Control: \label{test:c}	
-
-\begin{enumerate}
-
-\item Set-up a lane as in \textit{Figure~\ref{fig:bump-ang}}.
-
-\item Follow similar steps with \textit{Bump Test for Distance Control}, this time, however, collect the error angle information and plot accordingly.
-
-
-\end{enumerate}
-
-
-\begin{figure}[h]
-
-\includegraphics[width=0.45\textwidth,center]{images/bump_test_ang}
-
-\caption{Bump Test for Angle Control \label{fig:bump-ang} }
-
-\end{figure}		
-
-
-\item Path Tracking Test: \label{test:d}	
-
-\begin{enumerate}
-
-\item Make the necessary connection between motors Arduino and data processing unit  
-
-\item Place the vehicle to the desired empty path   
-
-\item Observe the behaviour of the vehicle  
-
-\item If the vehicle can follow the path smoothly, the result of the test can be considered as success.  
-
-\end{enumerate}
 
 
 
 \item Tracking a Path with Obstacles Test:	\label{test:e}	
 
 \begin{enumerate}
-
-\item Make the necessary connection between motors Arduino and data processing unit  
-
-\item Place the vehicle to the desired path with obstacles  
-
-\item Observe the behaviour of the vehicle  
-
-\item If the vehicle can follow the path and compensate the steady state errors due to obstacles without showing oscillatory behaviour and in a reasonable time (in less than 2 seconds), the result of the test can be considered as success.  
+	\item Make the necessary connection between motors Arduino and data processing unit  
+	\item Place the vehicle to the desired path with obstacles  
+	\item Observe the behaviour of the vehicle  
+	\item If the vehicle can follow the path and compensate the steady state errors due to obstacles without showing oscillatory behaviour and in  less than 2 seconds, the result of the test can be considered as success.  
 
 \end{enumerate}
-
-
 
 \item Path Tracking Test with Physical Disturbances: \label{test:f}	
 
 \begin{enumerate}
+	\item Make the necessary connection between motors Arduino and data processing unit  
+	\item Place the vehicle to the desired empty path   
+	\item Observe the behaviour of the vehicle  
+	\item If the vehicle can follow the path and compensate the steady state errors due to physical disturbance without showing oscillatory behaviour and in less than 2 seconds, the result of the test can be considered as success.  
+\end{enumerate}
 
-\item Make the necessary connection between motors Arduino and data processing unit  
+\item Sampling Time Consistency Test: \label{test:g}	
 
-\item Place the vehicle to the desired empty path   
-
-\item Observe the behaviour of the vehicle  
-
-\item If the vehicle can follow the path and compensate the steady state errors due to physical disturbance without showing oscillatory behaviour and in a reasonable time (in less than 2 seconds), the result of the test can be considered as success.  
-
+\begin{enumerate}
+	\item Make the necessary connection between motors Arduino and data processing unit  
+	\item Place the vehicle to the desired empty path   
+	\item Record the data proccessing time of each frame to a text file.
+	\item Plot the time vs processing time plot.
+	\item If the processing time, i.e., sampling time of the plant is oscillating inside $10\%$ band of thesampling time value used by PID controller subsystem, the test can be classified as success.
 \end{enumerate}
 
 
 
 
+\subsubsection*{Results of PID Controller Subsystem Tests}
 
-\item{Results of PID Controller Subsystem Tests}
-
-	\begin{figure}[t!]
-		\setlength{\unitlength}{\textwidth} 
-		\centering
-			\begin{subfigure}{.46\textwidth}
-			\centering
-			\includegraphics[width=0.44\unitlength]{images/ROT_ROI/ccwLapTime_crop}
-			\caption{\label{fig:ccwLapTime} CCW Lap Times}
-		\end{subfigure}%
-		\begin{subfigure}{.46\textwidth}
-			\centering
-			\includegraphics[width=0.44\unitlength]{images/ROT_ROI/cwLapTime_crop}
-			\caption{\label{fig:cwLapTime} CW Lap Times}
-		\end{subfigure}
-		\caption{\label{fig:LapTimes} A Sample Scenario on Eliminating Incorrect Lines}
+	The resuts for \textit{PID Parameters Tuning Test} can be seen at \textit{Figures~\ref{fig:ccwLapTime}~\&~\ref{fig:cwLapTime}}. The results satisfied the claimed succes requirement by completing at least 20 consecutive lap in one run for both direction. The controller also showed satisfactory performance to other test.
+	
+	\begin{figure}[H]
+		\includegraphics[width=\textwidth,center]{images/ROT_ROI/ccwLapTime_crop}
+		\caption{\label{fig:ccwLapTime} Results of PID Tune Test for CCW Movement on the Path}
 	\end{figure}
 
-	\begin{figure}[h]
+	\begin{figure}[H]
+		\includegraphics[width=\textwidth,center]{images/ROT_ROI/ccwLapTime_crop}
+		\caption{\label{fig:cwLapTime} Results of PID Tune Test for CW Movement on the Path}
+	\end{figure}
+
+	The resuts for \textit{ Sampling Time Consistency Test} proved the stability of the \textit{Data Processing Unit} and the relaibility of the PID Controller Subsystem, since the sampling time for the discrete time systems is very crucial and should be consistent at all time. 
+
+	\begin{figure}[H]
 		\includegraphics[width=\textwidth,center]{images/ROT_ROI/ProcessTime_crop}
-		\caption{Block Diagram of the Project and the Interaction of the Subsystems}\label{fig:blockdiagram}
+		\caption{Sampling Time Consistency Test Result }\label{fig:blockdiagram}
 	\end{figure}
 
 \end{enumerate}
@@ -2018,48 +1363,49 @@ The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit
 
 \begin{enumerate}
 
-\item Determination of Base Speed: \label{test:a2}	
+	
+	\item Determination of Minimum Base Speed Coefficients Test: \label{test:a2}		
+	\begin{enumerate}
+		\item Charge each Li-Po battery cell  up to 3.95 V
+		\item Check the regulator output voltage, if it is not at 10.44, play with internal potentiometer to make it so  
+		\item Start the data processing from Raspberry Pi
+		\item Use the PID parameter values determined at \textit{Test~\ref{test:a}}
+		\item Give the power to the motors  
+		\item Sweep the $K_{min1}$ value to find large enough minimum PWM value so that the vehicle do not leave the lane at corners
+		\item Sweep the $K_{min2}$ value to find large enough minimum PWM value that the vehicle do not speed up too much on straight sections of the path so that it does not enter the corners too fast.
+		\item Observe the behaviour of the vehicle  
+		\item If the vehicle is able to complete the path at ten consecutive lap, the coefficients can be classified as working. Record these values  
+	\end{enumerate}
 
-\begin{enumerate}
+	\item Determination of Maximum Base Speed Coefficients Test: \label{test:a2}		
+	\begin{enumerate}
+		\item Charge each Li-Po battery cell  up to 3.95 V
+		\item Check the regulator output voltage, if it is not at 10.44, play with internal potentiometer to make it so  
+		\item Start the data processing from Raspberry Pi
+		\item Use the PID parameter values determined at \textit{Test~\ref{test:a}}
+		\item Give the power to the motors  
+		\item Sweep the $K_{max}$ value to find small enough minimum PWM value so that the vehicle do not speed up too much on straight sections of the path so that it does not enter the corners too fast.
+		\item Observe the behaviour of the vehicle  
+		\item If the vehicle is able to complete the path at ten consecutive lap, the coefficient can be classified as working.  
+	\end{enumerate}
 
-\item Set $\beta$ value that is supplied to \textit{Speed Subsystem} equal to zero.
-
-\item Give PWM Base as 255 RPM and observe the vehicle on the path 
-
-\item Decrease the PWM Value by 10 PWM and observe the vehicle.
-
-\item Repeat the step 3 until the desired base speed value is observed.
-
-\item Record this value.
-
-\end{enumerate}
-
-
-\item Determination of Constant $K_1$:
-
-\begin{enumerate}
-
-\item Use the PWM Base value determined at the \textit{Test~\ref{test:a2}}
-
-\item Set $\beta$ value that is supplied to \textit{Speed Subsystem} equal to ten degree.
-
-\item Set $K_1$ value equal to one and observe the vehicle on the path.
-
-\item Increase the coefficient $K_1$ and observe the behaviour of the vehicle on the path.
-
-\item Repeat step 4 until the desired coefficient $K_1$ is determined.
-
-\item Record this value.
-
-\end{enumerate}
-
-
-
-
-\item{Results of Speed Subsystem Tests}
+	\item Determination of Slow Down Coefficients Test: \label{test:a2}		
+	\begin{enumerate}
+		\item Charge each Li-Po battery cell  up to 3.95 V
+		\item Check the regulator output voltage, if it is not at 10.44, play with internal potentiometer to make it so  
+		\item Start the data processing from Raspberry Pi
+		\item Use the PID parameter values determined at \textit{Test~\ref{test:a}}
+		\item Give the power to the motors  
+		\item Sweep the $K_1$ value to find large enough value so that the vehicle slow down properly but does not saturate to the minimum PWM limit
+		\item Observe the behaviour of the vehicle  
+		\item If the vehicle is able to complete the path at ten consecutive lap, the coefficient can be classified as working.  
+	\end{enumerate}
 
 
+	\subsubsection*{Results of Speed Subsystem Tests}
 
+	The result of each parameter tuning test can be found at \textit{Figure~\ref{fig:baseSpeedExp}}
+	
 	\begin{figure}[h]
 		\includegraphics[width=\textwidth,center]{images/ROT_ROI/baseSpeedExp_crop}
 		\caption{Experimental Base Speed PWM vs Experimental $\beta$ Angle}\label{fig:baseSpeedExp}
@@ -2252,7 +1598,11 @@ The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit
 		%Li-Po battery has these specs: 1750 mAh 11.1V 3S 25C, so it can supply 43 ampere constants during discharge although the motors demand 1.1 ampere at stall condition. 
 
 		% All in all, sources are completely enough for consumption even in the worst case conditions.   
-
+	
+	\begin{figure}[h]
+		\includegraphics[width=\textwidth,center]{images/ROT_ROI/voltageSupply_crop}
+		\caption{The Relation Between Supply Voltage from Powerbank vs Process Time}\label{fig:processTime}
+	\end{figure}
 
 	\begin{figure}[H]
 		\includegraphics[width=0.5\textwidth,center]{images/elec_arch}

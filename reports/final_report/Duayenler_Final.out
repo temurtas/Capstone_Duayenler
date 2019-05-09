@@ -5,42 +5,38 @@
 \BOOKMARK [3][-]{subsubsection.3.1.1}{Lane Detection Subsystem}{subsection.3.1}% 5
 \BOOKMARK [3][-]{subsubsection.3.1.2}{Vehicle Detection Subsystem}{subsection.3.1}% 6
 \BOOKMARK [2][-]{subsection.3.2}{Computation System}{section.3}% 7
-\BOOKMARK [3][-]{subsubsection.3.2.1}{Data Processing Subsystem}{subsection.3.2}% 8
-\BOOKMARK [3][-]{subsubsection.3.2.2}{PID Controller Subsystem}{subsection.3.2}% 9
-\BOOKMARK [2][-]{subsection.3.3}{Communication System}{section.3}% 10
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Internal Communication Subsystem}{subsection.3.3}% 11
-\BOOKMARK [3][-]{subsubsection.3.3.2}{External Communication Subsystem}{subsection.3.3}% 12
-\BOOKMARK [2][-]{subsection.3.4}{Driving System}{section.3}% 13
-\BOOKMARK [3][-]{subsubsection.3.4.1}{Direction Subsystem}{subsection.3.4}% 14
-\BOOKMARK [3][-]{subsubsection.3.4.2}{Speed Subsystem}{subsection.3.4}% 15
-\BOOKMARK [2][-]{subsection.3.5}{Motion System}{section.3}% 16
-\BOOKMARK [3][-]{subsubsection.3.5.1}{Wheels Subsystem}{subsection.3.5}% 17
-\BOOKMARK [3][-]{subsubsection.3.5.2}{Motors Subsystem}{subsection.3.5}% 18
-\BOOKMARK [2][-]{subsection.3.6}{Structure System}{section.3}% 19
-\BOOKMARK [3][-]{subsubsection.3.6.1}{Chassis Subsystem}{subsection.3.6}% 20
-\BOOKMARK [3][-]{subsubsection.3.6.2}{Printed Circuit Board Subsystem}{subsection.3.6}% 21
-\BOOKMARK [2][-]{subsection.3.7}{Compatibility of the Subsystems}{section.3}% 22
-\BOOKMARK [1][-]{section.4}{Detailed Tests for the Subsystems}{}% 23
-\BOOKMARK [2][-]{subsection.4.1}{Lane Detection Subsystem Tests and Results}{section.4}% 24
-\BOOKMARK [2][-]{subsection.4.2}{Vehicle Detection Subsystem Tests and Results}{section.4}% 25
-\BOOKMARK [2][-]{subsection.4.3}{Data Processing Subsystem Tests and Results}{section.4}% 26
-\BOOKMARK [2][-]{subsection.4.4}{PID Controller Subsystem Tests and Results}{section.4}% 27
-\BOOKMARK [2][-]{subsection.4.5}{Internal Communication Subsystem Tests and Results}{section.4}% 28
-\BOOKMARK [2][-]{subsection.4.6}{External Communication Subsystem Tests and Results}{section.4}% 29
-\BOOKMARK [2][-]{subsection.4.7}{Direction Subsystem Tests and Results}{section.4}% 30
-\BOOKMARK [2][-]{subsection.4.8}{Speed Subsystem Tests and Results}{section.4}% 31
-\BOOKMARK [2][-]{subsection.4.9}{Wheels Subsystem Tests and Results}{section.4}% 32
-\BOOKMARK [2][-]{subsection.4.10}{Motors Subsystem Tests and Results}{section.4}% 33
-\BOOKMARK [2][-]{subsection.4.11}{Chassis Subsystem Tests and Results}{section.4}% 34
-\BOOKMARK [2][-]{subsection.4.12}{Printed Circuit Board Subsystem Tests and Results}{section.4}% 35
-\BOOKMARK [1][-]{section.5}{Budget}{}% 36
-\BOOKMARK [2][-]{subsection.5.1}{Actual Expenditures}{section.5}% 37
-\BOOKMARK [2][-]{subsection.5.2}{Cost Analysis of Reproducible Product}{section.5}% 38
-\BOOKMARK [1][-]{section.6}{Power Analysis}{}% 39
-\BOOKMARK [1][-]{section.7}{Deliverables}{}% 40
-\BOOKMARK [1][-]{section.8}{Discussions}{}% 41
-\BOOKMARK [2][-]{subsection.8.1}{Safety Issues}{section.8}% 42
-\BOOKMARK [2][-]{subsection.8.2}{Application Areas}{section.8}% 43
-\BOOKMARK [2][-]{subsection.8.3}{Environmental Effects}{section.8}% 44
-\BOOKMARK [1][-]{section.9}{Conclusion}{}% 45
-\BOOKMARK [1][-]{Appendix.a.A}{Appendix USER MANUAL}{}% 46
+\BOOKMARK [3][-]{subsubsection.3.2.1}{PID Controller Subsystem}{subsection.3.2}% 8
+\BOOKMARK [2][-]{subsection.3.3}{Communication System}{section.3}% 9
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Internal Communication Subsystem}{subsection.3.3}% 10
+\BOOKMARK [3][-]{subsubsection.3.3.2}{External Communication Subsystem}{subsection.3.3}% 11
+\BOOKMARK [2][-]{subsection.3.4}{Driving System}{section.3}% 12
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Direction Subsystem}{subsection.3.4}% 13
+\BOOKMARK [3][-]{subsubsection.3.4.2}{Speed Subsystem}{subsection.3.4}% 14
+\BOOKMARK [2][-]{subsection.3.5}{Motion System}{section.3}% 15
+\BOOKMARK [3][-]{subsubsection.3.5.1}{Wheels Subsystem}{subsection.3.5}% 16
+\BOOKMARK [3][-]{subsubsection.3.5.2}{Motors Subsystem}{subsection.3.5}% 17
+\BOOKMARK [2][-]{subsection.3.6}{Structure System}{section.3}% 18
+\BOOKMARK [3][-]{subsubsection.3.6.1}{Chassis Subsystem}{subsection.3.6}% 19
+\BOOKMARK [3][-]{subsubsection.3.6.2}{Printed Circuit Board Subsystem}{subsection.3.6}% 20
+\BOOKMARK [2][-]{subsection.3.7}{Compatibility of the Subsystems}{section.3}% 21
+\BOOKMARK [1][-]{section.4}{Detailed Tests for the Subsystems}{}% 22
+\BOOKMARK [2][-]{subsection.4.1}{PID Controller Subsystem Tests and Results}{section.4}% 23
+\BOOKMARK [2][-]{subsection.4.2}{Internal Communication Subsystem Tests and Results}{section.4}% 24
+\BOOKMARK [2][-]{subsection.4.3}{External Communication Subsystem Tests and Results}{section.4}% 25
+\BOOKMARK [2][-]{subsection.4.4}{Direction Subsystem Tests and Results}{section.4}% 26
+\BOOKMARK [2][-]{subsection.4.5}{Speed Subsystem Tests and Results}{section.4}% 27
+\BOOKMARK [2][-]{subsection.4.6}{Wheels Subsystem Tests and Results}{section.4}% 28
+\BOOKMARK [2][-]{subsection.4.7}{Motors Subsystem Tests and Results}{section.4}% 29
+\BOOKMARK [2][-]{subsection.4.8}{Chassis Subsystem Tests and Results}{section.4}% 30
+\BOOKMARK [2][-]{subsection.4.9}{Printed Circuit Board Subsystem Tests and Results}{section.4}% 31
+\BOOKMARK [1][-]{section.5}{Budget}{}% 32
+\BOOKMARK [2][-]{subsection.5.1}{Actual Expenditures}{section.5}% 33
+\BOOKMARK [2][-]{subsection.5.2}{Cost Analysis of Reproducible Product}{section.5}% 34
+\BOOKMARK [1][-]{section.6}{Power Analysis}{}% 35
+\BOOKMARK [1][-]{section.7}{Deliverables}{}% 36
+\BOOKMARK [1][-]{section.8}{Discussions}{}% 37
+\BOOKMARK [2][-]{subsection.8.1}{Safety Issues}{section.8}% 38
+\BOOKMARK [2][-]{subsection.8.2}{Application Areas}{section.8}% 39
+\BOOKMARK [2][-]{subsection.8.3}{Environmental Effects}{section.8}% 40
+\BOOKMARK [1][-]{section.9}{Conclusion}{}% 41
+\BOOKMARK [1][-]{Appendix.a.A}{Appendix USER MANUAL}{}% 42

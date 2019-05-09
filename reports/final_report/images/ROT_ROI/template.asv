@@ -4,7 +4,7 @@ clear
 
 %% -
 load 'voltageSupply.txt'
-h0=figure('units','normalized','outerposition',[0 0 0.45 0.45])
+h0=figure('units','normalized','outerposition',[0 0 0.75 0.6])
 number=voltageSupply(:,1);
 voltage=voltageSupply(:,2);
 processTime=voltageSupply(:,3);
@@ -24,7 +24,7 @@ print(h0,sprintf('voltageSupply.png'),'-dpng','-r600')
 close(h0)
 %% -
 load 'testTime.txt'
-h1=figure('units','normalized','outerposition',[0 0 0.45 0.45])
+h1=figure('units','normalized','outerposition',[0 0 0.75 0.6])
 time=testTime(:,1);
 times=time/1000
 basetimes=times(1)
