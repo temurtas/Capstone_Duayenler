@@ -641,24 +641,24 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 
 \subsubsection{PID Controller Subsystem}\label{sect:ControllerSubsystem}
 
-	\todo{This subsubsection was rewritten for final report}
+\todo{This subsubsection was rewritten for final report}
+\begin{enumerate}
+	\item {Requirements for the Solution}
+	
 	\begin{enumerate}
-		\item {Requirements for the Solution}
-
-		\begin{enumerate}
-			\item The subsystem should be able to control the motors
-			\item The subsystem should be able to react the external disturbances
-		\end{enumerate} 
-
-
+		\item The subsystem should be able to control the motors
+		\item The subsystem should be able to react the external disturbances
+	\end{enumerate} 
+	
+	
 	\item {Solution for the Subsystem}
-
-
+	
+	
 	\textit{PID Controller Subsection} is the main subsystem of the vehicle whose reponsibility is keeping the vehicle at the middle of the path it is following. To achieve this task, this subsystem includes a PID controller for the lateral movement of the vehicle. As the achieved purpose is to stay in the middle of the lane, this subsystem creates a PWM differences between motors in order to rotate the vehicle via differential drive. 
-
-
+	
+	
 	For that purpose, the \textit{Data Processing Subsystem} produces the necessary feedback elements for this subsystem. For the control purpose, in ideal circumstances data processing unit determines eight main point on its vision to create processed variables as in \textit{Figure~\ref{fig:controlled-vars}}. These can be explained namely as;
-
+	
 	\begin{itemize}
 		\item \textbf{A1 \& A2:} Beginning and end points of left line at ROT (Region of Target).
 		\item \textbf{B1 \& B2:} Beginning and end points of right line at ROT.	
@@ -667,11 +667,11 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 		\item \textbf{Lane Center Back (LCB):} The middle point of the lane at the starting of the ROT. Can be found by averaging $A1$ $\&$ $B1$.
 		\item \textbf{Lane Center Front (LCF):} The middle point of the lane at the end of the ROT. Can be found by averaging $A2$ $\&$ $B2$.
 	\end{itemize}	   
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	
 	\begin{figure}[H]
 		\setlength{\unitlength}{\textwidth} 
 		\centering
@@ -687,22 +687,22 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 		\end{subfigure}
 		\caption{\label{fig:controlled-vars} Controlled Variables of the System }
 	\end{figure}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	
 	By utilizing these points and their coordinates, the data processing can produce four main variables that can bee used for PID controller and speed subsystems. These are;
-
+	
 	\begin{itemize}
 		\item \textbf{$\alpha$:} The angle between the current direction of the vehicle and the direction the vehicle should follow in order to arrive at point \textbf{LCF}. It is a main controlled variable for lateral position control with angle variable.
 		\item \textbf{$\beta$:} The angle of the line that connects the points \textbf{LCB} and \textbf{LCF}. It represents the angle of the lane, and it can be used for longitudinal movement control in speed subsystem.
 		\item \textbf{y1:} The instantaneous distance error of the vehicle from the center line. It can be calculated by subtracting the x-coordinate of \textbf{LCB} from the x-coordinate of \textbf{ICB}. Due to delays in the system, it is not fed to controller. However, it is a quite useful variable for observing the system.  
 		\item \textbf{y2:} The expected distance error of the vehicle from the center line at the end of ROT. It can be calculated by subtracting the x-coordinate of \textbf{LCF} from the x-coordinate of \textbf{ICF}. This results in a distance in a scale of pixels, to convert this to a distance in centimeter, the error can be multiplies by a constant. It is a main controlled variable for lateral position control with distance variable.
 	\end{itemize}	 			
-
-
-
+	
+	
+	
 	In our application, we have decided to use distance variable $y_1$ and angle variable for control purposes. The main pupose of the PID Subsystem is to compansate the lateral distance error of the vehicle, i.e., staying exactly on the center lane. In our control design, we have descided to use $y_1$ as control signal and, zero as reference signal. Basic block diagram can be seen at \textit{Figure~\ref{fig:blockdiagram}}. The output of this PID controller then send to the DC motors as PWM difference. The actual base PWM is produced by the Speed Subsystem.
 	
 	
@@ -710,48 +710,48 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 		\includegraphics[width=\textwidth,center]{images/Simulink/Block_Diagram}
 		\caption{Block Diagram of the Project and the Interaction of the Subsystems}\label{fig:blockdiagram}
 	\end{figure}
-
-
-
-%\subsubsection*{Modelling the Plant}
-
+	
+	
+	
+	%\subsubsection*{Modelling the Plant}
+	
 	%Modelling a plant is a good practice in controller design applications, however, in our case the model for the vehicle is unstable, thus applying a bump test as in \textit{Figure~\ref{fig:bump2}} results with a exponentially increasing processed data 'y2'. Thus, in this project, our aim is to apply bump test to closed loop system as in \textit{Figure~\ref{fig:bump1}} with a known P-controller. An approximate plant model from there can be found as follows;
-
+	
 	%$$ T(s)=\frac{G_c(s)G_p(s)}{1+G_c(s)G_p(s)} $$
-
+	
 	%If the overall step response can be modelled resulting with $T(s)$
-
-%$$\boxed{ G_p(s)=\frac{T(s)}{G_c(s)-T(s)G_c(s)} }$$ 
-
+	
+	%$$\boxed{ G_p(s)=\frac{T(s)}{G_c(s)-T(s)G_c(s)} }$$ 
+	
 	%Using this plant model, parameters for PID controller can be designed using \textit{Matlab Simulink}.
-
-
+	
+	
 	%\begin{figure}[h]
-		%\includegraphics[width=0.75\textwidth,center]{images/simulink/modelling2}
-		%\caption{Bump Test for the Unknown Plant \label{fig:bump2} }
+	%\includegraphics[width=0.75\textwidth,center]{images/simulink/modelling2}
+	%\caption{Bump Test for the Unknown Plant \label{fig:bump2} }
 	%\end{figure}
-
+	
 	%\begin{figure}[h]
-		%\includegraphics[width=1\textwidth,center]{images/simulink/modelling1}
-		%\caption{Bump Test for the Closed Loop System \label{fig:bump1} }
+	%\includegraphics[width=1\textwidth,center]{images/simulink/modelling1}
+	%\caption{Bump Test for the Closed Loop System \label{fig:bump1} }
 	%\end{figure}
-
+	
 	\subsubsection*{ Pulse Transfer Function of a Digital PID Controller }
-
+	
 	However, since the controller operates on the microcontroller, therby, on discrete-time domain. We firstly find its pulse transfer function and transferred it to discrete-time domain. General PID controller can be expressed in \textit{Laplace} domain as 
 	
 	
-		$$ G_c(s)=K_c(1+\frac{1}{\tau_I s}+\tau_d s )$$  
-		
+	$$ G_c(s)=K_c(1+\frac{1}{\tau_I s}+\tau_d s )$$  
+	
 	
 	\paragraph*{ Discritization of I Controller }
 	
-		Casual discrete time approximation of the I-Controller can be written as;
+	Casual discrete time approximation of the I-Controller can be written as;
 	
 	$$  y[k]=y[k-1]+\frac{u[k]+u[k-1]}{2}*T_s $$
 	
 	Where $y[k]$ is output and $u[k]$ is the output. Taking its Z-transform, the pulse transfer function becomes,
-		
+	
 	$$ Y(z) = Y(z) z^{-1}=\frac{T_s}{2}\left(U(z)+U(z)*z^{-1} \right) $$
 	
 	$$ G_I(z)=\frac{Y(z)}{U(z)}=\frac{T_s (1+Z^{-1})}{2 (1+Z^{-1})} $$
@@ -767,12 +767,12 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 	$$ Y(z) = Y(z) z^{-1}=\frac{T_s}{2}\left(E(z)+E(z) z^{-1} \right) $$
 	
 	$$ G_D(z)=\frac{Y(z)}{E(z)}=\frac{(1-Z^{-1})}{T_s} $$
-
-
+	
+	
 	Therefore pulse transfer function of the PID controller becomes,
 	
 	$$ G_{PID}(z)=K_p+	\frac{T_s (1+Z^{-1})}{2 (1+Z^{-1})} + \frac{(1-Z^{-1})}{T_s} $$
-
+	
 	$$ \boxed{	 G_{PID}(z)=\cfrac{K_p(1-z^{1})+K_i \frac{T_s (1+z^{-1})}{2}+K_d (1-2z^{-1}+z^{-2})}{1-z^{-1}}	}$$	
 	
 	\subsubsection*{Implementation of the PID Controller}
@@ -782,22 +782,22 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 	$$ +\cfrac{K_d}{T_s} E(z)-2 z^{-1} E(z)+\cfrac{K_d}{T_s} z^{-2} E(z)	$$
 	$$ y[k]-y[k-1]=K_p e[k]-K_p e[k-1]+\frac{K_i T_s}{2}+K_i T_s e[k-1]/2+\cfrac{K_d}{T_s} e[k]-2 e[k-1] \cfrac{K_d}{T_s}+ \cfrac{K_d}{T_s} e[k-2]	$$
 	$$ y[k]-y[k-1] = (K_p+\frac{K_i T_s}{2}+K_d) e[k]+(-K_p+\frac{K_i T_s}{2}-2 \cfrac{K_d}{T_s} ) e[k-1]+(\cfrac{K_d}{T_s}) e[k-2] $$
-
+	
 	If we add all past terms together to find $y[k]$,
 	
 	\begin{align*}
-		y[k]-y[k-1] = (K_p+\frac{K_i T_s}{2}+\cfrac{K_d}{T_s})&e[k]+(-K_p+\frac{K_i T_s}{2}-2 \cfrac{K_d}{T_s})e[k-1]..\\
-		+(K_d)&e[k-2]\\
-		y[k-1]-y[k-2] = (K_p+\frac{K_i T_s}{2}+\cfrac{K_d}{T_s})&e[k-1]+(-K_p+\frac{K_i T_s}{2}-2 \cfrac{K_d}{T_s})e[k-2]..\\
-		+(K_d)&e[k-3] \\
-		y[k-2]-y[k-1] = (K_p+\frac{K_i T_s}{2}+\cfrac{K_d}{T_s})&e[k-2]+(-K_p+\frac{K_i T_s}{2}-2 \cfrac{K_d}{T_s})e[k-3]..\\
-		+(K_d)&e[k-4]\\
-		...\\
-		...\\
-		y[k-n]-y[k-n-1] = (K_p+\frac{K_i T_s}{2}+\cfrac{K_d}{T_s})&e[k-n]+(-K_p+\frac{K_i T_s}{2}-2 \cfrac{K_d}{T_s})e[k-n-1]..\\
-		+(K_d)&e[k-n-2]\\
-		y[k]-y[k-n-1]= (K_p+\frac{K_i T_s}{2}+\cfrac{K_d}{T_s})&e[k] + (K_i T_s-\cfrac{K_d}{T_s})e[k-1] + (K_i T_s)e[k-2] ..\\ 
-		+ (K_i T_s)&e[k-2]  .... +  (K_i T_s)e[k-n-1]
+	y[k]-y[k-1] = (K_p+\frac{K_i T_s}{2}+\cfrac{K_d}{T_s})&e[k]+(-K_p+\frac{K_i T_s}{2}-2 \cfrac{K_d}{T_s})e[k-1]..\\
+	+(K_d)&e[k-2]\\
+	y[k-1]-y[k-2] = (K_p+\frac{K_i T_s}{2}+\cfrac{K_d}{T_s})&e[k-1]+(-K_p+\frac{K_i T_s}{2}-2 \cfrac{K_d}{T_s})e[k-2]..\\
+	+(K_d)&e[k-3] \\
+	y[k-2]-y[k-1] = (K_p+\frac{K_i T_s}{2}+\cfrac{K_d}{T_s})&e[k-2]+(-K_p+\frac{K_i T_s}{2}-2 \cfrac{K_d}{T_s})e[k-3]..\\
+	+(K_d)&e[k-4]\\
+	...\\
+	...\\
+	y[k-n]-y[k-n-1] = (K_p+\frac{K_i T_s}{2}+\cfrac{K_d}{T_s})&e[k-n]+(-K_p+\frac{K_i T_s}{2}-2 \cfrac{K_d}{T_s})e[k-n-1]..\\
+	+(K_d)&e[k-n-2]\\
+	y[k]-y[k-n-1]= (K_p+\frac{K_i T_s}{2}+\cfrac{K_d}{T_s})&e[k] + (K_i T_s-\cfrac{K_d}{T_s})e[k-1] + (K_i T_s)e[k-2] ..\\ 
+	+ (K_i T_s)&e[k-2]  .... +  (K_i T_s)e[k-n-1]
 	\end{align*}
 	
 	Therefore;
@@ -809,7 +809,7 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 	
 	
 	\paragraph*{Sampling Time Matching and Controller Output Limit}
-		
+	
 	In our implementation, the sampling time of the plant, i.e., the processing time in which the Raspberry Pi processes each picture frame is approximately 54 miliseconds, however, the sampling time of each Arduino loop is very small in comparison to our sampling time. To handle this proplem, we implemented delay function of the Arduino to match the sampling times.
 	
 	A saturation limit is also present to keep the overall PWM signal send to the DC motors within a 0-255 PWM range to prevent oscillation. Another saturation limit also controls the output of the controller subsystem to avoid any undesired errors that might happen at the video processing.
@@ -821,52 +821,63 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 		maxSum // Integral Wind-up term \\
 		Ts // Sampling time \\
 		// Update of past error array \\
-		\For { int i = pastSize - 1; i > 0; i--} {
+		\For { int i = (pastSize - 1) $\to$ 0 } {
 			pastError[i] = pastError[i - 1] 
 		} 
 		pastError[0] = error \\
 		// Calculation of Derivative Term \\
 		delta = (pastError[0] - pastError[1]) / Ts \\
 		// Calculation of Integral term \\
-		sum = min(max(sum + (pastError[0] + pastError[1] + pastError[2]) / 3 * Ts, -1 * maxSum), maxSum) \\
+		sum = sum + (pastError[0] + pastError[1] + pastError[2]) / 3 * Ts \\
+		sum = min(max(sum , -1 * maxSum), maxSum) // Anti-Wind-up  \\
 		// Calculation of PID output \\
-		motorCmd = int(Kp * error + Kd * delta + Ki * sum)		
-		motorCmd =  min(motorCmd,Max\_Delta\_PWM)
+		motorCmd = int(Kp * error + Kd * delta + Ki * sum)	\\	
+		motorCmd =  min(motorCmd,Max\_Delta\_PWM) \\
 		delay(Ts-duration) // duration:duration of each Arduino loop	
 		\caption{PID Controller Algorithm}
 		\label{algo:PID}
 	\end{algorithm}
-
+	
+	\paragraph*{Classification of Path Rotation}
+	
+	Due to unidealities of the motors, the controller tuned for the CCW movement failed to pass the test proposed under \textit{Section~4.4}, therefore, the PID parameters and the base speed parameters were seperated in order to have same performance at both sides. 
+	
+	It should be also noted that, the \textit{Data Processing Subsystem} produces $\beta$ in $0-180$ degree range if the path is located with a positive angle with respect to vehicle or produces $\beta$ in $180-360$ degree range otherwise.
+	In that notation sense, if the $\beta$ is in $0-180$ degree range the vehicle is being operated on a path at counterclockwise direction and at clockwise diirection if the $\beta$ is in $180-360$ degree range.
+	
+	However, since the main frame of the video input, i.e., orientation of the vehicle is moving constantly, the counterclockwise movement can be understood by the vehicle if an undesired input changes the direction of the vehicle dramatically. To avoid these undesired effect on the controller and base speed calculation, an array that holds past five angle information was created. At every frame, the angle classified as $1$ or $0$ according to its degree range. The purpose of this array is to elliminate the undesired rotation determination array by checking last five angle data. The basic algoithm can be further investigated at \textit{Algorithm~\ref{algo:rotation}}. 
+	
+	According to the value of \textit{yonFin} variable, PID parameters tuned for both direction is fed to the controller algorithm.
+	
+	\begin{algorithm}
+		\DontPrintSemicolon	
+		pastYon[yonSize] // Holds past rotations, has elements 0 or 1 \\
+		// Update pastYon array \\ 
+		\For {int i = (yonSize - 1) $\to$  0} {
+			pastyon[i] = pastyon[i - 1]
+		}
+		$ pastyon[0]=yon $\\
+		yonSum $=$ 0 \\
+		\For {int k $=$ 0  $\to$ (yonSize-1) }
+		{
+			$ yonSum = yonSum + pastyon[k] $
+		}
+		$ yonAvg=yonSum/yonSize $\\ 
+		\If { yonAvg  $<$  0.5} {
+			$yonFin=0$ 
+		}   
+		\Else {
+			$yonFin=1$ 
+		}
+		\caption{Path Rotation Classification Algorithm}
+		\label{algo:ratation}
+	\end{algorithm}
+	
 	\item {Discussions on the Solution}
 	
-	The proposed algorithm lacks the modelling of the system, thus, tuning of the PID parameters were handled by try and error. The state-space model of the plant will further be investigated under the term project of the another undergraduate course of our department, EE498:CONTROL SYSTEM DESIGN AND SIMULATION. However course, it was not included due to its incompleteness.	
+	The proposed algorithm lacks the modelling of the system, thus, tuning of the PID parameters were handled by try and error. The state-space model of the plant will further be investigated under the term project of the another undergraduate course of our department, EE498:CONTROL SYSTEM DESIGN AND SIMULATION. However, it was not included due to its incompleteness.	
 	
-	Other than the modelling part, the proposed methods are same as the ones proposed in the conceptual design review report. However, due to unidealities in the motors, the controller tuned for the CCW movement failed to pass the test proposed under \textit{Section~4.4}, therefore, the PID parameters and the base speed parameters were seperated in order to have same performance at both sides. To ensure the proper operation following algorithm is utilized.
-	
-	%\begin{algorithm}
-	%	\DontPrintSemicolon	
-	%// Update pastYon array \\ 
-	%\For {int i = (yonSize - 1) \Rightarrow  0} {
-	%	pastyon[i] = pastyon[i - 1]
-	%}
-	%$ pastyon[0]=yon $\\
-	% yonSum $=$ 0 \\
-	%\For {int k = 0 \Rightarrow (yonSize-1) }
-	%{
-	%	$ yonSum = yonSum + pastyon[k] $
-	%}
-	%$ yonAvg=yonSum/yonSize $\\ 
-	%\If {yonAvg < 0.5}{
-	%	$yonFin=0$  
-	%}   
-	%\Else {
-	%	$yonFin=1$ 
-	%}
-	%\caption{PID Controller Algorithm}
-	%\label{algo:PID}
-	%\end{algorithm}
-	
-	 
+	Other than the modelling part and rotation sensitivity, the proposed methods are same as the ones proposed in the conceptual design review report. And they function as expected. 
 
 
 \end{enumerate}
@@ -1052,8 +1063,8 @@ return;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Speed Subsystem}
-
-	\begin{enumerate}
+\todo{This part is rewritten for the final report}
+\begin{enumerate}
 	\item {Requirements for the Solution}
 	
 	\begin{enumerate}
@@ -1061,51 +1072,53 @@ return;
 		\item The subsystem should increase the vehicle speed at the wide lane
 		\item The subsystem should decrease the vehicle speed at the extreme disturbance  
 	\end{enumerate}
-
+	
 	\item {Solution for the Subsystem}
-
-		This subsystem is responsible for determining the base speed of the both DC motors. In order to do so, this subsystem produces a \textit{PWM Offsett} value that is sent to the \textit{Direction Subsystem}. To produce this PWM value, the lane angle value $\beta$ that was introduced in \textit{Section~\ref{sect:ControllerSubsystem}}.
-
-		Main algorithm of this subsystem relies on the inverse ratio principle, that is, as the lane angle increases the base speed for the motors is decreased. This can be formalized as follows;
-		
-		$$ PWM~Offset~=~K_{max}~-K_1 \beta$$
-		
-		where $K_{max}$ is the maximum PWM value the base PWM should reach as it is on the straight path, the value for $K_{max}$ can be determined by try and error test.
-		
-		However, it is also desired that the minimum PWM values shoul satisfy satisfying speed perfomance for the vehicle, therby a minimum PWM restrictions were put on this PWM calculation. It can be formulated as;
-		
-		$$ PWM~Offset~=~max\{ K_{max}~-K_1 \beta , K_{min} \}$$.
-		
-		where $K_{min}$ is the minimum allowable PWM value for the DC motors, and it can be found by try and error.	Moreover, since the path has varying properties, it was desired to have $K_{min}$ is also dependent on $\beta$ value. The implemented algorithm can be summuried at \textit{Algoritm~\ref{algo:baseSpeed}} and the hypotatical $\beta$ vs base PWM graph can be investigated at \textit{Figure~\ref{fig:baseSpeed}}.
-		
-		\begin{algorithm}
-			\DontPrintSemicolon			
-			\If{ $\beta > \beta_1$} {
-				$ K_{min}=K_{min1} $ \;
-			}	
-			\Else{
-				$ K_{min}=K_{min2} $ \;
-			}
-			$Base\_pwm=	max ( K_{max}~-K_1 * \beta , K_{min} ) $	
+	
+	This subsystem is responsible for determining the base speed of the both DC motors. In order to do so, this subsystem produces a \textit{PWM Offsett} value that is sent to the \textit{Direction Subsystem}. To produce this PWM value, the lane angle value $\beta$ that was introduced in \textit{Section~\ref{sect:ControllerSubsystem}}.
+	
+	Main algorithm of this subsystem relies on the inverse ratio principle, that is, as the lane angle increases the base speed for the motors is decreased. This can be formalized as follows;
+	
+	
+	$$ PWM~Offset ~=~K_{max}~-K_1 \beta$$
+	
+	where $K_{max}$ is the maximum PWM value the base PWM should reach as it is on the straight path, the value for $K_{max}$ can be determined by try and error test.
+	
+	However, it is also desired that the minimum PWM values shoul satisfy satisfying speed perfomance for the vehicle, therby a minimum PWM restrictions were put on this PWM calculation. It can be formulated as;
+	
+	$$ PWM~Offset~=~max\{ K_{max}~-K_1 \beta , K_{min} \}$$.
+	
+	where $K_{min}$ is the minimum allowable PWM value for the DC motors, and it can be found by try and error.	Moreover, since the path has varying properties, it was desired to have $K_{min}$ is also dependent on $\beta$ value. The implemented algorithm can be summuried at \textit{Algoritm~\ref{algo:baseSpeed}} and the hypotatical $\beta$ vs base PWM graph can be investigated at \textit{Figure~\ref{fig:baseSpeed}}.
+	
+	\begin{algorithm}
+		\DontPrintSemicolon			
+		\If{ $\beta > \beta_1$} {
+			$ K_{min}=K_{min1} $ \;
+		}	
+		\Else{
+			$ K_{min}=K_{min2} $ \;
+		}
+		$Base\_pwm=	max ( K_{max}~-K_1 * \beta , K_{min} ) $	
 		\caption{Base Speed Algorithm}
 		\label{algo:baseSpeed}
-		\end{algorithm}
-		
-		\begin{figure}[h]
-			\includegraphics[width=\textwidth,center]{images/ROT_ROI/baseSpeed_crop}
-			\caption{Therotical Base Speed PWM vs Theoratical $\beta$ Angle}\label{fig:baseSpeed}
-		\end{figure}
-
+	\end{algorithm}
 	
-
+	\begin{figure}[h]
+		\includegraphics[width=\textwidth,center]{images/ROT_ROI/baseSpeed_crop}
+		\caption{Therotical Base Speed PWM vs Theoratical $\beta$ Angle}\label{fig:baseSpeed}
+	\end{figure}
+	
+	
+	
 	\item {Discussions on the Solution}
-
-	%The main solution proposed in the conceptual design for the longitudinal speed control were not fully realizable for the project, thus the algorithm is improved by the usage of the road angle $\beta$. This improvement allowed us more robust results in our tests.
-
-	\end{enumerate}
+	
+	The main solution idea is the same as the one proposed at \textit{Conceptual Design Review Report}. The main difference is the dependency of the base PWM value on road rotation as it was explained in \textit{Section~\ref{sect:ControllerSubsystem}}. The test results proved that the algorithm provides satisfactory performance to control longitudinal speed. 
+	
+\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \subsection{Motion System}
 
@@ -1273,10 +1286,10 @@ return;
 
 
 \subsection{Compatibility of the Subsystems}
+"\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
+	The block diagram showing the interaction of the subsytem block with each other can be seen from the \textit{Figure~\ref{fig:subsys-block}}. As can be seen from the figure also that, there are two main path within the project. One of them starts by processing the camera vision by the \textit{Lane Detection Subsystem} and ends with the transfer of torque from \textit{Motors Subsystem} to \textit{Wheels Subsystem} which results with a movement of the vehicle. In this path the data before the \textit{PID Controller} and \textit{Speed} subsystems are processed within the Raspberry Pi without any problem, at this point the output data are transferred to Arduino by \textit{Internal Communication Subsystem} without any problem. The rest of this path is processed by the Arduino without any problem as well.
 
-	%The block diagram showing the interaction of the subsytem block with each other can be seen from the \textit{Figure~\ref{fig:subsys-block}}. As can be seen from the figure also that, there are two main path within the project. One of them starts by processing the camera vision by the \textit{Lane Detection Subsystem} and ends with the transfer of torque from \textit{Motors Subsystem} to \textit{Wheels Subsystem} which results with a movement of the vehicle. In this path the data before the \textit{PID Controller} and \textit{Speed} subsystems are processed within the Raspberry Pi without any problem, at this point the output data are transferred to Arduino by \textit{Internal Communication Subsystem} without any problem. The rest of this path is processed by the Arduino without any problem as well.
-
-	%The second path starts with the detection of the opponent by the \textit{Vehicle Detection Subsystem}. The path continues within the Raspberry Pi until the \textit{vehicle stop signal} is transferred to \textit{Motors Subsystem} by \textit{Internal Communication Subsystem} without any problem.
+	The second path starts with the detection of the opponent by the \textit{Vehicle Detection Subsystem}. The path continues within the Raspberry Pi until the \textit{vehicle stop signal} is transferred to \textit{Motors Subsystem} by \textit{Internal Communication Subsystem} without any problem.
 
 	\begin{figure}[h]
 		\includegraphics[width=\textwidth,center]{images/subsys_block}
@@ -1292,7 +1305,7 @@ return;
 
 
 \section{Detailed Tests for the Subsystems}\label{test_sec}
-This section presents followed test procedures and the outcome of the tests.
+	This section presents followed test procedures and the outcome of the tests.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection {Lane Detection Subsystem Tests and Results}	
@@ -1332,13 +1345,13 @@ This section presents followed test procedures and the outcome of the tests.
 
 \end{enumerate}
 
+\end{enumerate}
 
 
-
-\item{Results of Lane Detection Subsystem Tests}
+\subsubsection*{Results of Lane Detection Subsystem Tests}
 
 	The lane detection tests are conducted to asses reliability of the detection pipeline. A sample test result is shown in \textit{Figure~\ref{fig:laneD_test}}. The tests reveal that the subsystem satisfies its requirements by detecting lane lines. Note that, not all lines are detected, only the lines that are in the ROI are detected. One thing to note for the robustness of this subsystem is subsystem works as expected long as HSV filter is tuned for the medium.
-\end{enumerate}
+
 
 	\begin{figure}[h]
 		\includegraphics[width=0.75\textwidth,center]{images/laneD_test}
@@ -1415,16 +1428,15 @@ This section presents followed test procedures and the outcome of the tests.
 	
 	
 	
+\end{enumerate}
 	
-	
-	\item{Results of Vehicle Detection Subsystem Tests}
+	\subsubsection*{Results of Vehicle Detection Subsystem Tests}
 	
 	
 	All the test procedures mentioned at the \textbf{Section~\ref{sect:vhd}} is applied to the VL6180X Time-of-Flight distance sensor. At first, test results were satisfying for the back sensor, but not for the front one. Tests were repeated with switching front and rear sensors. Again, the sensor in the front of the vehicle measured erroneously. Then it is realized that the position of the front sensor is problematic. In the first design of the chasis, the front sensor was placed behind a hole under the the stick supporting camera. It is realized that this configuration was blocking the sensor. Then, in the second chasis design, front sensor is brought in front of the stick. After repeating tests results, it is confirmed that the problem with the front sensor is eliminated. 
 	
 	Time-of-flight sensors show very accurate result inside the closed environments like laboratory under artificial lights. The results under direct sunlight especially in CCC is also good as expected. In addition to the success in different light conditions test, the sensor shows very accurate result especially in \textit{Angled Approach Test}. According to test, the sensor gives correct results up to 30 degrees. Considering the fact that the path itself is elliptical and there would always be an angle between vehicle even though it may be very small for some cases, it is confirmed that time of flight sensors are quite good choice for this subsystem. 
 	
-\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1454,7 +1466,8 @@ This section presents followed test procedures and the outcome of the tests.
 	
 \end{enumerate}
 
-\item{Results of Data Processing Subsystem Tests}\label{sec:DataProcessingSubsystemTests}
+\end{enumerate}
+\subsubsection*{Results of Data Processing Subsystem Tests}\label{sec:DataProcessingSubsystemTests}
 
 	The tests asses the ability and performance of the subsystem. Numerous tests are made. The first set of tests cover the robustness of the subsystem by placing an obstacle of the subsystem. The test scenario and its results are presented in \textit{Figure~\ref{fig:dataP_down},\ref{fig:dataP_up} and \ref{fig:dataP_par}}. It can be seen that the algorithm ignores the obstacles in 7 cases out of 9 tests. In two cases, the algorithm fails to ignore the obstacles and determines the steering angle as if obstacle constitutes the lane line. Besides the results, on the presence of obstacles, in some particular obstacle placements, the output of the subsystem is observed to be unstable. Since the implementation is frozen after Conceptual Design Report, there has not been any significant change in the test performances since then.
 
@@ -1474,7 +1487,6 @@ This section presents followed test procedures and the outcome of the tests.
 		\label{tab:statisticalStability}
 	\end{table}
 
-\end{enumerate}
 \begin{figure}[H]
 
 \setlength{\unitlength}{\textwidth} 
@@ -1693,159 +1705,101 @@ This section presents followed test procedures and the outcome of the tests.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
+\newpage
 \subsection {PID Controller Subsystem Tests and Results}	
-
+\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
 \begin{enumerate}
-
-
-
-\item PID Parameters Test for Given Input:	 \label{test:a}	
-
-\begin{enumerate}
-
-\item Connect the Vehicle Motors to Motor Controller  
-
-\item Connect the Motor Driver to Arduino  
-
-\item Give the angle value that the subsystem should compensate   
-
-\item Give the power to the motors  
-
-\item Observe the behaviour of the vehicle  
-
-\item If the vehicle rotates with an angle given in step 3 without any feedback given, the result of the test can be considered as success.  
-
+	
+	
+	
+	\item PID Parameters Tuning Test :	 \label{test:a}	
+	
+	\begin{enumerate}
+		\item Charge each Li-Po battery cell  up to 3.95 V
+		\item Check the regulator output voltage, if it is not at 10.44, play with internal potentiometer to make it so  
+		\item Start the data processing from Raspberry Pi
+		\item Equate $K_d$ and $K_i$ values to zero
+		\item Give the power to the motors  
+		\item Sweep the $K_p$ value to follow the part wityh unstable, oscillatory behaivor
+		\item Sweep the $K_d$ value to damp these oscillation, stop before the system become unstable
+		\item Sweep the $K_i$ value to reduce steady-state error, stop before the system become unstable	
+		\item Observe the behaviour of the vehicle  
+		\item If the vehicle is able to complete the path at ten consecutive lap, the controller can be classified as working.  
+	\end{enumerate}
+	
+	
+	\item Bump Test for Distance Control: \label{test:b}	
+	
+	\begin{enumerate}
+		\item Set-up a lane as in \textit{Figure~\ref{fig:bump-dist}}.
+		\item Make the necessary connection between motors Arduino and data processing unit  
+		\item Drive the vehicle with PID parameters to be tested.
+		\item Collect the distance error between the center of the lane and current position of the vehicle.
+		\item Plot the time vs distance graph at Matlab using the collected distance errors.
+		\item Calculate necessary performance parameters from the plot.
+	\end{enumerate}
+	
+	
+	\begin{figure}[H]
+		\includegraphics[width=0.75\textwidth,center]{images/bump_test_dist}
+		\caption{Bump Test for Distance Control \label{fig:bump-dist} }
+	\end{figure}		
+	
+	
+	
+	\item Tracking a Path with Obstacles Test:	\label{test:e}	
+	
+	\begin{enumerate}
+		\item Make the necessary connection between motors Arduino and data processing unit  
+		\item Place the vehicle to the desired path with obstacles  
+		\item Observe the behaviour of the vehicle  
+		\item If the vehicle can follow the path and compensate the steady state errors due to obstacles without showing oscillatory behaviour and in  less than 2 seconds, the result of the test can be considered as success.  
+		
+	\end{enumerate}
+	
+	\item Path Tracking Test with Physical Disturbances: \label{test:f}	
+	
+	\begin{enumerate}
+		\item Make the necessary connection between motors Arduino and data processing unit  
+		\item Place the vehicle to the desired empty path   
+		\item Observe the behaviour of the vehicle  
+		\item If the vehicle can follow the path and compensate the steady state errors due to physical disturbance without showing oscillatory behaviour and in less than 2 seconds, the result of the test can be considered as success.  
+	\end{enumerate}
+	
+	\item Sampling Time Consistency Test: \label{test:g}	
+	
+	\begin{enumerate}
+		\item Make the necessary connection between motors Arduino and data processing unit  
+		\item Place the vehicle to the desired empty path   
+		\item Record the data proccessing time of each frame to a text file.
+		\item Plot the time vs processing time plot.
+		\item If the processing time, i.e., sampling time of the plant is oscillating inside $10\%$ band of thesampling time value used by PID controller subsystem, the test can be classified as success.
+	\end{enumerate}
+		
 \end{enumerate}
-
-
-\item Bump Test for Distance Control: \label{test:b}	
-
-\begin{enumerate}
-
-\item Set-up a lane as in \textit{Figure~\ref{fig:bump-dist}}.
-
-\item Make the necessary connection between motors Arduino and data processing unit  
-
-\item Drive the vehicle with PID parameters to be tested.
-
-\item Collect the distance error between the center of the lane and current position of the vehicle.
-
-\item Plot the time vs distance graph at Matlab using the collected distance errors.
-
-\item Calculate necessary performance parameters from the plot.
-
-
-\end{enumerate}
-
-
-\begin{figure}[h]
-
-\includegraphics[width=0.75\textwidth,center]{images/bump_test_dist}
-
-\caption{Bump Test for Distance Control \label{fig:bump-dist} }
-
-\end{figure}		
-
-
-\item Bump Test for Angle Control: \label{test:c}	
-
-\begin{enumerate}
-
-\item Set-up a lane as in \textit{Figure~\ref{fig:bump-ang}}.
-
-\item Follow similar steps with \textit{Bump Test for Distance Control}, this time, however, collect the error angle information and plot accordingly.
-
-
-\end{enumerate}
-
-
-\begin{figure}[h]
-
-\includegraphics[width=0.45\textwidth,center]{images/bump_test_ang}
-
-\caption{Bump Test for Angle Control \label{fig:bump-ang} }
-
-\end{figure}		
-
-
-\item Path Tracking Test: \label{test:d}	
-
-\begin{enumerate}
-
-\item Make the necessary connection between motors Arduino and data processing unit  
-
-\item Place the vehicle to the desired empty path   
-
-\item Observe the behaviour of the vehicle  
-
-\item If the vehicle can follow the path smoothly, the result of the test can be considered as success.  
-
-\end{enumerate}
-
-
-
-\item Tracking a Path with Obstacles Test:	\label{test:e}	
-
-\begin{enumerate}
-
-\item Make the necessary connection between motors Arduino and data processing unit  
-
-\item Place the vehicle to the desired path with obstacles  
-
-\item Observe the behaviour of the vehicle  
-
-\item If the vehicle can follow the path and compensate the steady state errors due to obstacles without showing oscillatory behaviour and in a reasonable time (in less than 2 seconds), the result of the test can be considered as success.  
-
-\end{enumerate}
-
-
-
-\item Path Tracking Test with Physical Disturbances: \label{test:f}	
-
-\begin{enumerate}
-
-\item Make the necessary connection between motors Arduino and data processing unit  
-
-\item Place the vehicle to the desired empty path   
-
-\item Observe the behaviour of the vehicle  
-
-\item If the vehicle can follow the path and compensate the steady state errors due to physical disturbance without showing oscillatory behaviour and in a reasonable time (in less than 2 seconds), the result of the test can be considered as success.  
-
-\end{enumerate}
-
-
-
-
-
-\item{Results of PID Controller Subsystem Tests}
-
-	\begin{figure}[t!]
-		\setlength{\unitlength}{\textwidth} 
-		\centering
-			\begin{subfigure}{.46\textwidth}
-			\centering
-			\includegraphics[width=0.44\unitlength]{images/ROT_ROI/ccwLapTime_crop}
-			\caption{\label{fig:ccwLapTime} CCW Lap Times}
-		\end{subfigure}%
-		\begin{subfigure}{.46\textwidth}
-			\centering
-			\includegraphics[width=0.44\unitlength]{images/ROT_ROI/cwLapTime_crop}
-			\caption{\label{fig:cwLapTime} CW Lap Times}
-		\end{subfigure}
-		\caption{\label{fig:LapTimes} A Sample Scenario on Eliminating Incorrect Lines}
+	
+	
+	\subsubsection*{Results of PID Controller Subsystem Tests}
+	
+	The resuts for \textit{PID Parameters Tuning Test} can be seen at \textit{Figures~\ref{fig:ccwLapTime}~\&~\ref{fig:cwLapTime}}. The results satisfied the claimed succes requirement by completing at least 20 consecutive lap in one run for both direction. The controller also showed satisfactory performance to other test.
+	
+	\begin{figure}[H]
+		\includegraphics[width=\textwidth,center]{images/ROT_ROI/ccwLapTime_crop}
+		\caption{\label{fig:ccwLapTime} Results of PID Tune Test for CCW Movement on the Path}
 	\end{figure}
-
-	\begin{figure}[h]
+	
+	\begin{figure}[H]
+		\includegraphics[width=\textwidth,center]{images/ROT_ROI/ccwLapTime_crop}
+		\caption{\label{fig:cwLapTime} Results of PID Tune Test for CW Movement on the Path}
+	\end{figure}
+	
+	The resuts for \textit{ Sampling Time Consistency Test} proved the stability of the \textit{Data Processing Unit} and the relaibility of the PID Controller Subsystem, since the sampling time for the discrete time systems is very crucial and should be consistent at all time. 
+	
+	\begin{figure}[H]
 		\includegraphics[width=\textwidth,center]{images/ROT_ROI/ProcessTime_crop}
-		\caption{Block Diagram of the Project and the Interaction of the Subsystems}\label{fig:blockdiagram}
+		\caption{Sampling Time Consistency Test Result }\label{fig:blockdiagram}
 	\end{figure}
 
-\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1872,14 +1826,14 @@ This section presents followed test procedures and the outcome of the tests.
 
 \end{enumerate}
 
+\end{enumerate}
 
 
-
-\item{Results of Internal Communication Subsystem Tests}
+\subsubsection*{Results of Internal Communication Subsystem Tests}
 
 
 	%The results are positive after all the necessary adjustments are done. The test is also repeated with the real lane detection algorithm and the real time sent data is read from LCD display connected to Arduino. The system was working properly at the rate at which lane detection algorithm produces data.
-\end{enumerate}
+
 
 
 
@@ -1955,7 +1909,7 @@ This section presents followed test procedures and the outcome of the tests.
 	
 	
 	
-	\item{Results of External Communication Subsystem Tests}
+	\subsubsection*{Results of External Communication Subsystem Tests}
 	
 	As mentioned in the design description section of the external communication subsystem, there exists a waiting period to receive messages from opponent. This duration, which is also called timeout, directly affects the frequency of the front sensor readings, because it is spent between consecutive readings. In the test results, setting it to high values(higher than 1s) gives good results in  \textit{Caught by the Opponent Test}, since it increases the probability to receive messages from the opponent. However, it results in crashing in \textit{Catching the Opponent Test}, because of the latency of the sensor reading. On the other hand, setting very low timeout(lower than 100 ms) speeds up the process and yields successful results in \textit{Catching the Opponent Test}. However, it decreases the probability of getting messages from the opponent, so \textit{Caught by the Opponent Test} fails. After test results, it is decided that 0.3 seconds is an appropriate value for timeout. By doing so, the probability of crashing is made lower and receiving messages is made higher.
 	
@@ -1966,107 +1920,89 @@ This section presents followed test procedures and the outcome of the tests.
 
 
 \subsection {Direction Subsystem Tests and Results}
+\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
+	\begin{enumerate}
+		\item Straight Drive Test: \label{test:a1}	
+		\begin{enumerate}
+			\item Make the necessary connections between motors, motor controller and the Arduino  
+			\item Set the PWM values of the motors equal  
+			\item Observe the behaviour of the motors  
+			\item Increase the PWM value of the slower motor until a point the vehicle can go in a straight line.
+			\item Record this PWM difference to use in PID controller subsystem
+		\end{enumerate}
 
-\begin{enumerate}
+		\item Circular Drive Test: \label{test:b1}	
+		\begin{enumerate}
+			\item Make the necessary connections between motors, motor controller and the Arduino  
+			\item Desired curvature is decided  
+			\item  According to motion of the vehicle PWMs of the motors are set  
+			\item  PID parameters are set according to this test
+		\end{enumerate}
+	\end{enumerate}
 
+\subsubsection*{Results of Direction Subsystem Tests}
 
-\item Straight Drive Test: \label{test:a1}	
+	The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit{Section 3} revealed to the team that, the differential drive method is capable of returning as desired and can keep up with the lane to be followed. Thereby, the design finalized with differential drive vehicle.
 
-
-\begin{enumerate}
-
-\item Make the necessary connections between motors, motor controller and the Arduino  
-
-\item Set the PWM values of the motors equal  
-
-\item Observe the behaviour of the motors  
-
-\item Increase the PWM value of the slower motor until a point the vehicle can go in a straight line.
-
-\item Record this PWM difference to use in PID controller subsystem
-
-\end{enumerate}
-
-
-
-
-\item Circular Drive Test: \label{test:b1}	
-
-\begin{enumerate}
-
-\item Make the necessary connections between motors, motor controller and the Arduino  
-
-\item Desired curvature is decided  
-
-\item  According to motion of the vehicle PWMs of the motors are set  
-
-\item  PID parameters are set according to this test
-
-\end{enumerate}
-
-
-\item{Results of Direction Subsystem Tests}
-
-
-The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit{Section 3} revealed to the team that, the differential drive method is capable of returning as desired and can keep up with the lane to be followed.
-\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \subsection {Speed Subsystem Tests and Results}
-
+\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
 \begin{enumerate}
-
-\item Determination of Base Speed: \label{test:a2}	
-
-\begin{enumerate}
-
-\item Set $\beta$ value that is supplied to \textit{Speed Subsystem} equal to zero.
-
-\item Give PWM Base as 255 RPM and observe the vehicle on the path 
-
-\item Decrease the PWM Value by 10 PWM and observe the vehicle.
-
-\item Repeat the step 3 until the desired base speed value is observed.
-
-\item Record this value.
-
+	
+	
+	\item Determination of Minimum Base Speed Coefficients Test: \label{test:a2}		
+	\begin{enumerate}
+		\item Charge each Li-Po battery cell  up to 3.95 V
+		\item Check the regulator output voltage, if it is not at 10.44, play with internal potentiometer to make it so  
+		\item Start the data processing from Raspberry Pi
+		\item Use the PID parameter values determined at \textit{Test~\ref{test:a}}
+		\item Give the power to the motors  
+		\item Sweep the $K_{min1}$ value to find large enough minimum PWM value so that the vehicle do not leave the lane at corners
+		\item Sweep the $K_{min2}$ value to find large enough minimum PWM value that the vehicle do not speed up too much on straight sections of the path so that it does not enter the corners too fast.
+		\item Observe the behaviour of the vehicle  
+		\item If the vehicle is able to complete the path at ten consecutive lap, the coefficients can be classified as working. Record these values  
+	\end{enumerate}
+	
+	\item Determination of Maximum Base Speed Coefficients Test: \label{test:a2}		
+	\begin{enumerate}
+		\item Charge each Li-Po battery cell  up to 3.95 V
+		\item Check the regulator output voltage, if it is not at 10.44, play with internal potentiometer to make it so  
+		\item Start the data processing from Raspberry Pi
+		\item Use the PID parameter values determined at \textit{Test~\ref{test:a}}
+		\item Give the power to the motors  
+		\item Sweep the $K_{max}$ value to find small enough minimum PWM value so that the vehicle do not speed up too much on straight sections of the path so that it does not enter the corners too fast.
+		\item Observe the behaviour of the vehicle  
+		\item If the vehicle is able to complete the path at ten consecutive lap, the coefficient can be classified as working.  
+	\end{enumerate}
+	
+	\item Determination of Slow Down Coefficients Test: \label{test:a2}		
+	\begin{enumerate}
+		\item Charge each Li-Po battery cell  up to 3.95 V
+		\item Check the regulator output voltage, if it is not at 10.44, play with internal potentiometer to make it so  
+		\item Start the data processing from Raspberry Pi
+		\item Use the PID parameter values determined at \textit{Test~\ref{test:a}}
+		\item Give the power to the motors  
+		\item Sweep the $K_1$ value to find large enough value so that the vehicle slow down properly but does not saturate to the minimum PWM limit
+		\item Observe the behaviour of the vehicle  
+		\item If the vehicle is able to complete the path at ten consecutive lap, the coefficient can be classified as working.  
+	\end{enumerate}
+	
 \end{enumerate}
-
-
-\item Determination of Constant $K_1$:
-
-\begin{enumerate}
-
-\item Use the PWM Base value determined at the \textit{Test~\ref{test:a2}}
-
-\item Set $\beta$ value that is supplied to \textit{Speed Subsystem} equal to ten degree.
-
-\item Set $K_1$ value equal to one and observe the vehicle on the path.
-
-\item Increase the coefficient $K_1$ and observe the behaviour of the vehicle on the path.
-
-\item Repeat step 4 until the desired coefficient $K_1$ is determined.
-
-\item Record this value.
-
-\end{enumerate}
-
-
-
-
-\item{Results of Speed Subsystem Tests}
-
-
-
+	
+	\subsubsection*{Results of Speed Subsystem Tests}
+	
+	The result of each parameter tuning test can be found at \textit{Figure~\ref{fig:baseSpeedExp}}
+	
 	\begin{figure}[h]
 		\includegraphics[width=\textwidth,center]{images/ROT_ROI/baseSpeedExp_crop}
 		\caption{Experimental Base Speed PWM vs Experimental $\beta$ Angle}\label{fig:baseSpeedExp}
 	\end{figure}
+	
+	
 
-
-\end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2114,15 +2050,14 @@ The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit
 \end{enumerate}
 
 
+\end{enumerate}
 
 
 
 
-
-\item{Results of Motion System Tests}
+\subsubsection*{Results of Motion System Tests}
 
 	%After tests, handling capability of the system is approved. However, although motors are quite well with high PWM, their low PWM performance cause some problems. Therefore, motor subsystem could need a revision.
-\end{enumerate}
 
 
 
@@ -2185,11 +2120,12 @@ The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit
 \end{enumerate}
 
 
+\end{enumerate}
 
-\item{Results of Structure System Tests}
+\subsubsection*{Results of Structure System Tests}
 
 	%As mentioned in Section 3, the disturbances applied on the vehicle and the deviation is between the levels that can be handled by other algorithms although some improvements are still needed. Furthermore, newly-designed chassis added rigidity to the structure which in turn provides better test results
-\end{enumerate}
+
 
 
 
@@ -2211,18 +2147,18 @@ The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit
 		\caption{Cost Analysis for the Project}
 			\begin{tabular}{c|c|c}
 			$$Component$$ & $$Number$$ & $$Total Price (in Dollar)$$  \\ \hline
-			Raspberry Pi 3B & 1 & 49   \\ \hline
+			Raspberry Pi 3B & 1 & 47   \\ \hline
 			Waveshare Raspberry Pi Camera (D) & 1 & 22   \\ \hline
-			Chassis Components & 1 & 15   \\ \hline
+			Chassis Components & 1 & 13   \\ \hline
 			Arduino Nano & 1 &  4.8 \\ \hline
 			Polulu 150:1 6 V 200 RPM DC Motor & 2 & 42 \\ \hline
-			Bond Silicon Wheel & 2 & 9 \\ \hline
+			Bond Silicon Wheel & 2 & 8 \\ \hline
 			Motor Driver & 1 &  2.5 \\ \hline
 			Xiaomi 10000 mAh Mi Powerbank (Ver 3) & 1 & 12 \\ \hline
-			ProFuse 11.1 V 1750 mAh Li-po Battery  & 1 & 24 \\ \hline
-			Polulu VL6180X ToF Distance Sensor & 2 & 18 \\ \hline
+			ProFuse 11.1 V 1750 mAh Li-po Battery  & 1 & 23 \\ \hline
+			Polulu VL6180X ToF Distance Sensor & 2 & 17 \\ \hline
 			LED headlight/LED & - & 0.2 \\ \hline
-			%% Additional Payments & - & 15 \\ \hline
+			Styrofoam, Glue $\&$ Cardboard & - & 7 \\ \hline
 			Total Project & - & 198.5 
 		\end{tabular} 
 		\label{tab:cost}
@@ -2253,6 +2189,11 @@ The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit
 
 		% All in all, sources are completely enough for consumption even in the worst case conditions.   
 
+	\begin{figure}[h]
+		\includegraphics[width=\textwidth,center]{images/ROT_ROI/voltageSupply_crop}
+		\caption{The Relation Between Supply Voltage from Powerbank vs Process Time}\label{fig:processTime}
+	\end{figure}
+
 
 	\begin{figure}[H]
 		\includegraphics[width=0.5\textwidth,center]{images/elec_arch}
@@ -2265,15 +2206,14 @@ The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit
 	\section{Deliverables}
 		Deliverables of the product are listed as follows;
 		\begin{itemize}
-			
-		\item Kobra 6.5  
-		\item Li-Po batteries (3S 11.1 V)
-		\item Power bank (Li-Ion 10 000 mAh)
-		\item Race Lane 
-		\item Flash stick with sofware 
-		\item User Manual 
-		\item USB Cable
-\end{itemize} 
+			\item Kobra 6.5  
+			\item Li-Po batteries (3S 11.1 V)
+			\item Power bank (Li-Ion 10 000 mAh)
+			\item Race Track 
+			\item Flash stick with sofware 
+			\item User Manual 
+			\item USB Cable
+		\end{itemize} 
 	\section{Discussions}
 		\todo{THIS PART IS NEW FOR FINAL REPORT.}
 		This sections presents a discussion on several things such as safety issues, application areas and environmental effects of the final product.
@@ -2289,16 +2229,16 @@ The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit
 		
 
 	\subsection{Application Areas}
-	At first sight, this project seems like a toy for children. As an RC car, two children can play with each other for fun. However, when project analyses in detail such as considering sub-systems, it is a small model of unmanned vehicle which has anti collusion and obstacle avoidance features. Furthermore, with modification of the sub-systems, this project can be evaluating different areas such as lane tracking algorithm can be enhanced to object tracking and this vehicle can follow specified object, or handshake algorithm can be evaluating to IoT applications which requires machine communications.
+		At first sight, this project seems like a toy for children. As an RC car, two children can play with each other for fun. However, when project analyses in detail such as considering sub-systems, it is a small model of unmanned vehicle which has anti collusion and obstacle avoidance features. Furthermore, with modification of the sub-systems, this project can be evaluating different areas such as lane tracking algorithm can be enhanced to object tracking and this vehicle can follow specified object, or handshake algorithm can be evaluating to IoT applications which requires machine communications.
 		
-	Considering these applications or more, this project could be primitive model of many specific applications.
+		Considering these applications or more, this project could be primitive model of many specific applications.
 
 	\subsection{Environmental Effects}
 		\todo{THIS PART IS NEW FOR FINAL REPORT.}
 	
-	The environmental effects can be discussed regarding the material used in body of the car. Chassis and camera arm are all made of plexiglass (PMMA) material. PMMA is a versatile, durable, recyclable and sustainable material. As it has such properties, PMMA based products products have replaced products which were previously made from wood, iron and other natural ingredients. With this way, pressure on natural supplies is decreased. Hence, the acrylic products can be considered as an environment friendly option.
+		The environmental effects can be discussed regarding the material used in body of the car. Chassis and camera arm are all made of plexiglass (PMMA) material. PMMA is a versatile, durable, recyclable and sustainable material. As it has such properties, PMMA based products products have replaced products which were previously made from wood, iron and other natural ingredients. With this way, pressure on natural supplies is decreased. Hence, the acrylic products can be considered as an environment friendly option.
 
-	Regarding the battery, a Li-Po battery is used on the vehicle. Production of Li-Po batteries require lots of chemical and energy. And, what is worse is that there are currently no good programs to recycle lithium-polymer batteries. So, it can be concluded that Li-Po batteries are not environment friendly.
+		Regarding the battery, a Li-Po battery is used on the vehicle. Production of Li-Po batteries require lots of chemical and energy. And, what is worse is that there are currently no good programs to recycle lithium-polymer batteries. So, it can be concluded that Li-Po batteries are not environment friendly.
 
 
 	\section{Conclusion}

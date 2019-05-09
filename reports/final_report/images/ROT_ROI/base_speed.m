@@ -2,7 +2,7 @@
 clc
 clear
 %% -
-h1=figure('units','normalized','outerposition',[0 0 0.75 0.6])
+h1=figure('units','normalized','outerposition',[0 0 0.45 0.45])
 beta=0:50;
 K_max=48;
 if (beta>22.5)
@@ -24,7 +24,7 @@ title('\beta vs Base Speed')
 print(h1,sprintf('baseSpeed.png'),'-dpng','-r600')
 close(h1)
 %% -
-h2=figure('units','normalized','outerposition',[0 0 0.75 0.6])
+h2=figure('units','normalized','outerposition',[0 0 0.45 0.45])
 beta_exp=[20 21.8 32.5 43.6 32.5 21.5 15.7 14.3 10.53 4.5 1.5 3.6 7.8 11.4 16.43 20.42 24.54 32.34 42.4 32.54 21.4 16.4 ]
 K_max=38;
 K_1=0.7

@@ -4,7 +4,7 @@ clear
 
 %% -
 load 'voltageSupply.txt'
-h0=figure('units','normalized','outerposition',[0 0 0.75 0.6])
+h0=figure('units','normalized','outerposition',[0 0 0.45 0.45])
 number=voltageSupply(:,1);
 voltage=voltageSupply(:,2);
 processTime=voltageSupply(:,3);
@@ -24,7 +24,7 @@ print(h0,sprintf('voltageSupply.png'),'-dpng','-r600')
 close(h0)
 %% -
 load 'testTime.txt'
-h1=figure('units','normalized','outerposition',[0 0 0.75 0.6])
+h1=figure('units','normalized','outerposition',[0 0 0.45 0.45])
 time=testTime(:,1);
 times=time/1000
 basetimes=times(1)
@@ -40,7 +40,7 @@ Avg=sum/73
 line=Avg*ones(1,73)
 plot(times,ProcessTime,'LineWidth',2);
 hold on
-plot(times,line,'r','LineWidth',1)
+plot(times,line,'r','LineWidth',1.5)
 ylim([40 70])
 xlim([0 70])
 grid on
