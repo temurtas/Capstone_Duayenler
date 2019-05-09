@@ -288,7 +288,7 @@ The graphical representation of the equations are given in \textit{Figure~\ref{f
 		
 		\centering
 		
-		\includegraphics[width=0.44\unitlength]{images/ROT_ROI/ROI_HIGH}
+		\includegraphics[width=0.44\unitlength]{images/ROT_ROI/ROI_HIGH_crop}
 		
 		\caption{ Graph of ROI\_High vs front\_distance}
 		
@@ -297,7 +297,7 @@ The graphical representation of the equations are given in \textit{Figure~\ref{f
 		
 		\centering
 		
-		\includegraphics[width=0.44\unitlength]{images/ROT_ROI/ROI}
+		\includegraphics[width=0.44\unitlength]{images/ROT_ROI/ROI_crop}
 		
 		\caption{ ROI\_Height Variation}
 		
@@ -449,12 +449,12 @@ ROT\_High =
 		\centering
 		\begin{subfigure}{.46\textwidth}
 			\centering
-			\includegraphics[width=0.44\unitlength]{images/ROT_ROI/ROT_HIGH}
+			\includegraphics[width=0.44\unitlength]{images/ROT_ROI/ROT_HIGH_crop}
 			\caption{ Graph of ROT\_High vs front\_distance}
 		\end{subfigure}%
 		\begin{subfigure}{.46\textwidth}
 			\centering
-			\includegraphics[width=0.44\unitlength]{images/ROT_ROI/ROT}
+			\includegraphics[width=0.44\unitlength]{images/ROT_ROI/ROT_crop}
 			\caption{ ROT\_Height Variation}
 		\end{subfigure}
 		\caption{\label{fig:ROT_crop} Graphs Defining ROT\_Height}
@@ -1015,6 +1015,11 @@ return;
 		%This subsystem is responsible for determining the base speed of the both DC motors. In order to do so, this subsystem produces a \textit{PWM Offsett} value that is sent to the \textit{Direction Subsystem}. To produce this PWM value, the lane angle value $\beta$ that was introduced in \textit{Section~\ref{sect:ControllerSubsystem}}.
 
 		%The algorithm relies on the inverse ratio principle, that is, as the lane angle increases the base speed for the motors is decreased. This can be formalized as follows;
+
+	\begin{figure}[h]
+		\includegraphics[width=\textwidth,center]{images/ROT_ROI/baseSpeed_crop}
+		\caption{Therotical Base Speed PWM vs Theoratical $\beta$ Angle}\label{fig:baseSpeed}
+	\end{figure}
 
 	%$$ PWM~Offset~=~PWM~Base~-K_1 \beta$$
 
@@ -1755,11 +1760,27 @@ This section presents followed test procedures and the outcome of the tests.
 
 \item{Results of PID Controller Subsystem Tests}
 
+	\begin{figure}[t!]
+		\setlength{\unitlength}{\textwidth} 
+		\centering
+			\begin{subfigure}{.46\textwidth}
+			\centering
+			\includegraphics[width=0.44\unitlength]{images/ROT_ROI/ccwLapTime_crop}
+			\caption{\label{fig:ccwLapTime} CCW Lap Times}
+		\end{subfigure}%
+		\begin{subfigure}{.46\textwidth}
+			\centering
+			\includegraphics[width=0.44\unitlength]{images/ROT_ROI/cwLapTime_crop}
+			\caption{\label{fig:cwLapTime} CW Lap Times}
+		\end{subfigure}
+		\caption{\label{fig:LapTimes} A Sample Scenario on Eliminating Incorrect Lines}
+	\end{figure}
 
-	%Due to some integration error related to internal communication tests, the controller parameters for the lateral movement were not determined sufficiently, thus the \textbf{PID Controller Subsystem Tests} introduced in \textit{Section 3} were not completely performed on the vehicle. 
+	\begin{figure}[h]
+		\includegraphics[width=\textwidth,center]{images/ROT_ROI/ProcessTime_crop}
+		\caption{Block Diagram of the Project and the Interaction of the Subsystems}\label{fig:blockdiagram}
+	\end{figure}
 
-
-	%Although the results of \textit{Test~\ref{test:a}} were successful for given error values directly to Arduino, the \textbf{Tests~\ref{test:b} \& \ref{test:c}} showed unsatisfying results due to some communication errors between \textit{Data Processing Subsystem} and \textbf{PID Controller Subsystem}.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2006,7 +2027,14 @@ The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit
 
 \item{Results of Speed Subsystem Tests}
 
-	%The tests proposed in \textit{Section~3} will be conducted after the tests for \textit{Internal Communication Subsystem} is completed and the tests for \textit{PID Controller Subsystem} is completed with constant base speed. 
+
+
+	\begin{figure}[h]
+		\includegraphics[width=\textwidth,center]{images/ROT_ROI/baseSpeedExp_crop}
+		\caption{Experimental Base Speed PWM vs Experimental $\beta$ Angle}\label{fig:baseSpeedExp}
+	\end{figure}
+
+
 \end{enumerate}
 
 
@@ -2140,28 +2168,29 @@ The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit
 
 	%Cost anaysis for the project can be investigated at \textit{Table~\ref{tab:cost}}. The reproducible vehicle is expected to cost under 200 dollar as desired by the project requirements.
 
+	
 	\begin{table}[H]
 		\centering
 		\caption{Cost Analysis for the Project}
 			\begin{tabular}{c|c|c}
 			$$Component$$ & $$Number$$ & $$Total Price (in Dollar)$$  \\ \hline
-			Raspberry Pi 3B & 1 & 48   \\ \hline
-			Camera & 1 & 23   \\ \hline
+			Raspberry Pi 3B & 1 & 49   \\ \hline
+			Waveshare Raspberry Pi Camera (D) & 1 & 22   \\ \hline
 			Chassis Components & 1 & 15   \\ \hline
 			Arduino Nano & 1 &  4.8 \\ \hline
-			DC Motor & 2 & 22 \\ \hline
-			Wheel & 2 & 8 \\ \hline
+			Polulu 150:1 6 V 200 RPM DC Motor & 2 & 42 \\ \hline
+			Bond Silicon Wheel & 2 & 9 \\ \hline
 			Motor Driver & 1 &  2.5 \\ \hline
-			Powerbank & 1 & 12 \\ \hline
-			Li-po Battery  & 1 & 24 \\ \hline
-			ToF Distance Sensor & 2 & 18 \\ \hline
+			Xiaomi 10000 mAh Mi Powerbank (Ver 3) & 1 & 12 \\ \hline
+			ProFuse 11.1 V 1750 mAh Li-po Battery  & 1 & 24 \\ \hline
+			Polulu VL6180X ToF Distance Sensor & 2 & 18 \\ \hline
 			LED headlight/LED & - & 0.2 \\ \hline
 			%% Additional Payments & - & 15 \\ \hline
-			Total Project & - & 176.7 
+			Total Project & - & 198.5 
 		\end{tabular} 
 		\label{tab:cost}
 	\end{table}
-	\todo{real spendings}
+	\todo{this table was recreated for the final report, please do thereal spendings}
 
 	%As seen from the \textit{Table~\ref{tab:cost}}, budget is optimized with some changes such as Arduino Uno is replaced with its nano version, and upper layer of the chassis is designed thinner plexi glass. However, critical components, such as motors, ToF sensors and wheels, are selected for their performance. Powerbank selection is based on its size. The chosen one is the smallest powerbank which can give enough output to supply Raspberry Pi under full load. Camera and Raspberry pi have no other option in this project. Li-Po battery selection is based on duration and output voltage. 12V output is required during motor drive, and long term is required for demonstrations. Therefore, 1750 mAh 11.1V 3S battery is selected. 
 

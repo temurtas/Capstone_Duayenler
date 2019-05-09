@@ -3,8 +3,28 @@ clc
 clear
 
 %% -
+load 'voltageSupply.txt'
+h0=figure('units','normalized','outerposition',[0 0 0.75 0.6])
+number=voltageSupply(:,1);
+voltage=voltageSupply(:,2);
+processTime=voltageSupply(:,3);
+yyaxis left
+stem(number,voltage,'LineWidth',1.5)
+ylim([4.25,5.25])
+ylabel('Voltage Supply (V)')
+hold on
+yyaxis right
+plot(number,processTime,'LineWidth',1.5)
+ylim([44,150])
+ylabel('Processing Time (msec)')
+legend('Supply Voltage from Powerbank','Processing Time for Each Frame')
+title('Supply Voltage Dependency of Processing Time')
+xlabel('Image Processing Iteration')
+print(h0,sprintf('voltageSupply.png'),'-dpng','-r600')
+close(h0)
+%% -
 load 'testTime.txt'
-h1=figure('units','normalized','outerposition',[0 0 1 1])
+h1=figure('units','normalized','outerposition',[0 0 0.75 0.6])
 time=testTime(:,1);
 times=time/1000
 basetimes=times(1)
@@ -34,11 +54,11 @@ legend('Process Time','Average Process Time')
 print(h1,sprintf('ProcessTime.png'),'-dpng','-r600')
 close(h1)
 %% -
-h2=figure('units','normalized','outerposition',[0 0 1 1])
-load 'ccw_lapTimes.txt'
-number=ccw_lapTimes(:,1);
-LapTime=ccw_lapTimes(:,2);
-linea=20*ones(1,20)
+h2=figure('units','normalized','outerposition',[0 0 0.45 0.45])
+load 'ccw_lapTimes_2.txt'
+number=ccw_lapTimes_2(:,1);
+LapTime=ccw_lapTimes_2(:,2);
+linea=20*ones(1,22)
 stem(number,LapTime,'LineWidth',1.5)
 hold on
 plot(number,linea,'r','LineWidth',1.5)
@@ -53,11 +73,11 @@ legend('CCW Lap Time','Lap Time Limit')
 print(h2,sprintf('ccwLapTime.png'),'-dpng','-r600')
 close(h2)
 %% -
-h3=figure('units','normalized','outerposition',[0 0 1 1])
-load 'cw_lapTimes.txt'
-number=cw_lapTimes(:,1);
-LapTime=cw_lapTimes(:,2);
-lineb=20*ones(1,20)
+h3=figure('units','normalized','outerposition',[0 0 0.45 0.45])
+load 'cw_lapTimes_2.txt'
+number=cw_lapTimes_2(:,1);
+LapTime=cw_lapTimes_2(:,2);
+lineb=20*ones(1,26)
 stem(number,LapTime,'LineWidth',1.5)
 hold on
 plot(number,lineb,'r','LineWidth',1.5)
