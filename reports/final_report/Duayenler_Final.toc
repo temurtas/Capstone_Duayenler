@@ -1,5 +1,5 @@
-\babel@toc {english}{}
-\babel@toc {english}{}
+\select@language {english}
+\select@language {english}
 \contentsline {section}{\numberline {1}Executive Summary}{3}{section.1}
 \contentsline {section}{\numberline {2}Introduction}{4}{section.2}
 \contentsline {section}{\numberline {3}Design Description}{5}{section.3}
@@ -10,41 +10,39 @@
 \contentsline {subsubsection}{\numberline {3.2.1}Data Processing Subsystem}{9}{subsubsection.3.2.1}
 \contentsline {subsubsection}{\numberline {3.2.2}PID Controller Subsystem}{14}{subsubsection.3.2.2}
 \contentsline {subsection}{\numberline {3.3}Communication System}{19}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Internal Communication Subsystem}{19}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}External Communication Subsystem}{20}{subsubsection.3.3.2}
-\contentsline {subsection}{\numberline {3.4}Driving System}{21}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}Direction Subsystem}{22}{subsubsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}Speed Subsystem}{23}{subsubsection.3.4.2}
-\contentsline {subsection}{\numberline {3.5}Motion System}{24}{subsection.3.5}
-\contentsline {subsubsection}{\numberline {3.5.1}Wheels Subsystem}{24}{subsubsection.3.5.1}
-\contentsline {subsubsection}{\numberline {3.5.2}Motors Subsystem}{24}{subsubsection.3.5.2}
-\contentsline {subsection}{\numberline {3.6}Structure System}{25}{subsection.3.6}
-\contentsline {subsubsection}{\numberline {3.6.1}Chassis Subsystem}{25}{subsubsection.3.6.1}
-\contentsline {subsubsection}{\numberline {3.6.2}Printed Circuit Board Subsystem}{26}{subsubsection.3.6.2}
-\contentsline {subsection}{\numberline {3.7}Compatibility of the Subsystems}{27}{subsection.3.7}
-\contentsline {section}{\numberline {4}Detailed Tests for the Subsystems}{27}{section.4}
-\contentsline {subsection}{\numberline {4.1}Lane Detection Subsystem Tests and Results}{27}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Vehicle Detection Subsystem Tests and Results}{28}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Data Processing Subsystem Tests and Results}{30}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}PID Controller Subsystem Tests and Results}{33}{subsection.4.4}
-\contentsline {subsection}{\numberline {4.5}Internal Communication Subsystem Tests and Results}{36}{subsection.4.5}
-\contentsline {subsection}{\numberline {4.6}External Communication Subsystem Tests and Results}{37}{subsection.4.6}
-\contentsline {subsection}{\numberline {4.7}Direction Subsystem Tests and Results}{39}{subsection.4.7}
-\contentsline {subsection}{\numberline {4.8}Speed Subsystem Tests and Results}{39}{subsection.4.8}
-\contentsline {subsection}{\numberline {4.9}Wheels Subsystem Tests and Results}{40}{subsection.4.9}
-\contentsline {subsection}{\numberline {4.10}Motors Subsystem Tests and Results}{40}{subsection.4.10}
-\contentsline {subsection}{\numberline {4.11}Chassis Subsystem Tests and Results}{41}{subsection.4.11}
-\contentsline {subsection}{\numberline {4.12}Printed Circuit Board Subsystem Tests and Results}{41}{subsection.4.12}
-\contentsline {section}{\numberline {5}Other Considerations}{41}{section.5}
-\contentsline {subsection}{\numberline {5.1}Cost Analysis}{41}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Power Analysis}{42}{subsection.5.2}
-\contentsline {section}{\numberline {6}Deliverables}{42}{section.6}
-\contentsline {section}{\numberline {7}Budget}{42}{section.7}
-\contentsline {subsection}{\numberline {7.1}Actual Expenditures}{43}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Total Cost}{43}{subsection.7.2}
-\contentsline {section}{\numberline {8}Discussions}{43}{section.8}
-\contentsline {subsection}{\numberline {8.1}Safety Issues}{43}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Application Areas}{43}{subsection.8.2}
-\contentsline {subsection}{\numberline {8.3}Environmental Effects}{43}{subsection.8.3}
-\contentsline {section}{\numberline {9}Conclusion}{43}{section.9}
-\contentsline {section}{Appendix \numberline {A}Gannt Chart}{44}{Appendix.a.A}
+\contentsline {subsubsection}{\numberline {3.3.1}Internal Communication Subsystem}{20}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}External Communication Subsystem}{21}{subsubsection.3.3.2}
+\contentsline {subsection}{\numberline {3.4}Driving System}{23}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Direction Subsystem}{24}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Speed Subsystem}{24}{subsubsection.3.4.2}
+\contentsline {subsection}{\numberline {3.5}Motion System}{25}{subsection.3.5}
+\contentsline {subsubsection}{\numberline {3.5.1}Wheels Subsystem}{26}{subsubsection.3.5.1}
+\contentsline {subsubsection}{\numberline {3.5.2}Motors Subsystem}{26}{subsubsection.3.5.2}
+\contentsline {subsection}{\numberline {3.6}Structure System}{26}{subsection.3.6}
+\contentsline {subsubsection}{\numberline {3.6.1}Chassis Subsystem}{27}{subsubsection.3.6.1}
+\contentsline {subsubsection}{\numberline {3.6.2}Printed Circuit Board Subsystem}{27}{subsubsection.3.6.2}
+\contentsline {subsection}{\numberline {3.7}Compatibility of the Subsystems}{28}{subsection.3.7}
+\contentsline {section}{\numberline {4}Detailed Tests for the Subsystems}{28}{section.4}
+\contentsline {subsection}{\numberline {4.1}Lane Detection Subsystem Tests and Results}{28}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Vehicle Detection Subsystem Tests and Results}{29}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Data Processing Subsystem Tests and Results}{31}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}PID Controller Subsystem Tests and Results}{36}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Internal Communication Subsystem Tests and Results}{38}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}External Communication Subsystem Tests and Results}{38}{subsection.4.6}
+\contentsline {subsection}{\numberline {4.7}Direction Subsystem Tests and Results}{40}{subsection.4.7}
+\contentsline {subsection}{\numberline {4.8}Speed Subsystem Tests and Results}{41}{subsection.4.8}
+\contentsline {subsection}{\numberline {4.9}Wheels Subsystem Tests and Results}{42}{subsection.4.9}
+\contentsline {subsection}{\numberline {4.10}Motors Subsystem Tests and Results}{42}{subsection.4.10}
+\contentsline {subsection}{\numberline {4.11}Chassis Subsystem Tests and Results}{42}{subsection.4.11}
+\contentsline {subsection}{\numberline {4.12}Printed Circuit Board Subsystem Tests and Results}{42}{subsection.4.12}
+\contentsline {section}{\numberline {5}Budget}{43}{section.5}
+\contentsline {subsection}{\numberline {5.1}Actual Expenditures}{43}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Cost Analysis of Reproducible Product}{43}{subsection.5.2}
+\contentsline {section}{\numberline {6}Power Analysis}{44}{section.6}
+\contentsline {section}{\numberline {7}Deliverables}{44}{section.7}
+\contentsline {section}{\numberline {8}Discussions}{44}{section.8}
+\contentsline {subsection}{\numberline {8.1}Safety Issues}{45}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Application Areas}{45}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Environmental Effects}{45}{subsection.8.3}
+\contentsline {section}{\numberline {9}Conclusion}{45}{section.9}
+\contentsline {section}{Appendix \numberline {A}USER MANUAL}{46}{Appendix.a.A}

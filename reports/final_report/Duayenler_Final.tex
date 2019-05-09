@@ -188,6 +188,8 @@ This report gives the reader a solid view and understanding of the project. Deta
 		\caption{V-Model}\label{fig:vmodel}
 	\end{figure}
 
+	%Besides, a Gannt Chart is prepared to have an detailed overview of future works and available in \textit{Appendix~\ref{gannt_chart_app}}.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -804,17 +806,67 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 	
 	This equation was utilized on Arduino microcontroller considering the past three errors for the integral term.
 	
+	
+	
 	\paragraph*{Sampling Time Matching and Controller Output Limit}
 		
 	In our implementation, the sampling time of the plant, i.e., the processing time in which the Raspberry Pi processes each picture frame is approximately 54 miliseconds, however, the sampling time of each Arduino loop is very small in comparison to our sampling time. To handle this proplem, we implemented delay function of the Arduino to match the sampling times.
 	
 	A saturation limit is also present to keep the overall PWM signal send to the DC motors within a 0-255 PWM range to prevent oscillation. Another saturation limit also controls the output of the controller subsystem to avoid any undesired errors that might happen at the video processing.
+	
+	Overall PID algorithm can be investigated at \textit{Algoritm~\ref{algo:PID}}.
+	
+	\begin{algorithm}
+		\DontPrintSemicolon	
+		maxSum // Integral Wind-up term \\
+		Ts // Sampling time \\
+		// Update of past error array \\
+		\For { int i = pastSize - 1; i > 0; i--} {
+			pastError[i] = pastError[i - 1] 
+		} 
+		pastError[0] = error \\
+		// Calculation of Derivative Term \\
+		delta = (pastError[0] - pastError[1]) / Ts \\
+		// Calculation of Integral term \\
+		sum = min(max(sum + (pastError[0] + pastError[1] + pastError[2]) / 3 * Ts, -1 * maxSum), maxSum) \\
+		// Calculation of PID output \\
+		motorCmd = int(Kp * error + Kd * delta + Ki * sum)		
+		motorCmd =  min(motorCmd,Max\_Delta\_PWM)
+		delay(Ts-duration) // duration:duration of each Arduino loop	
+		\caption{PID Controller Algorithm}
+		\label{algo:PID}
+	\end{algorithm}
 
 	\item {Discussions on the Solution}
 	
 	The proposed algorithm lacks the modelling of the system, thus, tuning of the PID parameters were handled by try and error. The state-space model of the plant will further be investigated under the term project of the another undergraduate course of our department, EE498:CONTROL SYSTEM DESIGN AND SIMULATION. However course, it was not included due to its incompleteness.	
 	
-	Other than the modelling part, the proposed methods are same as the ones proposed in the conceptual design review report and works as exected. 
+	Other than the modelling part, the proposed methods are same as the ones proposed in the conceptual design review report. However, due to unidealities in the motors, the controller tuned for the CCW movement failed to pass the test proposed under \textit{Section~4.4}, therefore, the PID parameters and the base speed parameters were seperated in order to have same performance at both sides. To ensure the proper operation following algorithm is utilized.
+	
+	\begin{algorithm}
+		\DontPrintSemicolon	
+	// Update pastYon array \\ 
+	\For {int i = yonSize - 1 \Rightarrow  0} {
+		pastyon[i] = pastyon[i - 1]
+	}
+	pastyon[0]=yon \\
+	yonSum=0 \\
+	\For {int k = 0; k < (yonSize-1) ; k++}
+	{
+		yonSum = yonSum + pastyon[k]
+	}
+	yonAvg=yonSum/yonSize \\ 
+	\If {yonAvg < 0.5}{
+		$yonFin=0$  
+	}   
+	\Else {
+		$yonFin=1$ 
+	}
+	\caption{PID Controller Algorithm}
+	\label{algo:PID}
+	\end{algorithm}
+	
+	 
 
 
 \end{enumerate}
@@ -1012,19 +1064,39 @@ return;
 
 	\item {Solution for the Subsystem}
 
-		%This subsystem is responsible for determining the base speed of the both DC motors. In order to do so, this subsystem produces a \textit{PWM Offsett} value that is sent to the \textit{Direction Subsystem}. To produce this PWM value, the lane angle value $\beta$ that was introduced in \textit{Section~\ref{sect:ControllerSubsystem}}.
+		This subsystem is responsible for determining the base speed of the both DC motors. In order to do so, this subsystem produces a \textit{PWM Offsett} value that is sent to the \textit{Direction Subsystem}. To produce this PWM value, the lane angle value $\beta$ that was introduced in \textit{Section~\ref{sect:ControllerSubsystem}}.
 
-		%The algorithm relies on the inverse ratio principle, that is, as the lane angle increases the base speed for the motors is decreased. This can be formalized as follows;
+		Main algorithm of this subsystem relies on the inverse ratio principle, that is, as the lane angle increases the base speed for the motors is decreased. This can be formalized as follows;
+		
+		$$ PWM~Offset~=~K_{max}~-K_1 \beta$$
+		
+		where $K_{max}$ is the maximum PWM value the base PWM should reach as it is on the straight path, the value for $K_{max}$ can be determined by try and error test.
+		
+		However, it is also desired that the minimum PWM values shoul satisfy satisfying speed perfomance for the vehicle, therby a minimum PWM restrictions were put on this PWM calculation. It can be formulated as;
+		
+		$$ PWM~Offset~=~max\{ K_{max}~-K_1 \beta , K_{min} \}$$.
+		
+		where $K_{min}$ is the minimum allowable PWM value for the DC motors, and it can be found by try and error.	Moreover, since the path has varying properties, it was desired to have $K_{min}$ is also dependent on $\beta$ value. The implemented algorithm can be summuried at \textit{Algoritm~\ref{algo:baseSpeed}} and the hypotatical $\beta$ vs base PWM graph can be investigated at \textit{Figure~\ref{fig:baseSpeed}}.
+		
+		\begin{algorithm}
+			\DontPrintSemicolon			
+			\If{ $\beta > \beta_1$} {
+				$ K_{min}=K_{min1} $ \;
+			}	
+			\Else{
+				$ K_{min}=K_{min2} $ \;
+			}
+			$Base\_pwm=	max ( K_{max}~-K_1 * \beta , K_{min} ) $	
+		\caption{Base Speed Algorithm}
+		\label{algo:baseSpeed}
+		\end{algorithm}
+		
+		\begin{figure}[h]
+			\includegraphics[width=\textwidth,center]{images/ROT_ROI/baseSpeed_crop}
+			\caption{Therotical Base Speed PWM vs Theoratical $\beta$ Angle}\label{fig:baseSpeed}
+		\end{figure}
 
-	\begin{figure}[h]
-		\includegraphics[width=\textwidth,center]{images/ROT_ROI/baseSpeed_crop}
-		\caption{Therotical Base Speed PWM vs Theoratical $\beta$ Angle}\label{fig:baseSpeed}
-	\end{figure}
-
-	%$$ PWM~Offset~=~PWM~Base~-K_1 \beta$$
-
-	%Where the \textit{PWM Base} value is the maximum PWM value for the motors as the lane angle $\beta$ is equal to zero. And the coefficient $K_1$ is the constant that determines how fast the base speed is increased as the angle $\beta$ increases.
-
+	
 
 	\item {Discussions on the Solution}
 
@@ -1933,15 +2005,6 @@ This section presents followed test procedures and the outcome of the tests.
 \end{enumerate}
 
 
-
-
-
-
-
-
-
-
-
 \item{Results of Direction Subsystem Tests}
 
 
@@ -1989,10 +2052,6 @@ The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit
 \item Record this value.
 
 \end{enumerate}
-
-
-
-
 
 
 
@@ -2132,13 +2191,19 @@ The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit
 	%As mentioned in Section 3, the disturbances applied on the vehicle and the deviation is between the levels that can be handled by other algorithms although some improvements are still needed. Furthermore, newly-designed chassis added rigidity to the structure which in turn provides better test results
 \end{enumerate}
 
-\section{Other Considerations}
 
-		%Besides, a Gannt Chart is prepared to have an detailed overview of future works and available in \textit{Appendix~\ref{gannt_chart_app}}.
 
-	\subsection{Cost Analysis}
+\section{Budget}
+	\todo{THIS PART IS NEW FOR FINAL REPORT.}
 
-	%Cost anaysis for the project can be investigated at \textit{Table~\ref{tab:cost}}. The reproducible vehicle is expected to cost under 200 dollar as desired by the project requirements.
+	\subsection{Actual Expenditures}
+		\todo{THIS PART IS NEW FOR FINAL REPORT.}
+		
+	\todo{Like 200 dolar hesap istiyor.}
+		
+	\subsection{Cost Analysis of Reproducible Product}
+
+	Cost anaysis for the \textbf{Kobra 6.5} can be investigated under \textit{Table~\ref{tab:cost}}. The reproducible vehicle costs under 200 dollar as stated by the project requirements. However, it should be noted that the 200 dollar budget does not cover additional expenses such as li-po battery charger and micro-USB chager.
 
 	
 	\begin{table}[H]
@@ -2166,7 +2231,7 @@ The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit
 
 	%As seen from the \textit{Table~\ref{tab:cost}}, budget is optimized with some changes such as Arduino Uno is replaced with its nano version, and upper layer of the chassis is designed thinner plexi glass. However, critical components, such as motors, ToF sensors and wheels, are selected for their performance. Powerbank selection is based on its size. The chosen one is the smallest powerbank which can give enough output to supply Raspberry Pi under full load. Camera and Raspberry pi have no other option in this project. Li-Po battery selection is based on duration and output voltage. 12V output is required during motor drive, and long term is required for demonstrations. Therefore, 1750 mAh 11.1V 3S battery is selected. 
 
-	\subsection{Power Analysis}
+	\section{Power Analysis}
 	
 	\begin{table}[H]
 		\centering
@@ -2186,7 +2251,7 @@ The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit
 		
 		%Li-Po battery has these specs: 1750 mAh 11.1V 3S 25C, so it can supply 43 ampere constants during discharge although the motors demand 1.1 ampere at stall condition. 
 
-		All in all, sources are completely enough for consumption even in the worst case conditions.   
+		% All in all, sources are completely enough for consumption even in the worst case conditions.   
 
 
 	\begin{figure}[H]
@@ -2197,26 +2262,25 @@ The results of \textit{Tests~\ref{test:a1} \& \ref{test:b1}} proposed in \textit
 
 	%\newpage
 
-\section{Deliverables}
-\todo{THIS PART IS NEW FOR FINAL REPORT.}
-\section{Budget}
-\todo{THIS PART IS NEW FOR FINAL REPORT.}
-\subsection{Actual Expenditures}
-\todo{THIS PART IS NEW FOR FINAL REPORT.}
-\subsection{Total Cost}
-\todo{THIS PART IS NEW FOR FINAL REPORT.}
-\section{Discussions}
-\todo{THIS PART IS NEW FOR FINAL REPORT.}
-This sections presents a discussion on several things such as safety issues, application areas and environmental effects of the final product.
-\subsection{Safety Issues}
-\todo{THIS PART IS NEW FOR FINAL REPORT.}
-\subsection{Application Areas}
-\todo{THIS PART IS NEW FOR FINAL REPORT.}
-\subsection{Environmental Effects}
-\todo{THIS PART IS NEW FOR FINAL REPORT.}
-The environmental effects can be discussed regarding the material used in body of the car. Chassis and camera arm are all made of plexiglass (PMMA) material. PMMA is a versatile, durable, recyclable and sustainable material. As it has such properties, PMMA based products products have replaced products which were previously made from wood, iron and other natural ingredients. With this way, pressure on natural supplies is decreased. Hence, the acrylic products can be considered as an environment friendly option.
+	\section{Deliverables}
+		\todo{THIS PART IS NEW FOR FINAL REPORT.}
 
-Regarding the battery, a Li-Po battery is used on the vehicle. Production of Li-Po batteries require lots of chemical and energy. And, what is worse is that there are currently no good programs to recycle lithium-polymer batteries. So, it can be concluded that Li-Po batteries are not environment friendly.
+	\section{Discussions}
+		\todo{THIS PART IS NEW FOR FINAL REPORT.}
+		This sections presents a discussion on several things such as safety issues, application areas and environmental effects of the final product.
+	
+	\subsection{Safety Issues}
+		\todo{THIS PART IS NEW FOR FINAL REPORT.}
+
+	\subsection{Application Areas}
+		\todo{THIS PART IS NEW FOR FINAL REPORT.}
+
+	\subsection{Environmental Effects}
+		\todo{THIS PART IS NEW FOR FINAL REPORT.}
+	
+	The environmental effects can be discussed regarding the material used in body of the car. Chassis and camera arm are all made of plexiglass (PMMA) material. PMMA is a versatile, durable, recyclable and sustainable material. As it has such properties, PMMA based products products have replaced products which were previously made from wood, iron and other natural ingredients. With this way, pressure on natural supplies is decreased. Hence, the acrylic products can be considered as an environment friendly option.
+
+	Regarding the battery, a Li-Po battery is used on the vehicle. Production of Li-Po batteries require lots of chemical and energy. And, what is worse is that there are currently no good programs to recycle lithium-polymer batteries. So, it can be concluded that Li-Po batteries are not environment friendly.
 
 
 	\section{Conclusion}
@@ -2235,9 +2299,13 @@ Regarding the battery, a Li-Po battery is used on the vehicle. Production of Li-
 \begin{appendices}
 
 
-\includepdf[landscape=true,pages=1, scale=0.775,angle=0, label=gannt_chart_app,pagecommand=\section{Gannt Chart}\label{gannt_chart_app}]{gantt.pdf}
+\includepdf[landscape=false,pages=1, scale=0.875,angle=0, label=gannt_chart_app,pagecommand=\section{USER MANUAL}\label{user_man}]{USER_MANUAL.pdf}
 
-\includepdf[landscape=true,pages=2-3, scale=0.775,angle=0,pagecommand=]{gantt.pdf}
+\includepdf[landscape=false,pages=2, scale=0.875,angle=0, label=gannt_chart_app,pagecommand=\label{user_man}]{USER_MANUAL.pdf}
+
+%\includepdf[landscape=true,pages=1, scale=0.775,angle=0, label=gannt_chart_app,pagecommand=\section{Gannt Chart}\label{gannt_chart_app}]{gantt.pdf}
+
+%\includepdf[landscape=true,pages=2-3, scale=0.775,angle=0,pagecommand=]{gantt.pdf}
 
 
 
