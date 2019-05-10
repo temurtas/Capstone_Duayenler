@@ -707,7 +707,7 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 	
 	
 	\begin{figure}[h]
-		\includegraphics[width=\textwidth,center]{images/Simulink/Block_Diagram}
+		\includegraphics[width=\textwidth,center]{images/simulink/Block_diagram}
 		\caption{Block Diagram of the Project and the Interaction of the Subsystems}\label{fig:blockdiagram}
 	\end{figure}
 	
@@ -885,9 +885,9 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%	
 
 \subsection{Communication System}
+\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
 
-
-	%This systems is responsible for all communication responsibility of the system. It is one of the most crucial systems of this project since it is responsible for safe communication between subsystems with each other. It is also responsible for communication with other vehicles.	And the requirements for this system are as follows;		
+	This systems is responsible for all communications of the system. It is one of the most crucial systems of this project since it provides a link between different parties of the vehicle as well as communication with other vehicles. The requirements for this system are as follows;		
 
 	\begin{enumerate}
 		\item The subsystem should ensure safe internal communication
@@ -905,7 +905,7 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%	
 
 \subsubsection{Internal Communication Subsystem}
-
+\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
 
 	\begin{enumerate}
 		\item {Requirements for the Solution}
@@ -917,44 +917,57 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 	
 	\item {Solution for the Subsystem}
 
-		%This subsystem covers the communication of the components inside vehicle. Currently, Raspberry Pi and Arduino are two components that requires communication. To prevent the large amount of cable connection, a serial communication protocol is implemented. \\
+		This subsystem covers the communication of the components in the vehicle. The only communicating parties are Raspberry-Pi and Arduino-Nano. That is why a serial communication protocol between them is enough to accomplish internal communication. The most reliable serial communication protocol that is USB is used for the vehicle. Since RPi is a computer, it can act as master and recognize Arduino as a device connected to its serial port. 
 		
-		%The serial communication is implemented via USB port. Since RPi is practically a computer, it can recognize Arduino as a device using a serial port such as \lstinline|/ttyUSB0| in case of a Linux based OS. When recognized, RPi can send any piece of strings to the Arduino via USB cable. The process of communication is as follows:
+		The technical details of communication is as follows:
+		
+		\paragraph*{Raspberry side}
+		
+		Serial communication can be implemented in any language but the choice is C++ since other algorithms are also implemented using it. Using \lstinline[language=C++]|<wiringPi.h>| and \lstinline[language=C++]|<wiringSerial.h>| libraries any piece of string can be sent to Arduino. However, the port of Arduino should be determined using Arduino IDE or other methods. In Linux based OS it is most probably \lstinline[language=C++]|/dev/ttyUSB0"|. Besides, the baud rate should be the same for each parties. Then using \textit{Algorithm \ref{algo:serialcomm_pi}}, the payload string can be send via serial port.
+		
+		\begin{algorithm}
+			\DontPrintSemicolon
+			include wiringPi, wiringSerial \;
+			set serial\_device\_ID \;
+			\textit{serial\_device\_ID= serialOpen("$ <serial\_port> ",<baud\_rate>$)}\;
+			\If{ setup successfull }{
+			send payload string \;
+			\textit{SerialPuts($ <serial\_device\_ID>,<payload> $)}	
+			} 
+			\Else{
+			connection unsuccessful
+				}
+			
+			\caption{RPi serial communication\label{algo:serialcomm_pi}}
+		\end{algorithm}
 
-	\begin{enumerate}
-		\item Arduino should be connected to the Pi. \vspace{-0.2cm}
-		\item Using Arduino IDE or any other method such as listing serial ports and checking for Arduino and so on, the serial port name should be detected \vspace{-0.2cm}
-		\item Baud rates of two sides should be the same. 9600 is generally enough but if needed, it can be incremented to satisfy fast communication rate. \vspace{-0.2cm}
-		\item On Arduino side, \texttt{Serial.begin(9600)} command should be executed and serial port should be read repeatedly to capture the incoming data \vspace{-0.2cm}
-		\item On Pi side, using  C++ messages can be send to serial port
-\end{enumerate}
-
-	%Since the lane detection algorithm is implemented on C++, serial communication on the Raspberry side is also implemented on C++. Using \lstinline[language=C++]|<wiringPi.h>| and \lstinline[language=C++]|<wiringSerial.h>| libraries any string can be sent to the serial port specified by the string \lstinline[language=C++]|/dev/ttyACM0"| with a specified baud rate. 
-
-
-\begin{lstlisting}[language=C++,caption={C++ class for serial communication}]
-void ArduinoComm::sendToController(std::string payload) {
-/*************************/
-int serialDeviceId = 0;
-serialDeviceId = serialOpen("/dev/ttyACM0", 9600);
-std::cout << "sender " << serialDeviceId << std::endl;
-if (serialDeviceId == -1) {
-std::cout << "Unable to open serial device" << std::endl;
-return;
-}
-if (wiringPiSetup() == -1) {
-return;
-}
-serialPuts(serialDeviceId, payload.c_str());
-return;
-}
-\end{lstlisting}
-
-	%On the Arduino side, the commands coming from serial port should be listened. The preferred way of achieving that task is to use \texttt{SerialCommand.h} library for the Arduino which allows executing a function depending on the incoming string. Using \lstinline|.addCommand("str",func)| function of the library any function \textit{\lstinline|func|} can be associated with any string coming from serial port. Moreover, the functions can have argument. For example, let the string "PWMSET" be execute a function \lstinline|setpwm()| which requires the PWM value as argument. If incoming string is of the form "PWMSET 150", using \lstinline|.next()| function of the library, the value 150 can be read and converted into integer and interpreted as the PWM value to be set by the function.\\
+	\paragraph*{Arduino side}
+	
+	On the Arduino side instead of simply using \lstinline[language=Arduino]|serialRead(.)| command,  the \lstinline[language=Arduino]|SerialCommand.h| library is used for more stable operation. This library allows us to associate any custom function to the specific incoming string.  An example for reading a PWM value is shown in \textit{Algorithm \ref{algo:serialcomm_ard}}
+	
+	\begin{algorithm}
+		\DontPrintSemicolon
+		include SerialCommand.h \;
+		declare object $scmd$ of the library \;
+		declare global variable $value$ \;
+		set baud rate \;
+		begin serial port\;
+		$scmd.addCommand("<payload\_string>",assc\_func)$ \;\;
+		
+		void assc\_func{\;
+			char$*$ arg \;
+			arg = scmd.next() \;
+			\If{arg is not NULL}{$value$=arg \;}
+			}
+		\caption{Arduino serial communication\label{algo:serialcomm_ard}}
+	\end{algorithm}	 
+	
+		In our case, baud rate is set to 9600 which can provide enough speed. Using the described structure any required value can be send to Arduino such as the mid-point of the road, target angle, distance sensor measurements and so on.
+		
 
 	\item {Discussions on the Solution}
 
-		%Using that library, consecutive commands with less that 1ms time separation are sent and the reliability of the library is tested. The results are positive. Since the lane detection algorithm is generating angle and position data approximately in every 7ms, the performance of the library is more than enough for this purpose.			
+		Using \lstinline[language=Arduino]|SerialCommand.h| library, consecutive commands with less than 1ms time separation are sent and the reliability of the library is tested. The results are positive. Since the lane detection algorithm is generating angle and position data approximately in every 7ms, the performance of the library is more than enough for this purpose. The library works properly in the finalized version of the design 			
 
 	\end{enumerate}
 
@@ -1015,7 +1028,7 @@ return;
 
 \subsection{Driving System}
 
-	%This system is responsible for the motion of the vehicle. Two parameters that are the direction and the speed of the vehicle is controlled by this unit accordingly to the information coming from the \textit{Computation System}. And the requirement for this system are as follows;
+	This system is responsible for the motion of the vehicle. Two parameters that are the direction and the speed of the vehicle is controlled by this unit accordingly to the information coming from the \textit{Computation System}. And the requirement for this system are as follows;
 
 
 	\begin{enumerate}
@@ -1031,7 +1044,7 @@ return;
 
 
 \subsubsection{Direction Subsystem}
-
+\todo{This part is rewritten for the final report}
 	\begin{enumerate}
 		\item {Requirements for the Solution}
 		
@@ -1042,20 +1055,19 @@ return;
 
 		\item {Solution for the Subsystem}
 
-		%As will be explained in more detail in \textit{Structure System}, the vehicle has two DC motors and one caster-ball as a movement part. This subsystem uses differential drive in order to drive the vehicle. This subsystem will get two important parameter from other subsystems, namely;
+		As explained more detail in \textit{Structure System}, the vehicle has two DC motors to provide differential derive and a caster-ball for balance and easy rotation of the vehicle.  This subsystem acquires two important parameters from other subsystems, namely;
 
 		\begin{itemize}
 			\item PWM Offset Value that determines the speed of the vehicle at longitudinal movement. This data is acquired from the \textbf{Speed Subsystem.} 	
-			\item PWM Difference Value that determines the speed difference between the two motors. This difference helps the vehicle in lateral movement. This data is acquired from the \textbf{PID Controller Subsystem.} 	
+			\item PWM Difference Value that determines the speed difference between the two motors. This difference helps the vehicle align itself in lateral direction. This data is acquired from the \textbf{PID Controller Subsystem.} 	
 		\end{itemize}	
-
-
-	%H-bridge motor drivers are used to drive DC motors. L298N motor driver with voltage regulator is used for this purpose in this project. 
+	
+	Using Arduino and H-bridge motor driver, acquired PWM data is supplied to the motors for their speed control. L298N is selected for motor driver since it can drive both motor together and easily controlled by Arduino.
 
 
 	\item {Discussions on the Solution}
 
-		%The solution for this subsystem is a very similar solution as discussed in \textit{Conceptual Design Report}. Since we performed the test for this subsystem even before the conceptual design stage and they were satisfying technical requirements, the solution was not altered. 
+		The solution for this subsystem is fixed at the \textit{Conceptual Design Report} stage. Since then, some improvements are made to match the voltage values at the same PWM value. Other than that, the solution fully satisfies the requirements.
 
 	\end{enumerate}
 
@@ -1080,13 +1092,13 @@ return;
 	Main algorithm of this subsystem relies on the inverse ratio principle, that is, as the lane angle increases the base speed for the motors is decreased. This can be formalized as follows;
 	
 	
-	$$ PWM~Offset ~=~K_{max}~-K_1 \beta$$
+	$$ \text{PWM~Offset}~=~K_{max}~-K_1 \beta$$
 	
 	where $K_{max}$ is the maximum PWM value the base PWM should reach as it is on the straight path, the value for $K_{max}$ can be determined by try and error test.
 	
 	However, it is also desired that the minimum PWM values shoul satisfy satisfying speed perfomance for the vehicle, therby a minimum PWM restrictions were put on this PWM calculation. It can be formulated as;
 	
-	$$ PWM~Offset~=~max\{ K_{max}~-K_1 \beta , K_{min} \}$$.
+	$$ \text{PWM~Offset}~=~max\{ K_{max}~-K_1 \beta , K_{min} \}$$.
 	
 	where $K_{min}$ is the minimum allowable PWM value for the DC motors, and it can be found by try and error.	Moreover, since the path has varying properties, it was desired to have $K_{min}$ is also dependent on $\beta$ value. The implemented algorithm can be summuried at \textit{Algoritm~\ref{algo:baseSpeed}} and the hypotatical $\beta$ vs base PWM graph can be investigated at \textit{Figure~\ref{fig:baseSpeed}}.
 	
@@ -1122,14 +1134,14 @@ return;
 
 \subsection{Motion System}
 
-	%Duty of this system is maintaining mechanical rigidity of the driving system. And the requirement for this system are as follows;
+	This system is responsible for maintaining mechanical rigidity of the driving system. The requirement for this system is as follows;
 
 	\begin{enumerate}
 		\item The system should ensure that the vehicle can drive itself with enough power.	
 	\end{enumerate}	
 
 	
-	%The system has two subsystems namely,
+	The system has two subsystems namely,
 
 	\begin{enumerate}
 		\item \textbf{Wheels Subsystem} which is responsible for transferring power from motor shaft to road.
@@ -1139,25 +1151,28 @@ return;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 	\subsubsection{Wheels Subsystem}
-
+\todo{This part is rewritten for the final report}
 		\begin{enumerate}
 			\item {Requirements for the Solution}
 			
 			\begin{enumerate}
-				\item The subsystem should ensure that the wheels can grip lane without slipping in all conditions 
+				\item The subsystem should ensure that the wheels can grip lane without slipping in all conditions
+				\item Vehicle should be able to turn steep bends of the specified lane
 			\end{enumerate}
 
 
 	\item {Solution for the Subsystem}
 	
-	%As the previous suggestion in CDR, 2+1 combination (2 wheel with power and 1 caster ball) is preferred due to easier implementation and control. Although this placement weaker in balance and obstacle handling, importance of easier implementation and control are considered more beneficial. 
+	Wheel structure is one of the critical subsystem since it affects the structure of the PID controllers for direction and speed. The preferred structure has two separately driven wheels for differential drive at the back and a caster ball in front for enabling the turning of the vehicle.  
 	
-	%While choosing wheels, high friction property is considered. Because of this reason, super soft and slick tire are chosen with lighten aluminum rim. Besides, larger width is preferred to increase hanging on the lane.      
+	The location of the wheels are moved 5 cm to the front from the back end. This design change comes with two beneficial results. First, the distance between camera and the wheels are shortened which in turn reduces the delay between lane detection and driving. More specifically, the distance between the the target point determined by the lane detection system and the actual present point is decreased. Second, a torque component after the wheels become present which in turn allows caster ball to move over obstacles more easily.
+	
+	In determining the wheels, high friction property is considered. Hence, super soft and slick tire are chosen with lighten aluminum rim. Besides, wheels with larger width is preferred to increase the possibility of sticking on the lane.      
 
 
 	\item {Discussions on the Solution}
 	
-	%After wheel subsystem tests, we observe the choice gives what we expect. Although tires make dirty the path, their handling capability is fascinating. Therefore, this system satisfies requirements.
+	After wheel subsystem tests, we observe the choice gives what we expect. Although tires make the path dirty, they fasten to the road quite successfully. Therefore, this system satisfies requirements.
 
 	\end{enumerate}
 
@@ -1189,7 +1204,7 @@ return;
 
 \subsection{Structure System}
 
-	%This system is responsible for mechanical structure of the vehicle. Placement and orientations of both electrical and mechanical components are considered in this system. And the requirements for this system are as follows;
+	This system is responsible for mechanical structure of the vehicle. Placement and orientations of both electrical and mechanical components are considered in this system. The requirements for this system are as follows;
 
 
 	\begin{enumerate}
@@ -1202,15 +1217,15 @@ return;
 	The system has two subsystems namely,
 	
 	\begin{enumerate}
-		\item \textbf{Chassis Subsystem} which is responsible for the connections of mechanical components in the vehicle.
-		\item \textbf{Printed Circuit Board Subsystem} which is responsible for the placement of electrical components.
+		\item \textbf{Chassis Subsystem} which is responsible for the mechanical connections of components in the vehicle.
+		\item \textbf{Printed Circuit Board Subsystem} which is responsible for preventing cable crowd caused by connection of electrical components.
 	\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Chassis Subsystem}
-
+\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
 	\begin{enumerate}
 		\item {Requirements for the Solution}
 		
@@ -1227,33 +1242,26 @@ return;
 
 	\item {Solution for the Subsystem}
 
-		%Main purposes of this subsystem are protection of the critical elements of the robot and holding components together. The most important part of this section is weight distribution.\\
+		Main purposes of this subsystem are protection of the critical elements of the robot and holding components together. The most important part of this section is weight distribution.
 
-		%Current chassis structure relies on two newly-designed plexiglass layers. Raspberry Pi and Arduino is placed on the upper layer while motor driver and the battery are on lower one. To keep the center of mass of the vehicle close to the ground, battery is placed as low as possible. The connection of the motor driver and Arduino consists of eight cables two of which are the power lines. The cables are placed in a way that they cause no entanglement with any other parts. The connection between RPi and Arduino is currently accomplished by USB cable. \\
+		Chassis structure relies on two custom-designed plexiglass layers. Raspberry Pi, Arduino Nano and Voltage regulator are placed on the upper layer while motor driver, Li-Po battery and powerbank are on lower one. To keep the center of mass of the vehicle close to the ground, Li-Po battery and powerbank are placed as low as possible. The connection of the motor driver and Arduino consists of eight cables two of which are the power lines. The cables are placed in a way that they cause no entanglement with any other parts. The connection between RPi and Arduino is accomplished by USB cable. 
 
-		%Since there is not much component on the vehicle, the space on the layers are enough to locate the components. However, placing the camera of RPi has been a great problem. The view angle of the camera turned out to be considerable small than expected. Other several cellphone cameras were tried but they are could not satisfy the requirement that both side of the lane should be visible either. The only solution was to elevate the camera. That is why a camera holder structure is designed and added to the system.\\	
+		Since there is not much component on the vehicle, the space on the layers are enough to locate the components. However, placing the camera of RPi has been a great problem. The view angle of the camera turned out to be considerable small than expected. Other several cellphone cameras were tried but they are could not satisfy the requirement that both side of the lane should be visible either. The only solution was to elevate the camera. That is why a camera holder structure is designed and added to the system.
 
-		%To satisfy the requirements the holder is built using 4mm plexiglass. The choice satisfies the rigidity and light weight possible. A thinner one would result in less rigidity and increased vibration on the system. The designed structure has the elevation range from 35 cm to 45 cm and a camera angle ranging from $0^o$ to $45^o$. Having manufactured, the camera holder is integrated to the vehicle (\textit{see Figure \ref{fig:chassis}}). After integration, the view of the camera can completely cover the both edges of the path.\\
-
-		%In addition, new motor holder part is designed to have better connection of the wheels to the vehicle. 3D isometric view of the piece can be seen in \textit{Figure }.
-
-	\begin{figure}[h]
-		\includegraphics[width=.2\textheight,center]{images/motor-holder.png}
-	\caption{Motor holder 3D view}
-	\end{figure}
+		To satisfy the requirements the holder is built using 4mm plexiglass. The choice satisfies the rigidity and light weight possible. A thinner one would result in less rigidity and increased vibration on the system. The designed structure has the elevation range from 35 cm to 45 cm and a camera angle ranging from $0^o$ to $45^o$. Having manufactured, the camera holder is integrated to the vehicle (\textit{see Figure \ref{fig:chassis}}). After integration, the view of the camera can completely cover the both edges of the path. Lastly LEDs for handshake protocols are also placed on the camera holder at the updated design.\\
 
 
-	Current version of chassis can be seen in \textit{Figure~\ref{fig:chassis}}.
+	CAD model of the chassis can be seen in \textit{Figure~\ref{fig:chassis}}.
 
 
 	\begin{figure}[h]
-		\includegraphics[width=0.8\textwidth,center]{images/chassis1}
-		\caption{Isometric view of the 3D Drawing of the Vehicle \label{fig:chassis} }
+%		\includegraphics[width=0.8\textwidth,center]{}
+		\caption{Isometric view of the 3D Drawing of the vehicle \label{fig:chassis} }
 	\end{figure}
 
 	\item {Discussions on the Solution}
-
-		%The only change done on this subsystem is to design a new plexiglass layers instead of using pre-designed ones. By that way, much more flexibility is obtained in terms of placement of the components. On the other hand designed motor holder pieces provides rigid connection between chassis and the wheels.  
+		A few minor updates have been made since \textit{Critical Design Review Report} such as changing the location of wheels and voltage regulator. However, no changes is needed in the overall design of the chassis. The vehicle now has good look with changed plexiglass colors of both layers and camera holder. In terms of center of mass, the vehicle tested itself by falling out of the elevated path without tipping over many times.
+	
 
 	\end{enumerate}
 
@@ -1262,7 +1270,7 @@ return;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Printed Circuit Board Subsystem}
-
+\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
 	\begin{enumerate}
 		\item {Requirements for the Solution}
 		
@@ -1273,9 +1281,13 @@ return;
 
 	\item {Solution for the Subsystem}
 
-		%The main role of this part is decreasing connection mess and increase vibration strength of the robot against disturbances. Also, this section increases rigidity of the whole system. The requirements of this subsystem are listed below:	
+		The main role of this part is decreasing connection mess and increase vibration strength of the robot against disturbances. Also, this section increases rigidity of the whole system. 
+		
+		In the finalized design, there are two places that required PCB. First one is RPi GPIO pinouts. Two distance sensor and handshake LEDs are controlled by RPi. In order to have a compact connection between sensors and LED module, a PCB is designed. Its purpose is just to convert GPIO pinouts to compact headers for sensors and LED module. It is designed as a socket that can be placed on the RPi's GPIO pins. The second PCB is designed for handshake LEDs such that only one cable with 5 pins is enough to connect it to RPi.  
+		
+		Other than that a cable with 6 pinned header is designed in order to connect Arduino to the motor driver. A switch is placed between Li-Po battery and motor driver so that the race scenario can be executed properly.
 
-		%This subsystem aims to make all the circuit connections rigid and compact. Currently, there is wire connections between Arduino-Motor driver and Arduino-RPi. However, addition of vehicle detection sensors and other lane detection alternatives will increase the amount of components, hence, wires. In addition, to use the space occupied by the Arduino UNO board, Arduino Mini can be used. This also allows to build the circuit board as shield for Arduino Mini. After that any other sensors and connections can be made through PCB. In other words, PCB acts as a breakout board for each item integrated to the system in a more rigid and compact way.
+
 
 
 	\end{enumerate}	
@@ -1286,7 +1298,7 @@ return;
 
 
 \subsection{Compatibility of the Subsystems}
-"\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
+\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
 	The block diagram showing the interaction of the subsytem block with each other can be seen from the \textit{Figure~\ref{fig:subsys-block}}. As can be seen from the figure also that, there are two main path within the project. One of them starts by processing the camera vision by the \textit{Lane Detection Subsystem} and ends with the transfer of torque from \textit{Motors Subsystem} to \textit{Wheels Subsystem} which results with a movement of the vehicle. In this path the data before the \textit{PID Controller} and \textit{Speed} subsystems are processed within the Raspberry Pi without any problem, at this point the output data are transferred to Arduino by \textit{Internal Communication Subsystem} without any problem. The rest of this path is processed by the Arduino without any problem as well.
 
 	The second path starts with the detection of the opponent by the \textit{Vehicle Detection Subsystem}. The path continues within the Raspberry Pi until the \textit{vehicle stop signal} is transferred to \textit{Motors Subsystem} by \textit{Internal Communication Subsystem} without any problem.
@@ -1814,9 +1826,9 @@ return;
 
 \item Generate data on Raspberry Pi in a rate that reflects the time consumed of Data Processing subsystem. This will yield a realistic data rate.  
 
-\item Send random text data to Arduino.  
+\item Do the initial integration between Arduino and Raspberry Pi.
 
-\item Do the initial integration between Arduino and Raspberry Pi.  
+\item Send random text data to Arduino.  
 
 \item Send data from Raspberry Pi to Arduino.  
 
@@ -1831,8 +1843,8 @@ return;
 
 \subsubsection*{Results of Internal Communication Subsystem Tests}
 
-
-	%The results are positive after all the necessary adjustments are done. The test is also repeated with the real lane detection algorithm and the real time sent data is read from LCD display connected to Arduino. The system was working properly at the rate at which lane detection algorithm produces data.
+	To check the accuracy of the sent data an LCD display is connected to Arduino and observed the values on the display. The observed values are correct implying that the system works properly.
+	
 
 
 
@@ -1997,7 +2009,7 @@ return;
 	The result of each parameter tuning test can be found at \textit{Figure~\ref{fig:baseSpeedExp}}
 	
 	\begin{figure}[h]
-		\includegraphics[width=\textwidth,center]{images/ROT_ROI/baseSpeedExp_crop}
+		\includegraphics[width=.8\textwidth,center]{images/ROT_ROI/baseSpeedExp_crop}
 		\caption{Experimental Base Speed PWM vs Experimental $\beta$ Angle}\label{fig:baseSpeedExp}
 	\end{figure}
 	
@@ -2022,7 +2034,7 @@ return;
 
 \item Apply a horizontal force
 
-\item Observe the behaibour 
+\item Observe the behavior 
 
 \item If the vehicle is slipping, the test can be considered to be failure. If not, the the test result can be considered as success. In other word, friction between road and wheel should greater than road and ground. 
 
@@ -2030,8 +2042,10 @@ return;
 \end{enumerate}
 
 \end{enumerate}
-
-
+\subsubsection*{Results for Wheels Subsystem Tests }
+	Since the weight distribution and total weight of the vehicle is properly adjusted, the slipping of the wheels is expected to be quite unlikely which is what is observed at the test.
+	
+	
 \subsection {Motors Subsystem Tests and Results} 
 
 
@@ -2067,7 +2081,7 @@ return;
 
 
 \subsection {Chassis Subsystem Tests and Results}
-
+	\todo{THIS PART IS NEW FOR FINAL REPORT.}
 \begin{enumerate}
 
 \item Inertia test: 
@@ -2091,6 +2105,9 @@ return;
 \end{enumerate}
 
 
+\subsubsection*{Results of Chassis Subsystem Tests}
+
+As mentioned previously, the disturbances applied on the vehicle and the deviation is between the levels that can be handled by other algorithms. Furthermore, custom-designed chassis added rigidity to the structure which in turn provides better test results.
 
 
 
@@ -2099,7 +2116,7 @@ return;
 
 
 \subsection {Printed Circuit Board Subsystem Tests and Results}
-
+	\todo{THIS PART IS NEW FOR FINAL REPORT.}
 
 \begin{enumerate}
 
@@ -2122,10 +2139,8 @@ return;
 
 \end{enumerate}
 
-\subsubsection*{Results of Structure System Tests}
-
-	%As mentioned in Section 3, the disturbances applied on the vehicle and the deviation is between the levels that can be handled by other algorithms although some improvements are still needed. Furthermore, newly-designed chassis added rigidity to the structure which in turn provides better test results
-
+\subsubsection*{Results of PCB Subsystem Tests}
+	When checked, there is no unwanted short circuit and all other connections were successful for both PCBs and cables. Thus, the subsystem satisfies the requirements.
 
 
 
@@ -2257,9 +2272,9 @@ return;
 \begin{appendices}
 
 
-\includepdf[landscape=false,pages=1, scale=0.875,angle=0, label=gannt_chart_app,pagecommand=\section{USER MANUAL}\label{user_man}]{USER_MANUAL.pdf}
+\includepdf[landscape=false,pages=1, scale=0.875,angle=0, label=gannt_chart_app,pagecommand=\section{USER MANUAL}\label{user_man1}]{USER_MANUAL.pdf}
 
-\includepdf[landscape=false,pages=2, scale=0.875,angle=0, label=gannt_chart_app,pagecommand=\label{user_man}]{USER_MANUAL.pdf}
+\includepdf[landscape=false,pages=2, scale=0.875,angle=0, label=gannt_chart_app,pagecommand=\label{user_man2}]{USER_MANUAL.pdf}
 
 %\includepdf[landscape=true,pages=1, scale=0.775,angle=0, label=gannt_chart_app,pagecommand=\section{Gannt Chart}\label{gannt_chart_app}]{gantt.pdf}
 
