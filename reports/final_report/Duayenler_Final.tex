@@ -149,26 +149,26 @@ The company consists of talented engineers from different fields, namely compute
 
 DUAYENLER has several focus points to develop an autonomous driving technology. These are, vehicle vision, inter-vehicle communication, vehicle control and physical design of the vehicle. Actually, those are the main building blocks of the main technology. Vehicle vision summarizes the concept of understanding path properties, that is to be able to extract and differentiate path and obstacles in every weather condition. Obviously, inter-vehicle communication provides cooperation environment with opponent vehicles and enables a traffic hierarchy. As the vehicle has path vision, the decision of steering must be made that brings the need for vehicle control. Being able to follow a path and to head towards bends are essential for a vehicle. Besides, the physical structure of the vehicle must be able to suit with the rest of the technologies. The height, the weight, the width of the vehicle, the chassis material choice and additional implementation-specific features are handled in physical design. This structure and combination of the systems provide suitable environment for DUAYENLER to develop autonomous driving technology.
 
-This report gives the reader a solid view and understanding of the project. Detailed design considerations with technical details and test results do not leave any vague point on the implementation. The duration of the project is 33 weeks, from the beginning of October 2018 to the second week of May 2019. The total cost is calculated to be [WRITE HERE ACTUAL COST VALUE], whereas cost to produce the commercial vehicle is [WRITE HERE ONLY PRODUCTION VALUE]. Along with the vehicle, the customer is provided with user manual, elliptical path, rechargeable batter and the charger. The vehicle has two (2) years of warranty.
-\todo{DONT FORGET THESE VALUES}
+This report gives the reader a solid view and understanding of the project. Detailed design considerations with technical details and test results do not leave any vague point on the implementation. The duration of the project is 33 weeks, from the beginning of October 2018 to the second week of May 2019. The total cost is calculated to be approximately $616.5~\$$ and  1700 man-hour, whereas cost to produce the commercial vehicle is 199.5 $\$$. Along with the vehicle, the customer is provided with user manual, elliptical path, rechargeable batter and the charger. The vehicle has two (2) years of warranty.
+
 \newpage
 	\section{Introduction}
 
-	%The self driving cars have been the buzz concept of the community lately. Many companies have established departments and teams to develop their own self driving cars. Increasing research on the concept brings the increasing demand to new technologies and approaches. DUAYENLER Ltd. Şti. (DUAYENLER) aims to catch this trend and be one of the pioneers in this field. To realize this goal, DUAYENLER develops a vehicle for Car Chasing Project. The outcome of the project is a vehicle that can follow a predefined path in an autonomous way. The vehicle not only drive on the path itself, but it will communicate with other vehicles as well.\\
+Autonomous car technologies are the hot topic of today. Companies which want to lead the technology have already started on this topic with their R\&D teams. To bring new approach in this area, DUAYENLER Ltd. Şti. (DUAYENLER) aims to be one of the leaders in this area. Based on this goal, DUAYENLER designed and produced a prototype for Car Chasing Project. The purpose of this project is an autonomous car can follow a predefined path, and it can communicate with the other car on the path.  
 
-	%This project, as most of projects, is a multi disciplinary tasks. It involves image processing, data processing, statistical estimation, networking, mechanical design and mechanical assembly. These disciplines are not adequate by themselves but also integration with each other. So, system design, testing and automation are key concepts to merge everything into a product. Fortunately, DUAYENLER is composed five team members who build up proficiency in those fields.\\
+DUAYENLER with its five team members divided this project into pieces, such as image processing, mechanical design, differential drive etc., and assign tasks to members according to their professions. After modules are designed, integration and testing were a collective work of all members.  
 
-	%The fundamental blocks of the project are autonomous steering and its control. To build up the fundamental blocks and the project, several systems and subsystems are developed in a reasonable way. Firstly, the objectives of the project was determined. Secondly, the system was divided into six main system and the requirements for these subsystem were determined considering the project objectives. Thirdly, these subsystems then divided into two main subsystems. And the requirements for theses subsystems were constructed considering their parent system requirements. Lastly, the subsystems were designed considering these requirements.\\
+The main blocks of the project are autonomous steering and its control. These blocks are built from systems that are built from subsystems. Therefore, at first stage, objectives of the project were specified. Then, the project was divided into six systems with their requirements. As a next stage, systems were divided into subsystems. Finally, from bottom to top design was completed. 
 
-	%This report includes detailed technical solutions for the subsystem blocks, their requirements and the respective justifications for the requirements. In addition to these detailed solutions, the report includes detailed test steps and the discussion on these tests for the subsystems of the project. Lastly, this report includes detailed power and cost analysis for the project and the Gantt chart for the project management purposes.
+This report contains detailed descriptions of solutions for subsystem blocks, their requirements, tests and test results of the prototype. Moreover, deliverables, detailed cost analysis of prototype and overall project are covered by this report. Finally, report contains safety issues, environmental effects of the prototype, and possible extensive application of the prototype. 
+
+
 \newpage
 
 
 
 
 \section{Design Description} 
-
-	\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
 	
 	The ultimate objective of the project is to design and manufacture a self driving vehicle. The vehicle meets certain criteria that are defined in Standard Committee Report. The project is composed of six main systems together with twelve subsystems. The overall top-down organization of the project is shown in \textit{Figure \ref{fig:organization}}.
 
@@ -213,7 +213,6 @@ This report gives the reader a solid view and understanding of the project. Deta
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Lane Detection Subsystem}\label{sec:LaneDetectionSubsystem}
-\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
 
 \begin{enumerate}[A.]
 
@@ -332,7 +331,6 @@ For this subsystem to be stable, HSV filter must produce a clean filtered result
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Vehicle Detection Subsystem}
-\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
 
 \begin{enumerate}
 	\item {Requirements for the Solution}
@@ -362,8 +360,6 @@ For this subsystem to be stable, HSV filter must produce a clean filtered result
 
 
 \subsection{Computation System}
-\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
-
 
 
 This system is responsible for computational works of the vehicle. The system mainly give meaning to data generated by the sensing system. The requirements for this system are as follows: 
@@ -393,7 +389,6 @@ This system is responsible for computational works of the vehicle. The system ma
 
 
 \subsubsection{Data Processing Subsystem}\label{sect:dataProcessingSubsystem}
-\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
 
 \begin{enumerate}[A.]
 
@@ -641,7 +636,6 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 
 \subsubsection{PID Controller Subsystem}\label{sect:ControllerSubsystem}
 
-\todo{This subsubsection was rewritten for final report}
 \begin{enumerate}
 	\item {Requirements for the Solution}
 	
@@ -977,7 +971,7 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 
 
 \subsubsection{External Communication Subsystem}	
-\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
+
 
 
 \begin{enumerate}
@@ -994,14 +988,6 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 	
 	\item {Solution for the Subsystem}
 	
-	The main solution for this subsystem is setting the device as a P2P host. Sockets are used to send or receive messages.  Since the host can act as a server as well as a client, both socket functions are used to establish communication. The subsystem requires opponent ID and host type(client/server) from the user and sensor readings from the vehicle detection subsystem. It can initiate and terminate other subsystems when necessary.
-	
-	The first step of the game is setting up a Wireless Ad-Hoc Network. The fact that which side will provide the network is decided according to the the agreement with the opponent. After that decision, by changing the Pi's configuration files accordingly, one side sets up the network and the other connects to it after rebooting.
-	
-	To implement the communication, the socket data structures are created in both server and client sides. At the beginning of the race, the peer acting as a server listens to the port 5000, which is specified in Standard Committee. Then, the connect() function is called in the client side, so that the request is sent. At the same time, server side acknowledges the request by means of accept() function. At this moment, client side also sends acknowledgement by default, hence race starts. The peers are connected during the race. This mechanism is common in every protocol that utilizes TCP, and called 3-way handshake.
-	
-	The process for the finishing handshake also utilizes socket functions, but the process is a little bit different. For the win case, vehicle detection subsystem (front sensor) initiates the handshake. A catch message (ID00) is sent to the opponent. If acknowledgment is taken from the opponent, stop message (ID10) is sent. On the other hand, for the defeat case, a catch message is received by the opponent. Then, vehicle detection subsystem is called. According to the returned value from the back sensor, the acknowledge (ID01) or reject (ID11) are sent. Also, LEDs corresponding to messages are lid for the finishing handshake.
-	
 	\begin{figure}[h]
 		\includegraphics[width=0.8\textwidth,center]{images/client_asm}
 		\caption{ASM Chart of the Algorithm of the External Communication Subsystem for Client Side \label{fig:asmclient} }
@@ -1011,6 +997,15 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 		\includegraphics[width=0.8\textwidth,center]{images/server_asm}
 		\caption{ASM Chart of the Algorithm of the External Communication Subsystem for Server Side \label{fig:asmserver} }
 	\end{figure}
+	
+	The main solution for this subsystem is setting the device as a P2P host. Sockets are used to send or receive messages.  Since the host can act as a server as well as a client, both socket functions are used to establish communication. The subsystem requires opponent ID and host type(client/server) from the user and sensor readings from the vehicle detection subsystem. It can initiate and terminate other subsystems when necessary.
+	
+	The first step of the game is setting up a Wireless Ad-Hoc Network. The fact that which side will provide the network is decided according to the the agreement with the opponent. After that decision, by changing the Pi's configuration files accordingly, one side sets up the network and the other connects to it after rebooting.
+	
+	To implement the communication, the socket data structures are created in both server and client sides. At the beginning of the race, the peer acting as a server listens to the port 5000, which is specified in Standard Committee. Then, the connect() function is called in the client side, so that the request is sent. At the same time, server side acknowledges the request by means of accept() function. At this moment, client side also sends acknowledgement by default, hence race starts. The peers are connected during the race. This mechanism is common in every protocol that utilizes TCP, and called 3-way handshake.
+	
+	The process for the finishing handshake also utilizes socket functions, but the process is a little bit different. For the win case, vehicle detection subsystem (front sensor) initiates the handshake. A catch message (ID00) is sent to the opponent. If acknowledgment is taken from the opponent, stop message (ID10) is sent. On the other hand, for the defeat case, a catch message is received by the opponent. Then, vehicle detection subsystem is called. According to the returned value from the back sensor, the acknowledge (ID01) or reject (ID11) are sent. Also, LEDs corresponding to messages are lid for the finishing handshake.
+	
 	
 	
 	The ASM chart describing the algorithm of the external communication subsystem can be seen in \textit{Figure~\ref{fig:asmserver}} and \textit{Figure~\ref{fig:asmclient}}, for client and server sides, respectively. The fact that which team will be server or client is decided with the agreement between the teams before the race. Notice that, the only difference between client and server codes is the TCP connection parts before starting the race. 
@@ -1075,7 +1070,7 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Speed Subsystem}
-\todo{This part is rewritten for the final report}
+
 \begin{enumerate}
 	\item {Requirements for the Solution}
 	
@@ -1298,13 +1293,16 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 
 
 \subsection{Compatibility of the Subsystems}
+
 \todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
+
+
 	The block diagram showing the interaction of the subsytem block with each other can be seen from the \textit{Figure~\ref{fig:subsys-block}}. As can be seen from the figure also that, there are two main path within the project. One of them starts by processing the camera vision by the \textit{Lane Detection Subsystem} and ends with the transfer of torque from \textit{Motors Subsystem} to \textit{Wheels Subsystem} which results with a movement of the vehicle. In this path the data before the \textit{PID Controller} and \textit{Speed} subsystems are processed within the Raspberry Pi without any problem, at this point the output data are transferred to Arduino by \textit{Internal Communication Subsystem} without any problem. The rest of this path is processed by the Arduino without any problem as well.
 
 	The second path starts with the detection of the opponent by the \textit{Vehicle Detection Subsystem}. The path continues within the Raspberry Pi until the \textit{vehicle stop signal} is transferred to \textit{Motors Subsystem} by \textit{Internal Communication Subsystem} without any problem.
 
 	\begin{figure}[h]
-		\includegraphics[width=\textwidth,center]{images/subsys_block}
+		\includegraphics[width=\textwidth,center]{images/subsys_block.png}
 		\caption{Block Diagram of the Project and the Interaction of the Subsystems}\label{fig:subsys-block}
 	\end{figure}
 
@@ -1321,7 +1319,7 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection {Lane Detection Subsystem Tests and Results}	
-\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
+
 
 \begin{enumerate}
 
@@ -1377,7 +1375,7 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection {Vehicle Detection Subsystem Tests and Results}\label{sect:vhd}
-\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
+
 
 \begin{enumerate}
 	\item Vehicle Detection Test in Closed Environment with One Sensor:
@@ -1719,7 +1717,7 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \subsection {PID Controller Subsystem Tests and Results}	
-\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
+
 \begin{enumerate}
 	
 	
@@ -1853,7 +1851,7 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection {External Communication Subsystem Tests and Results}
-\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
+
 
 \begin{enumerate}
 	
@@ -1932,7 +1930,7 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 
 
 \subsection {Direction Subsystem Tests and Results}
-\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
+
 	\begin{enumerate}
 		\item Straight Drive Test: \label{test:a1}	
 		\begin{enumerate}
@@ -1961,7 +1959,7 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 
 
 \subsection {Speed Subsystem Tests and Results}
-\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
+
 \begin{enumerate}
 	
 	
@@ -2019,10 +2017,10 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+\newpage
 
 \subsection{Wheels Subsystem Tests and Results} 
-
+\todo{THIS PART IS NEW FOR FINAL REPORT.}
 
 \begin{enumerate}
 
@@ -2145,12 +2143,32 @@ As mentioned previously, the disturbances applied on the vehicle and the deviati
 
 
 \section{Budget}
-	\todo{THIS PART IS NEW FOR FINAL REPORT.}
+		
+	In this section spendings of the project will be investigated under two part. Fistly, real spendings will be analyzed and secondly, the cost of reproducable product will be investigated.
 
 	\subsection{Actual Expenditures}
-		\todo{THIS PART IS NEW FOR FINAL REPORT.}
+	
+		Besides the component spendings spesified at \textit{Table~\ref{tab:totalcost}}, $100~\$$ worth mechanical components, such as rechargeble drill and approximately $100~\$$ worth electrical components from porevious term projects were utilized throughout the project. Thereby, a total of approximate $616.5~\$$ budget and  1700 man-hour were spent on this project.
 		
-	\todo{Like 200 dolar hesap istiyor.}
+		\begin{table}[H]
+			\centering
+			\caption{Total Spendings for the Project}
+			\begin{tabular}{c|c}
+				$$Component$$ &  $$Approximate Spendings (in Dollar)$$  \\ \hline
+				Raspberry Pi & 50   \\ \hline
+				Raspberry Pi Camera & 47   \\ \hline
+				Chassis $\&$ Mechanical Components & 45   \\ \hline
+				Arduino  & 20 \\ \hline
+				DC Motor $\&$ Wheel & 100 \\ \hline
+				Motor Driver and Regulator &  9.5 \\ \hline
+				Powerbank & 25 \\ \hline
+				Li-po Battery  &  23 \\ \hline
+				Sensor $\&$ Cable & 60 \\ \hline
+				Other Spendings & 37 \\ \hline
+				Total Project & 416.5
+			\end{tabular} 
+			\label{tab:totalcost}
+		\end{table}
 		
 	\subsection{Cost Analysis of Reproducible Product}
 
@@ -2168,19 +2186,18 @@ As mentioned previously, the disturbances applied on the vehicle and the deviati
 			Arduino Nano & 1 &  4.8 \\ \hline
 			Polulu 150:1 6 V 200 RPM DC Motor & 2 & 42 \\ \hline
 			Bond Silicon Wheel & 2 & 8 \\ \hline
-			Motor Driver & 1 &  2.5 \\ \hline
+			Motor Driver and Voltage Regulator & 1 &  4 \\ \hline
 			Xiaomi 10000 mAh Mi Powerbank (Ver 3) & 1 & 12 \\ \hline
 			ProFuse 11.1 V 1750 mAh Li-po Battery  & 1 & 23 \\ \hline
 			Polulu VL6180X ToF Distance Sensor & 2 & 17 \\ \hline
 			LED headlight/LED & - & 0.2 \\ \hline
-			Styrofoam, Glue $\&$ Cardboard & - & 7 \\ \hline
-			Total Project & - & 198.5 
+			Styrofoam, Glue $\&$ Cardboard & - & 6.5 \\ \hline
+			Total Project & - & 199.5 
 		\end{tabular} 
 		\label{tab:cost}
 	\end{table}
-	\todo{this table was recreated for the final report, please do thereal spendings}
-
-	%As seen from the \textit{Table~\ref{tab:cost}}, budget is optimized with some changes such as Arduino Uno is replaced with its nano version, and upper layer of the chassis is designed thinner plexi glass. However, critical components, such as motors, ToF sensors and wheels, are selected for their performance. Powerbank selection is based on its size. The chosen one is the smallest powerbank which can give enough output to supply Raspberry Pi under full load. Camera and Raspberry pi have no other option in this project. Li-Po battery selection is based on duration and output voltage. 12V output is required during motor drive, and long term is required for demonstrations. Therefore, 1750 mAh 11.1V 3S battery is selected. 
+	
+	As can be reffered from the \textit{Table~\ref{tab:cost}}, some component modification were made for the final design after conceptual design review report. For example, DC motors were replaced with the ones having lower rpm values, or powwerbank as replaced with the one having quick charge capabilities to elliminate unidealities in performance.
 
 	\section{Power Analysis}
 	
@@ -2191,18 +2208,23 @@ As mentioned previously, the disturbances applied on the vehicle and the deviati
 			$$Component$$ & $$\specialcell{Current\\ (Avg),A}$$ & $$\specialcell{Power\\(Avg),W}$$ & $$\specialcell{Current\\(Max),A}$$ & $$\specialcell{Power\\(Max),W}$$ \\ \hline
 			Raspberry Pi 3B & 0.85 & 4.25 & 2.5 & 12.5   \\ \hline
 			Arduino Nano & 80m &  0.4 & 0.2 & 1 \\ \hline
-			DC Motors \& Motor Driver & 0.4 & 4.8 & 1.1 & 12.12 \\ \hline
+			DC Motors \& Motor Driver & 0.35 & 4.2 & 0.95 & 11.4 \\ \hline
 			Distance Sensor & 19m & 62.7m & 40m & 132m \\ \hline
-			Total  &  1.52m & 9.153 & 3.84 & 25.75         
+			Total  &  1.349 & 8.9127 & 3.69 & 25.032         
 		\end{tabular} 
 		\label{tab:power}
 	\end{table}
 
-		%The \textit{Table~\ref{tab:power}} shows the consumption under regular case and extreme case. If extreme scenario is considered, full power consumption of Raspberry Pi is supplied from powerbank while motors are supplied by Li-Po battery as can be seen from the \textit{Figure~\ref{fig:elec}}. Also, sensors and Arduino are supplied from Pi because they do not have high demand. Powerbank has two output could supply 2.5A for 5V output, so Pi could supply in the worst case.
+		The \textit{Table~\ref{tab:power}} shows the consumption under regular case and extreme case. If extreme scenario is considered, full power consumption of Raspberry Pi is supplied from powerbank while motors are supplied by Li-Po battery as can be seen from the \textit{Figure~\ref{fig:elec}}. Also, sensors and Arduino are supplied from Pi because they do not have high demand. Powerbank has two output could supply 2.5A for 5V output, so Pi could supply in the worst case.
 		
-		%Li-Po battery has these specs: 1750 mAh 11.1V 3S 25C, so it can supply 43 ampere constants during discharge although the motors demand 1.1 ampere at stall condition. 
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth,center]{images/elec_arch2}
+			\caption{Electrical Architecture of the Project}\label{fig:elec}
+		\end{figure}
+		
+		Li-Po battery has these specs: 1750 mAh 11.1V 3S 25C, so it can supply 43 ampere constants during discharge although the motors demand 1.1 ampere at stall condition. 
 
-		% All in all, sources are completely enough for consumption even in the worst case conditions.   
+		 All in all, sources are completely enough for consumption even in the worst case conditions. Although, previous chosen powerbank, in therory, was capable of producing enough power for Raspberry Pi, in reality, its fluctiations in voltage output caused undesired low voltage warnings from Raspberry Pi which leads to closing of two cores of its cpu. As a result, this fluctiations in voltage caused undesired fluctiations in processing time as can be seen \textit{Figure~\ref{fig:processTime}}  
 
 	\begin{figure}[h]
 		\includegraphics[width=\textwidth,center]{images/ROT_ROI/voltageSupply_crop}
@@ -2210,13 +2232,7 @@ As mentioned previously, the disturbances applied on the vehicle and the deviati
 	\end{figure}
 
 
-	\begin{figure}[H]
-		\includegraphics[width=0.5\textwidth,center]{images/elec_arch}
-		\caption{Electrical Architecture of the Project}\label{fig:elec}
-	\end{figure}
-
-
-	%\newpage
+	\newpage
 
 	\section{Deliverables}
 		Deliverables of the product are listed as follows;
@@ -2230,7 +2246,6 @@ As mentioned previously, the disturbances applied on the vehicle and the deviati
 			\item USB Cable
 		\end{itemize} 
 	\section{Discussions}
-		\todo{THIS PART IS NEW FOR FINAL REPORT.}
 		This sections presents a discussion on several things such as safety issues, application areas and environmental effects of the final product.
 	
 	\subsection{Safety Issues}
@@ -2249,20 +2264,19 @@ As mentioned previously, the disturbances applied on the vehicle and the deviati
 		Considering these applications or more, this project could be primitive model of many specific applications.
 
 	\subsection{Environmental Effects}
-		\todo{THIS PART IS NEW FOR FINAL REPORT.}
-	
+		
 		The environmental effects can be discussed regarding the material used in body of the car. Chassis and camera arm are all made of plexiglass (PMMA) material. PMMA is a versatile, durable, recyclable and sustainable material. As it has such properties, PMMA based products products have replaced products which were previously made from wood, iron and other natural ingredients. With this way, pressure on natural supplies is decreased. Hence, the acrylic products can be considered as an environment friendly option.
 
 		Regarding the battery, a Li-Po battery is used on the vehicle. Production of Li-Po batteries require lots of chemical and energy. And, what is worse is that there are currently no good programs to recycle lithium-polymer batteries. So, it can be concluded that Li-Po batteries are not environment friendly.
 
 
 	\section{Conclusion}
-
-		%This report consists of a review of the conceptual design report solutions and picked solutions. The solutions are explained in detail, and comparison of the solution among alternatives are discussed. \\
-
-		%In especial, overview of the systems is shown in V-Model with the system block diagram. Then, subsystems are given in a detailed manner with clarifications of the final solution, comparison of the CDR solutions, test steps and test results. The system has been assembled into a prototype chassis. Thanks to that, tests are done on this chassis. Besides, final chassis is designed considering the feedback gathered by this chassis. Mentioned limitation in CDR are enhanced, as shown in the test result, even though there are still minor issues. In addition to this, other non-problematic subsystems’ solutions are frozen. On the other hand, economic constraint which is 200\$ is still higher than cost of the total project. The company believes that power of a company comes from its economic plans. \\
+	
+		This report consists of the summary of the results of entire design effort. For each subsystem, the solutions are explained in detail and the results of the tests are discussed in detail. \\
 		
-		%DUAYENLER will continue their hard work to enhance their design performance in every way, for every case and scenario. The company members believe that the final works will bring an innovative approach to the design of autonomous cars with its solutions and solution approach. 
+		In especial, overview of the systems is shown in V-Model with the system block diagram. Then, subsystems are given in a detailed manner with clarifications of the final solution, comparison of the CDRR solutions, test steps and test results. The system has been assembled into a final chassis. Mentioned limitations in CDRR are enhanced, as shown in the test result. In addition to this, other non-problematic subsystems’ solutions are frozen. On the other hand, economic constraint which is 200\$ is still higher than cost of the total project. The company believes that power of a company comes from its economic plans. Finally, safety issues, application areas and environmental effects are discussed. \\
+		
+		This work is  done in a way that it is capable of handling every way, every case and scenario, by the great efforts of the members of DUAYENLER. The company members believe that this project will bring an innovative approach to the design of autonomous cars with its solutions and solution approaches. 
 
 	%\newpage
 \newpage
@@ -2276,9 +2290,9 @@ As mentioned previously, the disturbances applied on the vehicle and the deviati
 
 \includepdf[landscape=false,pages=2, scale=0.875,angle=0, label=gannt_chart_app,pagecommand=\label{user_man2}]{USER_MANUAL.pdf}
 
-%\includepdf[landscape=true,pages=1, scale=0.775,angle=0, label=gannt_chart_app,pagecommand=\section{Gannt Chart}\label{gannt_chart_app}]{gantt.pdf}
+\includepdf[landscape=true,pages=1, scale=0.775,angle=0, label=gannt_chart_app,pagecommand=\section{Gannt Chart}\label{gannt_chart_app}]{gantt.pdf}
 
-%\includepdf[landscape=true,pages=2-3, scale=0.775,angle=0,pagecommand=]{gantt.pdf}
+\includepdf[landscape=true,pages=2-3, scale=0.775,angle=0,pagecommand=]{gantt.pdf}
 
 
 
