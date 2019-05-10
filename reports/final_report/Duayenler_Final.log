@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.16)  10 MAY 2019 11:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.16)  10 MAY 2019 11:53
 entering extended mode
 **./Duayenler_Final.tex
 (Duayenler_Final.tex
@@ -1897,31 +1897,28 @@ Overfull \hbox (10.81772pt too wide) in paragraph at lines 967--967
 \OT1/cmr/m/n/12 PORT.  
  []
 
-[21]
-<images/client_asm.jpg, id=530, 751.80875pt x 692.5875pt>
+<images/client_asm.jpg, id=497, 751.80875pt x 692.5875pt>
 File: images/client_asm.jpg Graphic file (type jpg)
 <use images/client_asm.jpg>
-Package pdftex.def Info: images/client_asm.jpg  used on input line 993.
+Package pdftex.def Info: images/client_asm.jpg  used on input line 985.
 (pdftex.def)             Requested size: 358.46039pt x 330.2295pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+[21]
 <images/server_asm.jpg, id=531, 750.805pt x 803.0pt>
 File: images/server_asm.jpg Graphic file (type jpg)
 <use images/server_asm.jpg>
-Package pdftex.def Info: images/server_asm.jpg  used on input line 998.
+Package pdftex.def Info: images/server_asm.jpg  used on input line 990.
 (pdftex.def)             Requested size: 358.46039pt x 383.3894pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[22] [23 <./images/client_asm.jpg>] [24 <./images/server_asm.jpg>]
-Overfull \hbox (8.86356pt too wide) in paragraph at lines 1066--1066
+[22 <./images/client_asm.jpg>] [23 <./images/server_asm.jpg>] [24]
+Overfull \hbox (8.86356pt too wide) in paragraph at lines 1067--1067
 \OT1/cmr/m/n/12 rewrit- 
  []
 
 
-Overfull \hbox (8.86356pt too wide) in paragraph at lines 1066--1066
+Overfull \hbox (8.86356pt too wide) in paragraph at lines 1067--1067
 \OT1/cmr/m/n/12 rewrit- 
  []
 
@@ -1929,7 +1926,7 @@ Overfull \hbox (8.86356pt too wide) in paragraph at lines 1066--1066
 File: images/ROT_ROI/baseSpeed_crop.png Graphic file (type png)
 <use images/ROT_ROI/baseSpeed_crop.png>
 Package pdftex.def Info: images/ROT_ROI/baseSpeed_crop.png  used on input line 
-1107.
+1108.
 (pdftex.def)             Requested size: 448.07378pt x 239.93243pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1938,7 +1935,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <images/motor-holder.png, id=591, 550.30594pt x 554.82281pt>
 File: images/motor-holder.png Graphic file (type png)
 <use images/motor-holder.png>
-Package pdftex.def Info: images/motor-holder.png  used on input line 1241.
+Package pdftex.def Info: images/motor-holder.png  used on input line 1242.
 (pdftex.def)             Requested size: 130.084pt x 131.14531pt.
 
 
@@ -1947,48 +1944,48 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <images/chassis1.png, id=593, 1317.42188pt x 846.16125pt>
 File: images/chassis1.png Graphic file (type png)
 <use images/chassis1.png>
-Package pdftex.def Info: images/chassis1.png  used on input line 1250.
+Package pdftex.def Info: images/chassis1.png  used on input line 1251.
 (pdftex.def)             Requested size: 358.46039pt x 230.23544pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [27]
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 1289--1289
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 1290--1290
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 1289--1289
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 1290--1290
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (28.26894pt too wide) in paragraph at lines 1289--1289
+Overfull \hbox (28.26894pt too wide) in paragraph at lines 1290--1290
 \OT1/cmr/m/n/12 REWRIT- 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 1289--1289
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 1290--1290
 \OT1/cmr/m/n/12 PORT.  
  []
 
 
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 1289--1289
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 1290--1290
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 1289--1289
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 1290--1290
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (28.26894pt too wide) in paragraph at lines 1289--1289
+Overfull \hbox (28.26894pt too wide) in paragraph at lines 1290--1290
 \OT1/cmr/m/n/12 REWRIT- 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 1289--1289
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 1290--1290
 \OT1/cmr/m/n/12 PORT.  
  []
 
@@ -1996,45 +1993,45 @@ Overfull \hbox (10.81772pt too wide) in paragraph at lines 1289--1289
 <images/subsys_block.png, id=632, 581.5326pt x 297.7524pt>
 File: images/subsys_block.png Graphic file (type png)
 <use images/subsys_block.png>
-Package pdftex.def Info: images/subsys_block.png  used on input line 1295.
+Package pdftex.def Info: images/subsys_block.png  used on input line 1296.
 (pdftex.def)             Requested size: 448.07378pt x 229.42906pt.
 
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 1312--1312
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 1313--1313
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 1312--1312
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 1313--1313
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (28.26894pt too wide) in paragraph at lines 1312--1312
+Overfull \hbox (28.26894pt too wide) in paragraph at lines 1313--1313
 \OT1/cmr/m/n/12 REWRIT- 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 1312--1312
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 1313--1313
 \OT1/cmr/m/n/12 PORT.  
  []
 
 
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 1312--1312
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 1313--1313
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 1312--1312
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 1313--1313
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (28.26894pt too wide) in paragraph at lines 1312--1312
+Overfull \hbox (28.26894pt too wide) in paragraph at lines 1313--1313
 \OT1/cmr/m/n/12 REWRIT- 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 1312--1312
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 1313--1313
 \OT1/cmr/m/n/12 PORT.  
  []
 
@@ -2042,45 +2039,45 @@ Overfull \hbox (10.81772pt too wide) in paragraph at lines 1312--1312
 <images/laneD_test.png, id=644, 479.27055pt x 358.82056pt>
 File: images/laneD_test.png Graphic file (type png)
 <use images/laneD_test.png>
-Package pdftex.def Info: images/laneD_test.png  used on input line 1357.
+Package pdftex.def Info: images/laneD_test.png  used on input line 1358.
 (pdftex.def)             Requested size: 336.05533pt x 251.60521pt.
 
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 1368--1368
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 1369--1369
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 1368--1368
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 1369--1369
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (28.26894pt too wide) in paragraph at lines 1368--1368
+Overfull \hbox (28.26894pt too wide) in paragraph at lines 1369--1369
 \OT1/cmr/m/n/12 REWRIT- 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 1368--1368
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 1369--1369
 \OT1/cmr/m/n/12 PORT.  
  []
 
 
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 1368--1368
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 1369--1369
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 1368--1368
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 1369--1369
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (28.26894pt too wide) in paragraph at lines 1368--1368
+Overfull \hbox (28.26894pt too wide) in paragraph at lines 1369--1369
 \OT1/cmr/m/n/12 REWRIT- 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 1368--1368
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 1369--1369
 \OT1/cmr/m/n/12 PORT.  
  []
 
@@ -2088,73 +2085,73 @@ Overfull \hbox (10.81772pt too wide) in paragraph at lines 1368--1368
 <images/path_images/down_1.png, id=712, 162.1257pt x 245.9589pt>
 File: images/path_images/down_1.png Graphic file (type png)
 <use images/path_images/down_1.png>
-Package pdftex.def Info: images/path_images/down_1.png  used on input line 1500
+Package pdftex.def Info: images/path_images/down_1.png  used on input line 1501
 .
 (pdftex.def)             Requested size: 134.4235pt x 203.9319pt.
 <images/path_images/down_2.png, id=713, 162.1257pt x 245.9589pt>
 File: images/path_images/down_2.png Graphic file (type png)
 <use images/path_images/down_2.png>
-Package pdftex.def Info: images/path_images/down_2.png  used on input line 1509
+Package pdftex.def Info: images/path_images/down_2.png  used on input line 1510
 .
 (pdftex.def)             Requested size: 134.4235pt x 203.9319pt.
 <images/path_images/down_3.png, id=714, 162.1257pt x 245.9589pt>
 File: images/path_images/down_3.png Graphic file (type png)
 <use images/path_images/down_3.png>
-Package pdftex.def Info: images/path_images/down_3.png  used on input line 1518
+Package pdftex.def Info: images/path_images/down_3.png  used on input line 1519
 .
 (pdftex.def)             Requested size: 134.4235pt x 203.9319pt.
 <images/path_images/up_1.png, id=715, 162.00525pt x 245.9589pt>
 File: images/path_images/up_1.png Graphic file (type png)
 <use images/path_images/up_1.png>
-Package pdftex.def Info: images/path_images/up_1.png  used on input line 1539.
+Package pdftex.def Info: images/path_images/up_1.png  used on input line 1540.
 (pdftex.def)             Requested size: 134.4235pt x 204.08952pt.
 <images/path_images/up_2.png, id=716, 162.00525pt x 245.9589pt>
 File: images/path_images/up_2.png Graphic file (type png)
 <use images/path_images/up_2.png>
-Package pdftex.def Info: images/path_images/up_2.png  used on input line 1548.
+Package pdftex.def Info: images/path_images/up_2.png  used on input line 1549.
 (pdftex.def)             Requested size: 134.4235pt x 204.08952pt.
 <images/path_images/up_3.png, id=717, 162.1257pt x 245.9589pt>
 File: images/path_images/up_3.png Graphic file (type png)
 <use images/path_images/up_3.png>
-Package pdftex.def Info: images/path_images/up_3.png  used on input line 1557.
+Package pdftex.def Info: images/path_images/up_3.png  used on input line 1558.
 (pdftex.def)             Requested size: 134.4235pt x 203.9319pt.
  [33 <./images/path_images/down_1.png> <./images/path_images/down_2.png> <./ima
 ges/path_images/down_3.png>]
 <images/path_images/par_1.png, id=731, 162.1257pt x 245.9589pt>
 File: images/path_images/par_1.png Graphic file (type png)
 <use images/path_images/par_1.png>
-Package pdftex.def Info: images/path_images/par_1.png  used on input line 1578.
+Package pdftex.def Info: images/path_images/par_1.png  used on input line 1579.
 
 (pdftex.def)             Requested size: 134.4235pt x 203.9319pt.
 <images/path_images/par_2.png, id=732, 162.1257pt x 245.9589pt>
 File: images/path_images/par_2.png Graphic file (type png)
 <use images/path_images/par_2.png>
-Package pdftex.def Info: images/path_images/par_2.png  used on input line 1587.
+Package pdftex.def Info: images/path_images/par_2.png  used on input line 1588.
 
 (pdftex.def)             Requested size: 134.4235pt x 203.9319pt.
 <images/path_images/par_3.png, id=733, 162.00525pt x 246.56116pt>
 File: images/path_images/par_3.png Graphic file (type png)
 <use images/path_images/par_3.png>
-Package pdftex.def Info: images/path_images/par_3.png  used on input line 1596.
+Package pdftex.def Info: images/path_images/par_3.png  used on input line 1597.
 
 (pdftex.def)             Requested size: 134.4235pt x 204.58926pt.
 <images/path_images/inside-bb.png, id=734, 481.19775pt x 361.35pt>
 File: images/path_images/inside-bb.png Graphic file (type png)
 <use images/path_images/inside-bb.png>
 Package pdftex.def Info: images/path_images/inside-bb.png  used on input line 1
-617.
+618.
 (pdftex.def)             Requested size: 134.4235pt x 100.94022pt.
 <images/path_images/inside-bw.png, id=735, 481.8pt x 361.35pt>
 File: images/path_images/inside-bw.png Graphic file (type png)
 <use images/path_images/inside-bw.png>
 Package pdftex.def Info: images/path_images/inside-bw.png  used on input line 1
-626.
+627.
 (pdftex.def)             Requested size: 134.4235pt x 100.8134pt.
 <images/path_images/inside-ww.png, id=736, 481.43864pt x 361.35pt>
 File: images/path_images/inside-ww.png Graphic file (type png)
 <use images/path_images/inside-ww.png>
 Package pdftex.def Info: images/path_images/inside-ww.png  used on input line 1
-635.
+636.
 (pdftex.def)             Requested size: 134.4235pt x 100.8961pt.
  [34 <./images/path_images/up_1.png> <./images/path_images/up_2.png> <./images/
 path_images/up_3.png> <./images/path_images/par_1.png> <./images/path_images/pa
@@ -2163,29 +2160,29 @@ r_2.png> <./images/path_images/par_3.png>]
 File: images/path_images/outsideObs0.png Graphic file (type png)
 <use images/path_images/outsideObs0.png>
 Package pdftex.def Info: images/path_images/outsideObs0.png  used on input line
- 1656.
+ 1657.
 (pdftex.def)             Requested size: 134.4235pt x 105.263pt.
 <images/path_images/outsideObs1.png, id=748, 481.8pt x 361.35pt>
 File: images/path_images/outsideObs1.png Graphic file (type png)
 <use images/path_images/outsideObs1.png>
 Package pdftex.def Info: images/path_images/outsideObs1.png  used on input line
- 1665.
+ 1666.
 (pdftex.def)             Requested size: 134.4235pt x 100.8134pt.
 <images/path_images/outsideObs2.png, id=749, 459.8781pt x 361.35pt>
 File: images/path_images/outsideObs2.png Graphic file (type png)
 <use images/path_images/outsideObs2.png>
 Package pdftex.def Info: images/path_images/outsideObs2.png  used on input line
- 1674.
+ 1675.
 (pdftex.def)             Requested size: 134.4235pt x 105.62138pt.
 <images/stabilityTestI.png, id=750, 454.21695pt x 164.41425pt>
 File: images/stabilityTestI.png Graphic file (type png)
 <use images/stabilityTestI.png>
-Package pdftex.def Info: images/stabilityTestI.png  used on input line 1685.
+Package pdftex.def Info: images/stabilityTestI.png  used on input line 1686.
 (pdftex.def)             Requested size: 425.66872pt x 154.08778pt.
 <images/stabilityTestS.png, id=751, 456.2646pt x 163.69154pt>
 File: images/stabilityTestS.png Graphic file (type png)
 <use images/stabilityTestS.png>
-Package pdftex.def Info: images/stabilityTestS.png  used on input line 1691.
+Package pdftex.def Info: images/stabilityTestS.png  used on input line 1692.
 (pdftex.def)             Requested size: 425.66872pt x 152.7186pt.
 
 
@@ -2194,7 +2191,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <images/stabilityTestU.png, id=752, 457.71pt x 163.3302pt>
 File: images/stabilityTestU.png Graphic file (type png)
 <use images/stabilityTestU.png>
-Package pdftex.def Info: images/stabilityTestU.png  used on input line 1698.
+Package pdftex.def Info: images/stabilityTestU.png  used on input line 1699.
 (pdftex.def)             Requested size: 425.66872pt x 151.90297pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -2203,42 +2200,42 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 ./images/path_images/inside-ww.png> <./images/path_images/outsideObs0.png> <./i
 mages/path_images/outsideObs1.png> <./images/path_images/outsideObs2.png> <./im
 ages/stabilityTestI.png>]
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 1710--1710
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 1711--1711
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 1710--1710
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 1711--1711
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (28.26894pt too wide) in paragraph at lines 1710--1710
+Overfull \hbox (28.26894pt too wide) in paragraph at lines 1711--1711
 \OT1/cmr/m/n/12 REWRIT- 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 1710--1710
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 1711--1711
 \OT1/cmr/m/n/12 PORT.  
  []
 
 
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 1710--1710
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 1711--1711
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 1710--1710
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 1711--1711
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (28.26894pt too wide) in paragraph at lines 1710--1710
+Overfull \hbox (28.26894pt too wide) in paragraph at lines 1711--1711
 \OT1/cmr/m/n/12 REWRIT- 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 1710--1710
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 1711--1711
 \OT1/cmr/m/n/12 PORT.  
  []
 
@@ -2246,144 +2243,144 @@ Overfull \hbox (10.81772pt too wide) in paragraph at lines 1710--1710
 <images/bump_test_dist.png, id=781, 730.98094pt x 268.75406pt>
 File: images/bump_test_dist.png Graphic file (type png)
 <use images/bump_test_dist.png>
-Package pdftex.def Info: images/bump_test_dist.png  used on input line 1744.
+Package pdftex.def Info: images/bump_test_dist.png  used on input line 1745.
 (pdftex.def)             Requested size: 336.05533pt x 123.55455pt.
  [37 <./images/bump_test_dist.png>]
 <images/ROT_ROI/ccwLapTime_crop.png, id=807, 545.51805pt x 294.50024pt>
 File: images/ROT_ROI/ccwLapTime_crop.png Graphic file (type png)
 <use images/ROT_ROI/ccwLapTime_crop.png>
 Package pdftex.def Info: images/ROT_ROI/ccwLapTime_crop.png  used on input line
- 1787.
+ 1788.
 (pdftex.def)             Requested size: 448.07378pt x 241.90068pt.
 File: images/ROT_ROI/ccwLapTime_crop.png Graphic file (type png)
 <use images/ROT_ROI/ccwLapTime_crop.png>
 Package pdftex.def Info: images/ROT_ROI/ccwLapTime_crop.png  used on input line
- 1792.
+ 1793.
 (pdftex.def)             Requested size: 448.07378pt x 241.90068pt.
  [38 <./images/ROT_ROI/ccwLapTime_crop.png>]
 <images/ROT_ROI/ProcessTime_crop.png, id=824, 551.78145pt x 294.50024pt>
 File: images/ROT_ROI/ProcessTime_crop.png Graphic file (type png)
 <use images/ROT_ROI/ProcessTime_crop.png>
 Package pdftex.def Info: images/ROT_ROI/ProcessTime_crop.png  used on input lin
-e 1799.
+e 1800.
 (pdftex.def)             Requested size: 448.07378pt x 239.15952pt.
  [39 <./images/ROT_ROI/ProcessTime_crop.png>]
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 1844--1844
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 1845--1845
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 1844--1844
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 1845--1845
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (28.26894pt too wide) in paragraph at lines 1844--1844
+Overfull \hbox (28.26894pt too wide) in paragraph at lines 1845--1845
 \OT1/cmr/m/n/12 REWRIT- 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 1844--1844
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 1845--1845
 \OT1/cmr/m/n/12 PORT.  
  []
 
 
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 1844--1844
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 1845--1845
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 1844--1844
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 1845--1845
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (28.26894pt too wide) in paragraph at lines 1844--1844
+Overfull \hbox (28.26894pt too wide) in paragraph at lines 1845--1845
 \OT1/cmr/m/n/12 REWRIT- 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 1844--1844
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 1845--1845
 \OT1/cmr/m/n/12 PORT.  
  []
 
 [40]
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 1923--1923
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 1924--1924
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 1923--1923
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 1924--1924
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (28.26894pt too wide) in paragraph at lines 1923--1923
+Overfull \hbox (28.26894pt too wide) in paragraph at lines 1924--1924
 \OT1/cmr/m/n/12 REWRIT- 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 1923--1923
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 1924--1924
 \OT1/cmr/m/n/12 PORT.  
  []
 
 
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 1923--1923
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 1924--1924
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 1923--1923
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 1924--1924
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (28.26894pt too wide) in paragraph at lines 1923--1923
+Overfull \hbox (28.26894pt too wide) in paragraph at lines 1924--1924
 \OT1/cmr/m/n/12 REWRIT- 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 1923--1923
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 1924--1924
 \OT1/cmr/m/n/12 PORT.  
  []
 
 [41]
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 1952--1952
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 1953--1953
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 1952--1952
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 1953--1953
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (28.26894pt too wide) in paragraph at lines 1952--1952
+Overfull \hbox (28.26894pt too wide) in paragraph at lines 1953--1953
 \OT1/cmr/m/n/12 REWRIT- 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 1952--1952
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 1953--1953
 \OT1/cmr/m/n/12 PORT.  
  []
 
 
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 1952--1952
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 1953--1953
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 1952--1952
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 1953--1953
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (28.26894pt too wide) in paragraph at lines 1952--1952
+Overfull \hbox (28.26894pt too wide) in paragraph at lines 1953--1953
 \OT1/cmr/m/n/12 REWRIT- 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 1952--1952
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 1953--1953
 \OT1/cmr/m/n/12 PORT.  
  []
 
@@ -2392,85 +2389,85 @@ Overfull \hbox (10.81772pt too wide) in paragraph at lines 1952--1952
 File: images/ROT_ROI/baseSpeedExp_crop.png Graphic file (type png)
 <use images/ROT_ROI/baseSpeedExp_crop.png>
 Package pdftex.def Info: images/ROT_ROI/baseSpeedExp_crop.png  used on input li
-ne 2000.
+ne 2001.
 (pdftex.def)             Requested size: 448.07378pt x 230.44608pt.
  [43 <./images/ROT_ROI/baseSpeedExp_crop.png>]
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 2133--2133
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 2134--2134
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 2133--2133
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 2134--2134
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (3.1414pt too wide) in paragraph at lines 2133--2133
+Overfull \hbox (3.1414pt too wide) in paragraph at lines 2134--2134
 \OT1/cmr/m/n/12 NEW 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 2133--2133
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 2134--2134
 \OT1/cmr/m/n/12 PORT.  
  []
 
 
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 2133--2133
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 2134--2134
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 2133--2133
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 2134--2134
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (3.1414pt too wide) in paragraph at lines 2133--2133
+Overfull \hbox (3.1414pt too wide) in paragraph at lines 2134--2134
 \OT1/cmr/m/n/12 NEW 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 2133--2133
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 2134--2134
 \OT1/cmr/m/n/12 PORT.  
  []
 
 [44]
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 2136--2136
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 2137--2137
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 2136--2136
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 2137--2137
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (3.1414pt too wide) in paragraph at lines 2136--2136
+Overfull \hbox (3.1414pt too wide) in paragraph at lines 2137--2137
 \OT1/cmr/m/n/12 NEW 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 2136--2136
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 2137--2137
 \OT1/cmr/m/n/12 PORT.  
  []
 
 
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 2136--2136
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 2137--2137
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 2136--2136
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 2137--2137
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (3.1414pt too wide) in paragraph at lines 2136--2136
+Overfull \hbox (3.1414pt too wide) in paragraph at lines 2137--2137
 \OT1/cmr/m/n/12 NEW 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 2136--2136
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 2137--2137
 \OT1/cmr/m/n/12 PORT.  
  []
 
@@ -2478,22 +2475,22 @@ Overfull \hbox (10.81772pt too wide) in paragraph at lines 2136--2136
 LaTeX Warning: Marginpar on page 45 moved.
 
 
-Overfull \hbox (3.0539pt too wide) in paragraph at lines 2138--2138
+Overfull \hbox (3.0539pt too wide) in paragraph at lines 2139--2139
 \OT1/cmr/m/n/12 hesap 
  []
 
 
-Overfull \hbox (1.68307pt too wide) in paragraph at lines 2138--2138
+Overfull \hbox (1.68307pt too wide) in paragraph at lines 2139--2139
 \OT1/cmr/m/n/12 tiyor.  
  []
 
 
-Overfull \hbox (3.0539pt too wide) in paragraph at lines 2138--2138
+Overfull \hbox (3.0539pt too wide) in paragraph at lines 2139--2139
 \OT1/cmr/m/n/12 hesap 
  []
 
 
-Overfull \hbox (1.68307pt too wide) in paragraph at lines 2138--2138
+Overfull \hbox (1.68307pt too wide) in paragraph at lines 2139--2139
 \OT1/cmr/m/n/12 tiyor.  
  []
 
@@ -2501,32 +2498,32 @@ Overfull \hbox (1.68307pt too wide) in paragraph at lines 2138--2138
 LaTeX Warning: Marginpar on page 45 moved.
 
 
-Overfull \hbox (2.98862pt too wide) in paragraph at lines 2166--2166
+Overfull \hbox (2.98862pt too wide) in paragraph at lines 2167--2167
 \OT1/cmr/m/n/12 recre- 
  []
 
 
-Overfull \hbox (5.0122pt too wide) in paragraph at lines 2166--2166
+Overfull \hbox (5.0122pt too wide) in paragraph at lines 2167--2167
 \OT1/cmr/m/n/12 please 
  []
 
 
-Overfull \hbox (7.94968pt too wide) in paragraph at lines 2166--2166
+Overfull \hbox (7.94968pt too wide) in paragraph at lines 2167--2167
 \OT1/cmr/m/n/12 spend- 
  []
 
 
-Overfull \hbox (2.98862pt too wide) in paragraph at lines 2166--2166
+Overfull \hbox (2.98862pt too wide) in paragraph at lines 2167--2167
 \OT1/cmr/m/n/12 recre- 
  []
 
 
-Overfull \hbox (5.0122pt too wide) in paragraph at lines 2166--2166
+Overfull \hbox (5.0122pt too wide) in paragraph at lines 2167--2167
 \OT1/cmr/m/n/12 please 
  []
 
 
-Overfull \hbox (7.94968pt too wide) in paragraph at lines 2166--2166
+Overfull \hbox (7.94968pt too wide) in paragraph at lines 2167--2167
 \OT1/cmr/m/n/12 spend- 
  []
 
@@ -2534,143 +2531,143 @@ Overfull \hbox (7.94968pt too wide) in paragraph at lines 2166--2166
 File: images/ROT_ROI/voltageSupply_crop.png Graphic file (type png)
 <use images/ROT_ROI/voltageSupply_crop.png>
 Package pdftex.def Info: images/ROT_ROI/voltageSupply_crop.png  used on input l
-ine 2193.
+ine 2194.
 (pdftex.def)             Requested size: 448.07378pt x 226.4027pt.
 [45]
 <images/elec_arch.png, id=967, 300.3722pt x 372.64218pt>
 File: images/elec_arch.png Graphic file (type png)
 <use images/elec_arch.png>
-Package pdftex.def Info: images/elec_arch.png  used on input line 2199.
+Package pdftex.def Info: images/elec_arch.png  used on input line 2200.
 (pdftex.def)             Requested size: 224.03688pt x 277.95139pt.
  [46 <./images/ROT_ROI/voltageSupply_crop.png> <./images/elec_arch.png>]
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 2218--2218
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 2219--2219
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 2218--2218
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 2219--2219
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (3.1414pt too wide) in paragraph at lines 2218--2218
+Overfull \hbox (3.1414pt too wide) in paragraph at lines 2219--2219
 \OT1/cmr/m/n/12 NEW 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 2218--2218
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 2219--2219
 \OT1/cmr/m/n/12 PORT.  
  []
 
 
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 2218--2218
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 2219--2219
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 2218--2218
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 2219--2219
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (3.1414pt too wide) in paragraph at lines 2218--2218
+Overfull \hbox (3.1414pt too wide) in paragraph at lines 2219--2219
 \OT1/cmr/m/n/12 NEW 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 2218--2218
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 2219--2219
 \OT1/cmr/m/n/12 PORT.  
  []
 
 ("C:\Users\ilker\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 2237--2237
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 2238--2238
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 2237--2237
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 2238--2238
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (3.1414pt too wide) in paragraph at lines 2237--2237
+Overfull \hbox (3.1414pt too wide) in paragraph at lines 2238--2238
 \OT1/cmr/m/n/12 NEW 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 2237--2237
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 2238--2238
 \OT1/cmr/m/n/12 PORT.  
  []
 
 
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 2237--2237
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 2238--2238
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 2237--2237
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 2238--2238
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (3.1414pt too wide) in paragraph at lines 2237--2237
+Overfull \hbox (3.1414pt too wide) in paragraph at lines 2238--2238
 \OT1/cmr/m/n/12 NEW 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 2237--2237
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 2238--2238
 \OT1/cmr/m/n/12 PORT.  
  []
 
 [47]
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 2245--2245
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 2246--2246
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 2245--2245
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 2246--2246
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (28.26894pt too wide) in paragraph at lines 2245--2245
+Overfull \hbox (28.26894pt too wide) in paragraph at lines 2246--2246
 \OT1/cmr/m/n/12 REWRIT- 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 2245--2245
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 2246--2246
 \OT1/cmr/m/n/12 PORT.  
  []
 
 
-Overfull \hbox (2.32751pt too wide) in paragraph at lines 2245--2245
+Overfull \hbox (2.32751pt too wide) in paragraph at lines 2246--2246
 [][][][]\OT1/cmr/m/n/12 THIS 
  []
 
 
-Overfull \hbox (6.24416pt too wide) in paragraph at lines 2245--2245
+Overfull \hbox (6.24416pt too wide) in paragraph at lines 2246--2246
 \OT1/cmr/m/n/12 PART 
  []
 
 
-Overfull \hbox (28.26894pt too wide) in paragraph at lines 2245--2245
+Overfull \hbox (28.26894pt too wide) in paragraph at lines 2246--2246
 \OT1/cmr/m/n/12 REWRIT- 
  []
 
 
-Overfull \hbox (10.81772pt too wide) in paragraph at lines 2245--2245
+Overfull \hbox (10.81772pt too wide) in paragraph at lines 2246--2246
 \OT1/cmr/m/n/12 PORT.  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2247--2248
+Underfull \hbox (badness 10000) in paragraph at lines 2248--2249
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2249--2250
+Underfull \hbox (badness 10000) in paragraph at lines 2250--2251
 
  []
 
@@ -2681,7 +2678,7 @@ pdfTeX warning: pdflatex.exe (file ./USER_MANUAL.pdf): PDF inclusion: found PDF
 <USER_MANUAL.pdf, id=987, 614.295pt x 794.97pt>
 File: USER_MANUAL.pdf Graphic file (type pdf)
 <use USER_MANUAL.pdf>
-Package pdftex.def Info: USER_MANUAL.pdf  used on input line 2261.
+Package pdftex.def Info: USER_MANUAL.pdf  used on input line 2262.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 
@@ -2689,7 +2686,7 @@ pdfTeX warning: pdflatex.exe (file ./USER_MANUAL.pdf): PDF inclusion: found PDF
  version <1.7>, but at most version <1.5> allowed
 File: USER_MANUAL.pdf Graphic file (type pdf)
 <use USER_MANUAL.pdf>
-Package pdftex.def Info: USER_MANUAL.pdf  used on input line 2261.
+Package pdftex.def Info: USER_MANUAL.pdf  used on input line 2262.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 
@@ -2702,28 +2699,28 @@ pdfTeX warning: pdflatex.exe (file ./USER_MANUAL.pdf): PDF inclusion: found PDF
 <USER_MANUAL.pdf, id=990, page=1, 614.295pt x 794.97pt>
 File: USER_MANUAL.pdf Graphic file (type pdf)
 <use USER_MANUAL.pdf, page 1>
-Package pdftex.def Info: USER_MANUAL.pdf , page1 used on input line 2261.
+Package pdftex.def Info: USER_MANUAL.pdf , page1 used on input line 2262.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: USER_MANUAL.pdf Graphic file (type pdf)
 <use USER_MANUAL.pdf, page 1>
-Package pdftex.def Info: USER_MANUAL.pdf , page1 used on input line 2261.
+Package pdftex.def Info: USER_MANUAL.pdf , page1 used on input line 2262.
 (pdftex.def)             Requested size: 537.50679pt x 695.59705pt.
 File: USER_MANUAL.pdf Graphic file (type pdf)
 <use USER_MANUAL.pdf, page 1>
-Package pdftex.def Info: USER_MANUAL.pdf , page1 used on input line 2261.
+Package pdftex.def Info: USER_MANUAL.pdf , page1 used on input line 2262.
 (pdftex.def)             Requested size: 537.50679pt x 695.59705pt.
 File: USER_MANUAL.pdf Graphic file (type pdf)
 <use USER_MANUAL.pdf, page 1>
-Package pdftex.def Info: USER_MANUAL.pdf , page1 used on input line 2261.
+Package pdftex.def Info: USER_MANUAL.pdf , page1 used on input line 2262.
 (pdftex.def)             Requested size: 537.50679pt x 695.59705pt.
 File: USER_MANUAL.pdf Graphic file (type pdf)
 <use USER_MANUAL.pdf, page 1>
-Package pdftex.def Info: USER_MANUAL.pdf , page1 used on input line 2261.
+Package pdftex.def Info: USER_MANUAL.pdf , page1 used on input line 2262.
 (pdftex.def)             Requested size: 537.50679pt x 695.59705pt.
 [49 <./USER_MANUAL.pdf>]
 File: USER_MANUAL.pdf Graphic file (type pdf)
 <use USER_MANUAL.pdf>
-Package pdftex.def Info: USER_MANUAL.pdf  used on input line 2263.
+Package pdftex.def Info: USER_MANUAL.pdf  used on input line 2264.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 
@@ -2731,7 +2728,7 @@ pdfTeX warning: pdflatex.exe (file ./USER_MANUAL.pdf): PDF inclusion: found PDF
  version <1.7>, but at most version <1.5> allowed
 File: USER_MANUAL.pdf Graphic file (type pdf)
 <use USER_MANUAL.pdf>
-Package pdftex.def Info: USER_MANUAL.pdf  used on input line 2263.
+Package pdftex.def Info: USER_MANUAL.pdf  used on input line 2264.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 
@@ -2744,30 +2741,30 @@ pdfTeX warning: pdflatex.exe (file ./USER_MANUAL.pdf): PDF inclusion: found PDF
 <USER_MANUAL.pdf, id=1016, page=2, 614.295pt x 794.97pt>
 File: USER_MANUAL.pdf Graphic file (type pdf)
 <use USER_MANUAL.pdf, page 2>
-Package pdftex.def Info: USER_MANUAL.pdf , page2 used on input line 2263.
+Package pdftex.def Info: USER_MANUAL.pdf , page2 used on input line 2264.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: USER_MANUAL.pdf Graphic file (type pdf)
 <use USER_MANUAL.pdf, page 2>
-Package pdftex.def Info: USER_MANUAL.pdf , page2 used on input line 2263.
+Package pdftex.def Info: USER_MANUAL.pdf , page2 used on input line 2264.
 (pdftex.def)             Requested size: 537.50679pt x 695.59705pt.
 File: USER_MANUAL.pdf Graphic file (type pdf)
 <use USER_MANUAL.pdf, page 2>
-Package pdftex.def Info: USER_MANUAL.pdf , page2 used on input line 2263.
+Package pdftex.def Info: USER_MANUAL.pdf , page2 used on input line 2264.
 (pdftex.def)             Requested size: 537.50679pt x 695.59705pt.
 File: USER_MANUAL.pdf Graphic file (type pdf)
 <use USER_MANUAL.pdf, page 2>
-Package pdftex.def Info: USER_MANUAL.pdf , page2 used on input line 2263.
+Package pdftex.def Info: USER_MANUAL.pdf , page2 used on input line 2264.
 (pdftex.def)             Requested size: 537.50679pt x 695.59705pt.
 File: USER_MANUAL.pdf Graphic file (type pdf)
 <use USER_MANUAL.pdf, page 2>
-Package pdftex.def Info: USER_MANUAL.pdf , page2 used on input line 2263.
+Package pdftex.def Info: USER_MANUAL.pdf , page2 used on input line 2264.
 (pdftex.def)             Requested size: 537.50679pt x 695.59705pt.
 [50 <./USER_MANUAL.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2280.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2280.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2281.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2281.
  (Duayenler_Final.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2280.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2280.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2281.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2281.
 
 Package rerunfilecheck Info: File `Duayenler_Final.out' has not changed.
 (rerunfilecheck)             Checksum: 031441887E87FB47075341015540C01E;3481.
@@ -2778,12 +2775,12 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2280.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2281.
  ) 
 Here is how much of TeX's memory you used:
  45380 strings out of 492970
  986857 string characters out of 3126593
- 1472189 words of memory out of 3000000
+ 1472334 words of memory out of 3000000
  48064 multiletter control sequences out of 15000+200000
  541780 words of font info for 58 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2807,7 +2804,7 @@ ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users
 fb><C:/Users/ilker/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
 s/cm/cmti12.pfb><C:/Users/ilker/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/u
 rw/courier/ucrr8a.pfb>
-Output written on Duayenler_Final.pdf (51 pages, 50201004 bytes).
+Output written on Duayenler_Final.pdf (51 pages, 50201050 bytes).
 PDF statistics:
  1178 PDF objects out of 1200 (max. 8388607)
  474 named destinations out of 1000 (max. 500000)
