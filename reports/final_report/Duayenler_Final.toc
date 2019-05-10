@@ -1,5 +1,5 @@
-\select@language {english}
-\select@language {english}
+\babel@toc {english}{}
+\babel@toc {english}{}
 \contentsline {section}{\numberline {1}Executive Summary}{3}{section.1}
 \contentsline {section}{\numberline {2}Introduction}{4}{section.2}
 \contentsline {section}{\numberline {3}Design Description}{5}{section.3}
@@ -31,18 +31,18 @@
 \contentsline {subsection}{\numberline {4.6}External Communication Subsystem Tests and Results}{40}{subsection.4.6}
 \contentsline {subsection}{\numberline {4.7}Direction Subsystem Tests and Results}{41}{subsection.4.7}
 \contentsline {subsection}{\numberline {4.8}Speed Subsystem Tests and Results}{42}{subsection.4.8}
-\contentsline {subsection}{\numberline {4.9}Wheels Subsystem Tests and Results}{43}{subsection.4.9}
-\contentsline {subsection}{\numberline {4.10}Motors Subsystem Tests and Results}{43}{subsection.4.10}
+\contentsline {subsection}{\numberline {4.9}Wheels Subsystem Tests and Results}{44}{subsection.4.9}
+\contentsline {subsection}{\numberline {4.10}Motors Subsystem Tests and Results}{44}{subsection.4.10}
 \contentsline {subsection}{\numberline {4.11}Chassis Subsystem Tests and Results}{44}{subsection.4.11}
 \contentsline {subsection}{\numberline {4.12}Printed Circuit Board Subsystem Tests and Results}{44}{subsection.4.12}
 \contentsline {section}{\numberline {5}Budget}{45}{section.5}
 \contentsline {subsection}{\numberline {5.1}Actual Expenditures}{45}{subsection.5.1}
 \contentsline {subsection}{\numberline {5.2}Cost Analysis of Reproducible Product}{45}{subsection.5.2}
-\contentsline {section}{\numberline {6}Power Analysis}{46}{section.6}
-\contentsline {section}{\numberline {7}Deliverables}{47}{section.7}
+\contentsline {section}{\numberline {6}Power Analysis}{45}{section.6}
+\contentsline {section}{\numberline {7}Deliverables}{46}{section.7}
 \contentsline {section}{\numberline {8}Discussions}{47}{section.8}
-\contentsline {subsection}{\numberline {8.1}Safety Issues}{48}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Application Areas}{48}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.1}Safety Issues}{47}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Application Areas}{47}{subsection.8.2}
 \contentsline {subsection}{\numberline {8.3}Environmental Effects}{48}{subsection.8.3}
-\contentsline {section}{\numberline {9}Conclusion}{49}{section.9}
-\contentsline {section}{Appendix \numberline {A}USER MANUAL}{50}{Appendix.a.A}
+\contentsline {section}{\numberline {9}Conclusion}{48}{section.9}
+\contentsline {section}{Appendix \numberline {A}USER MANUAL}{49}{Appendix.a.A}
