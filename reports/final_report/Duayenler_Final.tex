@@ -149,16 +149,16 @@ The company consists of talented engineers from different fields, namely compute
 
 DUAYENLER has several focus points to develop an autonomous driving technology. These are, vehicle vision, inter-vehicle communication, vehicle control and physical design of the vehicle. Actually, those are the main building blocks of the main technology. Vehicle vision summarizes the concept of understanding path properties, that is to be able to extract and differentiate path and obstacles in every weather condition. Obviously, inter-vehicle communication provides cooperation environment with opponent vehicles and enables a traffic hierarchy. As the vehicle has path vision, the decision of steering must be made that brings the need for vehicle control. Being able to follow a path and to head towards bends are essential for a vehicle. Besides, the physical structure of the vehicle must be able to suit with the rest of the technologies. The height, the weight, the width of the vehicle, the chassis material choice and additional implementation-specific features are handled in physical design. This structure and combination of the systems provide suitable environment for DUAYENLER to develop autonomous driving technology.
 
-This report gives the reader a solid view and understanding of the project. Detailed design considerations with technical details and test results do not leave any vague point on the implementation. The duration of the project is 33 weeks, from the beginning of October 2018 to the second week of May 2019. The total cost is calculated to be approximately $616.5~\$$ and  1700 man-hour, whereas cost to produce the commercial vehicle is 199.5 $\$$. Along with the vehicle, the customer is provided with user manual, elliptical path, rechargeable batter and the charger. The vehicle has two (2) years of warranty.
+This report gives the reader a solid view and understanding of the project. Detailed design considerations with technical details and test results do not leave any vague point on the implementation. The duration of the project is 33 weeks, from the beginning of October 2018 to the second week of May 2019. The total cost is calculated to be approximately $616.5~\$$ and  2000 man-hour, whereas cost to produce the commercial vehicle is 199.5 $\$$. Along with the vehicle, the customer is provided with user manual, elliptical path, rechargeable batter and the charger. The vehicle has two (2) years of warranty.
 
 \newpage
 	\section{Introduction}
 
-Autonomous car technologies are the hot topic of today. Companies which want to lead the technology have already started on this topic with their R\&D teams. To bring new approach in this area, DUAYENLER Ltd. Şti. (DUAYENLER) aims to be one of the leaders in this area. Based on this goal, DUAYENLER designed and produced a prototype for Car Chasing Project. The purpose of this project is an autonomous car can follow a predefined path, and it can communicate with the other car on the path.  
+Autonomous car technologies are the hot topic of today. Companies which want to lead the technology have already started on this topic with their R\&D teams. To bring new approach in this area, DUAYENLER Ltd. Şti. (DUAYENLER) aims to be one of the leaders in this area. Based on this goal, DUAYENLER designed and produced a prototype for Car Chasing Project. The purpose of this project is an autonomous car can follow a predefined path, and it can communicate with the other car on the path.  \\
 
-DUAYENLER with its five team members divided this project into pieces, such as image processing, mechanical design, differential drive etc., and assign tasks to members according to their professions. After modules are designed, integration and testing were a collective work of all members.  
+DUAYENLER with its five team members divided this project into pieces, such as image processing, mechanical design, differential drive etc., and assign tasks to members according to their professions. After modules are designed, integration and testing were a collective work of all members. \\ 
 
-The main blocks of the project are autonomous steering and its control. These blocks are built from systems that are built from subsystems. Therefore, at first stage, objectives of the project were specified. Then, the project was divided into six systems with their requirements. As a next stage, systems were divided into subsystems. Finally, from bottom to top design was completed. 
+The main blocks of the project are autonomous steering and its control. These blocks are built from systems that are built from subsystems. Therefore, at first stage, objectives of the project were specified. Then, the project was divided into six systems with their requirements. As a next stage, systems were divided into subsystems. Finally, from bottom to top design was completed. \\
 
 This report contains detailed descriptions of solutions for subsystem blocks, their requirements, tests and test results of the prototype. Moreover, deliverables, detailed cost analysis of prototype and overall project are covered by this report. Finally, report contains safety issues, environmental effects of the prototype, and possible extensive application of the prototype. 
 
@@ -2053,16 +2053,24 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 
 \begin{enumerate}
 
-\item {Torque Test:} 
+\item {Lower PWM Detection Test:} 
 
 \begin{enumerate}
+	 \item Connect motor to Arduino and motor driver 
+	 \item Give initial PWM value to DC motor
+	 \item Give power to the motor
+	 \item Observe the behaviour, and increase the PWM value to see lower limit of the PWM
+	 \item Record this value 
+\end{enumerate}
 
-\item Fix the motor at horizontal position with respect to ground  
+\item {Supply Current Determination Test:} 
 
-\item Attach an object of one kilogram  
-
-\item Contact the seller for more information 
-
+\begin{enumerate}
+	\item Connect motor to Arduino and motor driver 
+	\item Give 255 PWM value to DC motor
+	\item Give power to the motor
+	\item Measure the current value
+	\item Record this value 
 \end{enumerate}
 
 
@@ -2073,7 +2081,7 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 
 \subsubsection*{Results of Motion System Tests}
 
-	%After tests, handling capability of the system is approved. However, although motors are quite well with high PWM, their low PWM performance cause some problems. Therefore, motor subsystem could need a revision.
+	After proposed test steps applied, the determined values was utilized by Speed and PID Controller subsystems. 
 
 
 
@@ -2151,7 +2159,7 @@ As mentioned previously, the disturbances applied on the vehicle and the deviati
 
 	\subsection{Actual Expenditures}
 	
-		Besides the component spendings spesified at \textit{Table~\ref{tab:totalcost}}, $100~\$$ worth mechanical components, such as rechargeble drill and approximately $100~\$$ worth electrical components from porevious term projects were utilized throughout the project. Thereby, a total of approximate $616.5~\$$ budget and  1700 man-hour were spent on this project.
+		Besides the component spendings spesified at \textit{Table~\ref{tab:totalcost}}, $100~\$$ worth mechanical components, such as rechargeble drill and approximately $100~\$$ worth electrical components from porevious term projects were utilized throughout the project. Thereby, a total of approximate $616.5~\$$ budget and  2000 man-hour were spent on this project.
 		
 		\begin{table}[H]
 			\centering
@@ -2240,13 +2248,11 @@ As mentioned previously, the disturbances applied on the vehicle and the deviati
 	\section{Deliverables}
 		Deliverables of the product are listed as follows;
 		\begin{itemize}
-			\item Kobra 6.5  
-			\item Li-Po batteries (3S 11.1 V)
-			\item Power bank (Li-Ion 10 000 mAh)
+			\item KOBRA 6.5  
 			\item Race Track 
 			\item Flash stick with sofware 
 			\item User Manual 
-			\item USB Cable
+			\item Micro USB Cable
 		\end{itemize} 
 	\section{Discussions}
 		This sections presents a discussion on several things such as safety issues, application areas and environmental effects of the final product.
@@ -2272,7 +2278,7 @@ As mentioned previously, the disturbances applied on the vehicle and the deviati
 
 		Regarding the battery, a Li-Po battery is used on the vehicle. Production of Li-Po batteries require lots of chemical and energy. And, what is worse is that there are currently no good programs to recycle lithium-polymer batteries. So, it can be concluded that Li-Po batteries are not environment friendly.
 
-
+\newpage
 	\section{Conclusion}
 	
 		This report consists of the summary of the results of entire design effort. For each subsystem, the solutions are explained in detail and the results of the tests are discussed in detail. \\
