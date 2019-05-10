@@ -1177,17 +1177,26 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 			\item {Requirements for the Solution}
 			
 			\begin{enumerate}
-				\item The subsystem should ensure that the motors can supply enough torque to accelerate the vehicle 
+				\item The subsystem should ensure that the motors can supply 1 kg-cm torque to accelerate the vehicle 
 				\item The subsystem should ensure that the motors can execute driving system outputs without deviation
 			\end{enumerate} 
 
 		\item {Solution for the Subsystem}
 
-			%As the previous suggestion in CDR, DC motor selection did not change. The reason of this brushed gearhead DC motors are designed to this usage. Even though 3kg-cm is proposed, because the size and weight of the motors in this specs are not appropriate under 600 RPM condition, and eliminate the over engineering, this calculation turns into weight = torque at the shaft of the motor. RPM condition is set in CDR with equation (1). According to this equation 95.5 RPM is the minimum condition, but to be a strong competitor, 5 times of this value is idealized to goal speed. To handle with this value 100 RPM margin is set, to health of the motors during competition.   
+		The determined structure requires two separately controlled DC motors to control the direction and speed of the vehicle. The length of the path is approximately 3 meters and the vehicle should complete the path less than 20 seconds. Then, required RPM value of the motor is calculated using \eqref{rpm}. 
+		\begin{equation}\label{rpm}
+		\begin{split}
+		v=\frac{3}{20}&=\pi\times D\times\frac{RPM}{60}\\
+		RPM&=\frac{2.865}{D}
+		\end{split}
+		\end{equation}
+		where $D$ is the diameter of the wheel which is determined to be 3 cm. Then, minimum RPM value is 95.5. The finalized choice for the motor is to have 140 RPM as nominal value.  
+		
+		When it comes to torque discussion, it is chosen by trial and error with three separate motors and optimum value is obtained as 3.6 kg-cm. With this values, the vehicle can handle slow motions, steep turns and acceleration.  
 	
 		\item {Discussions on the Solution}
+	 Initially motors with 400 RPM are tried but they do not satisfy the requirements since the control range becomes limited. That is why nominal RPM value is reduced to 140.
 
-	%After motors subsystem tests, motors can move symmetrical without PWM offset, and vehicle can move fast enough with the motors. Also, they perform well in differential drive operation. Therefore, this system satisfies requirements. 
 
 	\end{enumerate}	
 
@@ -1248,7 +1257,7 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 
 
 	\begin{figure}[h]
-%		\includegraphics[width=0.8\textwidth,center]{}
+		\includegraphics[width=0.8\textwidth,center]{images/iso-colored.png}
 		\caption{Isometric view of the 3D Drawing of the vehicle \label{fig:chassis} }
 	\end{figure}
 
