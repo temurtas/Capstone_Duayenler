@@ -569,7 +569,8 @@ The next step is to determine whether there are disturbances on the lane lines o
 The third step is to fit best lines through the remaining lines. This is realized by using built-in Least-Squares method. As a result of this step, the number of lines is dropped to two as left line and right line.
 
 
-The last step is to find the steering angle. The target point is determined as the average of the middle points left and right lines. So the target point is always in the form of $(x_{avg}, 305)$. The y-coordinate is found by simple math (referencing from \textit{Figure~\ref{fig:camera_vision_explained}}) $480px-50px-125px$. The current point of the vehicle is always $(320,480)$. So the line connecting two points to each other constitutes the track path and the $arctan$ of the slope gives the steering angle. Steering angle is in the $[-90,90]$ range where negative values indicate to turn left and positive values indicate to turn right. This output is sent to PID Controller subsystem.
+The last step is to generate control outputs $y1$ and $/beta$ (to be detailed in \textit{PID Controller Subsystem}. The parameter $y1$ is found by pixel 320 subtracted by x-coordinate of the right line. The parameter $\beta$ is the difference between the slope angle of the right line and the left line. The calculated output parameters are fed into PID Controller as Subsystem as inputs.
+
 \begin{algorithm}[t]
 	
 	
@@ -864,7 +865,7 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 			$yonFin=1$ 
 		}
 		\caption{Path Rotation Classification Algorithm}
-		\label{algo:ratation}
+		\label{algo:rotation}
 	\end{algorithm}
 	
 	\item {Discussions on the Solution}
@@ -879,7 +880,6 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%	
 
 \subsection{Communication System}
-\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
 
 	This systems is responsible for all communications of the system. It is one of the most crucial systems of this project since it provides a link between different parties of the vehicle as well as communication with other vehicles. The requirements for this system are as follows;		
 
@@ -899,7 +899,6 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%	
 
 \subsubsection{Internal Communication Subsystem}
-\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
 
 	\begin{enumerate}
 		\item {Requirements for the Solution}
@@ -1039,7 +1038,6 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 
 
 \subsubsection{Direction Subsystem}
-\todo{This part is rewritten for the final report}
 	\begin{enumerate}
 		\item {Requirements for the Solution}
 		
@@ -1146,7 +1144,7 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 	\subsubsection{Wheels Subsystem}
-\todo{This part is rewritten for the final report}
+	
 		\begin{enumerate}
 			\item {Requirements for the Solution}
 			
@@ -1220,7 +1218,7 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Chassis Subsystem}
-\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
+
 	\begin{enumerate}
 		\item {Requirements for the Solution}
 		
@@ -1265,7 +1263,7 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Printed Circuit Board Subsystem}
-\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
+
 	\begin{enumerate}
 		\item {Requirements for the Solution}
 		
@@ -1293,9 +1291,6 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 
 
 \subsection{Compatibility of the Subsystems}
-
-\todo{THIS PART IS REWRITTEN FOR FINAL REPORT.}
-
 
 	The block diagram showing the interaction of the subsytem block with each other can be seen from the \textit{Figure~\ref{fig:subsys-block}}. As can be seen from the figure also that, there are two main path within the project. One of them starts by processing the camera vision by the \textit{Lane Detection Subsystem} and ends with the transfer of torque from \textit{Motors Subsystem} to \textit{Wheels Subsystem} which results with a movement of the vehicle. In this path the data before the \textit{PID Controller} and \textit{Speed} subsystems are processed within the Raspberry Pi without any problem, at this point the output data are transferred to Arduino by \textit{Internal Communication Subsystem} without any problem. The rest of this path is processed by the Arduino without any problem as well.
 
@@ -2020,7 +2015,7 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 \newpage
 
 \subsection{Wheels Subsystem Tests and Results} 
-\todo{THIS PART IS NEW FOR FINAL REPORT.}
+
 
 \begin{enumerate}
 
@@ -2079,7 +2074,7 @@ The proposed algorithm is mostly the same as in Conceptual Design Review Report.
 
 
 \subsection {Chassis Subsystem Tests and Results}
-	\todo{THIS PART IS NEW FOR FINAL REPORT.}
+
 \begin{enumerate}
 
 \item Inertia test: 
@@ -2114,8 +2109,7 @@ As mentioned previously, the disturbances applied on the vehicle and the deviati
 
 
 \subsection {Printed Circuit Board Subsystem Tests and Results}
-	\todo{THIS PART IS NEW FOR FINAL REPORT.}
-
+	
 \begin{enumerate}
 
 \item Short test: Aims to check all the wanted connections are present. The test procedure is as follows:
